@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Hutta nap šak",
+    "newGame": "Hutta new"
+  },
+  "common": {
+    "on": "HAL",
+    "off": "HUP"
+  },
+  "a11y": {
+    "utilityActions": "App link-me u hal",
+    "viewSource": "GitHub nap u-ri",
+    "gameControls": "Hutta kuk",
+    "gameBoard": "3D hutta tap",
+    "gameInfo": "Hutta temti"
+  },
+  "controls": {
+    "diffAI": "AI zana",
+    "diffPlayerOneAI": "P1 zana",
+    "diffPlayerTwoAI": "P2 zana",
+    "startingPlayer": "Hutta kiri",
+    "gameMode": "Hutta šak",
+    "pauseAI": "AI hup",
+    "resumeAI": "AI hal",
+    "undo": "Tir",
+    "redo": "Šak-me"
+  },
+  "diff": {
+    "easy": "Kut",
+    "medium": "Murka",
+    "hard": "Zana"
+  },
+  "mode": {
+    "userVsUser": "Sunki sunki",
+    "userVsAI": "Sunki AI",
+    "onlyAI": "AI AI"
+  },
+  "player": {
+    "playerYou": "Nu",
+    "playerOne": "Hutta sunki 1",
+    "playerTwo": "Hutta sunki 2",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Happir",
+    "playerAIPlayer": "AI sunki",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Hutta hali...",
+    "pausedAI": "{{player}} hup...",
+    "placingAI": "{{player}} hutta - parti tap-ri kuti...",
+    "placingUser": "{{player}} hutta - parti ši tap-ri kuti...",
+    "placeUserYou": "Nu hutta - parti ši tap-ri kuti...",
+    "gameDrawn": "Hutta mura - nika halma",
+    "gameWon": "{{player}} nika - halma nika šak",
+    "selectingAI": "{{player}} hutta - {{opponent}}-na parti ši...",
+    "selectUser": "{{player}} hutta - {{opponent}}-na parti ši...",
+    "selectUserYou": "Nu hutta - {{opponent}}-na parti ši..."
+  },
+  "piece": {
+    "inPlay": "Parti hutta-ri",
+    "none": "Akkai ši",
+    "traits": "Parti temti",
+    "black": "kikki",
+    "red": "ruh",
+    "big": "sunkir",
+    "small": "likki",
+    "round": "kur",
+    "square": "kutu",
+    "solid": "tak",
+    "hollow": "hup"
+  },
+  "board": {
+    "binary": "Tap 2",
+    "piecesPlaced": "Parti kuti",
+    "cellEmpty": "Kut {{cell}}: hup",
+    "cellPiece": "Kut {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D šak akkai.",
+    "webglHeading": "WebGL kiri akkai.",
+    "webglMsg": "Hutta WebGL browser-ri hal piri."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Cursor parti ši-ri kuti risk ši u-ri",
+    "hoveredRiskOne": "Parti risk cursor-na: {{risk}} nika kut",
+    "hoveredRiskMany": "Parti risk cursor-na: {{risk}} nika kuti",
+    "immediateWins": "Nika kuti",
+    "latestRisk": "Risk ši appa",
+    "riskOneAI": "AI parti ši risk: {{risk}} nika kut",
+    "riskManyAI": "AI parti ši risk: {{risk}} nika kuti",
+    "riskTurnedOff": "Risk ši hup",
+    "riskUnavailableAI": "Risk ši AI AI-ri akkai",
+    "selectionRisk": "Risk ši",
+    "turnRiskOff": "Risk ši hup",
+    "turnRiskOn": "Risk ši hal"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Me",
+    "search": "Me sari",
+    "empty": "Me in sari",
+    "close": "Kap"
+  }
+}

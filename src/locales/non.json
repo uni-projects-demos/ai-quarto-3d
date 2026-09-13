@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Fœrð bót af",
+    "newGame": "Nýr leikr"
+  },
+  "common": {
+    "on": "Á",
+    "off": "AF"
+  },
+  "a11y": {
+    "utilityActions": "Tengsl forrits ok tunga",
+    "viewSource": "Sé frumtexta á GitHub",
+    "gameControls": "Stjórn leiks",
+    "gameBoard": "3D tafl",
+    "gameInfo": "Fróðleikr um leik"
+  },
+  "controls": {
+    "diffAI": "Erfiðleikr AI",
+    "diffPlayerOneAI": "Erfiðleikr P1",
+    "diffPlayerTwoAI": "Erfiðleikr P2",
+    "startingPlayer": "Sá er hefir leik",
+    "gameMode": "Háttur leiks",
+    "pauseAI": "Hlé á AI",
+    "resumeAI": "Halda AI áfram",
+    "undo": "Afturkalla",
+    "redo": "Endrgöra"
+  },
+  "diff": {
+    "easy": "Auðveldr",
+    "medium": "Miðlungs",
+    "hard": "Erfiðr"
+  },
+  "mode": {
+    "userVsUser": "Notandi gegn notanda",
+    "userVsAI": "Notandi gegn AI",
+    "onlyAI": "AI gegn AI"
+  },
+  "player": {
+    "playerYou": "Þú",
+    "playerOne": "Leikmaðr Einn",
+    "playerTwo": "Leikmaðr Tveir",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Af hendingu",
+    "playerAIPlayer": "AI leikmaðr",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Staða leiks...",
+    "pausedAI": "{{player}} er í hléi...",
+    "placingAI": "{{player}} leikr - setr taflmann á borð...",
+    "placingUser": "{{player}} leikr - Set valinn taflmann á borð...",
+    "placeUserYou": "Þú leikr - Set valinn taflmann á borð...",
+    "gameDrawn": "Jafntefli - engin sigrandi lína",
+    "gameWon": "{{player}} sigrar - sigrandi lína sýnd",
+    "selectingAI": "{{player}} leikr - velr taflmann handa {{opponent}}...",
+    "selectUser": "{{player}} leikr - Vel taflmann handa {{opponent}}...",
+    "selectUserYou": "Þú leikr - Vel taflmann handa {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Taflmaðr í leik",
+    "none": "Ekkert valit",
+    "traits": "Eiginleikar taflmanns",
+    "black": "svartr",
+    "red": "rauðr",
+    "big": "stórr",
+    "small": "lítill",
+    "round": "kringlóttr",
+    "square": "ferhyrndr",
+    "solid": "heill",
+    "hollow": "holr"
+  },
+  "board": {
+    "binary": "Tvíundartafl",
+    "piecesPlaced": "Settir taflmenn",
+    "cellEmpty": "Reitr {{cell}}: tómr",
+    "cellPiece": "Reitr {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D myndgerð er eigi tiltæk.",
+    "webglHeading": "WebGL mátti eigi hefjast.",
+    "webglMsg": "Leikrinn krefst þess at WebGL sé virkt í vafra."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Halt bendli yfir valanlegum taflmanni at sjá hættu vals",
+    "hoveredRiskOne": "Hætta taflmanns undir bendli: {{risk}} þegar sigrandi staðsetning",
+    "hoveredRiskMany": "Hætta taflmanns undir bendli: {{risk}} þegar sigrandi staðsetningar",
+    "immediateWins": "Þegar sigrandi staðsetningar",
+    "latestRisk": "Síðasta hætta vals",
+    "riskOneAI": "Hætta taflmanns valins af AI: {{risk}} þegar sigrandi staðsetning",
+    "riskManyAI": "Hætta taflmanns valins af AI: {{risk}} þegar sigrandi staðsetningar",
+    "riskTurnedOff": "Hætta vals er af",
+    "riskUnavailableAI": "Hætta vals eigi tiltæk í AI gegn AI",
+    "selectionRisk": "Hætta vals",
+    "turnRiskOff": "Slökkva hættu vals",
+    "turnRiskOn": "Kveikja hættu vals"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Tunga",
+    "search": "Leita tungna",
+    "empty": "Engar tungur fundnar",
+    "close": "Lúka"
+  }
+}

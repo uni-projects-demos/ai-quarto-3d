@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Nu miglioramiento purtato 'a",
+    "newGame": "Juoco nuovo"
+  },
+  "common": {
+    "on": "APPIcciato",
+    "off": "STUTATO"
+  },
+  "a11y": {
+    "utilityActions": "Link d''app e lengua",
+    "viewSource": "Vire 'o sorgente ncopp'a GitHub",
+    "gameControls": "Cuntrolle d''o juoco",
+    "gameBoard": "Tavuliere 3D",
+    "gameInfo": "Nfurmazione d''o juoco"
+  },
+  "controls": {
+    "diffAI": "Difficurtà AI",
+    "diffPlayerOneAI": "Difficurtà P1",
+    "diffPlayerTwoAI": "Difficurtà P2",
+    "startingPlayer": "Jucatore ca accummincia",
+    "gameMode": "Modo d''o juoco",
+    "pauseAI": "Metti AI 'n pausa",
+    "resumeAI": "Ripiglia AI",
+    "undo": "Annanze arreto",
+    "redo": "Faje n'ata vota"
+  },
+  "diff": {
+    "easy": "Facile",
+    "medium": "Mmiezo",
+    "hard": "Difficile"
+  },
+  "mode": {
+    "userVsUser": "Utente contro utente",
+    "userVsAI": "Utente contro AI",
+    "onlyAI": "AI contro AI"
+  },
+  "player": {
+    "playerYou": "Tu",
+    "playerOne": "Jucatore Uno",
+    "playerTwo": "Jucatore Ddoje",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "A caso",
+    "playerAIPlayer": "Jucatore AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Stato d''o juoco...",
+    "pausedAI": "{{player}} sta 'n pausa...",
+    "placingAI": "{{player}} sta jucanno - mette 'o pezzo ncopp''o tavuliere...",
+    "placingUser": "{{player}} sta jucanno - Metti 'o pezzo scigliuto ncopp''o tavuliere...",
+    "placeUserYou": "Tu staje jucanno - Metti 'o pezzo scigliuto ncopp''o tavuliere...",
+    "gameDrawn": "Juoco pari - nisciuna linea vincente",
+    "gameWon": "{{player}} vence - linea vincente messa 'n evidenza",
+    "selectingAI": "{{player}} sta jucanno - sciglie nu pezzo pe {{opponent}}...",
+    "selectUser": "{{player}} sta jucanno - Sciglie nu pezzo pe {{opponent}}...",
+    "selectUserYou": "Tu staje jucanno - Sciglie nu pezzo pe {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pezzo 'n juoco",
+    "none": "Nisciuno scigliuto",
+    "traits": "Caratteristiche d''o pezzo",
+    "black": "niro",
+    "red": "russo",
+    "big": "gruosso",
+    "small": "piccerillo",
+    "round": "tunno",
+    "square": "quadrato",
+    "solid": "chino",
+    "hollow": "vacante"
+  },
+  "board": {
+    "binary": "Tavuliere binario",
+    "piecesPlaced": "Piezze misse",
+    "cellEmpty": "Casella {{cell}}: vacante",
+    "cellPiece": "Casella {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "'O rendering 3D nun è disponibile.",
+    "webglHeading": "WebGL nun s'è pututo avvià.",
+    "webglMsg": "'O juoco vò WebGL appicciato dint''o browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Passa 'o cursore ncopp'a nu pezzo ca se po' scigliere pe vedé 'o rischio d''a scelta",
+    "hoveredRiskOne": "Rischio d''o pezzo sott''o cursore: {{risk}} posizione vincente immediata",
+    "hoveredRiskMany": "Rischio d''o pezzo sott''o cursore: {{risk}} posizioni vincenti immediate",
+    "immediateWins": "Posizioni vincenti immediate",
+    "latestRisk": "Urdemo rischio d''a scelta",
+    "riskOneAI": "Rischio d''o pezzo scigliuto da AI: {{risk}} posizione vincente immediata",
+    "riskManyAI": "Rischio d''o pezzo scigliuto da AI: {{risk}} posizioni vincenti immediate",
+    "riskTurnedOff": "'O rischio d''a scelta è stutato",
+    "riskUnavailableAI": "'O rischio d''a scelta nun è disponibile int''o modo AI contro AI",
+    "selectionRisk": "Rischio d''a scelta",
+    "turnRiskOff": "Stuta 'o rischio d''a scelta",
+    "turnRiskOn": "Appiccia 'o rischio d''a scelta"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lengua",
+    "search": "Cerca lengue",
+    "empty": "Nisciuna lengua truvata",
+    "close": "Chiude"
+  }
+}

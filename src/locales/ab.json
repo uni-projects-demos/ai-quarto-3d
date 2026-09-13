@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Аиҭагәыргарала еиӷьтәу хувҵароуп",
+    "newGame": "Иҿыцу ах խաղ"
+  },
+  "common": {
+    "on": "ИАЛКУ",
+    "off": "ИАЛКУ МАЦ"
+  },
+  "a11y": {
+    "utilityActions": "Апрограмма азхьарԥшқәеи абызшәақәеи",
+    "viewSource": "GitHub аҿы ахыҵхырҭатә код ахәаҧшра",
+    "gameControls": "Ах խաղ ахылаԥшратә баӷәазақәа",
+    "gameBoard": "3D ах խաղтә ӷәы",
+    "gameInfo": "Ах խաղ иазку аинформациа"
+  },
+  "controls": {
+    "diffAI": "AI аџьбарра",
+    "diffPlayerOneAI": "P1 аџьбарра",
+    "diffPlayerTwoAI": "P2 аџьбарра",
+    "startingPlayer": "Ахлагаратә ахәмарыҩцәа",
+    "gameMode": "Ах խաղ арежим",
+    "pauseAI": "AI аанкылатәы",
+    "resumeAI": "AI анагӡара",
+    "undo": "Иацыԥхьоз архынҳәра",
+    "redo": "Аиҭа аҟаҵара"
+  },
+  "diff": {
+    "easy": "Имариоу",
+    "medium": "Ибжьаратәу",
+    "hard": "Иџьбароу"
+  },
+  "mode": {
+    "userVsUser": "Ахархәаҩ vs ахархәаҩ",
+    "userVsAI": "Ахархәаҩ vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Уара",
+    "playerOne": "Ахәмарыҩ Актәи",
+    "playerTwo": "Ахәмарыҩ аҩбатә",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Машәырла",
+    "playerAIPlayer": "AI ахәмарыҩ",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Ах խաղ аҭахрақәа...",
+    "pausedAI": "{{player}} аанкылоуп...",
+    "placingAI": "{{player}} ихәмарыуеит - ахәҭа ӷәыгәҟны ишьҭеиуеит...",
+    "placingUser": "{{player}} ихәмарыуеит - иалху ахәҭа ӷәыгәҟны ишьҭеи...",
+    "placeUserYou": "Уара ухәымарыуеит - иалху ахәҭа ӷәыгәҟны ишьҭеи...",
+    "gameDrawn": "Ах խաղ еиҟарахеит - аиааиратә цәаҳәа ыҟаӡами",
+    "gameWon": "{{player}} даиааит - аиааиратә цәаҳәа иазгәаҭоуп",
+    "selectingAI": "{{player}} ихәмарыуеит - {{opponent}} изы ахәҭа иалихуеит...",
+    "selectUser": "{{player}} ихәмарыуеит - {{opponent}} изы ахәҭа алух...",
+    "selectUserYou": "Уара ухәымарыуеит - {{opponent}} изы ахәҭа алух..."
+  },
+  "piece": {
+    "inPlay": "Ах խաղ аҿы иҟоу ахәҭа",
+    "none": "Иалхым",
+    "traits": "Ахәҭа аҟазшьақәа",
+    "black": "аиқәаҵәа",
+    "red": "аҟаԥшь",
+    "big": "аду",
+    "small": "ацәгьа",
+    "round": "акруг",
+    "square": "аквадрат",
+    "solid": "иԥкыра",
+    "hollow": "аҿыгӡа"
+  },
+  "board": {
+    "binary": "Абинаратә ӷәы",
+    "piecesPlaced": "Иқәыргылаз ахәҭақәа",
+    "cellEmpty": "Ааҭыҧ {{cell}}: ҭацә",
+    "cellPiece": "Ааҭыҧ {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D асахьаҟаҵара залшом.",
+    "webglHeading": "WebGL иалагаӡеит.",
+    "webglMsg": "Ах խաղ браузер аҿы WebGL аҿакра аҭахуп."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Иалхыр зылшо ахәҭа ахыхь унаскьаны иалхра ашәарҭара уба",
+    "hoveredRiskOne": "Иахьы унаскьаз ахәҭа ашәарҭара: {{risk}} иаразнак аиааиратә шьҭеира",
+    "hoveredRiskMany": "Иахьы унаскьаз ахәҭа ашәарҭара: {{risk}} иаразнак аиааиратә шьҭеирақәа",
+    "immediateWins": "Иаразнак аиааиратә шьҭеирақәа",
+    "latestRisk": "Аҵахәтәи иалхра ашәарҭара",
+    "riskOneAI": "AI иалнаху ахәҭа ашәарҭара: {{risk}} иаразнак аиааиратә шьҭеира",
+    "riskManyAI": "AI иалнаху ахәҭа ашәарҭара: {{risk}} иаразнак аиааиратә шьҭеирақәа",
+    "riskTurnedOff": "Аалхра ашәарҭара аҿыхуп",
+    "riskUnavailableAI": "AI vs AI арежим аҿы иалхра ашәарҭара उपलब्धым",
+    "selectionRisk": "Аалхра ашәарҭара",
+    "turnRiskOff": "Аалхра ашәарҭара аҿых",
+    "turnRiskOn": "Аалхра ашәарҭара аҿак"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Абызшәа",
+    "search": "Абызшәақәа рыԥшаара",
+    "empty": "Абызшәақәа ԥшааӡам",
+    "close": "Аркра"
+  }
+}

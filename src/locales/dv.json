@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "ޕޯޓް ކުރެވިފައިވާ ރަނގަޅުކުރުން",
+    "newGame": "އާ ކުޅިވަރެއް"
+  },
+  "common": {
+    "on": "ހުޅުވާ",
+    "off": "ބަންދު"
+  },
+  "a11y": {
+    "utilityActions": "އެޕް ލިންކްތަކާއި ބަސް",
+    "viewSource": "GitHub ގައި ސޯސް ބަލާ",
+    "gameControls": "ކުޅިވަރު ކޮންޓްރޯލްތައް",
+    "gameBoard": "3D ކުޅިވަރު ބޯޑް",
+    "gameInfo": "ކުޅިވަރު މަޢުލޫމާތު"
+  },
+  "controls": {
+    "diffAI": "AI ދަތިކަން",
+    "diffPlayerOneAI": "P1 ދަތިކަން",
+    "diffPlayerTwoAI": "P2 ދަތިކަން",
+    "startingPlayer": "ފެށޭ ކުޅުންތެރި",
+    "gameMode": "ކުޅިވަރު މޯޑް",
+    "pauseAI": "AI މެދުކަނޑާ",
+    "resumeAI": "AI ދެން ފަށާ",
+    "undo": "އަންޑޫ",
+    "redo": "ރީޑޫ"
+  },
+  "diff": {
+    "easy": "ފަސޭހަ",
+    "medium": "މެދު",
+    "hard": "ދަތި"
+  },
+  "mode": {
+    "userVsUser": "ޔޫޒަރ vs ޔޫޒަރ",
+    "userVsAI": "ޔޫޒަރ vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "ތިބާ",
+    "playerOne": "ކުޅުންތެރި އެކެއް",
+    "playerTwo": "ކުޅުންތެރި ދެއެއް",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "ރެންޑަމް",
+    "playerAIPlayer": "AI ކުޅުންތެރި",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "ކުޅިވަރުގެ ހާލަތު...",
+    "pausedAI": "{{player}} މެދުކަނޑާފައި...",
+    "placingAI": "{{player}} ކުޅެނީ - ބޯޑަށް ޕީސް ބަހައްޓަނީ...",
+    "placingUser": "{{player}} ކުޅެނީ - ހޮވާފައިވާ ޕީސް ބޯޑަށް ބަހައްޓާ...",
+    "placeUserYou": "ތިބާ ކުޅެނީ - ހޮވާފައިވާ ޕީސް ބޯޑަށް ބަހައްޓާ...",
+    "gameDrawn": "ކުޅިވަރު ޑްރޯ - މޮޅު ލައިނެއް ނެތް",
+    "gameWon": "{{player}} މޮޅު - މޮޅު ލައިން ހައިލައިޓް ކުރެވިފައި",
+    "selectingAI": "{{player}} ކުޅެނީ - {{opponent}} އަށް ޕީސެއް ހޮވަނީ...",
+    "selectUser": "{{player}} ކުޅެނީ - {{opponent}} އަށް ޕީސެއް ހޮވާ...",
+    "selectUserYou": "ތިބާ ކުޅެނީ - {{opponent}} އަށް ޕީސެއް ހޮވާ..."
+  },
+  "piece": {
+    "inPlay": "ކުޅިވަރުގައި ހުރި ޕީސް",
+    "none": "އެއްވެސް ހޮވާފައެއް ނެތް",
+    "traits": "ޕީސްގެ ސިފަތައް",
+    "black": "ކަޅު",
+    "red": "ރަތް",
+    "big": "ބޮޑު",
+    "small": "ކުޑަ",
+    "round": "ބުރު",
+    "square": "ހަތަރުކަން",
+    "solid": "ފުރިހަމަ",
+    "hollow": "ހުސް"
+  },
+  "board": {
+    "binary": "ބައިނަރީ ބޯޑް",
+    "piecesPlaced": "ބަހައްޓާފައިވާ ޕީސްތައް",
+    "cellEmpty": "ސެލް {{cell}}: ހުސް",
+    "cellPiece": "ސެލް {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D ރެންޑަރިން ލިބެން ނެތް.",
+    "webglHeading": "WebGL ފެށޭކަށް ނުކެރުނު.",
+    "webglMsg": "ކުޅިވަރަށް ބްރައުޒަރުގައި WebGL ހުޅުވާފައި ހުރުން މުހިންމު."
+  },
+  "metrics": {
+    "hoverRiskPreview": "ހޮވުމުގެ ރިސްކް ކުރިން ބެލުމަށް ހޮވޭ ޕީސެއް މަތީ މައުސް ބަހައްޓާ",
+    "hoveredRiskOne": "މައުސް މަތީ ހުރި ޕީސްގެ ރިސްކް: {{risk}} އެއްފަހަރާ މޮޅު ޕްލޭސްމެންޓް",
+    "hoveredRiskMany": "މައުސް މަތީ ހުރި ޕީސްގެ ރިސްކް: {{risk}} އެއްފަހަރާ މޮޅު ޕްލޭސްމެންޓްތައް",
+    "immediateWins": "އެއްފަހަރާ މޮޅު ޕްލޭސްމެންޓްތައް",
+    "latestRisk": "އެންމެ ފަހުގެ ހޮވުމުގެ ރިސްކް",
+    "riskOneAI": "AI ހޮވި ޕީސްގެ ރިސްކް: {{risk}} އެއްފަހަރާ މޮޅު ޕްލޭސްމެންޓް",
+    "riskManyAI": "AI ހޮވި ޕީސްގެ ރިސްކް: {{risk}} އެއްފަހަރާ މޮޅު ޕްލޭސްމެންޓްތައް",
+    "riskTurnedOff": "ހޮވުމުގެ ރިސްކް ބަންދު",
+    "riskUnavailableAI": "AI vs AI މޯޑުގައި ހޮވުމުގެ ރިސްކް ނެތް",
+    "selectionRisk": "ހޮވުމުގެ ރިސްކް",
+    "turnRiskOff": "ހޮވުމުގެ ރިސްކް ބަންދުކުރޭ",
+    "turnRiskOn": "ހޮވުމުގެ ރިސްކް ހުޅުވާ"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "ބަސް",
+    "search": "ބަސްތައް ހޯދާ",
+    "empty": "އެއްވެސް ބަހެއް ނުފެނުނު",
+    "close": "ބަންދުކުރޭ"
+  }
+}

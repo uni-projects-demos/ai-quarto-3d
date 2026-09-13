@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ān gebōt fram þissum āwend",
+    "newGame": "Nīwe plegu"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Þæs programas bend and sprǣc",
+    "viewSource": "Sēo fruma on GitHub",
+    "gameControls": "Pleges wealdung",
+    "gameBoard": "3D plegbord",
+    "gameInfo": "Pleges gewiss"
+  },
+  "controls": {
+    "diffAI": "AI earfoðnes",
+    "diffPlayerOneAI": "P1 earfoðnes",
+    "diffPlayerTwoAI": "P2 earfoðnes",
+    "startingPlayer": "Frum plegere",
+    "gameMode": "Pleggemet",
+    "pauseAI": "AI blinnan",
+    "resumeAI": "AI forðsettan",
+    "undo": "Undo",
+    "redo": "Eftdōn"
+  },
+  "diff": {
+    "easy": "Ēaðe",
+    "medium": "Middan",
+    "hard": "Earfoðe"
+  },
+  "mode": {
+    "userVsUser": "Brūcend wiþ brūcend",
+    "userVsAI": "Brūcend wiþ AI",
+    "onlyAI": "AI wiþ AI"
+  },
+  "player": {
+    "playerYou": "Þū",
+    "playerOne": "Plegere Ān",
+    "playerTwo": "Plegere Twā",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Hwyrftum",
+    "playerAIPlayer": "AI plegere",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Plegstāþol...",
+    "pausedAI": "{{player}} blint...",
+    "placingAI": "{{player}} plegaþ - setteþ stycce on bord...",
+    "placingUser": "{{player}} plegaþ - sete þæt gecorene stycce on bord...",
+    "placeUserYou": "Þū plegast - sete þæt gecorene stycce on bord...",
+    "gameDrawn": "Plegu ungelǣd - nān sigelīne",
+    "gameWon": "{{player}} sigeþ - sigelīne gemearcod",
+    "selectingAI": "{{player}} plegaþ - cēoseþ stycce for {{opponent}}...",
+    "selectUser": "{{player}} plegaþ - cēos stycce for {{opponent}}...",
+    "selectUserYou": "Þū plegast - cēos stycce for {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Stycce on plege",
+    "none": "Nāwiht gecoren",
+    "traits": "Stycces gecynd",
+    "black": "sweart",
+    "red": "rēad",
+    "big": "micel",
+    "small": "lytel",
+    "round": "sinewealt",
+    "square": "feowerhyrned",
+    "solid": "heard",
+    "hollow": "hol"
+  },
+  "board": {
+    "binary": "Twegenlic bord",
+    "piecesPlaced": "Gesette stycca",
+    "cellEmpty": "Stede {{cell}}: ǣmettig",
+    "cellPiece": "Stede {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D hīwung nis gearu.",
+    "webglHeading": "WebGL ne mihte onginnan.",
+    "webglMsg": "Þes pleg behōfaþ WebGL on browsere āwæcned."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Heald þone bendel ofer gecorenlic stycce tō sēonne cēosunges pleoh",
+    "hoveredRiskOne": "Pleoh þæs stycces under bendle: {{risk}} hrað sigestede",
+    "hoveredRiskMany": "Pleoh þæs stycces under bendle: {{risk}} hrað sigesteda",
+    "immediateWins": "Hrað sigesteda",
+    "latestRisk": "Nīwost cēosunges pleoh",
+    "riskOneAI": "Pleoh þæs stycces gecorenes fram AI: {{risk}} hrað sigestede",
+    "riskManyAI": "Pleoh þæs stycces gecorenes fram AI: {{risk}} hrað sigesteda",
+    "riskTurnedOff": "Cēosunges pleoh is of",
+    "riskUnavailableAI": "Cēosunges pleoh nis on AI wiþ AI",
+    "selectionRisk": "Cēosunges pleoh",
+    "turnRiskOff": "Dō cēosunges pleoh of",
+    "turnRiskOn": "Dō cēosunges pleoh on"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ġeþēode",
+    "search": "Ġeþēoda sēc",
+    "empty": "Nān ġeþēoda fundene",
+    "close": "Belūc"
+  }
+}

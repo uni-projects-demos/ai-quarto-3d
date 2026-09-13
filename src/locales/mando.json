@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Jate'shya be ret'urcyr",
+    "newGame": "Runi ven"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "App ruusaar bal joha",
+    "viewSource": "N'epar source o'r GitHub",
+    "gameControls": "Runi alor",
+    "gameBoard": "3D runi tabla",
+    "gameInfo": "Runi ret"
+  },
+  "controls": {
+    "diffAI": "AI katin",
+    "diffPlayerOneAI": "P1 katin",
+    "diffPlayerTwoAI": "P2 katin",
+    "startingPlayer": "Mando be narir",
+    "gameMode": "Runi ara",
+    "pauseAI": "AI nuhoy",
+    "resumeAI": "AI haa'taylir",
+    "undo": "Kyr'amur",
+    "redo": "Ruusaanir"
+  },
+  "diff": {
+    "easy": "Nuhoy",
+    "medium": "T'ad",
+    "hard": "Katin"
+  },
+  "mode": {
+    "userVsUser": "Verd vs verd",
+    "userVsAI": "Verd vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Gar",
+    "playerOne": "Verd Solus",
+    "playerTwo": "Verd T'ad",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Chaabar",
+    "playerAIPlayer": "AI verd",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Runi ret...",
+    "pausedAI": "{{player}} nuhoy...",
+    "placingAI": "{{player}} narir - jorir bic o'r tabla...",
+    "placingUser": "{{player}} narir - jorir bic narir o'r tabla...",
+    "placeUserYou": "Gar narir - jorir bic narir o'r tabla...",
+    "gameDrawn": "Runi t'ad - nayc kyr'am ruusaan",
+    "gameWon": "{{player}} kyr'amur - kyr'am ruusaan ret'urcye",
+    "selectingAI": "{{player}} narir - narir bic par {{opponent}}...",
+    "selectUser": "{{player}} narir - narir bic par {{opponent}}...",
+    "selectUserYou": "Gar narir - narir bic par {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Bic o'r runi",
+    "none": "Nayc narir",
+    "traits": "Bic ret",
+    "black": "kebiin",
+    "red": "ge'tal",
+    "big": "ori",
+    "small": "ad'ika",
+    "round": "ciryc",
+    "square": "kebiin-kuadr",
+    "solid": "kot",
+    "hollow": "ru'kara"
+  },
+  "board": {
+    "binary": "Binary tabla",
+    "piecesPlaced": "Bic jorir",
+    "cellEmpty": "Cell {{cell}}: shabla",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D ret'urcye nayc.",
+    "webglHeading": "WebGL ruusaan nayc.",
+    "webglMsg": "Runi cuyir WebGL on o'r browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Hover o'r bic narir par n'epar risk be narir",
+    "hoveredRiskOne": "Risk be bic hover: {{risk}} ruusaan kyr'am position",
+    "hoveredRiskMany": "Risk be bic hover: {{risk}} ruusaan kyr'am positions",
+    "immediateWins": "Ruusaan kyr'am positions",
+    "latestRisk": "Latest risk be narir",
+    "riskOneAI": "Risk be bic AI narir: {{risk}} ruusaan kyr'am position",
+    "riskManyAI": "Risk be bic AI narir: {{risk}} ruusaan kyr'am positions",
+    "riskTurnedOff": "Risk be narir cuyir off",
+    "riskUnavailableAI": "Risk be narir nayc o'r AI vs AI",
+    "selectionRisk": "Risk be narir",
+    "turnRiskOff": "Risk be narir off",
+    "turnRiskOn": "Risk be narir on"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Mando'a",
+    "search": "Narir joha",
+    "empty": "Nayc joha mar'eyc",
+    "close": "Ven'tu"
+  }
+}

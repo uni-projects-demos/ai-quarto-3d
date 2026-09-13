@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Giao diện trò chơi bàn Quarto 3D tương tác sử dụng Three.js và phiên bản Negamax của thuật toán trí tuệ nhân tạo Minimax với cắt tỉa alpha-beta. Chơi người dùng đấu người dùng, người dùng đấu AI và AI đấu AI với các mức AI dễ, trung bình và khó.",
     "ogDescription": "Trò chơi bàn Quarto 3D tương tác. Chơi người dùng đấu người dùng, người dùng đấu AI và AI đấu AI với các mức AI dễ, trung bình và khó."
+  },
+  "language": {
+    "label": "Ngôn ngữ",
+    "search": "Tìm kiếm ngôn ngữ",
+    "empty": "Không tìm thấy ngôn ngữ nào",
+    "close": "Đóng"
   }
 }

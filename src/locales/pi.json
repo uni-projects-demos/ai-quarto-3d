@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ito ānīta vaḍḍhitā rūpantarā",
+    "newGame": "Nava kīḷā"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "App-sambandhā ca bhāsā ca",
+    "viewSource": "GitHub-mhi mūlaṃ passa",
+    "gameControls": "Kīḷā-niyamanāni",
+    "gameBoard": "3D kīḷā-phalakaṃ",
+    "gameInfo": "Kīḷā-vutti"
+  },
+  "controls": {
+    "diffAI": "AI dukkaratā",
+    "diffPlayerOneAI": "P1 dukkaratā",
+    "diffPlayerTwoAI": "P2 dukkaratā",
+    "startingPlayer": "Ādi-kīḷako",
+    "gameMode": "Kīḷā-vidhi",
+    "pauseAI": "AI ṭhapehi",
+    "resumeAI": "AI pavattehi",
+    "undo": "Paṭinivattehi",
+    "redo": "Puna karohi"
+  },
+  "diff": {
+    "easy": "Sukara",
+    "medium": "Majjhima",
+    "hard": "Dukkara"
+  },
+  "mode": {
+    "userVsUser": "Upayogī paṭipakkha upayogī",
+    "userVsAI": "Upayogī paṭipakkha AI",
+    "onlyAI": "AI paṭipakkha AI"
+  },
+  "player": {
+    "playerYou": "Tvaṃ",
+    "playerOne": "Kīḷako Eko",
+    "playerTwo": "Kīḷako Dve",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Yadicchā",
+    "playerAIPlayer": "AI kīḷako",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Kīḷā-ṭhiti...",
+    "pausedAI": "{{player}} ṭhapito...",
+    "placingAI": "{{player}} kīḷati - khaṇḍaṃ phalake ṭhapeti...",
+    "placingUser": "{{player}} kīḷati - gahitaṃ khaṇḍaṃ phalake ṭhapehi...",
+    "placeUserYou": "Tvaṃ kīḷasi - gahitaṃ khaṇḍaṃ phalake ṭhapehi...",
+    "gameDrawn": "Kīḷā samā - jaya-rekhā natthi",
+    "gameWon": "{{player}} jināti - jaya-rekhā dassitā",
+    "selectingAI": "{{player}} kīḷati - {{opponent}} atthāya khaṇḍaṃ gaṇhāti...",
+    "selectUser": "{{player}} kīḷati - {{opponent}} atthāya khaṇḍaṃ gaṇhāhi...",
+    "selectUserYou": "Tvaṃ kīḷasi - {{opponent}} atthāya khaṇḍaṃ gaṇhāhi..."
+  },
+  "piece": {
+    "inPlay": "Kīḷāya khaṇḍaṃ",
+    "none": "Na kiñci gahitaṃ",
+    "traits": "Khaṇḍassa lakkhaṇāni",
+    "black": "kaṇha",
+    "red": "lohita",
+    "big": "mahanta",
+    "small": "khuddaka",
+    "round": "vaṭṭa",
+    "square": "caturassa",
+    "solid": "ghana",
+    "hollow": "susira"
+  },
+  "board": {
+    "binary": "Dvi-aṅka phalakaṃ",
+    "piecesPlaced": "Ṭhapitā khaṇḍā",
+    "cellEmpty": "Koṭṭha {{cell}}: suñña",
+    "cellPiece": "Koṭṭha {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D dassanaṃ na labbhati.",
+    "webglHeading": "WebGL ārabhituṃ na sakkā.",
+    "webglMsg": "Kīḷāya browser-mhi WebGL sakriyaṃ hotu."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Gahaṇa-bhayaṃ passituṃ gahaṇīya-khaṇḍe cursor ṭhapehi",
+    "hoveredRiskOne": "Cursor-heṭṭhā khaṇḍassa bhayaṃ: {{risk}} khippa-jaya-ṭhānaṃ",
+    "hoveredRiskMany": "Cursor-heṭṭhā khaṇḍassa bhayaṃ: {{risk}} khippa-jaya-ṭhānāni",
+    "immediateWins": "Khippa-jaya-ṭhānāni",
+    "latestRisk": "Pacchima gahaṇa-bhayaṃ",
+    "riskOneAI": "AI-gahitassa khaṇḍassa bhayaṃ: {{risk}} khippa-jaya-ṭhānaṃ",
+    "riskManyAI": "AI-gahitassa khaṇḍassa bhayaṃ: {{risk}} khippa-jaya-ṭhānāni",
+    "riskTurnedOff": "Gahaṇa-bhayaṃ nivāritaṃ",
+    "riskUnavailableAI": "AI paṭipakkha AI-vidhimhi gahaṇa-bhayaṃ na labbhati",
+    "selectionRisk": "Gahaṇa-bhayaṃ",
+    "turnRiskOff": "Gahaṇa-bhayaṃ nivārehi",
+    "turnRiskOn": "Gahaṇa-bhayaṃ pavattehi"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Bhāsā",
+    "search": "Bhāsāyo gavesa",
+    "empty": "Bhāsā na laddhā",
+    "close": "Pidaha"
+  }
+}

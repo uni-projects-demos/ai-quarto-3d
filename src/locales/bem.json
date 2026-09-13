@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ukulundulula kwa port kwalunduluka",
+    "newGame": "Umutambo upya"
+  },
+  "common": {
+    "on": "YAYATWA",
+    "off": "YAFIMWA"
+  },
+  "a11y": {
+    "utilityActions": "Ama link ya app na ululimi",
+    "viewSource": "Moneni source pa GitHub",
+    "gameControls": "Ifyakulamulila umutambo",
+    "gameBoard": "3D board ya mutambo",
+    "gameInfo": "Ifyebo fya mutambo"
+  },
+  "controls": {
+    "diffAI": "Ubukali bwa AI",
+    "diffPlayerOneAI": "Ubukali bwa P1",
+    "diffPlayerTwoAI": "Ubukali bwa P2",
+    "startingPlayer": "Umuntu uwakutendeka",
+    "gameMode": "Mode ya mutambo",
+    "pauseAI": "Imikeni AI",
+    "resumeAI": "Pitilizhyeni AI",
+    "undo": "Bweshyeni",
+    "redo": "Citani na kabili"
+  },
+  "diff": {
+    "easy": "Cyanguka",
+    "medium": "Pakatikati",
+    "hard": "Cakosa"
+  },
+  "mode": {
+    "userVsUser": "Umuntu vs umuntu",
+    "userVsAI": "Umuntu vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Imwe",
+    "playerOne": "Umushimbe Wamo",
+    "playerTwo": "Umushimbe Babili",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Cilemoneka fye",
+    "playerAIPlayer": "Umushimbe wa AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Imibele ya mutambo...",
+    "pausedAI": "{{player}} aliminine...",
+    "placingAI": "{{player}} alecimfya - alebika icibumba pa board...",
+    "placingUser": "{{player}} alecimfya - Bikeni icibumba mwalisala pa board...",
+    "placeUserYou": "Imwe mulecimfya - Bikeni icibumba mwalisala pa board...",
+    "gameDrawn": "Umutambo walingana - tapali umusango wa kucimfya",
+    "gameWon": "{{player}} nacimfya - umusango wa kucimfya walangilwe",
+    "selectingAI": "{{player}} alecimfya - alesala icibumba ca {{opponent}}...",
+    "selectUser": "{{player}} alecimfya - Saleni icibumba ca {{opponent}}...",
+    "selectUserYou": "Imwe mulecimfya - Saleni icibumba ca {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Icibumba cili mu mutambo",
+    "none": "Tapali casalilwe",
+    "traits": "Imibele ya cibumba",
+    "black": "cifita",
+    "red": "cakashika",
+    "big": "cikulu",
+    "small": "cinono",
+    "round": "cizunguluka",
+    "square": "square",
+    "solid": "cakuma",
+    "hollow": "ca mu kati pamo"
+  },
+  "board": {
+    "binary": "Binary board",
+    "piecesPlaced": "Ifibumba fyabikwa",
+    "cellEmpty": "Cell {{cell}}: muli fye",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering tailipo.",
+    "webglHeading": "WebGL tailekuti itendeke.",
+    "webglMsg": "Umutambo ulefwaya WebGL yayatwa mu browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Loleleni pa cibumba ico mwingasala ukuti mumone risk ya kusala",
+    "hoveredRiskOne": "Risk ya cibumba mwalolela: {{risk}} ukubika kwa kucimfya apo pene",
+    "hoveredRiskMany": "Risk ya cibumba mwalolela: {{risk}} ukubika kwa kucimfya apo pene",
+    "immediateWins": "Ukubika kwa kucimfya apo pene",
+    "latestRisk": "Risk ya kusala iya lelo",
+    "riskOneAI": "Risk ya cibumba AI yasala: {{risk}} ukubika kwa kucimfya apo pene",
+    "riskManyAI": "Risk ya cibumba AI yasala: {{risk}} ukubika kwa kucimfya apo pene",
+    "riskTurnedOff": "Risk ya kusala yafimwa",
+    "riskUnavailableAI": "Risk ya kusala tailipo mu mode ya AI vs AI",
+    "selectionRisk": "Risk ya kusala",
+    "turnRiskOff": "Fimfyeni risk ya kusala",
+    "turnRiskOn": "Yatyeni risk ya kusala"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ululimi",
+    "search": "Fwayeni indimi",
+    "empty": "Tapali ululimi lwasangwa",
+    "close": "Isaleni"
+  }
+}

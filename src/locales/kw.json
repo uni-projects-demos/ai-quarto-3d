@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Gwellheans portys a",
+    "newGame": "Gwari nowydh"
+  },
+  "common": {
+    "on": "YNN",
+    "off": "MES"
+  },
+  "a11y": {
+    "utilityActions": "Kevrennow an app hag yeth",
+    "viewSource": "Gweles an fenten war GitHub",
+    "gameControls": "Reolyansow gwari",
+    "gameBoard": "Bord gwari 3D",
+    "gameInfo": "Kedhlow gwari"
+  },
+  "controls": {
+    "diffAI": "Kalesder AI",
+    "diffPlayerOneAI": "Kalesder P1",
+    "diffPlayerTwoAI": "Kalesder P2",
+    "startingPlayer": "Gwarier dalleth",
+    "gameMode": "Fordh gwari",
+    "pauseAI": "Powes AI",
+    "resumeAI": "Dalleth AI arta",
+    "undo": "Diswul",
+    "redo": "Gul arta"
+  },
+  "diff": {
+    "easy": "Es",
+    "medium": "Kres",
+    "hard": "Kales"
+  },
+  "mode": {
+    "userVsUser": "Devnydhyer erbynn devnydhyer",
+    "userVsAI": "Devnydhyer erbynn AI",
+    "onlyAI": "AI erbynn AI"
+  },
+  "player": {
+    "playerYou": "Ty",
+    "playerOne": "Gwarier Onan",
+    "playerTwo": "Gwarier Dew",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Heb orden",
+    "playerAIPlayer": "Gwarier AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Studh an gwari...",
+    "pausedAI": "{{player}} yw powesys...",
+    "placingAI": "{{player}} a wari - ow posya darn war'n bord...",
+    "placingUser": "{{player}} a wari - Pos an darn dewisys war'n bord...",
+    "placeUserYou": "Ty a wari - Pos an darn dewisys war'n bord...",
+    "gameDrawn": "Gwari kevatal - linenn budh ny'n eus",
+    "gameWon": "{{player}} a wra budh - linenn budh yw diskwedhys",
+    "selectingAI": "{{player}} a wari - ow tiwis darn rag {{opponent}}...",
+    "selectUser": "{{player}} a wari - Dewis darn rag {{opponent}}...",
+    "selectUserYou": "Ty a wari - Dewis darn rag {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Darn y'n gwari",
+    "none": "Neppyth dewisys",
+    "traits": "Nodweddow an darn",
+    "black": "du",
+    "red": "rudh",
+    "big": "bras",
+    "small": "byghan",
+    "round": "krenn",
+    "square": "pedrek",
+    "solid": "leun",
+    "hollow": "kollow"
+  },
+  "board": {
+    "binary": "Bord dewyek",
+    "piecesPlaced": "Darnow posys",
+    "cellEmpty": "Kell {{cell}}: gwag",
+    "cellPiece": "Kell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Render 3D nyns yw kavadow.",
+    "webglHeading": "WebGL ny yllsa dalleth.",
+    "webglMsg": "An gwari a res WebGL bos galloseg y'n peuryer."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Gwith an logosen war darn dewisadow rag gweles an peryl a'n dewis",
+    "hoveredRiskOne": "Peryl an darn yn-dann an logosen: {{risk}} posyans budh yn-dann an doh",
+    "hoveredRiskMany": "Peryl an darn yn-dann an logosen: {{risk}} posyansow budh yn-dann an doh",
+    "immediateWins": "Posyansow budh yn-dann an doh",
+    "latestRisk": "Peryl dewis diwettha",
+    "riskOneAI": "Peryl darn dewisys gans AI: {{risk}} posyans budh yn-dann an doh",
+    "riskManyAI": "Peryl darn dewisys gans AI: {{risk}} posyansow budh yn-dann an doh",
+    "riskTurnedOff": "Peryl dewis yw desedhys",
+    "riskUnavailableAI": "Peryl dewis nyns yw kavadow yn ford AI erbynn AI",
+    "selectionRisk": "Peryl dewis",
+    "turnRiskOff": "Desedha peryl dewis",
+    "turnRiskOn": "Gasa peryl dewis"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Taves",
+    "search": "Hwilas tavosow",
+    "empty": "Taves vyth kavys",
+    "close": "Degea"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "ካብዚ ዝተወስደ ምምሕያሽ",
+    "newGame": "ሓድሽ ጸወታ"
+  },
+  "common": {
+    "on": "በሪሁ",
+    "off": "ጠፊኡ"
+  },
+  "a11y": {
+    "utilityActions": "መራኸቢታት መተግበሪን ቋንቋን",
+    "viewSource": "ምንጪ ኣብ GitHub ርአ",
+    "gameControls": "መቆጻጸሪ ጸወታ",
+    "gameBoard": "3D ሰሌዳ ጸወታ",
+    "gameInfo": "ሓበሬታ ጸወታ"
+  },
+  "controls": {
+    "diffAI": "ክብደት AI",
+    "diffPlayerOneAI": "ክብደት P1",
+    "diffPlayerTwoAI": "ክብደት P2",
+    "startingPlayer": "ጀማሪ ተጻዋታይ",
+    "gameMode": "ኣገባብ ጸወታ",
+    "pauseAI": "AI ኣቋርጽ",
+    "resumeAI": "AI ቀጽል",
+    "undo": "መልስ",
+    "redo": "ደግም"
+  },
+  "diff": {
+    "easy": "ቀሊል",
+    "medium": "ማእከላይ",
+    "hard": "ከቢድ"
+  },
+  "mode": {
+    "userVsUser": "ተጠቃሚ ኣንጻር ተጠቃሚ",
+    "userVsAI": "ተጠቃሚ ኣንጻር AI",
+    "onlyAI": "AI ኣንጻር AI"
+  },
+  "player": {
+    "playerYou": "ንስኻ",
+    "playerOne": "ተጻዋታይ ሓደ",
+    "playerTwo": "ተጻዋታይ ክልተ",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "ብዘይ ስርዓት",
+    "playerAIPlayer": "ተጻዋታይ AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "ኩነታት ጸወታ...",
+    "pausedAI": "{{player}} ተቋሪጹ...",
+    "placingAI": "{{player}} ይጻወት - ቁራጽ ኣብ ሰሌዳ የቐምጥ...",
+    "placingUser": "{{player}} ይጻወት - ዝተመርጸ ቁራጽ ኣብ ሰሌዳ ኣቐምጥ...",
+    "placeUserYou": "ንስኻ ትጻወት - ዝተመርጸ ቁራጽ ኣብ ሰሌዳ ኣቐምጥ...",
+    "gameDrawn": "ጸወታ ማዕረ - መስመር ዓወት የለን",
+    "gameWon": "{{player}} ተዓዊቱ - መስመር ዓወት ተጎሊሑ",
+    "selectingAI": "{{player}} ይጻወት - ን{{opponent}} ቁራጽ ይመርጽ...",
+    "selectUser": "{{player}} ይጻወት - ን{{opponent}} ቁራጽ ምረጽ...",
+    "selectUserYou": "ንስኻ ትጻወት - ን{{opponent}} ቁራጽ ምረጽ..."
+  },
+  "piece": {
+    "inPlay": "ኣብ ጸወታ ዘሎ ቁራጽ",
+    "none": "ዝተመርጸ የለን",
+    "traits": "ባህርያት ቁራጽ",
+    "black": "ጸሊም",
+    "red": "ቀይሕ",
+    "big": "ዓቢ",
+    "small": "ንእሽቶ",
+    "round": "ክቢ",
+    "square": "ትርብዒት",
+    "solid": "ምሉእ",
+    "hollow": "ባዶ ውሽጢ"
+  },
+  "board": {
+    "binary": "ድርብ ሰሌዳ",
+    "piecesPlaced": "ዝተቐመጡ ቁራጻት",
+    "cellEmpty": "ሳጹን {{cell}}: ባዶ",
+    "cellPiece": "ሳጹን {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D ምርኣይ ኣይርከብን።",
+    "webglHeading": "WebGL ክጅምር ኣይከኣለን።",
+    "webglMsg": "ጸወታ ኣብ browser WebGL ክበርህ ይጠልብ።"
+  },
+  "metrics": {
+    "hoverRiskPreview": "ሓደጋ ምርጫ ንምርኣይ ጠቋሚ ኣብ ዝምረጽ ቁራጽ ኣንብር",
+    "hoveredRiskOne": "ሓደጋ ቁራጽ ኣብ ትሕቲ ጠቋሚ: {{risk}} ቅጽበታዊ ቦታ ዓወት",
+    "hoveredRiskMany": "ሓደጋ ቁራጽ ኣብ ትሕቲ ጠቋሚ: {{risk}} ቅጽበታዊ ቦታታት ዓወት",
+    "immediateWins": "ቅጽበታዊ ቦታታት ዓወት",
+    "latestRisk": "ናይ መወዳእታ ሓደጋ ምርጫ",
+    "riskOneAI": "ሓደጋ AI ዝመረጾ ቁራጽ: {{risk}} ቅጽበታዊ ቦታ ዓወት",
+    "riskManyAI": "ሓደጋ AI ዝመረጾ ቁራጽ: {{risk}} ቅጽበታዊ ቦታታት ዓወት",
+    "riskTurnedOff": "ሓደጋ ምርጫ ጠፊኡ ኣሎ",
+    "riskUnavailableAI": "ሓደጋ ምርጫ ኣብ AI ኣንጻር AI ኣይርከብን",
+    "selectionRisk": "ሓደጋ ምርጫ",
+    "turnRiskOff": "ሓደጋ ምርጫ ኣጥፍእ",
+    "turnRiskOn": "ሓደጋ ምርጫ ኣብርህ"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "ቋንቋ",
+    "search": "ቋንቋታት ድለዩ።",
+    "empty": "ቋንቋታት ኣይተረኽበን።",
+    "close": "ዕጸዎ።"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "यसबाट पोर्ट गरिएको सुधार",
+    "newGame": "नयाँ खेल"
+  },
+  "common": {
+    "on": "खुला",
+    "off": "बन्द"
+  },
+  "a11y": {
+    "utilityActions": "एपका लिङ्क र भाषा",
+    "viewSource": "GitHub मा स्रोत हेर्नुहोस्",
+    "gameControls": "खेल नियन्त्रण",
+    "gameBoard": "3D खेल बोर्ड",
+    "gameInfo": "खेल जानकारी"
+  },
+  "controls": {
+    "diffAI": "AI कठिनाइ",
+    "diffPlayerOneAI": "P1 कठिनाइ",
+    "diffPlayerTwoAI": "P2 कठिनाइ",
+    "startingPlayer": "सुरु गर्ने खेलाडी",
+    "gameMode": "खेल मोड",
+    "pauseAI": "AI रोक्नुहोस्",
+    "resumeAI": "AI जारी राख्नुहोस्",
+    "undo": "पूर्ववत्",
+    "redo": "फेरि गर्नुहोस्"
+  },
+  "diff": {
+    "easy": "सजिलो",
+    "medium": "मध्यम",
+    "hard": "गाह्रो"
+  },
+  "mode": {
+    "userVsUser": "प्रयोगकर्ता विरुद्ध प्रयोगकर्ता",
+    "userVsAI": "प्रयोगकर्ता विरुद्ध AI",
+    "onlyAI": "AI विरुद्ध AI"
+  },
+  "player": {
+    "playerYou": "तपाईं",
+    "playerOne": "खेलाडी एक",
+    "playerTwo": "खेलाडी दुई",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "अनियमित",
+    "playerAIPlayer": "AI खेलाडी",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "खेलको स्थिति...",
+    "pausedAI": "{{player}} रोकिएको छ...",
+    "placingAI": "{{player}} खेल्दैछ - गोटी बोर्डमा राख्दैछ...",
+    "placingUser": "{{player}} खेल्दैछ - छानिएको गोटी बोर्डमा राख्नुहोस्...",
+    "placeUserYou": "तपाईं खेल्दै हुनुहुन्छ - छानिएको गोटी बोर्डमा राख्नुहोस्...",
+    "gameDrawn": "खेल बराबरी - जित्ने रेखा छैन",
+    "gameWon": "{{player}} ले जित्यो - जित्ने रेखा हाइलाइट गरिएको छ",
+    "selectingAI": "{{player}} खेल्दैछ - {{opponent}} का लागि गोटी छान्दैछ...",
+    "selectUser": "{{player}} खेल्दैछ - {{opponent}} का लागि गोटी छान्नुहोस्...",
+    "selectUserYou": "तपाईं खेल्दै हुनुहुन्छ - {{opponent}} का लागि गोटी छान्नुहोस्..."
+  },
+  "piece": {
+    "inPlay": "खेलमा रहेको गोटी",
+    "none": "केही पनि छानिएको छैन",
+    "traits": "गोटीका विशेषता",
+    "black": "कालो",
+    "red": "रातो",
+    "big": "ठूलो",
+    "small": "सानो",
+    "round": "गोलो",
+    "square": "वर्गाकार",
+    "solid": "ठोस",
+    "hollow": "खोक्रो"
+  },
+  "board": {
+    "binary": "बाइनरी बोर्ड",
+    "piecesPlaced": "राखिएका गोटी",
+    "cellEmpty": "कोठा {{cell}}: खाली",
+    "cellPiece": "कोठा {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D रेन्डरिङ उपलब्ध छैन।",
+    "webglHeading": "WebGL सुरु हुन सकेन।",
+    "webglMsg": "खेलका लागि ब्राउजरमा WebGL सक्षम हुनुपर्छ।"
+  },
+  "metrics": {
+    "hoverRiskPreview": "चयन जोखिम हेर्न छान्न मिल्ने गोटीमाथि कर्सर राख्नुहोस्",
+    "hoveredRiskOne": "कर्सरमुनिको गोटी जोखिम: {{risk}} तुरुन्त जित्ने स्थान",
+    "hoveredRiskMany": "कर्सरमुनिको गोटी जोखिम: {{risk}} तुरुन्त जित्ने स्थानहरू",
+    "immediateWins": "तुरुन्त जित्ने स्थानहरू",
+    "latestRisk": "पछिल्लो चयन जोखिम",
+    "riskOneAI": "AI ले छानेको गोटी जोखिम: {{risk}} तुरुन्त जित्ने स्थान",
+    "riskManyAI": "AI ले छानेको गोटी जोखिम: {{risk}} तुरुन्त जित्ने स्थानहरू",
+    "riskTurnedOff": "चयन जोखिम बन्द छ",
+    "riskUnavailableAI": "AI विरुद्ध AI मोडमा चयन जोखिम उपलब्ध छैन",
+    "selectionRisk": "चयन जोखिम",
+    "turnRiskOff": "चयन जोखिम बन्द गर्नुहोस्",
+    "turnRiskOn": "चयन जोखिम खोल्नुहोस्"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "भाषा",
+    "search": "भाषाहरू खोज्नुहोस्",
+    "empty": "कुनै भाषा भेटिएन",
+    "close": "बन्द गर्नुहोस्"
+  }
+}

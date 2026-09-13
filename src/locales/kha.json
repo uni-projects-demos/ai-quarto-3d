@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ka jingpynbha kaba la wanrah na",
+    "newGame": "Ka jingïalehkai thymmai"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Ki link application bad ka ktien",
+    "viewSource": "Peit ïa ka source ha GitHub",
+    "gameControls": "Ki control jingïalehkai",
+    "gameBoard": "3D board jingïalehkai",
+    "gameInfo": "Ka jingtip jingïalehkai"
+  },
+  "controls": {
+    "diffAI": "Ka jingeh AI",
+    "diffPlayerOneAI": "Ka jingeh P1",
+    "diffPlayerTwoAI": "Ka jingeh P2",
+    "startingPlayer": "U nongïalehkai ba sdang",
+    "gameMode": "Ka mode jingïalehkai",
+    "pauseAI": "Pynsangeh AI",
+    "resumeAI": "Bteng AI",
+    "undo": "Pynphai",
+    "redo": "Leh biang"
+  },
+  "diff": {
+    "easy": "Suk",
+    "medium": "Pdeng",
+    "hard": "Eh"
+  },
+  "mode": {
+    "userVsUser": "User pyrshah user",
+    "userVsAI": "User pyrshah AI",
+    "onlyAI": "AI pyrshah AI"
+  },
+  "player": {
+    "playerYou": "Phi",
+    "playerOne": "Nongïalehkai Wei",
+    "playerTwo": "Nongïalehkai Ar",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Random",
+    "playerAIPlayer": "Nongïalehkai AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Ka status jingïalehkai...",
+    "pausedAI": "{{player}} la pynsangeh...",
+    "placingAI": "{{player}} đang jingïalehkai - buh ïa ka piece ha ka board...",
+    "placingUser": "{{player}} đang jingïalehkai - Buh ïa ka piece ba la jied ha ka board...",
+    "placeUserYou": "Phi đang jingïalehkai - Buh ïa ka piece ba la jied ha ka board...",
+    "gameDrawn": "Ka jingïalehkai jingïaryngkat - ym don winning line",
+    "gameWon": "{{player}} jop - winning line la pynpaw",
+    "selectingAI": "{{player}} đang jingïalehkai - jied ïa ka piece na bynta {{opponent}}...",
+    "selectUser": "{{player}} đang jingïalehkai - Jied ïa ka piece na bynta {{opponent}}...",
+    "selectUserYou": "Phi đang jingïalehkai - Jied ïa ka piece na bynta {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Piece hapoh jingïalehkai",
+    "none": "Ym pat jied eiei",
+    "traits": "Ki jinglong jong ka piece",
+    "black": "ïong",
+    "red": "saw",
+    "big": "heh",
+    "small": "rit",
+    "round": "pyllun",
+    "square": "square",
+    "solid": "solid",
+    "hollow": "hollow"
+  },
+  "board": {
+    "binary": "Binary board",
+    "piecesPlaced": "Ki piece ba la buh",
+    "cellEmpty": "Cell {{cell}}: thylli",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Ka 3D rendering kam treikam.",
+    "webglHeading": "WebGL ym lah sdang.",
+    "webglMsg": "Ka jingïalehkai ka donkam ïa WebGL ba la enable ha browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Hover halor ka piece ba lah jied ban peit ïa ka selection risk",
+    "hoveredRiskOne": "Risk jong ka piece ba hover: {{risk}} immediate winning placement",
+    "hoveredRiskMany": "Risk jong ka piece ba hover: {{risk}} immediate winning placements",
+    "immediateWins": "Immediate winning placements",
+    "latestRisk": "Ka selection risk kaba thymmai",
+    "riskOneAI": "Risk jong ka piece ba AI jied: {{risk}} immediate winning placement",
+    "riskManyAI": "Risk jong ka piece ba AI jied: {{risk}} immediate winning placements",
+    "riskTurnedOff": "Selection risk la off",
+    "riskUnavailableAI": "Selection risk ym don ha AI pyrshah AI mode",
+    "selectionRisk": "Selection risk",
+    "turnRiskOff": "Off ïa selection risk",
+    "turnRiskOn": "On ïa selection risk"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ktien",
+    "search": "Wad ktien",
+    "empty": "Ym shem ktien",
+    "close": "Khang"
+  }
+}

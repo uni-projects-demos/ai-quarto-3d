@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "بۇنىڭدىن كۆچۈرۈلۈپ ياخشىلانغان",
+    "newGame": "يېڭى ئويۇن"
+  },
+  "common": {
+    "on": "ئوچۇق",
+    "off": "تاقاق"
+  },
+  "a11y": {
+    "utilityActions": "ئەپ ئۇلانمىلىرى ۋە تىل",
+    "viewSource": "GitHub دىكى مەنبەنى كۆرۈش",
+    "gameControls": "ئويۇن كونتروللىرى",
+    "gameBoard": "3D ئويۇن تاختىسى",
+    "gameInfo": "ئويۇن ئۇچۇرى"
+  },
+  "controls": {
+    "diffAI": "AI قىيىنلىقى",
+    "diffPlayerOneAI": "P1 قىيىنلىقى",
+    "diffPlayerTwoAI": "P2 قىيىنلىقى",
+    "startingPlayer": "باشلايدىغان ئوينىغۇچى",
+    "gameMode": "ئويۇن ھالىتى",
+    "pauseAI": "AI نى توختىتىش",
+    "resumeAI": "AI نى داۋاملاشتۇرۇش",
+    "undo": "يېنىۋېلىش",
+    "redo": "قايتا قىلىش"
+  },
+  "diff": {
+    "easy": "ئاسان",
+    "medium": "ئوتتۇرا",
+    "hard": "قىيىن"
+  },
+  "mode": {
+    "userVsUser": "ئىشلەتكۈچى vs ئىشلەتكۈچى",
+    "userVsAI": "ئىشلەتكۈچى vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "سىز",
+    "playerOne": "بىرىنچى ئوينىغۇچى",
+    "playerTwo": "ئىككىنچى ئوينىغۇچى",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "ئىختىيارىي",
+    "playerAIPlayer": "AI ئوينىغۇچى",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "ئويۇن ھالىتى...",
+    "pausedAI": "{{player}} توختىتىلدى...",
+    "placingAI": "{{player}} ئويناۋاتىدۇ - پارچىنى تاختىغا قويۇۋاتىدۇ...",
+    "placingUser": "{{player}} ئويناۋاتىدۇ - تاللانغان پارچىنى تاختىغا قويۇڭ...",
+    "placeUserYou": "سىز ئويناۋاتىسىز - تاللانغان پارچىنى تاختىغا قويۇڭ...",
+    "gameDrawn": "ئويۇن تەڭ - ئۇتۇش سىزىقى يوق",
+    "gameWon": "{{player}} ئۇتتى - ئۇتۇش سىزىقى يورۇتۇلدى",
+    "selectingAI": "{{player}} ئويناۋاتىدۇ - {{opponent}} ئۈچۈن پارچا تاللاۋاتىدۇ...",
+    "selectUser": "{{player}} ئويناۋاتىدۇ - {{opponent}} ئۈچۈن پارچا تاللاڭ...",
+    "selectUserYou": "سىز ئويناۋاتىسىز - {{opponent}} ئۈچۈن پارچا تاللاڭ..."
+  },
+  "piece": {
+    "inPlay": "ئويۇندىكى پارچا",
+    "none": "ھېچنېمە تاللانمىدى",
+    "traits": "پارچا خۇسۇسىيەتلىرى",
+    "black": "قارا",
+    "red": "قىزىل",
+    "big": "چوڭ",
+    "small": "كىچىك",
+    "round": "يۇمىلاق",
+    "square": "تۆت چاسا",
+    "solid": "پۈتۈن",
+    "hollow": "ئىچى بوش"
+  },
+  "board": {
+    "binary": "ئىككىلىك تاختا",
+    "piecesPlaced": "قويۇلغان پارچىلار",
+    "cellEmpty": "كاتەك {{cell}}: بوش",
+    "cellPiece": "كاتەك {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D رەڭدار كۆرسىتىش ئىشلەتكىلى بولمايدۇ.",
+    "webglHeading": "WebGL قوزغالمىدى.",
+    "webglMsg": "ئويۇن ئۈچۈن توركۆرگۈدە WebGL قوزغىتىلغان بولۇشى كېرەك."
+  },
+  "metrics": {
+    "hoverRiskPreview": "تاللاش خەۋپىنى كۆرۈش ئۈچۈن تاللىغىلى بولىدىغان پارچا ئۈستىدە نۇر بەلگىسىنى تۇتۇڭ",
+    "hoveredRiskOne": "نۇر بەلگىسى ئاستىدىكى پارچا خەۋپى: {{risk}} دەرھال ئۇتۇش ئورنى",
+    "hoveredRiskMany": "نۇر بەلگىسى ئاستىدىكى پارچا خەۋپى: {{risk}} دەرھال ئۇتۇش ئورۇنلىرى",
+    "immediateWins": "دەرھال ئۇتۇش ئورۇنلىرى",
+    "latestRisk": "ئەڭ يېڭى تاللاش خەۋپى",
+    "riskOneAI": "AI تاللىغان پارچا خەۋپى: {{risk}} دەرھال ئۇتۇش ئورنى",
+    "riskManyAI": "AI تاللىغان پارچا خەۋپى: {{risk}} دەرھال ئۇتۇش ئورۇنلىرى",
+    "riskTurnedOff": "تاللاش خەۋپى تاقاق",
+    "riskUnavailableAI": "AI vs AI ھالىتىدە تاللاش خەۋپى يوق",
+    "selectionRisk": "تاللاش خەۋپى",
+    "turnRiskOff": "تاللاش خەۋپىنى تاقاش",
+    "turnRiskOn": "تاللاش خەۋپىنى ئېچىش"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "تىل",
+    "search": "ئىزدەش تىللىرى",
+    "empty": "تىل تېپىلمىدى",
+    "close": "تاقاش"
+  }
+}

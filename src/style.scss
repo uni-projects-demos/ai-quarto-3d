@@ -17,8 +17,6 @@ $mobile-breakpoint: 560px;
 
   --line: rgba(255, 255, 255, 0.1);
   --gold: #e9b96e;
-  --green: #7dd3a7;
-  --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --shadow-panel: 0 20px 55px rgba(0, 0, 0, 0.42);
@@ -81,7 +79,8 @@ select {
 
 .game-screen,
 .game-info {
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-panel);
@@ -202,7 +201,6 @@ select {
   display: grid;
   flex: 0 0 auto;
   width: 28px;
-  min-width: 28px;
   min-height: 28px;
   padding: 0;
   place-items: center;
@@ -210,7 +208,6 @@ select {
   border-radius: 50%;
   color: var(--gold);
   background: rgba(233, 185, 110, 0.08);
-  cursor: pointer;
 
   &:hover {
     background: rgba(233, 185, 110, 0.17);
@@ -313,16 +310,177 @@ select {
   }
 }
 
-.language-toggle svg {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.language-toggle {
+  display: inline-flex;
+  flex: 0 0 auto;
+  inline-size: max-content;
+  min-width: 38px;
+  padding: 0 9px;
+  gap: 6px;
+  white-space: nowrap;
+
+  svg {
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+#locale-code {
+  direction: ltr;
+  font:
+    800 0.63rem / 1 ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    monospace;
+  letter-spacing: 0.04em;
 }
 
 .github-link svg {
   fill: currentColor;
+}
+
+.language-dialog {
+  width: min(540px, calc(100vw - 24px));
+  max-width: none;
+  max-height: min(680px, calc(100dvh - 32px));
+  padding: 22px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  color: var(--text);
+  background: rgba(16, 21, 29, 0.98);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.62);
+
+  &::backdrop {
+    background: rgba(5, 8, 13, 0.76);
+    backdrop-filter: blur(3px);
+  }
+}
+
+.language-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+
+  h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+  }
+}
+
+.dialog-close {
+  display: grid;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--text);
+  background: rgba(28, 34, 45, 0.92);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1;
+
+  &:hover {
+    border-color: rgba(233, 185, 110, 0.42);
+    background: rgba(233, 185, 110, 0.12);
+  }
+}
+
+.language-search-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.language-search {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  outline: none;
+  color: var(--text);
+  background: rgba(28, 34, 45, 0.92);
+  font: inherit;
+
+  &:focus {
+    border-color: rgba(233, 185, 110, 0.62);
+    box-shadow: 0 0 0 2px rgba(233, 185, 110, 0.14);
+  }
+}
+
+.language-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+  min-height: 48px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  background: rgba(28, 34, 45, 0.92);
+  text-align: start;
+  overflow-wrap: anywhere;
+
+  span {
+    min-width: 0;
+  }
+
+  small {
+    flex: 0 0 auto;
+    direction: ltr;
+    color: var(--muted);
+    font:
+      750 0.65rem / 1 ui-monospace,
+      SFMono-Regular,
+      Menlo,
+      Consolas,
+      monospace;
+    letter-spacing: 0.03em;
+  }
+
+  &[aria-pressed="true"] {
+    border-color: rgba(233, 185, 110, 0.72);
+    background: rgba(233, 185, 110, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(233, 185, 110, 0.42);
+  }
+
+  &:hover {
+    border-color: rgba(233, 185, 110, 0.52);
+    background: rgba(233, 185, 110, 0.1);
+  }
+}
+
+.language-empty {
+  margin: 16px 0 0;
+  color: var(--muted);
+  text-align: center;
 }
 
 .game-controls {
@@ -607,9 +765,6 @@ button {
   padding-top: 10px;
   border-top: 1px solid var(--line);
 
-  &[hidden] {
-    display: none;
-  }
 }
 
 .selection-risk-card {
@@ -678,11 +833,9 @@ button {
   border-radius: 8px;
   color: #f7e4c6;
   background: rgba(233, 185, 110, 0.1);
-  font: inherit;
   font-size: 0.58rem;
   font-weight: 850;
   letter-spacing: 0.05em;
-  cursor: pointer;
 
   &:hover {
     border-color: rgba(233, 185, 110, 0.45);
@@ -786,6 +939,14 @@ button {
 }
 
 @media (max-width: $mobile-breakpoint) {
+  .language-dialog {
+    padding: 18px;
+  }
+
+  .language-options {
+    grid-template-columns: 1fr;
+  }
+
   .game-info {
     padding: 14px;
   }
@@ -809,9 +970,6 @@ button {
     }
   }
 
-  .action-row {
-    grid-template-columns: 1fr 38px 38px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

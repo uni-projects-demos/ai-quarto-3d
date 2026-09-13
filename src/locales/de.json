@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interaktive 3D-Oberfläche des Brettspiels Quarto mit Three.js und der Negamax-Version des Minimax-Algorithmus für künstliche Intelligenz mit Alpha-Beta-Beschneidung. Spiele Spieler gegen Spieler, Spieler gegen KI und KI gegen KI mit leichter, mittlerer und schwerer KI-Schwierigkeit.",
     "ogDescription": "Interaktives 3D-Brettspiel Quarto. Spiele Spieler gegen Spieler, Spieler gegen KI und KI gegen KI mit leichter, mittlerer und schwerer KI-Schwierigkeit."
+  },
+  "language": {
+    "label": "Sprache",
+    "search": "Sprachen suchen",
+    "empty": "Keine Sprachen gefunden",
+    "close": "Schließen"
   }
 }

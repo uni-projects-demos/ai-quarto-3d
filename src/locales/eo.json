@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Portita plibonigo de",
+    "newGame": "Nova ludo"
+  },
+  "common": {
+    "on": "ŜALTITA",
+    "off": "MALŜALTITA"
+  },
+  "a11y": {
+    "utilityActions": "Aplikaj ligiloj kaj lingvo",
+    "viewSource": "Vidi la fontkodon en GitHub",
+    "gameControls": "Ludaj regiloj",
+    "gameBoard": "3D ludtabulo",
+    "gameInfo": "Ludaj informoj"
+  },
+  "controls": {
+    "diffAI": "Malfacileco de AI",
+    "diffPlayerOneAI": "Malfacileco P1",
+    "diffPlayerTwoAI": "Malfacileco P2",
+    "startingPlayer": "Komenca ludanto",
+    "gameMode": "Ludreĝimo",
+    "pauseAI": "Paŭzigi AI",
+    "resumeAI": "Daŭrigi AI",
+    "undo": "Malfari",
+    "redo": "Refari"
+  },
+  "diff": {
+    "easy": "Facila",
+    "medium": "Meza",
+    "hard": "Malfacila"
+  },
+  "mode": {
+    "userVsUser": "Uzanto kontraŭ uzanto",
+    "userVsAI": "Uzanto kontraŭ AI",
+    "onlyAI": "AI kontraŭ AI"
+  },
+  "player": {
+    "playerYou": "Vi",
+    "playerOne": "Ludanto Unu",
+    "playerTwo": "Ludanto Du",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Hazarda",
+    "playerAIPlayer": "AI-ludanto",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Ludstato...",
+    "pausedAI": "{{player}} estas paŭzigita...",
+    "placingAI": "{{player}} ludas - metas pecon sur la tabulon...",
+    "placingUser": "{{player}} ludas - Metu la elektitan pecon sur la tabulon...",
+    "placeUserYou": "Vi ludas - Metu la elektitan pecon sur la tabulon...",
+    "gameDrawn": "Remiza ludo - neniu venka linio",
+    "gameWon": "{{player}} venkas - venka linio emfazita",
+    "selectingAI": "{{player}} ludas - elektas pecon por {{opponent}}...",
+    "selectUser": "{{player}} ludas - Elektu pecon por {{opponent}}...",
+    "selectUserYou": "Vi ludas - Elektu pecon por {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Peco en ludo",
+    "none": "Nenio elektita",
+    "traits": "Ecoj de la peco",
+    "black": "nigra",
+    "red": "ruĝa",
+    "big": "granda",
+    "small": "malgranda",
+    "round": "ronda",
+    "square": "kvadrata",
+    "solid": "solida",
+    "hollow": "kava"
+  },
+  "board": {
+    "binary": "Duuma tabulo",
+    "piecesPlaced": "Metitaj pecoj",
+    "cellEmpty": "Ĉelo {{cell}}: malplena",
+    "cellPiece": "Ĉelo {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D-bildigo ne disponeblas.",
+    "webglHeading": "WebGL ne povis komenciĝi.",
+    "webglMsg": "La ludo postulas ke WebGL estu ŝaltita en la retumilo."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Ŝvebu super elektebla peco por antaŭrigardi ĝian elektoriskon",
+    "hoveredRiskOne": "Risko de la ŝvebata peco: {{risk}} tuja venka meto",
+    "hoveredRiskMany": "Risko de la ŝvebata peco: {{risk}} tujaj venkaj metoj",
+    "immediateWins": "Tujaj venkaj metoj",
+    "latestRisk": "Lasta elektorisko",
+    "riskOneAI": "Risko de peco elektita de AI: {{risk}} tuja venka meto",
+    "riskManyAI": "Risko de peco elektita de AI: {{risk}} tujaj venkaj metoj",
+    "riskTurnedOff": "Elektorisko estas malŝaltita",
+    "riskUnavailableAI": "Elektorisko ne disponeblas en reĝimo AI kontraŭ AI",
+    "selectionRisk": "Elektorisko",
+    "turnRiskOff": "Malŝalti elektoriskon",
+    "turnRiskOn": "Ŝalti elektoriskon"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lingvo",
+    "search": "Serĉu lingvojn",
+    "empty": "Neniuj lingvoj trovitaj",
+    "close": "Fermu"
+  }
+}

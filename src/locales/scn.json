@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Nu migghiuramentu purtatu di",
+    "newGame": "Jocu novu"
+  },
+  "common": {
+    "on": "ATTIVU",
+    "off": "DISATTIVU"
+  },
+  "a11y": {
+    "utilityActions": "Ligami di l'app e lingua",
+    "viewSource": "Talìa u sorgenti supra GitHub",
+    "gameControls": "Cuntrolli dû jocu",
+    "gameBoard": "Tabbula di jocu 3D",
+    "gameInfo": "Nfurmazzioni dû jocu"
+  },
+  "controls": {
+    "diffAI": "Difficurtà AI",
+    "diffPlayerOneAI": "Difficurtà P1",
+    "diffPlayerTwoAI": "Difficurtà P2",
+    "startingPlayer": "Jucaturi ca accumincia",
+    "gameMode": "Modalità di jocu",
+    "pauseAI": "Metti AI n pausa",
+    "resumeAI": "Ripigghia AI",
+    "undo": "Annulla",
+    "redo": "Rifai"
+  },
+  "diff": {
+    "easy": "Fàcili",
+    "medium": "Mediu",
+    "hard": "Difficili"
+  },
+  "mode": {
+    "userVsUser": "Utenti contra utenti",
+    "userVsAI": "Utenti contra AI",
+    "onlyAI": "AI contra AI"
+  },
+  "player": {
+    "playerYou": "Tu",
+    "playerOne": "Jucaturi Unu",
+    "playerTwo": "Jucaturi Dui",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "A casu",
+    "playerAIPlayer": "Jucaturi AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Statu dû jocu...",
+    "pausedAI": "{{player}} è n pausa...",
+    "placingAI": "{{player}} sta jucannu - metti na pedina ntâ tabbula...",
+    "placingUser": "{{player}} sta jucannu - metti a pedina scelta ntâ tabbula...",
+    "placeUserYou": "Tu stai jucannu - metti a pedina scelta ntâ tabbula...",
+    "gameDrawn": "Jocu pari - nudda linia vincitrici",
+    "gameWon": "{{player}} vinci - linia vincitrici evidinziata",
+    "selectingAI": "{{player}} sta jucannu - scegghi na pedina pi {{opponent}}...",
+    "selectUser": "{{player}} sta jucannu - scegghi na pedina pi {{opponent}}...",
+    "selectUserYou": "Tu stai jucannu - scegghi na pedina pi {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pedina n jocu",
+    "none": "Nudda scelta",
+    "traits": "Carattirìstichi dâ pedina",
+    "black": "nìuru",
+    "red": "russu",
+    "big": "granni",
+    "small": "nicareddu",
+    "round": "tunnu",
+    "square": "quatratu",
+    "solid": "chinu",
+    "hollow": "vacanti"
+  },
+  "board": {
+    "binary": "Tabbula binaria",
+    "piecesPlaced": "Pedini pusati",
+    "cellEmpty": "Cella {{cell}}: vacanti",
+    "cellPiece": "Cella {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "U rendering 3D nun è dispunìbbili.",
+    "webglHeading": "WebGL nun potti partiri.",
+    "webglMsg": "U jocu voli WebGL attivatu ntô browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Passa u cursuri supra na pedina scegliìbbili pi vidiri u risicu dâ scelta",
+    "hoveredRiskOne": "Risicu dâ pedina sutta u cursuri: {{risk}} pusizzioni vincitrici immediata",
+    "hoveredRiskMany": "Risicu dâ pedina sutta u cursuri: {{risk}} pusizzioni vincitrici immediati",
+    "immediateWins": "Pusizzioni vincitrici immediati",
+    "latestRisk": "Ùrtimu risicu dâ scelta",
+    "riskOneAI": "Risicu dâ pedina scelta di AI: {{risk}} pusizzioni vincitrici immediata",
+    "riskManyAI": "Risicu dâ pedina scelta di AI: {{risk}} pusizzioni vincitrici immediati",
+    "riskTurnedOff": "U risicu dâ scelta è disattivatu",
+    "riskUnavailableAI": "U risicu dâ scelta nun è dispunìbbili n modalità AI contra AI",
+    "selectionRisk": "Risicu dâ scelta",
+    "turnRiskOff": "Disattiva u risicu dâ scelta",
+    "turnRiskOn": "Attiva u risicu dâ scelta"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lingua",
+    "search": "Cerca lingui",
+    "empty": "Nudda lingua attruvata",
+    "close": "Chiudi"
+  }
+}

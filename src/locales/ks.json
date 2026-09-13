@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "اکھ منتقل کرنہٕ آمُت بہتر روپ",
+    "newGame": "نوٚو کھیل"
+  },
+  "common": {
+    "on": "چالو",
+    "off": "بند"
+  },
+  "a11y": {
+    "utilityActions": "ایپ لِنک تہٕ زبان",
+    "viewSource": "GitHub پٮ۪ٹھ سورس وُچھِو",
+    "gameControls": "کھیل کنٹرول",
+    "gameBoard": "3D کھیل بورڈ",
+    "gameInfo": "کھیل معلومات"
+  },
+  "controls": {
+    "diffAI": "AI مشکل",
+    "diffPlayerOneAI": "P1 مشکل",
+    "diffPlayerTwoAI": "P2 مشکل",
+    "startingPlayer": "شروعات کرن وول کھِلاڑی",
+    "gameMode": "کھیل موڈ",
+    "pauseAI": "AI رُکاوِو",
+    "resumeAI": "AI جاری تھاوِو",
+    "undo": "واپس",
+    "redo": "دوبارٕ"
+  },
+  "diff": {
+    "easy": "آسان",
+    "medium": "درمیان",
+    "hard": "مشکل"
+  },
+  "mode": {
+    "userVsUser": "صارف بمقابلہ صارف",
+    "userVsAI": "صارف بمقابلہ AI",
+    "onlyAI": "AI بمقابلہ AI"
+  },
+  "player": {
+    "playerYou": "تُہۍ",
+    "playerOne": "کھِلاڑی اَکھ",
+    "playerTwo": "کھِلاڑی زٕ",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "اتفاقی",
+    "playerAIPlayer": "AI کھِلاڑی",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "کھیل حالت...",
+    "pausedAI": "{{player}} رُکٲومُت چھُ...",
+    "placingAI": "{{player}} کھیل چھُ کران - ٹُک بورڈس پٮ۪ٹھ تھاوان...",
+    "placingUser": "{{player}} کھیل چھُ کران - ژارمُت ٹُک بورڈس پٮ۪ٹھ تھاوِو...",
+    "placeUserYou": "تُہۍ کھیل چھِو کران - ژارمُت ٹُک بورڈس پٮ۪ٹھ تھاوِو...",
+    "gameDrawn": "کھیل برابر - کامیاب لائن چھَنہٕ",
+    "gameWon": "{{player}} جیتُک - کامیاب لائن چھِ نمایاں",
+    "selectingAI": "{{player}} کھیل چھُ کران - {{opponent}} خٲطرٕ ٹُک ژاران...",
+    "selectUser": "{{player}} کھیل چھُ کران - {{opponent}} خٲطرٕ ٹُک ژارِو...",
+    "selectUserYou": "تُہۍ کھیل چھِو کران - {{opponent}} خٲطرٕ ٹُک ژارِو..."
+  },
+  "piece": {
+    "inPlay": "کھیلس منز ٹُک",
+    "none": "کانٛہہ تہِ ژارمُت چھُنہٕ",
+    "traits": "ٹُک خاصیت",
+    "black": "کروہُن",
+    "red": "ووزُل",
+    "big": "بوٚڈ",
+    "small": "لۄکُٹ",
+    "round": "گول",
+    "square": "مربع",
+    "solid": "ٹھوس",
+    "hollow": "کھوکھلا"
+  },
+  "board": {
+    "binary": "بائنری بورڈ",
+    "piecesPlaced": "تھاوِتھ ٹُک",
+    "cellEmpty": "سیل {{cell}}: خٲلی",
+    "cellPiece": "سیل {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D رینڈرنگ دستیاب چھَنہٕ۔",
+    "webglHeading": "WebGL شروع گژھِتھ نہٕ ہیوٗک۔",
+    "webglMsg": "کھیلس خٲطرٕ براوزرس منز WebGL چالو آسُن ضروٗری چھُ۔"
+  },
+  "metrics": {
+    "hoverRiskPreview": "ژارنہٕ لایق ٹُکَس پٮ۪ٹھ کرسر تھاوِو تاکہ ژارنہٕ خطرٕ وُچھِو",
+    "hoveredRiskOne": "کرسر تل ٹُک خطرٕ: {{risk}} فوری جیت والی جاے",
+    "hoveredRiskMany": "کرسر تل ٹُک خطرٕ: {{risk}} فوری جیت والی جایہ",
+    "immediateWins": "فوری جیت والی جایہ",
+    "latestRisk": "تازٕ ژارنہٕ خطرٕ",
+    "riskOneAI": "AI ژارمُت ٹُک خطرٕ: {{risk}} فوری جیت والی جاے",
+    "riskManyAI": "AI ژارمُت ٹُک خطرٕ: {{risk}} فوری جیت والی جایہ",
+    "riskTurnedOff": "ژارنہٕ خطرٕ بند چھُ",
+    "riskUnavailableAI": "AI بمقابلہ AI موڈس منز ژارنہٕ خطرٕ دستیاب چھُنہٕ",
+    "selectionRisk": "ژارنہٕ خطرٕ",
+    "turnRiskOff": "ژارنہٕ خطرٕ بند کرِو",
+    "turnRiskOn": "ژارنہٕ خطرٕ چالو کرِو"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "زبان",
+    "search": "زبانہٕ ژھارِو",
+    "empty": "کانٛہہ زبان نہٕ مِلی",
+    "close": "بند کرِو"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Nkwalite ebufere site na",
+    "newGame": "Egwuregwu ọhụrụ"
+  },
+  "common": {
+    "on": "GBANYE",
+    "off": "GBANYỤ"
+  },
+  "a11y": {
+    "utilityActions": "Njikọ ngwa na asụsụ",
+    "viewSource": "Lee koodu isi na GitHub",
+    "gameControls": "Njikwa egwuregwu",
+    "gameBoard": "Bọdụ egwuregwu 3D",
+    "gameInfo": "Ozi egwuregwu"
+  },
+  "controls": {
+    "diffAI": "Ihe isi ike AI",
+    "diffPlayerOneAI": "Ihe isi ike P1",
+    "diffPlayerTwoAI": "Ihe isi ike P2",
+    "startingPlayer": "Onye egwuregwu na-amalite",
+    "gameMode": "Ụdị egwuregwu",
+    "pauseAI": "Kwụsị AI nwa oge",
+    "resumeAI": "Gaa n'ihu AI",
+    "undo": "Kagbuo",
+    "redo": "Mee ọzọ"
+  },
+  "diff": {
+    "easy": "Dị mfe",
+    "medium": "Etiti",
+    "hard": "Siri ike"
+  },
+  "mode": {
+    "userVsUser": "Onye ọrụ megide onye ọrụ",
+    "userVsAI": "Onye ọrụ megide AI",
+    "onlyAI": "AI megide AI"
+  },
+  "player": {
+    "playerYou": "Gị",
+    "playerOne": "Onye Egwuregwu Otu",
+    "playerTwo": "Onye Egwuregwu Abụọ",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Na-enweghị usoro",
+    "playerAIPlayer": "Onye Egwuregwu AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Ọnọdụ egwuregwu...",
+    "pausedAI": "{{player}} akwụsịla nwa oge...",
+    "placingAI": "{{player}} na-egwu - na-etinye ibe na bọdụ...",
+    "placingUser": "{{player}} na-egwu - Tinye ibe ahọpụtara na bọdụ...",
+    "placeUserYou": "Ị na-egwu - Tinye ibe ahọpụtara na bọdụ...",
+    "gameDrawn": "Egwuregwu bụ nha - enweghị ahịrị mmeri",
+    "gameWon": "{{player}} meriri - e gosipụtara ahịrị mmeri",
+    "selectingAI": "{{player}} na-egwu - na-ahọrọ ibe maka {{opponent}}...",
+    "selectUser": "{{player}} na-egwu - Họrọ ibe maka {{opponent}}...",
+    "selectUserYou": "Ị na-egwu - Họrọ ibe maka {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Ibe dị n'egwuregwu",
+    "none": "Ọ dịghị ihe ahọpụtara",
+    "traits": "Njirimara ibe",
+    "black": "oji",
+    "red": "uhie",
+    "big": "nnukwu",
+    "small": "obere",
+    "round": "gburugburụ",
+    "square": "square",
+    "solid": "siri ike",
+    "hollow": "oghere"
+  },
+  "board": {
+    "binary": "Bọdụ binary",
+    "piecesPlaced": "Ibe etinyere",
+    "cellEmpty": "Cell {{cell}}: efu",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Ngosipụta 3D adịghị.",
+    "webglHeading": "WebGL enweghị ike ịmalite.",
+    "webglMsg": "Egwuregwu chọrọ ka WebGL gbanye na nchọgharị."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Dowe pointer n'elu ibe enwere ike ịhọrọ iji hụ ihe ize ndụ nhọrọ ya",
+    "hoveredRiskOne": "Ihe ize ndụ ibe dị n'okpuru pointer: {{risk}} ntinye mmeri ozugbo",
+    "hoveredRiskMany": "Ihe ize ndụ ibe dị n'okpuru pointer: {{risk}} ntinye mmeri ozugbo",
+    "immediateWins": "Ntinye mmeri ozugbo",
+    "latestRisk": "Ihe ize ndụ nhọrọ kacha ọhụrụ",
+    "riskOneAI": "Ihe ize ndụ ibe AI họọrọ: {{risk}} ntinye mmeri ozugbo",
+    "riskManyAI": "Ihe ize ndụ ibe AI họọrọ: {{risk}} ntinye mmeri ozugbo",
+    "riskTurnedOff": "Agbanyụọla ihe ize ndụ nhọrọ",
+    "riskUnavailableAI": "Ihe ize ndụ nhọrọ adịghị na ụdị AI megide AI",
+    "selectionRisk": "Ihe ize ndụ nhọrọ",
+    "turnRiskOff": "Gbanyụọ ihe ize ndụ nhọrọ",
+    "turnRiskOn": "Gbanye ihe ize ndụ nhọrọ"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Asụsụ",
+    "search": "Chọọ asụsụ",
+    "empty": "Ọnweghị asụsụ ahụrụ",
+    "close": "Mechie"
+  }
+}

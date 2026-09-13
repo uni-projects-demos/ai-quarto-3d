@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Kəla sələmbe-a ndara",
+    "newGame": "Kasala təze"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "App kəla-a dǝmbe-a",
+    "viewSource": "GitHub-ro source kuru",
+    "gameControls": "Kasala kəla",
+    "gameBoard": "3D kasala tǝla",
+    "gameInfo": "Kasala labar"
+  },
+  "controls": {
+    "diffAI": "AI karwua",
+    "diffPlayerOneAI": "P1 karwua",
+    "diffPlayerTwoAI": "P2 karwua",
+    "startingPlayer": "Kasalama fuwu",
+    "gameMode": "Kasala mode",
+    "pauseAI": "AI kaptu",
+    "resumeAI": "AI ci gaba",
+    "undo": "Undo",
+    "redo": "Redo"
+  },
+  "diff": {
+    "easy": "Sauki",
+    "medium": "Curo",
+    "hard": "Karwu"
+  },
+  "mode": {
+    "userVsUser": "Ngarma na ngarma",
+    "userVsAI": "Ngarma na AI",
+    "onlyAI": "AI na AI"
+  },
+  "player": {
+    "playerYou": "Nyi",
+    "playerOne": "Kasalama tilo",
+    "playerTwo": "Kasalama yindi",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Kǝla-kǝla",
+    "playerAIPlayer": "AI kasalama",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Kasala hal...",
+    "pausedAI": "{{player}} kaptəna...",
+    "placingAI": "{{player}} kasala - piece tǝla-ro cidi...",
+    "placingUser": "{{player}} kasala - piece suro-a tǝla-ro cidu...",
+    "placeUserYou": "Nyi kasala - piece suro-a tǝla-ro cidu...",
+    "gameDrawn": "Kasala ngəla - win line bawo",
+    "gameWon": "{{player}} kərga - win line filəna",
+    "selectingAI": "{{player}} kasala - {{opponent}}-be piece suro...",
+    "selectUser": "{{player}} kasala - {{opponent}}-be piece suru...",
+    "selectUserYou": "Nyi kasala - {{opponent}}-be piece suru..."
+  },
+  "piece": {
+    "inPlay": "Piece kasala-ro",
+    "none": "Suro bawo",
+    "traits": "Piece sifaa",
+    "black": "kǝlwu",
+    "red": "ja",
+    "big": "kura",
+    "small": "kǝnji",
+    "round": "kəla",
+    "square": "square",
+    "solid": "solid",
+    "hollow": "hollow"
+  },
+  "board": {
+    "binary": "Binary tǝla",
+    "piecesPlaced": "Piece cidi-a",
+    "cellEmpty": "Cell {{cell}}: fǝr",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering bawo.",
+    "webglHeading": "WebGL fuwu wa.",
+    "webglMsg": "Kasala browser-ro WebGL ON laazim."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Piece suro-a gade mouse dǝgə selection risk kuru",
+    "hoveredRiskOne": "Hover piece risk: {{risk}} awowa win placement",
+    "hoveredRiskMany": "Hover piece risk: {{risk}} awowa win placements",
+    "immediateWins": "Awowa win placements",
+    "latestRisk": "Selection risk cidi",
+    "riskOneAI": "AI suro piece risk: {{risk}} awowa win placement",
+    "riskManyAI": "AI suro piece risk: {{risk}} awowa win placements",
+    "riskTurnedOff": "Selection risk OFF",
+    "riskUnavailableAI": "AI na AI mode-ro selection risk bawo",
+    "selectionRisk": "Selection risk",
+    "turnRiskOff": "Selection risk OFF gǝnu",
+    "turnRiskOn": "Selection risk ON gǝnu"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Kanji",
+    "search": "Kanjiro koro",
+    "empty": "Kanji mbe gade ba",
+    "close": "Gadono"
+  }
+}

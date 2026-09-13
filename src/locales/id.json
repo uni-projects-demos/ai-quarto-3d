@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Antarmuka game papan Quarto 3D interaktif menggunakan Three.js dan versi Negamax dari algoritme kecerdasan buatan Minimax dengan pemangkasan alfa-beta. Mainkan pengguna vs pengguna, pengguna vs AI, dan AI vs AI dengan tingkat AI mudah, sedang, dan sulit.",
     "ogDescription": "Game papan Quarto 3D interaktif. Mainkan pengguna vs pengguna, pengguna vs AI, dan AI vs AI dengan tingkat AI mudah, sedang, dan sulit."
+  },
+  "language": {
+    "label": "Bahasa",
+    "search": "Cari bahasa",
+    "empty": "Tidak ada bahasa yang ditemukan",
+    "close": "Tutup"
   }
 }

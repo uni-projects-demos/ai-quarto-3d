@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Йоккха йолуш йоьзна хилла нисйина",
+    "newGame": "Керла ловзар"
+  },
+  "common": {
+    "on": "ЛАТТИЙНА",
+    "off": "ХЕЦНА"
+  },
+  "a11y": {
+    "utilityActions": "Приложени хьажоргаш а, мотт а",
+    "viewSource": "GitHub тӀехь source хьажа",
+    "gameControls": "Ловзарна тӀехьажар",
+    "gameBoard": "3D ловзарийн дош",
+    "gameInfo": "Ловзарх лаьцна хаам"
+  },
+  "controls": {
+    "diffAI": "AI халона",
+    "diffPlayerOneAI": "P1 халона",
+    "diffPlayerTwoAI": "P2 халона",
+    "startingPlayer": "ДӀаволалучу ловзархо",
+    "gameMode": "Ловзарийн режим",
+    "pauseAI": "AI сацо",
+    "resumeAI": "AI дӀадахьа",
+    "undo": "Юхаъяккха",
+    "redo": "Юха хӀоттае"
+  },
+  "diff": {
+    "easy": "Атта",
+    "medium": "Юккъера",
+    "hard": "Хала"
+  },
+  "mode": {
+    "userVsUser": "Пайдахочун vs пайдахочун",
+    "userVsAI": "Пайдахочун vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Хьо",
+    "playerOne": "Ловзархо Цхьа",
+    "playerTwo": "Ловзархо Шиъ",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Цхьа хиларан",
+    "playerAIPlayer": "AI ловзархо",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Ловзарийн хьал...",
+    "pausedAI": "{{player}} соцун ву...",
+    "placingAI": "{{player}} ловзуш ву - фигура дош тӀе йоллуш...",
+    "placingUser": "{{player}} ловзуш ву - харжина фигура дош тӀе йилла...",
+    "placeUserYou": "Хьо ловзуш ву - харжина фигура дош тӀе йилла...",
+    "gameDrawn": "Ловзар тӀеца - толамийн могӀа бац",
+    "gameWon": "{{player}} толам боху - толамийн могӀа билгалбина",
+    "selectingAI": "{{player}} ловзуш ву - {{opponent}}-на фигура харжуш...",
+    "selectUser": "{{player}} ловзуш ву - {{opponent}}-на фигура харжа...",
+    "selectUserYou": "Хьо ловзуш ву - {{opponent}}-на фигура харжа..."
+  },
+  "piece": {
+    "inPlay": "Ловзарехь йолу фигура",
+    "none": "Цхьа а харжина яц",
+    "traits": "Фигуранах долу белгало",
+    "black": "Ӏаьржа",
+    "red": "цӀен",
+    "big": "йоккха",
+    "small": "жима",
+    "round": "горга",
+    "square": "квадрат",
+    "solid": "кхочуш",
+    "hollow": "чӀагӀа йоцу"
+  },
+  "board": {
+    "binary": "Бинарни дош",
+    "piecesPlaced": "Йиллина фигураш",
+    "cellEmpty": "Клетка {{cell}}: йаьсса",
+    "cellPiece": "Клетка {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D рендеринг йиш яц.",
+    "webglHeading": "WebGL дӀайолайо йиш яц.",
+    "webglMsg": "Ловзарна браузерехь WebGL латтийна хила деза."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Харжа мегарг йолу фигура тӀе курсор йилла, харжаран кхерам хьалха хьажа",
+    "hoveredRiskOne": "Курсор тӀехь йолу фигуран кхерам: {{risk}} сихха толамийн меттиг",
+    "hoveredRiskMany": "Курсор тӀехь йолу фигуран кхерам: {{risk}} сихха толамийн меттигаш",
+    "immediateWins": "Сихха толамийн меттигаш",
+    "latestRisk": "ТӀаьххьара харжаран кхерам",
+    "riskOneAI": "AI харжина фигуран кхерам: {{risk}} сихха толамийн меттиг",
+    "riskManyAI": "AI харжина фигуран кхерам: {{risk}} сихха толамийн меттигаш",
+    "riskTurnedOff": "Харжаран кхерам хецна бу",
+    "riskUnavailableAI": "AI vs AI режимехь харжаран кхерам бац",
+    "selectionRisk": "Харжаран кхерам",
+    "turnRiskOff": "Харжаран кхерам хеца",
+    "turnRiskOn": "Харжаран кхерам латта"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Мотт",
+    "search": "Меттанаш лаха",
+    "empty": "Меттанаш ца карийна",
+    "close": "ДӀакъовла"
+  }
+}

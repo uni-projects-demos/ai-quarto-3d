@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interfață interactivă 3D pentru jocul de masă Quarto, folosind Three.js și versiunea Negamax a algoritmului de inteligență artificială Minimax cu tăiere alfa-beta. Joacă utilizator contra utilizator, utilizator contra IA și IA contra IA, cu dificultăți IA ușoară, medie și grea.",
     "ogDescription": "Joc de masă Quarto interactiv 3D. Joacă utilizator contra utilizator, utilizator contra IA și IA contra IA, cu dificultăți IA ușoară, medie și grea."
+  },
+  "language": {
+    "label": "Limba",
+    "search": "Căutați limbi",
+    "empty": "Nu s-au găsit limbi",
+    "close": "Închide"
   }
 }

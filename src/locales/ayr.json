@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Mayjt'ayasa apayata juk'amp suma lurawi",
+    "newGame": "Machaq anata"
+  },
+  "common": {
+    "on": "QHANT'ATA",
+    "off": "JIWT'ATA"
+  },
+  "a11y": {
+    "utilityActions": "Aplicación ch'amanaka ukat aru",
+    "viewSource": "GitHub ukan source uñjaña",
+    "gameControls": "Anata apnaqañanaka",
+    "gameBoard": "3D anata tabla",
+    "gameInfo": "Anata yatiyawi"
+  },
+  "controls": {
+    "diffAI": "AI ch'amani kayu",
+    "diffPlayerOneAI": "P1 ch'amani kayu",
+    "diffPlayerTwoAI": "P2 ch'amani kayu",
+    "startingPlayer": "Qallta anatiri",
+    "gameMode": "Anata uñta",
+    "pauseAI": "AI sayt'ayaña",
+    "resumeAI": "AI sarantaña",
+    "undo": "Kutt'ayaña",
+    "redo": "Wasitat luraña"
+  },
+  "diff": {
+    "easy": "Jasa",
+    "medium": "Taypi",
+    "hard": "Ch'ama"
+  },
+  "mode": {
+    "userVsUser": "Apnaqiri vs apnaqiri",
+    "userVsAI": "Apnaqiri vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Juma",
+    "playerOne": "Nayrïri anatiri",
+    "playerTwo": "Payïri anatiri",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Kawkïrsa",
+    "playerAIPlayer": "AI anatiri",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Anata sarawi...",
+    "pausedAI": "{{player}} sayt'atawa...",
+    "placingAI": "{{player}} anatañankiwa - t'aqa tabla patxaru uchañani...",
+    "placingUser": "{{player}} anatañankiwa - ajllita t'aqa tabla patxaru uchaña...",
+    "placeUserYou": "Jumaw anatañankta - ajllita t'aqa tabla patxaru uchaña...",
+    "gameDrawn": "Anata chikachata - atipjañ siqi janiw utjkiti",
+    "gameWon": "{{player}} atipji - atipjañ siqi qhanstayata",
+    "selectingAI": "{{player}} anatañankiwa - {{opponent}} ukatak t'aqa ajlliñani...",
+    "selectUser": "{{player}} anatañankiwa - {{opponent}} ukatak mä t'aqa ajlliña...",
+    "selectUserYou": "Jumaw anatañankta - {{opponent}} ukatak mä t'aqa ajlliña..."
+  },
+  "piece": {
+    "inPlay": "Anatañankir t'aqa",
+    "none": "Janiw kunas ajllitäkiti",
+    "traits": "T'aqa uñacht'äwinaka",
+    "black": "ch'iyara",
+    "red": "wila",
+    "big": "jach'a",
+    "small": "jisk'a",
+    "round": "muruq'u",
+    "square": "pusi k'uchu",
+    "solid": "phuqhata",
+    "hollow": "ch'usa"
+  },
+  "board": {
+    "binary": "Binario tabla",
+    "piecesPlaced": "Uchata t'aqanaka",
+    "cellEmpty": "Celdilla {{cell}}: ch'usa",
+    "cellPiece": "Celdilla {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D uñacht'ayawi janiw utjkiti.",
+    "webglHeading": "WebGL janiw qalltañjamäkiti.",
+    "webglMsg": "Anatax navegadoran WebGL qhant'ayatäñapawa."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Ajlliñjam t'aqa patxaru cursor uchaña ajlliñ jan walt'äwi nayraqat uñjañataki",
+    "hoveredRiskOne": "Cursorankir t'aqa jan walt'äwi: {{risk}} jank'aki atipjañ uchaña",
+    "hoveredRiskMany": "Cursorankir t'aqa jan walt'äwi: {{risk}} jank'aki atipjañ uchañanaka",
+    "immediateWins": "Jank'aki atipjañ uchañanaka",
+    "latestRisk": "Qhipa ajlliñ jan walt'äwi",
+    "riskOneAI": "AI ajllit t'aqa jan walt'äwi: {{risk}} jank'aki atipjañ uchaña",
+    "riskManyAI": "AI ajllit t'aqa jan walt'äwi: {{risk}} jank'aki atipjañ uchañanaka",
+    "riskTurnedOff": "Ajlliñ jan walt'äwi jiwt'atawa",
+    "riskUnavailableAI": "AI vs AI uñtan ajlliñ jan walt'äwi janiw utjkiti",
+    "selectionRisk": "Ajlliñ jan walt'äwi",
+    "turnRiskOff": "Ajlliñ jan walt'äwi jiwt'ayaña",
+    "turnRiskOn": "Ajlliñ jan walt'äwi qhant'ayaña"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Arunaka",
+    "search": "Arunak thaqhaña",
+    "empty": "Janiw kuna arunakas jikxataskiti",
+    "close": "Jist’antaña"
+  }
+}

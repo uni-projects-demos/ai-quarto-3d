@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Przeniesiōne ulepszynie z",
+    "newGame": "Nowŏ gra"
+  },
+  "common": {
+    "on": "ZAŁ.",
+    "off": "WYŁ."
+  },
+  "a11y": {
+    "utilityActions": "Linki aplikacyje i gŏdka",
+    "viewSource": "Ôbejzdrzij zdrzōdło na GitHub",
+    "gameControls": "Sterowanie grōm",
+    "gameBoard": "Plansza 3D",
+    "gameInfo": "Informacyje ô grze"
+  },
+  "controls": {
+    "diffAI": "Trudność AI",
+    "diffPlayerOneAI": "Trudność P1",
+    "diffPlayerTwoAI": "Trudność P2",
+    "startingPlayer": "Grŏcz zaczynajōncy",
+    "gameMode": "Tryb gry",
+    "pauseAI": "Pauza AI",
+    "resumeAI": "Wznōw AI",
+    "undo": "Cofnij",
+    "redo": "Powtōrz"
+  },
+  "diff": {
+    "easy": "Łatwe",
+    "medium": "Strzednie",
+    "hard": "Trudne"
+  },
+  "mode": {
+    "userVsUser": "Użytkownik kontra użytkownik",
+    "userVsAI": "Użytkownik kontra AI",
+    "onlyAI": "AI kontra AI"
+  },
+  "player": {
+    "playerYou": "Ty",
+    "playerOne": "Grŏcz Jedyn",
+    "playerTwo": "Grŏcz Dwa",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Losowo",
+    "playerAIPlayer": "Grŏcz AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Stan gry...",
+    "pausedAI": "{{player}} je zatrzimany...",
+    "placingAI": "{{player}} grŏ - kładzie figura na planszy...",
+    "placingUser": "{{player}} grŏ - połōż wybranõ figura na planszy...",
+    "placeUserYou": "Ty grŏsz - połōż wybranõ figura na planszy...",
+    "gameDrawn": "Remis - niy ma wygrywajōncej linije",
+    "gameWon": "{{player}} wygrywŏ - wygrywajōncŏ linijŏ je podkreślōnŏ",
+    "selectingAI": "{{player}} grŏ - ôbiyrŏ figura dlŏ {{opponent}}...",
+    "selectUser": "{{player}} grŏ - ôbier figura dlŏ {{opponent}}...",
+    "selectUserYou": "Ty grŏsz - ôbier figura dlŏ {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Figura we grze",
+    "none": "Nic niy ôbrane",
+    "traits": "Cechy figury",
+    "black": "czŏrnŏ",
+    "red": "czerwōnŏ",
+    "big": "srogo",
+    "small": "mało",
+    "round": "okrōngło",
+    "square": "kwadratowo",
+    "solid": "pełno",
+    "hollow": "dziurawo"
+  },
+  "board": {
+    "binary": "Plansza binarnŏ",
+    "piecesPlaced": "Położōne figury",
+    "cellEmpty": "Pole {{cell}}: prōżne",
+    "cellPiece": "Pole {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Renderowanie 3D je niydostympne.",
+    "webglHeading": "WebGL niy poradziōł wystartować.",
+    "webglMsg": "Gra wymŏgŏ włōnczōnego WebGL we przeglōndarce."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Najedź na figura, coby podejrzeć ryzyko ôboru",
+    "hoveredRiskOne": "Ryzyko figury pod kursorym: {{risk}} natychmiastowe wygrywajōnce pole",
+    "hoveredRiskMany": "Ryzyko figury pod kursorym: {{risk}} natychmiastowe wygrywajōnce pola",
+    "immediateWins": "Natychmiastowe wygrywajōnce pola",
+    "latestRisk": "Ôstatnie ryzyko ôboru",
+    "riskOneAI": "Ryzyko figury ôbranej bez AI: {{risk}} natychmiastowe wygrywajōnce pole",
+    "riskManyAI": "Ryzyko figury ôbranej bez AI: {{risk}} natychmiastowe wygrywajōnce pola",
+    "riskTurnedOff": "Ryzyko ôboru je wyłōnczōne",
+    "riskUnavailableAI": "Ryzyko ôboru niy ma dostympne we trybie AI kontra AI",
+    "selectionRisk": "Ryzyko ôboru",
+    "turnRiskOff": "Wyłōncz ryzyko ôboru",
+    "turnRiskOn": "Włōncz ryzyko ôboru"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Godka",
+    "search": "Szukej godek",
+    "empty": "Niy znŏleziōno godek",
+    "close": "Zawrzij"
+  }
+}

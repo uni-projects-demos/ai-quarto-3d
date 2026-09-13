@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Una amillora portada de",
+    "newGame": "Chuego nuevo"
+  },
+  "common": {
+    "on": "ACTIVAU",
+    "off": "DESACTIVAU"
+  },
+  "a11y": {
+    "utilityActions": "Vinclos de l'aplicación y idioma",
+    "viewSource": "Veyer o codigo fuent en GitHub",
+    "gameControls": "Controls d'o chuego",
+    "gameBoard": "Tablero de chuego 3D",
+    "gameInfo": "Información d'o chuego"
+  },
+  "controls": {
+    "diffAI": "Dificultat d'AI",
+    "diffPlayerOneAI": "Dificultat P1",
+    "diffPlayerTwoAI": "Dificultat P2",
+    "startingPlayer": "Chugador inicial",
+    "gameMode": "Modo de chuego",
+    "pauseAI": "Pausar AI",
+    "resumeAI": "Continar AI",
+    "undo": "Desfer",
+    "redo": "Refer"
+  },
+  "diff": {
+    "easy": "Fácil",
+    "medium": "Meyana",
+    "hard": "Dificil"
+  },
+  "mode": {
+    "userVsUser": "Usuario contra usuario",
+    "userVsAI": "Usuario contra AI",
+    "onlyAI": "AI contra AI"
+  },
+  "player": {
+    "playerYou": "Tu",
+    "playerOne": "Chugador Uno",
+    "playerTwo": "Chugador Dos",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Al azar",
+    "playerAIPlayer": "Chugador AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Estau d'o chuego...",
+    "pausedAI": "{{player}} ye en pausa...",
+    "placingAI": "{{player}} ye chugando - metendo a pieza en o tablero...",
+    "placingUser": "{{player}} ye chugando - Mete a pieza trigada en o tablero...",
+    "placeUserYou": "Tu yes chugando - Mete a pieza trigada en o tablero...",
+    "gameDrawn": "Empat - no bi ha linia ganadera",
+    "gameWon": "{{player}} gana - linia ganadera resaltada",
+    "selectingAI": "{{player}} ye chugando - trigando una pieza ta {{opponent}}...",
+    "selectUser": "{{player}} ye chugando - Triga una pieza ta {{opponent}}...",
+    "selectUserYou": "Tu yes chugando - Triga una pieza ta {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pieza en chuego",
+    "none": "No bi ha cosa trigada",
+    "traits": "Caracteristicas d'a pieza",
+    "black": "negra",
+    "red": "roya",
+    "big": "gran",
+    "small": "chicot",
+    "round": "redonda",
+    "square": "quadrada",
+    "solid": "solida",
+    "hollow": "buida"
+  },
+  "board": {
+    "binary": "Tablero binario",
+    "piecesPlaced": "Piezas colocadas",
+    "cellEmpty": "Casella {{cell}}: buida",
+    "cellPiece": "Casella {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "O renderizau 3D no ye disponible.",
+    "webglHeading": "WebGL no s'ha puesto en marcha.",
+    "webglMsg": "O chuego amenista que WebGL siga activau en o navegador."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Mete o cursor sobre una pieza trigable ta previsualizar o risque d'a triga",
+    "hoveredRiskOne": "Risque d'a pieza baixo o cursor: {{risk}} colocación ganadera immediata",
+    "hoveredRiskMany": "Risque d'a pieza baixo o cursor: {{risk}} colocacions ganaderas immediatas",
+    "immediateWins": "Colocacions ganaderas immediatas",
+    "latestRisk": "Zaguer risque de triga",
+    "riskOneAI": "Risque d'a pieza trigada por AI: {{risk}} colocación ganadera immediata",
+    "riskManyAI": "Risque d'a pieza trigada por AI: {{risk}} colocacions ganaderas immediatas",
+    "riskTurnedOff": "O risque de triga ye desactivau",
+    "riskUnavailableAI": "O risque de triga no ye disponible en modo AI contra AI",
+    "selectionRisk": "Risque de triga",
+    "turnRiskOff": "Desactivar o risque de triga",
+    "turnRiskOn": "Activar o risque de triga"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Idioma",
+    "search": "Buscar idiomas",
+    "empty": "No s'han trobau idiomas",
+    "close": "Zarrar"
+  }
+}

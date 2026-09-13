@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "ܫܘܦܪܐ ܕܐܬܢܩܠ ܡܢ",
+    "newGame": "ܛܘܠܐ ܚܕܬܐ"
+  },
+  "common": {
+    "on": "ܦܬܝܚ",
+    "off": "ܣܓܝܪ"
+  },
+  "a11y": {
+    "utilityActions": "ܐܣܘܪ̈ܐ ܕ-app ܘܠܫܢܐ",
+    "viewSource": "ܚܙܝ ܡܒܘܥܐ ܒ-GitHub",
+    "gameControls": "ܦܘܩܕܢ̈ܐ ܕܛܘܠܐ",
+    "gameBoard": "3D ܠܘܚܐ ܕܛܘܠܐ",
+    "gameInfo": "ܝܕܥܬܐ ܕܛܘܠܐ"
+  },
+  "controls": {
+    "diffAI": "ܩܫܝܘܬܐ AI",
+    "diffPlayerOneAI": "ܩܫܝܘܬܐ P1",
+    "diffPlayerTwoAI": "ܩܫܝܘܬܐ P2",
+    "startingPlayer": "ܛܠܝܐ ܩܕܡܝܐ",
+    "gameMode": "ܐܘܪܚܐ ܕܛܘܠܐ",
+    "pauseAI": "ܐܩܝܡ AI",
+    "resumeAI": "ܐܫܠܡ AI",
+    "undo": "ܐܗܦܟ",
+    "redo": "ܥܒܕ ܬܘܒ"
+  },
+  "diff": {
+    "easy": "ܦܫܝܩ",
+    "medium": "ܡܨܥܝܐ",
+    "hard": "ܩܫܝܐ"
+  },
+  "mode": {
+    "userVsUser": "ܡܫܬܡܫܢܐ ܠܘܩܒܠ ܡܫܬܡܫܢܐ",
+    "userVsAI": "ܡܫܬܡܫܢܐ ܠܘܩܒܠ AI",
+    "onlyAI": "AI ܠܘܩܒܠ AI"
+  },
+  "player": {
+    "playerYou": "ܐܢܬ",
+    "playerOne": "ܛܠܝܐ ܚܕ",
+    "playerTwo": "ܛܠܝܐ ܬܪܝܢ",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "ܒܓܕܐ",
+    "playerAIPlayer": "ܛܠܝܐ AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "ܩܝܡܐ ܕܛܘܠܐ...",
+    "pausedAI": "{{player}} ܩܐܡ...",
+    "placingAI": "{{player}} ܛܐܠ - ܣܐܡ ܡܢܬܐ ܥܠ ܠܘܚܐ...",
+    "placingUser": "{{player}} ܛܐܠ - ܣܝܡ ܡܢܬܐ ܓܒܝܬܐ ܥܠ ܠܘܚܐ...",
+    "placeUserYou": "ܐܢܬ ܛܐܠ - ܣܝܡ ܡܢܬܐ ܓܒܝܬܐ ܥܠ ܠܘܚܐ...",
+    "gameDrawn": "ܛܘܠܐ ܫܘܝܐ - ܠܝܬ ܫܘܪܛܐ ܕܙܟܘܬܐ",
+    "gameWon": "{{player}} ܙܟܐ - ܫܘܪܛܐ ܕܙܟܘܬܐ ܡܬܚܙܐ",
+    "selectingAI": "{{player}} ܛܐܠ - ܓܒܐ ܡܢܬܐ ܠ-{{opponent}}...",
+    "selectUser": "{{player}} ܛܐܠ - ܓܒܝ ܡܢܬܐ ܠ-{{opponent}}...",
+    "selectUserYou": "ܐܢܬ ܛܐܠ - ܓܒܝ ܡܢܬܐ ܠ-{{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "ܡܢܬܐ ܒܛܘܠܐ",
+    "none": "ܠܐ ܡܕܡ ܓܒܐ",
+    "traits": "ܣܝܡ̈ܐ ܕܡܢܬܐ",
+    "black": "ܐܘܟܡܐ",
+    "red": "ܣܘܡܩܐ",
+    "big": "ܪܒܐ",
+    "small": "ܙܥܘܪܐ",
+    "round": "ܥܓܝܠܐ",
+    "square": "ܡܪܒܥܐ",
+    "solid": "ܩܫܝܐ",
+    "hollow": "ܚܠܝܠܐ"
+  },
+  "board": {
+    "binary": "ܠܘܚܐ ܬܪܝܢܝܐ",
+    "piecesPlaced": "ܡܢܘ̈ܬܐ ܣܝܡ̈ܢ",
+    "cellEmpty": "ܒܝܬܐ {{cell}}: ܣܪܝܩ",
+    "cellPiece": "ܒܝܬܐ {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D ܚܙܬܐ ܠܐ ܐܝܬ.",
+    "webglHeading": "WebGL ܠܐ ܐܫܟܚ ܠܡܫܪܝ.",
+    "webglMsg": "ܛܘܠܐ ܒܥܐ WebGL ܦܬܝܚ ܒ-browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "ܣܝܡ cursor ܥܠ ܡܢܬܐ ܕܡܬܓܒܝܐ ܠܡܚܙܐ ܣܟܢܐ",
+    "hoveredRiskOne": "ܣܟܢܐ ܕܡܢܬܐ ܬܚܝܬ cursor: {{risk}} ܕܘܟܬܐ ܕܙܟܘܬܐ ܡܚܕܐ",
+    "hoveredRiskMany": "ܣܟܢܐ ܕܡܢܬܐ ܬܚܝܬ cursor: {{risk}} ܕܘܟܝ̈ܬܐ ܕܙܟܘܬܐ ܡܚܕܐ",
+    "immediateWins": "ܕܘܟܝ̈ܬܐ ܕܙܟܘܬܐ ܡܚܕܐ",
+    "latestRisk": "ܣܟܢܐ ܐܚܪܝܐ ܕܓܒܝܬܐ",
+    "riskOneAI": "ܣܟܢܐ ܕܡܢܬܐ ܕ-AI ܓܒܐ: {{risk}} ܕܘܟܬܐ ܕܙܟܘܬܐ ܡܚܕܐ",
+    "riskManyAI": "ܣܟܢܐ ܕܡܢܬܐ ܕ-AI ܓܒܐ: {{risk}} ܕܘܟܝ̈ܬܐ ܕܙܟܘܬܐ ܡܚܕܐ",
+    "riskTurnedOff": "ܣܟܢܐ ܕܓܒܝܬܐ ܣܓܝܪ",
+    "riskUnavailableAI": "ܣܟܢܐ ܕܓܒܝܬܐ ܠܝܬ ܒ-AI ܠܘܩܒܠ AI",
+    "selectionRisk": "ܣܟܢܐ ܕܓܒܝܬܐ",
+    "turnRiskOff": "ܣܓܘܪ ܣܟܢܐ ܕܓܒܝܬܐ",
+    "turnRiskOn": "ܦܬܚ ܣܟܢܐ ܕܓܒܝܬܐ"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "ܠܫܢܐ",
+    "search": "ܒܥܝ ܠܫܢ̈ܐ",
+    "empty": "ܠܐ ܐܫܬܟܚ ܠܫܢܐ",
+    "close": "ܐܚܘܕ"
+  }
+}

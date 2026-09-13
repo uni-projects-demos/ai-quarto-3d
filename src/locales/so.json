@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Horumarin laga soo raray",
+    "newGame": "Ciyaar cusub"
+  },
+  "common": {
+    "on": "SHIDAN",
+    "off": "DAMISAN"
+  },
+  "a11y": {
+    "utilityActions": "Xiriirrada abka iyo luqadda",
+    "viewSource": "Ka eeg koodhka GitHub",
+    "gameControls": "Kontaroollada ciyaarta",
+    "gameBoard": "Looxa ciyaarta 3D",
+    "gameInfo": "Macluumaadka ciyaarta"
+  },
+  "controls": {
+    "diffAI": "Adkaanta AI",
+    "diffPlayerOneAI": "Adkaanta P1",
+    "diffPlayerTwoAI": "Adkaanta P2",
+    "startingPlayer": "Ciyaaryahanka bilaabaya",
+    "gameMode": "Habka ciyaarta",
+    "pauseAI": "Hakadka AI",
+    "resumeAI": "Sii wad AI",
+    "undo": "Ka noqo",
+    "redo": "Ku celi"
+  },
+  "diff": {
+    "easy": "Fudud",
+    "medium": "Dhexdhexaad",
+    "hard": "Adag"
+  },
+  "mode": {
+    "userVsUser": "Isticmaale vs isticmaale",
+    "userVsAI": "Isticmaale vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Adiga",
+    "playerOne": "Ciyaaryahan Koowaad",
+    "playerTwo": "Ciyaaryahan Labaad",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Random",
+    "playerAIPlayer": "Ciyaaryahan AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Xaaladda ciyaarta...",
+    "pausedAI": "{{player}} waa hakad...",
+    "placingAI": "{{player}} wuu ciyaarayaa - wuxuu dhigaya gabal looxa...",
+    "placingUser": "{{player}} wuu ciyaarayaa - dhig gabalka la doortay looxa...",
+    "placeUserYou": "Adiga ayaa ciyaaraya - dhig gabalka la doortay looxa...",
+    "gameDrawn": "Ciyaartu waa barbaro - ma jiro saf guul",
+    "gameWon": "{{player}} wuu guulaystay - safka guusha waa la iftiimiyay",
+    "selectingAI": "{{player}} wuu ciyaarayaa - wuxuu u dooranayaa gabal {{opponent}}...",
+    "selectUser": "{{player}} wuu ciyaarayaa - u dooro gabal {{opponent}}...",
+    "selectUserYou": "Adiga ayaa ciyaaraya - u dooro gabal {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Gabal ciyaarta ku jira",
+    "none": "Waxba lama dooran",
+    "traits": "Sifooyinka gabalka",
+    "black": "madow",
+    "red": "cas",
+    "big": "weyn",
+    "small": "yar",
+    "round": "wareegsan",
+    "square": "afar-gees",
+    "solid": "adag",
+    "hollow": "dalool leh"
+  },
+  "board": {
+    "binary": "Loox binary",
+    "piecesPlaced": "Gabal la dhigay",
+    "cellEmpty": "Unug {{cell}}: madhan",
+    "cellPiece": "Unug {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Soo-bandhigga 3D lama heli karo.",
+    "webglHeading": "WebGL ma bilaaban karin.",
+    "webglMsg": "Ciyaartu waxay u baahan tahay WebGL oo browser-ka laga shiday."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Ku dul hay tilmaamaha gabal la dooran karo si aad u aragto khatarta doorashada",
+    "hoveredRiskOne": "Khatarta gabalka la dul joogo: {{risk}} meel guul degdeg ah",
+    "hoveredRiskMany": "Khatarta gabalka la dul joogo: {{risk}} meelo guul degdeg ah",
+    "immediateWins": "Meelo guul degdeg ah",
+    "latestRisk": "Khatartii doorashada ugu dambaysay",
+    "riskOneAI": "Khatarta gabalka AI doortay: {{risk}} meel guul degdeg ah",
+    "riskManyAI": "Khatarta gabalka AI doortay: {{risk}} meelo guul degdeg ah",
+    "riskTurnedOff": "Khatarta doorashada waa dansan tahay",
+    "riskUnavailableAI": "Khatarta doorashada lama heli karo habka AI vs AI",
+    "selectionRisk": "Khatarta doorashada",
+    "turnRiskOff": "Dami khatarta doorashada",
+    "turnRiskOn": "Shid khatarta doorashada"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Luuqad",
+    "search": "Raadi luqadaha",
+    "empty": "Lama helin luqado",
+    "close": "Xir"
+  }
+}

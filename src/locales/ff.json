@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ɓeydugol ngal iwdi e",
+    "newGame": "Fijirde hesere"
+  },
+  "common": {
+    "on": "HUƊII",
+    "off": "ÑIFII"
+  },
+  "a11y": {
+    "utilityActions": "Jokkorɗe jaaɓnirgal e ɗemngal",
+    "viewSource": "Yiylo dokkol to GitHub",
+    "gameControls": "Ɗowirɗe fijirde",
+    "gameBoard": "Alluwal fijirde 3D",
+    "gameInfo": "Humpito fijirde"
+  },
+  "controls": {
+    "diffAI": "Caɗeele AI",
+    "diffPlayerOneAI": "Caɗeele P1",
+    "diffPlayerTwoAI": "Caɗeele P2",
+    "startingPlayer": "Fijoowo fuɗɗoowo",
+    "gameMode": "Mbaydi fijirde",
+    "pauseAI": "Dartin AI",
+    "resumeAI": "Jokkit AI",
+    "undo": "Firtu",
+    "redo": "Waɗtu"
+  },
+  "diff": {
+    "easy": "Newii",
+    "medium": "Hakundeejo",
+    "hard": "Caɗi"
+  },
+  "mode": {
+    "userVsUser": "Kuutoro e kuutoro",
+    "userVsAI": "Kuutoro e AI",
+    "onlyAI": "AI e AI"
+  },
+  "player": {
+    "playerYou": "Aan",
+    "playerOne": "Fijoowo Gooto",
+    "playerTwo": "Fijoowo Ɗiɗo",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "E cuɓo",
+    "playerAIPlayer": "Fijoowo AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Ngonka fijirde...",
+    "pausedAI": "{{player}} darii...",
+    "placingAI": "{{player}} woni e fijaade - ina waɗa ɓoggol e alluwal...",
+    "placingUser": "{{player}} woni e fijaade - Waɗ ɓoggol cuɓangol e alluwal...",
+    "placeUserYou": "A woni e fijaade - Waɗ ɓoggol cuɓangol e alluwal...",
+    "gameDrawn": "Fijirde nanndi - alaa diidol jaaldugol",
+    "gameWon": "{{player}} jaalii - diidol jaaldugol hollitaama",
+    "selectingAI": "{{player}} woni e fijaade - ina suɓa ɓoggol ngam {{opponent}}...",
+    "selectUser": "{{player}} woni e fijaade - Suɓ ɓoggol ngam {{opponent}}...",
+    "selectUserYou": "A woni e fijaade - Suɓ ɓoggol ngam {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Ɓoggol e fijirde",
+    "none": "Alaa ko suɓaa",
+    "traits": "Sifaaji ɓoggol",
+    "black": "ɓaleejo",
+    "red": "boɗeejo",
+    "big": "mawɗo",
+    "small": "pamaro",
+    "round": "meyre",
+    "square": "kantungal",
+    "solid": "timmunde",
+    "hollow": "hollaande"
+  },
+  "board": {
+    "binary": "Alluwal binere",
+    "piecesPlaced": "Ɓoggi waɗaaɗi",
+    "cellEmpty": "Suudu {{cell}}: mehre",
+    "cellPiece": "Suudu {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Hollugol 3D heɓotaako.",
+    "webglHeading": "WebGL waawaa fuɗɗaade.",
+    "webglMsg": "Fijirde ena sokli WebGL hurminaama e wanngorde."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Jooɗnu dow ɓoggol cuɓotoongol ngam yiyde caɗeele cuɓol mum",
+    "hoveredRiskOne": "Caɗeele ɓoggol joɗnaaɗo: {{risk}} nokku jaaldugol ɗoon e ɗoon",
+    "hoveredRiskMany": "Caɗeele ɓoggol joɗnaaɗo: {{risk}} nokkuuje jaaldugol ɗoon e ɗoon",
+    "immediateWins": "Nokkuuje jaaldugol ɗoon e ɗoon",
+    "latestRisk": "Caɗeele cuɓol cakkitiiɗe",
+    "riskOneAI": "Caɗeele ɓoggol cuɓangol AI: {{risk}} nokku jaaldugol ɗoon e ɗoon",
+    "riskManyAI": "Caɗeele ɓoggol cuɓangol AI: {{risk}} nokkuuje jaaldugol ɗoon e ɗoon",
+    "riskTurnedOff": "Caɗeele cuɓol ñifaama",
+    "riskUnavailableAI": "Caɗeele cuɓol heɓotaako e mbaydi AI e AI",
+    "selectionRisk": "Caɗeele cuɓol",
+    "turnRiskOff": "Ñif caɗeele cuɓol",
+    "turnRiskOn": "Hurmim caɗeele cuɓol"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ɗemngal",
+    "search": "Yiylo ɗemɗe",
+    "empty": "Alaa ɗemɗe yiytaaɗe",
+    "close": "Uddu"
+  }
+}

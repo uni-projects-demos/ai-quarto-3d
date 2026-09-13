@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Šupra ḥadta men",
+    "newGame": "Māʿab ḥadta"
+  },
+  "common": {
+    "on": "PATIḤ",
+    "off": "SAGIR"
+  },
+  "a11y": {
+    "utilityActions": "Qešrē d-app u-liššāna",
+    "viewSource": "Ḥzī mebbuʿa b-GitHub",
+    "gameControls": "Puqdanē d-māʿab",
+    "gameBoard": "Luḥa d-māʿab 3D",
+    "gameInfo": "Yedʿa d-māʿab"
+  },
+  "controls": {
+    "diffAI": "Qašya AI",
+    "diffPlayerOneAI": "Qašya P1",
+    "diffPlayerTwoAI": "Qašya P2",
+    "startingPlayer": "Māʿab qadmāya",
+    "gameMode": "Ṭaqsa d-māʿab",
+    "pauseAI": "Šabbēq AI",
+    "resumeAI": "Ašlem AI",
+    "undo": "Hadar",
+    "redo": "ʿBed tub"
+  },
+  "diff": {
+    "easy": "Pšīq",
+    "medium": "Meṣʿa",
+    "hard": "Qašya"
+  },
+  "mode": {
+    "userVsUser": "Maštammeš l-qbal maštammeš",
+    "userVsAI": "Maštammeš l-qbal AI",
+    "onlyAI": "AI l-qbal AI"
+  },
+  "player": {
+    "playerYou": "Ant",
+    "playerOne": "Māʿab ḥad",
+    "playerTwo": "Māʿab trēn",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "B-gadda",
+    "playerAIPlayer": "Māʿab AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Qyāma d-māʿab...",
+    "pausedAI": "{{player}} šbīq...",
+    "placingAI": "{{player}} māʿab - sām mana ʿal luḥa...",
+    "placingUser": "{{player}} māʿab - sīm mana gbīta ʿal luḥa...",
+    "placeUserYou": "Ant māʿab - sīm mana gbīta ʿal luḥa...",
+    "gameDrawn": "Māʿab šwē - lā šurṭa d-zākūta",
+    "gameWon": "{{player}} zākē - šurṭa d-zākūta metḥazzē",
+    "selectingAI": "{{player}} māʿab - gābē mana l-{{opponent}}...",
+    "selectUser": "{{player}} māʿab - gabī mana l-{{opponent}}...",
+    "selectUserYou": "Ant māʿab - gabī mana l-{{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Mana b-māʿab",
+    "none": "Lā meddem gbē",
+    "traits": "Sīmāt mana",
+    "black": "ukāma",
+    "red": "sumāqa",
+    "big": "rabba",
+    "small": "zʿora",
+    "round": "ʿgīla",
+    "square": "mrabbaʿa",
+    "solid": "qašya",
+    "hollow": "ḥlīla"
+  },
+  "board": {
+    "binary": "Luḥa trēn",
+    "piecesPlaced": "Manē simīn",
+    "cellEmpty": "Bēta {{cell}}: srīq",
+    "cellPiece": "Bēta {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Ḥzāta 3D lā itkayyem.",
+    "webglHeading": "WebGL lā eštaqel.",
+    "webglMsg": "Māʿab bāʿē WebGL patiḥ b-browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Sīm cursor ʿal mana d-metgabyā l-meḥzē sakkanā",
+    "hoveredRiskOne": "Sakkanā d-mana taḥt cursor: {{risk}} dukta d-zākūta meḥda",
+    "hoveredRiskMany": "Sakkanā d-mana taḥt cursor: {{risk}} dukkāt d-zākūta meḥda",
+    "immediateWins": "Dukkāt d-zākūta meḥda",
+    "latestRisk": "Sakkanā aḥrāyā",
+    "riskOneAI": "Sakkanā d-mana d-AI gbā: {{risk}} dukta d-zākūta meḥda",
+    "riskManyAI": "Sakkanā d-mana d-AI gbā: {{risk}} dukkāt d-zākūta meḥda",
+    "riskTurnedOff": "Sakkanā d-gbāyā sagir",
+    "riskUnavailableAI": "Sakkanā d-gbāyā layt b-AI l-qbal AI",
+    "selectionRisk": "Sakkanā d-gbāyā",
+    "turnRiskOff": "Segor sakkanā",
+    "turnRiskOn": "Ptaḥ sakkanā"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Liššāna",
+    "search": "Baʿi liššānin",
+    "empty": "Lā eštaḵaḥ liššāna",
+    "close": "Segor"
+  }
+}

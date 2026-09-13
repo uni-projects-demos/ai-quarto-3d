@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interaktivno 3D sučelje društvene igre Quarto koje koristi Three.js i Negamax verziju Minimax algoritma umjetne inteligencije s alfa-beta rezanjem. Igraj igrač protiv igrača, igrač protiv AI-ja i AI protiv AI-ja s lakom, srednjom i teškom AI razinom.",
     "ogDescription": "Interaktivna 3D društvena igra Quarto. Igraj igrač protiv igrača, igrač protiv AI-ja i AI protiv AI-ja s lakom, srednjom i teškom AI razinom."
+  },
+  "language": {
+    "label": "Jezik",
+    "search": "Traži jezike",
+    "empty": "Nijedan jezik nije pronađen",
+    "close": "Zatvori"
   }
 }

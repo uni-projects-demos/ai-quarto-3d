@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Şundan geçirilip kämilleşdirilen",
+    "newGame": "Täze oýun"
+  },
+  "common": {
+    "on": "AÇYK",
+    "off": "ÖÇÜK"
+  },
+  "a11y": {
+    "utilityActions": "Programma baglanyşyklary we dil",
+    "viewSource": "Çeşmäni GitHub-da gör",
+    "gameControls": "Oýun dolandyryşlary",
+    "gameBoard": "3D oýun tagtasy",
+    "gameInfo": "Oýun maglumatlary"
+  },
+  "controls": {
+    "diffAI": "AI kynlygy",
+    "diffPlayerOneAI": "P1 kynlygy",
+    "diffPlayerTwoAI": "P2 kynlygy",
+    "startingPlayer": "Başlaýan oýunçy",
+    "gameMode": "Oýun tertibi",
+    "pauseAI": "AI-ni pauza et",
+    "resumeAI": "AI-ni dowam etdir",
+    "undo": "Yza al",
+    "redo": "Gaýtala"
+  },
+  "diff": {
+    "easy": "Aňsat",
+    "medium": "Orta",
+    "hard": "Kyn"
+  },
+  "mode": {
+    "userVsUser": "Ulanyjy garşy ulanyjy",
+    "userVsAI": "Ulanyjy garşy AI",
+    "onlyAI": "AI garşy AI"
+  },
+  "player": {
+    "playerYou": "Sen",
+    "playerOne": "Birinji oýunçy",
+    "playerTwo": "Ikinji oýunçy",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Tötänleýin",
+    "playerAIPlayer": "AI oýunçy",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Oýun ýagdaýy...",
+    "pausedAI": "{{player}} pauzada...",
+    "placingAI": "{{player}} oýnaýar - bölegi tagta goýýar...",
+    "placingUser": "{{player}} oýnaýar - saýlanan bölegi tagta goý...",
+    "placeUserYou": "Sen oýnaýarsyň - saýlanan bölegi tagta goý...",
+    "gameDrawn": "Oýun deňme-deň - ýeňiş çyzygy ýok",
+    "gameWon": "{{player}} ýeňdi - ýeňiş çyzygy görkezildi",
+    "selectingAI": "{{player}} oýnaýar - {{opponent}} üçin bölek saýlaýar...",
+    "selectUser": "{{player}} oýnaýar - {{opponent}} üçin bölek saýla...",
+    "selectUserYou": "Sen oýnaýarsyň - {{opponent}} üçin bölek saýla..."
+  },
+  "piece": {
+    "inPlay": "Oýundaky bölek",
+    "none": "Hiç zat saýlanmady",
+    "traits": "Bölegiň häsiýetleri",
+    "black": "gara",
+    "red": "gyzyl",
+    "big": "uly",
+    "small": "kiçi",
+    "round": "tegelek",
+    "square": "kwadrat",
+    "solid": "gaty",
+    "hollow": "içi boş"
+  },
+  "board": {
+    "binary": "Binar tagta",
+    "piecesPlaced": "Goýlan bölekler",
+    "cellEmpty": "Öýjük {{cell}}: boş",
+    "cellPiece": "Öýjük {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D şekillendiriş elýeterli däl.",
+    "webglHeading": "WebGL başlap bilmedi.",
+    "webglMsg": "Oýun üçin brauzerde WebGL açyk bolmaly."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Saýlama töwekgelçiligini görmek üçin saýlanyp bilinýän bölegiň üstünde kursory sakla",
+    "hoveredRiskOne": "Kursor astyndaky bölegiň töwekgelçiligi: {{risk}} dessine ýeňiş orny",
+    "hoveredRiskMany": "Kursor astyndaky bölegiň töwekgelçiligi: {{risk}} dessine ýeňiş orunlary",
+    "immediateWins": "Dessine ýeňiş orunlary",
+    "latestRisk": "Soňky saýlama töwekgelçiligi",
+    "riskOneAI": "AI saýlan bölegiň töwekgelçiligi: {{risk}} dessine ýeňiş orny",
+    "riskManyAI": "AI saýlan bölegiň töwekgelçiligi: {{risk}} dessine ýeňiş orunlary",
+    "riskTurnedOff": "Saýlama töwekgelçiligi öçük",
+    "riskUnavailableAI": "AI garşy AI tertibinde saýlama töwekgelçiligi elýeterli däl",
+    "selectionRisk": "Saýlama töwekgelçiligi",
+    "turnRiskOff": "Saýlama töwekgelçiligini öçür",
+    "turnRiskOn": "Saýlama töwekgelçiligini aç"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Dil",
+    "search": "Gözleg dilleri",
+    "empty": "Dil tapylmady",
+    "close": ".apyň"
+  }
+}

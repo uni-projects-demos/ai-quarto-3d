@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Juon kōkāāl eo kar bōk jen",
+    "newGame": "Kajjojo ekāāl"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Link ko an app im kajin",
+    "viewSource": "Lale source ilo GitHub",
+    "gameControls": "Control ko an kajjojo",
+    "gameBoard": "3D board in kajjojo",
+    "gameInfo": "Melele ko an kajjojo"
+  },
+  "controls": {
+    "diffAI": "Ebbōjrak in AI",
+    "diffPlayerOneAI": "Ebbōjrak in P1",
+    "diffPlayerTwoAI": "Ebbōjrak in P2",
+    "startingPlayer": "Rijerbal eo ej jino",
+    "gameMode": "Wāween kajjojo",
+    "pauseAI": "Kakkije AI",
+    "resumeAI": "Kōjparok AI",
+    "undo": "Undo",
+    "redo": "Redo"
+  },
+  "diff": {
+    "easy": "Emman",
+    "medium": "Joelap",
+    "hard": "Epen"
+  },
+  "mode": {
+    "userVsUser": "Ri-jerbal vs ri-jerbal",
+    "userVsAI": "Ri-jerbal vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Kwe",
+    "playerOne": "Rijerbal Juon",
+    "playerTwo": "Rijerbal Ruo",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Jabdewōt",
+    "playerAIPlayer": "Rijerbal AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Wāween kajjojo...",
+    "pausedAI": "{{player}} ej kakkije...",
+    "placingAI": "{{player}} ej kajjojo - ej likūt piece eo ilo board...",
+    "placingUser": "{{player}} ej kajjojo - Likūt piece eo kar kāālōt ilo board...",
+    "placeUserYou": "Kwe ej kajjojo - Likūt piece eo kar kāālōt ilo board...",
+    "gameDrawn": "Kajjojo ej joñan - ejjelok line in win",
+    "gameWon": "{{player}} ej win - line in win eo emōj kalikar",
+    "selectingAI": "{{player}} ej kajjojo - ej kāālōt piece ñan {{opponent}}...",
+    "selectUser": "{{player}} ej kajjojo - Kāālōt piece ñan {{opponent}}...",
+    "selectUserYou": "Kwe ej kajjojo - Kāālōt piece ñan {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Piece ilo kajjojo",
+    "none": "Ejjelok emōj kāālōt",
+    "traits": "Mōttan piece",
+    "black": "kilmej",
+    "red": "bōrā",
+    "big": "elap",
+    "small": "edik",
+    "round": "round",
+    "square": "square",
+    "solid": "solid",
+    "hollow": "hollow"
+  },
+  "board": {
+    "binary": "Binary board",
+    "piecesPlaced": "Piece ko emōj likūt",
+    "cellEmpty": "Cell {{cell}}: ejjelok",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering ejjab jerbal.",
+    "webglHeading": "WebGL ejjab maron jino.",
+    "webglMsg": "Kajjojo ej aikuj WebGL bwe en ON ilo browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Kōjparok mouse ion juon piece emaron kāālōt bwe kwon lale risk in kāālōt",
+    "hoveredRiskOne": "Risk in piece eo mouse ej ion: {{risk}} win placement ilo ien eo",
+    "hoveredRiskMany": "Risk in piece eo mouse ej ion: {{risk}} win placements ilo ien eo",
+    "immediateWins": "Win placements ilo ien eo",
+    "latestRisk": "Risk in kāālōt eo eliktata",
+    "riskOneAI": "Risk in piece eo AI kar kāālōt: {{risk}} win placement ilo ien eo",
+    "riskManyAI": "Risk in piece eo AI kar kāālōt: {{risk}} win placements ilo ien eo",
+    "riskTurnedOff": "Risk in kāālōt ej OFF",
+    "riskUnavailableAI": "Risk in kāālōt ejjab jerbal ilo AI vs AI",
+    "selectionRisk": "Risk in kāālōt",
+    "turnRiskOff": "Kōmman risk in kāālōt OFF",
+    "turnRiskOn": "Kōmman risk in kāālōt ON"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Kajin",
+    "search": "Bukōt kajin ko",
+    "empty": "Ejelok kajin emōj loi",
+    "close": "Kilōk"
+  }
+}

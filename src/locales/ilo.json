@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Maysa a naiyalis a pannakapintas ti",
+    "newGame": "Baro a ay-ayam"
+  },
+  "common": {
+    "on": "NAKA-ON",
+    "off": "NAKA-OFF"
+  },
+  "a11y": {
+    "utilityActions": "Dagiti silpo ti aplikasyon ken pagsasao",
+    "viewSource": "Kitaen ti source iti GitHub",
+    "gameControls": "Dagiti kontrol ti ay-ayam",
+    "gameBoard": "3D a tablero ti ay-ayam",
+    "gameInfo": "Impormasion ti ay-ayam"
+  },
+  "controls": {
+    "diffAI": "Kinarigat ti AI",
+    "diffPlayerOneAI": "Kinarigat ti P1",
+    "diffPlayerTwoAI": "Kinarigat ti P2",
+    "startingPlayer": "Agmula a managay-ayam",
+    "gameMode": "Mode ti ay-ayam",
+    "pauseAI": "Ipause ti AI",
+    "resumeAI": "Ituloy ti AI",
+    "undo": "Ibabawi",
+    "redo": "Aramiden manen"
+  },
+  "diff": {
+    "easy": "Nalaka",
+    "medium": "Kalalainganna",
+    "hard": "Narigat"
+  },
+  "mode": {
+    "userVsUser": "User kontra user",
+    "userVsAI": "User kontra AI",
+    "onlyAI": "AI kontra AI"
+  },
+  "player": {
+    "playerYou": "Sika",
+    "playerOne": "Managay-ayam Maysa",
+    "playerTwo": "Managay-ayam Dua",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Random",
+    "playerAIPlayer": "Managay-ayam nga AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Kasasaad ti ay-ayam...",
+    "pausedAI": "Naka-pause ni {{player}}...",
+    "placingAI": "Agay-ayam ni {{player}} - mangikabil ti piesa iti tablero...",
+    "placingUser": "Agay-ayam ni {{player}} - Ikabil ti napili a piesa iti tablero...",
+    "placeUserYou": "Agay-ayamka - Ikabil ti napili a piesa iti tablero...",
+    "gameDrawn": "Tabla ti ay-ayam - awan ti linia a mangabak",
+    "gameWon": "Nangabak ni {{player}} - naipakita ti linia a mangabak",
+    "selectingAI": "Agay-ayam ni {{player}} - mangpili ti piesa para ken {{opponent}}...",
+    "selectUser": "Agay-ayam ni {{player}} - Mangpili ti piesa para ken {{opponent}}...",
+    "selectUserYou": "Agay-ayamka - Mangpili ti piesa para ken {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Piesa nga adda iti ay-ayam",
+    "none": "Awan ti napili",
+    "traits": "Dagiti kababalin ti piesa",
+    "black": "nangisit",
+    "red": "nalabaga",
+    "big": "dakkel",
+    "small": "bassit",
+    "round": "nakabilog",
+    "square": "kuadrado",
+    "solid": "natibker",
+    "hollow": "addaan abut"
+  },
+  "board": {
+    "binary": "Binary a tablero",
+    "piecesPlaced": "Dagiti naikabil a piesa",
+    "cellEmpty": "Cell {{cell}}: awan laman",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Saan a magun-od ti 3D rendering.",
+    "webglHeading": "Saan a nakarugi ti WebGL.",
+    "webglMsg": "Masapul ti ay-ayam a naka-enable ti WebGL iti browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "I-hover ti mabalin a pilien a piesa tapno makita ti peggad ti panagpili",
+    "hoveredRiskOne": "Pegad ti na-hover a piesa: {{risk}} dagus a winning placement",
+    "hoveredRiskMany": "Pegad ti na-hover a piesa: {{risk}} dagus a winning placements",
+    "immediateWins": "Dagus a winning placements",
+    "latestRisk": "Kabarbaro a peggad ti panagpili",
+    "riskOneAI": "Pegad ti piesa a pinili ti AI: {{risk}} dagus a winning placement",
+    "riskManyAI": "Pegad ti piesa a pinili ti AI: {{risk}} dagus a winning placements",
+    "riskTurnedOff": "Naka-off ti peggad ti panagpili",
+    "riskUnavailableAI": "Saan a magun-od ti peggad ti panagpili iti AI kontra AI mode",
+    "selectionRisk": "Pegad ti panagpili",
+    "turnRiskOff": "I-off ti peggad ti panagpili",
+    "turnRiskOn": "I-on ti peggad ti panagpili"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Pagsasao",
+    "search": "Agbirok kadagiti pagsasao",
+    "empty": "Awan dagiti nasarakan a pagsasao",
+    "close": "Agserra"
+  }
+}

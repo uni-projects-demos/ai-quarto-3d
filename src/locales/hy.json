@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Փոխադրված կատարելագործում՝ հիմնված",
+    "newGame": "Նոր խաղ"
+  },
+  "common": {
+    "on": "ՄԻԱՑՎԱԾ",
+    "off": "ԱՆՋԱՏՎԱԾ"
+  },
+  "a11y": {
+    "utilityActions": "Հավելվածի հղումներ և լեզու",
+    "viewSource": "Դիտել սկզբնաղբյուրը GitHub-ում",
+    "gameControls": "Խաղի կառավարում",
+    "gameBoard": "3D խաղատախտակ",
+    "gameInfo": "Խաղի տեղեկություններ"
+  },
+  "controls": {
+    "diffAI": "AI-ի դժվարություն",
+    "diffPlayerOneAI": "P1-ի դժվարություն",
+    "diffPlayerTwoAI": "P2-ի դժվարություն",
+    "startingPlayer": "Սկսող խաղացող",
+    "gameMode": "Խաղի ռեժիմ",
+    "pauseAI": "Դադարեցնել AI-ը",
+    "resumeAI": "Շարունակել AI-ը",
+    "undo": "Հետարկել",
+    "redo": "Կրկնել"
+  },
+  "diff": {
+    "easy": "Հեշտ",
+    "medium": "Միջին",
+    "hard": "Դժվար"
+  },
+  "mode": {
+    "userVsUser": "Օգտատեր ընդդեմ օգտատիրոջ",
+    "userVsAI": "Օգտատեր ընդդեմ AI-ի",
+    "onlyAI": "AI ընդդեմ AI-ի"
+  },
+  "player": {
+    "playerYou": "Դուք",
+    "playerOne": "Խաղացող Մեկ",
+    "playerTwo": "Խաղացող Երկու",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Պատահական",
+    "playerAIPlayer": "AI խաղացող",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Խաղի վիճակ...",
+    "pausedAI": "{{player}}-ը դադարեցված է...",
+    "placingAI": "{{player}}-ը խաղում է՝ խաղաքարը տեղադրելով տախտակին...",
+    "placingUser": "{{player}}-ը խաղում է՝ տեղադրեք ընտրված խաղաքարը տախտակին...",
+    "placeUserYou": "Դուք խաղում եք՝ տեղադրեք ընտրված խաղաքարը տախտակին...",
+    "gameDrawn": "Ոչ-ոքի՝ հաղթական գիծ չկա",
+    "gameWon": "{{player}}-ը հաղթեց՝ հաղթական գիծը ընդգծված է",
+    "selectingAI": "{{player}}-ը խաղում է՝ ընտրելով խաղաքար {{opponent}}-ի համար...",
+    "selectUser": "{{player}}-ը խաղում է՝ ընտրեք խաղաքար {{opponent}}-ի համար...",
+    "selectUserYou": "Դուք խաղում եք՝ ընտրեք խաղաքար {{opponent}}-ի համար..."
+  },
+  "piece": {
+    "inPlay": "Խաղաքարը խաղի մեջ է",
+    "none": "Ոչինչ ընտրված չէ",
+    "traits": "Խաղաքարի հատկանիշներ",
+    "black": "սև",
+    "red": "կարմիր",
+    "big": "մեծ",
+    "small": "փոքր",
+    "round": "կլոր",
+    "square": "քառակուսի",
+    "solid": "լի",
+    "hollow": "խոռոչ"
+  },
+  "board": {
+    "binary": "Երկուական տախտակ",
+    "piecesPlaced": "Տեղադրված խաղաքարեր",
+    "cellEmpty": "Վանդակ {{cell}}՝ դատարկ",
+    "cellPiece": "Վանդակ {{cell}}՝ {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D պատկերումը հասանելի չէ։",
+    "webglHeading": "WebGL-ը չկարողացավ գործարկվել։",
+    "webglMsg": "Խաղի համար անհրաժեշտ է, որ WebGL-ը միացված լինի զննարկիչում։"
+  },
+  "metrics": {
+    "hoverRiskPreview": "Սլաքը պահեք ընտրելի խաղաքարի վրա՝ ընտրության ռիսկը տեսնելու համար",
+    "hoveredRiskOne": "Սլաքի տակ գտնվող խաղաքարի ռիսկ՝ {{risk}} անմիջապես հաղթող տեղադրում",
+    "hoveredRiskMany": "Սլաքի տակ գտնվող խաղաքարի ռիսկ՝ {{risk}} անմիջապես հաղթող տեղադրումներ",
+    "immediateWins": "Անմիջապես հաղթող տեղադրումներ",
+    "latestRisk": "Վերջին ընտրության ռիսկ",
+    "riskOneAI": "AI-ի ընտրած խաղաքարի ռիսկ՝ {{risk}} անմիջապես հաղթող տեղադրում",
+    "riskManyAI": "AI-ի ընտրած խաղաքարի ռիսկ՝ {{risk}} անմիջապես հաղթող տեղադրումներ",
+    "riskTurnedOff": "Ընտրության ռիսկն անջատված է",
+    "riskUnavailableAI": "Ընտրության ռիսկը հասանելի չէ AI ընդդեմ AI ռեժիմում",
+    "selectionRisk": "Ընտրության ռիսկ",
+    "turnRiskOff": "Անջատել ընտրության ռիսկը",
+    "turnRiskOn": "Միացնել ընտրության ռիսկը"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Լեզու",
+    "search": "Լեզուների որոնում",
+    "empty": "Լեզուներ չեն գտնվել",
+    "close": "Փակել"
+  }
+}

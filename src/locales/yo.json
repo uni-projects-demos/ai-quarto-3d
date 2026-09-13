@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Ojú-iṣẹ́ ere pátákó Quarto 3D tó ń báni ṣiṣẹ́, tó ń lo Three.js àti ẹ̀yà Negamax ti algoridimu ọgbọ́n atọwọda Minimax pẹ̀lú gígé alpha-beta. Ṣeré olùlò lòdì sí olùlò, olùlò lòdì sí AI àti AI lòdì sí AI, pẹ̀lú AI rọrùn, àárín àti líle.",
     "ogDescription": "Ere pátákó Quarto 3D tó ń báni ṣiṣẹ́. Ṣeré olùlò lòdì sí olùlò, olùlò lòdì sí AI àti AI lòdì sí AI, pẹ̀lú AI rọrùn, àárín àti líle."
+  },
+  "language": {
+    "label": "Ede",
+    "search": "Wa awọn ede",
+    "empty": "Ko si awọn ede ti a rii",
+    "close": "Sunmọ"
   }
 }

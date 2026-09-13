@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ein euvergezatte verbetering vaan",
+    "newGame": "Nuuj sjpel"
+  },
+  "common": {
+    "on": "AAN",
+    "off": "OET"
+  },
+  "a11y": {
+    "utilityActions": "App-links en taal",
+    "viewSource": "Bron bekieke op GitHub",
+    "gameControls": "Sjpelbediening",
+    "gameBoard": "3D-sjpelbord",
+    "gameInfo": "Sjpelinformaatsie"
+  },
+  "controls": {
+    "diffAI": "AI-moeilikheid",
+    "diffPlayerOneAI": "P1-moeilikheid",
+    "diffPlayerTwoAI": "P2-moeilikheid",
+    "startingPlayer": "Sjpeuler dae begint",
+    "gameMode": "Sjpelmodus",
+    "pauseAI": "AI pauzjere",
+    "resumeAI": "AI doorgoon",
+    "undo": "Ongedoon make",
+    "redo": "Opnuuj doon"
+  },
+  "diff": {
+    "easy": "Gemekkelik",
+    "medium": "Middel",
+    "hard": "Moeilik"
+  },
+  "mode": {
+    "userVsUser": "Gebroeker tege gebroeker",
+    "userVsAI": "Gebroeker tege AI",
+    "onlyAI": "AI tege AI"
+  },
+  "player": {
+    "playerYou": "Doe",
+    "playerOne": "Sjpeuler Eine",
+    "playerTwo": "Sjpeuler Twee",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Willekeurig",
+    "playerAIPlayer": "AI-sjpeuler",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Sjpelstatus...",
+    "pausedAI": "{{player}} is gepauzeerd...",
+    "placingAI": "{{player}} sjpeult - zet 'n sjtök op 't bord...",
+    "placingUser": "{{player}} sjpeult - Zet 't gekaoze sjtök op 't bord...",
+    "placeUserYou": "Doe sjpeuls - Zet 't gekaoze sjtök op 't bord...",
+    "gameDrawn": "Gliek sjpel - gein winnende lien",
+    "gameWon": "{{player}} wint - winnende lien gemarkeerd",
+    "selectingAI": "{{player}} sjpeult - keus 'n sjtök veur {{opponent}}...",
+    "selectUser": "{{player}} sjpeult - Keus 'n sjtök veur {{opponent}}...",
+    "selectUserYou": "Doe sjpeuls - Keus 'n sjtök veur {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Sjtök in 't sjpel",
+    "none": "Niks gekaoze",
+    "traits": "Eigeschappe vaan 't sjtök",
+    "black": "zwart",
+    "red": "roed",
+    "big": "groet",
+    "small": "klein",
+    "round": "rond",
+    "square": "veerkant",
+    "solid": "vol",
+    "hollow": "hol"
+  },
+  "board": {
+    "binary": "Binair bord",
+    "piecesPlaced": "Gezatte sjtökke",
+    "cellEmpty": "Vak {{cell}}: laeg",
+    "cellPiece": "Vak {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D-rendering is neet besjikbaar.",
+    "webglHeading": "WebGL kos neet starte.",
+    "webglMsg": "'t Sjpel hèèt WebGL neudig, ingesjakeld in de browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Hou de moes euver 'n kiesbaar sjtök veur 't keuzerisico te bekieke",
+    "hoveredRiskOne": "Risico van 't sjtök ónger de moes: {{risk}} direk winnende plaotsing",
+    "hoveredRiskMany": "Risico van 't sjtök ónger de moes: {{risk}} direk winnende plaotsinge",
+    "immediateWins": "Direk winnende plaotsinge",
+    "latestRisk": "Lètste keuzerisico",
+    "riskOneAI": "Risico van 't door AI gekaoze sjtök: {{risk}} direk winnende plaotsing",
+    "riskManyAI": "Risico van 't door AI gekaoze sjtök: {{risk}} direk winnende plaotsinge",
+    "riskTurnedOff": "Keuzerisico is oetgesjakeld",
+    "riskUnavailableAI": "Keuzerisico neet besjikbaar in AI tege AI-modus",
+    "selectionRisk": "Keuzerisico",
+    "turnRiskOff": "Keuzerisico oetsjakele",
+    "turnRiskOn": "Keuzerisico insjakele"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Taal",
+    "search": "Tale zeuke",
+    "empty": "Gein tale gevónje",
+    "close": "Sjloete"
+  }
+}

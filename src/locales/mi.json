@@ -99,5 +99,11 @@
   "metadata": {
     "description": "He atanga pāhekoheko mō te kēmu papa Quarto Ahu-3 e whakamahi ana i a Three.js me te putanga Negamax o te hātepe atamai horihori Minimax me te tapahi alpha-beta. Tākaro kaiwhakamahi ki te kaiwhakamahi, kaiwhakamahi ki te AI, me te AI ki AI, me ngā taumata uaua māmā, waenga, uaua hoki.",
     "ogDescription": "He kēmu papa Quarto Ahu-3 pāhekoheko. Tākaro kaiwhakamahi ki te kaiwhakamahi, kaiwhakamahi ki te AI, me te AI ki AI, me ngā taumata uaua māmā, waenga, uaua hoki."
+  },
+  "language": {
+    "label": "Reo",
+    "search": "Rapu reo",
+    "empty": "Karekau he reo i kitea",
+    "close": "Katia"
   }
 }

@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Rhyngwyneb 3D rhyngweithiol ar gyfer gêm fwrdd Quarto gan ddefnyddio Three.js a fersiwn Negamax o algorithm deallusrwydd artiffisial Minimax gyda thocio alffa-beta. Chwaraewch ddefnyddiwr yn erbyn defnyddiwr, defnyddiwr yn erbyn AI ac AI yn erbyn AI, gyda lefelau AI hawdd, canolig ac anodd.",
     "ogDescription": "Gêm fwrdd Quarto 3D ryngweithiol. Chwaraewch ddefnyddiwr yn erbyn defnyddiwr, defnyddiwr yn erbyn AI ac AI yn erbyn AI, gyda lefelau AI hawdd, canolig ac anodd."
+  },
+  "language": {
+    "label": "Iaith",
+    "search": "Chwilio ieithoedd",
+    "empty": "Heb ganfod ieithoedd",
+    "close": "Cau"
   }
 }

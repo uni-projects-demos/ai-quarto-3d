@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ku antswisiwa loku rhurhisiweke ku suka",
+    "newGame": "Ntlangu lowuntshwa"
+  },
+  "common": {
+    "on": "PFURIWE",
+    "off": "TIMIWE"
+  },
+  "a11y": {
+    "utilityActions": "Swihlanganisi swa app ni ririmi",
+    "viewSource": "Vona xihlovo eka GitHub",
+    "gameControls": "Swilawuri swa ntlangu",
+    "gameBoard": "Bodo ya ntlangu ya 3D",
+    "gameInfo": "Vuxokoxoko bya ntlangu"
+  },
+  "controls": {
+    "diffAI": "Ku tika ka AI",
+    "diffPlayerOneAI": "Ku tika ka P1",
+    "diffPlayerTwoAI": "Ku tika ka P2",
+    "startingPlayer": "Mutlangi loyi a sungulaka",
+    "gameMode": "Muxaka wa ntlangu",
+    "pauseAI": "Yimisa AI",
+    "resumeAI": "Yisa AI emakumu",
+    "undo": "Tlherisela",
+    "redo": "Endla nakambe"
+  },
+  "diff": {
+    "easy": "Olova",
+    "medium": "Exikari",
+    "hard": "Tika"
+  },
+  "mode": {
+    "userVsUser": "Mutirhisi na mutirhisi",
+    "userVsAI": "Mutirhisi na AI",
+    "onlyAI": "AI na AI"
+  },
+  "player": {
+    "playerYou": "Wena",
+    "playerOne": "Mutlangi Wo Sungula",
+    "playerTwo": "Mutlangi Wa Vumbirhi",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Hi xitshuketa",
+    "playerAIPlayer": "Mutlangi wa AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Xiyimo xa ntlangu...",
+    "pausedAI": "{{player}} u yimisiwile...",
+    "placingAI": "{{player}} wa tlanga - u veka xiphemu ebodweni...",
+    "placingUser": "{{player}} wa tlanga - veka xiphemu lexi hlawuriweke ebodweni...",
+    "placeUserYou": "Wa tlanga - veka xiphemu lexi hlawuriweke ebodweni...",
+    "gameDrawn": "Ntlangu wu ringana - ku hava layini yo hlula",
+    "gameWon": "{{player}} u hlurile - layini yo hlula yi kombisiwile",
+    "selectingAI": "{{player}} wa tlanga - u hlawulela {{opponent}} xiphemu...",
+    "selectUser": "{{player}} wa tlanga - hlawulela {{opponent}} xiphemu...",
+    "selectUserYou": "Wa tlanga - hlawulela {{opponent}} xiphemu..."
+  },
+  "piece": {
+    "inPlay": "Xiphemu lexi nga entlangwini",
+    "none": "Ku hava lexi hlawuriweke",
+    "traits": "Swihlawulekisi swa xiphemu",
+    "black": "ntima",
+    "red": "tshwuka",
+    "big": "kulu",
+    "small": "ntsongo",
+    "round": "rhendzeleka",
+    "square": "xikwere",
+    "solid": "tiya",
+    "hollow": "hava endzeni"
+  },
+  "board": {
+    "binary": "Bodo ya binary",
+    "piecesPlaced": "Swiphemu leswi vekiweke",
+    "cellEmpty": "Sele {{cell}}: hava",
+    "cellPiece": "Sele {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Ku kombisiwa ka 3D a ku kumeki.",
+    "webglHeading": "WebGL a yi swi kotanga ku sungula.",
+    "webglMsg": "Ntlangu wu lava WebGL yi pfuriwile eka browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Veka cursor ehenhla ka xiphemu lexi hlawulekaka ku vona khombo ra ku hlawula",
+    "hoveredRiskOne": "Khombo ra xiphemu lexi nga ehansi ka cursor: {{risk}} ndhawu yo hlula hi ku hatlisa",
+    "hoveredRiskMany": "Khombo ra xiphemu lexi nga ehansi ka cursor: {{risk}} tindhawu to hlula hi ku hatlisa",
+    "immediateWins": "Tindhawu to hlula hi ku hatlisa",
+    "latestRisk": "Khombo ra sweswinyana ra ku hlawula",
+    "riskOneAI": "Khombo ra xiphemu lexi hlawuriweke hi AI: {{risk}} ndhawu yo hlula hi ku hatlisa",
+    "riskManyAI": "Khombo ra xiphemu lexi hlawuriweke hi AI: {{risk}} tindhawu to hlula hi ku hatlisa",
+    "riskTurnedOff": "Khombo ra ku hlawula ri timiwile",
+    "riskUnavailableAI": "Khombo ra ku hlawula a ri kumeki eka AI na AI",
+    "selectionRisk": "Khombo ra ku hlawula",
+    "turnRiskOff": "Tima khombo ra ku hlawula",
+    "turnRiskOn": "Pfula khombo ra ku hlawula"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ririmi",
+    "search": "Ku lavisisa tindzimi",
+    "empty": "Ku hava tindzimi leti kumiweke",
+    "close": "Pfala"
+  }
+}

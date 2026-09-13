@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interfaċċa interattiva 3D tal-logħba tal-bord Quarto li tuża Three.js u l-verżjoni Negamax tal-algoritmu ta’ intelliġenza artifiċjali Minimax b’qtugħ alfa-beta. Ilgħab utent kontra utent, utent kontra AI u AI kontra AI, b’AI faċli, medja u diffiċli.",
     "ogDescription": "Logħba interattiva 3D tal-bord Quarto. Ilgħab utent kontra utent, utent kontra AI u AI kontra AI, b’AI faċli, medja u diffiċli."
+  },
+  "language": {
+    "label": "Lingwa",
+    "search": "Fittex lingwi",
+    "empty": "Ma nstabet l-ebda lingwa",
+    "close": "Agħlaq"
   }
 }

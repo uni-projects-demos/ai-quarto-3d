@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Antaŋ köçürülmiş edgüleme",
+    "newGame": "Yaŋï oyun"
+  },
+  "common": {
+    "on": "AÇUQ",
+    "off": "YAPUQ"
+  },
+  "a11y": {
+    "utilityActions": "App bağları birle til",
+    "viewSource": "GitHub-ta tüpni kör",
+    "gameControls": "Oyun başqaruğı",
+    "gameBoard": "3D oyun taxtası",
+    "gameInfo": "Oyun bilgisi"
+  },
+  "controls": {
+    "diffAI": "AI qıyınlığı",
+    "diffPlayerOneAI": "P1 qıyınlığı",
+    "diffPlayerTwoAI": "P2 qıyınlığı",
+    "startingPlayer": "Başlayur oyunçı",
+    "gameMode": "Oyun törü",
+    "pauseAI": "AI-ni toqtat",
+    "resumeAI": "AI-ni ilgerü tut",
+    "undo": "Keri al",
+    "redo": "Yana qıl"
+  },
+  "diff": {
+    "easy": "Oŋay",
+    "medium": "Orta",
+    "hard": "Qıyın"
+  },
+  "mode": {
+    "userVsUser": "İşletigçi qarşı işletigçi",
+    "userVsAI": "İşletigçi qarşı AI",
+    "onlyAI": "AI qarşı AI"
+  },
+  "player": {
+    "playerYou": "Sen",
+    "playerOne": "Oyunçı Bir",
+    "playerTwo": "Oyunçı Eki",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Uğraşıq",
+    "playerAIPlayer": "AI oyunçı",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Oyun turu...",
+    "pausedAI": "{{player}} toqtadı...",
+    "placingAI": "{{player}} oynayur - tašnı taxta üzä qoyur...",
+    "placingUser": "{{player}} oynayur - seçilmiş tašnı taxta üzä qoy...",
+    "placeUserYou": "Sen oynayursen - seçilmiş tašnı taxta üzä qoy...",
+    "gameDrawn": "Oyun teŋ - utuş çizigi yoq",
+    "gameWon": "{{player}} uttı - utuş çizigi belgülendi",
+    "selectingAI": "{{player}} oynayur - {{opponent}} üçün taş seçer...",
+    "selectUser": "{{player}} oynayur - {{opponent}} üçün taş seç...",
+    "selectUserYou": "Sen oynayursen - {{opponent}} üçün taş seç..."
+  },
+  "piece": {
+    "inPlay": "Oyundakı taş",
+    "none": "Neng seçilmadi",
+    "traits": "Taş belgüleri",
+    "black": "qara",
+    "red": "qızıl",
+    "big": "uluğ",
+    "small": "kiçig",
+    "round": "tegrek",
+    "square": "tört bucaqlı",
+    "solid": "qatı",
+    "hollow": "boş içli"
+  },
+  "board": {
+    "binary": "İkilik taxta",
+    "piecesPlaced": "Qoyulmış taşlar",
+    "cellEmpty": "Uy {{cell}}: boş",
+    "cellPiece": "Uy {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D körgüzme yoq.",
+    "webglHeading": "WebGL başlaya almadı.",
+    "webglMsg": "Oyun browser içrä WebGL açuq bolmağın tileyür."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Seçim xatarını körgeli seçilür taş üzä cursor tut",
+    "hoveredRiskOne": "Cursor astındağı taş xatarı: {{risk}} tez utuş ornı",
+    "hoveredRiskMany": "Cursor astındağı taş xatarı: {{risk}} tez utuş ornları",
+    "immediateWins": "Tez utuş ornları",
+    "latestRisk": "Soŋ seçim xatarı",
+    "riskOneAI": "AI seçmiş taş xatarı: {{risk}} tez utuş ornı",
+    "riskManyAI": "AI seçmiş taş xatarı: {{risk}} tez utuş ornları",
+    "riskTurnedOff": "Seçim xatarı yapuq",
+    "riskUnavailableAI": "AI qarşı AI töründe seçim xatarı yoq",
+    "selectionRisk": "Seçim xatarı",
+    "turnRiskOff": "Seçim xatarını yap",
+    "turnRiskOn": "Seçim xatarını aç"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Til",
+    "search": "Tiller iste",
+    "empty": "Til bulunmadï",
+    "close": "Qap"
+  }
+}

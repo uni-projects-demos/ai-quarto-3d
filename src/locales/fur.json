@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Un miorament puartât di",
+    "newGame": "Gnûf zûc"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Leams de aplicazion e lenghe",
+    "viewSource": "Viôt il codiç su GitHub",
+    "gameControls": "Controi dal zûc",
+    "gameBoard": "Tablier 3D",
+    "gameInfo": "Informazions dal zûc"
+  },
+  "controls": {
+    "diffAI": "Dificoltât AI",
+    "diffPlayerOneAI": "Dificoltât P1",
+    "diffPlayerTwoAI": "Dificoltât P2",
+    "startingPlayer": "Zuiadôr che al scomence",
+    "gameMode": "Modalitât di zûc",
+    "pauseAI": "Met in pause AI",
+    "resumeAI": "Torne a inviâ AI",
+    "undo": "Disfe",
+    "redo": "Torne a fâ"
+  },
+  "diff": {
+    "easy": "Facil",
+    "medium": "Medi",
+    "hard": "Dificil"
+  },
+  "mode": {
+    "userVsUser": "Utent cuintri utent",
+    "userVsAI": "Utent cuintri AI",
+    "onlyAI": "AI cuintri AI"
+  },
+  "player": {
+    "playerYou": "Tu",
+    "playerOne": "Zuiadôr Un",
+    "playerTwo": "Zuiadôr Doi",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Casuâl",
+    "playerAIPlayer": "Zuiadôr AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Stât dal zûc...",
+    "pausedAI": "{{player}} al è in pause...",
+    "placingAI": "{{player}} al zuie - al met il toc sul tablier...",
+    "placingUser": "{{player}} al zuie - Met il toc selezionât sul tablier...",
+    "placeUserYou": "Tu tu stâs zuiant - Met il toc selezionât sul tablier...",
+    "gameDrawn": "Patade - nissune rie di vitorie",
+    "gameWon": "{{player}} al vinç - rie di vitorie evidenziade",
+    "selectingAI": "{{player}} al zuie - al selezione un toc par {{opponent}}...",
+    "selectUser": "{{player}} al zuie - Selezione un toc par {{opponent}}...",
+    "selectUserYou": "Tu tu stâs zuiant - Selezione un toc par {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Toc in zûc",
+    "none": "Nissun selezionât",
+    "traits": "Carateristichis dal toc",
+    "black": "neri",
+    "red": "ros",
+    "big": "grant",
+    "small": "piçul",
+    "round": "tond",
+    "square": "cuadrât",
+    "solid": "plen",
+    "hollow": "vueit"
+  },
+  "board": {
+    "binary": "Tablier binari",
+    "piecesPlaced": "Tocs metûts",
+    "cellEmpty": "Casele {{cell}}: vueide",
+    "cellPiece": "Casele {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "La visualizazion 3D no je disponibile.",
+    "webglHeading": "WebGL nol pues inviâsi.",
+    "webglMsg": "Il zûc al à bisugne che WebGL al sedi abilitât tal navigadôr."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Passe sore un toc selezionabil par viodi il riscli de selezion",
+    "hoveredRiskOne": "Riscli dal toc sot dal cursôr: {{risk}} colocazion vincente imediade",
+    "hoveredRiskMany": "Riscli dal toc sot dal cursôr: {{risk}} colocazions vincentis imediatis",
+    "immediateWins": "Colocazions vincentis imediatis",
+    "latestRisk": "Ultin riscli di selezion",
+    "riskOneAI": "Riscli dal toc selezionât de AI: {{risk}} colocazion vincente imediade",
+    "riskManyAI": "Riscli dal toc selezionât de AI: {{risk}} colocazions vincentis imediatis",
+    "riskTurnedOff": "Il riscli di selezion al è disativât",
+    "riskUnavailableAI": "Riscli di selezion no disponibil in modalitât AI cuintri AI",
+    "selectionRisk": "Riscli di selezion",
+    "turnRiskOff": "Disative riscli di selezion",
+    "turnRiskOn": "Ative riscli di selezion"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lenghe",
+    "search": "Cîr lenghis",
+    "empty": "Nissune lenghe cjatade",
+    "close": "Siere"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Inyongera yimuwe iva kuri",
+    "newGame": "Umukino mushya"
+  },
+  "common": {
+    "on": "BIRAFUNGUYE",
+    "off": "BIRAFUNZE"
+  },
+  "a11y": {
+    "utilityActions": "Amahuza ya porogaramu n'ururimi",
+    "viewSource": "Reba inkomoko kuri GitHub",
+    "gameControls": "Igenzura ry'umukino",
+    "gameBoard": "Ikibaho cy'umukino cya 3D",
+    "gameInfo": "Amakuru y'umukino"
+  },
+  "controls": {
+    "diffAI": "Urwego rwa AI",
+    "diffPlayerOneAI": "Urwego rwa P1",
+    "diffPlayerTwoAI": "Urwego rwa P2",
+    "startingPlayer": "Umukinnyi utangira",
+    "gameMode": "Uburyo bw'umukino",
+    "pauseAI": "Hagarika AI",
+    "resumeAI": "Komeza AI",
+    "undo": "Subiza inyuma",
+    "redo": "Subiramo"
+  },
+  "diff": {
+    "easy": "Byoroshye",
+    "medium": "Hagati",
+    "hard": "Bigoye"
+  },
+  "mode": {
+    "userVsUser": "Umukoresha na umukoresha",
+    "userVsAI": "Umukoresha na AI",
+    "onlyAI": "AI na AI"
+  },
+  "player": {
+    "playerYou": "Wowe",
+    "playerOne": "Umukinnyi wa mbere",
+    "playerTwo": "Umukinnyi wa kabiri",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Bitunguranye",
+    "playerAIPlayer": "Umukinnyi AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Imiterere y'umukino...",
+    "pausedAI": "{{player}} arahagaritswe...",
+    "placingAI": "{{player}} arakina - ashyira agace ku kibaho...",
+    "placingUser": "{{player}} arakina - shyira agace wahisemo ku kibaho...",
+    "placeUserYou": "Urakina - shyira agace wahisemo ku kibaho...",
+    "gameDrawn": "Umukino urangiye binganya - nta murongo utsinda",
+    "gameWon": "{{player}} aratsinze - umurongo utsinda wagaragajwe",
+    "selectingAI": "{{player}} arakina - ahitiramo {{opponent}} agace...",
+    "selectUser": "{{player}} arakina - hitiramo {{opponent}} agace...",
+    "selectUserYou": "Urakina - hitiramo {{opponent}} agace..."
+  },
+  "piece": {
+    "inPlay": "Agace kari mu mukino",
+    "none": "Nta cyahiswemo",
+    "traits": "Ibiranga agace",
+    "black": "umukara",
+    "red": "umutuku",
+    "big": "kinini",
+    "small": "gito",
+    "round": "kizengurutse",
+    "square": "kare",
+    "solid": "gikomeye",
+    "hollow": "gifite umwobo"
+  },
+  "board": {
+    "binary": "Ikibaho cya binary",
+    "piecesPlaced": "Uduce twashyizwe",
+    "cellEmpty": "Akazu {{cell}}: karimo ubusa",
+    "cellPiece": "Akazu {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Kwerekana 3D ntibihari.",
+    "webglHeading": "WebGL ntiyashoboye gutangira.",
+    "webglMsg": "Umukino usaba ko WebGL iba ifunguye muri mushakisha."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Shyira imbeba ku gace gashobora guhitamo kugira urebe ibyago byo kugahitamo",
+    "hoveredRiskOne": "Ibyago by'agace kari munsi y'imbeba: {{risk}} ahantu ho gutsinda ako kanya",
+    "hoveredRiskMany": "Ibyago by'agace kari munsi y'imbeba: {{risk}} ahantu ho gutsinda ako kanya",
+    "immediateWins": "Ahantu ho gutsinda ako kanya",
+    "latestRisk": "Ibyago bya nyuma byo guhitamo",
+    "riskOneAI": "Ibyago by'agace kahiswemo na AI: {{risk}} ahantu ho gutsinda ako kanya",
+    "riskManyAI": "Ibyago by'agace kahiswemo na AI: {{risk}} ahantu ho gutsinda ako kanya",
+    "riskTurnedOff": "Ibyago byo guhitamo byazimijwe",
+    "riskUnavailableAI": "Ibyago byo guhitamo ntibihari mu buryo AI na AI",
+    "selectionRisk": "Ibyago byo guhitamo",
+    "turnRiskOff": "Zimya ibyago byo guhitamo",
+    "turnRiskOn": "Fungura ibyago byo guhitamo"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ururimi",
+    "search": "Shakisha indimi",
+    "empty": "Nta ndimi zabonetse",
+    "close": "Funga"
+  }
+}

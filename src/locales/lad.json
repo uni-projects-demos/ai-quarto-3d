@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Una mijorasion portada de",
+    "newGame": "Muevo djuego"
+  },
+  "common": {
+    "on": "ENDJENDIDO",
+    "off": "APAGADO"
+  },
+  "a11y": {
+    "utilityActions": "Enlaces de la aplikasion i lingua",
+    "viewSource": "Ver el codigo fuente en GitHub",
+    "gameControls": "Kontroles del djuego",
+    "gameBoard": "Tabla de djuego 3D",
+    "gameInfo": "Informasion del djuego"
+  },
+  "controls": {
+    "diffAI": "Difikultad de AI",
+    "diffPlayerOneAI": "Difikultad P1",
+    "diffPlayerTwoAI": "Difikultad P2",
+    "startingPlayer": "Djigador ke empesa",
+    "gameMode": "Modo de djuego",
+    "pauseAI": "Pauzar AI",
+    "resumeAI": "Kontinuar AI",
+    "undo": "Desazer",
+    "redo": "Refazer"
+  },
+  "diff": {
+    "easy": "Fasil",
+    "medium": "Medio",
+    "hard": "Difikil"
+  },
+  "mode": {
+    "userVsUser": "Uzador kontra uzador",
+    "userVsAI": "Uzador kontra AI",
+    "onlyAI": "AI kontra AI"
+  },
+  "player": {
+    "playerYou": "Tu",
+    "playerOne": "Djigador Uno",
+    "playerTwo": "Djigador Dos",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Al azaro",
+    "playerAIPlayer": "Djigador AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Estado del djuego...",
+    "pausedAI": "{{player}} esta en pauza...",
+    "placingAI": "{{player}} esta djugando - metiendo la piesa en la tabla...",
+    "placingUser": "{{player}} esta djugando - Mete la piesa eskojida en la tabla...",
+    "placeUserYou": "Tu estas djugando - Mete la piesa eskojida en la tabla...",
+    "gameDrawn": "Djuego empatado - no ay linea ganadora",
+    "gameWon": "{{player}} gana - linea ganadora marcada",
+    "selectingAI": "{{player}} esta djugando - eskoje una piesa para {{opponent}}...",
+    "selectUser": "{{player}} esta djugando - Eskoje una piesa para {{opponent}}...",
+    "selectUserYou": "Tu estas djugando - Eskoje una piesa para {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Piesa en djuego",
+    "none": "Nada eskojido",
+    "traits": "Karakteristikas de la piesa",
+    "black": "preta",
+    "red": "kolorada",
+    "big": "grande",
+    "small": "chika",
+    "round": "redonda",
+    "square": "kuadrada",
+    "solid": "solida",
+    "hollow": "gueka"
+  },
+  "board": {
+    "binary": "Tabla binaria",
+    "piecesPlaced": "Piesas metidas",
+    "cellEmpty": "Kaza {{cell}}: vazia",
+    "cellPiece": "Kaza {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "El renderizado 3D no esta disponivle.",
+    "webglHeading": "WebGL no pudo empesar.",
+    "webglMsg": "El djuego nesesita ke WebGL este endjendido en el navigador."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Pasa el kursor sovre una piesa ke se puede eskojer para ver el rizgo de eskojimiento",
+    "hoveredRiskOne": "Rizgo de la piesa debasho del kursor: {{risk}} pozision ganadora imediata",
+    "hoveredRiskMany": "Rizgo de la piesa debasho del kursor: {{risk}} pozisiones ganadoras imediatas",
+    "immediateWins": "Pozisiones ganadoras imediatas",
+    "latestRisk": "Ultimo rizgo de eskojimiento",
+    "riskOneAI": "Rizgo de la piesa eskojida por AI: {{risk}} pozision ganadora imediata",
+    "riskManyAI": "Rizgo de la piesa eskojida por AI: {{risk}} pozisiones ganadoras imediatas",
+    "riskTurnedOff": "El rizgo de eskojimiento esta apagado",
+    "riskUnavailableAI": "El rizgo de eskojimiento no esta disponivle en modo AI kontra AI",
+    "selectionRisk": "Rizgo de eskojimiento",
+    "turnRiskOff": "Apagar rizgo de eskojimiento",
+    "turnRiskOn": "Endjender rizgo de eskojimiento"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lingua",
+    "search": "Bushkar linguas",
+    "empty": "No se toparon linguas",
+    "close": "Serrar"
+  }
+}

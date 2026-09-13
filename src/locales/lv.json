@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interaktīva 3D Quarto galda spēles saskarne, izmantojot Three.js un Minimax mākslīgā intelekta algoritma Negamax versiju ar alfa-beta apgriešanu. Spēlē spēlētājs pret spēlētāju, spēlētājs pret MI un MI pret MI ar vieglu, vidēju vai grūtu MI.",
     "ogDescription": "Interaktīva 3D Quarto galda spēle. Spēlē spēlētājs pret spēlētāju, spēlētājs pret MI un MI pret MI ar vieglu, vidēju vai grūtu MI."
+  },
+  "language": {
+    "label": "Valoda",
+    "search": "Meklēt valodas",
+    "empty": "Nav atrasta neviena valoda",
+    "close": "Aizvērt"
   }
 }

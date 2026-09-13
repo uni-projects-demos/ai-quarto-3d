@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Shundan ko‘chirilgan takomillashtirish",
+    "newGame": "Yangi o‘yin"
+  },
+  "common": {
+    "on": "YOQILGAN",
+    "off": "O‘CHIRILGAN"
+  },
+  "a11y": {
+    "utilityActions": "Ilova havolalari va til",
+    "viewSource": "Manbani GitHub’da ko‘rish",
+    "gameControls": "O‘yin boshqaruvlari",
+    "gameBoard": "3D o‘yin taxtasi",
+    "gameInfo": "O‘yin ma’lumoti"
+  },
+  "controls": {
+    "diffAI": "AI qiyinligi",
+    "diffPlayerOneAI": "P1 qiyinligi",
+    "diffPlayerTwoAI": "P2 qiyinligi",
+    "startingPlayer": "Boshlovchi o‘yinchi",
+    "gameMode": "O‘yin rejimi",
+    "pauseAI": "AI-ni pauza qilish",
+    "resumeAI": "AI-ni davom ettirish",
+    "undo": "Bekor qilish",
+    "redo": "Qayta bajarish"
+  },
+  "diff": {
+    "easy": "Oson",
+    "medium": "O‘rta",
+    "hard": "Qiyin"
+  },
+  "mode": {
+    "userVsUser": "Foydalanuvchi vs foydalanuvchi",
+    "userVsAI": "Foydalanuvchi vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Siz",
+    "playerOne": "Birinchi o‘yinchi",
+    "playerTwo": "Ikkinchi o‘yinchi",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Tasodifiy",
+    "playerAIPlayer": "AI o‘yinchi",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "O‘yin holati...",
+    "pausedAI": "{{player}} pauzada...",
+    "placingAI": "{{player}} o‘ynamoqda - donani taxtaga qo‘ymoqda...",
+    "placingUser": "{{player}} o‘ynamoqda - tanlangan donani taxtaga qo‘ying...",
+    "placeUserYou": "Siz o‘ynamoqdasiz - tanlangan donani taxtaga qo‘ying...",
+    "gameDrawn": "O‘yin durang - yutuq chizig‘i yo‘q",
+    "gameWon": "{{player}} yutdi - yutuq chizig‘i ajratib ko‘rsatildi",
+    "selectingAI": "{{player}} o‘ynamoqda - {{opponent}} uchun dona tanlamoqda...",
+    "selectUser": "{{player}} o‘ynamoqda - {{opponent}} uchun dona tanlang...",
+    "selectUserYou": "Siz o‘ynamoqdasiz - {{opponent}} uchun dona tanlang..."
+  },
+  "piece": {
+    "inPlay": "O‘yindagi dona",
+    "none": "Hech narsa tanlanmagan",
+    "traits": "Dona xususiyatlari",
+    "black": "qora",
+    "red": "qizil",
+    "big": "katta",
+    "small": "kichik",
+    "round": "dumaloq",
+    "square": "kvadrat",
+    "solid": "yaxlit",
+    "hollow": "kovak"
+  },
+  "board": {
+    "binary": "Ikkilik taxta",
+    "piecesPlaced": "Qo‘yilgan donalar",
+    "cellEmpty": "Katak {{cell}}: bo‘sh",
+    "cellPiece": "Katak {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D renderlash mavjud emas.",
+    "webglHeading": "WebGL ishga tushmadi.",
+    "webglMsg": "O‘yin uchun brauzerda WebGL yoqilgan bo‘lishi kerak."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Tanlash xavfini ko‘rish uchun tanlanadigan dona ustida kursorni ushlab turing",
+    "hoveredRiskOne": "Kursor ostidagi dona xavfi: {{risk}} darhol yutish joyi",
+    "hoveredRiskMany": "Kursor ostidagi dona xavfi: {{risk}} darhol yutish joylari",
+    "immediateWins": "Darhol yutish joylari",
+    "latestRisk": "Oxirgi tanlash xavfi",
+    "riskOneAI": "AI tanlagan dona xavfi: {{risk}} darhol yutish joyi",
+    "riskManyAI": "AI tanlagan dona xavfi: {{risk}} darhol yutish joylari",
+    "riskTurnedOff": "Tanlash xavfi o‘chirilgan",
+    "riskUnavailableAI": "AI vs AI rejimida tanlash xavfi mavjud emas",
+    "selectionRisk": "Tanlash xavfi",
+    "turnRiskOff": "Tanlash xavfini o‘chirish",
+    "turnRiskOn": "Tanlash xavfini yoqish"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Til",
+    "search": "Tillarni qidirish",
+    "empty": "Hech qanday til topilmadi",
+    "close": "Yopish"
+  }
+}

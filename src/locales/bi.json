@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Wan portem mo mekem gud moa",
+    "newGame": "Niufala gem"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Ol link blong aplikesen mo lanwis",
+    "viewSource": "Luk source long GitHub",
+    "gameControls": "Ol kontrol blong gem",
+    "gameBoard": "3D bod blong gem",
+    "gameInfo": "Infomesen blong gem"
+  },
+  "controls": {
+    "diffAI": "Had blong AI",
+    "diffPlayerOneAI": "Had blong P1",
+    "diffPlayerTwoAI": "Had blong P2",
+    "startingPlayer": "Pleiha we i stat",
+    "gameMode": "Mod blong gem",
+    "pauseAI": "Pausum AI",
+    "resumeAI": "Gohed wetem AI",
+    "undo": "Undo",
+    "redo": "Redo"
+  },
+  "diff": {
+    "easy": "Isi",
+    "medium": "Medel",
+    "hard": "Had"
+  },
+  "mode": {
+    "userVsUser": "Yusa vs yusa",
+    "userVsAI": "Yusa vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Yu",
+    "playerOne": "Pleiha Wan",
+    "playerTwo": "Pleiha Tu",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Random",
+    "playerAIPlayer": "AI pleiha",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Status blong gem...",
+    "pausedAI": "{{player}} i stap paus...",
+    "placingAI": "{{player}} i stap plei - i putum pis long bod...",
+    "placingUser": "{{player}} i stap plei - Putum pis we yu jusum long bod...",
+    "placeUserYou": "Yu stap plei - Putum pis we yu jusum long bod...",
+    "gameDrawn": "Gem i dro - i no gat wining laen",
+    "gameWon": "{{player}} i win - wining laen i laetap",
+    "selectingAI": "{{player}} i stap plei - i jusum wan pis blong {{opponent}}...",
+    "selectUser": "{{player}} i stap plei - Jusum wan pis blong {{opponent}}...",
+    "selectUserYou": "Yu stap plei - Jusum wan pis blong {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pis we i stap long plei",
+    "none": "I no gat wan we oli jusum",
+    "traits": "Ol fasin blong pis",
+    "black": "blak",
+    "red": "red",
+    "big": "big",
+    "small": "smol",
+    "round": "raon",
+    "square": "skwea",
+    "solid": "solid",
+    "hollow": "holow"
+  },
+  "board": {
+    "binary": "Baenari bod",
+    "piecesPlaced": "Ol pis we oli putum",
+    "cellEmpty": "Sel {{cell}}: emti",
+    "cellPiece": "Sel {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering i no stap.",
+    "webglHeading": "WebGL i no save stat.",
+    "webglMsg": "Gem i nidim WebGL i on long braosa."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Putum maos antap long pis we yu save jusum blong luk risk blong seçim",
+    "hoveredRiskOne": "Risk blong pis we maos i stap antap: {{risk}} ples we i save win stret",
+    "hoveredRiskMany": "Risk blong pis we maos i stap antap: {{risk}} ol ples we oli save win stret",
+    "immediateWins": "Ol ples we oli save win stret",
+    "latestRisk": "Las risk blong seçim",
+    "riskOneAI": "Risk blong pis we AI i jusum: {{risk}} ples we i save win stret",
+    "riskManyAI": "Risk blong pis we AI i jusum: {{risk}} ol ples we oli save win stret",
+    "riskTurnedOff": "Risk blong seçim i off",
+    "riskUnavailableAI": "Risk blong seçim i no stap long mod AI vs AI",
+    "selectionRisk": "Risk blong seçim",
+    "turnRiskOff": "Ofem risk blong seçim",
+    "turnRiskOn": "Onem risk blong seçim"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lanwis",
+    "search": "Faenem ol lanwis",
+    "empty": "No faenem eni lanwis",
+    "close": "Klos"
+  }
+}

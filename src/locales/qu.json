@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Kaymanta apamusqa allinchaynin",
+    "newGame": "Musuq pukllay"
+  },
+  "common": {
+    "on": "KICHASQA",
+    "off": "WICHQASQA"
+  },
+  "a11y": {
+    "utilityActions": "Ruwana t'inkikuna chaymanta simi",
+    "viewSource": "GitHub-pi pukyuta qhaway",
+    "gameControls": "Pukllay kamachiqkuna",
+    "gameBoard": "3D pukllay tabla",
+    "gameInfo": "Pukllay willakuy"
+  },
+  "controls": {
+    "diffAI": "AI sasachakuynin",
+    "diffPlayerOneAI": "P1 sasachakuynin",
+    "diffPlayerTwoAI": "P2 sasachakuynin",
+    "startingPlayer": "Qallariq pukllaq",
+    "gameMode": "Pukllay ñan",
+    "pauseAI": "AI-ta sayachiy",
+    "resumeAI": "AI-ta qatiy",
+    "undo": "Kutichiy",
+    "redo": "Wakmanta ruray"
+  },
+  "diff": {
+    "easy": "Facil",
+    "medium": "Chawpi",
+    "hard": "Sasa"
+  },
+  "mode": {
+    "userVsUser": "Runa vs runa",
+    "userVsAI": "Runa vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Qam",
+    "playerOne": "Pukllaq Huk",
+    "playerTwo": "Pukllaq Iskay",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Mayqinpas",
+    "playerAIPlayer": "AI pukllaq",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Pukllay kaynin...",
+    "pausedAI": "{{player}} sayachisqa...",
+    "placingAI": "{{player}} pukllachkan - fichata tablapi churachkan...",
+    "placingUser": "{{player}} pukllachkan - akllasqa fichata tablapi churay...",
+    "placeUserYou": "Qam pukllachkanki - akllasqa fichata tablapi churay...",
+    "gameDrawn": "Pukllay kuska tukusqa - atipaq siqi mana kanchu",
+    "gameWon": "{{player}} atipan - atipaq siqi rikuchisqa",
+    "selectingAI": "{{player}} pukllachkan - {{opponent}}paq fichata akllachkan...",
+    "selectUser": "{{player}} pukllachkan - {{opponent}}paq fichata akllay...",
+    "selectUserYou": "Qam pukllachkanki - {{opponent}}paq fichata akllay..."
+  },
+  "piece": {
+    "inPlay": "Pukllaypi ficha",
+    "none": "Mana imapas akllasqa",
+    "traits": "Ficha sut'ichayninkuna",
+    "black": "yana",
+    "red": "puka",
+    "big": "hatun",
+    "small": "huch'uy",
+    "round": "muyu",
+    "square": "tawa k'uchu",
+    "solid": "hunt'a",
+    "hollow": "huch'uy t'oqoyuq"
+  },
+  "board": {
+    "binary": "Iskay yupay tabla",
+    "piecesPlaced": "Churasqa fichakuna",
+    "cellEmpty": "T'oqo {{cell}}: ch'usaq",
+    "cellPiece": "T'oqo {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rikuchiy mana kanchu.",
+    "webglHeading": "WebGL mana qallariyta atirqanchu.",
+    "webglMsg": "Pukllayqa navegadorpi WebGL kawsachisqa kananmi."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Akllaypa peligrota qhawanapaq akllana ficha hawapi cursor-ta churay",
+    "hoveredRiskOne": "Cursorpa uranpi fichapa peligro: {{risk}} chaylla atipana churay",
+    "hoveredRiskMany": "Cursorpa uranpi fichapa peligro: {{risk}} chaylla atipana churaykuna",
+    "immediateWins": "Chaylla atipana churaykuna",
+    "latestRisk": "Qhipa akllay peligro",
+    "riskOneAI": "AI akllasqa fichapa peligro: {{risk}} chaylla atipana churay",
+    "riskManyAI": "AI akllasqa fichapa peligro: {{risk}} chaylla atipana churaykuna",
+    "riskTurnedOff": "Akllay peligro wañuchisqa",
+    "riskUnavailableAI": "AI vs AI ñanpi akllay peligro mana kanchu",
+    "selectionRisk": "Akllay peligro",
+    "turnRiskOff": "Akllay peligro wañuchiy",
+    "turnRiskOn": "Akllay peligro kawsachiy"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Simi",
+    "search": "Simikunata maskay",
+    "empty": "Mana simikuna tarikunchu",
+    "close": "Wichqay"
+  }
+}

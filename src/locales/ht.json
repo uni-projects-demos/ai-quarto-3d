@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Yon amelyorasyon ki sòti nan",
+    "newGame": "Nouvo jwèt"
+  },
+  "common": {
+    "on": "LIMEN",
+    "off": "ETENN"
+  },
+  "a11y": {
+    "utilityActions": "Lyen aplikasyon ak lang",
+    "viewSource": "Gade kòd sous la sou GitHub",
+    "gameControls": "Kontwòl jwèt",
+    "gameBoard": "Tablo jwèt 3D",
+    "gameInfo": "Enfòmasyon sou jwèt"
+  },
+  "controls": {
+    "diffAI": "Difikilte AI",
+    "diffPlayerOneAI": "Difikilte P1",
+    "diffPlayerTwoAI": "Difikilte P2",
+    "startingPlayer": "Jwè ki kòmanse",
+    "gameMode": "Mòd jwèt",
+    "pauseAI": "Mete AI an poz",
+    "resumeAI": "Reprann AI",
+    "undo": "Defè",
+    "redo": "Refè"
+  },
+  "diff": {
+    "easy": "Fasil",
+    "medium": "Mwayen",
+    "hard": "Difisil"
+  },
+  "mode": {
+    "userVsUser": "Itilizatè kont itilizatè",
+    "userVsAI": "Itilizatè kont AI",
+    "onlyAI": "AI kont AI"
+  },
+  "player": {
+    "playerYou": "Ou",
+    "playerOne": "Jwè Youn",
+    "playerTwo": "Jwè De",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "O aza",
+    "playerAIPlayer": "Jwè AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Estati jwèt la...",
+    "pausedAI": "{{player}} an poz...",
+    "placingAI": "{{player}} ap jwe - l ap mete pyès la sou tablo a...",
+    "placingUser": "{{player}} ap jwe - Mete pyès ou chwazi a sou tablo a...",
+    "placeUserYou": "W ap jwe - Mete pyès ou chwazi a sou tablo a...",
+    "gameDrawn": "Match nil - pa gen liy gagnan",
+    "gameWon": "{{player}} genyen - liy gagnan an make",
+    "selectingAI": "{{player}} ap jwe - l ap chwazi yon pyès pou {{opponent}}...",
+    "selectUser": "{{player}} ap jwe - Chwazi yon pyès pou {{opponent}}...",
+    "selectUserYou": "W ap jwe - Chwazi yon pyès pou {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pyès an jwèt",
+    "none": "Pa gen anyen ki chwazi",
+    "traits": "Karakteristik pyès la",
+    "black": "nwa",
+    "red": "wouj",
+    "big": "gwo",
+    "small": "piti",
+    "round": "wonn",
+    "square": "kare",
+    "solid": "plen",
+    "hollow": "kre"
+  },
+  "board": {
+    "binary": "Tablo binè",
+    "piecesPlaced": "Pyès ki plase",
+    "cellEmpty": "Selil {{cell}}: vid",
+    "cellPiece": "Selil {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Rann 3D pa disponib.",
+    "webglHeading": "WebGL pa t kapab kòmanse.",
+    "webglMsg": "Jwèt la mande pou WebGL aktive nan navigatè a."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Pase sourit la sou yon pyès ou ka chwazi pou wè risk seleksyon li",
+    "hoveredRiskOne": "Risk pyès anba sourit la: {{risk}} plasman gagnan imedya",
+    "hoveredRiskMany": "Risk pyès anba sourit la: {{risk}} plasman gagnan imedya",
+    "immediateWins": "Plasman gagnan imedya",
+    "latestRisk": "Dènye risk seleksyon",
+    "riskOneAI": "Risk pyès AI chwazi a: {{risk}} plasman gagnan imedya",
+    "riskManyAI": "Risk pyès AI chwazi a: {{risk}} plasman gagnan imedya",
+    "riskTurnedOff": "Risk seleksyon etenn",
+    "riskUnavailableAI": "Risk seleksyon pa disponib nan mòd AI kont AI",
+    "selectionRisk": "Risk seleksyon",
+    "turnRiskOff": "Etenn risk seleksyon",
+    "turnRiskOn": "Limen risk seleksyon"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lang",
+    "search": "Chèche lang",
+    "empty": "Okenn lang pa jwenn",
+    "close": "Fèmen"
+  }
+}

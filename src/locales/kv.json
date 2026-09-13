@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Портируйтӧм бурмӧдӧм версия",
+    "newGame": "Выль ворсӧм"
+  },
+  "common": {
+    "on": "ПЫРТӦМА",
+    "off": "КУСӦДӦМА"
+  },
+  "a11y": {
+    "utilityActions": "Приложение йитӧдъяс да кыв",
+    "viewSource": "GitHub-ын видзӧдны исходник",
+    "gameControls": "Ворсӧм веськӧдланторъяс",
+    "gameBoard": "3D ворсан пӧв",
+    "gameInfo": "Ворсӧм йылысь юӧр"
+  },
+  "controls": {
+    "diffAI": "AI сьӧкыдлун",
+    "diffPlayerOneAI": "P1 сьӧкыдлун",
+    "diffPlayerTwoAI": "P2 сьӧкыдлун",
+    "startingPlayer": "Панӧдчысь ворсысь",
+    "gameMode": "Ворсӧм режим",
+    "pauseAI": "AI сувтӧдны",
+    "resumeAI": "AI водзӧ нуӧдны",
+    "undo": "Бӧр бергӧдны",
+    "redo": "Выльысь вӧчны"
+  },
+  "diff": {
+    "easy": "Кокни",
+    "medium": "Шӧр",
+    "hard": "Сьӧкыд"
+  },
+  "mode": {
+    "userVsUser": "Вӧзйысь вӧзйысьлы паныд",
+    "userVsAI": "Вӧзйысь AI-лы паныд",
+    "onlyAI": "AI AI-лы паныд"
+  },
+  "player": {
+    "playerYou": "Тэ",
+    "playerOne": "Ӧти ворсысь",
+    "playerTwo": "Кык ворсысь",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Случайнӧй",
+    "playerAIPlayer": "AI ворсысь",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Ворсӧмлӧн ин...",
+    "pausedAI": "{{player}} сувтӧдӧма...",
+    "placingAI": "{{player}} ворсӧ - пуктӧ тор пӧв вылӧ...",
+    "placingUser": "{{player}} ворсӧ - Пуктӧй бӧрйӧм тор пӧв вылӧ...",
+    "placeUserYou": "Тэ ворсан - Пуктӧй бӧрйӧм тор пӧв вылӧ...",
+    "gameDrawn": "Ворсӧм ӧткодь - абу вермӧм визь",
+    "gameWon": "{{player}} вермис - вермӧм визь пасйӧма",
+    "selectingAI": "{{player}} ворсӧ - бӧрйӧ тор {{opponent}} понда...",
+    "selectUser": "{{player}} ворсӧ - Бӧрйӧй тор {{opponent}} понда...",
+    "selectUserYou": "Тэ ворсан - Бӧрйӧй тор {{opponent}} понда..."
+  },
+  "piece": {
+    "inPlay": "Тор ворсӧмын",
+    "none": "Нинӧм абу бӧрйӧма",
+    "traits": "Торлӧн признакъяс",
+    "black": "сьӧд",
+    "red": "гӧрд",
+    "big": "ыджыд",
+    "small": "ичӧт",
+    "round": "гӧгрӧс",
+    "square": "квадрат",
+    "solid": "тыр",
+    "hollow": "гуран"
+  },
+  "board": {
+    "binary": "Binary пӧв",
+    "piecesPlaced": "Пуктӧм торъяс",
+    "cellEmpty": "Ячейка {{cell}}: тыртӧм",
+    "cellPiece": "Ячейка {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D рендеринг оз уджав.",
+    "webglHeading": "WebGL оз вермы заводитчыны.",
+    "webglMsg": "Ворсӧмлы колӧ, медым браузерын WebGL вӧлі пыртӧма."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Вайӧдӧй курсор бӧрйыны позян тор вылӧ, медым аддзыны бӧрйӧм риск",
+    "hoveredRiskOne": "Курсор улын торлӧн риск: {{risk}} пыр вермӧм пуктӧм",
+    "hoveredRiskMany": "Курсор улын торлӧн риск: {{risk}} пыр вермӧм пуктӧмъяс",
+    "immediateWins": "Пыр вермӧм пуктӧмъяс",
+    "latestRisk": "Медбӧрынъя бӧрйӧм риск",
+    "riskOneAI": "AI бӧрйӧм торлӧн риск: {{risk}} пыр вермӧм пуктӧм",
+    "riskManyAI": "AI бӧрйӧм торлӧн риск: {{risk}} пыр вермӧм пуктӧмъяс",
+    "riskTurnedOff": "Бӧрйӧм риск кусӧдӧма",
+    "riskUnavailableAI": "Бӧрйӧм риск AI AI-лы паныд режимын абу",
+    "selectionRisk": "Бӧрйӧм риск",
+    "turnRiskOff": "Кусӧдны бӧрйӧм риск",
+    "turnRiskOn": "Пыртны бӧрйӧм риск"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Кыв",
+    "search": "Кывъяс корсь",
+    "empty": "Кывъяс эз аддзысь",
+    "close": "Пӧдлав"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Nkyerɛase a wɔde aba mu no nkɔanim",
+    "newGame": "Agodie foforo"
+  },
+  "common": {
+    "on": "SƆ",
+    "off": "DUM"
+  },
+  "a11y": {
+    "utilityActions": "Dwumadie links ne kasa",
+    "viewSource": "Hwɛ source wɔ GitHub",
+    "gameControls": "Agodie controls",
+    "gameBoard": "3D agodie board",
+    "gameInfo": "Agodie ho nsɛm"
+  },
+  "controls": {
+    "diffAI": "AI den",
+    "diffPlayerOneAI": "P1 den",
+    "diffPlayerTwoAI": "P2 den",
+    "startingPlayer": "Odi kan bɔfo",
+    "gameMode": "Agodie mode",
+    "pauseAI": "Gyina AI",
+    "resumeAI": "Toa AI so",
+    "undo": "San kɔ akyi",
+    "redo": "San yɛ"
+  },
+  "diff": {
+    "easy": "Mmerɛw",
+    "medium": "Mfinimfini",
+    "hard": "Den"
+  },
+  "mode": {
+    "userVsUser": "Onipa vs onipa",
+    "userVsAI": "Onipa vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Wo",
+    "playerOne": "Bɔfo Baako",
+    "playerTwo": "Bɔfo Mmienu",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Kwa",
+    "playerAIPlayer": "AI Bɔfo",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Agodie tebea...",
+    "pausedAI": "{{player}} agyina...",
+    "placingAI": "{{player}} rebɔ - ɔde ade no reto board no so...",
+    "placingUser": "{{player}} rebɔ - Fa ade a woapaw no to board no so...",
+    "placeUserYou": "Worebɔ - Fa ade a woapaw no to board no so...",
+    "gameDrawn": "Agodie no ayɛ pɛ - nkonim kwan biara nni hɔ",
+    "gameWon": "{{player}} adi nkonim - wɔahyɛ nkonim kwan no agyirae",
+    "selectingAI": "{{player}} rebɔ - ɔrepaw ade ama {{opponent}}...",
+    "selectUser": "{{player}} rebɔ - Paw ade ma {{opponent}}...",
+    "selectUserYou": "Worebɔ - Paw ade ma {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Ade a ɛwɔ agodie mu",
+    "none": "Wɔmpaw biara",
+    "traits": "Ade no su",
+    "black": "tuntum",
+    "red": "kɔkɔɔ",
+    "big": "kɛse",
+    "small": "ketewa",
+    "round": "kurukuruwa",
+    "square": "ahinan",
+    "solid": "mu pi",
+    "hollow": "mu da"
+  },
+  "board": {
+    "binary": "Binary board",
+    "piecesPlaced": "Nneɛma a wɔde ato hɔ",
+    "cellEmpty": "Beae {{cell}}: hwee nni mu",
+    "cellPiece": "Beae {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering nni hɔ.",
+    "webglHeading": "WebGL antumi anhyɛ ase.",
+    "webglMsg": "Agodie no hia sɛ wɔsɔ WebGL wɔ browser no mu."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Fa cursor no si ade a wobetumi apaw so na hwɛ paw no mu asiane",
+    "hoveredRiskOne": "Ade a wɔde cursor sii so asiane: {{risk}} nkonim beae a ɛba ntɛm",
+    "hoveredRiskMany": "Ade a wɔde cursor sii so asiane: {{risk}} nkonim mmeae a ɛba ntɛm",
+    "immediateWins": "Nkonim mmeae a ɛba ntɛm",
+    "latestRisk": "Paw asiane a etwa to",
+    "riskOneAI": "AI ade a ɔpaw no asiane: {{risk}} nkonim beae a ɛba ntɛm",
+    "riskManyAI": "AI ade a ɔpaw no asiane: {{risk}} nkonim mmeae a ɛba ntɛm",
+    "riskTurnedOff": "Wɔadum paw asiane",
+    "riskUnavailableAI": "Paw asiane nni AI vs AI mode mu",
+    "selectionRisk": "Paw asiane",
+    "turnRiskOff": "Dum paw asiane",
+    "turnRiskOn": "Sɔ paw asiane"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Kasa a wɔde di dwuma",
+    "search": "Hwehwɛ kasa horow mu",
+    "empty": "Kasa biara nni hɔ a wɔanhu",
+    "close": "Bɛto mu"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Yeesal bu ñu jële ci",
+    "newGame": "Po bu bees"
+  },
+  "common": {
+    "on": "TÀKK",
+    "off": "FAY"
+  },
+  "a11y": {
+    "utilityActions": "Lëkkalekaay yu app bi ak làkk",
+    "viewSource": "Xool source bi ci GitHub",
+    "gameControls": "Saytu po bi",
+    "gameBoard": "Taabal po 3D",
+    "gameInfo": "Xibaaru po"
+  },
+  "controls": {
+    "diffAI": "Jafe-jafe AI",
+    "diffPlayerOneAI": "Jafe-jafe P1",
+    "diffPlayerTwoAI": "Jafe-jafe P2",
+    "startingPlayer": "Po-kat bi di tàmbali",
+    "gameMode": "Anamu po",
+    "pauseAI": "Taxawal AI",
+    "resumeAI": "Kontine AI",
+    "undo": "Delloo ginnaaw",
+    "redo": "Defaat"
+  },
+  "diff": {
+    "easy": "Yomb",
+    "medium": "Digg",
+    "hard": "Jafe"
+  },
+  "mode": {
+    "userVsUser": "Jëfandikukat ak jëfandikukat",
+    "userVsAI": "Jëfandikukat ak AI",
+    "onlyAI": "AI ak AI"
+  },
+  "player": {
+    "playerYou": "Yaw",
+    "playerOne": "Po-kat Benn",
+    "playerTwo": "Po-kat Ñaar",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Caas",
+    "playerAIPlayer": "Po-kat AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Nekkinu po bi...",
+    "pausedAI": "{{player}} taxaw na...",
+    "placingAI": "{{player}} ngi po - di teg dog bi ci taabal bi...",
+    "placingUser": "{{player}} ngi po - teg dog bi nga tànn ci taabal bi...",
+    "placeUserYou": "Yaw nga ngi po - teg dog bi nga tànn ci taabal bi...",
+    "gameDrawn": "Po bi yem na - amul rëddum ndam",
+    "gameWon": "{{player}} dafa ndam - rëddum ndam bi feeñal na",
+    "selectingAI": "{{player}} ngi po - di tànnal {{opponent}} dog...",
+    "selectUser": "{{player}} ngi po - tànnal {{opponent}} dog...",
+    "selectUserYou": "Yaw nga ngi po - tànnal {{opponent}} dog..."
+  },
+  "piece": {
+    "inPlay": "Dog bi ci po",
+    "none": "Tànnul dara",
+    "traits": "Melo yu dog bi",
+    "black": "ñuul",
+    "red": "xonk",
+    "big": "mag",
+    "small": "ndaw",
+    "round": "wër",
+    "square": "kaare",
+    "solid": "dëgër",
+    "hollow": "am pax"
+  },
+  "board": {
+    "binary": "Taabal binari",
+    "piecesPlaced": "Dog yi ñu teg",
+    "cellEmpty": "Këll {{cell}}: neen",
+    "cellPiece": "Këll {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Wone 3D amul.",
+    "webglHeading": "WebGL mënuñu tàmbali.",
+    "webglMsg": "Po bi soxla na WebGL tàkk ci browser bi."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Yëngu cursor bi ci dog bu manees a tànn ngir xool risk bi",
+    "hoveredRiskOne": "Risku dog bi cursor ne ci kaw: {{risk}} bérab ndam ci saa si",
+    "hoveredRiskMany": "Risku dog bi cursor ne ci kaw: {{risk}} bérab yu ndam ci saa si",
+    "immediateWins": "Bérab yu ndam ci saa si",
+    "latestRisk": "Risku tànn bu mujj",
+    "riskOneAI": "Risku dog bi AI tànn: {{risk}} bérab ndam ci saa si",
+    "riskManyAI": "Risku dog bi AI tànn: {{risk}} bérab yu ndam ci saa si",
+    "riskTurnedOff": "Risku tànn fay na",
+    "riskUnavailableAI": "Risku tànn amul ci AI ak AI",
+    "selectionRisk": "Risku tànn",
+    "turnRiskOff": "Fay risku tànn",
+    "turnRiskOn": "Tàkk risku tànn"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Làkk",
+    "search": "Seet làkk yi",
+    "empty": "Gisul benn làkk",
+    "close": "Tëj"
+  }
+}

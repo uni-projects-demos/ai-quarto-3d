@@ -2,7 +2,8 @@ import "./style.scss";
 import { flushSync } from "react-dom";
 import { createRoot, type Root } from "react-dom/client";
 import App from "./App";
-import { changeLang, curLang, initI18n, LOCALES, type Locale, translate } from "./i18n";
+import { initI18n, translate } from "./i18n";
+import { initLangPicker } from "./lang-picker";
 import { GameScene } from "./render/GameScene";
 import GameController from "./ui/GameController";
 
@@ -37,9 +38,9 @@ function setupTitleFit(): void {
     }
   };
 
-  const resizeObs = new ResizeObserver(fitTitle);
+  const resizeObs: ResizeObserver = new ResizeObserver(fitTitle);
   resizeObs.observe(header);
-  const mutationObs = new MutationObserver(fitTitle);
+  const mutationObs: MutationObserver = new MutationObserver(fitTitle);
   mutationObs.observe(title, { childList: true, characterData: true, subtree: true });
   fitTitle();
 }
@@ -54,7 +55,7 @@ const canvas: HTMLCanvasElement = requiredElement<HTMLCanvasElement>("game-canva
 const status: HTMLElement = requiredElement<HTMLElement>("game-status");
 const statusLbl: HTMLElement = requiredElement<HTMLElement>("game-status-label");
 
-function showStartupErr(error: unknown): void {
+function showStartupErr(err: unknown): void {
   canvas.hidden = true;
   status.classList.remove("is-ai", "is-paused");
   status.classList.add("is-error");
@@ -70,31 +71,16 @@ function showStartupErr(error: unknown): void {
   fallback.append(heading, msg);
   canvas.parentElement?.append(fallback);
 
-  console.error(error);
+  console.error(err);
 }
 
 async function startApp(): Promise<void> {
   await initI18n();
   setupTitleFit();
-
-  const langToggle: HTMLButtonElement = requiredElement<HTMLButtonElement>("language-toggle");
-  const updateLangToggle: () => void = (): void => {
-    const lang: Locale = curLang();
-    const label: string = lang.toUpperCase();
-    langToggle.dataset.language = lang;
-    langToggle.setAttribute("aria-label", `langToggle ${label}`);
-    langToggle.title = `${label}`;
-  };
-  updateLangToggle();
-  langToggle.addEventListener("click", (): void => {
-    const curIdx: number = LOCALES.indexOf(curLang());
-    const nxtLang: Locale = LOCALES[(curIdx + 1) % LOCALES.length] ?? LOCALES[0];
-    changeLang(nxtLang);
-    updateLangToggle();
-  });
+  initLangPicker();
 
   let controller!: GameController;
-  const scene = new GameScene(canvas, {
+  const scene: GameScene = new GameScene(canvas, {
     onCellClick: (cell: number): void => controller.handleCellClick(cell),
     onPieceClick: (piece: number): void => controller.handlePieceClick(piece),
     onPieceHover: (piece: number | null): void => controller.handlePieceHover(piece),

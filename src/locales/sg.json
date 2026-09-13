@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Gbûgû na yâ ni ahûngö tî",
+    "newGame": "Jeu mbeni"
+  },
+  "common": {
+    "on": "ÂA",
+    "off": "APE"
+  },
+  "a11y": {
+    "utilityActions": "Liens tî application na yanga",
+    "viewSource": "Bâ source na GitHub",
+    "gameControls": "Commandes tî jeu",
+    "gameBoard": "Tableau tî jeu 3D",
+    "gameInfo": "Sango tî jeu"
+  },
+  "controls": {
+    "diffAI": "Ngangu tî AI",
+    "diffPlayerOneAI": "Ngangu P1",
+    "diffPlayerTwoAI": "Ngangu P2",
+    "startingPlayer": "Joueur so a tî wara ndo",
+    "gameMode": "Mode tî jeu",
+    "pauseAI": "Zia AI na pause",
+    "resumeAI": "Tene AI aga na nduzu",
+    "undo": "Undo",
+    "redo": "Redo"
+  },
+  "diff": {
+    "easy": "Hio",
+    "medium": "Na popo",
+    "hard": "Ngangu"
+  },
+  "mode": {
+    "userVsUser": "Utilisateur contre utilisateur",
+    "userVsAI": "Utilisateur contre AI",
+    "onlyAI": "AI contre AI"
+  },
+  "player": {
+    "playerYou": "Mo",
+    "playerOne": "Joueur Oko",
+    "playerTwo": "Joueur Use",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Na hasard",
+    "playerAIPlayer": "Joueur AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "État tî jeu...",
+    "pausedAI": "{{player}} a zia na pause...",
+    "placingAI": "{{player}} a joué - a zia pièce na tableau...",
+    "placingUser": "{{player}} a joué - zia pièce so mo choisi na tableau...",
+    "placeUserYou": "Mo joué - zia pièce so mo choisi na tableau...",
+    "gameDrawn": "Jeu a fini égalité - ligne tî victoire ape",
+    "gameWon": "{{player}} a gagné - ligne tî victoire a yeke marqué",
+    "selectingAI": "{{player}} a joué - a choisi pièce pona {{opponent}}...",
+    "selectUser": "{{player}} a joué - choisi pièce pona {{opponent}}...",
+    "selectUserYou": "Mo joué - choisi pièce pona {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pièce na jeu",
+    "none": "Mbeni ape a choisi",
+    "traits": "Caractéristiques tî pièce",
+    "black": "vukö",
+    "red": "rouge",
+    "big": "kota",
+    "small": "kete",
+    "round": "rond",
+    "square": "carré",
+    "solid": "solide",
+    "hollow": "creux"
+  },
+  "board": {
+    "binary": "Tableau binaire",
+    "piecesPlaced": "Pièces so a zia",
+    "cellEmpty": "Case {{cell}}: vide",
+    "cellPiece": "Case {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Rendu 3D a yeke ape.",
+    "webglHeading": "WebGL a lingbi ape tî tambula.",
+    "webglMsg": "Jeu a yeke besoin WebGL a âa na navigateur."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Zia curseur na pièce so mo lingbi choisi pona bâ risque tî choix",
+    "hoveredRiskOne": "Risque tî pièce na curseur: {{risk}} place tî victoire hio",
+    "hoveredRiskMany": "Risque tî pièce na curseur: {{risk}} âplace tî victoire hio",
+    "immediateWins": "Âplace tî victoire hio",
+    "latestRisk": "Risque tî choix so a fini",
+    "riskOneAI": "Risque tî pièce so AI a choisi: {{risk}} place tî victoire hio",
+    "riskManyAI": "Risque tî pièce so AI a choisi: {{risk}} âplace tî victoire hio",
+    "riskTurnedOff": "Risque tî choix a yeke ape",
+    "riskUnavailableAI": "Risque tî choix a yeke ape na mode AI contre AI",
+    "selectionRisk": "Risque tî choix",
+    "turnRiskOff": "Kanga risque tî choix",
+    "turnRiskOn": "Âa risque tî choix"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Yanga",
+    "search": "Gi yâ yanga",
+    "empty": "Yanga oko pëpe a mû",
+    "close": "Kanga"
+  }
+}

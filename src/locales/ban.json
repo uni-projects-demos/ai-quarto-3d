@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Panglimbak sane sampun ka-port tur kaaptiang",
+    "newGame": "Permainan anyar"
+  },
+  "common": {
+    "on": "URIP",
+    "off": "PATI"
+  },
+  "a11y": {
+    "utilityActions": "Pranala aplikasi miwah basa",
+    "viewSource": "Cingak sumber ring GitHub",
+    "gameControls": "Kontrol permainan",
+    "gameBoard": "Papan permainan 3D",
+    "gameInfo": "Informasi permainan"
+  },
+  "controls": {
+    "diffAI": "Kasulitan AI",
+    "diffPlayerOneAI": "Kasulitan P1",
+    "diffPlayerTwoAI": "Kasulitan P2",
+    "startingPlayer": "Pemain sane ngawitin",
+    "gameMode": "Mode permainan",
+    "pauseAI": "Jeda AI",
+    "resumeAI": "Terusang AI",
+    "undo": "Batalang",
+    "redo": "Balikang"
+  },
+  "diff": {
+    "easy": "Gampang",
+    "medium": "Sedeng",
+    "hard": "Susah"
+  },
+  "mode": {
+    "userVsUser": "Panganggo vs panganggo",
+    "userVsAI": "Panganggo vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Ragane",
+    "playerOne": "Pemain Siki",
+    "playerTwo": "Pemain Kalih",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Acak",
+    "playerAIPlayer": "Pemain AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Status permainan...",
+    "pausedAI": "{{player}} sedek jeda...",
+    "placingAI": "{{player}} sedek maen - nyelehang bidak ring papan...",
+    "placingUser": "{{player}} sedek maen - Selehang bidak sane kapilih ring papan...",
+    "placeUserYou": "Ragane sedek maen - Selehang bidak sane kapilih ring papan...",
+    "gameDrawn": "Permainan seri - nenten wenten garis menang",
+    "gameWon": "{{player}} menang - garis kemenangan kasorot",
+    "selectingAI": "{{player}} sedek maen - milih bidak anggen {{opponent}}...",
+    "selectUser": "{{player}} sedek maen - Pilih bidak anggen {{opponent}}...",
+    "selectUserYou": "Ragane sedek maen - Pilih bidak anggen {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Bidak sane sedek kaanggen",
+    "none": "Nenten wenten sane kapilih",
+    "traits": "Sifat bidak",
+    "black": "selem",
+    "red": "barak",
+    "big": "gede",
+    "small": "cenik",
+    "round": "bunder",
+    "square": "kotak",
+    "solid": "padet",
+    "hollow": "bolong"
+  },
+  "board": {
+    "binary": "Papan biner",
+    "piecesPlaced": "Bidak sane sampun kaselehang",
+    "cellEmpty": "Sel {{cell}}: kosong",
+    "cellPiece": "Sel {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Rendering 3D nenten kasadia.",
+    "webglHeading": "WebGL nenten prasida ngawit.",
+    "webglMsg": "Permainan puniki perlu WebGL kauripang ring browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Arahang kursor ring bidak sane prasida kapilih antuk nyidang pratinjau risiko pilihan",
+    "hoveredRiskOne": "Risiko bidak sane kasorot: {{risk}} penempatan menang langsung",
+    "hoveredRiskMany": "Risiko bidak sane kasorot: {{risk}} penempatan menang langsung",
+    "immediateWins": "Penempatan menang langsung",
+    "latestRisk": "Risiko pilihan paling anyar",
+    "riskOneAI": "Risiko bidak sane kapilih AI: {{risk}} penempatan menang langsung",
+    "riskManyAI": "Risiko bidak sane kapilih AI: {{risk}} penempatan menang langsung",
+    "riskTurnedOff": "Risiko pilihan sampun kapatian",
+    "riskUnavailableAI": "Risiko pilihan nenten kasadia ring mode AI vs AI",
+    "selectionRisk": "Risiko pilihan",
+    "turnRiskOff": "Patiang risiko pilihan",
+    "turnRiskOn": "Uripang risiko pilihan"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Basa",
+    "search": "Ngalih basa",
+    "empty": "Nenten wenten basa kapanggih",
+    "close": "Tutup"
+  }
+}

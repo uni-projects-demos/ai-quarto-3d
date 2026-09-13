@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Kaonafatšo ye e tlišitšwego go tšwa go",
+    "newGame": "Papadi ye mpsha"
+  },
+  "common": {
+    "on": "BULETŠWE",
+    "off": "TIMILWE"
+  },
+  "a11y": {
+    "utilityActions": "Dikgokagano tša app le polelo",
+    "viewSource": "Bona source go GitHub",
+    "gameControls": "Ditaolo tša papadi",
+    "gameBoard": "Boto ya papadi ya 3D",
+    "gameInfo": "Tshedimošo ya papadi"
+  },
+  "controls": {
+    "diffAI": "Bothata bja AI",
+    "diffPlayerOneAI": "Bothata bja P1",
+    "diffPlayerTwoAI": "Bothata bja P2",
+    "startingPlayer": "Sebapadi se se thomago",
+    "gameMode": "Mokgwa wa papadi",
+    "pauseAI": "Emiša AI",
+    "resumeAI": "Tšwetša AI pele",
+    "undo": "Dirolla",
+    "redo": "Dira gape"
+  },
+  "diff": {
+    "easy": "Bonolo",
+    "medium": "Magareng",
+    "hard": "Bothata"
+  },
+  "mode": {
+    "userVsUser": "Modiriši kgahlanong le modiriši",
+    "userVsAI": "Modiriši kgahlanong le AI",
+    "onlyAI": "AI kgahlanong le AI"
+  },
+  "player": {
+    "playerYou": "Wena",
+    "playerOne": "Sebapadi sa Pele",
+    "playerTwo": "Sebapadi sa Bobedi",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Ka go se kgethe",
+    "playerAIPlayer": "Sebapadi sa AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Boemo bja papadi...",
+    "pausedAI": "{{player}} o emišitšwe...",
+    "placingAI": "{{player}} o a bapala - o bea seripana botong...",
+    "placingUser": "{{player}} o a bapala - Bea seripana se se kgethilwego botong...",
+    "placeUserYou": "Wena o a bapala - Bea seripana se se kgethilwego botong...",
+    "gameDrawn": "Papadi e lekane - ga go na mothaladi wa phenyo",
+    "gameWon": "{{player}} o fentše - mothaladi wa phenyo o gateletšwe",
+    "selectingAI": "{{player}} o a bapala - o kgetha seripana sa {{opponent}}...",
+    "selectUser": "{{player}} o a bapala - Kgetha seripana sa {{opponent}}...",
+    "selectUserYou": "Wena o a bapala - Kgetha seripana sa {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Seripana papading",
+    "none": "Ga go se se kgethilwego",
+    "traits": "Dika tša seripana",
+    "black": "ntsho",
+    "red": "khubedu",
+    "big": "kgolo",
+    "small": "nyenyane",
+    "round": "sediko",
+    "square": "sekwere",
+    "solid": "se tiilego",
+    "hollow": "se sekoti"
+  },
+  "board": {
+    "binary": "Boto ya binary",
+    "piecesPlaced": "Diripana tše di beilwego",
+    "cellEmpty": "Sele {{cell}}: ga e na selo",
+    "cellPiece": "Sele {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Pontšho ya 3D ga e hwetšagale.",
+    "webglHeading": "WebGL ga se ya kgona go thoma.",
+    "webglMsg": "Papadi e nyaka WebGL e buletšwe go sebatli."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Iša cursor godimo ga seripana se se kgethegago go bona kotsi ya kgetho",
+    "hoveredRiskOne": "Kotsi ya seripana ka tlase ga cursor: {{risk}} peo ya phenyo ya ka pela",
+    "hoveredRiskMany": "Kotsi ya seripana ka tlase ga cursor: {{risk}} dipeo tša phenyo tša ka pela",
+    "immediateWins": "Dipeo tša phenyo tša ka pela",
+    "latestRisk": "Kotsi ya kgetho ya moragorago",
+    "riskOneAI": "Kotsi ya seripana se AI e se kgethilego: {{risk}} peo ya phenyo ya ka pela",
+    "riskManyAI": "Kotsi ya seripana se AI e se kgethilego: {{risk}} dipeo tša phenyo tša ka pela",
+    "riskTurnedOff": "Kotsi ya kgetho e timilwe",
+    "riskUnavailableAI": "Kotsi ya kgetho ga e hwetšagale mokgweng wa AI kgahlanong le AI",
+    "selectionRisk": "Kotsi ya kgetho",
+    "turnRiskOff": "Tima kotsi ya kgetho",
+    "turnRiskOn": "Bulela kotsi ya kgetho"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Polelo",
+    "search": "Batla maleme",
+    "empty": "Ga go na maleme ao a hweditšwego",
+    "close": "Tswala"
+  }
+}

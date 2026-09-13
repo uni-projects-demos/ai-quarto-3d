@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Kukonza kopititsidwa kuchokera ku",
+    "newGame": "Masewera atsopano"
+  },
+  "common": {
+    "on": "YATSEGUKA",
+    "off": "YATSEKEDWA"
+  },
+  "a11y": {
+    "utilityActions": "Maulalo a pulogalamu ndi chinenero",
+    "viewSource": "Onani gwero pa GitHub",
+    "gameControls": "Zowongolera masewera",
+    "gameBoard": "Bolodi ya masewera ya 3D",
+    "gameInfo": "Zambiri za masewera"
+  },
+  "controls": {
+    "diffAI": "Kuvuta kwa AI",
+    "diffPlayerOneAI": "Kuvuta kwa P1",
+    "diffPlayerTwoAI": "Kuvuta kwa P2",
+    "startingPlayer": "Wosewera woyamba",
+    "gameMode": "Mtundu wa masewera",
+    "pauseAI": "Imitsani AI",
+    "resumeAI": "Pitirizani AI",
+    "undo": "Bwezeretsani",
+    "redo": "Chitani kachiwiri"
+  },
+  "diff": {
+    "easy": "Kosavuta",
+    "medium": "Pakatikati",
+    "hard": "Kovuta"
+  },
+  "mode": {
+    "userVsUser": "Wogwiritsa ntchito motsutsana ndi wogwiritsa ntchito",
+    "userVsAI": "Wogwiritsa ntchito motsutsana ndi AI",
+    "onlyAI": "AI motsutsana ndi AI"
+  },
+  "player": {
+    "playerYou": "Inu",
+    "playerOne": "Wosewera Mmodzi",
+    "playerTwo": "Wosewera Awiri",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Mwachisawawa",
+    "playerAIPlayer": "Wosewera wa AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Mkhalidwe wa masewera...",
+    "pausedAI": "{{player}} wayimitsidwa...",
+    "placingAI": "{{player}} akusewera - akuika chidutswa pa bolodi...",
+    "placingUser": "{{player}} akusewera - Ikani chidutswa chosankhidwa pa bolodi...",
+    "placeUserYou": "Inu mukusewera - Ikani chidutswa chosankhidwa pa bolodi...",
+    "gameDrawn": "Masewera agwirizana - palibe mzere wopambana",
+    "gameWon": "{{player}} wapambana - mzere wopambana wasonyezedwa",
+    "selectingAI": "{{player}} akusewera - akusankha chidutswa cha {{opponent}}...",
+    "selectUser": "{{player}} akusewera - Sankhani chidutswa cha {{opponent}}...",
+    "selectUserYou": "Inu mukusewera - Sankhani chidutswa cha {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Chidutswa chomwe chikuseweredwa",
+    "none": "Palibe chosankhidwa",
+    "traits": "Makhalidwe a chidutswa",
+    "black": "chakuda",
+    "red": "chofiira",
+    "big": "chachikulu",
+    "small": "chaching'ono",
+    "round": "chozungulira",
+    "square": "cha makona anayi",
+    "solid": "cholimba",
+    "hollow": "chobowo"
+  },
+  "board": {
+    "binary": "Bolodi ya binary",
+    "piecesPlaced": "Zidutswa zoikidwa",
+    "cellEmpty": "Selo {{cell}}: yopanda kanthu",
+    "cellPiece": "Selo {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Kuwonetsa kwa 3D kulibe.",
+    "webglHeading": "WebGL yalephera kuyamba.",
+    "webglMsg": "Masewera amafuna WebGL kuyatsidwa mu browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Ikani mbewa pa chidutswa chosankhika kuti muwone chiopsezo cha kusankha",
+    "hoveredRiskOne": "Chiopsezo cha chidutswa pansi pa mbewa: {{risk}} malo opambana nthawi yomweyo",
+    "hoveredRiskMany": "Chiopsezo cha chidutswa pansi pa mbewa: {{risk}} malo opambana nthawi yomweyo",
+    "immediateWins": "Malo opambana nthawi yomweyo",
+    "latestRisk": "Chiopsezo chaposachedwa cha kusankha",
+    "riskOneAI": "Chiopsezo cha chidutswa chosankhidwa ndi AI: {{risk}} malo opambana nthawi yomweyo",
+    "riskManyAI": "Chiopsezo cha chidutswa chosankhidwa ndi AI: {{risk}} malo opambana nthawi yomweyo",
+    "riskTurnedOff": "Chiopsezo cha kusankha chatsekedwa",
+    "riskUnavailableAI": "Chiopsezo cha kusankha chilibe mu AI motsutsana ndi AI",
+    "selectionRisk": "Chiopsezo cha kusankha",
+    "turnRiskOff": "Tsekani chiopsezo cha kusankha",
+    "turnRiskOn": "Tsegulani chiopsezo cha kusankha"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Chiyankhulo",
+    "search": "Sakani zilankhulo",
+    "empty": "Palibe zilankhulo zomwe zapezeka",
+    "close": "Tsekani"
+  }
+}

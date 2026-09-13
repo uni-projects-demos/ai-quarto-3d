@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interaktiivinen 3D Quarto -lautapelin käyttöliittymä, joka käyttää Three.js:ää sekä Minimax-tekoälyalgoritmin Negamax-versiota alfa-beta-karsinnalla. Pelaa pelaaja vastaan pelaaja, pelaaja vastaan tekoäly tai tekoäly vastaan tekoäly helpolla, keskitasolla tai vaikealla tekoälyllä.",
     "ogDescription": "Interaktiivinen 3D Quarto -lautapeli. Pelaa pelaaja vastaan pelaaja, pelaaja vastaan tekoäly tai tekoäly vastaan tekoäly helpolla, keskitasolla tai vaikealla tekoälyllä."
+  },
+  "language": {
+    "label": "Kieli",
+    "search": "Hae kieliä",
+    "empty": "Kieliä ei löytynyt",
+    "close": "Sulje"
   }
 }

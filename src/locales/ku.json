@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Guhertoyek veguheztî ya",
+    "newGame": "Lîstika nû"
+  },
+  "common": {
+    "on": "VEKIRÎ",
+    "off": "GIRTÎ"
+  },
+  "a11y": {
+    "utilityActions": "Girêdanên sepanê û ziman",
+    "viewSource": "Çavkaniyê li GitHub bibîne",
+    "gameControls": "Kontrolên lîstikê",
+    "gameBoard": "Tabloya lîstikê ya 3D",
+    "gameInfo": "Agahiyên lîstikê"
+  },
+  "controls": {
+    "diffAI": "Zehmetiya AI",
+    "diffPlayerOneAI": "Zehmetiya P1",
+    "diffPlayerTwoAI": "Zehmetiya P2",
+    "startingPlayer": "Lîstikvanê destpêkê",
+    "gameMode": "Moda lîstikê",
+    "pauseAI": "AI rawestîne",
+    "resumeAI": "AI bidomîne",
+    "undo": "Paşve vegere",
+    "redo": "Dîsa bike"
+  },
+  "diff": {
+    "easy": "Hêsan",
+    "medium": "Navîn",
+    "hard": "Zehmet"
+  },
+  "mode": {
+    "userVsUser": "Bikarhêner li dijî bikarhêner",
+    "userVsAI": "Bikarhêner li dijî AI",
+    "onlyAI": "AI li dijî AI"
+  },
+  "player": {
+    "playerYou": "Tu",
+    "playerOne": "Lîstikvan Yek",
+    "playerTwo": "Lîstikvan Du",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Tesadufî",
+    "playerAIPlayer": "Lîstikvanê AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Rewşa lîstikê...",
+    "pausedAI": "{{player}} hatiye rawestandin...",
+    "placingAI": "{{player}} dilîze - perçeyê li ser tabloyê dide...",
+    "placingUser": "{{player}} dilîze - Perçeya hilbijartî li ser tabloyê deyn...",
+    "placeUserYou": "Tu dilîzî - Perçeya hilbijartî li ser tabloyê deyn...",
+    "gameDrawn": "Lîstik beramber - rêza serketinê tune",
+    "gameWon": "{{player}} serket - rêza serketinê hatiye ronîkirin",
+    "selectingAI": "{{player}} dilîze - perçeyek ji bo {{opponent}} hilbijêre...",
+    "selectUser": "{{player}} dilîze - Perçeyek ji bo {{opponent}} hilbijêre...",
+    "selectUserYou": "Tu dilîzî - Perçeyek ji bo {{opponent}} hilbijêre..."
+  },
+  "piece": {
+    "inPlay": "Perçe di lîstikê de",
+    "none": "Tiştek nehatiye hilbijartin",
+    "traits": "Taybetmendiyên perçeyê",
+    "black": "reş",
+    "red": "sor",
+    "big": "mezin",
+    "small": "piçûk",
+    "round": "girover",
+    "square": "çarçik",
+    "solid": "tije",
+    "hollow": "vala"
+  },
+  "board": {
+    "binary": "Tabloya binary",
+    "piecesPlaced": "Perçeyên hatine danîn",
+    "cellEmpty": "Xane {{cell}}: vala",
+    "cellPiece": "Xane {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Nîşandana 3D nayê bikaranîn.",
+    "webglHeading": "WebGL nikarî dest pê bike.",
+    "webglMsg": "Lîstik hewce dike WebGL di gerokê de çalak be."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Kursorê li ser perçeyek hilbijêrbar bihêle da rîska hilbijartinê bibînî",
+    "hoveredRiskOne": "Rîska perçeya bin kursorê: {{risk}} danîna serketinê ya yekser",
+    "hoveredRiskMany": "Rîska perçeya bin kursorê: {{risk}} danînên serketinê yên yekser",
+    "immediateWins": "Danînên serketinê yên yekser",
+    "latestRisk": "Rîska hilbijartinê ya dawî",
+    "riskOneAI": "Rîska perçeya AI hilbijartî: {{risk}} danîna serketinê ya yekser",
+    "riskManyAI": "Rîska perçeya AI hilbijartî: {{risk}} danînên serketinê yên yekser",
+    "riskTurnedOff": "Rîska hilbijartinê girtî ye",
+    "riskUnavailableAI": "Rîska hilbijartinê di moda AI li dijî AI de tune",
+    "selectionRisk": "Rîska hilbijartinê",
+    "turnRiskOff": "Rîska hilbijartinê bigire",
+    "turnRiskOn": "Rîska hilbijartinê veke"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ziman",
+    "search": "Zimanan bigerin",
+    "empty": "Ziman nehatin dîtin",
+    "close": "Bigire"
+  }
+}

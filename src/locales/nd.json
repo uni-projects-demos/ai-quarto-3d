@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ukuthuthukiswa okulethwe kusuka ku",
+    "newGame": "Umdlalo omutsha"
+  },
+  "common": {
+    "on": "VULIWE",
+    "off": "CINYIWE"
+  },
+  "a11y": {
+    "utilityActions": "Izixhumanisi zohlelo lolimi",
+    "viewSource": "Bona umthombo ku-GitHub",
+    "gameControls": "Izilawuli zomdlalo",
+    "gameBoard": "Ibhodi lomdlalo le-3D",
+    "gameInfo": "Ulwazi lomdlalo"
+  },
+  "controls": {
+    "diffAI": "Ubunzima be-AI",
+    "diffPlayerOneAI": "Ubunzima be-P1",
+    "diffPlayerTwoAI": "Ubunzima be-P2",
+    "startingPlayer": "Umdlali oqalisayo",
+    "gameMode": "Indlela yomdlalo",
+    "pauseAI": "Misa i-AI",
+    "resumeAI": "Qhubeka ne-AI",
+    "undo": "Buyisela",
+    "redo": "Yenza futhi"
+  },
+  "diff": {
+    "easy": "Kulula",
+    "medium": "Phakathi",
+    "hard": "Kunzima"
+  },
+  "mode": {
+    "userVsUser": "Umsebenzisi vs umsebenzisi",
+    "userVsAI": "Umsebenzisi vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Wena",
+    "playerOne": "Umdlali Wokuqala",
+    "playerTwo": "Umdlali Wesibili",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Okungahleliwe",
+    "playerAIPlayer": "Umdlali we-AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Isimo somdlalo...",
+    "pausedAI": "{{player}} umisiwe...",
+    "placingAI": "{{player}} uyadlala - ubeka isiqephu ebhodini...",
+    "placingUser": "{{player}} uyadlala - Beka isiqephu esikhethiwe ebhodini...",
+    "placeUserYou": "Wena uyadlala - Beka isiqephu esikhethiwe ebhodini...",
+    "gameDrawn": "Umdlalo ulingene - akukho umugqa wokunqoba",
+    "gameWon": "{{player}} unqobile - umugqa wokunqoba ugqanyisiwe",
+    "selectingAI": "{{player}} uyadlala - ukhetha isiqephu sika {{opponent}}...",
+    "selectUser": "{{player}} uyadlala - Khetha isiqephu sika {{opponent}}...",
+    "selectUserYou": "Wena uyadlala - Khetha isiqephu sika {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Isiqephu esidlalwayo",
+    "none": "Akukho okukhethiwe",
+    "traits": "Izimpawu zesiqephu",
+    "black": "mnyama",
+    "red": "bomvu",
+    "big": "khulu",
+    "small": "ncane",
+    "round": "yindilinga",
+    "square": "sikwele",
+    "solid": "qinile",
+    "hollow": "lilomgodi"
+  },
+  "board": {
+    "binary": "Ibhodi le-binary",
+    "piecesPlaced": "Iziqephu ezibekiweyo",
+    "cellEmpty": "Iseli {{cell}}: alilalutho",
+    "cellPiece": "Iseli {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Ukubonisa kwe-3D akutholakali.",
+    "webglHeading": "I-WebGL ayikwazanga ukuqala.",
+    "webglMsg": "Umdlalo udinga i-WebGL ivuliwe kusiphequluli."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Hambisa igundane phezu kwesiqephu esikhethekayo ukubona ingozi yokukhetha",
+    "hoveredRiskOne": "Ingozi yesiqephu esingaphansi kwegundane: {{risk}} indawo yokunqoba masinyane",
+    "hoveredRiskMany": "Ingozi yesiqephu esingaphansi kwegundane: {{risk}} izindawo zokunqoba masinyane",
+    "immediateWins": "Izindawo zokunqoba masinyane",
+    "latestRisk": "Ingozi yokukhetha yakamuva",
+    "riskOneAI": "Ingozi yesiqephu esikhethwe yi-AI: {{risk}} indawo yokunqoba masinyane",
+    "riskManyAI": "Ingozi yesiqephu esikhethwe yi-AI: {{risk}} izindawo zokunqoba masinyane",
+    "riskTurnedOff": "Ingozi yokukhetha icinyiwe",
+    "riskUnavailableAI": "Ingozi yokukhetha ayitholakali kumodi ye-AI vs AI",
+    "selectionRisk": "Ingozi yokukhetha",
+    "turnRiskOff": "Cima ingozi yokukhetha",
+    "turnRiskOn": "Vula ingozi yokukhetha"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ulimi",
+    "search": "Dinga izilimi",
+    "empty": "Akulalimi olutholakeleyo",
+    "close": "Vala"
+  }
+}

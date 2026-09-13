@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Wēhīh ī pad ēn frāz āmad",
+    "newGame": "Nōg bāzīg"
+  },
+  "common": {
+    "on": "RŌŠN",
+    "off": "XĀMŌŠ"
+  },
+  "a11y": {
+    "utilityActions": "Paywandān ī app ud uzwān",
+    "viewSource": "Bunag pad GitHub niger",
+    "gameControls": "Farmānān ī bāzīg",
+    "gameBoard": "3D tāxtag ī bāzīg",
+    "gameInfo": "Dānišn ī bāzīg"
+  },
+  "controls": {
+    "diffAI": "Dušwārīh ī AI",
+    "diffPlayerOneAI": "Dušwārīh ī P1",
+    "diffPlayerTwoAI": "Dušwārīh ī P2",
+    "startingPlayer": "Bāzīgar ī fradom",
+    "gameMode": "Rāh ī bāzīg",
+    "pauseAI": "AI estēn",
+    "resumeAI": "AI rawān kun",
+    "undo": "Abāz kun",
+    "redo": "Dōbār kun"
+  },
+  "diff": {
+    "easy": "Āsān",
+    "medium": "Miyān",
+    "hard": "Dušwār"
+  },
+  "mode": {
+    "userVsUser": "Kārbar abar kārbar",
+    "userVsAI": "Kārbar abar AI",
+    "onlyAI": "AI abar AI"
+  },
+  "player": {
+    "playerYou": "Tō",
+    "playerOne": "Bāzīgar Ēk",
+    "playerTwo": "Bāzīgar Dō",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Gumānīg",
+    "playerAIPlayer": "Bāzīgar AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Hāl ī bāzīg...",
+    "pausedAI": "{{player}} estād...",
+    "placingAI": "{{player}} bāzēd - parrag pad tāxtag nihēd...",
+    "placingUser": "{{player}} bāzēd - parrag ī wizīd pad tāxtag nih...",
+    "placeUserYou": "Tō bāzē - parrag ī wizīd pad tāxtag nih...",
+    "gameDrawn": "Bāzīg hambaz - rēš ī pērōzīh nēst",
+    "gameWon": "{{player}} pērōz - rēš ī pērōzīh nishān dād",
+    "selectingAI": "{{player}} bāzēd - parrag ō {{opponent}} wizīnēd...",
+    "selectUser": "{{player}} bāzēd - parrag ō {{opponent}} wizīn...",
+    "selectUserYou": "Tō bāzē - parrag ō {{opponent}} wizīn..."
+  },
+  "piece": {
+    "inPlay": "Parrag andar bāzīg",
+    "none": "Čiš nē wizīd",
+    "traits": "Xwēškārīhā ī parrag",
+    "black": "siyāh",
+    "red": "suxr",
+    "big": "wuzurg",
+    "small": "kas",
+    "round": "gard",
+    "square": "čahār-gōšag",
+    "solid": "stabr",
+    "hollow": "tuhīg"
+  },
+  "board": {
+    "binary": "Dō-gōnag tāxtag",
+    "piecesPlaced": "Parragān ī nihād",
+    "cellEmpty": "Xānag {{cell}}: tuhīg",
+    "cellPiece": "Xānag {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D nishān nēst.",
+    "webglHeading": "WebGL nē tawānist āgāz kardan.",
+    "webglMsg": "Bāzīg WebGL pad browser rōšn xwāhēd."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Cursor abar parrag ī wizīdan šāyad dār tā wizīšn-bīm niger",
+    "hoveredRiskOne": "Bīm ī parrag pad cursor: {{risk}} juld pērōzīh-gāh",
+    "hoveredRiskMany": "Bīm ī parrag pad cursor: {{risk}} juld pērōzīh-gāhān",
+    "immediateWins": "Juld pērōzīh-gāhān",
+    "latestRisk": "Pasīn wizīšn-bīm",
+    "riskOneAI": "Bīm ī parrag ī AI wizīd: {{risk}} juld pērōzīh-gāh",
+    "riskManyAI": "Bīm ī parrag ī AI wizīd: {{risk}} juld pērōzīh-gāhān",
+    "riskTurnedOff": "Wizīšn-bīm xāmōš ast",
+    "riskUnavailableAI": "Wizīšn-bīm pad AI abar AI nēst",
+    "selectionRisk": "Wizīšn-bīm",
+    "turnRiskOff": "Wizīšn-bīm xāmōš kun",
+    "turnRiskOn": "Wizīšn-bīm rōšn kun"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Zabān",
+    "search": "Zabān jōy",
+    "empty": "Zabān nē dīd",
+    "close": "Bastan"
+  }
+}

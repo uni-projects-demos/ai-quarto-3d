@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ũbũngũrũri ũcio wathamitio kuuma",
+    "newGame": "Mũthako mwerũ"
+  },
+  "common": {
+    "on": "WAKWA",
+    "off": "WAZIMA"
+  },
+  "a11y": {
+    "utilityActions": "Mĩhĩtũkĩro ya app na rũthiomi",
+    "viewSource": "Rora source GitHub",
+    "gameControls": "Mĩthondekero ya mũthako",
+    "gameBoard": "Ũbao wa mũthako wa 3D",
+    "gameInfo": "Ũhoro wa mũthako"
+  },
+  "controls": {
+    "diffAI": "Ũritũ wa AI",
+    "diffPlayerOneAI": "Ũritũ wa P1",
+    "diffPlayerTwoAI": "Ũritũ wa P2",
+    "startingPlayer": "Mũthaki wa kuambĩrĩria",
+    "gameMode": "Mũthemba wa mũthako",
+    "pauseAI": "Hingĩrĩria AI",
+    "resumeAI": "Enderia AI",
+    "undo": "Tharia",
+    "redo": "Ĩra rĩngĩ"
+  },
+  "diff": {
+    "easy": "Hũthũ",
+    "medium": "Gatagatĩ",
+    "hard": "Ritũ"
+  },
+  "mode": {
+    "userVsUser": "Mũndũ thiritũ wa mũndũ",
+    "userVsAI": "Mũndũ thiritũ wa AI",
+    "onlyAI": "AI thiritũ wa AI"
+  },
+  "player": {
+    "playerYou": "Wee",
+    "playerOne": "Mũthaki Wa Mbere",
+    "playerTwo": "Mũthaki Wa Kerĩ",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Hatarĩ mũtaratara",
+    "playerAIPlayer": "Mũthaki wa AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Mũthako ũrĩ atĩa...",
+    "pausedAI": "{{player}} nĩ ahingĩrĩrio...",
+    "placingAI": "{{player}} nĩ arathaka - agĩtũma kipande ũbao-inĩ...",
+    "placingUser": "{{player}} nĩ arathaka - Tũma kipande gĩthuurĩtwo ũbao-inĩ...",
+    "placeUserYou": "Nĩ ũrathaka - Tũma kipande gĩthuurĩtwo ũbao-inĩ...",
+    "gameDrawn": "Mũthako ũrĩ sawa - gũtirĩ mũhari wa gũtooria",
+    "gameWon": "{{player}} nĩ atooria - mũhari wa gũtooria nĩ wonanĩtio",
+    "selectingAI": "{{player}} nĩ arathaka - agĩthuura kipande kĩa {{opponent}}...",
+    "selectUser": "{{player}} nĩ arathaka - Thuura kipande kĩa {{opponent}}...",
+    "selectUserYou": "Nĩ ũrathaka - Thuura kipande kĩa {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Kipande kĩrĩ mũthakoinĩ",
+    "none": "Gũtirĩ kĩthuurĩtwo",
+    "traits": "Mĩthemba ya kipande",
+    "black": "irũ",
+    "red": "ndune",
+    "big": "nene",
+    "small": "nini",
+    "round": "kĩringo",
+    "square": "kĩa kona inya",
+    "solid": "kĩiyũru",
+    "hollow": "gĩtũũgĩ"
+  },
+  "board": {
+    "binary": "Ũbao wa binary",
+    "piecesPlaced": "Ipinande iria ithondeketwo",
+    "cellEmpty": "Cell {{cell}}: harĩ thĩ",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering ndĩho.",
+    "webglHeading": "WebGL ndĩahotire kwambĩrĩria.",
+    "webglMsg": "Mũthako ũrabatara WebGL wakwa browser-inĩ."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Tũma mouse igũrũ rĩa kipande gĩthuurĩtwo kuona risk ya gũthuura",
+    "hoveredRiskOne": "Risk ya kipande kĩrĩ thĩ wa mouse: {{risk}} handũ ha gũtooria o rĩu",
+    "hoveredRiskMany": "Risk ya kipande kĩrĩ thĩ wa mouse: {{risk}} handũ cia gũtooria o rĩu",
+    "immediateWins": "Handũ cia gũtooria o rĩu",
+    "latestRisk": "Risk ya gũthuura ya mũthia",
+    "riskOneAI": "Risk ya kipande gĩthuurĩtwo nĩ AI: {{risk}} handũ ha gũtooria o rĩu",
+    "riskManyAI": "Risk ya kipande gĩthuurĩtwo nĩ AI: {{risk}} handũ cia gũtooria o rĩu",
+    "riskTurnedOff": "Risk ya gũthuura nĩ yazimwo",
+    "riskUnavailableAI": "Risk ya gũthuura ndĩho thĩinĩ wa AI thiritũ wa AI",
+    "selectionRisk": "Risk ya gũthuura",
+    "turnRiskOff": "Zima risk ya gũthuura",
+    "turnRiskOn": "Kwaka risk ya gũthuura"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Rũthiomi",
+    "search": "Caria ndimi",
+    "empty": "Gũtirĩ rũthiomi rũonekire",
+    "close": "Hinga"
+  }
+}

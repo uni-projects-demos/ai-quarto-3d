@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Un portat amelioration de",
+    "newGame": "Nov partie"
+  },
+  "common": {
+    "on": "ACTIV",
+    "off": "INACTIV"
+  },
+  "a11y": {
+    "utilityActions": "Ligamentes del application e lingue",
+    "viewSource": "Vider li fonte sur GitHub",
+    "gameControls": "Control del partie",
+    "gameBoard": "Tabul de partie 3D",
+    "gameInfo": "Information pri li partie"
+  },
+  "controls": {
+    "diffAI": "Dificultá de AI",
+    "diffPlayerOneAI": "Dificultá P1",
+    "diffPlayerTwoAI": "Dificultá P2",
+    "startingPlayer": "Ludero inicial",
+    "gameMode": "Mode de partie",
+    "pauseAI": "Pausar AI",
+    "resumeAI": "Continuar AI",
+    "undo": "Defar",
+    "redo": "Refar"
+  },
+  "diff": {
+    "easy": "Facil",
+    "medium": "Medial",
+    "hard": "Dificil"
+  },
+  "mode": {
+    "userVsUser": "Usator contra usator",
+    "userVsAI": "Usator contra AI",
+    "onlyAI": "AI contra AI"
+  },
+  "player": {
+    "playerYou": "Tu",
+    "playerOne": "Ludero Un",
+    "playerTwo": "Ludero Du",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Aleatori",
+    "playerAIPlayer": "Ludero AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "State del partie...",
+    "pausedAI": "{{player}} es pausat...",
+    "placingAI": "{{player}} lude - plazza un pezze sur li tabul...",
+    "placingUser": "{{player}} lude - Plazza li selectet pezze sur li tabul...",
+    "placeUserYou": "Tu lude - Plazza li selectet pezze sur li tabul...",
+    "gameDrawn": "Partie egal - null victori-linie",
+    "gameWon": "{{player}} victe - li victori-linie es accentuat",
+    "selectingAI": "{{player}} lude - selecte un pezze por {{opponent}}...",
+    "selectUser": "{{player}} lude - Selecte un pezze por {{opponent}}...",
+    "selectUserYou": "Tu lude - Selecte un pezze por {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pezze in lude",
+    "none": "Null selectet",
+    "traits": "Proprietás del pezze",
+    "black": "nigri",
+    "red": "rubi",
+    "big": "grand",
+    "small": "micri",
+    "round": "rond",
+    "square": "quadratic",
+    "solid": "solid",
+    "hollow": "cavi"
+  },
+  "board": {
+    "binary": "Binari tabul",
+    "piecesPlaced": "Plazzat pezzes",
+    "cellEmpty": "Cellul {{cell}}: vacui",
+    "cellPiece": "Cellul {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Li rendition 3D ne es disponibil.",
+    "webglHeading": "WebGL ne posset iniciar.",
+    "webglMsg": "Li partie besona WebGL activat in li navigator."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Tene li cursor sur un selectibil pezze por vider su risca de selection",
+    "hoveredRiskOne": "Risca del pezze sub cursor: {{risk}} immediat victori-plazzament",
+    "hoveredRiskMany": "Risca del pezze sub cursor: {{risk}} immediat victori-plazzamentes",
+    "immediateWins": "Immediat victori-plazzamentes",
+    "latestRisk": "Ultim risca de selection",
+    "riskOneAI": "Risca del pezze selectet de AI: {{risk}} immediat victori-plazzament",
+    "riskManyAI": "Risca del pezze selectet de AI: {{risk}} immediat victori-plazzamentes",
+    "riskTurnedOff": "Risca de selection es desactivat",
+    "riskUnavailableAI": "Risca de selection ne es disponibil in mode AI contra AI",
+    "selectionRisk": "Risca de selection",
+    "turnRiskOff": "Desactivar risca de selection",
+    "turnRiskOn": "Activar risca de selection"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lingue",
+    "search": "Serchar lingues",
+    "empty": "Null lingues trovat",
+    "close": "Cluder"
+  }
+}

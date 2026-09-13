@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "A portit impruivement o",
+    "newGame": "New game"
+  },
+  "common": {
+    "on": "ON",
+    "off": "AFF"
+  },
+  "a11y": {
+    "utilityActions": "App links an leid",
+    "viewSource": "View soorce on GitHub",
+    "gameControls": "Game controls",
+    "gameBoard": "3D game buird",
+    "gameInfo": "Game information"
+  },
+  "controls": {
+    "diffAI": "AI difficulty",
+    "diffPlayerOneAI": "P1 difficulty",
+    "diffPlayerTwoAI": "P2 difficulty",
+    "startingPlayer": "Stairtin player",
+    "gameMode": "Game mode",
+    "pauseAI": "Pause AI",
+    "resumeAI": "Resume AI",
+    "undo": "Undo",
+    "redo": "Redo"
+  },
+  "diff": {
+    "easy": "Easy",
+    "medium": "Middlin",
+    "hard": "Haird"
+  },
+  "mode": {
+    "userVsUser": "Uiser vs uiser",
+    "userVsAI": "Uiser vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Ye",
+    "playerOne": "Player Ane",
+    "playerTwo": "Player Twa",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Random",
+    "playerAIPlayer": "AI Player",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Game status...",
+    "pausedAI": "{{player}} is pausit...",
+    "placingAI": "{{player}} is playin - pittin piece on the buird...",
+    "placingUser": "{{player}} is playin - pit selected piece on buird...",
+    "placeUserYou": "Ye are playin - pit selected piece on buird...",
+    "gameDrawn": "Game drawn - nae winnin line",
+    "gameWon": "{{player}} wins - winnin line heichlichtit",
+    "selectingAI": "{{player}} is playin - selectin a piece fer {{opponent}}...",
+    "selectUser": "{{player}} is playin - select a piece fer {{opponent}}...",
+    "selectUserYou": "Ye are playin - select a piece fer {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Piece in play",
+    "none": "Nane selected",
+    "traits": "Piece traits",
+    "black": "black",
+    "red": "red",
+    "big": "big",
+    "small": "wee",
+    "round": "roond",
+    "square": "square",
+    "solid": "solid",
+    "hollow": "holler"
+  },
+  "board": {
+    "binary": "Binary buird",
+    "piecesPlaced": "Placed pieces",
+    "cellEmpty": "Cell {{cell}}: empty",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D renderin isnae available.",
+    "webglHeading": "WebGL couldnae stairt.",
+    "webglMsg": "The game needs WebGL enabled in the brouser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Houver a selectable piece tae preview its selection risk",
+    "hoveredRiskOne": "Houvered piece risk: {{risk}} immediate winnin placement",
+    "hoveredRiskMany": "Houvered piece risk: {{risk}} immediate winnin placements",
+    "immediateWins": "Immediate winnin placements",
+    "latestRisk": "Latest selection risk",
+    "riskOneAI": "AI selected piece risk: {{risk}} immediate winnin placement",
+    "riskManyAI": "AI selected piece risk: {{risk}} immediate winnin placements",
+    "riskTurnedOff": "Selection risk is turnt aff",
+    "riskUnavailableAI": "Selection risk unavailable in AI vs AI mode",
+    "selectionRisk": "Selection risk",
+    "turnRiskOff": "Turn selection risk aff",
+    "turnRiskOn": "Turn selection risk on"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Leid",
+    "search": "Search leids",
+    "empty": "Nae leids fund",
+    "close": "Dùin"
+  }
+}

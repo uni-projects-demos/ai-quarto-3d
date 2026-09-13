@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Three.js とアルファベータ枝刈りを備えた Minimax 人工知能アルゴリズムの Negamax 版を使用する、インタラクティブな 3D Quarto ボードゲーム UI。ユーザー対ユーザー、ユーザー対 AI、AI 対 AI を、簡単・普通・難しい AI 難易度でプレイできます。",
     "ogDescription": "インタラクティブな 3D Quarto ボードゲーム。ユーザー対ユーザー、ユーザー対 AI、AI 対 AI を、簡単・普通・難しい AI 難易度でプレイできます。"
+  },
+  "language": {
+    "label": "言語",
+    "search": "検索言語",
+    "empty": "言語が見つかりません",
+    "close": "閉じる"
   }
 }

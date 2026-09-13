@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Áłtsé át'éego bee ánáádááłnííł",
+    "newGame": "Naalkaah bee na'ashchąąh náhást'éí"
+  },
+  "common": {
+    "on": "ÍÍŁ'ÁÁH",
+    "off": "DAAŁTS'ÍÍŁ"
+  },
+  "a11y": {
+    "utilityActions": "Naaltsoos bee hane'ígíí dóó saad",
+    "viewSource": "GitHub bikáá' source yíłta'",
+    "gameControls": "Na'ashchąąh bee ájít'į́",
+    "gameBoard": "3D na'ashchąąh bikáá'",
+    "gameInfo": "Na'ashchąąh baa hane'"
+  },
+  "controls": {
+    "diffAI": "AI doo yá'át'ééhgóó",
+    "diffPlayerOneAI": "P1 doo yá'át'ééhgóó",
+    "diffPlayerTwoAI": "P2 doo yá'át'ééhgóó",
+    "startingPlayer": "Naashchąąhígíí áłtsé",
+    "gameMode": "Na'ashchąąh bee át'é",
+    "pauseAI": "AI yish'ą́ą́zh",
+    "resumeAI": "AI nááłchį́į́h",
+    "undo": "Nááshch'į́į́h",
+    "redo": "Ánááshch'į́į́h"
+  },
+  "diff": {
+    "easy": "Hózhǫ́",
+    "medium": "T'áá áłts'íísí",
+    "hard": "Hadaałts'íí"
+  },
+  "mode": {
+    "userVsUser": "Hastiin naashchąąh hastiin yázhí yíláah",
+    "userVsAI": "Hastiin naashchąąh AI yíláah",
+    "onlyAI": "AI AI yíláah"
+  },
+  "player": {
+    "playerYou": "Nii",
+    "playerOne": "Naashchąąhígíí T'ááłá'í",
+    "playerTwo": "Naashchąąhígíí Naaki",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "T'áá bí'dizhchį́į́h",
+    "playerAIPlayer": "AI naashchąąhígíí",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Na'ashchąąh bee át'é...",
+    "pausedAI": "{{player}} yish'ą́ą́zh...",
+    "placingAI": "{{player}} naashchąąh - béésh łichíí' bikáá' bee yishtį́...",
+    "placingUser": "{{player}} naashchąąh - Béésh bee yáníłti'ígíí bikáá' bee náníłtį́į́h...",
+    "placeUserYou": "Nii naashchąąh - Béésh bee yáníłti'ígíí bikáá' bee náníłtį́į́h...",
+    "gameDrawn": "Na'ashchąąh t'áá ahééhésh - doo ałts'á'ígíí nidaalnish",
+    "gameWon": "{{player}} yił ałts'á' - ałts'á'ígíí bee yá'át'ééh",
+    "selectingAI": "{{player}} naashchąąh - {{opponent}} biniiyé béésh yáníłti'...",
+    "selectUser": "{{player}} naashchąąh - {{opponent}} biniiyé béésh níłti'...",
+    "selectUserYou": "Nii naashchąąh - {{opponent}} biniiyé béésh níłti'..."
+  },
+  "piece": {
+    "inPlay": "Béésh na'ashchąąh bikáá'",
+    "none": "Doo baa níłtį́į́góó",
+    "traits": "Béésh bee át'éegi",
+    "black": "łizhin",
+    "red": "łichíí'",
+    "big": "níłtsá",
+    "small": "yázhí",
+    "round": "hazhó'ógo ánáshchį́į́h",
+    "square": "náákááh",
+    "solid": "bee hwiih yázhí",
+    "hollow": "bee hwiih"
+  },
+  "board": {
+    "binary": "Binary bikáá'",
+    "piecesPlaced": "Béésh bikáá' naazlį́į́'",
+    "cellEmpty": "Cell {{cell}}: doo bee dah naaz'ą́ą́góó",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D bee yishtį́ doo bee ájít'į́į́ł da.",
+    "webglHeading": "WebGL doo áłtsé yá'át'ééh da.",
+    "webglMsg": "Na'ashchąąh WebGL browser bikáá' ííł'áahgo ájít'į́į́ł."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Béésh bee yáníłti'ígíí bikáá' cursor yíníłtį́į́ł, bee háádá át'į́į́dígíí níłta'",
+    "hoveredRiskOne": "Béésh cursor biyaa risk: {{risk}} t'áá íiyisíí ałts'á'ígíí",
+    "hoveredRiskMany": "Béésh cursor biyaa risk: {{risk}} t'áá íiyisíí ałts'á'ígíí",
+    "immediateWins": "T'áá íiyisíí ałts'á'ígíí",
+    "latestRisk": "Áłahjį́ risk bee yáníłti'",
+    "riskOneAI": "AI béésh yáníłti' risk: {{risk}} t'áá íiyisíí ałts'á'ígíí",
+    "riskManyAI": "AI béésh yáníłti' risk: {{risk}} t'áá íiyisíí ałts'á'ígíí",
+    "riskTurnedOff": "Risk doo ííł'ááh da",
+    "riskUnavailableAI": "AI AI yíláah mode risk doo bee ájít'į́į́ł da",
+    "selectionRisk": "Risk bee yáníłti'",
+    "turnRiskOff": "Risk daałts'ííł",
+    "turnRiskOn": "Risk ííł'ááh"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Saad",
+    "search": "Saad yishʼį́į́ł",
+    "empty": "Saad doo shił hólǫ́ǫ́ da",
+    "close": "Nááshchííł"
+  }
+}

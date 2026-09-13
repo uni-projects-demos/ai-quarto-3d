@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "E dua na vakavinakataki mai na",
+    "newGame": "Qito vou"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Isema ni app kei na vosa",
+    "viewSource": "Raica na ivurevure ena GitHub",
+    "gameControls": "Veiliutaki ni qito",
+    "gameBoard": "Papa ni qito 3D",
+    "gameInfo": "iTukutuku ni qito"
+  },
+  "controls": {
+    "diffAI": "Dredre ni AI",
+    "diffPlayerOneAI": "Dredre ni P1",
+    "diffPlayerTwoAI": "Dredre ni P2",
+    "startingPlayer": "Dauqito me tekivu",
+    "gameMode": "iVakarau ni qito",
+    "pauseAI": "Vakadua na AI",
+    "resumeAI": "Vakuria tale na AI",
+    "undo": "Lesu",
+    "redo": "Cakava tale"
+  },
+  "diff": {
+    "easy": "Rawarawa",
+    "medium": "Veimama",
+    "hard": "Dredre"
+  },
+  "mode": {
+    "userVsUser": "Tamata kei na tamata",
+    "userVsAI": "Tamata kei na AI",
+    "onlyAI": "AI kei na AI"
+  },
+  "player": {
+    "playerYou": "O iko",
+    "playerOne": "Dauqito Dua",
+    "playerTwo": "Dauqito Rua",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Veicalati",
+    "playerAIPlayer": "Dauqito AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "iTuvaki ni qito...",
+    "pausedAI": "Sa vakadua tu o {{player}}...",
+    "placingAI": "Sa qito tiko o {{player}} - biuta tiko na tiki ena papa...",
+    "placingUser": "Sa qito tiko o {{player}} - Biuta na tiki sa digitaki ena papa...",
+    "placeUserYou": "O qito tiko - Biuta na tiki sa digitaki ena papa...",
+    "gameDrawn": "Qito tautauvata - sega na laini qaqa",
+    "gameWon": "Sa qaqa o {{player}} - sa vakatakilai na laini qaqa",
+    "selectingAI": "Sa qito tiko o {{player}} - digitaka e dua na tiki me nei {{opponent}}...",
+    "selectUser": "Sa qito tiko o {{player}} - Digitaka e dua na tiki me nei {{opponent}}...",
+    "selectUserYou": "O qito tiko - Digitaka e dua na tiki me nei {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Tiki e qito",
+    "none": "Sega ni dua e digitaki",
+    "traits": "iTovo ni tiki",
+    "black": "loaloa",
+    "red": "damudamu",
+    "big": "levu",
+    "small": "lailai",
+    "round": "mokimokiti",
+    "square": "veimama-vakatikina",
+    "solid": "taucoko",
+    "hollow": "qara"
+  },
+  "board": {
+    "binary": "Papa binary",
+    "piecesPlaced": "Tiki sa biu",
+    "cellEmpty": "Kato {{cell}}: lala",
+    "cellPiece": "Kato {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "E sega ni rawa na vakatakilakila 3D.",
+    "webglHeading": "E sega ni rawa ni tekivu na WebGL.",
+    "webglMsg": "E gadrevi na WebGL me vakayagataki ena barausa."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Tara toka e dua na tiki e rawa ni digitaki mo raica na kena rerevaki ni digitaki",
+    "hoveredRiskOne": "Rerevaki ni tiki e raici: {{risk}} vanua ni qaqa vakatotolo",
+    "hoveredRiskMany": "Rerevaki ni tiki e raici: {{risk}} vanua ni qaqa vakatotolo",
+    "immediateWins": "Vanua ni qaqa vakatotolo",
+    "latestRisk": "Rerevaki ni digidigi vou",
+    "riskOneAI": "Rerevaki ni tiki sa digitaka na AI: {{risk}} vanua ni qaqa vakatotolo",
+    "riskManyAI": "Rerevaki ni tiki sa digitaka na AI: {{risk}} vanua ni qaqa vakatotolo",
+    "riskTurnedOff": "Sa bokoci na rerevaki ni digidigi",
+    "riskUnavailableAI": "Sega ni vakarautaki na rerevaki ni digidigi ena AI kei na AI",
+    "selectionRisk": "Rerevaki ni digidigi",
+    "turnRiskOff": "Bokoca na rerevaki ni digidigi",
+    "turnRiskOn": "Vakacuruma na rerevaki ni digidigi"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Vosa",
+    "search": "Vakasaqara na vosa",
+    "empty": "Sega ni kune e dua na vosa",
+    "close": "Sogo"
+  }
+}

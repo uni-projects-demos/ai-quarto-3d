@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Usa ka gi-port nga pagpaayo sa",
+    "newGame": "Bag-ong duwa"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Mga link sa aplikasyon ug pinulongan",
+    "viewSource": "Tan-awa ang source sa GitHub",
+    "gameControls": "Mga kontrol sa duwa",
+    "gameBoard": "3D nga board sa duwa",
+    "gameInfo": "Impormasyon sa duwa"
+  },
+  "controls": {
+    "diffAI": "Kalisod sa AI",
+    "diffPlayerOneAI": "Kalisod sa P1",
+    "diffPlayerTwoAI": "Kalisod sa P2",
+    "startingPlayer": "Magsugod nga magdudula",
+    "gameMode": "Mode sa duwa",
+    "pauseAI": "I-pause ang AI",
+    "resumeAI": "Ipadayon ang AI",
+    "undo": "I-undo",
+    "redo": "I-redo"
+  },
+  "diff": {
+    "easy": "Sayon",
+    "medium": "Tunga-tunga",
+    "hard": "Lisod"
+  },
+  "mode": {
+    "userVsUser": "User kontra user",
+    "userVsAI": "User kontra AI",
+    "onlyAI": "AI kontra AI"
+  },
+  "player": {
+    "playerYou": "Ikaw",
+    "playerOne": "Magdudula Usa",
+    "playerTwo": "Magdudula Duha",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Random",
+    "playerAIPlayer": "AI nga magdudula",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Kahimtang sa duwa...",
+    "pausedAI": "{{player}} naka-pause...",
+    "placingAI": "{{player}} nagdula - nagbutang og piyesa sa board...",
+    "placingUser": "{{player}} nagdula - Ibutang ang napiling piyesa sa board...",
+    "placeUserYou": "Nagdula ka - Ibutang ang napiling piyesa sa board...",
+    "gameDrawn": "Tabla ang duwa - walay linya nga modaog",
+    "gameWon": "{{player}} midaog - gi-highlight ang linya nga modaog",
+    "selectingAI": "{{player}} nagdula - nagpili og piyesa para kang {{opponent}}...",
+    "selectUser": "{{player}} nagdula - Pagpili og piyesa para kang {{opponent}}...",
+    "selectUserYou": "Nagdula ka - Pagpili og piyesa para kang {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Piyesa nga gidula",
+    "none": "Walay napili",
+    "traits": "Mga kinaiya sa piyesa",
+    "black": "itom",
+    "red": "pula",
+    "big": "dako",
+    "small": "gamay",
+    "round": "lingin",
+    "square": "kuwadrado",
+    "solid": "solid",
+    "hollow": "lungag"
+  },
+  "board": {
+    "binary": "Binary nga board",
+    "piecesPlaced": "Mga piyesang gibutang",
+    "cellEmpty": "Cell {{cell}}: walay sulod",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Dili magamit ang 3D rendering.",
+    "webglHeading": "Dili makasugod ang WebGL.",
+    "webglMsg": "Kinahanglan sa duwa nga naka-enable ang WebGL sa browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "I-hover ang mapiling piyesa aron makita daan ang risgo sa pagpili",
+    "hoveredRiskOne": "Risgo sa gi-hover nga piyesa: {{risk}} dayon nga modaog nga placement",
+    "hoveredRiskMany": "Risgo sa gi-hover nga piyesa: {{risk}} dayon nga modaog nga mga placement",
+    "immediateWins": "Dayon nga modaog nga mga placement",
+    "latestRisk": "Pinakabag-ong risgo sa pagpili",
+    "riskOneAI": "Risgo sa piyesang gipili sa AI: {{risk}} dayon nga modaog nga placement",
+    "riskManyAI": "Risgo sa piyesang gipili sa AI: {{risk}} dayon nga modaog nga mga placement",
+    "riskTurnedOff": "Gipalong ang risgo sa pagpili",
+    "riskUnavailableAI": "Dili magamit ang risgo sa pagpili sa AI kontra AI nga mode",
+    "selectionRisk": "Risgo sa pagpili",
+    "turnRiskOff": "Palonga ang risgo sa pagpili",
+    "turnRiskOn": "I-on ang risgo sa pagpili"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Pinulongan",
+    "search": "Pangitag mga pinulongan",
+    "empty": "Walay mga pinulongan nga nakit-an",
+    "close": "Duol"
+  }
+}

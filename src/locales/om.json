@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Fooyya'iinsa irraa geeffame",
+    "newGame": "Tapha haaraa"
+  },
+  "common": {
+    "on": "BANAME",
+    "off": "CUFAME"
+  },
+  "a11y": {
+    "utilityActions": "Hidhamoota app fi afaan",
+    "viewSource": "Madda GitHub irratti ilaali",
+    "gameControls": "To'annoo taphaa",
+    "gameBoard": "Gabatee taphaa 3D",
+    "gameInfo": "Odeeffannoo taphaa"
+  },
+  "controls": {
+    "diffAI": "Rakkina AI",
+    "diffPlayerOneAI": "Rakkina P1",
+    "diffPlayerTwoAI": "Rakkina P2",
+    "startingPlayer": "Taphataa jalqabaa",
+    "gameMode": "Haala taphaa",
+    "pauseAI": "AI dhaabi",
+    "resumeAI": "AI itti fufi",
+    "undo": "Deebisi",
+    "redo": "Irra deebi'i"
+  },
+  "diff": {
+    "easy": "Salphaa",
+    "medium": "Giddu-galeessa",
+    "hard": "Rakkisaa"
+  },
+  "mode": {
+    "userVsUser": "Fayyadamaa fi fayyadamaa",
+    "userVsAI": "Fayyadamaa fi AI",
+    "onlyAI": "AI fi AI"
+  },
+  "player": {
+    "playerYou": "Ati",
+    "playerOne": "Taphataa Tokko",
+    "playerTwo": "Taphataa Lama",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Tasaa",
+    "playerAIPlayer": "Taphataa AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Haala taphaa...",
+    "pausedAI": "{{player}} dhaabbateera...",
+    "placingAI": "{{player}} taphachaa jira - kutaa gabatee irra kaa'aa jira...",
+    "placingUser": "{{player}} taphachaa jira - kutaa filatame gabatee irra kaa'i...",
+    "placeUserYou": "Ati taphachaa jirta - kutaa filatame gabatee irra kaa'i...",
+    "gameDrawn": "Taphi walqixa - sarara injifannoo hin jiru",
+    "gameWon": "{{player}} injifate - sararri injifannoo ifa taasifame",
+    "selectingAI": "{{player}} taphachaa jira - {{opponent}}f kutaa filachaa jira...",
+    "selectUser": "{{player}} taphachaa jira - {{opponent}}f kutaa fili...",
+    "selectUserYou": "Ati taphachaa jirta - {{opponent}}f kutaa fili..."
+  },
+  "piece": {
+    "inPlay": "Kutaa tapharra jiru",
+    "none": "Homaa hin filatamne",
+    "traits": "Amaloota kutaa",
+    "black": "gurraacha",
+    "red": "diimaa",
+    "big": "guddaa",
+    "small": "xiqqaa",
+    "round": "geengoo",
+    "square": "iskuweerii",
+    "solid": "jabaa",
+    "hollow": "qaawwa qabu"
+  },
+  "board": {
+    "binary": "Gabatee baayinarii",
+    "piecesPlaced": "Kutaalee kaa'aman",
+    "cellEmpty": "Saanduqa {{cell}}: duwwaa",
+    "cellPiece": "Saanduqa {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Agarsiisni 3D hin argamu.",
+    "webglHeading": "WebGL jalqabuu hin dandeenye.",
+    "webglMsg": "Tapha kanaaf WebGL biraawzar keessatti banaa ta'uu qaba."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Balaa filannoo ilaaluuf kutaa filatamuu danda'u irra kursara kaa'i",
+    "hoveredRiskOne": "Balaa kutaa irra kursarri jiru: {{risk}} bakka injifannoo battalaa",
+    "hoveredRiskMany": "Balaa kutaa irra kursarri jiru: {{risk}} bakkeewwan injifannoo battalaa",
+    "immediateWins": "Bakkeewwan injifannoo battalaa",
+    "latestRisk": "Balaa filannoo isa dhumaa",
+    "riskOneAI": "Balaa kutaa AI filate: {{risk}} bakka injifannoo battalaa",
+    "riskManyAI": "Balaa kutaa AI filate: {{risk}} bakkeewwan injifannoo battalaa",
+    "riskTurnedOff": "Balaan filannoo cufameera",
+    "riskUnavailableAI": "Haala AI fi AI keessatti balaan filannoo hin argamu",
+    "selectionRisk": "Balaa filannoo",
+    "turnRiskOff": "Balaa filannoo cufi",
+    "turnRiskOn": "Balaa filannoo bani"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Afaan",
+    "search": "Afaanota barbaadi",
+    "empty": "Afaanonni hin argamne",
+    "close": "Cufi"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ennongoosereza eyatwaliddwa okuva ku",
+    "newGame": "Omuzannyo omupya"
+  },
+  "common": {
+    "on": "KULI",
+    "off": "KUVAKO"
+  },
+  "a11y": {
+    "utilityActions": "Enkolagana z'app n'olulimi",
+    "viewSource": "Laba source ku GitHub",
+    "gameControls": "Ebiragiro by'omuzannyo",
+    "gameBoard": "Olubaawo lw'omuzannyo lwa 3D",
+    "gameInfo": "Amawulire g'omuzannyo"
+  },
+  "controls": {
+    "diffAI": "Obuzibu bwa AI",
+    "diffPlayerOneAI": "Obuzibu bwa P1",
+    "diffPlayerTwoAI": "Obuzibu bwa P2",
+    "startingPlayer": "Omuzannyi atandika",
+    "gameMode": "Enkola y'omuzannyo",
+    "pauseAI": "Yimiriza AI",
+    "resumeAI": "Genda mu maaso ne AI",
+    "undo": "Jjulula",
+    "redo": "Ddamu"
+  },
+  "diff": {
+    "easy": "Kyangu",
+    "medium": "Wakati",
+    "hard": "Kizibu"
+  },
+  "mode": {
+    "userVsUser": "Omukozesa ku mukozesa",
+    "userVsAI": "Omukozesa ku AI",
+    "onlyAI": "AI ku AI"
+  },
+  "player": {
+    "playerYou": "Ggwe",
+    "playerOne": "Omuzannyi Omu",
+    "playerTwo": "Omuzannyi Babiri",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Kya bukanga",
+    "playerAIPlayer": "Omuzannyi wa AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Embeera y'omuzannyo...",
+    "pausedAI": "{{player}} ayimiriziddwa...",
+    "placingAI": "{{player}} azannya - ateeka ekitundu ku lubaawo...",
+    "placingUser": "{{player}} azannya - Teeka ekitundu ekirondeddwa ku lubaawo...",
+    "placeUserYou": "Ggwe ozannya - Teeka ekitundu ekirondeddwa ku lubaawo...",
+    "gameDrawn": "Omuzannyo gwakwatagana - tewali lukalala lwa kuwangula",
+    "gameWon": "{{player}} awangudde - olunyiriri lw'okuwangula lulagiddwa",
+    "selectingAI": "{{player}} azannya - alonda ekitundu kya {{opponent}}...",
+    "selectUser": "{{player}} azannya - Londa ekitundu kya {{opponent}}...",
+    "selectUserYou": "Ggwe ozannya - Londa ekitundu kya {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Ekitundu mu muzannyo",
+    "none": "Tewali kirondeddwa",
+    "traits": "Enkula z'ekitundu",
+    "black": "kiddugavu",
+    "red": "kimyufu",
+    "big": "kinene",
+    "small": "kitono",
+    "round": "kyekulungirivu",
+    "square": "kya square",
+    "solid": "kijjuvu",
+    "hollow": "kirimu ekituli"
+  },
+  "board": {
+    "binary": "Olubaawo lwa binary",
+    "piecesPlaced": "Ebitundu ebiteekeddwa",
+    "cellEmpty": "Akabokisi {{cell}}: kalimu bwereere",
+    "cellPiece": "Akabokisi {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Okulaga 3D tekuliwo.",
+    "webglHeading": "WebGL tesobodde kutandika.",
+    "webglMsg": "Omuzannyo gwetaaga WebGL okuba ng'ekola mu browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Teeka pointer ku kitundu ekirondwa okulaba akabi k'okulonda",
+    "hoveredRiskOne": "Akabi k'ekitundu pointer kw'eri: {{risk}} okuteeka okuwangula amangu",
+    "hoveredRiskMany": "Akabi k'ekitundu pointer kw'eri: {{risk}} okuteeka okuwangula amangu",
+    "immediateWins": "Okuteeka okuwangula amangu",
+    "latestRisk": "Akabi k'okulonda akasembayo",
+    "riskOneAI": "Akabi k'ekitundu AI ky'alonze: {{risk}} okuteeka okuwangula amangu",
+    "riskManyAI": "Akabi k'ekitundu AI ky'alonze: {{risk}} okuteeka okuwangula amangu",
+    "riskTurnedOff": "Akabi k'okulonda kavuddeko",
+    "riskUnavailableAI": "Akabi k'okulonda tekaliwo mu nkola AI ku AI",
+    "selectionRisk": "Akabi k'okulonda",
+    "turnRiskOff": "Ggyako akabi k'okulonda",
+    "turnRiskOn": "Teekako akabi k'okulonda"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Olulimi",
+    "search": "Noonya ennimi",
+    "empty": "Tewali nnimi zizuuliddwa",
+    "close": "Ggalawo"
+  }
+}

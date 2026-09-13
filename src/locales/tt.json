@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Моннан күчерелгән камилләштерү",
+    "newGame": "Яңа уен"
+  },
+  "common": {
+    "on": "КАБЫЗЫЛГАН",
+    "off": "СҮНДЕРЕЛГӘН"
+  },
+  "a11y": {
+    "utilityActions": "Кушымта сылтамалары һәм тел",
+    "viewSource": "GitHub-та чыганакны карау",
+    "gameControls": "Уен идарәсе",
+    "gameBoard": "3D уен тактасы",
+    "gameInfo": "Уен турында мәгълүмат"
+  },
+  "controls": {
+    "diffAI": "AI кыенлыгы",
+    "diffPlayerOneAI": "P1 кыенлыгы",
+    "diffPlayerTwoAI": "P2 кыенлыгы",
+    "startingPlayer": "Башлаучы уенчы",
+    "gameMode": "Уен режимы",
+    "pauseAI": "AI-ны туктату",
+    "resumeAI": "AI-ны дәвам итү",
+    "undo": "Кире кайтару",
+    "redo": "Кабатлау"
+  },
+  "diff": {
+    "easy": "Җиңел",
+    "medium": "Уртача",
+    "hard": "Авыр"
+  },
+  "mode": {
+    "userVsUser": "Кулланучы кулланучыга каршы",
+    "userVsAI": "Кулланучы AI-га каршы",
+    "onlyAI": "AI AI-га каршы"
+  },
+  "player": {
+    "playerYou": "Сез",
+    "playerOne": "Беренче уенчы",
+    "playerTwo": "Икенче уенчы",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Очраклы",
+    "playerAIPlayer": "AI уенчы",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Уен торышы...",
+    "pausedAI": "{{player}} туктатылган...",
+    "placingAI": "{{player}} уйный - фигураны тактага куя...",
+    "placingUser": "{{player}} уйный - сайланган фигураны тактага куегыз...",
+    "placeUserYou": "Сез уйныйсыз - сайланган фигураны тактага куегыз...",
+    "gameDrawn": "Уен тигез - җиңү сызыгы юк",
+    "gameWon": "{{player}} җиңде - җиңү сызыгы күрсәтелде",
+    "selectingAI": "{{player}} уйный - {{opponent}} өчен фигура сайлый...",
+    "selectUser": "{{player}} уйный - {{opponent}} өчен фигура сайлагыз...",
+    "selectUserYou": "Сез уйныйсыз - {{opponent}} өчен фигура сайлагыз..."
+  },
+  "piece": {
+    "inPlay": "Уендагы фигура",
+    "none": "Бернәрсә дә сайланмаган",
+    "traits": "Фигура үзлекләре",
+    "black": "кара",
+    "red": "кызыл",
+    "big": "зур",
+    "small": "кечкенә",
+    "round": "түгәрәк",
+    "square": "квадрат",
+    "solid": "тоташ",
+    "hollow": "куыш"
+  },
+  "board": {
+    "binary": "Бинар такта",
+    "piecesPlaced": "Куелган фигуралар",
+    "cellEmpty": "Шакмак {{cell}}: буш",
+    "cellPiece": "Шакмак {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D күрсәтү мөмкин түгел.",
+    "webglHeading": "WebGL эшли башлый алмады.",
+    "webglMsg": "Уен өчен браузерда WebGL кабызылган булырга тиеш."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Сайлау хәвефен күрү өчен сайлана торган фигура өстендә курсорны тотыгыз",
+    "hoveredRiskOne": "Курсор астындагы фигура хәвефе: {{risk}} шунда ук җиңү урыны",
+    "hoveredRiskMany": "Курсор астындагы фигура хәвефе: {{risk}} шунда ук җиңү урыннары",
+    "immediateWins": "Шунда ук җиңү урыннары",
+    "latestRisk": "Соңгы сайлау хәвефе",
+    "riskOneAI": "AI сайлаган фигура хәвефе: {{risk}} шунда ук җиңү урыны",
+    "riskManyAI": "AI сайлаган фигура хәвефе: {{risk}} шунда ук җиңү урыннары",
+    "riskTurnedOff": "Сайлау хәвефе сүндерелгән",
+    "riskUnavailableAI": "AI AI-га каршы режимында сайлау хәвефе мөмкин түгел",
+    "selectionRisk": "Сайлау хәвефе",
+    "turnRiskOff": "Сайлау хәвефен сүндерү",
+    "turnRiskOn": "Сайлау хәвефен кабызу"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Тел",
+    "search": "Телләрне эзләү",
+    "empty": "Бер тел дә табылмады",
+    "close": "Ябу"
+  }
+}

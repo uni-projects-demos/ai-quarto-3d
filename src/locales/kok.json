@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "हाचे पोर्ट केल्लें सुधारीत रूप",
+    "newGame": "नवो खेळ"
+  },
+  "common": {
+    "on": "चालू",
+    "off": "बंद"
+  },
+  "a11y": {
+    "utilityActions": "ॲप दुवे आनी भास",
+    "viewSource": "GitHub चेर स्रोत पळयात",
+    "gameControls": "खेळ नियंत्रणां",
+    "gameBoard": "3D खेळ फळो",
+    "gameInfo": "खेळाची म्हायती"
+  },
+  "controls": {
+    "diffAI": "AI कठीणपण",
+    "diffPlayerOneAI": "P1 कठीणपण",
+    "diffPlayerTwoAI": "P2 कठीणपण",
+    "startingPlayer": "सुरवात करपी खेळगडो",
+    "gameMode": "खेळ प्रकार",
+    "pauseAI": "AI थांबयात",
+    "resumeAI": "AI परत चालू करात",
+    "undo": "मागें घेयात",
+    "redo": "परत करात"
+  },
+  "diff": {
+    "easy": "सोपें",
+    "medium": "मध्यम",
+    "hard": "कठीण"
+  },
+  "mode": {
+    "userVsUser": "वापरपी विरुद्ध वापरपी",
+    "userVsAI": "वापरपी विरुद्ध AI",
+    "onlyAI": "AI विरुद्ध AI"
+  },
+  "player": {
+    "playerYou": "तूं",
+    "playerOne": "खेळगडो एक",
+    "playerTwo": "खेळगडो दोन",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "यादृच्छिक",
+    "playerAIPlayer": "AI खेळगडो",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "खेळ स्थिती...",
+    "pausedAI": "{{player}} थांबला...",
+    "placingAI": "{{player}} खेळता - फळ्यार गोटी दवरता...",
+    "placingUser": "{{player}} खेळता - निवडिल्ली गोटी फळ्यार दवरात...",
+    "placeUserYou": "तूं खेळता - निवडिल्ली गोटी फळ्यार दवरात...",
+    "gameDrawn": "खेळ बरोबरींत - जिखपी रेष ना",
+    "gameWon": "{{player}} जिखलो - जिखपी रेष ठळक केल्या",
+    "selectingAI": "{{player}} खेळता - {{opponent}} खातीर गोटी निवडता...",
+    "selectUser": "{{player}} खेळता - {{opponent}} खातीर गोटी निवडात...",
+    "selectUserYou": "तूं खेळता - {{opponent}} खातीर गोटी निवडात..."
+  },
+  "piece": {
+    "inPlay": "खेळांतली गोटी",
+    "none": "कांयच निवडूंक ना",
+    "traits": "गोटीचे गुण",
+    "black": "काळें",
+    "red": "तांबडें",
+    "big": "व्हड",
+    "small": "ल्हान",
+    "round": "वर्तुळाकार",
+    "square": "चौकोनी",
+    "solid": "भरिल्ली",
+    "hollow": "पोकळ"
+  },
+  "board": {
+    "binary": "द्विमान फळो",
+    "piecesPlaced": "दवरिल्ल्यो गोटी",
+    "cellEmpty": "खण {{cell}}: रिकामो",
+    "cellPiece": "खण {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D रेंडरिंग उपलब्ध ना.",
+    "webglHeading": "WebGL सुरू जावंक शकलो ना.",
+    "webglMsg": "खेळाक ब्राउझरांत WebGL चालू आसप गरजेचें."
+  },
+  "metrics": {
+    "hoverRiskPreview": "निवडूंक शकपी गोटीचेर कर्सर दवरून निवड जोखीम पळयात",
+    "hoveredRiskOne": "कर्सराखालची गोटी जोखीम: {{risk}} ताबडतोब जिखपी दवरप",
+    "hoveredRiskMany": "कर्सराखालची गोटी जोखीम: {{risk}} ताबडतोब जिखपी दवरपां",
+    "immediateWins": "ताबडतोब जिखपी दवरपां",
+    "latestRisk": "नवीनतम निवड जोखीम",
+    "riskOneAI": "AI निवडिल्ली गोटी जोखीम: {{risk}} ताबडतोब जिखपी दवरप",
+    "riskManyAI": "AI निवडिल्ली गोटी जोखीम: {{risk}} ताबडतोब जिखपी दवरपां",
+    "riskTurnedOff": "निवड जोखीम बंद आसा",
+    "riskUnavailableAI": "AI विरुद्ध AI प्रकारांत निवड जोखीम उपलब्ध ना",
+    "selectionRisk": "निवड जोखीम",
+    "turnRiskOff": "निवड जोखीम बंद करात",
+    "turnRiskOn": "निवड जोखीम चालू करात"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "भास",
+    "search": "भास सोदात",
+    "empty": "खंयचीच भास मेळ्ळी ना",
+    "close": "बंद करात"
+  }
+}

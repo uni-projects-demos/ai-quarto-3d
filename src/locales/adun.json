@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Nîluzadan anadûn",
+    "newGame": "Nîlu gaim"
+  },
+  "common": {
+    "on": "AN",
+    "off": "LÂ"
+  },
+  "a11y": {
+    "utilityActions": "App zabathân ar Adûnayân",
+    "viewSource": "GitHub na zadan izindi",
+    "gameControls": "Gaim balakân",
+    "gameBoard": "3D gaim tâbal",
+    "gameInfo": "Gaim bêthim"
+  },
+  "controls": {
+    "diffAI": "AI burud",
+    "diffPlayerOneAI": "P1 burud",
+    "diffPlayerTwoAI": "P2 burud",
+    "startingPlayer": "Gaimun narû",
+    "gameMode": "Gaim azûb",
+    "pauseAI": "AI akhôr",
+    "resumeAI": "AI anad",
+    "undo": "Abâr",
+    "redo": "Tâk"
+  },
+  "diff": {
+    "easy": "Nimîr",
+    "medium": "Miyad",
+    "hard": "Burud"
+  },
+  "mode": {
+    "userVsUser": "Zadanun pan zadanun",
+    "userVsAI": "Zadanun pan AI",
+    "onlyAI": "AI pan AI"
+  },
+  "player": {
+    "playerYou": "Zîr",
+    "playerOne": "Gaimun Min",
+    "playerTwo": "Gaimun Atta",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Bâr",
+    "playerAIPlayer": "AI gaimun",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Gaim bêthim...",
+    "pausedAI": "{{player}} akhôr...",
+    "placingAI": "{{player}} gaim - makin tâbal na zad...",
+    "placingUser": "{{player}} gaim - makin nimir tâbal na zad...",
+    "placeUserYou": "Zîr gaim - makin nimir tâbal na zad...",
+    "gameDrawn": "Gaim tâk - lâ nard zâyan",
+    "gameWon": "{{player}} zâyan - nard zâyan azgar",
+    "selectingAI": "{{player}} gaim - makin {{opponent}} an nimir...",
+    "selectUser": "{{player}} gaim - makin {{opponent}} an nimir...",
+    "selectUserYou": "Zîr gaim - makin {{opponent}} an nimir..."
+  },
+  "piece": {
+    "inPlay": "Makin gaim na",
+    "none": "Lâ makin nimir",
+    "traits": "Makin bêthim",
+    "black": "mûl",
+    "red": "rôth",
+    "big": "gabil",
+    "small": "nîl",
+    "round": "rund",
+    "square": "arba",
+    "solid": "sakh",
+    "hollow": "khôl"
+  },
+  "board": {
+    "binary": "Tâbal atta",
+    "piecesPlaced": "Makin zadan",
+    "cellEmpty": "Bêth {{cell}}: khôl",
+    "cellPiece": "Bêth {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D azgar lâ.",
+    "webglHeading": "WebGL lâ narû.",
+    "webglMsg": "Gaim WebGL app na an khârad."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Makin nimir na cursor zad risk nimir an izindi",
+    "hoveredRiskOne": "Makin risk cursor na: {{risk}} zâyan bêth nîl",
+    "hoveredRiskMany": "Makin risk cursor na: {{risk}} zâyan bêthim nîl",
+    "immediateWins": "Zâyan bêthim nîl",
+    "latestRisk": "Risk nimir tâk",
+    "riskOneAI": "AI nimir makin risk: {{risk}} zâyan bêth nîl",
+    "riskManyAI": "AI nimir makin risk: {{risk}} zâyan bêthim nîl",
+    "riskTurnedOff": "Risk nimir lâ",
+    "riskUnavailableAI": "Risk nimir AI pan AI na lâ",
+    "selectionRisk": "Risk nimir",
+    "turnRiskOff": "Risk nimir akhôr",
+    "turnRiskOn": "Risk nimir an"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Adûnayân",
+    "search": "Nimir Adûnayân",
+    "empty": "Lâ Adûnayân nimir",
+    "close": "Akhôr"
+  }
+}

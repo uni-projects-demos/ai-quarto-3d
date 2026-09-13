@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "د دې څخه لېږدول شوې پرمختللې بڼه",
+    "newGame": "نوې لوبه"
+  },
+  "common": {
+    "on": "چالان",
+    "off": "بند"
+  },
+  "a11y": {
+    "utilityActions": "د غوښتنلیک لینکونه او ژبه",
+    "viewSource": "سرچینه په GitHub کې وګورئ",
+    "gameControls": "د لوبې کنټرولونه",
+    "gameBoard": "د 3D لوبې تخته",
+    "gameInfo": "د لوبې معلومات"
+  },
+  "controls": {
+    "diffAI": "د AI سختوالی",
+    "diffPlayerOneAI": "د P1 سختوالی",
+    "diffPlayerTwoAI": "د P2 سختوالی",
+    "startingPlayer": "پیل کوونکی لوبغاړی",
+    "gameMode": "د لوبې حالت",
+    "pauseAI": "AI ودرول",
+    "resumeAI": "AI بیا روانول",
+    "undo": "بېرته ګرځول",
+    "redo": "بیا کول"
+  },
+  "diff": {
+    "easy": "اسانه",
+    "medium": "منځنی",
+    "hard": "سخت"
+  },
+  "mode": {
+    "userVsUser": "کارن د کارن پر وړاندې",
+    "userVsAI": "کارن د AI پر وړاندې",
+    "onlyAI": "AI د AI پر وړاندې"
+  },
+  "player": {
+    "playerYou": "تاسو",
+    "playerOne": "لومړی لوبغاړی",
+    "playerTwo": "دوهم لوبغاړی",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "تصادفي",
+    "playerAIPlayer": "AI لوبغاړی",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "د لوبې حالت...",
+    "pausedAI": "{{player}} درول شوی...",
+    "placingAI": "{{player}} لوبه کوي - مهره پر تخته ږدي...",
+    "placingUser": "{{player}} لوبه کوي - ټاکل شوې مهره پر تخته کېږدئ...",
+    "placeUserYou": "تاسو لوبه کوئ - ټاکل شوې مهره پر تخته کېږدئ...",
+    "gameDrawn": "لوبه مساوي شوه - د بریا کرښه نشته",
+    "gameWon": "{{player}} وګټله - د بریا کرښه روښانه شوې",
+    "selectingAI": "{{player}} لوبه کوي - د {{opponent}} لپاره مهره ټاکي...",
+    "selectUser": "{{player}} لوبه کوي - د {{opponent}} لپاره مهره وټاکئ...",
+    "selectUserYou": "تاسو لوبه کوئ - د {{opponent}} لپاره مهره وټاکئ..."
+  },
+  "piece": {
+    "inPlay": "په لوبه کې مهره",
+    "none": "هیڅ شی نه دی ټاکل شوی",
+    "traits": "د مهرې ځانګړنې",
+    "black": "تور",
+    "red": "سور",
+    "big": "لوی",
+    "small": "کوچنی",
+    "round": "ګرد",
+    "square": "مربع",
+    "solid": "کلک",
+    "hollow": "تش"
+  },
+  "board": {
+    "binary": "باینري تخته",
+    "piecesPlaced": "ایښودل شوې مهرې",
+    "cellEmpty": "خانه {{cell}}: تشه",
+    "cellPiece": "خانه {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "د 3D رینډر کول شتون نه لري.",
+    "webglHeading": "WebGL پیل نه شو.",
+    "webglMsg": "لوبه اړتیا لري چې WebGL په براوزر کې فعال وي."
+  },
+  "metrics": {
+    "hoverRiskPreview": "د ټاکنې د خطر د کتلو لپاره پر ټاکل کېدونکې مهره کرسر ونیسئ",
+    "hoveredRiskOne": "د کرسر لاندې مهرې خطر: {{risk}} سمدستي د بریا ځای",
+    "hoveredRiskMany": "د کرسر لاندې مهرې خطر: {{risk}} سمدستي د بریا ځایونه",
+    "immediateWins": "سمدستي د بریا ځایونه",
+    "latestRisk": "وروستی د ټاکنې خطر",
+    "riskOneAI": "د AI ټاکلې مهرې خطر: {{risk}} سمدستي د بریا ځای",
+    "riskManyAI": "د AI ټاکلې مهرې خطر: {{risk}} سمدستي د بریا ځایونه",
+    "riskTurnedOff": "د ټاکنې خطر بند دی",
+    "riskUnavailableAI": "د AI پر AI حالت کې د ټاکنې خطر شتون نه لري",
+    "selectionRisk": "د ټاکنې خطر",
+    "turnRiskOff": "د ټاکنې خطر بند کړئ",
+    "turnRiskOn": "د ټاکنې خطر چالان کړئ"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "ژبه",
+    "search": "ژبې لټون",
+    "empty": "هیڅ ژبه ونه موندل شوه",
+    "close": "تړل"
+  }
+}

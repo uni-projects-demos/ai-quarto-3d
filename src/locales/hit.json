@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Appan arha šalliyaš",
+    "newGame": "Neuwa paiš"
+  },
+  "common": {
+    "on": "HUIŠ",
+    "off": "NAŠ"
+  },
+  "a11y": {
+    "utilityActions": "App ištamanaš u lingaiš",
+    "viewSource": "GitHub-aš šuppiš memiyaš wek",
+    "gameControls": "Paiš ḫandandatar",
+    "gameBoard": "3D paiš GIŠBANŠUR",
+    "gameInfo": "Paiš memiyaš"
+  },
+  "controls": {
+    "diffAI": "AI ḫarkatar",
+    "diffPlayerOneAI": "P1 ḫarkatar",
+    "diffPlayerTwoAI": "P2 ḫarkatar",
+    "startingPlayer": "Para paiyaz antuḫšaš",
+    "gameMode": "Paiš išḫiul",
+    "pauseAI": "AI šer arḫa",
+    "resumeAI": "AI para",
+    "undo": "Appa",
+    "redo": "Namman iya"
+  },
+  "diff": {
+    "easy": "Luli",
+    "medium": "Šer",
+    "hard": "Ḫarki"
+  },
+  "mode": {
+    "userVsUser": "Antuḫšaš kontra antuḫšaš",
+    "userVsAI": "Antuḫšaš kontra AI",
+    "onlyAI": "AI kontra AI"
+  },
+  "player": {
+    "playerYou": "Zik",
+    "playerOne": "Paiyant 1",
+    "playerTwo": "Paiyant 2",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Ḫalzi",
+    "playerAIPlayer": "AI paiyant",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Paiš išḫiul...",
+    "pausedAI": "{{player}} arḫa...",
+    "placingAI": "{{player}} paiyazzi - parçan GIŠBANŠUR-i dai...",
+    "placingUser": "{{player}} paiyazzi - šekta parçan GIŠBANŠUR-i dai...",
+    "placeUserYou": "Zik paiyazi - šekta parçan GIŠBANŠUR-i dai...",
+    "gameDrawn": "Paiš takšan - win line natta",
+    "gameWon": "{{player}} tarḫuzi - tarḫu line šak",
+    "selectingAI": "{{player}} paiyazzi - {{opponent}}-i parçan šekzi...",
+    "selectUser": "{{player}} paiyazzi - {{opponent}}-i parçan šek...",
+    "selectUserYou": "Zik paiyazi - {{opponent}}-i parçan šek..."
+  },
+  "piece": {
+    "inPlay": "Parça paišni",
+    "none": "Natta kuitki šekta",
+    "traits": "Parça šalliš",
+    "black": "dankuiš",
+    "red": "marša",
+    "big": "šalliš",
+    "small": "tepuš",
+    "round": "gurta",
+    "square": "4-kant",
+    "solid": "dannatta",
+    "hollow": "šuwatta"
+  },
+  "board": {
+    "binary": "2-num GIŠBANŠUR",
+    "piecesPlaced": "Parçameš dāir",
+    "cellEmpty": "Kuwapi {{cell}}: šuwai",
+    "cellPiece": "Kuwapi {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D šak natta.",
+    "webglHeading": "WebGL paiyanna natta tarḫta.",
+    "webglMsg": "Paiš WebGL browser-ni huiš kuitki."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Cursor parçan šekti šer dai riskan wek",
+    "hoveredRiskOne": "Parça risk cursor kattan: {{risk}} kattan tarḫu kuwapit",
+    "hoveredRiskMany": "Parça risk cursor kattan: {{risk}} kattan tarḫu kuwapimeš",
+    "immediateWins": "Kattan tarḫu kuwapimeš",
+    "latestRisk": "Appa šekta risk",
+    "riskOneAI": "AI šekta parça risk: {{risk}} kattan tarḫu kuwapit",
+    "riskManyAI": "AI šekta parça risk: {{risk}} kattan tarḫu kuwapimeš",
+    "riskTurnedOff": "Šekta risk naš",
+    "riskUnavailableAI": "Šekta risk AI kontra AI natta",
+    "selectionRisk": "Šekta risk",
+    "turnRiskOff": "Šekta risk naš",
+    "turnRiskOn": "Šekta risk huiš"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Memiyatar",
+    "search": "Memiyaš wek",
+    "empty": "Memiya UL wekta",
+    "close": "Išḫiya"
+  }
+}

@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Gagnvirkt 3D viðmót fyrir Quarto borðspilið með Three.js og Negamax-útgáfu Minimax-gervigreindarreikniritsins með alfa-beta klippingu. Spilaðu leikmann gegn leikmanni, leikmann gegn gervigreind og gervigreind gegn gervigreind með auðveldu, miðlungs eða erfiðu stigi.",
     "ogDescription": "Gagnvirkt 3D Quarto borðspil. Spilaðu leikmann gegn leikmanni, leikmann gegn gervigreind og gervigreind gegn gervigreind með auðveldu, miðlungs eða erfiðu stigi."
+  },
+  "language": {
+    "label": "Tungumál",
+    "search": "Leitaðu að tungumálum",
+    "empty": "Engin tungumál fundust",
+    "close": "Loka"
   }
 }

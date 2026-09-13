@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Kuvandudzwa kwakatorwa kubva",
+    "newGame": "Mutambo mutsva"
+  },
+  "common": {
+    "on": "BATIDZWA",
+    "off": "DZIMWA"
+  },
+  "a11y": {
+    "utilityActions": "Zvinongedzo zveapp nemutauro",
+    "viewSource": "Ona mabviro paGitHub",
+    "gameControls": "Zvinodzora mutambo",
+    "gameBoard": "Bhodhi remutambo re3D",
+    "gameInfo": "Ruzivo rwemutambo"
+  },
+  "controls": {
+    "diffAI": "Kuoma kweAI",
+    "diffPlayerOneAI": "Kuoma kweP1",
+    "diffPlayerTwoAI": "Kuoma kweP2",
+    "startingPlayer": "Mutambi anotanga",
+    "gameMode": "Mhando yemutambo",
+    "pauseAI": "Misa AI",
+    "resumeAI": "Enderera neAI",
+    "undo": "Dzosera",
+    "redo": "Itazve"
+  },
+  "diff": {
+    "easy": "Nyore",
+    "medium": "Pakati",
+    "hard": "Zvakaoma"
+  },
+  "mode": {
+    "userVsUser": "Mushandisi achipikisana nemushandisi",
+    "userVsAI": "Mushandisi achipikisana neAI",
+    "onlyAI": "AI ichipikisana neAI"
+  },
+  "player": {
+    "playerYou": "Iwe",
+    "playerOne": "Mutambi Wekutanga",
+    "playerTwo": "Mutambi Wechipiri",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Zvisina kurongwa",
+    "playerAIPlayer": "Mutambi weAI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Mamiriro emutambo...",
+    "pausedAI": "{{player}} amiswa...",
+    "placingAI": "{{player}} ari kutamba - ari kuisa chidimbu pabhodhi...",
+    "placingUser": "{{player}} ari kutamba - isa chidimbu chakasarudzwa pabhodhi...",
+    "placeUserYou": "Uri kutamba - isa chidimbu chakasarudzwa pabhodhi...",
+    "gameDrawn": "Mutambo wakaenzana - hapana mutsara wokukunda",
+    "gameWon": "{{player}} akunda - mutsara wokukunda waratidzwa",
+    "selectingAI": "{{player}} ari kutamba - ari kusarudza chidimbu cha {{opponent}}...",
+    "selectUser": "{{player}} ari kutamba - sarudza chidimbu cha {{opponent}}...",
+    "selectUserYou": "Uri kutamba - sarudza chidimbu cha {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Chidimbu chiri mumutambo",
+    "none": "Hapana chakasarudzwa",
+    "traits": "Hunhu hwechidimbu",
+    "black": "dema",
+    "red": "tsvuku",
+    "big": "hombe",
+    "small": "diki",
+    "round": "denderedzwa",
+    "square": "sikweya",
+    "solid": "chakazara",
+    "hollow": "chine mhango"
+  },
+  "board": {
+    "binary": "Bhodhi rebhinari",
+    "piecesPlaced": "Zvidimbu zvakaiswa",
+    "cellEmpty": "Sero {{cell}}: harina chinhu",
+    "cellPiece": "Sero {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Kuratidza 3D hakusi kuwanikwa.",
+    "webglHeading": "WebGL yatadza kutanga.",
+    "webglMsg": "Mutambo unoda WebGL yakabatidzwa mubrowser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Isa mbeva pachidimbu chinogona kusarudzwa kuti uone njodzi yekusarudza",
+    "hoveredRiskOne": "Njodzi yechidimbu chiri pasi pembeva: {{risk}} nzvimbo yokukunda pakarepo",
+    "hoveredRiskMany": "Njodzi yechidimbu chiri pasi pembeva: {{risk}} nzvimbo dzokukunda pakarepo",
+    "immediateWins": "Nzvimbo dzokukunda pakarepo",
+    "latestRisk": "Njodzi yazvino yekusarudza",
+    "riskOneAI": "Njodzi yechidimbu chakasarudzwa neAI: {{risk}} nzvimbo yokukunda pakarepo",
+    "riskManyAI": "Njodzi yechidimbu chakasarudzwa neAI: {{risk}} nzvimbo dzokukunda pakarepo",
+    "riskTurnedOff": "Njodzi yekusarudza yakadzimwa",
+    "riskUnavailableAI": "Njodzi yekusarudza haisi kuwanikwa muAI ichipikisana neAI",
+    "selectionRisk": "Njodzi yekusarudza",
+    "turnRiskOff": "Dzima njodzi yekusarudza",
+    "turnRiskOn": "Batidza njodzi yekusarudza"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Mutauro",
+    "search": "Tsvaga mitauro",
+    "empty": "Hapana mitauro yawanikwa",
+    "close": "Vhara"
+  }
+}

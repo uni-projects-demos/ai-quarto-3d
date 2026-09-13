@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Lhiasaghey currit veih",
+    "newGame": "Cluiche noa"
+  },
+  "common": {
+    "on": "ER",
+    "off": "JEH"
+  },
+  "a11y": {
+    "utilityActions": "Kianglaghyn yn aplacaid as çhengey",
+    "viewSource": "Jeeagh er bun-choad er GitHub",
+    "gameControls": "Reirey yn chluiche",
+    "gameBoard": "Boayrd-cluiche 3D",
+    "gameInfo": "Fysseree yn chluiche"
+  },
+  "controls": {
+    "diffAI": "Doilleeaght AI",
+    "diffPlayerOneAI": "Doilleeaght P1",
+    "diffPlayerTwoAI": "Doilleeaght P2",
+    "startingPlayer": "Cluicheder toshee",
+    "gameMode": "Aght cluiche",
+    "pauseAI": "Scuirr AI",
+    "resumeAI": "Toshiaght AI reesht",
+    "undo": "Feaysley",
+    "redo": "Jean reesht"
+  },
+  "diff": {
+    "easy": "Aashagh",
+    "medium": "Meanagh",
+    "hard": "Doillee"
+  },
+  "mode": {
+    "userVsUser": "Ymmydeyr noi ymmydeyr",
+    "userVsAI": "Ymmydeyr noi AI",
+    "onlyAI": "AI noi AI"
+  },
+  "player": {
+    "playerYou": "Ussey",
+    "playerOne": "Cluicheder Nane",
+    "playerTwo": "Cluicheder Jees",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Gyn-oardagh",
+    "playerAIPlayer": "Cluicheder AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Stayd yn chluiche...",
+    "pausedAI": "Ta {{player}} scuirrit...",
+    "placingAI": "Ta {{player}} cloie - cur peesh er y voayrd...",
+    "placingUser": "Ta {{player}} cloie - Cur y pheesh reiht er y voayrd...",
+    "placeUserYou": "Ta us cloie - Cur y pheesh reiht er y voayrd...",
+    "gameDrawn": "Cluiche corrym - cha nel linney cosney",
+    "gameWon": "Ta {{player}} cosney - linney cosney soilshit",
+    "selectingAI": "Ta {{player}} cloie - reih peesh son {{opponent}}...",
+    "selectUser": "Ta {{player}} cloie - Reih peesh son {{opponent}}...",
+    "selectUserYou": "Ta us cloie - Reih peesh son {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Peesh ayns cluiche",
+    "none": "Cha nel veg reiht",
+    "traits": "Troyn y pheesh",
+    "black": "doo",
+    "red": "jiarg",
+    "big": "mooar",
+    "small": "beg",
+    "round": "cruin",
+    "square": "kiare-chuilleenagh",
+    "solid": "lane",
+    "hollow": "folley"
+  },
+  "board": {
+    "binary": "Boayrd daa-earrooagh",
+    "piecesPlaced": "Peeshyn currit",
+    "cellEmpty": "Kerrin {{cell}}: follym",
+    "cellPiece": "Kerrin {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Cha nel soilshaghey 3D ry gheddyn.",
+    "webglHeading": "Cha row WebGL abyl dy ghoaill toshiaght.",
+    "webglMsg": "Ta feme ec y chluiche er WebGL dy ve lowit ayns y jeeagheyder."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Cum y lught-thie harrish peesh reihtagh dy yeeaghyn gaue yn reih",
+    "hoveredRiskOne": "Gaue yn pheesh fo'n lught-thie: {{risk}} cur cosney jeeragh",
+    "hoveredRiskMany": "Gaue yn pheesh fo'n lught-thie: {{risk}} curraghyn cosney jeeragh",
+    "immediateWins": "Curraghyn cosney jeeragh",
+    "latestRisk": "Gaue reih s'jerree",
+    "riskOneAI": "Gaue y pheesh reiht ec AI: {{risk}} cur cosney jeeragh",
+    "riskManyAI": "Gaue y pheesh reiht ec AI: {{risk}} curraghyn cosney jeeragh",
+    "riskTurnedOff": "Ta gaue reih currit jeh",
+    "riskUnavailableAI": "Cha nel gaue reih ry gheddyn ayns AI noi AI",
+    "selectionRisk": "Gaue reih",
+    "turnRiskOff": "Cur gaue reih jeh",
+    "turnRiskOn": "Cur gaue reih er"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Çhengey",
+    "search": "Ronsaghey çhengaghyn",
+    "empty": "Cha row çhengey erbee er ny gheddyn",
+    "close": "Dooney"
+  }
+}

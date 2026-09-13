@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "გადატანილი გაუმჯობესებული ვერსია",
+    "newGame": "ახალი თამაში"
+  },
+  "common": {
+    "on": "ჩართული",
+    "off": "გამორთული"
+  },
+  "a11y": {
+    "utilityActions": "აპლიკაციის ბმულები და ენა",
+    "viewSource": "წყაროს ნახვა GitHub-ზე",
+    "gameControls": "თამაშის მართვა",
+    "gameBoard": "3D სათამაშო დაფა",
+    "gameInfo": "თამაშის ინფორმაცია"
+  },
+  "controls": {
+    "diffAI": "AI-ის სირთულე",
+    "diffPlayerOneAI": "P1-ის სირთულე",
+    "diffPlayerTwoAI": "P2-ის სირთულე",
+    "startingPlayer": "დამწყები მოთამაშე",
+    "gameMode": "თამაშის რეჟიმი",
+    "pauseAI": "AI-ის დაპაუზება",
+    "resumeAI": "AI-ის გაგრძელება",
+    "undo": "გაუქმება",
+    "redo": "გამეორება"
+  },
+  "diff": {
+    "easy": "მარტივი",
+    "medium": "საშუალო",
+    "hard": "რთული"
+  },
+  "mode": {
+    "userVsUser": "მომხმარებელი მომხმარებლის წინააღმდეგ",
+    "userVsAI": "მომხმარებელი AI-ის წინააღმდეგ",
+    "onlyAI": "AI AI-ის წინააღმდეგ"
+  },
+  "player": {
+    "playerYou": "თქვენ",
+    "playerOne": "მოთამაშე ერთი",
+    "playerTwo": "მოთამაშე ორი",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "შემთხვევითი",
+    "playerAIPlayer": "AI მოთამაშე",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "თამაშის სტატუსი...",
+    "pausedAI": "{{player}} დაპაუზებულია...",
+    "placingAI": "{{player}} თამაშობს — დებს ფიგურას დაფაზე...",
+    "placingUser": "{{player}} თამაშობს — დადეთ არჩეული ფიგურა დაფაზე...",
+    "placeUserYou": "თქვენ თამაშობთ — დადეთ არჩეული ფიგურა დაფაზე...",
+    "gameDrawn": "ფრე — მომგებიანი ხაზი არ არის",
+    "gameWon": "{{player}} იგებს — მომგებიანი ხაზი მონიშნულია",
+    "selectingAI": "{{player}} თამაშობს — ირჩევს ფიგურას {{opponent}}-ისთვის...",
+    "selectUser": "{{player}} თამაშობს — აირჩიეთ ფიგურა {{opponent}}-ისთვის...",
+    "selectUserYou": "თქვენ თამაშობთ — აირჩიეთ ფიგურა {{opponent}}-ისთვის..."
+  },
+  "piece": {
+    "inPlay": "ფიგურა თამაშში",
+    "none": "არაფერი არჩეული",
+    "traits": "ფიგურის თვისებები",
+    "black": "შავი",
+    "red": "წითელი",
+    "big": "დიდი",
+    "small": "პატარა",
+    "round": "მრგვალი",
+    "square": "კვადრატული",
+    "solid": "მყარი",
+    "hollow": "ღრუ"
+  },
+  "board": {
+    "binary": "ორობითი დაფა",
+    "piecesPlaced": "განთავსებული ფიგურები",
+    "cellEmpty": "უჯრა {{cell}}: ცარიელი",
+    "cellPiece": "უჯრა {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D რენდერი მიუწვდომელია.",
+    "webglHeading": "WebGL ვერ გაეშვა.",
+    "webglMsg": "თამაშისთვის საჭიროა ბრაუზერში WebGL-ის ჩართვა."
+  },
+  "metrics": {
+    "hoverRiskPreview": "გადაატარეთ კურსორი ასარჩევ ფიგურაზე, რათა ნახოთ მისი არჩევის რისკი",
+    "hoveredRiskOne": "კურსორის ქვეშ არსებული ფიგურის რისკი: {{risk}} დაუყოვნებლივი მომგებიანი განთავსება",
+    "hoveredRiskMany": "კურსორის ქვეშ არსებული ფიგურის რისკი: {{risk}} დაუყოვნებლივი მომგებიანი განთავსება",
+    "immediateWins": "დაუყოვნებლივი მომგებიანი განთავსებები",
+    "latestRisk": "ბოლო არჩევის რისკი",
+    "riskOneAI": "AI-ის არჩეული ფიგურის რისკი: {{risk}} დაუყოვნებლივი მომგებიანი განთავსება",
+    "riskManyAI": "AI-ის არჩეული ფიგურის რისკი: {{risk}} დაუყოვნებლივი მომგებიანი განთავსება",
+    "riskTurnedOff": "არჩევის რისკი გამორთულია",
+    "riskUnavailableAI": "არჩევის რისკი მიუწვდომელია AI AI-ის წინააღმდეგ რეჟიმში",
+    "selectionRisk": "არჩევის რისკი",
+    "turnRiskOff": "არჩევის რისკის გამორთვა",
+    "turnRiskOn": "არჩევის რისკის ჩართვა"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "ენა",
+    "search": "ენანი ეძიე",
+    "empty": "ენა არა პოვნილ",
+    "close": "დახშე"
+  }
+}

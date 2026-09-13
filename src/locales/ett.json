@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Zilχ portate śuθ",
+    "newGame": "Lusuχ nϵv"
+  },
+  "common": {
+    "on": "AC",
+    "off": "APA"
+  },
+  "a11y": {
+    "utilityActions": "Nexś app ei meχ",
+    "viewSource": "Mulθce śu GitHub",
+    "gameControls": "Rizile lusuχ",
+    "gameBoard": "3D tular lusuχ",
+    "gameInfo": "Cersu lusuχ"
+  },
+  "controls": {
+    "diffAI": "AI turuce",
+    "diffPlayerOneAI": "P1 turuce",
+    "diffPlayerTwoAI": "P2 turuce",
+    "startingPlayer": "Lusuχ amce",
+    "gameMode": "Meθlum lusuχ",
+    "pauseAI": "AI apa",
+    "resumeAI": "AI ac",
+    "undo": "Celu",
+    "redo": "Ece"
+  },
+  "diff": {
+    "easy": "Facil",
+    "medium": "Meχ",
+    "hard": "Turu"
+  },
+  "mode": {
+    "userVsUser": "Usuθ versus usuθ",
+    "userVsAI": "Usuθ versus AI",
+    "onlyAI": "AI versus AI"
+  },
+  "player": {
+    "playerYou": "Mi",
+    "playerOne": "Lusuχ I",
+    "playerTwo": "Lusuχ II",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Fortuna",
+    "playerAIPlayer": "Lusuχ AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Statu lusuχ...",
+    "pausedAI": "{{player}} apa...",
+    "placingAI": "{{player}} lusu - parc tular ce...",
+    "placingUser": "{{player}} lusu - parc select tular ce...",
+    "placeUserYou": "Mi lusu - parc select tular ce...",
+    "gameDrawn": "Lusuχ pari - zilχ vinum ne",
+    "gameWon": "{{player}} vin - zilχ vinum marc",
+    "selectingAI": "{{player}} lusu - parc select śu {{opponent}}...",
+    "selectUser": "{{player}} lusu - parc select śu {{opponent}}...",
+    "selectUserYou": "Mi lusu - parc select śu {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Parc lusuχ",
+    "none": "Ne select",
+    "traits": "Meχl parc",
+    "black": "svar",
+    "red": "ruti",
+    "big": "maχ",
+    "small": "pic",
+    "round": "rutun",
+    "square": "quadr",
+    "solid": "sol",
+    "hollow": "cav"
+  },
+  "board": {
+    "binary": "Tular binar",
+    "piecesPlaced": "Parc ce",
+    "cellEmpty": "Cel {{cell}}: vac",
+    "cellPiece": "Cel {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D mulθ ne.",
+    "webglHeading": "WebGL amce ne.",
+    "webglMsg": "Lusuχ WebGL ac in browser turce."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Cursor śu parc select ce avil risk select",
+    "hoveredRiskOne": "Risk parc śu cursor: {{risk}} loc vinum fast",
+    "hoveredRiskMany": "Risk parc śu cursor: {{risk}} loci vinum fast",
+    "immediateWins": "Loci vinum fast",
+    "latestRisk": "Risk select last",
+    "riskOneAI": "Risk parc select AI: {{risk}} loc vinum fast",
+    "riskManyAI": "Risk parc select AI: {{risk}} loci vinum fast",
+    "riskTurnedOff": "Risk select apa",
+    "riskUnavailableAI": "Risk select ne in AI versus AI",
+    "selectionRisk": "Risk select",
+    "turnRiskOff": "Apa risk select",
+    "turnRiskOn": "Ac risk select"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Mexl (reconstructed UI)",
+    "search": "Śac mexl",
+    "empty": "Nac mexl turce",
+    "close": "Clan"
+  }
+}

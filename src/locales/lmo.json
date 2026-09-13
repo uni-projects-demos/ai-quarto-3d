@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Un migliorament portaa da",
+    "newGame": "Gioeugh noeuv"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Ligam de l'app e lengua",
+    "viewSource": "Varda el sorgent su GitHub",
+    "gameControls": "Control del gioeugh",
+    "gameBoard": "Tabellon 3D",
+    "gameInfo": "Informazion del gioeugh"
+  },
+  "controls": {
+    "diffAI": "Dificoltà de AI",
+    "diffPlayerOneAI": "Dificoltà P1",
+    "diffPlayerTwoAI": "Dificoltà P2",
+    "startingPlayer": "Giugador che el scomenza",
+    "gameMode": "Modalità del gioeugh",
+    "pauseAI": "Met in pausa AI",
+    "resumeAI": "Riprö AI",
+    "undo": "Desfa",
+    "redo": "Rifa"
+  },
+  "diff": {
+    "easy": "Fàcil",
+    "medium": "Medi",
+    "hard": "Dificil"
+  },
+  "mode": {
+    "userVsUser": "Utent contra utent",
+    "userVsAI": "Utent contra AI",
+    "onlyAI": "AI contra AI"
+  },
+  "player": {
+    "playerYou": "Ti",
+    "playerOne": "Giugador Vün",
+    "playerTwo": "Giugador Duu",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "A cas",
+    "playerAIPlayer": "Giugador AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Stato del gioeugh...",
+    "pausedAI": "{{player}} l'è in pausa...",
+    "placingAI": "{{player}} el giuga - el met el tòch sul tabellon...",
+    "placingUser": "{{player}} el giuga - Met el tòch selezionaa sul tabellon...",
+    "placeUserYou": "Ti te giügh - Met el tòch selezionaa sul tabellon...",
+    "gameDrawn": "Gioeugh pari - nissüna riga vincente",
+    "gameWon": "{{player}} el vens - riga vincente evidenziada",
+    "selectingAI": "{{player}} el giuga - el seleziona un tòch per {{opponent}}...",
+    "selectUser": "{{player}} el giuga - Seleziona un tòch per {{opponent}}...",
+    "selectUserYou": "Ti te giügh - Seleziona un tòch per {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Tòch in gioeugh",
+    "none": "Nient selezionaa",
+    "traits": "Carateristiche del tòch",
+    "black": "negher",
+    "red": "ross",
+    "big": "grand",
+    "small": "piscinin",
+    "round": "tond",
+    "square": "quadrad",
+    "solid": "pien",
+    "hollow": "vöud"
+  },
+  "board": {
+    "binary": "Tabellon binari",
+    "piecesPlaced": "Tòch miss",
+    "cellEmpty": "Casella {{cell}}: vöuda",
+    "cellPiece": "Casella {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "El rendering 3D l'è minga disponibil.",
+    "webglHeading": "WebGL l'ha minga podüü partì.",
+    "webglMsg": "El gioeugh el gh'ha besogn che WebGL el sia ativ nel browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Passa el cursor sora un tòch selezionabil per vedè el ris'c de selezion",
+    "hoveredRiskOne": "Ris'c del tòch sora el cursor: {{risk}} posizion vincente immediata",
+    "hoveredRiskMany": "Ris'c del tòch sora el cursor: {{risk}} posizion vincent immediat",
+    "immediateWins": "Posizion vincent immediat",
+    "latestRisk": "Ultim ris'c de selezion",
+    "riskOneAI": "Ris'c del tòch selezionaa da AI: {{risk}} posizion vincente immediata",
+    "riskManyAI": "Ris'c del tòch selezionaa da AI: {{risk}} posizion vincent immediat",
+    "riskTurnedOff": "El ris'c de selezion l'è desativaa",
+    "riskUnavailableAI": "El ris'c de selezion l'è minga disponibil in modalità AI contra AI",
+    "selectionRisk": "Ris'c de selezion",
+    "turnRiskOff": "Desativa el ris'c de selezion",
+    "turnRiskOn": "Ativa el ris'c de selezion"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lengua",
+    "search": "Cerca lenguv",
+    "empty": "Nissuna lengua trovada",
+    "close": "Sara"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Usa nga gin-port nga pagpauswag tikang ha",
+    "newGame": "Bag-o nga uyag"
+  },
+  "common": {
+    "on": "BUHI",
+    "off": "PATAY"
+  },
+  "a11y": {
+    "utilityActions": "Mga sumpay han app ngan yinaknan",
+    "viewSource": "Kitaa an source ha GitHub",
+    "gameControls": "Mga kontrol han uyag",
+    "gameBoard": "3D nga tabla han uyag",
+    "gameInfo": "Impormasyon han uyag"
+  },
+  "controls": {
+    "diffAI": "Kakurian han AI",
+    "diffPlayerOneAI": "Kakurian P1",
+    "diffPlayerTwoAI": "Kakurian P2",
+    "startingPlayer": "Nagtitikang nga mag-uyag",
+    "gameMode": "Paagi han uyag",
+    "pauseAI": "I-pause an AI",
+    "resumeAI": "Ipadayon an AI",
+    "undo": "I-undo",
+    "redo": "I-redo"
+  },
+  "diff": {
+    "easy": "Masayon",
+    "medium": "Tunga",
+    "hard": "Makuri"
+  },
+  "mode": {
+    "userVsUser": "Gumaramit kontra gumaramit",
+    "userVsAI": "Gumaramit kontra AI",
+    "onlyAI": "AI kontra AI"
+  },
+  "player": {
+    "playerYou": "Ikaw",
+    "playerOne": "Mag-uyag Uno",
+    "playerTwo": "Mag-uyag Duha",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Waray-pili",
+    "playerAIPlayer": "Mag-uyag nga AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Kahimtang han uyag...",
+    "pausedAI": "Naka-pause hi {{player}}...",
+    "placingAI": "Nag-uuyag hi {{player}} - nagbubutang hin piyesa ha tabla...",
+    "placingUser": "Nag-uuyag hi {{player}} - ibutang an ginpili nga piyesa ha tabla...",
+    "placeUserYou": "Nag-uuyag ka - ibutang an ginpili nga piyesa ha tabla...",
+    "gameDrawn": "Tabla an uyag - waray linya nga daog",
+    "gameWon": "Dumaug hi {{player}} - ginmarkahan an linya nga daog",
+    "selectingAI": "Nag-uuyag hi {{player}} - namimili hin piyesa para kan {{opponent}}...",
+    "selectUser": "Nag-uuyag hi {{player}} - pagpili hin piyesa para kan {{opponent}}...",
+    "selectUserYou": "Nag-uuyag ka - pagpili hin piyesa para kan {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Piyesa nga ginagamit",
+    "none": "Waray ginpili",
+    "traits": "Mga kinaiya han piyesa",
+    "black": "itom",
+    "red": "pula",
+    "big": "dako",
+    "small": "gutî",
+    "round": "lingin",
+    "square": "kwadrado",
+    "solid": "bug-os",
+    "hollow": "buho"
+  },
+  "board": {
+    "binary": "Binary nga tabla",
+    "piecesPlaced": "Mga piyesa nga ginbutang",
+    "cellEmpty": "Selda {{cell}}: waray sulod",
+    "cellPiece": "Selda {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Diri magagamit an 3D rendering.",
+    "webglHeading": "Waray makagtikang an WebGL.",
+    "webglMsg": "Kinahanglan han uyag nga naka-enable an WebGL ha browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "I-hover an mapipili nga piyesa basi makita an peligro han pagpili",
+    "hoveredRiskOne": "Peligro han gin-hover nga piyesa: {{risk}} dayon nga pwesto nga daog",
+    "hoveredRiskMany": "Peligro han gin-hover nga piyesa: {{risk}} dayon nga mga pwesto nga daog",
+    "immediateWins": "Dayon nga mga pwesto nga daog",
+    "latestRisk": "Pinakabag-o nga peligro han pagpili",
+    "riskOneAI": "Peligro han piyesa nga ginpili han AI: {{risk}} dayon nga pwesto nga daog",
+    "riskManyAI": "Peligro han piyesa nga ginpili han AI: {{risk}} dayon nga mga pwesto nga daog",
+    "riskTurnedOff": "Ginpatay an peligro han pagpili",
+    "riskUnavailableAI": "Diri magagamit an peligro han pagpili ha AI kontra AI",
+    "selectionRisk": "Peligro han pagpili",
+    "turnRiskOff": "Pataya an peligro han pagpili",
+    "turnRiskOn": "Buhi-a an peligro han pagpili"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Yinaknan",
+    "search": "Bilnga an mga yinaknan",
+    "empty": "Waray nabilngan nga yinaknan",
+    "close": "Sara"
+  }
+}

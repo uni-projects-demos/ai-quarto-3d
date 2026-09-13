@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Oshki-jiigewin gaa-bi-ozhichigaadeg",
+    "newGame": "Oshki-odaminowin"
+  },
+  "common": {
+    "on": "BIMAADAD",
+    "off": "BOON"
+  },
+  "a11y": {
+    "utilityActions": "App-gikendan-aabajichiganan miinawaa anishinaabemowin",
+    "viewSource": "Waabandaan GitHub gaa-izhi-ozhichigaadeg",
+    "gameControls": "Odaminowin onaakonigewinan",
+    "gameBoard": "3D odaminowin mazina'igan",
+    "gameInfo": "Odaminowin gikendaasowin"
+  },
+  "controls": {
+    "diffAI": "AI zanagad",
+    "diffPlayerOneAI": "P1 zanagad",
+    "diffPlayerTwoAI": "P2 zanagad",
+    "startingPlayer": "Nitam odaminowinini",
+    "gameMode": "Odaminowin izhiwebak",
+    "pauseAI": "Boonaa AI",
+    "resumeAI": "Maajii AI",
+    "undo": "Aanikanootan",
+    "redo": "Miinawaa izhichige"
+  },
+  "diff": {
+    "easy": "Weweni",
+    "medium": "Aabiding",
+    "hard": "Zanagad"
+  },
+  "mode": {
+    "userVsUser": "Aabajitoojig vs aabajitoojig",
+    "userVsAI": "Aabajitoojig vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Giin",
+    "playerOne": "Nitam Odaminowinini",
+    "playerTwo": "Niizh Odaminowinini",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Gaa-onji-izhiwebak",
+    "playerAIPlayer": "AI odaminowinini",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Odaminowin izhiwebiziwin...",
+    "pausedAI": "{{player}} boonid...",
+    "placingAI": "{{player}} odaminod - asaa mitigwaabishag mazina'iganing...",
+    "placingUser": "{{player}} odaminod - asaa mitigwaabishag gaa-onji-naabanda'ang mazina'iganing...",
+    "placeUserYou": "Giin odaminon - asaa mitigwaabishag gaa-onji-naabanda'ang mazina'iganing...",
+    "gameDrawn": "Odaminowin gagwej - gaawiin zhaawendaagoziwin miikana",
+    "gameWon": "{{player}} gashkitoon - zhaawendaagoziwin miikana waabanda'igaade",
+    "selectingAI": "{{player}} odaminod - naabanda'an mitigwaabishag {{opponent}} odaapinang...",
+    "selectUser": "{{player}} odaminod - naabanda'an mitigwaabishag {{opponent}} odaapinang...",
+    "selectUserYou": "Giin odaminon - naabanda'an mitigwaabishag {{opponent}} odaapinang..."
+  },
+  "piece": {
+    "inPlay": "Mitigwaabishag odaminowining",
+    "none": "Gaawiin gegoo naabanda'igaadesinoon",
+    "traits": "Mitigwaabishag izhiwebiziwin",
+    "black": "makadewaa",
+    "red": "miskwaa",
+    "big": "mishaa",
+    "small": "agaasaa",
+    "round": "waawiye",
+    "square": "niiwin-gonaa",
+    "solid": "mashkawaa",
+    "hollow": "baashkine"
+  },
+  "board": {
+    "binary": "Niizh-waawiye mazina'igan",
+    "piecesPlaced": "Mitigwaabishag gaa-asaag",
+    "cellEmpty": "Akiing {{cell}}: bangii",
+    "cellPiece": "Akiing {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D waabanda'igewin gaawiin ayaasinoon.",
+    "webglHeading": "WebGL gaawiin gii-maajitaasii.",
+    "webglMsg": "Odaminowin WebGL da-bimaadad browsering."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Akawe naabanda'an mitigwaabishag da-waabandaman odaapinangewin gagwe",
+    "hoveredRiskOne": "Mitigwaabishag gaa-naabanda'ang gagwe: {{risk}} waawiindamaagewin gashkitoowin",
+    "hoveredRiskMany": "Mitigwaabishag gaa-naabanda'ang gagwe: {{risk}} waawiindamaagewinan gashkitoowin",
+    "immediateWins": "Waawiindamaagewinan gashkitoowin",
+    "latestRisk": "Odaapinangewin gagwe oshki",
+    "riskOneAI": "AI gaa-odaapinang mitigwaabishag gagwe: {{risk}} waawiindamaagewin gashkitoowin",
+    "riskManyAI": "AI gaa-odaapinang mitigwaabishag gagwe: {{risk}} waawiindamaagewinan gashkitoowin",
+    "riskTurnedOff": "Odaapinangewin gagwe boon",
+    "riskUnavailableAI": "Odaapinangewin gagwe gaawiin ayaasinoon AI vs AI",
+    "selectionRisk": "Odaapinangewin gagwe",
+    "turnRiskOff": "Boonaa odaapinangewin gagwe",
+    "turnRiskOn": "Maajii odaapinangewin gagwe"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Anishinaabemowin",
+    "search": "Nanaandawi-nitaawe anishinaabemowinan",
+    "empty": "Gaawiin gagwe anishinaabemowin mikigaadesinoon",
+    "close": "Gibitoon"
+  }
+}

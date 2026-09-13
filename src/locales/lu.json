@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Dibungija dyakafuma ku",
+    "newGame": "Dinaya dipya"
+  },
+  "common": {
+    "on": "KUNYI",
+    "off": "KUFUNGA"
+  },
+  "a11y": {
+    "utilityActions": "Milongo ya app ne muakulu",
+    "viewSource": "Mona source mu GitHub",
+    "gameControls": "Bikokeshi bya dinaya",
+    "gameBoard": "Tshibalu tsha dinaya 3D",
+    "gameInfo": "Lumu lwa dinaya"
+  },
+  "controls": {
+    "diffAI": "Bukole bwa AI",
+    "diffPlayerOneAI": "Bukole bwa P1",
+    "diffPlayerTwoAI": "Bukole bwa P2",
+    "startingPlayer": "Munayi udi utandika",
+    "gameMode": "Mushindu wa dinaya",
+    "pauseAI": "Imika AI",
+    "resumeAI": "Tungunuka ne AI",
+    "undo": "Pinga panyima",
+    "redo": "Enza kabidi"
+  },
+  "diff": {
+    "easy": "Bipepele",
+    "medium": "Pakati",
+    "hard": "Bikole"
+  },
+  "mode": {
+    "userVsUser": "Muntu ne muntu",
+    "userVsAI": "Muntu ne AI",
+    "onlyAI": "AI ne AI"
+  },
+  "player": {
+    "playerYou": "Wewe",
+    "playerOne": "Munayi Umue",
+    "playerTwo": "Munayi Mibidi",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Mu tshimpitshimpi",
+    "playerAIPlayer": "Munayi AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Mushindu wa dinaya...",
+    "pausedAI": "{{player}} udi mu dimika...",
+    "placingAI": "{{player}} udi unaya - udi uteka tshitupa pa tshibalu...",
+    "placingUser": "{{player}} udi unaya - Teka tshitupa tshisunguluke pa tshibalu...",
+    "placeUserYou": "Wewe udi unaya - Teka tshitupa tshisunguluke pa tshibalu...",
+    "gameDrawn": "Dinaya divua diangalangana - kabiyi mulongo wa kuenza buimpe",
+    "gameWon": "{{player}} udi munangane - mulongo wa dinanga udi umueneka",
+    "selectingAI": "{{player}} udi unaya - udi usungula tshitupa tsha {{opponent}}...",
+    "selectUser": "{{player}} udi unaya - Sungula tshitupa tsha {{opponent}}...",
+    "selectUserYou": "Wewe udi unaya - Sungula tshitupa tsha {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Tshitupa mu dinaya",
+    "none": "Kakuena tshisunguluke",
+    "traits": "Bilemo bya tshitupa",
+    "black": "mufike",
+    "red": "mukunze",
+    "big": "tshinene",
+    "small": "tshikese",
+    "round": "tshibulungane",
+    "square": "tshina makona",
+    "solid": "tshizale",
+    "hollow": "tshina mukena"
+  },
+  "board": {
+    "binary": "Tshibalu binary",
+    "piecesPlaced": "Bitupa bitekekala",
+    "cellEmpty": "Kasaka {{cell}}: kakapu",
+    "cellPiece": "Kasaka {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Kumuenesha 3D kakuena.",
+    "webglHeading": "WebGL kakuyi anu kutandika.",
+    "webglMsg": "Dinaya didi dijinga WebGL kunyisha mu browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Teka cursor pa tshitupa tshisunguluke bua kumona njiwu wa disungula",
+    "hoveredRiskOne": "Njiwu wa tshitupa pansi pa cursor: {{risk}} diteka dia dinanga dia tshikondo",
+    "hoveredRiskMany": "Njiwu wa tshitupa pansi pa cursor: {{risk}} mateka a dinanga a tshikondo",
+    "immediateWins": "Mateka a dinanga a tshikondo",
+    "latestRisk": "Njiwu wa disungula wa ndekelu",
+    "riskOneAI": "Njiwu wa tshitupa tshisunguluke ne AI: {{risk}} diteka dia dinanga dia tshikondo",
+    "riskManyAI": "Njiwu wa tshitupa tshisunguluke ne AI: {{risk}} mateka a dinanga a tshikondo",
+    "riskTurnedOff": "Njiwu wa disungula udi mufunge",
+    "riskUnavailableAI": "Njiwu wa disungula kawena mu mode AI ne AI",
+    "selectionRisk": "Njiwu wa disungula",
+    "turnRiskOff": "Funga njiwu wa disungula",
+    "turnRiskOn": "Nyisha njiwu wa disungula"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Muakulu",
+    "search": "Keba miakulu",
+    "empty": "Kakuena muakulu muanji",
+    "close": "Jika"
+  }
+}

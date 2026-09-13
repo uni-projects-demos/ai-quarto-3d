@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Pangembangan se epaḍḍha dari",
+    "newGame": "Maèn anyar"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Pangabhubung aplikasi sareng basa",
+    "viewSource": "Nenggu source e GitHub",
+    "gameControls": "Kontrol maèn",
+    "gameBoard": "Papan maèn 3D",
+    "gameInfo": "Informasi maèn"
+  },
+  "controls": {
+    "diffAI": "Kasarangan AI",
+    "diffPlayerOneAI": "Kasarangan P1",
+    "diffPlayerTwoAI": "Kasarangan P2",
+    "startingPlayer": "Pamaèn se molai",
+    "gameMode": "Mode maèn",
+    "pauseAI": "Pause AI",
+    "resumeAI": "Terros AI",
+    "undo": "Batalaghi",
+    "redo": "Ghâbây pole"
+  },
+  "diff": {
+    "easy": "Gâmpang",
+    "medium": "Tengnga",
+    "hard": "Sossa"
+  },
+  "mode": {
+    "userVsUser": "Pangguna lawan pangguna",
+    "userVsAI": "Pangguna lawan AI",
+    "onlyAI": "AI lawan AI"
+  },
+  "player": {
+    "playerYou": "Bâ'na",
+    "playerOne": "Pamaèn Satos",
+    "playerTwo": "Pamaèn Duwa'",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Acak",
+    "playerAIPlayer": "Pamaèn AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Status maèn...",
+    "pausedAI": "{{player}} e-pause...",
+    "placingAI": "{{player}} maèn - nempatagi potongan e papan...",
+    "placingUser": "{{player}} maèn - Tempatagi potongan se epele e papan...",
+    "placeUserYou": "Bâ'na maèn - Tempatagi potongan se epele e papan...",
+    "gameDrawn": "Maèn seri - tadâ' garis menang",
+    "gameWon": "{{player}} menang - garis menang e-sorot",
+    "selectingAI": "{{player}} maèn - melea potongan kaangguy {{opponent}}...",
+    "selectUser": "{{player}} maèn - Pele potongan kaangguy {{opponent}}...",
+    "selectUserYou": "Bâ'na maèn - Pele potongan kaangguy {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Potongan se e-maèn",
+    "none": "Tadâ' se epele",
+    "traits": "Sifat potongan",
+    "black": "celleng",
+    "red": "mera",
+    "big": "rajâ",
+    "small": "kenik",
+    "round": "bunder",
+    "square": "kotak",
+    "solid": "padet",
+    "hollow": "berlubang"
+  },
+  "board": {
+    "binary": "Papan biner",
+    "piecesPlaced": "Potongan se e-tempatagi",
+    "cellEmpty": "Sel {{cell}}: kosong",
+    "cellPiece": "Sel {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Rendering 3D ta' tersedia.",
+    "webglHeading": "WebGL ta' bisa molai.",
+    "webglMsg": "Maèn mbutohagi WebGL aktif e browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Arahagi kursor e potongan se bisa epele kaangguy nenggu risiko pemilihan",
+    "hoveredRiskOne": "Risiko potongan e bawah kursor: {{risk}} penempatan menang langsung",
+    "hoveredRiskMany": "Risiko potongan e bawah kursor: {{risk}} penempatan menang langsung",
+    "immediateWins": "Penempatan menang langsung",
+    "latestRisk": "Risiko pemilihan paling anyar",
+    "riskOneAI": "Risiko potongan se epele AI: {{risk}} penempatan menang langsung",
+    "riskManyAI": "Risiko potongan se epele AI: {{risk}} penempatan menang langsung",
+    "riskTurnedOff": "Risiko pemilihan mate",
+    "riskUnavailableAI": "Risiko pemilihan ta' tersedia e mode AI lawan AI",
+    "selectionRisk": "Risiko pemilihan",
+    "turnRiskOff": "Mateagi risiko pemilihan",
+    "turnRiskOn": "On-agi risiko pemilihan"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Bhâsa",
+    "search": "Nyare bhâsa",
+    "empty": "Ta’ ètemmo bhâsa",
+    "close": "Tutup"
+  }
+}

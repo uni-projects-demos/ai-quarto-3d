@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Three.js અને alpha-beta pruning સાથેના Minimax કૃત્રિમ બુદ્ધિ અલ્ગોરિધમના Negamax સંસ્કરણનો ઉપયોગ કરતું ઇન્ટરેક્ટિવ 3D Quarto બોર્ડ ગેમ UI. સરળ, મધ્યમ અને મુશ્કેલ AI સ્તરો સાથે વપરાશકર્તા vs વપરાશકર્તા, વપરાશકર્તા vs AI અને AI vs AI રમો.",
     "ogDescription": "ઇન્ટરેક્ટિવ 3D Quarto બોર્ડ ગેમ. સરળ, મધ્યમ અને મુશ્કેલ AI સ્તરો સાથે વપરાશકર્તા vs વપરાશકર્તા, વપરાશકર્તા vs AI અને AI vs AI રમો."
+  },
+  "language": {
+    "label": "ભાષા",
+    "search": "ભાષાઓ શોધો",
+    "empty": "કોઈ ભાષા મળી નથી",
+    "close": "બંધ કરો"
   }
 }

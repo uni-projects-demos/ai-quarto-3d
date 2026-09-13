@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Se fa'aleleiga na siitia mai",
+    "newGame": "Ta'aloga fou"
+  },
+  "common": {
+    "on": "OLA",
+    "off": "PE"
+  },
+  "a11y": {
+    "utilityActions": "So'oga o le polokalame ma le gagana",
+    "viewSource": "Va'ai le puna i GitHub",
+    "gameControls": "Pule o le ta'aloga",
+    "gameBoard": "Laupapa ta'aloga 3D",
+    "gameInfo": "Fa'amatalaga o le ta'aloga"
+  },
+  "controls": {
+    "diffAI": "Faigata o AI",
+    "diffPlayerOneAI": "Faigata P1",
+    "diffPlayerTwoAI": "Faigata P2",
+    "startingPlayer": "Tagata ta'alo amata",
+    "gameMode": "Ituaiga ta'aloga",
+    "pauseAI": "Taofi AI",
+    "resumeAI": "Fa'aauau AI",
+    "undo": "Toe fa'afo'i",
+    "redo": "Toe fai"
+  },
+  "diff": {
+    "easy": "Faigofie",
+    "medium": "Feololo",
+    "hard": "Faigata"
+  },
+  "mode": {
+    "userVsUser": "Tagata fa'aoga ma tagata fa'aoga",
+    "userVsAI": "Tagata fa'aoga ma AI",
+    "onlyAI": "AI ma AI"
+  },
+  "player": {
+    "playerYou": "Oe",
+    "playerOne": "Tagata Ta'alo Tasi",
+    "playerTwo": "Tagata Ta'alo Lua",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Fa'afuase'i",
+    "playerAIPlayer": "Tagata ta'alo AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Tulaga o le ta'aloga...",
+    "pausedAI": "Ua taofi {{player}}...",
+    "placingAI": "O lo'o ta'alo {{player}} - tu'u le fasi i le laupapa...",
+    "placingUser": "O lo'o ta'alo {{player}} - tu'u le fasi ua filifilia i le laupapa...",
+    "placeUserYou": "O lo'o e ta'alo - tu'u le fasi ua filifilia i le laupapa...",
+    "gameDrawn": "Tutusa le ta'aloga - e leai se laina manumalo",
+    "gameWon": "Ua manumalo {{player}} - ua fa'ailoa le laina manumalo",
+    "selectingAI": "O lo'o ta'alo {{player}} - filifili se fasi mo {{opponent}}...",
+    "selectUser": "O lo'o ta'alo {{player}} - filifili se fasi mo {{opponent}}...",
+    "selectUserYou": "O lo'o e ta'alo - filifili se fasi mo {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Fasi o lo'o ta'alo",
+    "none": "E leai se mea ua filifilia",
+    "traits": "Uiga o le fasi",
+    "black": "uliuli",
+    "red": "mumu",
+    "big": "tele",
+    "small": "laiti",
+    "round": "lapotopoto",
+    "square": "sikuea",
+    "solid": "mautu",
+    "hollow": "'o'ogo"
+  },
+  "board": {
+    "binary": "Laupapa binary",
+    "piecesPlaced": "Fasi ua tu'u",
+    "cellEmpty": "Sela {{cell}}: avanoa",
+    "cellPiece": "Sela {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "E lē avanoa le fa'aaliga 3D.",
+    "webglHeading": "E le'i mafai ona amata WebGL.",
+    "webglMsg": "E mana'omia e le ta'aloga ona fa'agaoioi WebGL i le su'esu'e."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Fa'ae'e le isumu i se fasi e filifilia e va'ai le lamatiaga o le filifiliga",
+    "hoveredRiskOne": "Lamatiaga o le fasi i lalo o le isumu: {{risk}} nofoaga manumalo vave",
+    "hoveredRiskMany": "Lamatiaga o le fasi i lalo o le isumu: {{risk}} nofoaga manumalo vave",
+    "immediateWins": "Nofoaga manumalo vave",
+    "latestRisk": "Lamatiaga fou o le filifiliga",
+    "riskOneAI": "Lamatiaga o le fasi na filifilia e AI: {{risk}} nofoaga manumalo vave",
+    "riskManyAI": "Lamatiaga o le fasi na filifilia e AI: {{risk}} nofoaga manumalo vave",
+    "riskTurnedOff": "Ua tape le lamatiaga o le filifiliga",
+    "riskUnavailableAI": "E lē avanoa le lamatiaga o le filifiliga i le AI ma AI",
+    "selectionRisk": "Lamatiaga o le filifiliga",
+    "turnRiskOff": "Tape le lamatiaga o le filifiliga",
+    "turnRiskOn": "Ki le lamatiaga o le filifiliga"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Gagana",
+    "search": "Su'e gagana",
+    "empty": "Leai gagana na maua",
+    "close": "Tapuni"
+  }
+}

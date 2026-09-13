@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Antarbeungeut kaulinan papan Quarto 3D interaktif maké Three.js jeung vérsi Negamax tina algoritma kecerdasan jieunan Minimax kalayan pruning alpha-beta. Maén pamaké ngalawan pamaké, pamaké ngalawan AI, jeung AI ngalawan AI kalayan AI gampang, sedeng, jeung hésé.",
     "ogDescription": "Kaulinan papan Quarto 3D interaktif. Maén pamaké ngalawan pamaké, pamaké ngalawan AI, jeung AI ngalawan AI kalayan AI gampang, sedeng, jeung hésé."
+  },
+  "language": {
+    "label": "Basa",
+    "search": "Pilarian basa",
+    "empty": "Teu kapanggih basa",
+    "close": "Tutup"
   }
 }

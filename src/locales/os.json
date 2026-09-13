@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ацы проектæй арæзт фæлгонц",
+    "newGame": "Ног хъазт"
+  },
+  "common": {
+    "on": "КУЫСТЫ",
+    "off": "АХГÆД"
+  },
+  "a11y": {
+    "utilityActions": "Приложенийы бастытæ æмæ æвзаг",
+    "viewSource": "GitHub-ы исходник фен",
+    "gameControls": "Хъазты æвдисæнтæ",
+    "gameBoard": "3D хъазты фæз",
+    "gameInfo": "Хъазты информаци"
+  },
+  "controls": {
+    "diffAI": "AI-йы уæззаугонд",
+    "diffPlayerOneAI": "P1 уæззаугонд",
+    "diffPlayerTwoAI": "P2 уæззаугонд",
+    "startingPlayer": "Райдайæг хъазæг",
+    "gameMode": "Хъазты режим",
+    "pauseAI": "AI рауадз",
+    "resumeAI": "AI дарддæр",
+    "undo": "Фæстæмæ",
+    "redo": "Ногæй"
+  },
+  "diff": {
+    "easy": "Æнцон",
+    "medium": "Астæу",
+    "hard": "Уæззау"
+  },
+  "mode": {
+    "userVsUser": "Архайæг æмæ архайæг",
+    "userVsAI": "Архайæг æмæ AI",
+    "onlyAI": "AI æмæ AI"
+  },
+  "player": {
+    "playerYou": "Ды",
+    "playerOne": "Фыццаг хъазæг",
+    "playerTwo": "Дыккаг хъазæг",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Рандом",
+    "playerAIPlayer": "AI хъазæг",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Хъазты статус...",
+    "pausedAI": "{{player}} рауадзт у...",
+    "placingAI": "{{player}} хъазы - фигурæ фæзыл æвæры...",
+    "placingUser": "{{player}} хъазы - равзæрст фигурæ фæзыл æвæр...",
+    "placeUserYou": "Ды хъазыc - равзæрст фигурæ фæзыл æвæр...",
+    "gameDrawn": "Хъазт ничейæ - уæлахизы рæнхъ нæй",
+    "gameWon": "{{player}} уæлахиз - уæлахизы рæнхъ нысангонд",
+    "selectingAI": "{{player}} хъазы - {{opponent}}-æн фигурæ равзары...",
+    "selectUser": "{{player}} хъазы - {{opponent}}-æн фигурæ равзар...",
+    "selectUserYou": "Ды хъазыc - {{opponent}}-æн фигурæ равзар..."
+  },
+  "piece": {
+    "inPlay": "Хъазты фигурæ",
+    "none": "Ницы равзæрст нæу",
+    "traits": "Фигурæйы миниуджытæ",
+    "black": "сау",
+    "red": "сырх",
+    "big": "стыр",
+    "small": "чысыл",
+    "round": "тогъд",
+    "square": "квадрат",
+    "solid": "цæхгæр",
+    "hollow": "хъæбыс"
+  },
+  "board": {
+    "binary": "Бинарон фæз",
+    "piecesPlaced": "Æвæрд фигурæтæ",
+    "cellEmpty": "Хъæд {{cell}}: афтид",
+    "cellPiece": "Хъæд {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D рендеринг нæй.",
+    "webglHeading": "WebGL райдайын нæ бафтыд.",
+    "webglMsg": "Хъазтæн WebGL браузеры хъуамæ активон уа."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Равзæрсты тæссаг фенынæн курсор равзæрст фигурæм фæдар",
+    "hoveredRiskOne": "Курсоры бын фигурæйы тæссаг: {{risk}} æвзæрст уæлахизы бынат",
+    "hoveredRiskMany": "Курсоры бын фигурæйы тæссаг: {{risk}} æвзæрст уæлахизы бынæттæ",
+    "immediateWins": "Æвзæрст уæлахизы бынæттæ",
+    "latestRisk": "Фæстаг равзæрсты тæссаг",
+    "riskOneAI": "AI равзæрст фигурæйы тæссаг: {{risk}} æвзæрст уæлахизы бынат",
+    "riskManyAI": "AI равзæрст фигурæйы тæссаг: {{risk}} æвзæрст уæлахизы бынæттæ",
+    "riskTurnedOff": "Равзæрсты тæссаг ахгæд у",
+    "riskUnavailableAI": "AI æмæ AI режимы равзæрсты тæссаг нæй",
+    "selectionRisk": "Равзæрсты тæссаг",
+    "turnRiskOff": "Равзæрсты тæссаг ахгæн",
+    "turnRiskOn": "Равзæрсты тæссаг байгом кæн"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Æвзаг",
+    "search": "Æвзæгтæ агур",
+    "empty": "Æвзæгтæ нæ ссардтой",
+    "close": "Æхгæн"
+  }
+}

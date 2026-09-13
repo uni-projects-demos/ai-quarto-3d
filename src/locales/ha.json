@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Mu’amalar wasan allo Quarto na 3D mai hulɗa, tana amfani da Three.js da sigar Negamax ta tsarin basirar wucin gadi na Minimax tare da yankan alpha-beta. Yi wasa mai amfani da mai amfani, mai amfani da AI, da AI da AI, tare da matakan AI masu sauƙi, matsakaici da wahala.",
     "ogDescription": "Wasan allo Quarto na 3D mai hulɗa. Yi wasa mai amfani da mai amfani, mai amfani da AI, da AI da AI, tare da matakan AI masu sauƙi, matsakaici da wahala."
+  },
+  "language": {
+    "label": "Harshe",
+    "search": "Bincika harsuna",
+    "empty": "Ba a sami yaruka ba",
+    "close": "Kusa"
   }
 }

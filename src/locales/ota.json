@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Bundan nakl olunmuş ıslāh",
+    "newGame": "Yeñi oyun"
+  },
+  "common": {
+    "on": "AÇIK",
+    "off": "KAPALI"
+  },
+  "a11y": {
+    "utilityActions": "Tatbîk rabıtaları ve lisān",
+    "viewSource": "Menbaı GitHub'da gör",
+    "gameControls": "Oyun kumandaları",
+    "gameBoard": "3D oyun tahtası",
+    "gameInfo": "Oyun ma‘lûmâtı"
+  },
+  "controls": {
+    "diffAI": "AI müşkilâtı",
+    "diffPlayerOneAI": "P1 müşkilâtı",
+    "diffPlayerTwoAI": "P2 müşkilâtı",
+    "startingPlayer": "İbtidâ eden oyuncu",
+    "gameMode": "Oyun tarzı",
+    "pauseAI": "AI'yi tevkîf et",
+    "resumeAI": "AI'yi devâm ettir",
+    "undo": "Geri al",
+    "redo": "Tekrâr et"
+  },
+  "diff": {
+    "easy": "Âsân",
+    "medium": "Vasat",
+    "hard": "Müşkil"
+  },
+  "mode": {
+    "userVsUser": "Kullanıcı mukābil kullanıcı",
+    "userVsAI": "Kullanıcı mukābil AI",
+    "onlyAI": "AI mukābil AI"
+  },
+  "player": {
+    "playerYou": "Siz",
+    "playerOne": "Oyuncu Bir",
+    "playerTwo": "Oyuncu İki",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Tesâdüfî",
+    "playerAIPlayer": "AI oyuncu",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Oyun hâli...",
+    "pausedAI": "{{player}} tevkîf olundu...",
+    "placingAI": "{{player}} oynuyor - parçayı tahtaya vaz‘ ediyor...",
+    "placingUser": "{{player}} oynuyor - müntehab parçayı tahtaya vaz‘ edin...",
+    "placeUserYou": "Siz oynuyorsunuz - müntehab parçayı tahtaya vaz‘ edin...",
+    "gameDrawn": "Oyun berâber - galebe hattı yok",
+    "gameWon": "{{player}} galebe etti - galebe hattı işâretlendi",
+    "selectingAI": "{{player}} oynuyor - {{opponent}} için parça intihâb ediyor...",
+    "selectUser": "{{player}} oynuyor - {{opponent}} için parça intihâb edin...",
+    "selectUserYou": "Siz oynuyorsunuz - {{opponent}} için parça intihâb edin..."
+  },
+  "piece": {
+    "inPlay": "Oyundaki parça",
+    "none": "Hiçbir şey müntehab değil",
+    "traits": "Parça evsâfı",
+    "black": "siyah",
+    "red": "kırmızı",
+    "big": "büyük",
+    "small": "küçük",
+    "round": "yuvarlak",
+    "square": "murabba",
+    "solid": "dolu",
+    "hollow": "içi boş"
+  },
+  "board": {
+    "binary": "İkili tahta",
+    "piecesPlaced": "Vaz‘ edilmiş parçalar",
+    "cellEmpty": "Hâne {{cell}}: hâlî",
+    "cellPiece": "Hâne {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D tasvîr mevcut değil.",
+    "webglHeading": "WebGL başlayamadı.",
+    "webglMsg": "Oyun için tarayıcıda WebGL açık olmalıdır."
+  },
+  "metrics": {
+    "hoverRiskPreview": "İntihâb riskini görmek için müntehab olabilir parça üstünde imleci tutun",
+    "hoveredRiskOne": "İmleç altındaki parça riski: {{risk}} derhal galebe mevkii",
+    "hoveredRiskMany": "İmleç altındaki parça riski: {{risk}} derhal galebe mevkileri",
+    "immediateWins": "Derhal galebe mevkileri",
+    "latestRisk": "Son intihâb riski",
+    "riskOneAI": "AI'nin intihâb ettiği parça riski: {{risk}} derhal galebe mevkii",
+    "riskManyAI": "AI'nin intihâb ettiği parça riski: {{risk}} derhal galebe mevkileri",
+    "riskTurnedOff": "İntihâb riski kapalı",
+    "riskUnavailableAI": "AI mukābil AI tarzında intihâb riski mevcut değil",
+    "selectionRisk": "İntihâb riski",
+    "turnRiskOff": "İntihâb riskini kapat",
+    "turnRiskOn": "İntihâb riskini aç"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "لسان",
+    "search": "لسانلری تحرّی ایت",
+    "empty": "هیچ لسان بولنمادی",
+    "close": "قاپا"
+  }
+}

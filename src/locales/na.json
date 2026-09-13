@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Amena ebwerin port imin",
+    "newGame": "Giemen etiu"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "App link me edorer",
+    "viewSource": "Daga source i GitHub",
+    "gameControls": "Giemen control",
+    "gameBoard": "3D giemen board",
+    "gameInfo": "Giemen information"
+  },
+  "controls": {
+    "diffAI": "AI difficulty",
+    "diffPlayerOneAI": "P1 difficulty",
+    "diffPlayerTwoAI": "P2 difficulty",
+    "startingPlayer": "Gamer an start",
+    "gameMode": "Giemen mode",
+    "pauseAI": "Pause AI",
+    "resumeAI": "Resume AI",
+    "undo": "Undo",
+    "redo": "Redo"
+  },
+  "diff": {
+    "easy": "Emang",
+    "medium": "Danga",
+    "hard": "Ekamawir"
+  },
+  "mode": {
+    "userVsUser": "User kontra user",
+    "userVsAI": "User kontra AI",
+    "onlyAI": "AI kontra AI"
+  },
+  "player": {
+    "playerYou": "Ngam",
+    "playerOne": "Gamer It",
+    "playerTwo": "Gamer Aro",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Random",
+    "playerAIPlayer": "AI Gamer",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Giemen status...",
+    "pausedAI": "{{player}} pause...",
+    "placingAI": "{{player}} e giem - e ita piece ia board...",
+    "placingUser": "{{player}} e giem - Ita piece an select ia board...",
+    "placeUserYou": "Ngam e giem - Ita piece an select ia board...",
+    "gameDrawn": "Giem draw - win line eo",
+    "gameWon": "{{player}} win - win line e highlight",
+    "selectingAI": "{{player}} e giem - e select piece pan {{opponent}}...",
+    "selectUser": "{{player}} e giem - Select piece pan {{opponent}}...",
+    "selectUserYou": "Ngam e giem - Select piece pan {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Piece imin giem",
+    "none": "No select",
+    "traits": "Piece trait",
+    "black": "black",
+    "red": "red",
+    "big": "big",
+    "small": "small",
+    "round": "round",
+    "square": "square",
+    "solid": "solid",
+    "hollow": "hollow"
+  },
+  "board": {
+    "binary": "Binary board",
+    "piecesPlaced": "Piece an ita",
+    "cellEmpty": "Cell {{cell}}: empty",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering eja available.",
+    "webglHeading": "WebGL eja start.",
+    "webglMsg": "Giem e need WebGL ON imin browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Hover piece an select pan daga selection risk",
+    "hoveredRiskOne": "Hovered piece risk: {{risk}} immediate win placement",
+    "hoveredRiskMany": "Hovered piece risk: {{risk}} immediate win placements",
+    "immediateWins": "Immediate win placements",
+    "latestRisk": "Latest selection risk",
+    "riskOneAI": "AI selected piece risk: {{risk}} immediate win placement",
+    "riskManyAI": "AI selected piece risk: {{risk}} immediate win placements",
+    "riskTurnedOff": "Selection risk e OFF",
+    "riskUnavailableAI": "Selection risk eja available imin AI kontra AI mode",
+    "selectionRisk": "Selection risk",
+    "turnRiskOff": "Selection risk OFF",
+    "turnRiskOn": "Selection risk ON"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Gagana",
+    "search": "Ekamam language eko",
+    "empty": "Eko language eo ebōk",
+    "close": "Ekamow"
+  }
+}

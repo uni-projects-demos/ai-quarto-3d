@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Asnerni yettusqedcen seg",
+    "newGame": "Urar amaynut"
+  },
+  "common": {
+    "on": "YERMED",
+    "off": "YENSA"
+  },
+  "a11y": {
+    "utilityActions": "Iseɣwan n usnas d tutlayt",
+    "viewSource": "Wali aɣbalu deg GitHub",
+    "gameControls": "Isenqaden n wurar",
+    "gameBoard": "Tafelwit n wurar 3D",
+    "gameInfo": "Talɣut n wurar"
+  },
+  "controls": {
+    "diffAI": "Taɛkemt n AI",
+    "diffPlayerOneAI": "Taɛkemt n P1",
+    "diffPlayerTwoAI": "Taɛkemt n P2",
+    "startingPlayer": "Amurar amezwaru",
+    "gameMode": "Askar n wurar",
+    "pauseAI": "Seḥbes AI",
+    "resumeAI": "Kemmel AI",
+    "undo": "Sefsex",
+    "redo": "Ales"
+  },
+  "diff": {
+    "easy": "Fessus",
+    "medium": "Alemmas",
+    "hard": "Iweɛṛ"
+  },
+  "mode": {
+    "userVsUser": "Aseqdac mgal aseqdac",
+    "userVsAI": "Aseqdac mgal AI",
+    "onlyAI": "AI mgal AI"
+  },
+  "player": {
+    "playerYou": "Kečč",
+    "playerOne": "Amurar Yiwen",
+    "playerTwo": "Amurar Sin",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Agacuran",
+    "playerAIPlayer": "Amurar AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Addad n wurar...",
+    "pausedAI": "{{player}} yettwaḥbes...",
+    "placingAI": "{{player}} yetturar - yettserrus taferkit ɣef tfelwit...",
+    "placingUser": "{{player}} yetturar - Sers taferkit yettwafernen ɣef tfelwit...",
+    "placeUserYou": "Kečč tetturareḍ - Sers taferkit yettwafernen ɣef tfelwit...",
+    "gameDrawn": "Urar yemgadda - ulac izirig n rrbeḥ",
+    "gameWon": "{{player}} yerbeḥ - izirig n rrbeḥ yettusebrureq",
+    "selectingAI": "{{player}} yetturar - yettfernis taferkit i {{opponent}}...",
+    "selectUser": "{{player}} yetturar - Fren taferkit i {{opponent}}...",
+    "selectUserYou": "Kečč tetturareḍ - Fren taferkit i {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Taferkit deg wurar",
+    "none": "Ulac ayen yettwafernen",
+    "traits": "Iraten n tferkit",
+    "black": "aberkan",
+    "red": "azeggaɣ",
+    "big": "ameqqran",
+    "small": "ameẓyan",
+    "round": "amdewwer",
+    "square": "amkuẓ",
+    "solid": "aččuran",
+    "hollow": "ilem"
+  },
+  "board": {
+    "binary": "Tafelwit tabinaryt",
+    "piecesPlaced": "Tiferkiyin yettusersen",
+    "cellEmpty": "Taxxamt {{cell}}: tilemt",
+    "cellPiece": "Taxxamt {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Aseḍru 3D ur yelli ara.",
+    "webglHeading": "WebGL ur yezmir ara ad yekker.",
+    "webglMsg": "Urar yeḥwaǧ WebGL ad yili yermed deg iminig."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Sers taɣerdayt ɣef tferkit i yezmer ad tettwafernen akken ad twaliḍ amihi n ufran",
+    "hoveredRiskOne": "Amihi n tferkit ddaw tɣerdayt: {{risk}} asers n rrbeḥ imir",
+    "hoveredRiskMany": "Amihi n tferkit ddaw tɣerdayt: {{risk}} isersiyen n rrbeḥ imir",
+    "immediateWins": "Isersiyen n rrbeḥ imir",
+    "latestRisk": "Amihi aneggaru n ufran",
+    "riskOneAI": "Amihi n tferkit i yefren AI: {{risk}} asers n rrbeḥ imir",
+    "riskManyAI": "Amihi n tferkit i yefren AI: {{risk}} isersiyen n rrbeḥ imir",
+    "riskTurnedOff": "Amihi n ufran yensa",
+    "riskUnavailableAI": "Amihi n ufran ur yelli ara deg uskar AI mgal AI",
+    "selectionRisk": "Amihi n ufran",
+    "turnRiskOff": "Sensi amihi n ufran",
+    "turnRiskOn": "Sermed amihi n ufran"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Tutlayt",
+    "search": "Nadi tutlayin",
+    "empty": "Ulac tutlayt yettwafen",
+    "close": "Mdel"
+  }
+}

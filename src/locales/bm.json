@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Baarakɛ min bɛ ta ka don kɔnɔ ka fisa",
+    "newGame": "Tulon kura"
+  },
+  "common": {
+    "on": "A BƐ YƐLƐ",
+    "off": "A DATUSUN"
+  },
+  "a11y": {
+    "utilityActions": "Aplikaasiɔn ka yɔrɔw ni kan",
+    "viewSource": "Source lajɛ GitHub kan",
+    "gameControls": "Tulon mara",
+    "gameBoard": "3D tulon tabla",
+    "gameInfo": "Tulon kunnafoni"
+  },
+  "controls": {
+    "diffAI": "AI gɛlɛya",
+    "diffPlayerOneAI": "P1 gɛlɛya",
+    "diffPlayerTwoAI": "P2 gɛlɛya",
+    "startingPlayer": "Tulonkɛla min bɛ daminɛ",
+    "gameMode": "Tulon cogoya",
+    "pauseAI": "AI lajɔ",
+    "resumeAI": "AI taa fɔlɔ",
+    "undo": "Kɔsegin",
+    "redo": "Seginka kɛ"
+  },
+  "diff": {
+    "easy": "Nɔgɔn",
+    "medium": "Cɛmancɛ",
+    "hard": "Gɛlɛn"
+  },
+  "mode": {
+    "userVsUser": "Baarakɛla vs baarakɛla",
+    "userVsAI": "Baarakɛla vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "I",
+    "playerOne": "Tulonkɛla Kelen",
+    "playerTwo": "Tulonkɛla Fla",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Bana-bana",
+    "playerAIPlayer": "AI tulonkɛla",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Tulon cogoya...",
+    "pausedAI": "{{player}} lajɔlen don...",
+    "placingAI": "{{player}} bɛ tulon kɛ - a bɛ fitini bila tabla kan...",
+    "placingUser": "{{player}} bɛ tulon kɛ - Fitini sugandilen bila tabla kan...",
+    "placeUserYou": "I bɛ tulon kɛ - Fitini sugandilen bila tabla kan...",
+    "gameDrawn": "Tulon bɛɛ bɛ nɔgɔn na - nɔgɔnya sira tɛ",
+    "gameWon": "{{player}} ye se sɔrɔ - se sira jiralen don",
+    "selectingAI": "{{player}} bɛ tulon kɛ - a bɛ fitini sugandi {{opponent}} ye...",
+    "selectUser": "{{player}} bɛ tulon kɛ - Fitini sugandi {{opponent}} ye...",
+    "selectUserYou": "I bɛ tulon kɛ - Fitini sugandi {{opponent}} ye..."
+  },
+  "piece": {
+    "inPlay": "Fitini min bɛ tulon na",
+    "none": "Foyi ma sugandi",
+    "traits": "Fitini sifaw",
+    "black": "finman",
+    "red": "bilenman",
+    "big": "belebele",
+    "small": "misɛn",
+    "round": "kuru",
+    "square": "kare",
+    "solid": "dafalen",
+    "hollow": "kɔnɔ lakelen"
+  },
+  "board": {
+    "binary": "Binary tabla",
+    "piecesPlaced": "Fitini bilalenw",
+    "cellEmpty": "Cell {{cell}}: lankolon",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering tɛ sɔrɔ.",
+    "webglHeading": "WebGL ma se ka daminɛ.",
+    "webglMsg": "Tulon ka kan WebGL ka yɛlɛ browser kɔnɔ."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Mouse bila fitini suganditaw kan walasa ka sugandi risk lajɛ",
+    "hoveredRiskOne": "Fitini min kan mouse bɛ, o risk: {{risk}} se-bila ko kelen",
+    "hoveredRiskMany": "Fitini min kan mouse bɛ, o risk: {{risk}} se-bila kow",
+    "immediateWins": "Se-bila kow joona",
+    "latestRisk": "Sugandi risk laban",
+    "riskOneAI": "AI ka fitini sugandilen risk: {{risk}} se-bila ko kelen",
+    "riskManyAI": "AI ka fitini sugandilen risk: {{risk}} se-bila kow",
+    "riskTurnedOff": "Sugandi risk datugulen don",
+    "riskUnavailableAI": "Sugandi risk tɛ sɔrɔ AI vs AI cogoya la",
+    "selectionRisk": "Sugandi risk",
+    "turnRiskOff": "Sugandi risk datugu",
+    "turnRiskOn": "Sugandi risk yɛlɛ"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Kanko",
+    "search": "Kanw ɲinini",
+    "empty": "Kan si ma Sɔrɔ",
+    "close": "A da tugu"
+  }
+}

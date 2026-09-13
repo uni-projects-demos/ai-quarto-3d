@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Pitsanngorsagaq nuunneqarsimasoq",
+    "newGame": "Unammineq nutaaq"
+  },
+  "common": {
+    "on": "IKUMavoq",
+    "off": "QAMippoq"
+  },
+  "a11y": {
+    "utilityActions": "App-ip linkii oqaatsillu",
+    "viewSource": "GitHub-imi source takuuk",
+    "gameControls": "Unamminermut aqutsissutit",
+    "gameBoard": "3D unammiffik",
+    "gameInfo": "Unamminermut paasissutissat"
+  },
+  "controls": {
+    "diffAI": "AI-p ajornassusia",
+    "diffPlayerOneAI": "P1-p ajornassusia",
+    "diffPlayerTwoAI": "P2-p ajornassusia",
+    "startingPlayer": "Unammilersussaq",
+    "gameMode": "Unamminermut periuseq",
+    "pauseAI": "AI unitsiguk",
+    "resumeAI": "AI nangiguk",
+    "undo": "Utertiguk",
+    "redo": "Tassaqqissaaruk"
+  },
+  "diff": {
+    "easy": "Ajornanngitsoq",
+    "medium": "Akunnattoq",
+    "hard": "Ajornartoq"
+  },
+  "mode": {
+    "userVsUser": "Atuisoq atuisumut",
+    "userVsAI": "Atuisoq AI-mut",
+    "onlyAI": "AI AI-mut"
+  },
+  "player": {
+    "playerYou": "Illit",
+    "playerOne": "Unammisartoq Ataaseq",
+    "playerTwo": "Unammisartoq Marlunnik",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Nalaatsornikkut",
+    "playerAIPlayer": "AI-unammisartoq",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Unamminermi pissuseq...",
+    "pausedAI": "{{player}} unitsinneqarpoq...",
+    "placingAI": "{{player}} unammivoq - brikki papanut inissillugu...",
+    "placingUser": "{{player}} unammivoq - Brikki toqqagaq papanut inissiguk...",
+    "placeUserYou": "Illit unammivutit - Brikki toqqagaq papanut inissiguk...",
+    "gameDrawn": "Naligiinneq - ajugaassutaasumik titarnertaqanngilaq",
+    "gameWon": "{{player}} ajugaavoq - ajugaassutaasoq titarnertaq ersarissarneqarpoq",
+    "selectingAI": "{{player}} unammivoq - {{opponent}}-imut brikkimik toqqaavoq...",
+    "selectUser": "{{player}} unammivoq - {{opponent}}-imut brikki toqqaruk...",
+    "selectUserYou": "Illit unammivutit - {{opponent}}-imut brikki toqqaruk..."
+  },
+  "piece": {
+    "inPlay": "Brikki atorneqartoq",
+    "none": "Soqanngilaq toqqagaq",
+    "traits": "Brikkip ilisarnaatai",
+    "black": "qernertoq",
+    "red": "aappalaartoq",
+    "big": "angisooq",
+    "small": "mikisooq",
+    "round": "ammalortoq",
+    "square": "sisamanik teqeqqulik",
+    "solid": "tamakkerluni",
+    "hollow": "putulik"
+  },
+  "board": {
+    "binary": "Binary board",
+    "piecesPlaced": "Brikkit inissinneqartut",
+    "cellEmpty": "Cell {{cell}}: imaqanngilaq",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D-mik takutitsineq atorneqarsinnaanngilaq.",
+    "webglHeading": "WebGL aallartissinnaanngilaq.",
+    "webglMsg": "Unamminermi browser-imi WebGL ikumatinneqartariaqarpoq."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Toqqagassap qulaanut cursor inissiguk toqqaanermi ulorianartorsiorneq takuniarlugu",
+    "hoveredRiskOne": "Brikkip qulaaniittup ulorianartorsiornera: {{risk}} ingerlaannaq ajugaassutaasumik inissiineq",
+    "hoveredRiskMany": "Brikkip qulaaniittup ulorianartorsiornera: {{risk}} ingerlaannaq ajugaassutaasumik inissiinerit",
+    "immediateWins": "Ingerlaannaq ajugaassutaasumik inissiinerit",
+    "latestRisk": "Kingullermik toqqaanermi ulorianartorsiorneq",
+    "riskOneAI": "AI-p toqqagaata ulorianartorsiornera: {{risk}} ingerlaannaq ajugaassutaasumik inissiineq",
+    "riskManyAI": "AI-p toqqagaata ulorianartorsiornera: {{risk}} ingerlaannaq ajugaassutaasumik inissiinerit",
+    "riskTurnedOff": "Toqqaanermi ulorianartorsiorneq qamippoq",
+    "riskUnavailableAI": "Toqqaanermi ulorianartorsiorneq AI AI-mut periutsimi atorneqarsinnaanngilaq",
+    "selectionRisk": "Toqqaanermi ulorianartorsiorneq",
+    "turnRiskOff": "Toqqaanermi ulorianartorsiorneq qamiguk",
+    "turnRiskOn": "Toqqaanermi ulorianartorsiorneq ikiguk"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Oqaatsit",
+    "search": "Oqaatsinik ujarlerit",
+    "empty": "Oqaatsit nassaarineqanngillat",
+    "close": "Matu"
+  }
+}

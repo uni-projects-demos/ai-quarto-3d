@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ko ha fakalelei kuo hiki mai mei",
+    "newGame": "Va'inga fo'ou"
+  },
+  "common": {
+    "on": "ULO",
+    "off": "TAMATE"
+  },
+  "a11y": {
+    "utilityActions": "Ngaahi fehokotaki'anga app mo e lea",
+    "viewSource": "Sio ki he tupu'anga 'i GitHub",
+    "gameControls": "Ngaahi pule'i 'o e va'inga",
+    "gameBoard": "Palakipoe va'inga 3D",
+    "gameInfo": "Fakamatala va'inga"
+  },
+  "controls": {
+    "diffAI": "Faingata'a AI",
+    "diffPlayerOneAI": "Faingata'a P1",
+    "diffPlayerTwoAI": "Faingata'a P2",
+    "startingPlayer": "Tokotaha va'inga kamata",
+    "gameMode": "Founga va'inga",
+    "pauseAI": "Ta'ofi AI",
+    "resumeAI": "Hoko atu AI",
+    "undo": "Fakafoki",
+    "redo": "Toe fai"
+  },
+  "diff": {
+    "easy": "Faingofua",
+    "medium": "Lotoloto",
+    "hard": "Faingata'a"
+  },
+  "mode": {
+    "userVsUser": "Tokotaha ngaue vs tokotaha ngaue",
+    "userVsAI": "Tokotaha ngaue vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Ko koe",
+    "playerOne": "Tokotaha Va'inga Taha",
+    "playerTwo": "Tokotaha Va'inga Ua",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Taumu'a noa",
+    "playerAIPlayer": "Tokotaha va'inga AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Tu'unga 'o e va'inga...",
+    "pausedAI": "Kuo ta'ofi {{player}}...",
+    "placingAI": "'Oku va'inga {{player}} - tuku ha kongokonga ki he palakipoe...",
+    "placingUser": "'Oku va'inga {{player}} - tuku e kongokonga kuo fili ki he palakipoe...",
+    "placeUserYou": "'Oku ke va'inga - tuku e kongokonga kuo fili ki he palakipoe...",
+    "gameDrawn": "Va'inga tatau - 'ikai ha laine ikuna",
+    "gameWon": "Ikuna {{player}} - kuo fakamaama e laine ikuna",
+    "selectingAI": "'Oku va'inga {{player}} - fili ha kongokonga ma'a {{opponent}}...",
+    "selectUser": "'Oku va'inga {{player}} - fili ha kongokonga ma'a {{opponent}}...",
+    "selectUserYou": "'Oku ke va'inga - fili ha kongokonga ma'a {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Kongokonga 'i he va'inga",
+    "none": "'Ikai ha me'a kuo fili",
+    "traits": "Ngaahi 'ulungaanga kongokonga",
+    "black": "'uli'uli",
+    "red": "kulokula",
+    "big": "lahi",
+    "small": "si'i",
+    "round": "takatakai",
+    "square": "tapafā",
+    "solid": "kakato",
+    "hollow": "ava"
+  },
+  "board": {
+    "binary": "Palakipoe binary",
+    "piecesPlaced": "Ngaahi kongokonga kuo tuku",
+    "cellEmpty": "Sela {{cell}}: maha",
+    "cellPiece": "Sela {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "'Oku 'ikai ma'u e fakahaa 3D.",
+    "webglHeading": "Na'e 'ikai lava ke kamata WebGL.",
+    "webglMsg": "'Oku fiema'u e WebGL ke ulo 'i he browser ki he va'inga."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Tuku e cursor 'i ha kongokonga 'e lava ke fili ke sio ki he fakatu'utamaki 'o e fili",
+    "hoveredRiskOne": "Fakatu'utamaki 'o e kongokonga 'i lalo he cursor: {{risk}} tu'unga ikuna vave",
+    "hoveredRiskMany": "Fakatu'utamaki 'o e kongokonga 'i lalo he cursor: {{risk}} ngaahi tu'unga ikuna vave",
+    "immediateWins": "Ngaahi tu'unga ikuna vave",
+    "latestRisk": "Fakatu'utamaki fili fakamuimui",
+    "riskOneAI": "Fakatu'utamaki 'o e kongokonga kuo fili 'e AI: {{risk}} tu'unga ikuna vave",
+    "riskManyAI": "Fakatu'utamaki 'o e kongokonga kuo fili 'e AI: {{risk}} ngaahi tu'unga ikuna vave",
+    "riskTurnedOff": "Kuo tamate e fakatu'utamaki fili",
+    "riskUnavailableAI": "'Oku 'ikai ma'u e fakatu'utamaki fili 'i he AI vs AI",
+    "selectionRisk": "Fakatu'utamaki fili",
+    "turnRiskOff": "Tamate e fakatu'utamaki fili",
+    "turnRiskOn": "Ulo e fakatu'utamaki fili"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lea",
+    "search": "Kumi lea",
+    "empty": "ʻIkai maʻu ha lea",
+    "close": "Tāpuni"
+  }
+}

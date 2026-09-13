@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Port edilmiş təkmilləşdirilmiş versiya",
+    "newGame": "Yeni oyun"
+  },
+  "common": {
+    "on": "AÇIQ",
+    "off": "SÖNÜK"
+  },
+  "a11y": {
+    "utilityActions": "Tətbiq keçidləri və dil",
+    "viewSource": "GitHub-da mənbəyə bax",
+    "gameControls": "Oyun idarəetmələri",
+    "gameBoard": "3D oyun lövhəsi",
+    "gameInfo": "Oyun məlumatı"
+  },
+  "controls": {
+    "diffAI": "AI çətinliyi",
+    "diffPlayerOneAI": "P1 çətinliyi",
+    "diffPlayerTwoAI": "P2 çətinliyi",
+    "startingPlayer": "Başlayan oyunçu",
+    "gameMode": "Oyun rejimi",
+    "pauseAI": "AI-ni dayandır",
+    "resumeAI": "AI-ni davam etdir",
+    "undo": "Geri al",
+    "redo": "Yenidən et"
+  },
+  "diff": {
+    "easy": "Asan",
+    "medium": "Orta",
+    "hard": "Çətin"
+  },
+  "mode": {
+    "userVsUser": "İstifadəçi vs istifadəçi",
+    "userVsAI": "İstifadəçi vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Siz",
+    "playerOne": "Birinci oyunçu",
+    "playerTwo": "İkinci oyunçu",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Təsadüfi",
+    "playerAIPlayer": "AI oyunçusu",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Oyun vəziyyəti...",
+    "pausedAI": "{{player}} dayandırılıb...",
+    "placingAI": "{{player}} oynayır - fiquru lövhəyə yerləşdirir...",
+    "placingUser": "{{player}} oynayır - seçilmiş fiquru lövhəyə yerləşdirin...",
+    "placeUserYou": "Siz oynayırsınız - seçilmiş fiquru lövhəyə yerləşdirin...",
+    "gameDrawn": "Oyun heç-heçədir - qalib xətt yoxdur",
+    "gameWon": "{{player}} qalib gəlir - qalib xətt vurğulanıb",
+    "selectingAI": "{{player}} oynayır - {{opponent}} üçün fiqur seçir...",
+    "selectUser": "{{player}} oynayır - {{opponent}} üçün fiqur seçin...",
+    "selectUserYou": "Siz oynayırsınız - {{opponent}} üçün fiqur seçin..."
+  },
+  "piece": {
+    "inPlay": "Oyundakı fiqur",
+    "none": "Heç biri seçilməyib",
+    "traits": "Fiqurun xüsusiyyətləri",
+    "black": "qara",
+    "red": "qırmızı",
+    "big": "böyük",
+    "small": "kiçik",
+    "round": "dairəvi",
+    "square": "kvadrat",
+    "solid": "bütöv",
+    "hollow": "içi boş"
+  },
+  "board": {
+    "binary": "İkilik lövhə",
+    "piecesPlaced": "Yerləşdirilmiş fiqurlar",
+    "cellEmpty": "Xana {{cell}}: boş",
+    "cellPiece": "Xana {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D render əlçatan deyil.",
+    "webglHeading": "WebGL başlaya bilmədi.",
+    "webglMsg": "Oyun üçün brauzerdə WebGL aktiv olmalıdır."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Seçim riskini önizləmək üçün seçilə bilən fiqurun üzərinə gəlin",
+    "hoveredRiskOne": "Üzərinə gəlinən fiqurun riski: {{risk}} dərhal qalib yerləşdirmə",
+    "hoveredRiskMany": "Üzərinə gəlinən fiqurun riski: {{risk}} dərhal qalib yerləşdirmə",
+    "immediateWins": "Dərhal qalib yerləşdirmələr",
+    "latestRisk": "Son seçim riski",
+    "riskOneAI": "AI-nin seçdiyi fiqurun riski: {{risk}} dərhal qalib yerləşdirmə",
+    "riskManyAI": "AI-nin seçdiyi fiqurun riski: {{risk}} dərhal qalib yerləşdirmə",
+    "riskTurnedOff": "Seçim riski söndürülüb",
+    "riskUnavailableAI": "AI vs AI rejimində seçim riski əlçatan deyil",
+    "selectionRisk": "Seçim riski",
+    "turnRiskOff": "Seçim riskini söndür",
+    "turnRiskOn": "Seçim riskini aç"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Dil",
+    "search": "Dilləri axtarın",
+    "empty": "Heç bir dil tapılmadı",
+    "close": "Bağlayın"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "باشترکردنێکی گوازراوەی",
+    "newGame": "یاریی نوێ"
+  },
+  "common": {
+    "on": "چالاک",
+    "off": "ناچالاک"
+  },
+  "a11y": {
+    "utilityActions": "بەستەرەکانی بەرنامە و زمان",
+    "viewSource": "سەرچاوە لە GitHub ببینە",
+    "gameControls": "کۆنترۆڵەکانی یاری",
+    "gameBoard": "تەختەی یاریی 3D",
+    "gameInfo": "زانیاریی یاری"
+  },
+  "controls": {
+    "diffAI": "ئاستی سەختی AI",
+    "diffPlayerOneAI": "ئاستی سەختی P1",
+    "diffPlayerTwoAI": "ئاستی سەختی P2",
+    "startingPlayer": "یاریزانێکی دەستپێکەر",
+    "gameMode": "دۆخی یاری",
+    "pauseAI": "AI ڕابگرە",
+    "resumeAI": "AI بەردەوام بکە",
+    "undo": "پاشگەزبوونەوە",
+    "redo": "دووبارەکردنەوە"
+  },
+  "diff": {
+    "easy": "ئاسان",
+    "medium": "مامناوەند",
+    "hard": "سەخت"
+  },
+  "mode": {
+    "userVsUser": "بەکارهێنەر بەرامبەر بەکارهێنەر",
+    "userVsAI": "بەکارهێنەر بەرامبەر AI",
+    "onlyAI": "AI بەرامبەر AI"
+  },
+  "player": {
+    "playerYou": "تۆ",
+    "playerOne": "یاریزانی یەکەم",
+    "playerTwo": "یاریزانی دووەم",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "هەڕەمەکی",
+    "playerAIPlayer": "یاریزانی AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "دۆخی یاری...",
+    "pausedAI": "{{player}} ڕاگیراوە...",
+    "placingAI": "{{player}} یاری دەکات - پارچەکە لەسەر تەختەکە دادەنێت...",
+    "placingUser": "{{player}} یاری دەکات - پارچە هەڵبژێردراوەکە لەسەر تەختە دابنێ...",
+    "placeUserYou": "تۆ یاری دەکەیت - پارچە هەڵبژێردراوەکە لەسەر تەختە دابنێ...",
+    "gameDrawn": "یاری یەکسان بوو - هیچ هێڵێکی بردنەوە نییە",
+    "gameWon": "{{player}} بردیەوە - هێڵی بردنەوە دیار کراوە",
+    "selectingAI": "{{player}} یاری دەکات - پارچەیەک بۆ {{opponent}} هەڵدەبژێرێت...",
+    "selectUser": "{{player}} یاری دەکات - پارچەیەک بۆ {{opponent}} هەڵبژێرە...",
+    "selectUserYou": "تۆ یاری دەکەیت - پارچەیەک بۆ {{opponent}} هەڵبژێرە..."
+  },
+  "piece": {
+    "inPlay": "پارچەی ناو یاری",
+    "none": "هیچ شتێک هەڵنەبژێردراوە",
+    "traits": "تایبەتمەندییەکانی پارچە",
+    "black": "ڕەش",
+    "red": "سوور",
+    "big": "گەورە",
+    "small": "بچووک",
+    "round": "خولێن",
+    "square": "چوارگۆشە",
+    "solid": "پڕ",
+    "hollow": "کون"
+  },
+  "board": {
+    "binary": "تەختەی دووانە",
+    "piecesPlaced": "پارچە دانراوەکان",
+    "cellEmpty": "خانەی {{cell}}: بەتاڵ",
+    "cellPiece": "خانەی {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "ڕەندەرکردنی 3D بەردەست نییە.",
+    "webglHeading": "WebGL نەیتوانی دەست پێ بکات.",
+    "webglMsg": "یارییەکە پێویستی بە چالاکبوونی WebGL لە وێبگەڕدا هەیە."
+  },
+  "metrics": {
+    "hoverRiskPreview": "ماوس بخەرە سەر پارچەیەکی هەڵبژێردراو بۆ پێشبینینی مەترسیی هەڵبژاردن",
+    "hoveredRiskOne": "مەترسیی پارچەی ژێر ماوس: {{risk}} دانانی دەستبەجێی بردنەوە",
+    "hoveredRiskMany": "مەترسیی پارچەی ژێر ماوس: {{risk}} دانانە دەستبەجێکانی بردنەوە",
+    "immediateWins": "دانانە دەستبەجێکانی بردنەوە",
+    "latestRisk": "نوێترین مەترسیی هەڵبژاردن",
+    "riskOneAI": "مەترسیی پارچەی هەڵبژێردراوی AI: {{risk}} دانانی دەستبەجێی بردنەوە",
+    "riskManyAI": "مەترسیی پارچەی هەڵبژێردراوی AI: {{risk}} دانانە دەستبەجێکانی بردنەوە",
+    "riskTurnedOff": "مەترسیی هەڵبژاردن ناچالاکە",
+    "riskUnavailableAI": "مەترسیی هەڵبژاردن لە دۆخی AI بەرامبەر AI بەردەست نییە",
+    "selectionRisk": "مەترسیی هەڵبژاردن",
+    "turnRiskOff": "مەترسیی هەڵبژاردن ناچالاک بکە",
+    "turnRiskOn": "مەترسیی هەڵبژاردن چالاک بکە"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "زمان",
+    "search": "زمانەکان بگەڕێ",
+    "empty": "هیچ زمانێک نەدۆزراوەتەوە",
+    "close": "دابخە"
+  }
+}

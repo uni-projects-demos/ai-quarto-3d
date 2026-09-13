@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Eadar-aghaidh 3D eadar-ghnìomhach airson geama-bùird Quarto a’ cleachdadh Three.js agus dreach Negamax den algairim inntleachd fuadain Minimax le bearradh alpha-beta. Cluich cleachdaiche an aghaidh cleachdaiche, cleachdaiche an aghaidh AI agus AI an aghaidh AI, le AI furasta, meadhanach agus doirbh.",
     "ogDescription": "Geama-bùird Quarto 3D eadar-ghnìomhach. Cluich cleachdaiche an aghaidh cleachdaiche, cleachdaiche an aghaidh AI agus AI an aghaidh AI, le AI furasta, meadhanach agus doirbh."
+  },
+  "language": {
+    "label": "Cànain",
+    "search": "Rannsaich cànanan",
+    "empty": "Cha deach cànan sam bith a lorg",
+    "close": "Dùin"
   }
 }

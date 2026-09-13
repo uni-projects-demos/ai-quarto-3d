@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "In porte ferbettering fan",
+    "newGame": "Nij spul"
+  },
+  "common": {
+    "on": "OAN",
+    "off": "ÚT"
+  },
+  "a11y": {
+    "utilityActions": "Applikaasjekeppelings en taal",
+    "viewSource": "Boarne besjen op GitHub",
+    "gameControls": "Spulbestjoering",
+    "gameBoard": "3D-spulboerd",
+    "gameInfo": "Spulynformaasje"
+  },
+  "controls": {
+    "diffAI": "AI-swierrichheid",
+    "diffPlayerOneAI": "P1-swierrichheid",
+    "diffPlayerTwoAI": "P2-swierrichheid",
+    "startingPlayer": "Begjinnende spiler",
+    "gameMode": "Spulmodus",
+    "pauseAI": "AI pauzearje",
+    "resumeAI": "AI trochgean litte",
+    "undo": "Ungedien meitsje",
+    "redo": "Opnij"
+  },
+  "diff": {
+    "easy": "Maklik",
+    "medium": "Gemiddeld",
+    "hard": "Dreech"
+  },
+  "mode": {
+    "userVsUser": "Brûker tsjin brûker",
+    "userVsAI": "Brûker tsjin AI",
+    "onlyAI": "AI tsjin AI"
+  },
+  "player": {
+    "playerYou": "Do",
+    "playerOne": "Spiler Ien",
+    "playerTwo": "Spiler Twa",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Willekeurich",
+    "playerAIPlayer": "AI-spiler",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Spulstatus...",
+    "pausedAI": "{{player}} is pauzearre...",
+    "placingAI": "{{player}} spilet - set in stik op it boerd...",
+    "placingUser": "{{player}} spilet - Set it selektearre stik op it boerd...",
+    "placeUserYou": "Do spilest - Set it selektearre stik op it boerd...",
+    "gameDrawn": "Gelykspul - gjin winnende line",
+    "gameWon": "{{player}} wint - winnende line markearre",
+    "selectingAI": "{{player}} spilet - selektearret in stik foar {{opponent}}...",
+    "selectUser": "{{player}} spilet - Selektearje in stik foar {{opponent}}...",
+    "selectUserYou": "Do spilest - Selektearje in stik foar {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Stik yn it spul",
+    "none": "Neat selektearre",
+    "traits": "Stikeigenskippen",
+    "black": "swart",
+    "red": "read",
+    "big": "grut",
+    "small": "lyts",
+    "round": "rûn",
+    "square": "fjouwerkant",
+    "solid": "fol",
+    "hollow": "hol"
+  },
+  "board": {
+    "binary": "Binêr boerd",
+    "piecesPlaced": "Pleatste stikken",
+    "cellEmpty": "Fak {{cell}}: leech",
+    "cellPiece": "Fak {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D-rendering is net beskikber.",
+    "webglHeading": "WebGL koe net starte.",
+    "webglMsg": "It spul fereasket dat WebGL yn de browser ynskeakele is."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Hâld de mûs oer in selektearber stik om it seleksjerisiko te besjen",
+    "hoveredRiskOne": "Risiko fan stik ûnder mûs: {{risk}} direkte winnende pleatsing",
+    "hoveredRiskMany": "Risiko fan stik ûnder mûs: {{risk}} direkte winnende pleatsingen",
+    "immediateWins": "Direkte winnende pleatsingen",
+    "latestRisk": "Lêste seleksjerisiko",
+    "riskOneAI": "Risiko fan troch AI selektearre stik: {{risk}} direkte winnende pleatsing",
+    "riskManyAI": "Risiko fan troch AI selektearre stik: {{risk}} direkte winnende pleatsingen",
+    "riskTurnedOff": "Seleksjerisiko is útskeakele",
+    "riskUnavailableAI": "Seleksjerisiko net beskikber yn AI tsjin AI-modus",
+    "selectionRisk": "Seleksjerisiko",
+    "turnRiskOff": "Seleksjerisiko útskeakelje",
+    "turnRiskOn": "Seleksjerisiko ynskeakelje"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Spreke",
+    "search": "Sēka spreken",
+    "empty": "Nēne spreke funden",
+    "close": "Slūt"
+  }
+}

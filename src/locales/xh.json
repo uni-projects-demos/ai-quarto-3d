@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Uphuculo olususiweyo kwi",
+    "newGame": "Umdlalo omtsha"
+  },
+  "common": {
+    "on": "VULIWE",
+    "off": "CINYIWE"
+  },
+  "a11y": {
+    "utilityActions": "Amakhonkco e-app nolwimi",
+    "viewSource": "Jonga umthombo kwiGitHub",
+    "gameControls": "Izilawuli zomdlalo",
+    "gameBoard": "Ibhodi yomdlalo ye-3D",
+    "gameInfo": "Ulwazi lomdlalo"
+  },
+  "controls": {
+    "diffAI": "Ubunzima be-AI",
+    "diffPlayerOneAI": "Ubunzima be-P1",
+    "diffPlayerTwoAI": "Ubunzima be-P2",
+    "startingPlayer": "Umdlali oqalayo",
+    "gameMode": "Imo yomdlalo",
+    "pauseAI": "Misa i-AI",
+    "resumeAI": "Qhubeka ne-AI",
+    "undo": "Buyisela",
+    "redo": "Yenza kwakhona"
+  },
+  "diff": {
+    "easy": "Lula",
+    "medium": "Phakathi",
+    "hard": "Nzima"
+  },
+  "mode": {
+    "userVsUser": "Umsebenzisi vs umsebenzisi",
+    "userVsAI": "Umsebenzisi vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Wena",
+    "playerOne": "Umdlali Wokuqala",
+    "playerTwo": "Umdlali Wesibini",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Ngokungacwangciswanga",
+    "playerAIPlayer": "Umdlali we-AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Isimo somdlalo...",
+    "pausedAI": "{{player}} umisiwe...",
+    "placingAI": "{{player}} uyadlala - ubeka iqhekeza ebhodini...",
+    "placingUser": "{{player}} uyadlala - beka iqhekeza elikhethiweyo ebhodini...",
+    "placeUserYou": "Uyadlala - beka iqhekeza elikhethiweyo ebhodini...",
+    "gameDrawn": "Umdlalo uyalingana - akukho mgca wokuphumelela",
+    "gameWon": "{{player}} uphumelele - umgca wokuphumelela uqaqambisiwe",
+    "selectingAI": "{{player}} uyadlala - ukhethela {{opponent}} iqhekeza...",
+    "selectUser": "{{player}} uyadlala - khethela {{opponent}} iqhekeza...",
+    "selectUserYou": "Uyadlala - khethela {{opponent}} iqhekeza..."
+  },
+  "piece": {
+    "inPlay": "Iqhekeza elisemdlalweni",
+    "none": "Akukho nto ikhethiweyo",
+    "traits": "Iimpawu zeqhekeza",
+    "black": "mnyama",
+    "red": "bomvu",
+    "big": "khulu",
+    "small": "ncinci",
+    "round": "ngqukuva",
+    "square": "isikwere",
+    "solid": "qinile",
+    "hollow": "linomngxuma"
+  },
+  "board": {
+    "binary": "Ibhodi ye-binary",
+    "piecesPlaced": "Amaqhekeza abekiweyo",
+    "cellEmpty": "Iseli {{cell}}: ayinanto",
+    "cellPiece": "Iseli {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Uboniso lwe-3D alufumaneki.",
+    "webglHeading": "I-WebGL ayikwazanga ukuqala.",
+    "webglMsg": "Umdlalo ufuna i-WebGL ivuliwe kwisikhangeli."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Beka ikhesa phezu kweqhekeza elikhethwayo ukuze ubone umngcipheko wokukhetha",
+    "hoveredRiskOne": "Umngcipheko weqhekeza elingaphantsi kwekhesa: {{risk}} indawo yokuphumelela ngoko nangoko",
+    "hoveredRiskMany": "Umngcipheko weqhekeza elingaphantsi kwekhesa: {{risk}} iindawo zokuphumelela ngoko nangoko",
+    "immediateWins": "Iindawo zokuphumelela ngoko nangoko",
+    "latestRisk": "Umngcipheko wakutshanje wokukhetha",
+    "riskOneAI": "Umngcipheko weqhekeza elikhethwe yi-AI: {{risk}} indawo yokuphumelela ngoko nangoko",
+    "riskManyAI": "Umngcipheko weqhekeza elikhethwe yi-AI: {{risk}} iindawo zokuphumelela ngoko nangoko",
+    "riskTurnedOff": "Umngcipheko wokukhetha ucinyiwe",
+    "riskUnavailableAI": "Umngcipheko wokukhetha awufumaneki kwimowudi ye-AI vs AI",
+    "selectionRisk": "Umngcipheko wokukhetha",
+    "turnRiskOff": "Cima umngcipheko wokukhetha",
+    "turnRiskOn": "Vula umngcipheko wokukhetha"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ulwimi",
+    "search": "Phendla iilwimi",
+    "empty": "Akukho zilwimi zifunyenweyo",
+    "close": "Vala"
+  }
+}

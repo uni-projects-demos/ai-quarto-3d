@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Three.js ve alfa-beta budamalı Minimax yapay zekâ algoritmasının Negamax sürümünü kullanan etkileşimli 3B Quarto masa oyunu arayüzü. Kolay, orta ve zor YZ seviyeleriyle kullanıcıya karşı kullanıcı, kullanıcıya karşı YZ ve YZ’ye karşı YZ oynayın.",
     "ogDescription": "Etkileşimli 3B Quarto masa oyunu. Kolay, orta ve zor YZ seviyeleriyle kullanıcıya karşı kullanıcı, kullanıcıya karşı YZ ve YZ’ye karşı YZ oynayın."
+  },
+  "language": {
+    "label": "Dil",
+    "search": "Dilleri ara",
+    "empty": "Dil bulunamadı",
+    "close": "Kapat"
   }
 }

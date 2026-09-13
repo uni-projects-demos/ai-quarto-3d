@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Pērweidins labbāi iz",
+    "newGame": "Naws spēlis"
+  },
+  "common": {
+    "on": "ĪMTAS",
+    "off": "AUSINS"
+  },
+  "a11y": {
+    "utilityActions": "App saitus be billā",
+    "viewSource": "Waidinna iztekli en GitHub",
+    "gameControls": "Spēles waldīsnai",
+    "gameBoard": "3D spēles galds",
+    "gameInfo": "Spēles zināsnai"
+  },
+  "controls": {
+    "diffAI": "AI grūtiskan",
+    "diffPlayerOneAI": "P1 grūtiskan",
+    "diffPlayerTwoAI": "P2 grūtiskan",
+    "startingPlayer": "Prābutais spēlētājs",
+    "gameMode": "Spēles būds",
+    "pauseAI": "Stādin AI",
+    "resumeAI": "Turrin AI",
+    "undo": "Atgrīzt",
+    "redo": "Darīt atkal"
+  },
+  "diff": {
+    "easy": "Lēisis",
+    "medium": "Widuss",
+    "hard": "Grūts"
+  },
+  "mode": {
+    "userVsUser": "Tērpautājs prei tērpautājs",
+    "userVsAI": "Tērpautājs prei AI",
+    "onlyAI": "AI prei AI"
+  },
+  "player": {
+    "playerYou": "Tou",
+    "playerOne": "Spēlētājs Ains",
+    "playerTwo": "Spēlētājs Dwāi",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Atsitiktin",
+    "playerAIPlayer": "AI spēlētājs",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Spēles stāws...",
+    "pausedAI": "{{player}} stādināts...",
+    "placingAI": "{{player}} spēlē - laikā gabalan en galdan...",
+    "placingUser": "{{player}} spēlē - laikā izwaidintan gabalan en galdan...",
+    "placeUserYou": "Tou spēlē - laikā izwaidintan gabalan en galdan...",
+    "gameDrawn": "Spēlis līgis - ni wintan līnija",
+    "gameWon": "{{player}} wintai - wintan līnija waidinna",
+    "selectingAI": "{{player}} spēlē - waidina gabalan per {{opponent}}...",
+    "selectUser": "{{player}} spēlē - waidin gabalan per {{opponent}}...",
+    "selectUserYou": "Tou spēlē - waidin gabalan per {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Gabals en spēli",
+    "none": "Ni kas waidints",
+    "traits": "Gabala īpatnībei",
+    "black": "kirsnan",
+    "red": "raudan",
+    "big": "dīdan",
+    "small": "mazan",
+    "round": "aplinkan",
+    "square": "keturkampan",
+    "solid": "pilnan",
+    "hollow": "tukšan"
+  },
+  "board": {
+    "binary": "Dwi-bits galds",
+    "piecesPlaced": "Laikāti gabalai",
+    "cellEmpty": "Lāuks {{cell}}: tukšs",
+    "cellPiece": "Lāuks {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D waidīsnā ni ast.",
+    "webglHeading": "WebGL ni galēi prābutun.",
+    "webglMsg": "Spēlis kwaitēi WebGL īmtan en browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Turri kursoran ukan waidintin gabalan per riskan waidīsnai",
+    "hoveredRiskOne": "Gabala riskas po kursoru: {{risk}} tūlin wintan stāws",
+    "hoveredRiskMany": "Gabala riskas po kursoru: {{risk}} tūlin wintan stāwai",
+    "immediateWins": "Tūlin wintan stāwai",
+    "latestRisk": "Paskutinis waidīsnas riskas",
+    "riskOneAI": "AI waidinta gabala riskas: {{risk}} tūlin wintan stāws",
+    "riskManyAI": "AI waidinta gabala riskas: {{risk}} tūlin wintan stāwai",
+    "riskTurnedOff": "Waidīsnas riskas ausins",
+    "riskUnavailableAI": "Waidīsnas riskas ni ast en AI prei AI",
+    "selectionRisk": "Waidīsnas riskas",
+    "turnRiskOff": "Ausin waidīsnas riskan",
+    "turnRiskOn": "Īm waidīsnas riskan"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Billā",
+    "search": "Īsais billāi",
+    "empty": "Ni billā attrāts",
+    "close": "Klāust"
+  }
+}

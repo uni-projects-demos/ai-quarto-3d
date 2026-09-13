@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Un melhorament portat de",
+    "newGame": "Joc novel"
+  },
+  "common": {
+    "on": "ENCÉS",
+    "off": "ESTEINT"
+  },
+  "a11y": {
+    "utilityActions": "Ligams de l'aplicacion e lenga",
+    "viewSource": "Vejatz la font sus GitHub",
+    "gameControls": "Comandas del joc",
+    "gameBoard": "Taula de joc 3D",
+    "gameInfo": "Informacion del joc"
+  },
+  "controls": {
+    "diffAI": "Dificultat AI",
+    "diffPlayerOneAI": "Dificultat P1",
+    "diffPlayerTwoAI": "Dificultat P2",
+    "startingPlayer": "Jogaire que comença",
+    "gameMode": "Mòde del joc",
+    "pauseAI": "Pausatz AI",
+    "resumeAI": "Reprenetz AI",
+    "undo": "Desfasetz",
+    "redo": "Refasetz"
+  },
+  "diff": {
+    "easy": "Leugièr",
+    "medium": "Mejan",
+    "hard": "Greu"
+  },
+  "mode": {
+    "userVsUser": "Usador contra usador",
+    "userVsAI": "Usador contra AI",
+    "onlyAI": "AI contra AI"
+  },
+  "player": {
+    "playerYou": "Vos",
+    "playerOne": "Jogaire Un",
+    "playerTwo": "Jogaire Dos",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "A ventura",
+    "playerAIPlayer": "Jogaire AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Estat del joc...",
+    "pausedAI": "{{player}} es en pausa...",
+    "placingAI": "{{player}} joga - pausa una pèça sus la taula...",
+    "placingUser": "{{player}} joga - pausatz la pèça causida sus la taula...",
+    "placeUserYou": "Vos jogatz - pausatz la pèça causida sus la taula...",
+    "gameDrawn": "Joc egal - nulha linha de victòria",
+    "gameWon": "{{player}} venç - linha de victòria marcada",
+    "selectingAI": "{{player}} joga - causís una pèça per {{opponent}}...",
+    "selectUser": "{{player}} joga - causissètz una pèça per {{opponent}}...",
+    "selectUserYou": "Vos jogatz - causissètz una pèça per {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pèça en joc",
+    "none": "Res causit",
+    "traits": "Qualitats de la pèça",
+    "black": "negre",
+    "red": "roge",
+    "big": "grand",
+    "small": "pichon",
+    "round": "redon",
+    "square": "quadrat",
+    "solid": "plen",
+    "hollow": "cau"
+  },
+  "board": {
+    "binary": "Taula binària",
+    "piecesPlaced": "Pèças pausadas",
+    "cellEmpty": "Casa {{cell}}: voida",
+    "cellPiece": "Casa {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "La representacion 3D non es disponibla.",
+    "webglHeading": "WebGL non poguèt començar.",
+    "webglMsg": "Lo joc requer WebGL activat dins lo navegador."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Passatz lo cursor sus una pèça causibla per veire lo risc de causida",
+    "hoveredRiskOne": "Risc de la pèça jos lo cursor: {{risk}} plaça de victòria immediata",
+    "hoveredRiskMany": "Risc de la pèça jos lo cursor: {{risk}} plaças de victòria immediatas",
+    "immediateWins": "Plaças de victòria immediatas",
+    "latestRisk": "Darrièr risc de causida",
+    "riskOneAI": "Risc de la pèça causida per AI: {{risk}} plaça de victòria immediata",
+    "riskManyAI": "Risc de la pèça causida per AI: {{risk}} plaças de victòria immediatas",
+    "riskTurnedOff": "Lo risc de causida es esteint",
+    "riskUnavailableAI": "Lo risc de causida non es disponibla en AI contra AI",
+    "selectionRisk": "Risc de causida",
+    "turnRiskOff": "Esteindre lo risc de causida",
+    "turnRiskOn": "Encendre lo risc de causida"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lengatge",
+    "search": "Cerca lengatges",
+    "empty": "Cap lengatge non trobat",
+    "close": "Clau"
+  }
+}

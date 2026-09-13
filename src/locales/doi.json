@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "पोर्ट कीता होया सुधार",
+    "newGame": "नमीं खेढ"
+  },
+  "common": {
+    "on": "चालू",
+    "off": "बंद"
+  },
+  "a11y": {
+    "utilityActions": "ऐप दे लिंक ते भाशा",
+    "viewSource": "GitHub पर सोर्स दिक्खो",
+    "gameControls": "खेढ कंट्रोल",
+    "gameBoard": "3D खेढ बोर्ड",
+    "gameInfo": "खेढ दी जानकारी"
+  },
+  "controls": {
+    "diffAI": "AI दी मुश्किल",
+    "diffPlayerOneAI": "P1 दी मुश्किल",
+    "diffPlayerTwoAI": "P2 दी मुश्किल",
+    "startingPlayer": "शुरू करने आह्ला खिलाड़ी",
+    "gameMode": "खेढ मोड",
+    "pauseAI": "AI रोक्को",
+    "resumeAI": "AI जारी रक्खो",
+    "undo": "पिच्छे करो",
+    "redo": "फिर करो"
+  },
+  "diff": {
+    "easy": "सौखा",
+    "medium": "दरम्याना",
+    "hard": "औखा"
+  },
+  "mode": {
+    "userVsUser": "यूज़र बनाम यूज़र",
+    "userVsAI": "यूज़र बनाम AI",
+    "onlyAI": "AI बनाम AI"
+  },
+  "player": {
+    "playerYou": "तुस",
+    "playerOne": "खिलाड़ी इक",
+    "playerTwo": "खिलाड़ी दो",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "रैंडम",
+    "playerAIPlayer": "AI खिलाड़ी",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "खेढ दी हालत...",
+    "pausedAI": "{{player}} रोक्या गेदा ऐ...",
+    "placingAI": "{{player}} खेढा करदा ऐ - मोहरा बोर्ड पर रखदा ऐ...",
+    "placingUser": "{{player}} खेढा करदा ऐ - चुनेआ मोहरा बोर्ड पर रक्खो...",
+    "placeUserYou": "तुस खेढा करदे ओ - चुनेआ मोहरा बोर्ड पर रक्खो...",
+    "gameDrawn": "खेढ बराबर - जित्तने आह्ली लाइन नेईं",
+    "gameWon": "{{player}} जित्तेआ - जित्तने आह्ली लाइन हाईलाइट कीती",
+    "selectingAI": "{{player}} खेढा करदा ऐ - {{opponent}} लेई मोहरा चुनदा ऐ...",
+    "selectUser": "{{player}} खेढा करदा ऐ - {{opponent}} लेई मोहरा चुनो...",
+    "selectUserYou": "तुस खेढा करदे ओ - {{opponent}} लेई मोहरा चुनो..."
+  },
+  "piece": {
+    "inPlay": "खेढ च मोहरा",
+    "none": "कोई नेईं चुनेआ",
+    "traits": "मोहरे दियां खासियतां",
+    "black": "काला",
+    "red": "लाल",
+    "big": "बड्डा",
+    "small": "निक्का",
+    "round": "गोल",
+    "square": "चौरस",
+    "solid": "ठोस",
+    "hollow": "खोखला"
+  },
+  "board": {
+    "binary": "बाइनरी बोर्ड",
+    "piecesPlaced": "रक्खे दे मोहरे",
+    "cellEmpty": "सेल {{cell}}: खाली",
+    "cellPiece": "सेल {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D रेंडरिंग उपलब्ध नेईं।",
+    "webglHeading": "WebGL शुरू नेईं होई सक्या।",
+    "webglMsg": "खेढ लेई ब्राउज़र च WebGL चालू होना चाहिदा।"
+  },
+  "metrics": {
+    "hoverRiskPreview": "चुनाव दे खतरे दी झलक दिक्खने लेई चुने जा सकने आह्ले मोहरे पर माउस ले जाओ",
+    "hoveredRiskOne": "माउस थल्ले मोहरे दा खतरा: {{risk}} फौरन जित्त दी जगह",
+    "hoveredRiskMany": "माउस थल्ले मोहरे दा खतरा: {{risk}} फौरन जित्त दियां जगहां",
+    "immediateWins": "फौरन जित्त दियां जगहां",
+    "latestRisk": "आखरी चुनाव खतरा",
+    "riskOneAI": "AI दे चुने मोहरे दा खतरा: {{risk}} फौरन जित्त दी जगह",
+    "riskManyAI": "AI दे चुने मोहरे दा खतरा: {{risk}} फौरन जित्त दियां जगहां",
+    "riskTurnedOff": "चुनाव खतरा बंद ऐ",
+    "riskUnavailableAI": "AI बनाम AI मोड च चुनाव खतरा उपलब्ध नेईं",
+    "selectionRisk": "चुनाव खतरा",
+    "turnRiskOff": "चुनाव खतरा बंद करो",
+    "turnRiskOn": "चुनाव खतरा चालू करो"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "भाशा",
+    "search": "भाशा खोजो",
+    "empty": "कोई भाशा नेईं मिली",
+    "close": "बंद करो"
+  }
+}

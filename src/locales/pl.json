@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interaktywny interfejs planszowej gry Quarto 3D wykorzystujący Three.js oraz wersję Negamax algorytmu sztucznej inteligencji Minimax z przycinaniem alfa-beta. Graj gracz kontra gracz, gracz kontra AI i AI kontra AI na łatwym, średnim lub trudnym poziomie AI.",
     "ogDescription": "Interaktywna planszowa gra Quarto 3D. Graj gracz kontra gracz, gracz kontra AI i AI kontra AI na łatwym, średnim lub trudnym poziomie AI."
+  },
+  "language": {
+    "label": "Język",
+    "search": "Wyszukaj języki",
+    "empty": "Nie znaleziono języków",
+    "close": "Zamknij"
   }
 }

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "थ्वसिं पोर्ट याःगु सुधार",
+    "newGame": "न्हूगु खेल"
+  },
+  "common": {
+    "on": "च्वंगु",
+    "off": "मच्वंगु"
+  },
+  "a11y": {
+    "utilityActions": "एप लिंक व भाषा",
+    "viewSource": "GitHub य् स्रोत स्वयादिसँ",
+    "gameControls": "खेल नियन्त्रण",
+    "gameBoard": "3D खेल पाटी",
+    "gameInfo": "खेलया खँ"
+  },
+  "controls": {
+    "diffAI": "AI कठिनता",
+    "diffPlayerOneAI": "P1 कठिनता",
+    "diffPlayerTwoAI": "P2 कठिनता",
+    "startingPlayer": "न्ह्यःगु खेलाडि",
+    "gameMode": "खेल मोड",
+    "pauseAI": "AI थ्वयादिसँ",
+    "resumeAI": "AI लिक्क वयादिसँ",
+    "undo": "लिपा कयादिसँ",
+    "redo": "दनेगु"
+  },
+  "diff": {
+    "easy": "सजिलो",
+    "medium": "मध्य",
+    "hard": "कठिन"
+  },
+  "mode": {
+    "userVsUser": "प्रयोगकर्ता विरुद्ध प्रयोगकर्ता",
+    "userVsAI": "प्रयोगकर्ता विरुद्ध AI",
+    "onlyAI": "AI विरुद्ध AI"
+  },
+  "player": {
+    "playerYou": "छि",
+    "playerOne": "खेलाडि छगू",
+    "playerTwo": "खेलाडि निगू",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "जिगु",
+    "playerAIPlayer": "AI खेलाडि",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "खेल अवस्था...",
+    "pausedAI": "{{player}} थ्वयाःगु दु...",
+    "placingAI": "{{player}} खेलय् - टुक्रा पाटीय् तयेत...",
+    "placingUser": "{{player}} खेलय् - ल्वयाःगु टुक्रा पाटीय् तयादिसँ...",
+    "placeUserYou": "छि खेलय् - ल्वयाःगु टुक्रा पाटीय् तयादिसँ...",
+    "gameDrawn": "खेल बराबर - जितेगु रेखा मदु",
+    "gameWon": "{{player}} जितल - जितेगु रेखा देखायाःगु",
+    "selectingAI": "{{player}} खेलय् - {{opponent}}-या लागि टुक्रा ल्वयेत...",
+    "selectUser": "{{player}} खेलय् - {{opponent}}-या लागि टुक्रा ल्वयादिसँ...",
+    "selectUserYou": "छि खेलय् - {{opponent}}-या लागि टुक्रा ल्वयादिसँ..."
+  },
+  "piece": {
+    "inPlay": "खेलय् टुक्रा",
+    "none": "छुँ ल्वयाःगु मदु",
+    "traits": "टुक्राया गुण",
+    "black": "हाकु",
+    "red": "ह्याउँ",
+    "big": "तःधंगु",
+    "small": "चिधंगु",
+    "round": "गोल",
+    "square": "चौकोण",
+    "solid": "घन",
+    "hollow": "प्वाँ"
+  },
+  "board": {
+    "binary": "बाइनरी पाटी",
+    "piecesPlaced": "तयाःगु टुक्रा",
+    "cellEmpty": "कोठा {{cell}}: खाली",
+    "cellPiece": "कोठा {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D देखाइ मखं।",
+    "webglHeading": "WebGL सुरू जुइ मखं।",
+    "webglMsg": "खेलय् browser य् WebGL च्वंगु माः।"
+  },
+  "metrics": {
+    "hoverRiskPreview": "ल्वयेगु टुक्राय् cursor तया चयन जोखिम स्वयादिसँ",
+    "hoveredRiskOne": "Cursor तः टुक्राया जोखिम: {{risk}} तुरुन्त जितेगु ठाउँ",
+    "hoveredRiskMany": "Cursor तः टुक्राया जोखिम: {{risk}} तुरुन्त जितेगु ठाउँ",
+    "immediateWins": "तुरुन्त जितेगु ठाउँ",
+    "latestRisk": "ल्याःगु चयन जोखिम",
+    "riskOneAI": "AI ल्वयाःगु टुक्राया जोखिम: {{risk}} तुरुन्त जितेगु ठाउँ",
+    "riskManyAI": "AI ल्वयाःगु टुक्राया जोखिम: {{risk}} तुरुन्त जितेगु ठाउँ",
+    "riskTurnedOff": "चयन जोखिम मच्वंगु",
+    "riskUnavailableAI": "AI विरुद्ध AI मोडय् चयन जोखिम मदु",
+    "selectionRisk": "चयन जोखिम",
+    "turnRiskOff": "चयन जोखिम बन्द यायादिसँ",
+    "turnRiskOn": "चयन जोखिम चालू यायादिसँ"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "भाय्",
+    "search": "भाय् माल",
+    "empty": "भाय् मलुइ",
+    "close": "थुन"
+  }
+}

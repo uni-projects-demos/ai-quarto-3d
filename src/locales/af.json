@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interaktiewe 3D Quarto-bordspeletjie-koppelvlak wat Three.js en die Negamax-weergawe van die Minimax-kunsmatige-intelligensie-algoritme met alfa-beta-snoei gebruik. Speel gebruiker teen gebruiker, gebruiker teen KI en KI teen KI, met maklike, medium en moeilike KI-moeilikheidsgrade.",
     "ogDescription": "Interaktiewe 3D Quarto-bordspeletjie. Speel gebruiker teen gebruiker, gebruiker teen KI en KI teen KI, met maklike, medium en moeilike KI-moeilikheidsgrade."
+  },
+  "language": {
+    "label": "Taal",
+    "search": "Soek tale",
+    "empty": "Geen tale gevind nie",
+    "close": "Maak toe"
   }
 }

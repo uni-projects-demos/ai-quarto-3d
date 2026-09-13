@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Un mejo portà da",
+    "newGame": "Novo zogo"
+  },
+  "common": {
+    "on": "ACESO",
+    "off": "SPENTO"
+  },
+  "a11y": {
+    "utilityActions": "Ligamenti de l'app e łéngua",
+    "viewSource": "Varda el sorzente su GitHub",
+    "gameControls": "Controli del zogo",
+    "gameBoard": "Tavola de zogo 3D",
+    "gameInfo": "Informasion del zogo"
+  },
+  "controls": {
+    "diffAI": "Dificoltà AI",
+    "diffPlayerOneAI": "Dificoltà P1",
+    "diffPlayerTwoAI": "Dificoltà P2",
+    "startingPlayer": "Zogador che scominsia",
+    "gameMode": "Modo de zogo",
+    "pauseAI": "Meti AI in pausa",
+    "resumeAI": "Continua AI",
+    "undo": "Desfa",
+    "redo": "Rifà"
+  },
+  "diff": {
+    "easy": "Fàsile",
+    "medium": "Medio",
+    "hard": "Difìsile"
+  },
+  "mode": {
+    "userVsUser": "Utente contro utente",
+    "userVsAI": "Utente contro AI",
+    "onlyAI": "AI contro AI"
+  },
+  "player": {
+    "playerYou": "Ti",
+    "playerOne": "Zogador Uno",
+    "playerTwo": "Zogador Do",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "A caso",
+    "playerAIPlayer": "Zogador AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Stato del zogo...",
+    "pausedAI": "{{player}} xe in pausa...",
+    "placingAI": "{{player}} zoga - mete un toco so la tavola...",
+    "placingUser": "{{player}} zoga - meti el toco selezionà so la tavola...",
+    "placeUserYou": "Ti te zoghi - meti el toco selezionà so la tavola...",
+    "gameDrawn": "Zogo pari - gnanca na linea vinzente",
+    "gameWon": "{{player}} vinze - linea vinzente evidenziada",
+    "selectingAI": "{{player}} zoga - seleziona un toco par {{opponent}}...",
+    "selectUser": "{{player}} zoga - seleziona un toco par {{opponent}}...",
+    "selectUserYou": "Ti te zoghi - seleziona un toco par {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Toco in zogo",
+    "none": "Gnente selezionà",
+    "traits": "Carateristiche del toco",
+    "black": "nero",
+    "red": "roso",
+    "big": "grando",
+    "small": "pìcolo",
+    "round": "tondo",
+    "square": "quadrà",
+    "solid": "pien",
+    "hollow": "vodo"
+  },
+  "board": {
+    "binary": "Tavola binaria",
+    "piecesPlaced": "Tochi messi",
+    "cellEmpty": "Caza {{cell}}: voda",
+    "cellPiece": "Caza {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "El rendering 3D no'l xe disponibile.",
+    "webglHeading": "WebGL no'l ga podesto partir.",
+    "webglMsg": "El zogo el ga bisogno de WebGL ativà nel browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Passa el cursor sora un toco selezionabile par védar el risco de selezion",
+    "hoveredRiskOne": "Risco del toco soto el cursor: {{risk}} posizion vinzente imediata",
+    "hoveredRiskMany": "Risco del toco soto el cursor: {{risk}} posizioni vinzenti imediati",
+    "immediateWins": "Posizioni vinzenti imediati",
+    "latestRisk": "Ultimo risco de selezion",
+    "riskOneAI": "Risco del toco selezionà da AI: {{risk}} posizion vinzente imediata",
+    "riskManyAI": "Risco del toco selezionà da AI: {{risk}} posizioni vinzenti imediati",
+    "riskTurnedOff": "El risco de selezion xe spento",
+    "riskUnavailableAI": "El risco de selezion no'l xe disponibile nel modo AI contro AI",
+    "selectionRisk": "Risco de selezion",
+    "turnRiskOff": "Spegni el risco de selezion",
+    "turnRiskOn": "Ativa el risco de selezion"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lengua",
+    "search": "Serca lengue",
+    "empty": "Nissuna lengua trovà",
+    "close": "Sara"
+  }
+}

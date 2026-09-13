@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "ສະບັບປັບປຸງທີ່ຍ້າຍມາຈາກ",
+    "newGame": "ເກມໃໝ່"
+  },
+  "common": {
+    "on": "ເປີດ",
+    "off": "ປິດ"
+  },
+  "a11y": {
+    "utilityActions": "ລິ້ງແອັບ ແລະ ພາສາ",
+    "viewSource": "ເບິ່ງຊອດໂຄດຢູ່ GitHub",
+    "gameControls": "ການຄວບຄຸມເກມ",
+    "gameBoard": "ກະດານເກມ 3D",
+    "gameInfo": "ຂໍ້ມູນເກມ"
+  },
+  "controls": {
+    "diffAI": "ຄວາມຍາກ AI",
+    "diffPlayerOneAI": "ຄວາມຍາກ P1",
+    "diffPlayerTwoAI": "ຄວາມຍາກ P2",
+    "startingPlayer": "ຜູ້ຫຼິ້ນເລີ່ມ",
+    "gameMode": "ໂໝດເກມ",
+    "pauseAI": "ພັກ AI",
+    "resumeAI": "ສືບຕໍ່ AI",
+    "undo": "ຍົກເລີກ",
+    "redo": "ເຮັດຄືນ"
+  },
+  "diff": {
+    "easy": "ງ່າຍ",
+    "medium": "ປານກາງ",
+    "hard": "ຍາກ"
+  },
+  "mode": {
+    "userVsUser": "ຜູ້ໃຊ້ ພົບ ຜູ້ໃຊ້",
+    "userVsAI": "ຜູ້ໃຊ້ ພົບ AI",
+    "onlyAI": "AI ພົບ AI"
+  },
+  "player": {
+    "playerYou": "ທ່ານ",
+    "playerOne": "ຜູ້ຫຼິ້ນໜຶ່ງ",
+    "playerTwo": "ຜູ້ຫຼິ້ນສອງ",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "ສຸ່ມ",
+    "playerAIPlayer": "ຜູ້ຫຼິ້ນ AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "ສະຖານະເກມ...",
+    "pausedAI": "{{player}} ຖືກພັກ...",
+    "placingAI": "{{player}} ກຳລັງຫຼິ້ນ - ວາງຊິ້ນສ່ວນເທິງກະດານ...",
+    "placingUser": "{{player}} ກຳລັງຫຼິ້ນ - ວາງຊິ້ນທີ່ເລືອກໄວ້ເທິງກະດານ...",
+    "placeUserYou": "ທ່ານກຳລັງຫຼິ້ນ - ວາງຊິ້ນທີ່ເລືອກໄວ້ເທິງກະດານ...",
+    "gameDrawn": "ເກມສະເໝີ - ບໍ່ມີແຖວຊະນະ",
+    "gameWon": "{{player}} ຊະນະ - ແຖວຊະນະຖືກເນັ້ນ",
+    "selectingAI": "{{player}} ກຳລັງຫຼິ້ນ - ກຳລັງເລືອກຊິ້ນໃຫ້ {{opponent}}...",
+    "selectUser": "{{player}} ກຳລັງຫຼິ້ນ - ເລືອກຊິ້ນໃຫ້ {{opponent}}...",
+    "selectUserYou": "ທ່ານກຳລັງຫຼິ້ນ - ເລືອກຊິ້ນໃຫ້ {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "ຊິ້ນທີ່ກຳລັງຫຼິ້ນ",
+    "none": "ບໍ່ມີອັນໃດຖືກເລືອກ",
+    "traits": "ລັກສະນະຊິ້ນ",
+    "black": "ດຳ",
+    "red": "ແດງ",
+    "big": "ໃຫຍ່",
+    "small": "ນ້ອຍ",
+    "round": "ກົມ",
+    "square": "ສີ່ຫຼ່ຽມ",
+    "solid": "ຕັນ",
+    "hollow": "ກວງ"
+  },
+  "board": {
+    "binary": "ກະດານໄບນາຣີ",
+    "piecesPlaced": "ຊິ້ນທີ່ວາງແລ້ວ",
+    "cellEmpty": "ຊ່ອງ {{cell}}: ຫວ່າງ",
+    "cellPiece": "ຊ່ອງ {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "ການສະແດງ 3D ບໍ່ພ້ອມໃຊ້.",
+    "webglHeading": "WebGL ບໍ່ສາມາດເລີ່ມໄດ້.",
+    "webglMsg": "ເກມຕ້ອງການໃຫ້ WebGL ເປີດໃນບຣາວເຊີ."
+  },
+  "metrics": {
+    "hoverRiskPreview": "ເລື່ອນເມົາໄປເທິງຊິ້ນທີ່ເລືອກໄດ້ເພື່ອເບິ່ງຄວາມສ່ຽງການເລືອກ",
+    "hoveredRiskOne": "ຄວາມສ່ຽງຂອງຊິ້ນທີ່ເມົາຊີ້: {{risk}} ຈຸດວາງຊະນະທັນທີ",
+    "hoveredRiskMany": "ຄວາມສ່ຽງຂອງຊິ້ນທີ່ເມົາຊີ້: {{risk}} ຈຸດວາງຊະນະທັນທີ",
+    "immediateWins": "ຈຸດວາງຊະນະທັນທີ",
+    "latestRisk": "ຄວາມສ່ຽງການເລືອກຫຼ້າສຸດ",
+    "riskOneAI": "ຄວາມສ່ຽງຂອງຊິ້ນທີ່ AI ເລືອກ: {{risk}} ຈຸດວາງຊະນະທັນທີ",
+    "riskManyAI": "ຄວາມສ່ຽງຂອງຊິ້ນທີ່ AI ເລືອກ: {{risk}} ຈຸດວາງຊະນະທັນທີ",
+    "riskTurnedOff": "ຄວາມສ່ຽງການເລືອກຖືກປິດ",
+    "riskUnavailableAI": "ຄວາມສ່ຽງການເລືອກບໍ່ມີໃນໂໝດ AI ພົບ AI",
+    "selectionRisk": "ຄວາມສ່ຽງການເລືອກ",
+    "turnRiskOff": "ປິດຄວາມສ່ຽງການເລືອກ",
+    "turnRiskOn": "ເປີດຄວາມສ່ຽງການເລືອກ"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "ພາສາ",
+    "search": "ຊອກຫາພາສາ",
+    "empty": "ບໍ່ພົບພາສາ",
+    "close": "ປິດ"
+  }
+}

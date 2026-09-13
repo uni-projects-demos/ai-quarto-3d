@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Куҫарса лайăхлатнă тата",
+    "newGame": "Çĕнĕ вăйă"
+  },
+  "common": {
+    "on": "ХУТШАНТАРНĂ",
+    "off": "ХУТШАНМАН"
+  },
+  "a11y": {
+    "utilityActions": "Приложени çыхăнăвĕсем тата чĕлхе",
+    "viewSource": "GitHub çинче код кур",
+    "gameControls": "Вăйă управленийĕ",
+    "gameBoard": "3D вăйă хăми",
+    "gameInfo": "Вăйă информацийĕ"
+  },
+  "controls": {
+    "diffAI": "AI йывăрлăхĕ",
+    "diffPlayerOneAI": "P1 йывăрлăхĕ",
+    "diffPlayerTwoAI": "P2 йывăрлăхĕ",
+    "startingPlayer": "Пуҫлакан вăйăçă",
+    "gameMode": "Вăйă режимĕ",
+    "pauseAI": "AI чар",
+    "resumeAI": "AI малалла",
+    "undo": "Каялла",
+    "redo": "Тепĕр хут"
+  },
+  "diff": {
+    "easy": "Ансат",
+    "medium": "Вăтам",
+    "hard": "Йывăр"
+  },
+  "mode": {
+    "userVsUser": "Усăçă vs усăçă",
+    "userVsAI": "Усăçă vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Эсĕ",
+    "playerOne": "Пĕрремĕш вăйăçă",
+    "playerTwo": "Иккĕмĕш вăйăçă",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Туртăмсăр",
+    "playerAIPlayer": "AI вăйăçă",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Вăйă статусĕ...",
+    "pausedAI": "{{player}} чарăннă...",
+    "placingAI": "{{player}} вăйăлать - фигурăна хăма çине хурать...",
+    "placingUser": "{{player}} вăйăлать - суйланă фигурăна хăма çине хур...",
+    "placeUserYou": "Эсĕ вăйăлатăн - суйланă фигурăна хăма çине хур...",
+    "gameDrawn": "Вăйă танлашрĕ - çĕнтерÿ йĕрĕ çук",
+    "gameWon": "{{player}} çĕнтерчĕ - çĕнтерÿ йĕрĕ палăртнă",
+    "selectingAI": "{{player}} вăйăлать - {{opponent}} валли фигурă суйлаççĕ...",
+    "selectUser": "{{player}} вăйăлать - {{opponent}} валли фигурă суйла...",
+    "selectUserYou": "Эсĕ вăйăлатăн - {{opponent}} валли фигурă суйла..."
+  },
+  "piece": {
+    "inPlay": "Вăйăри фигурă",
+    "none": "Нимĕн те суйланман",
+    "traits": "Фигура паллисем",
+    "black": "хура",
+    "red": "хĕрлĕ",
+    "big": "пысăк",
+    "small": "пĕчĕк",
+    "round": "çавра",
+    "square": "квадрат",
+    "solid": "тулли",
+    "hollow": "пушă"
+  },
+  "board": {
+    "binary": "Икĕлĕ хăма",
+    "piecesPlaced": "Хунă фигурăсем",
+    "cellEmpty": "Клетка {{cell}}: пушă",
+    "cellPiece": "Клетка {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D рендеринг çук.",
+    "webglHeading": "WebGL пуҫланаймарĕ.",
+    "webglMsg": "Вăйă валли браузерта WebGL хутшантарнă пулмалла."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Суйлас рискне малтан курма суйлама май пур фигурă çине курсор ил",
+    "hoveredRiskOne": "Курсор айĕнчи фигура риске: {{risk}} хăвăрт çĕнтерÿ вырăнĕ",
+    "hoveredRiskMany": "Курсор айĕнчи фигура риске: {{risk}} хăвăрт çĕнтерÿ вырăнĕсем",
+    "immediateWins": "Хăвăрт çĕнтерÿ вырăнĕсем",
+    "latestRisk": "Юлашки суйлас риск",
+    "riskOneAI": "AI суйланă фигура риске: {{risk}} хăвăрт çĕнтерÿ вырăнĕ",
+    "riskManyAI": "AI суйланă фигура риске: {{risk}} хăвăрт çĕнтерÿ вырăнĕсем",
+    "riskTurnedOff": "Суйлас риск хутшанман",
+    "riskUnavailableAI": "AI vs AI режимĕнче суйлас риск çук",
+    "selectionRisk": "Суйлас риск",
+    "turnRiskOff": "Суйлас рискне хутшантарма",
+    "turnRiskOn": "Суйлас рискне хутшантар"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Чӗлхе",
+    "search": "Чӗлхесене шырав",
+    "empty": "Чӗлхе тупӑнмарӗ",
+    "close": "Хуп"
+  }
+}

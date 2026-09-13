@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ce tlacualtiliztli tlen motlalilia ipan",
+    "newGame": "Yancuic ahuiliztli"
+  },
+  "common": {
+    "on": "TLATLATOC",
+    "off": "CEHUI"
+  },
+  "a11y": {
+    "utilityActions": "Tepozmachiyotl tlanilpiliztli ihuan tlahtolli",
+    "viewSource": "Xiquitta in nelhuayotl ipan GitHub",
+    "gameControls": "Ahuiliztli tequiti",
+    "gameBoard": "3D tlapechahuiliztli",
+    "gameInfo": "Ahuiliztli tlamachiliztli"
+  },
+  "controls": {
+    "diffAI": "AI ouhcayotl",
+    "diffPlayerOneAI": "P1 ouhcayotl",
+    "diffPlayerTwoAI": "P2 ouhcayotl",
+    "startingPlayer": "Achtopa ahuilquetl",
+    "gameMode": "Ahuiliztli iuhcayotl",
+    "pauseAI": "Xiccehui AI",
+    "resumeAI": "Xicchihua AI ma yauh",
+    "undo": "Xiccuepa",
+    "redo": "Xicchihua occeppa"
+  },
+  "diff": {
+    "easy": "Amo ouhqui",
+    "medium": "Nepantla",
+    "hard": "Ouhqui"
+  },
+  "mode": {
+    "userVsUser": "Tlacatl ihuan tlacatl",
+    "userVsAI": "Tlacatl ihuan AI",
+    "onlyAI": "AI ihuan AI"
+  },
+  "player": {
+    "playerYou": "Tehuatl",
+    "playerOne": "Ce ahuilquetl",
+    "playerTwo": "Ome ahuilquetl",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Amo tlatlalilli",
+    "playerAIPlayer": "AI ahuilquetl",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Ahuiliztli iuhcatiliz...",
+    "pausedAI": "{{player}} mocehuia...",
+    "placingAI": "{{player}} mahuiltia - tlalia tetl ipan tlapechtli...",
+    "placingUser": "{{player}} mahuiltia - Xictlali in tetl motlapehpenilli ipan tlapechtli...",
+    "placeUserYou": "Tehuatl timahuiltia - Xictlali in tetl motlapehpenilli ipan tlapechtli...",
+    "gameDrawn": "Ahuiliztli nepantla - amo onca tlaniliztli pantli",
+    "gameWon": "{{player}} tlatlani - tlaniliztli pantli motta",
+    "selectingAI": "{{player}} mahuiltia - tlapehpena tetl ipampa {{opponent}}...",
+    "selectUser": "{{player}} mahuiltia - Xictlapehpena tetl ipampa {{opponent}}...",
+    "selectUserYou": "Tehuatl timahuiltia - Xictlapehpena tetl ipampa {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Tetl ipan ahuiliztli",
+    "none": "Amo tle tlapehpenilli",
+    "traits": "Tetl ixnextiliz",
+    "black": "tliltic",
+    "red": "chichiltic",
+    "big": "hueyi",
+    "small": "tepiton",
+    "round": "yahualtic",
+    "square": "nauhcan",
+    "solid": "tentoc",
+    "hollow": "coyontoc"
+  },
+  "board": {
+    "binary": "Omemeh tlapechtli",
+    "piecesPlaced": "Tetl tlalilli",
+    "cellEmpty": "Calli {{cell}}: cactoc",
+    "cellPiece": "Calli {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D ixnextiliz amo onca.",
+    "webglHeading": "WebGL amo huel ompehua.",
+    "webglMsg": "Ahuiliztli monequi WebGL tlattic ipan tepoztlatoloni."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Xicmana in tlachiyaloni ipan tetl huel tlapehpenaloni ic tiquittaz in tlapehpeniliztli mauhcayotl",
+    "hoveredRiskOne": "Tetl mauhcayotl: {{risk}} niman tlaniliztli tlaliliztli",
+    "hoveredRiskMany": "Tetl mauhcayotl: {{risk}} niman tlaniliztli tlaliliztin",
+    "immediateWins": "Niman tlaniliztli tlaliliztin",
+    "latestRisk": "Yancuic tlapehpeniliztli mauhcayotl",
+    "riskOneAI": "AI tlapehpenilli tetl mauhcayotl: {{risk}} niman tlaniliztli tlaliliztli",
+    "riskManyAI": "AI tlapehpenilli tetl mauhcayotl: {{risk}} niman tlaniliztli tlaliliztin",
+    "riskTurnedOff": "Tlapehpeniliztli mauhcayotl cehui",
+    "riskUnavailableAI": "Tlapehpeniliztli mauhcayotl amo onca ipan AI ihuan AI",
+    "selectionRisk": "Tlapehpeniliztli mauhcayotl",
+    "turnRiskOff": "Xiccehui tlapehpeniliztli mauhcayotl",
+    "turnRiskOn": "Xictlati tlapehpeniliztli mauhcayotl"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Tlahtōlli",
+    "search": "Xictemoa tlahtōlli",
+    "empty": "Amo tlahtōlli monexti",
+    "close": "Xictzacua"
+  }
+}

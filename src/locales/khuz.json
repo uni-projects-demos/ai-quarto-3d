@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Gamil-gabil uz",
+    "newGame": "Gabil gaim"
+  },
+  "common": {
+    "on": "RAK",
+    "off": "SAKH"
+  },
+  "a11y": {
+    "utilityActions": "App kibil u Khuzdul",
+    "viewSource": "GitHub uz gamil",
+    "gameControls": "Gaim uzbad",
+    "gameBoard": "3D gaim zaram",
+    "gameInfo": "Gaim ma'lum"
+  },
+  "controls": {
+    "diffAI": "AI narag",
+    "diffPlayerOneAI": "P1 narag",
+    "diffPlayerTwoAI": "P2 narag",
+    "startingPlayer": "Gaimul baruk",
+    "gameMode": "Gaim ukul",
+    "pauseAI": "AI sakh",
+    "resumeAI": "AI rak",
+    "undo": "Dum",
+    "redo": "Gamil"
+  },
+  "diff": {
+    "easy": "Rukhs",
+    "medium": "Mizan",
+    "hard": "Narag"
+  },
+  "mode": {
+    "userVsUser": "Uzbad vs uzbad",
+    "userVsAI": "Uzbad vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Zu",
+    "playerOne": "Gaimul 1",
+    "playerTwo": "Gaimul 2",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Rakh",
+    "playerAIPlayer": "AI gaimul",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Gaim hal...",
+    "pausedAI": "{{player}} sakh...",
+    "placingAI": "{{player}} gaim - makin zaram-ra rakam...",
+    "placingUser": "{{player}} gaim - makin gamil zaram-ra rakam...",
+    "placeUserYou": "Zu gaim - makin gamil zaram-ra rakam...",
+    "gameDrawn": "Gaim mizan - la zaram uzbad",
+    "gameWon": "{{player}} uzbad - zaram uzbad gamil",
+    "selectingAI": "{{player}} gaim - makin {{opponent}}-ra gamil...",
+    "selectUser": "{{player}} gaim - makin {{opponent}}-ra gamil...",
+    "selectUserYou": "Zu gaim - makin {{opponent}}-ra gamil..."
+  },
+  "piece": {
+    "inPlay": "Makin gaim-ra",
+    "none": "La makin gamil",
+    "traits": "Makin ma'lum",
+    "black": "narag",
+    "red": "baraz",
+    "big": "gabil",
+    "small": "zilik",
+    "round": "rund",
+    "square": "arbaz",
+    "solid": "sakh",
+    "hollow": "khul"
+  },
+  "board": {
+    "binary": "Zaram binar",
+    "piecesPlaced": "Makin rakam",
+    "cellEmpty": "Khaz {{cell}}: khul",
+    "cellPiece": "Khaz {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D gamil la.",
+    "webglHeading": "WebGL rak la.",
+    "webglMsg": "Gaim WebGL browser-ra rak gabil."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Cursor makin gamil-ra dak risk gamil",
+    "hoveredRiskOne": "Makin risk cursor-ra: {{risk}} uzbad khaz zud",
+    "hoveredRiskMany": "Makin risk cursor-ra: {{risk}} uzbad khazim zud",
+    "immediateWins": "Uzbad khazim zud",
+    "latestRisk": "Risk gamil akhir",
+    "riskOneAI": "AI gamil makin risk: {{risk}} uzbad khaz zud",
+    "riskManyAI": "AI gamil makin risk: {{risk}} uzbad khazim zud",
+    "riskTurnedOff": "Risk gamil sakh",
+    "riskUnavailableAI": "Risk gamil AI vs AI-ra la",
+    "selectionRisk": "Risk gamil",
+    "turnRiskOff": "Risk gamil sakh",
+    "turnRiskOn": "Risk gamil rak"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Khuzdul",
+    "search": "Gamil Khuzdul",
+    "empty": "La Khuzdul gamil",
+    "close": "Sakh"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Portita ameliorigo de",
+    "newGame": "Nova ludo"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Ligili dil apliko e linguo",
+    "viewSource": "Videz la fonto ye GitHub",
+    "gameControls": "Ludo-kontroli",
+    "gameBoard": "3D ludo-tabulo",
+    "gameInfo": "Ludo-informo"
+  },
+  "controls": {
+    "diffAI": "AI-desfacileso",
+    "diffPlayerOneAI": "P1-desfacileso",
+    "diffPlayerTwoAI": "P2-desfacileso",
+    "startingPlayer": "Komencanta ludanto",
+    "gameMode": "Ludo-modo",
+    "pauseAI": "Pauzizez AI",
+    "resumeAI": "Rekomencez AI",
+    "undo": "Desfacez",
+    "redo": "Rifacez"
+  },
+  "diff": {
+    "easy": "Facila",
+    "medium": "Meza",
+    "hard": "Desfacila"
+  },
+  "mode": {
+    "userVsUser": "Uzanto kontre uzanto",
+    "userVsAI": "Uzanto kontre AI",
+    "onlyAI": "AI kontre AI"
+  },
+  "player": {
+    "playerYou": "Vu",
+    "playerOne": "Ludanto Un",
+    "playerTwo": "Ludanto Du",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Hazarda",
+    "playerAIPlayer": "AI-ludanto",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Stando dil ludo...",
+    "pausedAI": "{{player}} esas pauzita...",
+    "placingAI": "{{player}} ludas - pozas peco sur la tabulo...",
+    "placingUser": "{{player}} ludas - Posez la selektita peco sur la tabulo...",
+    "placeUserYou": "Vu ludas - Posez la selektita peco sur la tabulo...",
+    "gameDrawn": "Ludo egaligita - nula vinkanta lineo",
+    "gameWon": "{{player}} vinkas - vinkanta lineo esas emfazita",
+    "selectingAI": "{{player}} ludas - selektas peco por {{opponent}}...",
+    "selectUser": "{{player}} ludas - Selektez peco por {{opponent}}...",
+    "selectUserYou": "Vu ludas - Selektez peco por {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Peco en ludo",
+    "none": "Nulo selektita",
+    "traits": "Qualesi dil peco",
+    "black": "nigra",
+    "red": "reda",
+    "big": "granda",
+    "small": "mikra",
+    "round": "ronda",
+    "square": "quadrata",
+    "solid": "solida",
+    "hollow": "kava"
+  },
+  "board": {
+    "binary": "Binara tabulo",
+    "piecesPlaced": "Pozita peci",
+    "cellEmpty": "Celulo {{cell}}: vakua",
+    "cellPiece": "Celulo {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D-renderado ne esas disponebla.",
+    "webglHeading": "WebGL ne povis komencar.",
+    "webglMsg": "La ludo bezonas WebGL aktivigita en la ret-navigilo."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Pozigez la muso super selektebla peco por previder lua selekto-risko",
+    "hoveredRiskOne": "Risko dil peco sub la muso: {{risk}} neposita vinkanta pozado",
+    "hoveredRiskMany": "Risko dil peco sub la muso: {{risk}} neposita vinkanta pozadi",
+    "immediateWins": "Neposita vinkanta pozadi",
+    "latestRisk": "Lastesa selekto-risko",
+    "riskOneAI": "Risko dil peco selektita da AI: {{risk}} neposita vinkanta pozado",
+    "riskManyAI": "Risko dil peco selektita da AI: {{risk}} neposita vinkanta pozadi",
+    "riskTurnedOff": "Selekto-risko esas desaktivigita",
+    "riskUnavailableAI": "Selekto-risko ne disponeblas en AI kontre AI modo",
+    "selectionRisk": "Selekto-risko",
+    "turnRiskOff": "Desaktivigez selekto-risko",
+    "turnRiskOn": "Aktivigez selekto-risko"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Linguo",
+    "search": "Serchar lingui",
+    "empty": "Nula linguo trovita",
+    "close": "Klozar"
+  }
+}

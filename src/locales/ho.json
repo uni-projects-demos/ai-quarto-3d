@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Lahia ma haidaia mai",
+    "newGame": "Gemu matamata"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "App link bona gado",
+    "viewSource": "Source ita GitHub de",
+    "gameControls": "Gemu control",
+    "gameBoard": "3D gemu board",
+    "gameInfo": "Gemu sivarai"
+  },
+  "controls": {
+    "diffAI": "AI badina",
+    "diffPlayerOneAI": "P1 badina",
+    "diffPlayerTwoAI": "P2 badina",
+    "startingPlayer": "Player matama",
+    "gameMode": "Gemu mode",
+    "pauseAI": "AI lau-aro",
+    "resumeAI": "AI lao-hiri",
+    "undo": "Undo",
+    "redo": "Redo"
+  },
+  "diff": {
+    "easy": "Mamarina",
+    "medium": "Noho-badadia",
+    "hard": "Badina"
+  },
+  "mode": {
+    "userVsUser": "User de user",
+    "userVsAI": "User de AI",
+    "onlyAI": "AI de AI"
+  },
+  "player": {
+    "playerYou": "Oi",
+    "playerOne": "Player Ta",
+    "playerTwo": "Player Rua",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Idau-idau",
+    "playerAIPlayer": "AI Player",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Gemu noho...",
+    "pausedAI": "{{player}} ia lau-aro...",
+    "placingAI": "{{player}} ia gemu - board de piece ia atoa...",
+    "placingUser": "{{player}} ia gemu - piece abia board de atoa...",
+    "placeUserYou": "Oi gemu - piece abia board de atoa...",
+    "gameDrawn": "Gemu ia hegeregere - win line be dia",
+    "gameWon": "{{player}} ia win - win line ia hahedinaraia",
+    "selectingAI": "{{player}} ia gemu - {{opponent}} ena piece ia abia...",
+    "selectUser": "{{player}} ia gemu - {{opponent}} ena piece abia...",
+    "selectUserYou": "Oi gemu - {{opponent}} ena piece abia..."
+  },
+  "piece": {
+    "inPlay": "Piece gemu de",
+    "none": "Ta be abia",
+    "traits": "Piece ena kara",
+    "black": "dibura",
+    "red": "memero",
+    "big": "badana",
+    "small": "maragina",
+    "round": "garina",
+    "square": "square",
+    "solid": "solid",
+    "hollow": "hollow"
+  },
+  "board": {
+    "binary": "Binary board",
+    "piecesPlaced": "Piece atoava",
+    "cellEmpty": "Cell {{cell}}: gauna",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering be ai.",
+    "webglHeading": "WebGL be matama diba.",
+    "webglMsg": "Gemu ena WebGL browser de ena hedehedena."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Piece abia ena latada hover kara selection risk ita",
+    "hoveredRiskOne": "Hover piece risk: {{risk}} win placement momo",
+    "hoveredRiskMany": "Hover piece risk: {{risk}} win placements momo",
+    "immediateWins": "Win placements momo",
+    "latestRisk": "Selection risk murimuri",
+    "riskOneAI": "AI ena piece abia risk: {{risk}} win placement momo",
+    "riskManyAI": "AI ena piece abia risk: {{risk}} win placements momo",
+    "riskTurnedOff": "Selection risk ia ore",
+    "riskUnavailableAI": "AI de AI mode de selection risk be ai",
+    "selectionRisk": "Selection risk",
+    "turnRiskOff": "Selection risk ore",
+    "turnRiskOn": "Selection risk hede"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Gado",
+    "search": "Gado be tahua",
+    "empty": "Gado be diba tahua",
+    "close": "Kaua"
+  }
+}

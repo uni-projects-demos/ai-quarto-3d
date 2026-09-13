@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Gabot gataujan fram",
+    "newGame": "Niujata leik"
+  },
+  "common": {
+    "on": "ANA",
+    "off": "AF"
+  },
+  "a11y": {
+    "utilityActions": "App bandi jah razda",
+    "viewSource": "Saiƕ frumistōþ ana GitHub",
+    "gameControls": "Leikis waldufni",
+    "gameBoard": "3D leikabaurd",
+    "gameInfo": "Leikis kunþi"
+  },
+  "controls": {
+    "diffAI": "AI aglus",
+    "diffPlayerOneAI": "P1 aglus",
+    "diffPlayerTwoAI": "P2 aglus",
+    "startingPlayer": "Frumists leikands",
+    "gameMode": "Leikis haidus",
+    "pauseAI": "AI anahaban",
+    "resumeAI": "AI framhaldan",
+    "undo": "Andwairþjan",
+    "redo": "Aftuma taujan"
+  },
+  "diff": {
+    "easy": "Azēts",
+    "medium": "Midjis",
+    "hard": "Aglus"
+  },
+  "mode": {
+    "userVsUser": "Brūkands wiþra brūkand",
+    "userVsAI": "Brūkands wiþra AI",
+    "onlyAI": "AI wiþra AI"
+  },
+  "player": {
+    "playerYou": "Þu",
+    "playerOne": "Leikands Ains",
+    "playerTwo": "Leikands Twai",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Hlauts",
+    "playerAIPlayer": "AI leikands",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Leikis staþs...",
+    "pausedAI": "{{player}} anahabans ist...",
+    "placingAI": "{{player}} leikiþ - lagjiþ stukka ana baurd...",
+    "placingUser": "{{player}} leikiþ - lagja walida stukka ana baurd...",
+    "placeUserYou": "Þu leikis - lagja walida stukka ana baurd...",
+    "gameDrawn": "Leik galeiks - ni sigis laina",
+    "gameWon": "{{player}} sigiþ - sigis laina gaumida",
+    "selectingAI": "{{player}} leikiþ - waljiþ stukka du {{opponent}}...",
+    "selectUser": "{{player}} leikiþ - wali stukka du {{opponent}}...",
+    "selectUserYou": "Þu leikis - wali stukka du {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Stukka in leik",
+    "none": "Ni waiht walida",
+    "traits": "Stukkis eiginleika",
+    "black": "swarts",
+    "red": "rauþs",
+    "big": "mikils",
+    "small": "leitils",
+    "round": "sinweigs",
+    "square": "fidur-skauta",
+    "solid": "fasts",
+    "hollow": "hols"
+  },
+  "board": {
+    "binary": "Twai-tala baurd",
+    "piecesPlaced": "Galagida stukkōs",
+    "cellEmpty": "Stadus {{cell}}: laus",
+    "cellPiece": "Stadus {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D gawaurki ni ist andbaht.",
+    "webglHeading": "WebGL ni mahta duginnan.",
+    "webglMsg": "Leik þarf WebGL ana browser gahailid."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Hald cursor ufar waljanda stukka du saihƕan waljandis fairina",
+    "hoveredRiskOne": "Fairina stukkis undar cursor: {{risk}} suns sigis stadus",
+    "hoveredRiskMany": "Fairina stukkis undar cursor: {{risk}} suns sigis stadōs",
+    "immediateWins": "Suns sigis stadōs",
+    "latestRisk": "Spēdista waljandis fairina",
+    "riskOneAI": "Fairina AI-walida stukkis: {{risk}} suns sigis stadus",
+    "riskManyAI": "Fairina AI-walida stukkis: {{risk}} suns sigis stadōs",
+    "riskTurnedOff": "Waljandis fairina ist af",
+    "riskUnavailableAI": "Waljandis fairina ni ist in AI wiþra AI",
+    "selectionRisk": "Waljandis fairina",
+    "turnRiskOff": "Af-taujan waljandis fairina",
+    "turnRiskOn": "Ana-taujan waljandis fairina"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Razda",
+    "search": "Razdos sokjan",
+    "empty": "Ni razda bigitana",
+    "close": "Galukan"
+  }
+}

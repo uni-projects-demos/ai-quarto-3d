@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Vovome si woɖe va afima",
+    "newGame": "Fefe yeye"
+  },
+  "common": {
+    "on": "LE ŊU",
+    "off": "LE EME"
+  },
+  "a11y": {
+    "utilityActions": "Dɔwɔnu ƒe kadodoawo kple gbe",
+    "viewSource": "Kpɔ source le GitHub",
+    "gameControls": "Fefe dziɖuɖu",
+    "gameBoard": "3D fefe tabla",
+    "gameInfo": "Fefe ŋuti nyawo"
+  },
+  "controls": {
+    "diffAI": "AI sesẽme",
+    "diffPlayerOneAI": "P1 sesẽme",
+    "diffPlayerTwoAI": "P2 sesẽme",
+    "startingPlayer": "Fefela si adze egɔme",
+    "gameMode": "Fefe nɔnɔme",
+    "pauseAI": "Tɔ AI",
+    "resumeAI": "Yi edzi kple AI",
+    "undo": "Trɔ megbe",
+    "redo": "Wɔ ake"
+  },
+  "diff": {
+    "easy": "Bɔbɔe",
+    "medium": "Titina",
+    "hard": "Sesẽ"
+  },
+  "mode": {
+    "userVsUser": "Zãla vs zãla",
+    "userVsAI": "Zãla vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Wò",
+    "playerOne": "Fefela Gbãtɔ",
+    "playerTwo": "Fefela Evelia",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Le dzodzro me",
+    "playerAIPlayer": "AI fefela",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Fefe ƒe nɔnɔme...",
+    "pausedAI": "{{player}} le tɔtɔ me...",
+    "placingAI": "{{player}} le fefe me - ele akpa la dem ɖe tabla dzi...",
+    "placingUser": "{{player}} le fefe me - De akpa si nètsɔ la ɖe tabla dzi...",
+    "placeUserYou": "Wòle fefe me - De akpa si nètsɔ la ɖe tabla dzi...",
+    "gameDrawn": "Fefe la sɔ - dziɖuɖu fli aɖeke mele o",
+    "gameWon": "{{player}} ɖu dzi - woɖe dzesi dziɖuɖu fli la",
+    "selectingAI": "{{player}} le fefe me - ele akpa aɖe tiam na {{opponent}}...",
+    "selectUser": "{{player}} le fefe me - Tia akpa aɖe na {{opponent}}...",
+    "selectUserYou": "Wòle fefe me - Tia akpa aɖe na {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Akpa si le fefe me",
+    "none": "Wometia naneke o",
+    "traits": "Akpa ƒe nɔnɔmetatawo",
+    "black": "yibɔ",
+    "red": "dzĩ",
+    "big": "gã",
+    "small": "sue",
+    "round": "tegbetegbe",
+    "square": "kɔta",
+    "solid": "sẽ",
+    "hollow": "to"
+  },
+  "board": {
+    "binary": "Binary tabla",
+    "piecesPlaced": "Akpawo si wode ɖe anyi",
+    "cellEmpty": "Cell {{cell}}: le ƒuƒlu",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering mele asi o.",
+    "webglHeading": "WebGL mete ŋu dze egɔme o.",
+    "webglMsg": "Fefe la hiã be WebGL nanɔ ŋu le browser me."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Tsɔ mouse yi akpa si wòate ŋu atia la dzi be nàkpɔ tiatia ƒe ŋɔdzidoname do ŋgɔ",
+    "hoveredRiskOne": "Akpa si mouse le dzi ƒe ŋɔdzidoname: {{risk}} dziɖuɖu teƒe enumake",
+    "hoveredRiskMany": "Akpa si mouse le dzi ƒe ŋɔdzidoname: {{risk}} dziɖuɖu teƒewo enumake",
+    "immediateWins": "Dziɖuɖu teƒewo enumake",
+    "latestRisk": "Tiatia ƒe ŋɔdzidoname mamlɛtɔ",
+    "riskOneAI": "AI ƒe akpa si wòtia ƒe ŋɔdzidoname: {{risk}} dziɖuɖu teƒe enumake",
+    "riskManyAI": "AI ƒe akpa si wòtia ƒe ŋɔdzidoname: {{risk}} dziɖuɖu teƒewo enumake",
+    "riskTurnedOff": "Woɖe tiatia ƒe ŋɔdzidoname le eme",
+    "riskUnavailableAI": "Tiatia ƒe ŋɔdzidoname mele AI vs AI nɔnɔme me o",
+    "selectionRisk": "Tiatia ƒe ŋɔdzidoname",
+    "turnRiskOff": "Ɖe tiatia ƒe ŋɔdzidoname le eme",
+    "turnRiskOn": "Da tiatia ƒe ŋɔdzidoname ŋu"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Gbegbɔgblɔ",
+    "search": "Di gbegbɔgblɔwo",
+    "empty": "Womekpɔ gbegbɔgblɔ aɖeke o",
+    "close": "Kloe"
+  }
+}

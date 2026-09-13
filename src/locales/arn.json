@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Kiñe kümelelün tüfachi kimün mew",
+    "newGame": "We wechun aukantun"
+  },
+  "common": {
+    "on": "LÜFKÜLEY",
+    "off": "LÜFKÜLAY"
+  },
+  "a11y": {
+    "utilityActions": "App ñi trawün ka dungun",
+    "viewSource": "GitHub mew pefi source",
+    "gameControls": "Aukantun ñi ngünen",
+    "gameBoard": "3D aukantun rangi",
+    "gameInfo": "Aukantun ñi zugu"
+  },
+  "controls": {
+    "diffAI": "AI ñi küzaw",
+    "diffPlayerOneAI": "P1 ñi küzaw",
+    "diffPlayerTwoAI": "P2 ñi küzaw",
+    "startingPlayer": "Wünen aukantufe",
+    "gameMode": "Aukantun ñi az",
+    "pauseAI": "Üñüm AI",
+    "resumeAI": "Amulepe AI",
+    "undo": "Wiñoltu",
+    "redo": "Femtu ka"
+  },
+  "diff": {
+    "easy": "Züngun",
+    "medium": "Rangi",
+    "hard": "Kütrankülechi"
+  },
+  "mode": {
+    "userVsUser": "Che kontra che",
+    "userVsAI": "Che kontra AI",
+    "onlyAI": "AI kontra AI"
+  },
+  "player": {
+    "playerYou": "Eymi",
+    "playerOne": "Aukantufe Kiñe",
+    "playerTwo": "Aukantufe Epu",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Rupalechi",
+    "playerAIPlayer": "AI aukantufe",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Aukantun ñi mülen...",
+    "pausedAI": "{{player}} üñümtuley...",
+    "placingAI": "{{player}} aukantuley - pichi chem elufi rangi mew...",
+    "placingUser": "{{player}} aukantuley - Elunge tüchi dullin pichi chem rangi mew...",
+    "placeUserYou": "Eymi aukantuleymi - Elunge tüchi dullin pichi chem rangi mew...",
+    "gameDrawn": "Aukantun fey tañi kiñewün - müleyla wewün wirin",
+    "gameWon": "{{player}} wewi - wewün wirin adkintungey",
+    "selectingAI": "{{player}} aukantuley - dulliley pichi chem {{opponent}} mew...",
+    "selectUser": "{{player}} aukantuley - Dulli pichi chem {{opponent}} mew...",
+    "selectUserYou": "Eymi aukantuleymi - Dulli pichi chem {{opponent}} mew..."
+  },
+  "piece": {
+    "inPlay": "Pichi chem aukantun mew",
+    "none": "Chem no rume dullingelay",
+    "traits": "Pichi chem ñi az",
+    "black": "kurü",
+    "red": "kelü",
+    "big": "fütra",
+    "small": "pichi",
+    "round": "tüway",
+    "square": "meli ad",
+    "solid": "trür",
+    "hollow": "wechu"
+  },
+  "board": {
+    "binary": "Binary rangi",
+    "piecesPlaced": "Elün pichi chem",
+    "cellEmpty": "Katrüwe {{cell}}: welli",
+    "cellPiece": "Katrüwe {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D adkintun mülelay.",
+    "webglHeading": "WebGL pepi llitukelay.",
+    "webglMsg": "Aukantun fey WebGL llüfküleal navegador mew duamfi."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Pichi chem dullingeal mew cursor eluge ta peam ñi dullin ñi peligro",
+    "hoveredRiskOne": "Cursor mülelu pichi chem ñi peligro: {{risk}} feymew wewün elün",
+    "hoveredRiskMany": "Cursor mülelu pichi chem ñi peligro: {{risk}} feymew wewün elün",
+    "immediateWins": "Feymew wewün elün",
+    "latestRisk": "Wünelu dullin ñi peligro",
+    "riskOneAI": "AI dullilu pichi chem ñi peligro: {{risk}} feymew wewün elün",
+    "riskManyAI": "AI dullilu pichi chem ñi peligro: {{risk}} feymew wewün elün",
+    "riskTurnedOff": "Dullin ñi peligro ñamküley",
+    "riskUnavailableAI": "AI kontra AI az mew dullin ñi peligro mülelay",
+    "selectionRisk": "Dullin ñi peligro",
+    "turnRiskOff": "Ñamkülepe dullin ñi peligro",
+    "turnRiskOn": "Llüfkülepe dullin ñi peligro"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Dungun",
+    "search": "Kintu dungun",
+    "empty": "Dungun pegelay",
+    "close": "Nürüf"
+  }
+}

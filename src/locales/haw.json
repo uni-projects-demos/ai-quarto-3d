@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "He hoʻomaikaʻi i lawe ʻia mai",
+    "newGame": "Pāʻani hou"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Nā loulou polokalamu a me ka ʻōlelo",
+    "viewSource": "Nānā i ke kumu ma GitHub",
+    "gameControls": "Nā mana pāʻani",
+    "gameBoard": "Papa pāʻani 3D",
+    "gameInfo": "ʻIke pāʻani"
+  },
+  "controls": {
+    "diffAI": "Paʻakikī AI",
+    "diffPlayerOneAI": "Paʻakikī P1",
+    "diffPlayerTwoAI": "Paʻakikī P2",
+    "startingPlayer": "Mea pāʻani hoʻomaka",
+    "gameMode": "ʻAno pāʻani",
+    "pauseAI": "Hoʻomaha AI",
+    "resumeAI": "Hoʻomau AI",
+    "undo": "Hoʻihoʻi",
+    "redo": "Hana hou"
+  },
+  "diff": {
+    "easy": "Maʻalahi",
+    "medium": "Waena",
+    "hard": "Paʻakikī"
+  },
+  "mode": {
+    "userVsUser": "Mea hoʻohana kūʻē mea hoʻohana",
+    "userVsAI": "Mea hoʻohana kūʻē AI",
+    "onlyAI": "AI kūʻē AI"
+  },
+  "player": {
+    "playerYou": "ʻO ʻoe",
+    "playerOne": "Mea Pāʻani Hoʻokahi",
+    "playerTwo": "Mea Pāʻani ʻElua",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Kaulele",
+    "playerAIPlayer": "Mea Pāʻani AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Kūlana pāʻani...",
+    "pausedAI": "Ua hoʻomaha ʻo {{player}}...",
+    "placingAI": "Ke pāʻani nei ʻo {{player}} - ke kau nei i ka ʻāpana ma ka papa...",
+    "placingUser": "Ke pāʻani nei ʻo {{player}} - E kau i ka ʻāpana i koho ʻia ma ka papa...",
+    "placeUserYou": "Ke pāʻani nei ʻoe - E kau i ka ʻāpana i koho ʻia ma ka papa...",
+    "gameDrawn": "Kaulike ka pāʻani - ʻaʻohe laina lanakila",
+    "gameWon": "Lanakila ʻo {{player}} - ua hoʻokalakupua ʻia ka laina lanakila",
+    "selectingAI": "Ke pāʻani nei ʻo {{player}} - ke koho nei i kahi ʻāpana no {{opponent}}...",
+    "selectUser": "Ke pāʻani nei ʻo {{player}} - E koho i kahi ʻāpana no {{opponent}}...",
+    "selectUserYou": "Ke pāʻani nei ʻoe - E koho i kahi ʻāpana no {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "ʻĀpana e pāʻani nei",
+    "none": "ʻAʻohe mea i koho ʻia",
+    "traits": "Nā ʻano o ka ʻāpana",
+    "black": "ʻeleʻele",
+    "red": "ʻulaʻula",
+    "big": "nui",
+    "small": "liʻiliʻi",
+    "round": "poepoe",
+    "square": "huinahā",
+    "solid": "paʻa",
+    "hollow": "puka"
+  },
+  "board": {
+    "binary": "Papa binary",
+    "piecesPlaced": "Nā ʻāpana i kau ʻia",
+    "cellEmpty": "Pūnaewele {{cell}}: hakahaka",
+    "cellPiece": "Pūnaewele {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "ʻAʻole loaʻa ka hōʻike 3D.",
+    "webglHeading": "ʻAʻole hiki iā WebGL ke hoʻomaka.",
+    "webglMsg": "Pono ka pāʻani e hoʻā ʻia ʻo WebGL ma ka polokalamu kele pūnaewele."
+  },
+  "metrics": {
+    "hoverRiskPreview": "E kau i ka ʻiole ma luna o kahi ʻāpana koho ʻia e nānā i kona pilikia koho",
+    "hoveredRiskOne": "Pilikia o ka ʻāpana ma lalo o ka ʻiole: {{risk}} kau lanakila koke",
+    "hoveredRiskMany": "Pilikia o ka ʻāpana ma lalo o ka ʻiole: {{risk}} mau kau lanakila koke",
+    "immediateWins": "Nā kau lanakila koke",
+    "latestRisk": "Pilikia koho hou loa",
+    "riskOneAI": "Pilikia o ka ʻāpana i koho ʻia e AI: {{risk}} kau lanakila koke",
+    "riskManyAI": "Pilikia o ka ʻāpana i koho ʻia e AI: {{risk}} mau kau lanakila koke",
+    "riskTurnedOff": "Ua pio ka pilikia koho",
+    "riskUnavailableAI": "ʻAʻole loaʻa ka pilikia koho ma ke ʻano AI kūʻē AI",
+    "selectionRisk": "Pilikia koho",
+    "turnRiskOff": "Hoʻopio i ka pilikia koho",
+    "turnRiskOn": "Hoʻā i ka pilikia koho"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "ʻŌlelo",
+    "search": "Huli i nā ʻōlelo",
+    "empty": "ʻAʻohe ʻōlelo i loaʻa",
+    "close": "Pani"
+  }
+}

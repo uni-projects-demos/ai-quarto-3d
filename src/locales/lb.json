@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interaktiv 3D-Interface vum Quarto-Brietspill mat Three.js an der Negamax-Versioun vum Minimax-Algorithmus fir kënschtlech Intelligenz mat Alpha-Beta-Pruning. Spill Spiller géint Spiller, Spiller géint KI a KI géint KI mat einfacher, mëttlerer a schwéierer KI.",
     "ogDescription": "Interaktivt 3D Quarto-Brietspill. Spill Spiller géint Spiller, Spiller géint KI a KI géint KI mat einfacher, mëttlerer a schwéierer KI."
+  },
+  "language": {
+    "label": "Sprooch",
+    "search": "Sich Sproochen",
+    "empty": "Keng Sprooche fonnt",
+    "close": "Zoumaachen"
   }
 }

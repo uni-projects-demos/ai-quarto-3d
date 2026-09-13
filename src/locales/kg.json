@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Mbongisama yina me katuka na",
+    "newGame": "Nsaka ya mpa"
+  },
+  "common": {
+    "on": "KANGULA",
+    "off": "KANGA"
+  },
+  "a11y": {
+    "utilityActions": "Bansinga ya programme mpi ndinga",
+    "viewSource": "Tala source na GitHub",
+    "gameControls": "Bantwadisi ya nsaka",
+    "gameBoard": "Mesa ya nsaka 3D",
+    "gameInfo": "Bansangu ya nsaka"
+  },
+  "controls": {
+    "diffAI": "Mpasi ya AI",
+    "diffPlayerOneAI": "Mpasi ya P1",
+    "diffPlayerTwoAI": "Mpasi ya P2",
+    "startingPlayer": "Nsani yina ke yantika",
+    "gameMode": "Mutindu ya nsaka",
+    "pauseAI": "Telemisa AI",
+    "resumeAI": "Landisa AI",
+    "undo": "Katula",
+    "redo": "Vutula"
+  },
+  "diff": {
+    "easy": "Pete",
+    "medium": "Kati-kati",
+    "hard": "Mpasi"
+  },
+  "mode": {
+    "userVsUser": "Muntu na muntu",
+    "userVsAI": "Muntu na AI",
+    "onlyAI": "AI na AI"
+  },
+  "player": {
+    "playerYou": "Nge",
+    "playerOne": "Nsani Mosi",
+    "playerTwo": "Nsani Zole",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Na nkama",
+    "playerAIPlayer": "Nsani AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Mambu ya nsaka...",
+    "pausedAI": "{{player}} me telema...",
+    "placingAI": "{{player}} ke sala nsaka - ke tula kitini na mesa...",
+    "placingUser": "{{player}} ke sala nsaka - Tula kitini yina nge solaka na mesa...",
+    "placeUserYou": "Nge ke sala nsaka - Tula kitini yina nge solaka na mesa...",
+    "gameDrawn": "Nsaka me mana na kiteso - nzila ya kununga kele ve",
+    "gameWon": "{{player}} me nunga - nzila ya kununga me monana",
+    "selectingAI": "{{player}} ke sala nsaka - ke sola kitini sambu na {{opponent}}...",
+    "selectUser": "{{player}} ke sala nsaka - Sola kitini sambu na {{opponent}}...",
+    "selectUserYou": "Nge ke sala nsaka - Sola kitini sambu na {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Kitini na nsaka",
+    "none": "Kima me solama ve",
+    "traits": "Bikalulu ya kitini",
+    "black": "ndombe",
+    "red": "mbwaki",
+    "big": "nene",
+    "small": "fioti",
+    "round": "ngungu",
+    "square": "kare",
+    "solid": "ngolo",
+    "hollow": "mpamba na kati"
+  },
+  "board": {
+    "binary": "Mesa binary",
+    "piecesPlaced": "Bitini yina me tulama",
+    "cellEmpty": "Kisika {{cell}}: mpamba",
+    "cellPiece": "Kisika {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Kumonisa 3D kele ve.",
+    "webglHeading": "WebGL lendaka ve kuyantika.",
+    "webglMsg": "Nsaka ke lomba WebGL kuvanda ya kukangula na navigateur."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Tula souris na zulu ya kitini ya kusola sambu na kutala kigonsa ya nsonga",
+    "hoveredRiskOne": "Kigonsa ya kitini na nsi ya souris: {{risk}} kutula ya kununga mbala mosi",
+    "hoveredRiskMany": "Kigonsa ya kitini na nsi ya souris: {{risk}} kutula ya kununga mbala mosi",
+    "immediateWins": "Kutula ya kununga mbala mosi",
+    "latestRisk": "Kigonsa ya nsonga ya nsuka",
+    "riskOneAI": "Kigonsa ya kitini yina AI solaka: {{risk}} kutula ya kununga mbala mosi",
+    "riskManyAI": "Kigonsa ya kitini yina AI solaka: {{risk}} kutula ya kununga mbala mosi",
+    "riskTurnedOff": "Kigonsa ya nsonga me kangama",
+    "riskUnavailableAI": "Kigonsa ya nsonga kele ve na mutindu AI na AI",
+    "selectionRisk": "Kigonsa ya nsonga",
+    "turnRiskOff": "Kanga kigonsa ya nsonga",
+    "turnRiskOn": "Kangula kigonsa ya nsonga"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ndinga",
+    "search": "Sosa bandinga",
+    "empty": "Ndinga mosi ve me monika",
+    "close": "Kanga"
+  }
+}

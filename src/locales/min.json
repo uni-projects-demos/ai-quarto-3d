@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Pambaharuan nan dipindahkan dari",
+    "newGame": "Main baru"
+  },
+  "common": {
+    "on": "HIDUIK",
+    "off": "MATI"
+  },
+  "a11y": {
+    "utilityActions": "Tautan aplikasi jo bahaso",
+    "viewSource": "Liek sumber di GitHub",
+    "gameControls": "Kontrol main",
+    "gameBoard": "Papan main 3D",
+    "gameInfo": "Informasi main"
+  },
+  "controls": {
+    "diffAI": "Kasulitan AI",
+    "diffPlayerOneAI": "Kasulitan P1",
+    "diffPlayerTwoAI": "Kasulitan P2",
+    "startingPlayer": "Pemain nan mulai",
+    "gameMode": "Mode main",
+    "pauseAI": "Jeda AI",
+    "resumeAI": "Lanjuikkan AI",
+    "undo": "Batalan",
+    "redo": "Ulangi"
+  },
+  "diff": {
+    "easy": "Mudah",
+    "medium": "Sadang",
+    "hard": "Sulik"
+  },
+  "mode": {
+    "userVsUser": "Pangguno lawan pangguno",
+    "userVsAI": "Pangguno lawan AI",
+    "onlyAI": "AI lawan AI"
+  },
+  "player": {
+    "playerYou": "Ang",
+    "playerOne": "Pemain Satu",
+    "playerTwo": "Pemain Duo",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Acak",
+    "playerAIPlayer": "Pemain AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Status main...",
+    "pausedAI": "{{player}} sadang dijeda...",
+    "placingAI": "{{player}} sadang main - malatak potongan di papan...",
+    "placingUser": "{{player}} sadang main - Latakkan potongan nan dipiliah di papan...",
+    "placeUserYou": "Ang sadang main - Latakkan potongan nan dipiliah di papan...",
+    "gameDrawn": "Main sari - indak ado garis manang",
+    "gameWon": "{{player}} manang - garis manang disorot",
+    "selectingAI": "{{player}} sadang main - mamiliah potongan untuak {{opponent}}...",
+    "selectUser": "{{player}} sadang main - Piliah potongan untuak {{opponent}}...",
+    "selectUserYou": "Ang sadang main - Piliah potongan untuak {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Potongan dalam main",
+    "none": "Indak ado nan dipiliah",
+    "traits": "Sifat potongan",
+    "black": "itam",
+    "red": "sirah",
+    "big": "gadang",
+    "small": "ketek",
+    "round": "bulek",
+    "square": "persegi",
+    "solid": "padek",
+    "hollow": "barongga"
+  },
+  "board": {
+    "binary": "Papan biner",
+    "piecesPlaced": "Potongan nan talatak",
+    "cellEmpty": "Sel {{cell}}: kosong",
+    "cellPiece": "Sel {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Rendering 3D indak tasadio.",
+    "webglHeading": "WebGL indak bisa dimulai.",
+    "webglMsg": "Main mambutuahkan WebGL diaktifkan di browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Arahkan kursor ka potongan nan bisa dipiliah untuak mancaliak risiko pemilihan",
+    "hoveredRiskOne": "Risiko potongan di bawah kursor: {{risk}} posisi manang langsung",
+    "hoveredRiskMany": "Risiko potongan di bawah kursor: {{risk}} posisi manang langsung",
+    "immediateWins": "Posisi manang langsung",
+    "latestRisk": "Risiko pemilihan tarakhir",
+    "riskOneAI": "Risiko potongan nan dipiliah AI: {{risk}} posisi manang langsung",
+    "riskManyAI": "Risiko potongan nan dipiliah AI: {{risk}} posisi manang langsung",
+    "riskTurnedOff": "Risiko pemilihan dimatikan",
+    "riskUnavailableAI": "Risiko pemilihan indak tasadio di mode AI lawan AI",
+    "selectionRisk": "Risiko pemilihan",
+    "turnRiskOff": "Matikan risiko pemilihan",
+    "turnRiskOn": "Hiduikkan risiko pemilihan"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Baso",
+    "search": "Cari baso",
+    "empty": "Indak ado baso nan ditemukan",
+    "close": "Tutuik"
+  }
+}

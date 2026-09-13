@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Un migliuramentu purtatu di",
+    "newGame": "Ghjocu novu"
+  },
+  "common": {
+    "on": "ATTIVU",
+    "off": "DISATTIVU"
+  },
+  "a11y": {
+    "utilityActions": "Ligami di l'applicazione è lingua",
+    "viewSource": "Vede u codice fonte nant'à GitHub",
+    "gameControls": "Cuntrolli di u ghjocu",
+    "gameBoard": "Tavulone di ghjocu 3D",
+    "gameInfo": "Infurmazione di u ghjocu"
+  },
+  "controls": {
+    "diffAI": "Difficultà AI",
+    "diffPlayerOneAI": "Difficultà P1",
+    "diffPlayerTwoAI": "Difficultà P2",
+    "startingPlayer": "Ghjucatore iniziale",
+    "gameMode": "Modu di ghjocu",
+    "pauseAI": "Mette AI in pausa",
+    "resumeAI": "Ripiglià AI",
+    "undo": "Annullà",
+    "redo": "Rifà"
+  },
+  "diff": {
+    "easy": "Facile",
+    "medium": "Mediu",
+    "hard": "Difficile"
+  },
+  "mode": {
+    "userVsUser": "Utilizatore vs utilizatore",
+    "userVsAI": "Utilizatore vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Tù",
+    "playerOne": "Ghjucatore Unu",
+    "playerTwo": "Ghjucatore Dui",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Casuale",
+    "playerAIPlayer": "Ghjucatore AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Statu di u ghjocu...",
+    "pausedAI": "{{player}} hè in pausa...",
+    "placingAI": "{{player}} ghjoca - mette a pezza nant'à u tavulone...",
+    "placingUser": "{{player}} ghjoca - Mette a pezza scelta nant'à u tavulone...",
+    "placeUserYou": "Stai ghjucendu - Mette a pezza scelta nant'à u tavulone...",
+    "gameDrawn": "Partita patta - nisuna linea vincente",
+    "gameWon": "{{player}} vince - linea vincente evidenziata",
+    "selectingAI": "{{player}} ghjoca - sceglie una pezza per {{opponent}}...",
+    "selectUser": "{{player}} ghjoca - Sceglie una pezza per {{opponent}}...",
+    "selectUserYou": "Stai ghjucendu - Sceglie una pezza per {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pezza in ghjocu",
+    "none": "Nunda sceltu",
+    "traits": "Caratteristiche di a pezza",
+    "black": "neru",
+    "red": "rossu",
+    "big": "grande",
+    "small": "chjucu",
+    "round": "tondu",
+    "square": "quadratu",
+    "solid": "pienu",
+    "hollow": "cavu"
+  },
+  "board": {
+    "binary": "Tavulone binariu",
+    "piecesPlaced": "Pezze piazzate",
+    "cellEmpty": "Casella {{cell}}: viota",
+    "cellPiece": "Casella {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "U rendering 3D ùn hè micca dispunibule.",
+    "webglHeading": "WebGL ùn hà pussutu principià.",
+    "webglMsg": "U ghjocu richiede WebGL attivatu in u navigatore."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Passa sopra una pezza selezziunabile per vede in anteprima u risicu di selezzione",
+    "hoveredRiskOne": "Risicu di a pezza sottu u puntatore: {{risk}} piazzamentu vincente immediatu",
+    "hoveredRiskMany": "Risicu di a pezza sottu u puntatore: {{risk}} piazzamenti vincenti immediati",
+    "immediateWins": "Piazzamenti vincenti immediati",
+    "latestRisk": "Ultimu risicu di selezzione",
+    "riskOneAI": "Risicu di a pezza scelta da AI: {{risk}} piazzamentu vincente immediatu",
+    "riskManyAI": "Risicu di a pezza scelta da AI: {{risk}} piazzamenti vincenti immediati",
+    "riskTurnedOff": "U risicu di selezzione hè disattivatu",
+    "riskUnavailableAI": "U risicu di selezzione ùn hè dispunibule in modu AI vs AI",
+    "selectionRisk": "Risicu di selezzione",
+    "turnRiskOff": "Disattivà u risicu di selezzione",
+    "turnRiskOn": "Attivà u risicu di selezzione"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lingua",
+    "search": "Circà lingue",
+    "empty": "Nisuna lingua truvata",
+    "close": "Chjode"
+  }
+}

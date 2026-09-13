@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Un melioration portate de",
+    "newGame": "Nove joco"
+  },
+  "common": {
+    "on": "ACTIVE",
+    "off": "INACTIVE"
+  },
+  "a11y": {
+    "utilityActions": "Ligamines del application e lingua",
+    "viewSource": "Vider le codice fonte sur GitHub",
+    "gameControls": "Controles del joco",
+    "gameBoard": "Tabuliero de joco 3D",
+    "gameInfo": "Information del joco"
+  },
+  "controls": {
+    "diffAI": "Difficultate del AI",
+    "diffPlayerOneAI": "Difficultate P1",
+    "diffPlayerTwoAI": "Difficultate P2",
+    "startingPlayer": "Jocator initial",
+    "gameMode": "Modo de joco",
+    "pauseAI": "Pausar AI",
+    "resumeAI": "Reprender AI",
+    "undo": "Disfacer",
+    "redo": "Refacer"
+  },
+  "diff": {
+    "easy": "Facile",
+    "medium": "Medie",
+    "hard": "Difficile"
+  },
+  "mode": {
+    "userVsUser": "Usator contra usator",
+    "userVsAI": "Usator contra AI",
+    "onlyAI": "AI contra AI"
+  },
+  "player": {
+    "playerYou": "Tu",
+    "playerOne": "Jocator Uno",
+    "playerTwo": "Jocator Duo",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Aleatori",
+    "playerAIPlayer": "Jocator AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Stato del joco...",
+    "pausedAI": "{{player}} es pausate...",
+    "placingAI": "{{player}} joca - placia un pecia sur le tabuliero...",
+    "placingUser": "{{player}} joca - Placia le pecia seligite sur le tabuliero...",
+    "placeUserYou": "Tu joca - Placia le pecia seligite sur le tabuliero...",
+    "gameDrawn": "Joco in empate - nulle linea victoriose",
+    "gameWon": "{{player}} ganiar - linea victoriose evidentiate",
+    "selectingAI": "{{player}} joca - selige un pecia pro {{opponent}}...",
+    "selectUser": "{{player}} joca - Selige un pecia pro {{opponent}}...",
+    "selectUserYou": "Tu joca - Selige un pecia pro {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pecia in joco",
+    "none": "Nihil seligite",
+    "traits": "Characteristicas del pecia",
+    "black": "nigre",
+    "red": "rubie",
+    "big": "grande",
+    "small": "parve",
+    "round": "ronde",
+    "square": "quadrate",
+    "solid": "solide",
+    "hollow": "cave"
+  },
+  "board": {
+    "binary": "Tabuliero binari",
+    "piecesPlaced": "Pecias placiate",
+    "cellEmpty": "Cellula {{cell}}: vacue",
+    "cellPiece": "Cellula {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Le rendition 3D non es disponibile.",
+    "webglHeading": "WebGL non poteva initiar.",
+    "webglMsg": "Le joco require que WebGL sia activate in le navigator."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Passa le cursor super un pecia seligibile pro previsualisar su risco de selection",
+    "hoveredRiskOne": "Risco del pecia sub le cursor: {{risk}} placement victoriose immediate",
+    "hoveredRiskMany": "Risco del pecia sub le cursor: {{risk}} placements victoriose immediate",
+    "immediateWins": "Placements victoriose immediate",
+    "latestRisk": "Ultime risco de selection",
+    "riskOneAI": "Risco del pecia seligite per AI: {{risk}} placement victoriose immediate",
+    "riskManyAI": "Risco del pecia seligite per AI: {{risk}} placements victoriose immediate",
+    "riskTurnedOff": "Le risco de selection es disactivate",
+    "riskUnavailableAI": "Risco de selection indisponibile in modo AI contra AI",
+    "selectionRisk": "Risco de selection",
+    "turnRiskOff": "Disactivar risco de selection",
+    "turnRiskOn": "Activar risco de selection"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lingua",
+    "search": "Cercar linguas",
+    "empty": "Nulle lingua trovate",
+    "close": "Clauder"
+  }
+}

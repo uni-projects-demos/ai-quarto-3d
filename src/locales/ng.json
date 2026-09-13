@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ombongarero ya etwa mo okuza",
+    "newGame": "Omutambo omupe"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Omakwatathano goprograama nelaka",
+    "viewSource": "Tala source mo GitHub",
+    "gameControls": "Omakontrola gomutambo",
+    "gameBoard": "Oshipelende shomutambo 3D",
+    "gameInfo": "Uuyelele womutambo"
+  },
+  "controls": {
+    "diffAI": "Uudhigu wa AI",
+    "diffPlayerOneAI": "Uudhigu wa P1",
+    "diffPlayerTwoAI": "Uudhigu wa P2",
+    "startingPlayer": "Omudani ta tameke",
+    "gameMode": "Omode yomutambo",
+    "pauseAI": "Imika AI",
+    "resumeAI": "Tsikila AI",
+    "undo": "Galula",
+    "redo": "Longa natango"
+  },
+  "diff": {
+    "easy": "Shipupu",
+    "medium": "Pokatati",
+    "hard": "Shidhigu"
+  },
+  "mode": {
+    "userVsUser": "Omulongifi na omulongifi",
+    "userVsAI": "Omulongifi na AI",
+    "onlyAI": "AI na AI"
+  },
+  "player": {
+    "playerYou": "Ove",
+    "playerOne": "Omudani Gumwe",
+    "playerTwo": "Omudani Guvali",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Otashi ningi",
+    "playerAIPlayer": "Omudani wa AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Onghalo yomutambo...",
+    "pausedAI": "{{player}} okwa imikwa...",
+    "placingAI": "{{player}} ota dana - ta tula oshinima koshipelende...",
+    "placingUser": "{{player}} ota dana - Tula oshinima sha hogololwa koshipelende...",
+    "placeUserYou": "Ove oto dana - Tula oshinima sha hogololwa koshipelende...",
+    "gameDrawn": "Omutambo gwa thikana - kapena omukweyo gwokuwina",
+    "gameWon": "{{player}} okwa wina - omukweyo gwokuwina gwa yandjwa",
+    "selectingAI": "{{player}} ota dana - ta hogolola oshinima sha {{opponent}}...",
+    "selectUser": "{{player}} ota dana - Hogolola oshinima sha {{opponent}}...",
+    "selectUserYou": "Ove oto dana - Hogolola oshinima sha {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Oshinima momutambo",
+    "none": "Kapena sha hogololwa",
+    "traits": "Iikando yoshinima",
+    "black": "shiluudhe",
+    "red": "shitilyana",
+    "big": "shinene",
+    "small": "shishona",
+    "round": "shimwelele",
+    "square": "square",
+    "solid": "solid",
+    "hollow": "hollow"
+  },
+  "board": {
+    "binary": "Oshipelende binary",
+    "piecesPlaced": "Iinima ya tulwa",
+    "cellEmpty": "Cell {{cell}}: oshali",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering kayili po.",
+    "webglHeading": "WebGL kashi pondola okutameka.",
+    "webglMsg": "Omutambo ogwa pumbwa WebGL yi kale ON mo browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Tula mouse kombanda yoshinima sha hogololwa opo u tale selection risk",
+    "hoveredRiskOne": "Risk yoshinima shi li kombanda: {{risk}} winning placement mbala imwe",
+    "hoveredRiskMany": "Risk yoshinima shi li kombanda: {{risk}} winning placements mbala imwe",
+    "immediateWins": "Winning placements mbala imwe",
+    "latestRisk": "Selection risk ya hugunina",
+    "riskOneAI": "Risk yoshinima sha hogololwa ku AI: {{risk}} winning placement mbala imwe",
+    "riskManyAI": "Risk yoshinima sha hogololwa ku AI: {{risk}} winning placements mbala imwe",
+    "riskTurnedOff": "Selection risk oya dimwa",
+    "riskUnavailableAI": "Selection risk kayili po mo AI na AI mode",
+    "selectionRisk": "Selection risk",
+    "turnRiskOff": "Dima selection risk",
+    "turnRiskOn": "Kwatha selection risk"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Elaka",
+    "search": "Konga omalaka",
+    "empty": "Kape na elaka lya monika",
+    "close": "Edhila"
+  }
+}

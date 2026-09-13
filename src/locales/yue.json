@@ -99,5 +99,11 @@
   "metadata": {
     "description": "使用 Three.js 同帶 alpha-beta 剪枝嘅 Minimax 人工智能算法 Negamax 版本製作嘅互動式 3D Quarto 棋盤遊戲介面。可以玩用戶對用戶、用戶對 AI 同 AI 對 AI，並有容易、中等同困難 AI 難度。",
     "ogDescription": "互動式 3D Quarto 棋盤遊戲。可以玩用戶對用戶、用戶對 AI 同 AI 對 AI，並有容易、中等同困難 AI 難度。"
+  },
+  "language": {
+    "label": "語言",
+    "search": "搜尋語言",
+    "empty": "搵唔到語言",
+    "close": "閂咗"
   }
 }

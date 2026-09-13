@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Дараахаас зөөвөрлөж сайжруулсан хувилбар",
+    "newGame": "Шинэ тоглоом"
+  },
+  "common": {
+    "on": "АСААЛТТАЙ",
+    "off": "УНТРААЛТТАЙ"
+  },
+  "a11y": {
+    "utilityActions": "Аппын холбоос ба хэл",
+    "viewSource": "Эх кодыг GitHub дээр үзэх",
+    "gameControls": "Тоглоомын удирдлага",
+    "gameBoard": "3D тоглоомын самбар",
+    "gameInfo": "Тоглоомын мэдээлэл"
+  },
+  "controls": {
+    "diffAI": "AI-ийн хүндрэл",
+    "diffPlayerOneAI": "P1-ийн хүндрэл",
+    "diffPlayerTwoAI": "P2-ийн хүндрэл",
+    "startingPlayer": "Эхлэх тоглогч",
+    "gameMode": "Тоглоомын горим",
+    "pauseAI": "AI-г түр зогсоох",
+    "resumeAI": "AI-г үргэлжлүүлэх",
+    "undo": "Буцаах",
+    "redo": "Дахин хийх"
+  },
+  "diff": {
+    "easy": "Хялбар",
+    "medium": "Дунд",
+    "hard": "Хэцүү"
+  },
+  "mode": {
+    "userVsUser": "Хэрэглэгч хэрэглэгчийн эсрэг",
+    "userVsAI": "Хэрэглэгч AI-ийн эсрэг",
+    "onlyAI": "AI AI-ийн эсрэг"
+  },
+  "player": {
+    "playerYou": "Та",
+    "playerOne": "Нэгдүгээр тоглогч",
+    "playerTwo": "Хоёрдугаар тоглогч",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Санамсаргүй",
+    "playerAIPlayer": "AI тоглогч",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Тоглоомын төлөв...",
+    "pausedAI": "{{player}} түр зогссон...",
+    "placingAI": "{{player}} тоглож байна — дүрсийг самбарт байрлуулж байна...",
+    "placingUser": "{{player}} тоглож байна — сонгосон дүрсийг самбарт байрлуулна уу...",
+    "placeUserYou": "Та тоглож байна — сонгосон дүрсийг самбарт байрлуулна уу...",
+    "gameDrawn": "Тэнцээ — хожлын шугам алга",
+    "gameWon": "{{player}} хожлоо — хожлын шугамыг тодрууллаа",
+    "selectingAI": "{{player}} тоглож байна — {{opponent}}-д зориулж дүрс сонгож байна...",
+    "selectUser": "{{player}} тоглож байна — {{opponent}}-д зориулж дүрс сонгоно уу...",
+    "selectUserYou": "Та тоглож байна — {{opponent}}-д зориулж дүрс сонгоно уу..."
+  },
+  "piece": {
+    "inPlay": "Тоглож буй дүрс",
+    "none": "Юу ч сонгоогүй",
+    "traits": "Дүрсний шинж",
+    "black": "хар",
+    "red": "улаан",
+    "big": "том",
+    "small": "жижиг",
+    "round": "дугуй",
+    "square": "дөрвөлжин",
+    "solid": "битүү",
+    "hollow": "хөндий"
+  },
+  "board": {
+    "binary": "Хоёртын самбар",
+    "piecesPlaced": "Байрлуулсан дүрсүүд",
+    "cellEmpty": "Нүд {{cell}}: хоосон",
+    "cellPiece": "Нүд {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D дүрслэл боломжгүй.",
+    "webglHeading": "WebGL эхэлж чадсангүй.",
+    "webglMsg": "Тоглоомд браузер дээр WebGL идэвхтэй байх шаардлагатай."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Сонголтын эрсдэлийг харахын тулд сонгож болох дүрсэн дээр курсорыг аваачна уу",
+    "hoveredRiskOne": "Курсорын доорх дүрсний эрсдэл: {{risk}} шууд хожих байрлал",
+    "hoveredRiskMany": "Курсорын доорх дүрсний эрсдэл: {{risk}} шууд хожих байрлалууд",
+    "immediateWins": "Шууд хожих байрлалууд",
+    "latestRisk": "Сүүлийн сонголтын эрсдэл",
+    "riskOneAI": "AI-ийн сонгосон дүрсний эрсдэл: {{risk}} шууд хожих байрлал",
+    "riskManyAI": "AI-ийн сонгосон дүрсний эрсдэл: {{risk}} шууд хожих байрлалууд",
+    "riskTurnedOff": "Сонголтын эрсдэл унтраалттай",
+    "riskUnavailableAI": "Сонголтын эрсдэл AI AI-ийн эсрэг горимд боломжгүй",
+    "selectionRisk": "Сонголтын эрсдэл",
+    "turnRiskOff": "Сонголтын эрсдэлийг унтраах",
+    "turnRiskOn": "Сонголтын эрсдэлийг асаах"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Хэл",
+    "search": "Хэл хайх",
+    "empty": "Ямар ч хэл олдсонгүй",
+    "close": "Хаах"
+  }
+}

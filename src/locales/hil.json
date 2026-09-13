@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Isa ka gin-port nga pagpaayo sang",
+    "newGame": "Bag-o nga hampang"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Mga link sang aplikasyon kag hambal",
+    "viewSource": "Tan-awa ang source sa GitHub",
+    "gameControls": "Mga kontrol sang hampang",
+    "gameBoard": "3D nga board sang hampang",
+    "gameInfo": "Impormasyon sang hampang"
+  },
+  "controls": {
+    "diffAI": "Kalisod sang AI",
+    "diffPlayerOneAI": "Kalisod sang P1",
+    "diffPlayerTwoAI": "Kalisod sang P2",
+    "startingPlayer": "Manug-umpisa nga manughampang",
+    "gameMode": "Mode sang hampang",
+    "pauseAI": "I-pause ang AI",
+    "resumeAI": "Ipadayon ang AI",
+    "undo": "Undo",
+    "redo": "Redo"
+  },
+  "diff": {
+    "easy": "Mahapos",
+    "medium": "Tunga-tunga",
+    "hard": "Mabudlay"
+  },
+  "mode": {
+    "userVsUser": "User kontra user",
+    "userVsAI": "User kontra AI",
+    "onlyAI": "AI kontra AI"
+  },
+  "player": {
+    "playerYou": "Ikaw",
+    "playerOne": "Manughampang Isa",
+    "playerTwo": "Manughampang Duha",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Random",
+    "playerAIPlayer": "AI nga Manughampang",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Estado sang hampang...",
+    "pausedAI": "Naka-pause si {{player}}...",
+    "placingAI": "Nagahampang si {{player}} - nagabutang sang piyesa sa board...",
+    "placingUser": "Nagahampang si {{player}} - Ibutang ang napili nga piyesa sa board...",
+    "placeUserYou": "Nagahampang ka - Ibutang ang napili nga piyesa sa board...",
+    "gameDrawn": "Tabla ang hampang - wala sang linya nga nagdaog",
+    "gameWon": "Nagdaog si {{player}} - gin-highlight ang linya nga nagdaog",
+    "selectingAI": "Nagahampang si {{player}} - nagapili sang piyesa para kay {{opponent}}...",
+    "selectUser": "Nagahampang si {{player}} - Magpili sang piyesa para kay {{opponent}}...",
+    "selectUserYou": "Nagahampang ka - Magpili sang piyesa para kay {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Piyesa nga ginahampang",
+    "none": "Wala sang napili",
+    "traits": "Mga kinaiya sang piyesa",
+    "black": "itom",
+    "red": "pula",
+    "big": "daku",
+    "small": "gamay",
+    "round": "lingin",
+    "square": "kuwadrado",
+    "solid": "solid",
+    "hollow": "guwang"
+  },
+  "board": {
+    "binary": "Binary nga board",
+    "piecesPlaced": "Mga nabutang nga piyesa",
+    "cellEmpty": "Cell {{cell}}: wala sing sulod",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Indi magamit ang 3D rendering.",
+    "webglHeading": "Indi makasugod ang WebGL.",
+    "webglMsg": "Kinahanglan sang hampang nga naka-enable ang WebGL sa browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "I-hover ang mapilian nga piyesa para makita ang risgo sang pagpili",
+    "hoveredRiskOne": "Risgo sang gin-hover nga piyesa: {{risk}} gilayon nga winning placement",
+    "hoveredRiskMany": "Risgo sang gin-hover nga piyesa: {{risk}} gilayon nga winning placements",
+    "immediateWins": "Gilayon nga winning placements",
+    "latestRisk": "Pinakabag-o nga risgo sang pagpili",
+    "riskOneAI": "Risgo sang piyesa nga ginpili sang AI: {{risk}} gilayon nga winning placement",
+    "riskManyAI": "Risgo sang piyesa nga ginpili sang AI: {{risk}} gilayon nga winning placements",
+    "riskTurnedOff": "Gin-off ang risgo sang pagpili",
+    "riskUnavailableAI": "Indi magamit ang risgo sang pagpili sa AI kontra AI nga mode",
+    "selectionRisk": "Risgo sang pagpili",
+    "turnRiskOff": "I-off ang risgo sang pagpili",
+    "turnRiskOn": "I-on ang risgo sang pagpili"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lenggwahe",
+    "search": "Pangita sang mga lenggwahe",
+    "empty": "Wala sang lenggwahe nga nakita",
+    "close": "Sirado"
+  }
+}

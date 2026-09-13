@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Three.js እና የMinimax የሰው ሰራሽ ብልህነት አልጎርይዝም Negamax ስሪትን ከalpha-beta pruning ጋር የሚጠቀም ተግባራዊ 3D Quarto የሰሌዳ ጨዋታ UI። ተጠቃሚ ከተጠቃሚ፣ ተጠቃሚ ከAI እና AI ከAI በቀላል፣ መካከለኛ እና ከባድ AI ደረጃዎች ይጫወቱ።",
     "ogDescription": "ተግባራዊ 3D Quarto የሰሌዳ ጨዋታ። ተጠቃሚ ከተጠቃሚ፣ ተጠቃሚ ከAI እና AI ከAI በቀላል፣ መካከለኛ እና ከባድ AI ደረጃዎች ይጫወቱ።"
+  },
+  "language": {
+    "label": "ቋንቋ",
+    "search": "ቋንቋዎችን ይፈልጉ",
+    "empty": "ምንም ቋንቋዎች አልተገኙም።",
+    "close": "ዝጋ"
   }
 }

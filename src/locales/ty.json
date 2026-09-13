@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Te haamaitairaa i afa'i mai",
+    "newGame": "Ha'uti apî"
+  },
+  "common": {
+    "on": "MATARA",
+    "off": "PŌ"
+  },
+  "a11y": {
+    "utilityActions": "Tū'atira'a app e te reo",
+    "viewSource": "Hi'o i te tumu i GitHub",
+    "gameControls": "Faatereraa ha'uti",
+    "gameBoard": "Papa ha'uti 3D",
+    "gameInfo": "Ha'amaramaramaraa ha'uti"
+  },
+  "controls": {
+    "diffAI": "Fifi AI",
+    "diffPlayerOneAI": "Fifi P1",
+    "diffPlayerTwoAI": "Fifi P2",
+    "startingPlayer": "Taata ha'uti matamua",
+    "gameMode": "Huru ha'uti",
+    "pauseAI": "Faaea AI",
+    "resumeAI": "Haere faahou AI",
+    "undo": "Faaho'i",
+    "redo": "Hamani faahou"
+  },
+  "diff": {
+    "easy": "Ohie",
+    "medium": "Roto",
+    "hard": "Fifi"
+  },
+  "mode": {
+    "userVsUser": "Taata faaohipa e taata faaohipa",
+    "userVsAI": "Taata faaohipa e AI",
+    "onlyAI": "AI e AI"
+  },
+  "player": {
+    "playerYou": "Oe",
+    "playerOne": "Taata Ha'uti Hoê",
+    "playerTwo": "Taata Ha'uti Piti",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Tupuraa noa",
+    "playerAIPlayer": "Taata ha'uti AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Tiaraa ha'uti...",
+    "pausedAI": "Ua faaea {{player}}...",
+    "placingAI": "Te ha'uti ra {{player}} - te tuu ra i te tuhaa i nia i te papa...",
+    "placingUser": "Te ha'uti ra {{player}} - tuu i te tuhaa i ma'itihia i nia i te papa...",
+    "placeUserYou": "Te ha'uti ra oe - tuu i te tuhaa i ma'itihia i nia i te papa...",
+    "gameDrawn": "Aifaito te ha'uti - aita e reni upooti'a",
+    "gameWon": "Ua upooti'a {{player}} - ua faaitehia te reni upooti'a",
+    "selectingAI": "Te ha'uti ra {{player}} - te ma'iti ra i te tuhaa na {{opponent}}...",
+    "selectUser": "Te ha'uti ra {{player}} - ma'iti i te tuhaa na {{opponent}}...",
+    "selectUserYou": "Te ha'uti ra oe - ma'iti i te tuhaa na {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Tuhaa i roto i te ha'uti",
+    "none": "Aita e mea i ma'itihia",
+    "traits": "Huru o te tuhaa",
+    "black": "ereere",
+    "red": "uteute",
+    "big": "rahi",
+    "small": "iti",
+    "round": "menemene",
+    "square": "maha",
+    "solid": "paari",
+    "hollow": "puaa"
+  },
+  "board": {
+    "binary": "Papa binary",
+    "piecesPlaced": "Te mau tuhaa i tuuhia",
+    "cellEmpty": "Piha {{cell}}: aore",
+    "cellPiece": "Piha {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Aita te faaiteiteraa 3D e vai ra.",
+    "webglHeading": "Aita WebGL i nehenehe e haamata.",
+    "webglMsg": "E titau te ha'uti ia matara WebGL i roto i te browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Tuu i te cursor i nia i te tuhaa e nehenehe e ma'iti no te hi'o i te ati o te ma'itiraa",
+    "hoveredRiskOne": "Ati o te tuhaa i raro i te cursor: {{risk}} vahi upooti'a oioi",
+    "hoveredRiskMany": "Ati o te tuhaa i raro i te cursor: {{risk}} mau vahi upooti'a oioi",
+    "immediateWins": "Mau vahi upooti'a oioi",
+    "latestRisk": "Ati ma'itiraa hopea",
+    "riskOneAI": "Ati o te tuhaa i ma'itihia e AI: {{risk}} vahi upooti'a oioi",
+    "riskManyAI": "Ati o te tuhaa i ma'itihia e AI: {{risk}} mau vahi upooti'a oioi",
+    "riskTurnedOff": "Ua po te ati ma'itiraa",
+    "riskUnavailableAI": "Aita te ati ma'itiraa e vai i te AI e AI",
+    "selectionRisk": "Ati ma'itiraa",
+    "turnRiskOff": "Po te ati ma'itiraa",
+    "turnRiskOn": "Matara te ati ma'itiraa"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Reo",
+    "search": "Rapu reo",
+    "empty": "Aita e reo i itehia",
+    "close": "Pani"
+  }
+}

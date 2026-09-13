@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Mae govad ad-dannen",
+    "newGame": "Gêm gwain"
+  },
+  "common": {
+    "on": "CALAD",
+    "off": "DÚATH"
+  },
+  "a11y": {
+    "utilityActions": "Nauth app a lam",
+    "viewSource": "Tiro i thond vi GitHub",
+    "gameControls": "Tengwath gêm",
+    "gameBoard": "3D talaf gêm",
+    "gameInfo": "Tîw gêm"
+  },
+  "controls": {
+    "diffAI": "AI dorn",
+    "diffPlayerOneAI": "P1 dorn",
+    "diffPlayerTwoAI": "P2 dorn",
+    "startingPlayer": "Telchar minui",
+    "gameMode": "Gêm ven",
+    "pauseAI": "Daro AI",
+    "resumeAI": "Men AI",
+    "undo": "Dadwen",
+    "redo": "Caro ad"
+  },
+  "diff": {
+    "easy": "Faeg",
+    "medium": "Ened",
+    "hard": "Dorn"
+  },
+  "mode": {
+    "userVsUser": "Pen gwaith dan pen gwaith",
+    "userVsAI": "Pen gwaith dan AI",
+    "onlyAI": "AI dan AI"
+  },
+  "player": {
+    "playerYou": "Le",
+    "playerOne": "Telchar Minui",
+    "playerTwo": "Telchar Tadui",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Amarth",
+    "playerAIPlayer": "AI telchar",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Gêm tîw...",
+    "pausedAI": "{{player}} daro...",
+    "placingAI": "{{player}} telcha - pada ranc bo talaf...",
+    "placingUser": "{{player}} telcha - pada ranc cilen bo talaf...",
+    "placeUserYou": "Le telcha - pada ranc cilen bo talaf...",
+    "gameDrawn": "Gêm coth - ú lín narn",
+    "gameWon": "{{player}} ortha - lín narn calen",
+    "selectingAI": "{{player}} telcha - cila ranc an {{opponent}}...",
+    "selectUser": "{{player}} telcha - cilo ranc an {{opponent}}...",
+    "selectUserYou": "Le telcha - cilo ranc an {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Ranc vi gêm",
+    "none": "Ú vain cilen",
+    "traits": "Tîw ranc",
+    "black": "morn",
+    "red": "caran",
+    "big": "beleg",
+    "small": "pîn",
+    "round": "corf",
+    "square": "cant",
+    "solid": "tanc",
+    "hollow": "doll"
+  },
+  "board": {
+    "binary": "Talaf tadui",
+    "piecesPlaced": "Rench pada",
+    "cellEmpty": "Sam {{cell}}: lost",
+    "cellPiece": "Sam {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D thîw ú-vain.",
+    "webglHeading": "WebGL ú-bediant estel.",
+    "webglMsg": "Gêm boe WebGL calad vi browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Daro cursor or ranc cilen a tiro i achas ciled",
+    "hoveredRiskOne": "Achas ranc nu cursor: {{risk}} sad narn raud",
+    "hoveredRiskMany": "Achas ranc nu cursor: {{risk}} sadath narn raud",
+    "immediateWins": "Sadath narn raud",
+    "latestRisk": "Achas ciled vedui",
+    "riskOneAI": "Achas ranc cilen na AI: {{risk}} sad narn raud",
+    "riskManyAI": "Achas ranc cilen na AI: {{risk}} sadath narn raud",
+    "riskTurnedOff": "Achas ciled dúath",
+    "riskUnavailableAI": "Achas ciled ú-vain vi AI dan AI",
+    "selectionRisk": "Achas ciled",
+    "turnRiskOff": "Dúath achas ciled",
+    "turnRiskOn": "Calad achas ciled"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lam",
+    "search": "Cesta laim",
+    "empty": "Ú lam hirnen",
+    "close": "Hol"
+  }
+}

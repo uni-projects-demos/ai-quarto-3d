@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "প'ৰ্ট কৰি উন্নত কৰা ৰূপ",
+    "newGame": "নতুন খেল"
+  },
+  "common": {
+    "on": "চালু",
+    "off": "বন্ধ"
+  },
+  "a11y": {
+    "utilityActions": "এপ্লিকেচনৰ লিংক আৰু ভাষা",
+    "viewSource": "GitHub-ত উৎস চাওক",
+    "gameControls": "খেলৰ নিয়ন্ত্ৰণ",
+    "gameBoard": "3D খেলপট",
+    "gameInfo": "খেলৰ তথ্য"
+  },
+  "controls": {
+    "diffAI": "AI-ৰ কঠিনতা",
+    "diffPlayerOneAI": "P1-ৰ কঠিনতা",
+    "diffPlayerTwoAI": "P2-ৰ কঠিনতা",
+    "startingPlayer": "আৰম্ভণিৰ খেলুৱৈ",
+    "gameMode": "খেলৰ ধৰণ",
+    "pauseAI": "AI থমকাওক",
+    "resumeAI": "AI পুনৰ চলাওক",
+    "undo": "পূৰ্বাৱস্থালৈ",
+    "redo": "পুনৰ কৰক"
+  },
+  "diff": {
+    "easy": "সহজ",
+    "medium": "মধ্যম",
+    "hard": "কঠিন"
+  },
+  "mode": {
+    "userVsUser": "ব্যৱহাৰকাৰী বনাম ব্যৱহাৰকাৰী",
+    "userVsAI": "ব্যৱহাৰকাৰী বনাম AI",
+    "onlyAI": "AI বনাম AI"
+  },
+  "player": {
+    "playerYou": "আপুনি",
+    "playerOne": "খেলুৱৈ এক",
+    "playerTwo": "খেলুৱৈ দুই",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "যাদৃচ্ছিক",
+    "playerAIPlayer": "AI খেলুৱৈ",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "খেলৰ অৱস্থা...",
+    "pausedAI": "{{player}} থমকি আছে...",
+    "placingAI": "{{player}} খেলি আছে - গুটিটো পটত ৰাখিছে...",
+    "placingUser": "{{player}} খেলি আছে - নিৰ্বাচিত গুটিটো পটত ৰাখক...",
+    "placeUserYou": "আপুনি খেলি আছে - নিৰ্বাচিত গুটিটো পটত ৰাখক...",
+    "gameDrawn": "খেল ড্ৰ - বিজয়ী ৰেখা নাই",
+    "gameWon": "{{player}} জয়ী - বিজয়ী ৰেখা উজ্জ্বল কৰা হৈছে",
+    "selectingAI": "{{player}} খেলি আছে - {{opponent}}-ৰ বাবে এটা গুটি বাছি আছে...",
+    "selectUser": "{{player}} খেলি আছে - {{opponent}}-ৰ বাবে এটা গুটি বাছক...",
+    "selectUserYou": "আপুনি খেলি আছে - {{opponent}}-ৰ বাবে এটা গুটি বাছক..."
+  },
+  "piece": {
+    "inPlay": "খেলত থকা গুটি",
+    "none": "এটাও নিৰ্বাচিত নহয়",
+    "traits": "গুটিৰ বৈশিষ্ট্য",
+    "black": "ক'লা",
+    "red": "ৰঙা",
+    "big": "ডাঙৰ",
+    "small": "সৰু",
+    "round": "ঘূৰণীয়া",
+    "square": "চৌকো",
+    "solid": "ভৰ্তি",
+    "hollow": "ফোঁপোলা"
+  },
+  "board": {
+    "binary": "বাইনাৰী পট",
+    "piecesPlaced": "ৰখা গুটিসমূহ",
+    "cellEmpty": "কোষ {{cell}}: খালী",
+    "cellPiece": "কোষ {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D ৰেণ্ডাৰিং উপলব্ধ নহয়।",
+    "webglHeading": "WebGL আৰম্ভ কৰিব পৰা নগ'ল।",
+    "webglMsg": "খেলটোৰ বাবে ব্ৰাউজাৰত WebGL সক্ৰিয় থাকিব লাগিব।"
+  },
+  "metrics": {
+    "hoverRiskPreview": "নিৰ্বাচন ঝুঁকি আগতীয়াকৈ চাবলৈ বাছিব পৰা গুটিৰ ওপৰত কাৰ্ছৰ ৰাখক",
+    "hoveredRiskOne": "কাৰ্ছৰ থকা গুটিৰ ঝুঁকি: {{risk}} তাৎক্ষণিক বিজয়ী স্থান",
+    "hoveredRiskMany": "কাৰ্ছৰ থকা গুটিৰ ঝুঁকি: {{risk}} তাৎক্ষণিক বিজয়ী স্থানসমূহ",
+    "immediateWins": "তাৎক্ষণিক বিজয়ী স্থানসমূহ",
+    "latestRisk": "শেহতীয়া নিৰ্বাচন ঝুঁকি",
+    "riskOneAI": "AI-এ বাছা গুটিৰ ঝুঁকি: {{risk}} তাৎক্ষণিক বিজয়ী স্থান",
+    "riskManyAI": "AI-এ বাছা গুটিৰ ঝুঁকি: {{risk}} তাৎক্ষণিক বিজয়ী স্থানসমূহ",
+    "riskTurnedOff": "নিৰ্বাচন ঝুঁকি বন্ধ আছে",
+    "riskUnavailableAI": "AI বনাম AI ধৰণত নিৰ্বাচন ঝুঁকি উপলব্ধ নহয়",
+    "selectionRisk": "নিৰ্বাচন ঝুঁকি",
+    "turnRiskOff": "নিৰ্বাচন ঝুঁকি বন্ধ কৰক",
+    "turnRiskOn": "নিৰ্বাচন ঝুঁকি চালু কৰক"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "ভাষা",
+    "search": "ভাষা সন্ধান কৰক",
+    "empty": "কোনো ভাষা পোৱা নগ'ল",
+    "close": "বন্ধ কৰক"
+  }
+}

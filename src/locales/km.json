@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "កំណែកែលម្អដែលបានបម្លែងពី",
+    "newGame": "ហ្គេមថ្មី"
+  },
+  "common": {
+    "on": "បើក",
+    "off": "បិទ"
+  },
+  "a11y": {
+    "utilityActions": "តំណកម្មវិធី និងភាសា",
+    "viewSource": "មើលកូដប្រភពនៅ GitHub",
+    "gameControls": "ការគ្រប់គ្រងហ្គេម",
+    "gameBoard": "ក្តារហ្គេម 3D",
+    "gameInfo": "ព័ត៌មានហ្គេម"
+  },
+  "controls": {
+    "diffAI": "កម្រិតលំបាក AI",
+    "diffPlayerOneAI": "កម្រិតលំបាក P1",
+    "diffPlayerTwoAI": "កម្រិតលំបាក P2",
+    "startingPlayer": "អ្នកលេងចាប់ផ្តើម",
+    "gameMode": "របៀបហ្គេម",
+    "pauseAI": "ផ្អាក AI",
+    "resumeAI": "បន្ត AI",
+    "undo": "មិនធ្វើវិញ",
+    "redo": "ធ្វើវិញ"
+  },
+  "diff": {
+    "easy": "ងាយ",
+    "medium": "មធ្យម",
+    "hard": "លំបាក"
+  },
+  "mode": {
+    "userVsUser": "អ្នកប្រើ ទល់នឹង អ្នកប្រើ",
+    "userVsAI": "អ្នកប្រើ ទល់នឹង AI",
+    "onlyAI": "AI ទល់នឹង AI"
+  },
+  "player": {
+    "playerYou": "អ្នក",
+    "playerOne": "អ្នកលេងទីមួយ",
+    "playerTwo": "អ្នកលេងទីពីរ",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "ចៃដន្យ",
+    "playerAIPlayer": "អ្នកលេង AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "ស្ថានភាពហ្គេម...",
+    "pausedAI": "{{player}} ត្រូវបានផ្អាក...",
+    "placingAI": "{{player}} កំពុងលេង - កំពុងដាក់កូនហ្គេមលើក្តារ...",
+    "placingUser": "{{player}} កំពុងលេង - ដាក់កូនហ្គេមដែលបានជ្រើសលើក្តារ...",
+    "placeUserYou": "អ្នកកំពុងលេង - ដាក់កូនហ្គេមដែលបានជ្រើសលើក្តារ...",
+    "gameDrawn": "ហ្គេមស្មើ - គ្មានបន្ទាត់ឈ្នះ",
+    "gameWon": "{{player}} ឈ្នះ - បន្ទាត់ឈ្នះត្រូវបានរំលេច",
+    "selectingAI": "{{player}} កំពុងលេង - កំពុងជ្រើសកូនហ្គេមឱ្យ {{opponent}}...",
+    "selectUser": "{{player}} កំពុងលេង - ជ្រើសកូនហ្គេមឱ្យ {{opponent}}...",
+    "selectUserYou": "អ្នកកំពុងលេង - ជ្រើសកូនហ្គេមឱ្យ {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "កូនហ្គេមកំពុងលេង",
+    "none": "មិនបានជ្រើសអ្វីទេ",
+    "traits": "លក្ខណៈកូនហ្គេម",
+    "black": "ខ្មៅ",
+    "red": "ក្រហម",
+    "big": "ធំ",
+    "small": "តូច",
+    "round": "មូល",
+    "square": "ការ៉េ",
+    "solid": "ពេញ",
+    "hollow": "ប្រហោង"
+  },
+  "board": {
+    "binary": "ក្តារគោលពីរ",
+    "piecesPlaced": "កូនហ្គេមដែលបានដាក់",
+    "cellEmpty": "ក្រឡា {{cell}}: ទទេ",
+    "cellPiece": "ក្រឡា {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "មិនមានការបង្ហាញ 3D ទេ។",
+    "webglHeading": "WebGL មិនអាចចាប់ផ្តើមបានទេ។",
+    "webglMsg": "ហ្គេមតម្រូវឱ្យបើក WebGL នៅក្នុងកម្មវិធីរុករក។"
+  },
+  "metrics": {
+    "hoverRiskPreview": "ដាក់កណ្ដុរលើកូនហ្គេមដែលអាចជ្រើស ដើម្បីមើលហានិភ័យនៃការជ្រើស",
+    "hoveredRiskOne": "ហានិភ័យកូនហ្គេមក្រោមកណ្ដុរ៖ {{risk}} ទីតាំងឈ្នះភ្លាមៗ",
+    "hoveredRiskMany": "ហានិភ័យកូនហ្គេមក្រោមកណ្ដុរ៖ {{risk}} ទីតាំងឈ្នះភ្លាមៗ",
+    "immediateWins": "ទីតាំងឈ្នះភ្លាមៗ",
+    "latestRisk": "ហានិភ័យជ្រើសចុងក្រោយ",
+    "riskOneAI": "ហានិភ័យកូនហ្គេមដែល AI ជ្រើស៖ {{risk}} ទីតាំងឈ្នះភ្លាមៗ",
+    "riskManyAI": "ហានិភ័យកូនហ្គេមដែល AI ជ្រើស៖ {{risk}} ទីតាំងឈ្នះភ្លាមៗ",
+    "riskTurnedOff": "ហានិភ័យនៃការជ្រើសត្រូវបានបិទ",
+    "riskUnavailableAI": "ហានិភ័យនៃការជ្រើសមិនមានក្នុងរបៀប AI ទល់នឹង AI",
+    "selectionRisk": "ហានិភ័យនៃការជ្រើស",
+    "turnRiskOff": "បិទហានិភ័យនៃការជ្រើស",
+    "turnRiskOn": "បើកហានិភ័យនៃការជ្រើស"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "ភាសា",
+    "search": "ស្វែងរកភាសា",
+    "empty": "រកមិនឃើញភាសាទេ។",
+    "close": "បិទ"
+  }
+}

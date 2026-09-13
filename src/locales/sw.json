@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Kiolesura shirikishi cha mchezo wa ubao wa Quarto wa 3D kinachotumia Three.js na toleo la Negamax la algoriti ya akili bandia ya Minimax yenye upogoaji wa alpha-beta. Cheza mtumiaji dhidi ya mtumiaji, mtumiaji dhidi ya AI na AI dhidi ya AI kwa viwango rahisi, vya wastani na vigumu vya AI.",
     "ogDescription": "Mchezo shirikishi wa ubao wa Quarto wa 3D. Cheza mtumiaji dhidi ya mtumiaji, mtumiaji dhidi ya AI na AI dhidi ya AI kwa viwango rahisi, vya wastani na vigumu vya AI."
+  },
+  "language": {
+    "label": "Lugha",
+    "search": "Tafuta lugha",
+    "empty": "Hakuna lugha zilizopatikana",
+    "close": "Funga"
   }
 }

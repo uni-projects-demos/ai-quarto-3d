@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interfície interactiva del joc de taula Quarto en 3D amb Three.js i la versió Negamax de l’algoritme d’intel·ligència artificial Minimax amb poda alfa-beta. Juga usuari contra usuari, usuari contra IA i IA contra IA, amb dificultats d’IA fàcil, mitjana i difícil.",
     "ogDescription": "Joc de taula Quarto interactiu en 3D. Juga usuari contra usuari, usuari contra IA i IA contra IA, amb dificultats d’IA fàcil, mitjana i difícil."
+  },
+  "language": {
+    "label": "Llengua",
+    "search": "Cerca idiomes",
+    "empty": "No s'han trobat llengües",
+    "close": "Tancar"
   }
 }

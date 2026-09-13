@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Šunnû ša ištu annî naṣû",
+    "newGame": "Mēlultu eššetu"
+  },
+  "common": {
+    "on": "PETÛ",
+    "off": "KAṢÛ"
+  },
+  "a11y": {
+    "utilityActions": "Kiṣrāt app u lišānu",
+    "viewSource": "Aṣṣam ina GitHub amur",
+    "gameControls": "Qātāt mēlulti",
+    "gameBoard": "Kisallu mēlulti 3D",
+    "gameInfo": "Ṭēmu ša mēlulti"
+  },
+  "controls": {
+    "diffAI": "Pušqu AI",
+    "diffPlayerOneAI": "Pušqu P1",
+    "diffPlayerTwoAI": "Pušqu P2",
+    "startingPlayer": "Mēlilum pānû",
+    "gameMode": "Šiknu mēlulti",
+    "pauseAI": "AI šapāru",
+    "resumeAI": "AI alāku",
+    "undo": "Târu",
+    "redo": "Epēšu šanîš"
+  },
+  "diff": {
+    "easy": "Qallu",
+    "medium": "Mīšlu",
+    "hard": "Pušqu"
+  },
+  "mode": {
+    "userVsUser": "Mār banî ana mār banî",
+    "userVsAI": "Mār banî ana AI",
+    "onlyAI": "AI ana AI"
+  },
+  "player": {
+    "playerYou": "Atta",
+    "playerOne": "Mēlilum Ištēn",
+    "playerTwo": "Mēlilum Šinā",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Ša qāti",
+    "playerAIPlayer": "Mēlilum AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Šiknu mēlulti...",
+    "pausedAI": "{{player}} šapir...",
+    "placingAI": "{{player}} imellul - parçam eli kisalli išakkan...",
+    "placingUser": "{{player}} imellul - parçam tebîtam eli kisalli šukun...",
+    "placeUserYou": "Atta tamellul - parçam tebîtam eli kisalli šukun...",
+    "gameDrawn": "Mēlultu mithārit - šaṭru nēmeqi ul ibašši",
+    "gameWon": "{{player}} ikšud - šaṭru nēmeqi ubburu",
+    "selectingAI": "{{player}} imellul - ana {{opponent}} parçam itebbi...",
+    "selectUser": "{{player}} imellul - ana {{opponent}} parçam tabi...",
+    "selectUserYou": "Atta tamellul - ana {{opponent}} parçam tabi..."
+  },
+  "piece": {
+    "inPlay": "Parçu ina mēlulti",
+    "none": "Mimma ul tebû",
+    "traits": "Šīmāt parṣi",
+    "black": "ṣalmu",
+    "red": "sāmu",
+    "big": "rabû",
+    "small": "ṣeḫru",
+    "round": "kippatu",
+    "square": "erbû",
+    "solid": "dannu",
+    "hollow": "nēpu"
+  },
+  "board": {
+    "binary": "Kisallu ša šinâ",
+    "piecesPlaced": "Parṣū šaknū",
+    "cellEmpty": "Bītu {{cell}}: rēqu",
+    "cellPiece": "Bītu {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Ṣalmu 3D ul bašû.",
+    "webglHeading": "WebGL ul ipte.",
+    "webglMsg": "Mēlultu WebGL ina pān browser petû tuššû."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Ana pušq ša tebûti amāri cursor eli parṣi tebûtim šukun",
+    "hoveredRiskOne": "Pušqu parṣi ša cursor elišu: {{risk}} ašru nēmeqi arḫiš",
+    "hoveredRiskMany": "Pušqu parṣi ša cursor elišu: {{risk}} ašrū nēmeqi arḫiš",
+    "immediateWins": "Ašrū nēmeqi arḫiš",
+    "latestRisk": "Pušqu tebûti arki",
+    "riskOneAI": "Pušqu parṣi ša AI itebbi: {{risk}} ašru nēmeqi arḫiš",
+    "riskManyAI": "Pušqu parṣi ša AI itebbi: {{risk}} ašrū nēmeqi arḫiš",
+    "riskTurnedOff": "Pušqu tebûti kaṣû",
+    "riskUnavailableAI": "Pušqu tebûti ina AI ana AI ul bašû",
+    "selectionRisk": "Pušqu tebûti",
+    "turnRiskOff": "Pušqu tebûti kuṣṣur",
+    "turnRiskOn": "Pušqu tebûti petû"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "lišānu",
+    "search": "lišānāti baʾû",
+    "empty": "lišānu mamma lā innamir",
+    "close": "katim"
+  }
+}

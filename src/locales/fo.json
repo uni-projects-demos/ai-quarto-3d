@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ein flutt og betrað útgáva av",
+    "newGame": "Nýtt spæl"
+  },
+  "common": {
+    "on": "Á",
+    "off": "AV"
+  },
+  "a11y": {
+    "utilityActions": "Leinki hjá forritinum og mál",
+    "viewSource": "Sí keldukotuna á GitHub",
+    "gameControls": "Spælstýring",
+    "gameBoard": "3D-spælborð",
+    "gameInfo": "Spælupplýsingar"
+  },
+  "controls": {
+    "diffAI": "AI-trupulleiki",
+    "diffPlayerOneAI": "P1-trupulleiki",
+    "diffPlayerTwoAI": "P2-trupulleiki",
+    "startingPlayer": "Byrjandi spælari",
+    "gameMode": "Spælháttur",
+    "pauseAI": "Steðga AI",
+    "resumeAI": "Halt fram við AI",
+    "undo": "Angra",
+    "redo": "Ger umaftur"
+  },
+  "diff": {
+    "easy": "Lætt",
+    "medium": "Miðal",
+    "hard": "Trupult"
+  },
+  "mode": {
+    "userVsUser": "Brúkari móti brúkara",
+    "userVsAI": "Brúkari móti AI",
+    "onlyAI": "AI móti AI"
+  },
+  "player": {
+    "playerYou": "Tú",
+    "playerOne": "Spælari eitt",
+    "playerTwo": "Spælari tvey",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Tilvildarligur",
+    "playerAIPlayer": "AI-spælari",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Spælstøða...",
+    "pausedAI": "{{player}} er steðgaður...",
+    "placingAI": "{{player}} spælir - leggur brikk á borðið...",
+    "placingUser": "{{player}} spælir - Legg valdu brikkina á borðið...",
+    "placeUserYou": "Tú spælir - Legg valdu brikkina á borðið...",
+    "gameDrawn": "Javnleikur - eingin vinnandi røð",
+    "gameWon": "{{player}} vinnur - vinnandi røðin er framhevjað",
+    "selectingAI": "{{player}} spælir - velur eina brikk til {{opponent}}...",
+    "selectUser": "{{player}} spælir - Vel eina brikk til {{opponent}}...",
+    "selectUserYou": "Tú spælir - Vel eina brikk til {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Brikk í spæli",
+    "none": "Einki valt",
+    "traits": "Eginleikar hjá brikk",
+    "black": "svørt",
+    "red": "reyð",
+    "big": "stór",
+    "small": "lítil",
+    "round": "rund",
+    "square": "fýrkantað",
+    "solid": "heil",
+    "hollow": "hol"
+  },
+  "board": {
+    "binary": "Binert borð",
+    "piecesPlaced": "Lagdar brikkir",
+    "cellEmpty": "Reitur {{cell}}: tómur",
+    "cellPiece": "Reitur {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D-vísing er ikki tøk.",
+    "webglHeading": "WebGL kundi ikki byrja.",
+    "webglMsg": "Spælið krevur, at WebGL er virkið í kaganum."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Halt músini yvir eina veljbara brikk fyri at síggja váðan við valinum",
+    "hoveredRiskOne": "Váði hjá brikkini undir músini: {{risk}} beinleiðis vinnandi plassering",
+    "hoveredRiskMany": "Váði hjá brikkini undir músini: {{risk}} beinleiðis vinnandi plasseringar",
+    "immediateWins": "Beinleiðis vinnandi plasseringar",
+    "latestRisk": "Seinasti valváði",
+    "riskOneAI": "Váði hjá AI-valdu brikkini: {{risk}} beinleiðis vinnandi plassering",
+    "riskManyAI": "Váði hjá AI-valdu brikkini: {{risk}} beinleiðis vinnandi plasseringar",
+    "riskTurnedOff": "Valváði er sløktur",
+    "riskUnavailableAI": "Valváði er ikki tøkur í AI móti AI",
+    "selectionRisk": "Valváði",
+    "turnRiskOff": "Sløkk valváða",
+    "turnRiskOn": "Tendra valváða"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Mál",
+    "search": "Leita eftir málum",
+    "empty": "Eingi mál funnin",
+    "close": "Lat aftur"
+  }
+}

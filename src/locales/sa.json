@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "अस्मात् रूपान्तरितं संवर्धनम्",
+    "newGame": "नूतनः क्रीडा"
+  },
+  "common": {
+    "on": "चालू",
+    "off": "बन्द"
+  },
+  "a11y": {
+    "utilityActions": "अनुप्रयोगस्य सूत्राणि भाषा च",
+    "viewSource": "GitHub मध्ये स्रोतं पश्यतु",
+    "gameControls": "क्रीडानियन्त्रणानि",
+    "gameBoard": "3D क्रीडाफलकम्",
+    "gameInfo": "क्रीडासूचना"
+  },
+  "controls": {
+    "diffAI": "AI कठिनता",
+    "diffPlayerOneAI": "P1 कठिनता",
+    "diffPlayerTwoAI": "P2 कठिनता",
+    "startingPlayer": "आरम्भकः क्रीडकः",
+    "gameMode": "क्रीडाप्रकारः",
+    "pauseAI": "AI विरामयतु",
+    "resumeAI": "AI पुनरारभताम्",
+    "undo": "पूर्ववत्",
+    "redo": "पुनः कुरुत"
+  },
+  "diff": {
+    "easy": "सुलभम्",
+    "medium": "मध्यमम्",
+    "hard": "कठिनम्"
+  },
+  "mode": {
+    "userVsUser": "उपयोक्ता विरुद्धम् उपयोक्ता",
+    "userVsAI": "उपयोक्ता विरुद्धम् AI",
+    "onlyAI": "AI विरुद्धम् AI"
+  },
+  "player": {
+    "playerYou": "भवान्/भवती",
+    "playerOne": "प्रथमः क्रीडकः",
+    "playerTwo": "द्वितीयः क्रीडकः",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "यादृच्छिकम्",
+    "playerAIPlayer": "AI क्रीडकः",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "क्रीडास्थितिः...",
+    "pausedAI": "{{player}} विरामे अस्ति...",
+    "placingAI": "{{player}} क्रीडति - खण्डं फलके स्थापयति...",
+    "placingUser": "{{player}} क्रीडति - चयनितं खण्डं फलके स्थापयतु...",
+    "placeUserYou": "भवान्/भवती क्रीडति - चयनितं खण्डं फलके स्थापयतु...",
+    "gameDrawn": "क्रीडा समा - विजयरेखा नास्ति",
+    "gameWon": "{{player}} जयति - विजयरेखा प्रकाशिताऽस्ति",
+    "selectingAI": "{{player}} क्रीडति - {{opponent}} कृते खण्डं चिनोति...",
+    "selectUser": "{{player}} क्रीडति - {{opponent}} कृते खण्डं चिनोतु...",
+    "selectUserYou": "भवान्/भवती क्रीडति - {{opponent}} कृते खण्डं चिनोतु..."
+  },
+  "piece": {
+    "inPlay": "क्रीडायां खण्डः",
+    "none": "किमपि न चयनितम्",
+    "traits": "खण्डस्य लक्षणानि",
+    "black": "कृष्णः",
+    "red": "रक्तः",
+    "big": "बृहत्",
+    "small": "लघु",
+    "round": "वृत्ताकारः",
+    "square": "चतुरस्रः",
+    "solid": "घनः",
+    "hollow": "सुषिरः"
+  },
+  "board": {
+    "binary": "द्विआधारी फलकम्",
+    "piecesPlaced": "स्थापिताः खण्डाः",
+    "cellEmpty": "कोष्ठः {{cell}}: रिक्तः",
+    "cellPiece": "कोष्ठः {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D चित्रणम् उपलब्धं नास्ति।",
+    "webglHeading": "WebGL आरब्धुं न शक्नोति।",
+    "webglMsg": "क्रीडायै ब्राउजरमध्ये WebGL सक्रियं भवितव्यम्।"
+  },
+  "metrics": {
+    "hoverRiskPreview": "चयनजोखिमं द्रष्टुं चयनयोग्यखण्डस्य उपरि सूचकं स्थापयतु",
+    "hoveredRiskOne": "सूचकाधीनखण्डस्य जोखिमम्: {{risk}} तत्क्षणविजयस्थानम्",
+    "hoveredRiskMany": "सूचकाधीनखण्डस्य जोखिमम्: {{risk}} तत्क्षणविजयस्थानानि",
+    "immediateWins": "तत्क्षणविजयस्थानानि",
+    "latestRisk": "नवीनतमं चयनजोखिमम्",
+    "riskOneAI": "AI-चयनितखण्डस्य जोखिमम्: {{risk}} तत्क्षणविजयस्थानम्",
+    "riskManyAI": "AI-चयनितखण्डस्य जोखिमम्: {{risk}} तत्क्षणविजयस्थानानि",
+    "riskTurnedOff": "चयनजोखिमं निष्क्रियं अस्ति",
+    "riskUnavailableAI": "AI विरुद्धम् AI प्रकारे चयनजोखिमं नोपलब्धम्",
+    "selectionRisk": "चयनजोखिमम्",
+    "turnRiskOff": "चयनजोखिमं निष्क्रियं करोतु",
+    "turnRiskOn": "चयनजोखिमं सक्रियं करोतु"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "भाषा",
+    "search": "भाषाः अन्वेष्टुम्",
+    "empty": "न भाषाः लभ्यन्ते",
+    "close": "निमील्यताम्"
+  }
+}

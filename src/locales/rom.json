@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Jekh pherdo portirimo lačharipen katar",
+    "newGame": "Nevo khelipe"
+  },
+  "common": {
+    "on": "PHANDLO",
+    "off": "MUKLO"
+  },
+  "a11y": {
+    "utilityActions": "Linkura e aplikacijake thaj čhib",
+    "viewSource": "Dikh o sursa po GitHub",
+    "gameControls": "Kontrole e khelimaske",
+    "gameBoard": "3D tabla e khelimaske",
+    "gameInfo": "Informacija e khelimaske"
+  },
+  "controls": {
+    "diffAI": "AI pharipen",
+    "diffPlayerOneAI": "P1 pharipen",
+    "diffPlayerTwoAI": "P2 pharipen",
+    "startingPlayer": "Khelari savo lel anglal",
+    "gameMode": "Modusi e khelimaske",
+    "pauseAI": "Thov AI pe pauza",
+    "resumeAI": "Džal angle AI",
+    "undo": "Palpale",
+    "redo": "Majekhvar"
+  },
+  "diff": {
+    "easy": "Lokho",
+    "medium": "Maškarutno",
+    "hard": "Pharo"
+  },
+  "mode": {
+    "userVsUser": "Korisnik mamuj korisnik",
+    "userVsAI": "Korisnik mamuj AI",
+    "onlyAI": "AI mamuj AI"
+  },
+  "player": {
+    "playerYou": "Tu",
+    "playerOne": "Jekhto khelari",
+    "playerTwo": "Dujto khelari",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Slučajno",
+    "playerAIPlayer": "AI khelari",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Statuso e khelimaske...",
+    "pausedAI": "{{player}} si pe pauza...",
+    "placingAI": "{{player}} khelel - thovel o kotor pe tabla...",
+    "placingUser": "{{player}} khelel - thov o alosardo kotor pe tabla...",
+    "placeUserYou": "Tu kheles - thov o alosardo kotor pe tabla...",
+    "gameDrawn": "O khelipe si barabar - naj linija e dživdipeske",
+    "gameWon": "{{player}} džanel - e linija e dživdipeske si sikadi",
+    "selectingAI": "{{player}} khelel - alosarel kotor vaš {{opponent}}...",
+    "selectUser": "{{player}} khelel - alosar kotor vaš {{opponent}}...",
+    "selectUserYou": "Tu kheles - alosar kotor vaš {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Kotor ando khelipe",
+    "none": "Nič nane alosardo",
+    "traits": "Svojstva e kotoreske",
+    "black": "kalo",
+    "red": "lolo",
+    "big": "baro",
+    "small": "cikno",
+    "round": "kruglo",
+    "square": "kvadrato",
+    "solid": "phandlo",
+    "hollow": "šučho"
+  },
+  "board": {
+    "binary": "Binarno tabla",
+    "piecesPlaced": "Thode kotora",
+    "cellEmpty": "Polje {{cell}}: prazno",
+    "cellPiece": "Polje {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D renderingo naj dostupno.",
+    "webglHeading": "WebGL na šaj te startuil.",
+    "webglMsg": "O khelipe mangela WebGL te avel uključime ando browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Thov o kursor pe jekh alosarutno kotor te dikhes o riziko e alosarimaske",
+    "hoveredRiskOne": "Riziko e kotoreske tele kursor: {{risk}} momentalno dživdipasko than",
+    "hoveredRiskMany": "Riziko e kotoreske tele kursor: {{risk}} momentalna dživdipaske thana",
+    "immediateWins": "Momentalna dživdipaske thana",
+    "latestRisk": "Paluno riziko e alosarimaske",
+    "riskOneAI": "Riziko e kotoreske alosardo kotar AI: {{risk}} momentalno dživdipasko than",
+    "riskManyAI": "Riziko e kotoreske alosardo kotar AI: {{risk}} momentalna dživdipaske thana",
+    "riskTurnedOff": "O riziko e alosarimaske si phandlo",
+    "riskUnavailableAI": "O riziko e alosarimaske naj dostupno ando AI mamuj AI",
+    "selectionRisk": "Riziko e alosarimaske",
+    "turnRiskOff": "Phand o riziko e alosarimaske",
+    "turnRiskOn": "Phandav o riziko e alosarimaske"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Čhib",
+    "search": "Rod čhiba",
+    "empty": "Nisavi čhib na arakhlili",
+    "close": "Phand"
+  }
+}

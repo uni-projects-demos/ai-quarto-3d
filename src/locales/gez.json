@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "እምዝ ዘተወሰደ ማሕየዊ",
+    "newGame": "ሐዲስ ጨዋታ"
+  },
+  "common": {
+    "on": "ብሩህ",
+    "off": "ጥፉእ"
+  },
+  "a11y": {
+    "utilityActions": "አስራት ዘመተግበሪ ወልሳን",
+    "viewSource": "ርአይ ምንጭ በGitHub",
+    "gameControls": "ሥርዓተ ጨዋታ",
+    "gameBoard": "3D ሰሌዳ ጨዋታ",
+    "gameInfo": "ዜና ጨዋታ"
+  },
+  "controls": {
+    "diffAI": "ጽኑዕ AI",
+    "diffPlayerOneAI": "ጽኑዕ P1",
+    "diffPlayerTwoAI": "ጽኑዕ P2",
+    "startingPlayer": "ቀዳማዊ ተጫዋቲ",
+    "gameMode": "አገባብ ጨዋታ",
+    "pauseAI": "አቁም AI",
+    "resumeAI": "ቀጽል AI",
+    "undo": "መልስ",
+    "redo": "ድገም"
+  },
+  "diff": {
+    "easy": "ቀሊል",
+    "medium": "ማእከላይ",
+    "hard": "ጽኑዕ"
+  },
+  "mode": {
+    "userVsUser": "ተጠቃሚ በተጠቃሚ",
+    "userVsAI": "ተጠቃሚ በAI",
+    "onlyAI": "AI በAI"
+  },
+  "player": {
+    "playerYou": "አንተ",
+    "playerOne": "ተጫዋቲ ፩",
+    "playerTwo": "ተጫዋቲ ፪",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "በዕድል",
+    "playerAIPlayer": "ተጫዋቲ AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "ሁኔታ ጨዋታ...",
+    "pausedAI": "{{player}} ቆሞ...",
+    "placingAI": "{{player}} ይጫወት - ክፍል በሰሌዳ ያኖር...",
+    "placingUser": "{{player}} ይጫወት - የተመረጠ ክፍል በሰሌዳ አኑር...",
+    "placeUserYou": "አንተ ትጫወት - የተመረጠ ክፍል በሰሌዳ አኑር...",
+    "gameDrawn": "ጨዋታ እኩል - የድል መስመር የለም",
+    "gameWon": "{{player}} ድል ነሣ - የድል መስመር ተገለጠ",
+    "selectingAI": "{{player}} ይጫወት - ለ{{opponent}} ክፍል ይመርጥ...",
+    "selectUser": "{{player}} ይጫወት - ለ{{opponent}} ክፍል ምረጥ...",
+    "selectUserYou": "አንተ ትጫወት - ለ{{opponent}} ክፍል ምረጥ..."
+  },
+  "piece": {
+    "inPlay": "ክፍል በጨዋታ",
+    "none": "ምንም አልተመረጠም",
+    "traits": "ባሕርያተ ክፍል",
+    "black": "ጸሊም",
+    "red": "ቀይሕ",
+    "big": "ዓቢይ",
+    "small": "ንኡስ",
+    "round": "ክቡብ",
+    "square": "አርባዕት",
+    "solid": "ጽኑዕ",
+    "hollow": "ባዶ"
+  },
+  "board": {
+    "binary": "ሰሌዳ ሁለት",
+    "piecesPlaced": "የተቀመጡ ክፍሎች",
+    "cellEmpty": "ቦታ {{cell}}: ባዶ",
+    "cellPiece": "ቦታ {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D ምስል አይገኝም።",
+    "webglHeading": "WebGL መጀመር አልቻለም።",
+    "webglMsg": "ጨዋታ WebGL በbrowser እንዲበራ ይፈልጋል።"
+  },
+  "metrics": {
+    "hoverRiskPreview": "የምርጫ አደጋ ለማየት cursor በሚመረጥ ክፍል ላይ አኑር",
+    "hoveredRiskOne": "የክፍል አደጋ ከcursor በታች: {{risk}} ፈጣን የድል ቦታ",
+    "hoveredRiskMany": "የክፍል አደጋ ከcursor በታች: {{risk}} ፈጣን የድል ቦታዎች",
+    "immediateWins": "ፈጣን የድል ቦታዎች",
+    "latestRisk": "የመጨረሻ ምርጫ አደጋ",
+    "riskOneAI": "AI የመረጠው ክፍል አደጋ: {{risk}} ፈጣን የድል ቦታ",
+    "riskManyAI": "AI የመረጠው ክፍል አደጋ: {{risk}} ፈጣን የድል ቦታዎች",
+    "riskTurnedOff": "የምርጫ አደጋ ጠፍቷል",
+    "riskUnavailableAI": "የምርጫ አደጋ በAI በAI አይገኝም",
+    "selectionRisk": "የምርጫ አደጋ",
+    "turnRiskOff": "የምርጫ አደጋ አጥፋ",
+    "turnRiskOn": "የምርጫ አደጋ አብራ"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "ልሳን",
+    "search": "ኅሥሥ አልሳን",
+    "empty": "አልቦ ልሳን ተረክበ",
+    "close": "ዕጹ"
+  }
+}

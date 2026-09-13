@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "ಇಂದ ಪೊರ್ತು ಮಲ್ಪುನ ಸುಧಾರಣೆ",
+    "newGame": "ಪೊಸ ಆಟ"
+  },
+  "common": {
+    "on": "ಆನ್",
+    "off": "ಆಫ್"
+  },
+  "a11y": {
+    "utilityActions": "ಆಪ್ ಲಿಂಕ್‌ಲು ಬೊಕ್ಕ ಬಾಸೆ",
+    "viewSource": "GitHub ದ್ ಮೂಲನು ತೂಲೆ",
+    "gameControls": "ಆಟದ ನಿಯಂತ್ರಣೊಲು",
+    "gameBoard": "3D ಆಟದ ಬೋರ್ಡ್",
+    "gameInfo": "ಆಟದ ಮಾಹಿತಿ"
+  },
+  "controls": {
+    "diffAI": "AI ಕಷ್ಟ",
+    "diffPlayerOneAI": "P1 ಕಷ್ಟ",
+    "diffPlayerTwoAI": "P2 ಕಷ್ಟ",
+    "startingPlayer": "ಸುರು ಮಲ್ಪುನ ಆಟಗಾರ",
+    "gameMode": "ಆಟದ ಮೋಡ್",
+    "pauseAI": "AI ನಿಲ್ಪಾಲೆ",
+    "resumeAI": "AI ಮುಂದುವರಿಸಾಲೆ",
+    "undo": "ಹಿಂದೆ ಮಲ್ಪುಲೆ",
+    "redo": "ಮತ್ತೆ ಮಲ್ಪುಲೆ"
+  },
+  "diff": {
+    "easy": "ಸುಲಭ",
+    "medium": "ಮಧ್ಯಮ",
+    "hard": "ಕಷ್ಟ"
+  },
+  "mode": {
+    "userVsUser": "ಬಳಕೆದಾರೆ ಎದುರು ಬಳಕೆದಾರೆ",
+    "userVsAI": "ಬಳಕೆದಾರೆ ಎದುರು AI",
+    "onlyAI": "AI ಎದುರು AI"
+  },
+  "player": {
+    "playerYou": "ಈರ್",
+    "playerOne": "ಆಟಗಾರ ಒಂಜಿ",
+    "playerTwo": "ಆಟಗಾರ ರಡ್ಡ್",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "ಯಾದೃಚ್ಛಿಕ",
+    "playerAIPlayer": "AI ಆಟಗಾರ",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "ಆಟದ ಸ್ಥಿತಿ...",
+    "pausedAI": "{{player}} ನಿಲ್ತ್‌ದ್ ಉಲ್ಲೆರ್...",
+    "placingAI": "{{player}} ಆಟೊನು ಮಲ್ಪುವೆರ್ - ತುಂಡುನು ಬೋರ್ಡ್‌ಡ್ ದೀವೆರ್...",
+    "placingUser": "{{player}} ಆಟೊನು ಮಲ್ಪುವೆರ್ - ಆಯ್ಕೆ ಮಲ್ಪಿನ ತುಂಡುನು ಬೋರ್ಡ್‌ಡ್ ದೀಲೆ...",
+    "placeUserYou": "ಈರ್ ಆಟೊನು ಮಲ್ಪುವೆರ್ - ಆಯ್ಕೆ ಮಲ್ಪಿನ ತುಂಡುನು ಬೋರ್ಡ್‌ಡ್ ದೀಲೆ...",
+    "gameDrawn": "ಆಟ ಸಮ - ಗೆಲ್ಲುನ ಸಾಲ್ ಇಜ್ಜಿ",
+    "gameWon": "{{player}} ಗೆಂಡೆರ್ - ಗೆಲ್ಲುನ ಸಾಲ್ ಗುರುತು ಮಲ್ತ್‌ದ್ ಉಂಡು",
+    "selectingAI": "{{player}} ಆಟೊನು ಮಲ್ಪುವೆರ್ - {{opponent}} ಗೆ ತುಂಡು ಆಯ್ಕೆ ಮಲ್ಪುವೆರ್...",
+    "selectUser": "{{player}} ಆಟೊನು ಮಲ್ಪುವೆರ್ - {{opponent}} ಗೆ ತುಂಡು ಆಯ್ಕೆ ಮಲ್ಪುಲೆ...",
+    "selectUserYou": "ಈರ್ ಆಟೊನು ಮಲ್ಪುವೆರ್ - {{opponent}} ಗೆ ತುಂಡು ಆಯ್ಕೆ ಮಲ್ಪುಲೆ..."
+  },
+  "piece": {
+    "inPlay": "ಆಟೊಡು ಉಪ್ಪುನ ತುಂಡು",
+    "none": "ಎಂಚಿನವೂ ಆಯ್ಕೆ ಮಲ್ತಿಜ್ಜಿ",
+    "traits": "ತುಂಡುದ ಗುಣೊಲು",
+    "black": "ಕಪ್ಪು",
+    "red": "ಕೆಂಪು",
+    "big": "ದೊಡ್ಡ",
+    "small": "ಚಿಕ್ಕ",
+    "round": "ಗುಂಡು",
+    "square": "ಚೌಕ",
+    "solid": "ಗಟ್ಟಿ",
+    "hollow": "ಟೊಳ್ಳು"
+  },
+  "board": {
+    "binary": "ಬೈನರಿ ಬೋರ್ಡ್",
+    "piecesPlaced": "ದೀತಿನ ತುಂಡುಲು",
+    "cellEmpty": "ಸೆಲ್ {{cell}}: ಖಾಲಿ",
+    "cellPiece": "ಸೆಲ್ {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D ರೆಂಡರಿಂಗ್ ಲಭ್ಯ ಇಜ್ಜಿ.",
+    "webglHeading": "WebGL ಸುರು ಆವಂದಿಜ್ಜಿ.",
+    "webglMsg": "ಆಟೊಗು ಬ್ರೌಸರ್‌ಡ್ WebGL ಆನ್ ಆದುಪ್ಪೊಡು."
+  },
+  "metrics": {
+    "hoverRiskPreview": "ಆಯ್ಕೆದ ಅಪಾಯ ತೂನಗ ಆಯ್ಕೆ ಮಲ್ಪೊಲಿ ತುಂಡುದ ಮಿತ್ತ್ ಕರ್ಸರ್ ದೀಲೆ",
+    "hoveredRiskOne": "ಕರ್ಸರ್‌ಡ್ ಉಪ್ಪುನ ತುಂಡುದ ಅಪಾಯ: {{risk}} ಕೂಡಲೆ ಗೆಲ್ಲುನ ಜಾಗ",
+    "hoveredRiskMany": "ಕರ್ಸರ್‌ಡ್ ಉಪ್ಪುನ ತುಂಡುದ ಅಪಾಯ: {{risk}} ಕೂಡಲೆ ಗೆಲ್ಲುನ ಜಾಗೊಲು",
+    "immediateWins": "ಕೂಡಲೆ ಗೆಲ್ಲುನ ಜಾಗೊಲು",
+    "latestRisk": "ಇಂಚಿನ ಆಯ್ಕೆದ ಅಪಾಯ",
+    "riskOneAI": "AI ಆಯ್ಕೆ ಮಲ್ಪಿನ ತುಂಡುದ ಅಪಾಯ: {{risk}} ಕೂಡಲೆ ಗೆಲ್ಲುನ ಜಾಗ",
+    "riskManyAI": "AI ಆಯ್ಕೆ ಮಲ್ಪಿನ ತುಂಡುದ ಅಪಾಯ: {{risk}} ಕೂಡಲೆ ಗೆಲ್ಲುನ ಜಾಗೊಲು",
+    "riskTurnedOff": "ಆಯ್ಕೆದ ಅಪಾಯ ಆಫ್ ಆದುಂಡು",
+    "riskUnavailableAI": "AI ಎದುರು AI ಮೋಡ್‌ಡ್ ಆಯ್ಕೆದ ಅಪಾಯ ಲಭ್ಯ ಇಜ್ಜಿ",
+    "selectionRisk": "ಆಯ್ಕೆದ ಅಪಾಯ",
+    "turnRiskOff": "ಆಯ್ಕೆದ ಅಪಾಯ ಆಫ್ ಮಲ್ಪುಲೆ",
+    "turnRiskOn": "ಆಯ್ಕೆದ ಅಪಾಯ ಆನ್ ಮಲ್ಪುಲೆ"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "ಭಾಷೆ",
+    "search": "ಭಾಷೆಲೆನ್ ನಾಡು",
+    "empty": "ಯಾವ ಭಾಷೆಯೂ ಸಿಕ್ಕಿಜ್ಜಿ",
+    "close": "ಮುಚ್ಚು"
+  }
+}

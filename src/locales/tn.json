@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Tokafatso e e tswang kwa",
+    "newGame": "Motshameko o mosha"
+  },
+  "common": {
+    "on": "TSHUBILWE",
+    "off": "TIMILWE"
+  },
+  "a11y": {
+    "utilityActions": "Dikgolagano tsa app le puo",
+    "viewSource": "Bona motswedi mo GitHub",
+    "gameControls": "Ditaolo tsa motshameko",
+    "gameBoard": "Boto ya motshameko ya 3D",
+    "gameInfo": "Tshedimosetso ya motshameko"
+  },
+  "controls": {
+    "diffAI": "Bokete jwa AI",
+    "diffPlayerOneAI": "Bokete jwa P1",
+    "diffPlayerTwoAI": "Bokete jwa P2",
+    "startingPlayer": "Motshameki yo o simololang",
+    "gameMode": "Mokgwa wa motshameko",
+    "pauseAI": "Emisa AI",
+    "resumeAI": "Tsweletsa AI",
+    "undo": "Dirolola",
+    "redo": "Dira gape"
+  },
+  "diff": {
+    "easy": "Bonolo",
+    "medium": "Magareng",
+    "hard": "Thata"
+  },
+  "mode": {
+    "userVsUser": "Modirisi kgatlhanong le modirisi",
+    "userVsAI": "Modirisi kgatlhanong le AI",
+    "onlyAI": "AI kgatlhanong le AI"
+  },
+  "player": {
+    "playerYou": "Wena",
+    "playerOne": "Motshameki wa Ntlha",
+    "playerTwo": "Motshameki wa Bobedi",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Ka tshoganyetso",
+    "playerAIPlayer": "Motshameki wa AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Maemo a motshameko...",
+    "pausedAI": "{{player}} o emisitswe...",
+    "placingAI": "{{player}} o a tshameka - o baya seripa mo botong...",
+    "placingUser": "{{player}} o a tshameka - baya seripa se se tlhophilweng mo botong...",
+    "placeUserYou": "O a tshameka - baya seripa se se tlhophilweng mo botong...",
+    "gameDrawn": "Motshameko o lekana - ga go mola wa phenyo",
+    "gameWon": "{{player}} o fentse - mola wa phenyo o bontshitswe",
+    "selectingAI": "{{player}} o a tshameka - o tlhophela {{opponent}} seripa...",
+    "selectUser": "{{player}} o a tshameka - tlhophela {{opponent}} seripa...",
+    "selectUserYou": "O a tshameka - tlhophela {{opponent}} seripa..."
+  },
+  "piece": {
+    "inPlay": "Seripa se se mo motshamekong",
+    "none": "Ga go se se tlhophilweng",
+    "traits": "Dipharologanyo tsa seripa",
+    "black": "ntsho",
+    "red": "khubidu",
+    "big": "kgolo",
+    "small": "nnye",
+    "round": "kgolokwe",
+    "square": "sekwere",
+    "solid": "tiile",
+    "hollow": "sekoti"
+  },
+  "board": {
+    "binary": "Boto ya binary",
+    "piecesPlaced": "Diripa tse di beilweng",
+    "cellEmpty": "Sele {{cell}}: ga e na sepe",
+    "cellPiece": "Sele {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Ponagalo ya 3D ga e teng.",
+    "webglHeading": "WebGL ga e a kgona go simolola.",
+    "webglMsg": "Motshameko o batla WebGL e tshubilwe mo sebatling."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Isa sesupi mo seripeng se se ka tlhophwang go bona kotsi ya tlhopho",
+    "hoveredRiskOne": "Kotsi ya seripa se se ka fa tlase ga sesupi: {{risk}} lefelo la phenyo ka bonako",
+    "hoveredRiskMany": "Kotsi ya seripa se se ka fa tlase ga sesupi: {{risk}} mafelo a phenyo ka bonako",
+    "immediateWins": "Mafelo a phenyo ka bonako",
+    "latestRisk": "Kotsi ya bofelo ya tlhopho",
+    "riskOneAI": "Kotsi ya seripa se AI e se tlhophileng: {{risk}} lefelo la phenyo ka bonako",
+    "riskManyAI": "Kotsi ya seripa se AI e se tlhophileng: {{risk}} mafelo a phenyo ka bonako",
+    "riskTurnedOff": "Kotsi ya tlhopho e timilwe",
+    "riskUnavailableAI": "Kotsi ya tlhopho ga e teng mo mokgweng wa AI kgatlhanong le AI",
+    "selectionRisk": "Kotsi ya tlhopho",
+    "turnRiskOff": "Tima kotsi ya tlhopho",
+    "turnRiskOn": "Tshuba kotsi ya tlhopho"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Puo",
+    "search": "Batla dipuo",
+    "empty": "Ga go puo e e bonweng",
+    "close": "Tswala"
+  }
+}

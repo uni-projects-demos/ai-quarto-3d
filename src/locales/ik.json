@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Iñuuniaqtaaq ikayuutaa",
+    "newGame": "Aŋuyaaq nutaaq"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "App-mi atautit uqausiq-lu",
+    "viewSource": "GitHub-mi source tautuk",
+    "gameControls": "Aŋuyaam aqunneqa",
+    "gameBoard": "3D aŋuyaaq papan",
+    "gameInfo": "Aŋuyaam nalunaitkutaa"
+  },
+  "controls": {
+    "diffAI": "AI saperniq",
+    "diffPlayerOneAI": "P1 saperniq",
+    "diffPlayerTwoAI": "P2 saperniq",
+    "startingPlayer": "Aullaqtitiruaq",
+    "gameMode": "Aŋuyaam mode",
+    "pauseAI": "AI unniq",
+    "resumeAI": "AI aullaqtiq",
+    "undo": "Utimut",
+    "redo": "Suli"
+  },
+  "diff": {
+    "easy": "Qaŋiq",
+    "medium": "Akuni",
+    "hard": "Saperniq"
+  },
+  "mode": {
+    "userVsUser": "Atuqti vs atuqti",
+    "userVsAI": "Atuqti vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Ilvit",
+    "playerOne": "Aŋuyaaq 1",
+    "playerTwo": "Aŋuyaaq 2",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Naliak",
+    "playerAIPlayer": "AI aŋuyaaq",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Aŋuyaam qanusia...",
+    "pausedAI": "{{player}} unniqtuq...",
+    "placingAI": "{{player}} aŋuyauq - piece papanun ilillugu...",
+    "placingUser": "{{player}} aŋuyauq - Piqsiqtuq piece papanun iliuk...",
+    "placeUserYou": "Ilvit aŋuyutin - Piqsiqtuq piece papanun iliuk...",
+    "gameDrawn": "Aŋuyaaq naligiik - win line piitchuq",
+    "gameWon": "{{player}} akimaruq - win line nalunaiqtuq",
+    "selectingAI": "{{player}} aŋuyauq - {{opponent}}-mun piece piqsiqtuq...",
+    "selectUser": "{{player}} aŋuyauq - {{opponent}}-mun piece piqsiuk...",
+    "selectUserYou": "Ilvit aŋuyutin - {{opponent}}-mun piece piqsiuk..."
+  },
+  "piece": {
+    "inPlay": "Piece aŋuyaami",
+    "none": "Piqsiq piitchuq",
+    "traits": "Piece qanusia",
+    "black": "taaq",
+    "red": "kaviq",
+    "big": "aŋiruq",
+    "small": "mikiruq",
+    "round": "akimiaq",
+    "square": "square",
+    "solid": "solid",
+    "hollow": "hollow"
+  },
+  "board": {
+    "binary": "Binary papan",
+    "piecesPlaced": "Piece ilijauhimayut",
+    "cellEmpty": "Cell {{cell}}: imaitchuq",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D tautuktitaq atuŋitchuq.",
+    "webglHeading": "WebGL aullaqtaŋitchuq.",
+    "webglMsg": "Aŋuyaaq WebGL browser-mi ON-ruksaq."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Mouse piece piqsiqtaq qaŋani aturuk selection risk tautukługu",
+    "hoveredRiskOne": "Piece qaŋani risk: {{risk}} qiñiqtuq win placement",
+    "hoveredRiskMany": "Piece qaŋani risk: {{risk}} qiñiqtuq win placements",
+    "immediateWins": "Qiñiqtuq win placements",
+    "latestRisk": "Kingulliq selection risk",
+    "riskOneAI": "AI piqsiqtaa piece risk: {{risk}} qiñiqtuq win placement",
+    "riskManyAI": "AI piqsiqtaa piece risk: {{risk}} qiñiqtuq win placements",
+    "riskTurnedOff": "Selection risk OFF",
+    "riskUnavailableAI": "AI vs AI mode-mi selection risk atuŋitchuq",
+    "selectionRisk": "Selection risk",
+    "turnRiskOff": "Selection risk OFF-ruk",
+    "turnRiskOn": "Selection risk ON-ruk"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Uqaluktuat",
+    "search": "Uqaluktuat pakak",
+    "empty": "Uqaluktuamik paqinnaitchuq",
+    "close": "Umik"
+  }
+}

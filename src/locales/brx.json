@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "पर्ट खालामनाय जौगाखां होनाय",
+    "newGame": "गोदान गेलेनाय"
+  },
+  "common": {
+    "on": "अन",
+    "off": "अफ"
+  },
+  "a11y": {
+    "utilityActions": "एप्लिकेसन लिंक आरो राव",
+    "viewSource": "GitHub आव सोर्स नाय",
+    "gameControls": "गेलेनाय कन्ट्रल",
+    "gameBoard": "3D गेलेनाय बोर्ड",
+    "gameInfo": "गेलेनाय फोरमायथिहोग्रा"
+  },
+  "controls": {
+    "diffAI": "AI गोब्राबथि",
+    "diffPlayerOneAI": "P1 गोब्राबथि",
+    "diffPlayerTwoAI": "P2 गोब्राबथि",
+    "startingPlayer": "जागायनाय गेलेग्रा",
+    "gameMode": "गेलेनाय मोड",
+    "pauseAI": "AI थाद' हो",
+    "resumeAI": "AI सोलिबाय थां",
+    "undo": "उन्डु",
+    "redo": "रिडु"
+  },
+  "diff": {
+    "easy": "गोरलै",
+    "medium": "गेजेर",
+    "hard": "गोब्राब"
+  },
+  "mode": {
+    "userVsUser": "बाहायग्रा vs बाहायग्रा",
+    "userVsAI": "बाहायग्रा vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "नों",
+    "playerOne": "गेलेग्रा से",
+    "playerTwo": "गेलेग्रा नै",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "रान्डम",
+    "playerAIPlayer": "AI गेलेग्रा",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "गेलेनाय थासारि...",
+    "pausedAI": "{{player}} थाद'खांदों...",
+    "placingAI": "{{player}} गेलेदों - बोर्डआव फिसा थिदों...",
+    "placingUser": "{{player}} गेलेदों - सायखखानाय फिसाखौ बोर्डआव थि...",
+    "placeUserYou": "नों गेलेदों - सायखखानाय फिसाखौ बोर्डआव थि...",
+    "gameDrawn": "गेलेनाय समान - जेननाय लाइन गैया",
+    "gameWon": "{{player}} जेनदों - जेननाय लाइन दिन्थिफुंदों",
+    "selectingAI": "{{player}} गेलेदों - {{opponent}} नि थाखाय फिसा सायखदों...",
+    "selectUser": "{{player}} गेलेदों - {{opponent}} नि थाखाय मोनसे फिसा सायख...",
+    "selectUserYou": "नों गेलेदों - {{opponent}} नि थाखाय मोनसे फिसा सायख..."
+  },
+  "piece": {
+    "inPlay": "गेलेनायाव थानाय फिसा",
+    "none": "जेबो सायखाखै",
+    "traits": "फिसानि आखुथाय",
+    "black": "गोसोम",
+    "red": "गोजा",
+    "big": "गेदेर",
+    "small": "फिसा",
+    "round": "बेंखन",
+    "square": "स्क्वार",
+    "solid": "गथां",
+    "hollow": "गोजौ"
+  },
+  "board": {
+    "binary": "बाइनारि बोर्ड",
+    "piecesPlaced": "थिखानाय फिसाफोर",
+    "cellEmpty": "सेल {{cell}}: लांदां",
+    "cellPiece": "सेल {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D रेन्डारिं मोननो हाया।",
+    "webglHeading": "WebGL जागायनो हायाखै।",
+    "webglMsg": "गेलेनायनि थाखाय ब्राउजाराव WebGL अन जानांगौ।"
+  },
+  "metrics": {
+    "hoverRiskPreview": "सायखनाय खैफोदखौ आगोल नायनो सायखनो हानाय फिसायाव माउस दोन",
+    "hoveredRiskOne": "माउस दोननाय फिसानि खैफोद: {{risk}} थाब जेननाय थिनाय",
+    "hoveredRiskMany": "माउस दोननाय फिसानि खैफोद: {{risk}} थाब जेननाय थिनायफोर",
+    "immediateWins": "थाब जेननाय थिनायफोर",
+    "latestRisk": "जोबथा सायखनाय खैफोद",
+    "riskOneAI": "AI सायखखानाय फिसानि खैफोद: {{risk}} थाब जेननाय थिनाय",
+    "riskManyAI": "AI सायखखानाय फिसानि खैफोद: {{risk}} थाब जेननाय थिनायफोर",
+    "riskTurnedOff": "सायखनाय खैफोद अफ खालामखांदों",
+    "riskUnavailableAI": "AI vs AI मोडआव सायखनाय खैफोद गैया",
+    "selectionRisk": "सायखनाय खैफोद",
+    "turnRiskOff": "सायखनाय खैफोद अफ खालाम",
+    "turnRiskOn": "सायखनाय खैफोद अन खालाम"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "राव",
+    "search": "राव नागिर",
+    "empty": "जेबो राव मोनाखै",
+    "close": "बन्द खालाम"
+  }
+}

@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interaktivt 3D-grensesnitt for brettspillet Quarto med Three.js og Negamax-versjonen av Minimax-algoritmen for kunstig intelligens med alfa-beta-beskjæring. Spill spiller mot spiller, spiller mot AI og AI mot AI med lett, middels og vanskelig AI.",
     "ogDescription": "Interaktivt 3D-brettspill Quarto. Spill spiller mot spiller, spiller mot AI og AI mot AI med lett, middels og vanskelig AI."
+  },
+  "language": {
+    "label": "Språk",
+    "search": "Søk etter språk",
+    "empty": "Ingen språk funnet",
+    "close": "Lukk"
   }
 }

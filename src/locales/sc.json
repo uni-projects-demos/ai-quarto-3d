@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Un megioramentu portadu dae",
+    "newGame": "Giogu nou"
+  },
+  "common": {
+    "on": "ATIVU",
+    "off": "INATIVU"
+  },
+  "a11y": {
+    "utilityActions": "Ligàmines de s'aplicatzione e limba",
+    "viewSource": "Bide su còdighe in GitHub",
+    "gameControls": "Cumandos de su giogu",
+    "gameBoard": "Tabellone de giogu 3D",
+    "gameInfo": "Informatziones de su giogu"
+  },
+  "controls": {
+    "diffAI": "Dificultade AI",
+    "diffPlayerOneAI": "Dificultade P1",
+    "diffPlayerTwoAI": "Dificultade P2",
+    "startingPlayer": "Giogadore chi cumintzat",
+    "gameMode": "Modalidade de giogu",
+    "pauseAI": "Pausa AI",
+    "resumeAI": "Continua AI",
+    "undo": "Annulla",
+    "redo": "Torra a fàghere"
+  },
+  "diff": {
+    "easy": "Fàtzile",
+    "medium": "Mèdia",
+    "hard": "Difìtzile"
+  },
+  "mode": {
+    "userVsUser": "Utente contra utente",
+    "userVsAI": "Utente contra AI",
+    "onlyAI": "AI contra AI"
+  },
+  "player": {
+    "playerYou": "Tue",
+    "playerOne": "Giogadore Unu",
+    "playerTwo": "Giogadore Duos",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "A sorte",
+    "playerAIPlayer": "Giogadore AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Istadu de su giogu...",
+    "pausedAI": "{{player}} est in pàusa...",
+    "placingAI": "{{player}} est giogende - ponende sa pedina in su tabellone...",
+    "placingUser": "{{player}} est giogende - pone sa pedina seletzionada in su tabellone...",
+    "placeUserYou": "Tue ses giogende - pone sa pedina seletzionada in su tabellone...",
+    "gameDrawn": "Giogu pàridu - peruna lìnia de vitòria",
+    "gameWon": "{{player}} bìnchit - lìnia de vitòria marcada",
+    "selectingAI": "{{player}} est giogende - seletzionende una pedina pro {{opponent}}...",
+    "selectUser": "{{player}} est giogende - seletziona una pedina pro {{opponent}}...",
+    "selectUserYou": "Tue ses giogende - seletziona una pedina pro {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pedina in giogu",
+    "none": "Peruna seletzionada",
+    "traits": "Caraterìsticas de sa pedina",
+    "black": "nieddu",
+    "red": "ruju",
+    "big": "mannu",
+    "small": "piticu",
+    "round": "tundu",
+    "square": "cuadradu",
+    "solid": "prenu",
+    "hollow": "bucau"
+  },
+  "board": {
+    "binary": "Tabellone binàriu",
+    "piecesPlaced": "Pedinas postas",
+    "cellEmpty": "Casu {{cell}}: bòidu",
+    "cellPiece": "Casu {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Sa renderizatzione 3D no est a disponimentu.",
+    "webglHeading": "WebGL no at pòdidu cumintzare.",
+    "webglMsg": "Su giogu rechiedet WebGL ativadu in su navigadore."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Passa su cursore subra una pedina seletzionàbile pro prevìdere su riscu de seletzione",
+    "hoveredRiskOne": "Riscu de sa pedina subra su cursore: {{risk}} positzione de vitòria immediata",
+    "hoveredRiskMany": "Riscu de sa pedina subra su cursore: {{risk}} positziones de vitòria immediatas",
+    "immediateWins": "Positziones de vitòria immediatas",
+    "latestRisk": "Ùrtimu riscu de seletzione",
+    "riskOneAI": "Riscu de sa pedina seletzionada dae AI: {{risk}} positzione de vitòria immediata",
+    "riskManyAI": "Riscu de sa pedina seletzionada dae AI: {{risk}} positziones de vitòria immediatas",
+    "riskTurnedOff": "Su riscu de seletzione est disativadu",
+    "riskUnavailableAI": "Su riscu de seletzione no est a disponimentu in modalidade AI contra AI",
+    "selectionRisk": "Riscu de seletzione",
+    "turnRiskOff": "Disativa su riscu de seletzione",
+    "turnRiskOn": "Ativa su riscu de seletzione"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Limba",
+    "search": "Chirca limbas",
+    "empty": "Peruna limba agatada",
+    "close": "Serra"
+  }
+}

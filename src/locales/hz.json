@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Okutjindja okuza mo",
+    "newGame": "Omuhapo omupe"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Ozondjerera zonganda no rurimi",
+    "viewSource": "Tara ombazu pu GitHub",
+    "gameControls": "Ovikongoro vyomuhapo",
+    "gameBoard": "Otjipango tjomuhapo 3D",
+    "gameInfo": "Omauzeu womuhapo"
+  },
+  "controls": {
+    "diffAI": "Ongaro ya AI",
+    "diffPlayerOneAI": "Ongaro ya P1",
+    "diffPlayerTwoAI": "Ongaro ya P2",
+    "startingPlayer": "Omuhape omuatjiti",
+    "gameMode": "Omuhapo mode",
+    "pauseAI": "Tjinda AI",
+    "resumeAI": "Kara AI ko",
+    "undo": "Tjinda okupitira",
+    "redo": "Ungurura"
+  },
+  "diff": {
+    "easy": "Ouveruke",
+    "medium": "Okatiti",
+    "hard": "Ouzeu"
+  },
+  "mode": {
+    "userVsUser": "Omundu na omundu",
+    "userVsAI": "Omundu na AI",
+    "onlyAI": "AI na AI"
+  },
+  "player": {
+    "playerYou": "Ove",
+    "playerOne": "Omuhape umwe",
+    "playerTwo": "Omuhape vari",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Tjiri nga",
+    "playerAIPlayer": "Omuhape wa AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Ongaro yomuhapo...",
+    "pausedAI": "{{player}} wa tjindirwa...",
+    "placingAI": "{{player}} u muhapo - u tura otjipuka kotjipango...",
+    "placingUser": "{{player}} u muhapo - Tura otjipuka tja toororwa kotjipango...",
+    "placeUserYou": "Ove u muhapo - Tura otjipuka tja toororwa kotjipango...",
+    "gameDrawn": "Omuhapo wa yenenwa pamwe - kapena orutuu oruwina",
+    "gameWon": "{{player}} wa wina - orutuu oruwina rwa tjanunwa",
+    "selectingAI": "{{player}} u muhapo - u toorora otjipuka tja {{opponent}}...",
+    "selectUser": "{{player}} u muhapo - Toorora otjipuka tja {{opponent}}...",
+    "selectUserYou": "Ove u muhapo - Toorora otjipuka tja {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Otjipuka mu muhapo",
+    "none": "Kape na tja toororwa",
+    "traits": "Ovitji vyotjipuka",
+    "black": "otjivapa",
+    "red": "otjihonga",
+    "big": "otjinene",
+    "small": "otjititi",
+    "round": "otjivinga",
+    "square": "otjikona",
+    "solid": "otjizuma",
+    "hollow": "otjipere"
+  },
+  "board": {
+    "binary": "Otjipango binary",
+    "piecesPlaced": "Ovipuka vya turwa",
+    "cellEmpty": "Otjikondo {{cell}}: tjina",
+    "cellPiece": "Otjikondo {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Okutjanuna 3D ku ha ri ko.",
+    "webglHeading": "WebGL ka ya yenene okutjikiza.",
+    "webglMsg": "Omuhapo u hepa WebGL i ri on kotjiserver."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Tura omouse kombanda yotjipuka tjatoororwa okutara risk yatoororo",
+    "hoveredRiskOne": "Risk yotjipuka tjiri kombanda: {{risk}} okutjita okuwina tjimanga",
+    "hoveredRiskMany": "Risk yotjipuka tjiri kombanda: {{risk}} ovitjita okuwina tjimanga",
+    "immediateWins": "Ovitjita okuwina tjimanga",
+    "latestRisk": "Risk yatoororo yokuhizira",
+    "riskOneAI": "Risk yotjipuka tja toororwa i AI: {{risk}} okutjita okuwina tjimanga",
+    "riskManyAI": "Risk yotjipuka tja toororwa i AI: {{risk}} ovitjita okuwina tjimanga",
+    "riskTurnedOff": "Risk yatoororo ya tjindirwa",
+    "riskUnavailableAI": "Risk yatoororo ka i ri ko mu AI na AI mode",
+    "selectionRisk": "Risk yatoororo",
+    "turnRiskOff": "Tjinda risk yatoororo",
+    "turnRiskOn": "Kara risk yatoororo ko"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Eraka",
+    "search": "Hinga omaraka",
+    "empty": "Kape na eraka ra monika",
+    "close": "Tjita"
+  }
+}

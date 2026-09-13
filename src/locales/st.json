@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ntlafatso e fetisitsoeng ho tloha",
+    "newGame": "Papali e ncha"
+  },
+  "common": {
+    "on": "BULETSE",
+    "off": "TIMME"
+  },
+  "a11y": {
+    "utilityActions": "Lihokelo tsa app le puo",
+    "viewSource": "Sheba mohloli ho GitHub",
+    "gameControls": "Litaolo tsa papali",
+    "gameBoard": "Boto ea papali ea 3D",
+    "gameInfo": "Tlhahisoleseling ea papali"
+  },
+  "controls": {
+    "diffAI": "Bothata ba AI",
+    "diffPlayerOneAI": "Bothata ba P1",
+    "diffPlayerTwoAI": "Bothata ba P2",
+    "startingPlayer": "Sebapali se qalang",
+    "gameMode": "Mokhoa oa papali",
+    "pauseAI": "Emisa AI",
+    "resumeAI": "Tsoela pele AI",
+    "undo": "Etsolla",
+    "redo": "Pheta"
+  },
+  "diff": {
+    "easy": "Bonolo",
+    "medium": "Mahareng",
+    "hard": "Thata"
+  },
+  "mode": {
+    "userVsUser": "Mosebelisi khahlanong le mosebelisi",
+    "userVsAI": "Mosebelisi khahlanong le AI",
+    "onlyAI": "AI khahlanong le AI"
+  },
+  "player": {
+    "playerYou": "Uena",
+    "playerOne": "Sebapali sa Pele",
+    "playerTwo": "Sebapali sa Bobeli",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Ka tšohanyetso",
+    "playerAIPlayer": "Sebapali sa AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Boemo ba papali...",
+    "pausedAI": "{{player}} o emisitsoe...",
+    "placingAI": "{{player}} oa bapala - o beha sekhechana botong...",
+    "placingUser": "{{player}} oa bapala - beha sekhechana se khethiloeng botong...",
+    "placeUserYou": "U oa bapala - beha sekhechana se khethiloeng botong...",
+    "gameDrawn": "Papali e lekana - ha ho mola oa tlholo",
+    "gameWon": "{{player}} oa hlola - mola oa tlholo o totobalitsoe",
+    "selectingAI": "{{player}} oa bapala - o khethela {{opponent}} sekhechana...",
+    "selectUser": "{{player}} oa bapala - khethela {{opponent}} sekhechana...",
+    "selectUserYou": "U oa bapala - khethela {{opponent}} sekhechana..."
+  },
+  "piece": {
+    "inPlay": "Sekhechana se papaling",
+    "none": "Ha ho letho le khethiloeng",
+    "traits": "Litšobotsi tsa sekhechana",
+    "black": "ntšo",
+    "red": "khubelu",
+    "big": "kholo",
+    "small": "nyane",
+    "round": "chitja",
+    "square": "sekwere",
+    "solid": "tiileng",
+    "hollow": "sekoti"
+  },
+  "board": {
+    "binary": "Boto ea binary",
+    "piecesPlaced": "Likhechana tse behiloeng",
+    "cellEmpty": "Sele {{cell}}: e se na letho",
+    "cellPiece": "Sele {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Ponahatso ea 3D ha e fumanehe.",
+    "webglHeading": "WebGL ha ea khona ho qala.",
+    "webglMsg": "Papali e hloka WebGL e buletsoe sebatling."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Tsamaea ka sesupa holim'a sekhechana se ka khethoang ho bona kotsi ea khetho",
+    "hoveredRiskOne": "Kotsi ea sekhechana se ka tlas'a sesupa: {{risk}} sebaka sa tlholo hang-hang",
+    "hoveredRiskMany": "Kotsi ea sekhechana se ka tlas'a sesupa: {{risk}} libaka tsa tlholo hang-hang",
+    "immediateWins": "Libaka tsa tlholo hang-hang",
+    "latestRisk": "Kotsi ea morao-rao ea khetho",
+    "riskOneAI": "Kotsi ea sekhechana se khethiloeng ke AI: {{risk}} sebaka sa tlholo hang-hang",
+    "riskManyAI": "Kotsi ea sekhechana se khethiloeng ke AI: {{risk}} libaka tsa tlholo hang-hang",
+    "riskTurnedOff": "Kotsi ea khetho e timiloe",
+    "riskUnavailableAI": "Kotsi ea khetho ha e fumanehe mokhoeng oa AI khahlanong le AI",
+    "selectionRisk": "Kotsi ea khetho",
+    "turnRiskOff": "Tima kotsi ea khetho",
+    "turnRiskOn": "Bulela kotsi ea khetho"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Puo",
+    "search": "Batla lipuo",
+    "empty": "Ha ho lipuo tse fumanoeng",
+    "close": "Koala"
+  }
+}

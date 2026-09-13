@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Khwinifhadzo yo pfuluswaho u bva kha",
+    "newGame": "Mutambo muswa"
+  },
+  "common": {
+    "on": "YO VULA",
+    "off": "YO TSIMA"
+  },
+  "a11y": {
+    "utilityActions": "Zwikungi zwa app na luambo",
+    "viewSource": "Vhonani tshiko kha GitHub",
+    "gameControls": "Ndangulo dza mutambo",
+    "gameBoard": "Bodo ya mutambo ya 3D",
+    "gameInfo": "Mafhungo a mutambo"
+  },
+  "controls": {
+    "diffAI": "Vhuleme ha AI",
+    "diffPlayerOneAI": "Vhuleme ha P1",
+    "diffPlayerTwoAI": "Vhuleme ha P2",
+    "startingPlayer": "Mutambi ane a thoma",
+    "gameMode": "Ngona ya mutambo",
+    "pauseAI": "Imisani AI",
+    "resumeAI": "Bvelani phanda na AI",
+    "undo": "Humisela murahu",
+    "redo": "Dovhololani"
+  },
+  "diff": {
+    "easy": "Zwo leluwa",
+    "medium": "Vhukati",
+    "hard": "Zwo konḓa"
+  },
+  "mode": {
+    "userVsUser": "Mushumisi u lwa na mushumisi",
+    "userVsAI": "Mushumisi u lwa na AI",
+    "onlyAI": "AI u lwa na AI"
+  },
+  "player": {
+    "playerYou": "Inwi",
+    "playerOne": "Mutambi Wa U Thoma",
+    "playerTwo": "Mutambi Wa Vhuvhili",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Nga u sokou",
+    "playerAIPlayer": "Mutambi wa AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Tshiimo tsha mutambo...",
+    "pausedAI": "{{player}} o imiswa...",
+    "placingAI": "{{player}} u khou tamba - u vhea tshipiḓa kha bodo...",
+    "placingUser": "{{player}} u khou tamba - vheani tshipiḓa tsho nangiwaho kha bodo...",
+    "placeUserYou": "Ni khou tamba - vheani tshipiḓa tsho nangiwaho kha bodo...",
+    "gameDrawn": "Mutambo wo lingana - a hu na mutalo wa u kunda",
+    "gameWon": "{{player}} o kunda - mutalo wa u kunda wo sumbedzwa",
+    "selectingAI": "{{player}} u khou tamba - u nangela {{opponent}} tshipiḓa...",
+    "selectUser": "{{player}} u khou tamba - nangela {{opponent}} tshipiḓa...",
+    "selectUserYou": "Ni khou tamba - nangela {{opponent}} tshipiḓa..."
+  },
+  "piece": {
+    "inPlay": "Tshipiḓa tshi re mutamboni",
+    "none": "A hu na tsho nangiwaho",
+    "traits": "Zwivhumbeo zwa tshipiḓa",
+    "black": "ntswu",
+    "red": "tswuku",
+    "big": "tshihulu",
+    "small": "tshiṱuku",
+    "round": "tshi davhula",
+    "square": "tshi square",
+    "solid": "tsho khwaṱha",
+    "hollow": "tshi na bula"
+  },
+  "board": {
+    "binary": "Bodo ya binary",
+    "piecesPlaced": "Zwipiḓa zwo vheiwaho",
+    "cellEmpty": "Selo {{cell}}: a i na tshithu",
+    "cellPiece": "Selo {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "U sumbedza 3D a hu wanali.",
+    "webglHeading": "WebGL a yo ngo kona u thoma.",
+    "webglMsg": "Mutambo u ṱoḓa WebGL yo vulwa kha browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Vheani cursor nṱha ha tshipiḓa tshi nangiwaho u vhona khombo ya u nanga",
+    "hoveredRiskOne": "Khombo ya tshipiḓa tshi re fhasi ha cursor: {{risk}} fhethu ha u kunda nga u ṱavhanya",
+    "hoveredRiskMany": "Khombo ya tshipiḓa tshi re fhasi ha cursor: {{risk}} fhethu ha u kunda nga u ṱavhanya",
+    "immediateWins": "Fhethu ha u kunda nga u ṱavhanya",
+    "latestRisk": "Khombo ya u nanga ya u fhedzisela",
+    "riskOneAI": "Khombo ya tshipiḓa tsho nangiwaho nga AI: {{risk}} fhethu ha u kunda nga u ṱavhanya",
+    "riskManyAI": "Khombo ya tshipiḓa tsho nangiwaho nga AI: {{risk}} fhethu ha u kunda nga u ṱavhanya",
+    "riskTurnedOff": "Khombo ya u nanga yo tsimiwa",
+    "riskUnavailableAI": "Khombo ya u nanga a i wanali kha AI u lwa na AI",
+    "selectionRisk": "Khombo ya u nanga",
+    "turnRiskOff": "Tsimani khombo ya u nanga",
+    "turnRiskOn": "Vulani khombo ya u nanga"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Luambo",
+    "search": "Ṱoḓani nyambo",
+    "empty": "A hu na luambo lwo wanalaho",
+    "close": "Valani"
+  }
+}

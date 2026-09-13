@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Penambahbaikan yang dipindahkan daripada",
+    "newGame": "Permainan baharu"
+  },
+  "common": {
+    "on": "HIDUP",
+    "off": "MATI"
+  },
+  "a11y": {
+    "utilityActions": "Pautan aplikasi dan bahasa",
+    "viewSource": "Lihat sumber di GitHub",
+    "gameControls": "Kawalan permainan",
+    "gameBoard": "Papan permainan 3D",
+    "gameInfo": "Maklumat permainan"
+  },
+  "controls": {
+    "diffAI": "Kesukaran AI",
+    "diffPlayerOneAI": "Kesukaran P1",
+    "diffPlayerTwoAI": "Kesukaran P2",
+    "startingPlayer": "Pemain permulaan",
+    "gameMode": "Mod permainan",
+    "pauseAI": "Jeda AI",
+    "resumeAI": "Sambung AI",
+    "undo": "Buat asal",
+    "redo": "Buat semula"
+  },
+  "diff": {
+    "easy": "Mudah",
+    "medium": "Sederhana",
+    "hard": "Sukar"
+  },
+  "mode": {
+    "userVsUser": "Pengguna lawan pengguna",
+    "userVsAI": "Pengguna lawan AI",
+    "onlyAI": "AI lawan AI"
+  },
+  "player": {
+    "playerYou": "Anda",
+    "playerOne": "Pemain Satu",
+    "playerTwo": "Pemain Dua",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Rawak",
+    "playerAIPlayer": "Pemain AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Status permainan...",
+    "pausedAI": "{{player}} dijeda...",
+    "placingAI": "{{player}} sedang bermain - meletakkan buah di papan...",
+    "placingUser": "{{player}} sedang bermain - Letakkan buah yang dipilih di papan...",
+    "placeUserYou": "Anda sedang bermain - Letakkan buah yang dipilih di papan...",
+    "gameDrawn": "Permainan seri - tiada garisan kemenangan",
+    "gameWon": "{{player}} menang - garisan kemenangan diserlahkan",
+    "selectingAI": "{{player}} sedang bermain - memilih buah untuk {{opponent}}...",
+    "selectUser": "{{player}} sedang bermain - Pilih buah untuk {{opponent}}...",
+    "selectUserYou": "Anda sedang bermain - Pilih buah untuk {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Buah dalam permainan",
+    "none": "Tiada yang dipilih",
+    "traits": "Ciri-ciri buah",
+    "black": "hitam",
+    "red": "merah",
+    "big": "besar",
+    "small": "kecil",
+    "round": "bulat",
+    "square": "segi empat",
+    "solid": "pejal",
+    "hollow": "berongga"
+  },
+  "board": {
+    "binary": "Papan binari",
+    "piecesPlaced": "Buah yang diletakkan",
+    "cellEmpty": "Sel {{cell}}: kosong",
+    "cellPiece": "Sel {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Paparan 3D tidak tersedia.",
+    "webglHeading": "WebGL tidak dapat dimulakan.",
+    "webglMsg": "Permainan memerlukan WebGL didayakan dalam pelayar."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Arahkan tetikus pada buah yang boleh dipilih untuk pratonton risiko pemilihannya",
+    "hoveredRiskOne": "Risiko buah di bawah tetikus: {{risk}} peletakan kemenangan serta-merta",
+    "hoveredRiskMany": "Risiko buah di bawah tetikus: {{risk}} peletakan kemenangan serta-merta",
+    "immediateWins": "Peletakan kemenangan serta-merta",
+    "latestRisk": "Risiko pemilihan terkini",
+    "riskOneAI": "Risiko buah yang dipilih AI: {{risk}} peletakan kemenangan serta-merta",
+    "riskManyAI": "Risiko buah yang dipilih AI: {{risk}} peletakan kemenangan serta-merta",
+    "riskTurnedOff": "Risiko pemilihan dimatikan",
+    "riskUnavailableAI": "Risiko pemilihan tidak tersedia dalam mod AI lawan AI",
+    "selectionRisk": "Risiko pemilihan",
+    "turnRiskOff": "Matikan risiko pemilihan",
+    "turnRiskOn": "Hidupkan risiko pemilihan"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Bahasa",
+    "search": "Cari bahasa",
+    "empty": "Tiada bahasa ditemui",
+    "close": "tutup"
+  }
+}

@@ -64,10 +64,16 @@ function InfoHeader(): JSX.Element {
           type="button"
           aria-label="Change language"
           title="Change language"
-          data-i18n-aria-label="controls.langToggle"
-          data-i18n-title="controls.langToggle"
+          aria-expanded="false"
+          aria-controls="language-dialog"
+          aria-haspopup="dialog"
+          data-i18n-aria-label="language.label"
+          data-i18n-title="language.label"
         >
           <GlobeIcon />
+          <span id="locale-code" dir="ltr" translate="no">
+            EN
+          </span>
         </button>
         <a
           className="utility-button github-link"
@@ -360,11 +366,54 @@ function GameInfo(): JSX.Element {
   );
 }
 
+function LanguageDialog(): JSX.Element {
+  return (
+    <dialog id="language-dialog" className="language-dialog" aria-labelledby="language-heading">
+      <div className="language-heading">
+        <h2 id="language-heading" data-i18n="language.label">
+          Language
+        </h2>
+        <button
+          id="close-language"
+          className="dialog-close"
+          type="button"
+          aria-label="Close"
+          data-i18n-aria-label="language.close"
+        >
+          ×
+        </button>
+      </div>
+      <label
+        className="language-search-label"
+        htmlFor="language-search"
+        data-i18n="language.search"
+      >
+        Search languages
+      </label>
+      <input
+        id="language-search"
+        className="language-search"
+        type="search"
+        autoComplete="off"
+        spellCheck={false}
+        aria-controls="language-options"
+      />
+      <div id="language-options" className="language-options" translate="no" />
+      <p id="language-empty" className="language-empty" data-i18n="language.empty" hidden>
+        No languages found
+      </p>
+    </dialog>
+  );
+}
+
 export default function App(): JSX.Element {
   return (
-    <main className="game-layout">
-      <GameScreen />
-      <GameInfo />
-    </main>
+    <>
+      <main className="game-layout">
+        <GameScreen />
+        <GameInfo />
+      </main>
+      <LanguageDialog />
+    </>
   );
 }

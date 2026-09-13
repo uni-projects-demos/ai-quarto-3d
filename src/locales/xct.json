@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "སྤོ་སྒྱུར་བྱས་པའི་ལེགས་བཅོས་",
+    "newGame": "རྩེད་མོ་གསར་པ་"
+  },
+  "common": {
+    "on": "ཁ་ཕྱེ་",
+    "off": "ཁ་རྒྱག་"
+  },
+  "a11y": {
+    "utilityActions": "ཉེར་སྤྱོད་ཀྱི་སྦྲེལ་ཐག་དང་སྐད་ཡིག་",
+    "viewSource": "GitHub ནང་འབྱུང་ཁུངས་ལྟ་",
+    "gameControls": "རྩེད་མོའི་ཚོད་འཛིན་",
+    "gameBoard": "3D རྩེད་མོའི་པང་ལེབ་",
+    "gameInfo": "རྩེད་མོའི་གནས་ཚུལ་"
+  },
+  "controls": {
+    "diffAI": "AI དཀའ་ཚད་",
+    "diffPlayerOneAI": "P1 དཀའ་ཚད་",
+    "diffPlayerTwoAI": "P2 དཀའ་ཚད་",
+    "startingPlayer": "འགོ་འཛུགས་རྩེད་མཁན་",
+    "gameMode": "རྩེད་མོའི་རྣམ་པ་",
+    "pauseAI": "AI མཚམས་འཇོག་",
+    "resumeAI": "AI མུ་མཐུད་",
+    "undo": "ཕྱིར་བསྡུ་",
+    "redo": "བསྐྱར་བྱ་"
+  },
+  "diff": {
+    "easy": "སླ་པོ་",
+    "medium": "འབྲིང་",
+    "hard": "དཀའ་པོ་"
+  },
+  "mode": {
+    "userVsUser": "སྤྱོད་མཁན་ vs སྤྱོད་མཁན་",
+    "userVsAI": "སྤྱོད་མཁན་ vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "ཁྱེད་",
+    "playerOne": "རྩེད་མཁན་དང་པོ་",
+    "playerTwo": "རྩེད་མཁན་གཉིས་པ་",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "སྐབས་བསྟུན་",
+    "playerAIPlayer": "AI རྩེད་མཁན་",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "རྩེད་མོའི་གནས་བབ...",
+    "pausedAI": "{{player}} མཚམས་བཞག་ཡོད...",
+    "placingAI": "{{player}} རྩེད་བཞིན་པ - རྡོག་པོ་པང་ལེབ་ཐོག་འཇོག་བཞིན་པ...",
+    "placingUser": "{{player}} རྩེད་བཞིན་པ - བདམས་པའི་རྡོག་པོ་པང་ལེབ་ཐོག་ཞོག...",
+    "placeUserYou": "ཁྱེད་རྩེད་བཞིན་པ - བདམས་པའི་རྡོག་པོ་པང་ལེབ་ཐོག་ཞོག...",
+    "gameDrawn": "རྩེད་མོ་འདྲ་མཉམ - རྒྱལ་ཐིག་མེད་",
+    "gameWon": "{{player}} རྒྱལ - རྒྱལ་ཐིག་མངོན་གསལ་བྱས་",
+    "selectingAI": "{{player}} རྩེད་བཞིན་པ - {{opponent}} ཆེད་རྡོག་པོ་འདེམས་བཞིན་པ...",
+    "selectUser": "{{player}} རྩེད་བཞིན་པ - {{opponent}} ཆེད་རྡོག་པོ་ཞིག་འདེམས...",
+    "selectUserYou": "ཁྱེད་རྩེད་བཞིན་པ - {{opponent}} ཆེད་རྡོག་པོ་ཞིག་འདེམས..."
+  },
+  "piece": {
+    "inPlay": "རྩེད་མོའི་ནང་གི་རྡོག་པོ་",
+    "none": "གང་ཡང་མ་བདམས་",
+    "traits": "རྡོག་པོའི་ཁྱད་ཆོས་",
+    "black": "ནག་པོ་",
+    "red": "དམར་པོ་",
+    "big": "ཆེན་པོ་",
+    "small": "ཆུང་ཆུང་",
+    "round": "སྒོར་སྒོར་",
+    "square": "གྲུ་བཞི་",
+    "solid": "སྲ་མོ་",
+    "hollow": "སྟོང་པ་"
+  },
+  "board": {
+    "binary": "གཉིས་ལྡན་པང་ལེབ་",
+    "piecesPlaced": "བཞག་པའི་རྡོག་པོ་",
+    "cellEmpty": "ཚན་ {{cell}}: སྟོང་པ་",
+    "cellPiece": "ཚན་ {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D རི་མོ་སྐྲུན་མི་ཐུབ།",
+    "webglHeading": "WebGL འགོ་འཛུགས་མ་ཐུབ།",
+    "webglMsg": "རྩེད་མོར་བཤར་ཆས་ནང་ WebGL ཁ་ཕྱེ་དགོས།"
+  },
+  "metrics": {
+    "hoverRiskPreview": "བདམས་ཆོག་པའི་རྡོག་པོའི་ཐོག་ཙིག་རྟགས་བཞག་ནས་འདེམས་ཉེན་སྔོན་ལྟ་བྱ་",
+    "hoveredRiskOne": "ཙིག་རྟགས་འོག་གི་རྡོག་པོའི་ཉེན་ཁ: {{risk}} མྱུར་རྒྱལ་འཇོག་ས་",
+    "hoveredRiskMany": "ཙིག་རྟགས་འོག་གི་རྡོག་པོའི་ཉེན་ཁ: {{risk}} མྱུར་རྒྱལ་འཇོག་ས་",
+    "immediateWins": "མྱུར་རྒྱལ་འཇོག་ས་",
+    "latestRisk": "འདེམས་ཉེན་གསར་ཤོས་",
+    "riskOneAI": "AI བདམས་པའི་རྡོག་པོའི་ཉེན་ཁ: {{risk}} མྱུར་རྒྱལ་འཇོག་ས་",
+    "riskManyAI": "AI བདམས་པའི་རྡོག་པོའི་ཉེན་ཁ: {{risk}} མྱུར་རྒྱལ་འཇོག་ས་",
+    "riskTurnedOff": "འདེམས་ཉེན་ཁ་རྒྱག་ཡོད་",
+    "riskUnavailableAI": "AI vs AI རྣམ་པར་འདེམས་ཉེན་མེད་",
+    "selectionRisk": "འདེམས་ཉེན་",
+    "turnRiskOff": "འདེམས་ཉེན་ཁ་རྒྱག་",
+    "turnRiskOn": "འདེམས་ཉེན་ཁ་ཕྱེ་"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "སྐད",
+    "search": "སྐད་ཚོལ",
+    "empty": "སྐད་མ་རྙེད",
+    "close": "རྒྱག"
+  }
+}

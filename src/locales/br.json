@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ur gwelladur douget eus",
+    "newGame": "C'hoari nevez"
+  },
+  "common": {
+    "on": "ENAÑ",
+    "off": "LAZHET"
+  },
+  "a11y": {
+    "utilityActions": "Liammoù an arload hag ar yezh",
+    "viewSource": "Gwelet an tarzh war GitHub",
+    "gameControls": "Reolennoù ar c'hoari",
+    "gameBoard": "Taolenn c'hoari 3D",
+    "gameInfo": "Titouroù ar c'hoari"
+  },
+  "controls": {
+    "diffAI": "Diaester an AI",
+    "diffPlayerOneAI": "Diaester P1",
+    "diffPlayerTwoAI": "Diaester P2",
+    "startingPlayer": "C'hoarier kentañ",
+    "gameMode": "Mod c'hoari",
+    "pauseAI": "Ehanañ an AI",
+    "resumeAI": "Kenderc'hel gant an AI",
+    "undo": "Dizober",
+    "redo": "Adober"
+  },
+  "diff": {
+    "easy": "Aes",
+    "medium": "Krenn",
+    "hard": "Diaes"
+  },
+  "mode": {
+    "userVsUser": "Implijer vs implijer",
+    "userVsAI": "Implijer vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "C'hwi",
+    "playerOne": "C'hoarier Un",
+    "playerTwo": "C'hoarier Daou",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Dargouezhek",
+    "playerAIPlayer": "C'hoarier AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Stad ar c'hoari...",
+    "pausedAI": "{{player}} zo paouezet...",
+    "placingAI": "{{player}} zo o c'hoari - o lakaat ar pezh war an daolenn...",
+    "placingUser": "{{player}} zo o c'hoari - Lakait ar pezh dibabet war an daolenn...",
+    "placeUserYou": "C'hwi zo o c'hoari - Lakait ar pezh dibabet war an daolenn...",
+    "gameDrawn": "C'hoari par - linenn c'hounit ebet",
+    "gameWon": "{{player}} a c'hounez - al linenn c'hounit zo usskedet",
+    "selectingAI": "{{player}} zo o c'hoari - o tibab ur pezh evit {{opponent}}...",
+    "selectUser": "{{player}} zo o c'hoari - Dibabit ur pezh evit {{opponent}}...",
+    "selectUserYou": "C'hwi zo o c'hoari - Dibabit ur pezh evit {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pezh er c'hoari",
+    "none": "Netra dibabet",
+    "traits": "Perzhioù ar pezh",
+    "black": "du",
+    "red": "ruz",
+    "big": "bras",
+    "small": "bihan",
+    "round": "rond",
+    "square": "karrez",
+    "solid": "leun",
+    "hollow": "kleuz"
+  },
+  "board": {
+    "binary": "Taolenn binarel",
+    "piecesPlaced": "Pezhoù lakaet",
+    "cellEmpty": "Kell {{cell}}: goullo",
+    "cellPiece": "Kell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "N'eo ket hegerz ar render 3D.",
+    "webglHeading": "N'hall ket WebGL loc'hañ.",
+    "webglMsg": "Ret eo gweredekaat WebGL er merdeer evit ar c'hoari."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Lakait al logodenn war ur pezh dibabapl evit rakwelet riskl an dibab",
+    "hoveredRiskOne": "Riskl ar pezh dindan al logodenn: {{risk}} lec'h c'hounit diouzhtu",
+    "hoveredRiskMany": "Riskl ar pezh dindan al logodenn: {{risk}} lec'hioù c'hounit diouzhtu",
+    "immediateWins": "Lec'hioù c'hounit diouzhtu",
+    "latestRisk": "Riskl dibab diwezhañ",
+    "riskOneAI": "Riskl ar pezh dibabet gant an AI: {{risk}} lec'h c'hounit diouzhtu",
+    "riskManyAI": "Riskl ar pezh dibabet gant an AI: {{risk}} lec'hioù c'hounit diouzhtu",
+    "riskTurnedOff": "Riskl dibab lazhet",
+    "riskUnavailableAI": "N'eo ket hegerz riskl dibab er mod AI vs AI",
+    "selectionRisk": "Riskl dibab",
+    "turnRiskOff": "Lazhañ riskl dibab",
+    "turnRiskOn": "Enañ riskl dibab"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Yezh",
+    "search": "Klask yezhoù",
+    "empty": "Yezh ebet kavet",
+    "close": "Serriñ"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Күсереп яҡшыртылған версия",
+    "newGame": "Яңы уйын"
+  },
+  "common": {
+    "on": "ҠАБЫҘЫЛҒАН",
+    "off": "ҺҮНДЕРЕЛГӘН"
+  },
+  "a11y": {
+    "utilityActions": "Ҡушымта һылтанмалары һәм тел",
+    "viewSource": "GitHub-та сығанаҡ кодты ҡарау",
+    "gameControls": "Уйын идараһы",
+    "gameBoard": "3D уйын таҡтаһы",
+    "gameInfo": "Уйын тураһында мәғлүмәт"
+  },
+  "controls": {
+    "diffAI": "AI ауырлығы",
+    "diffPlayerOneAI": "P1 ауырлығы",
+    "diffPlayerTwoAI": "P2 ауырлығы",
+    "startingPlayer": "Башлаусы уйынсы",
+    "gameMode": "Уйын режимы",
+    "pauseAI": "AI-ҙы туҡтатыу",
+    "resumeAI": "AI-ҙы дауам итеү",
+    "undo": "Кире ҡайтарыу",
+    "redo": "Ҡабатлау"
+  },
+  "diff": {
+    "easy": "Еңел",
+    "medium": "Уртаса",
+    "hard": "Ауыр"
+  },
+  "mode": {
+    "userVsUser": "Ҡулланыусы vs ҡулланыусы",
+    "userVsAI": "Ҡулланыусы vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Һеҙ",
+    "playerOne": "Беренсе уйынсы",
+    "playerTwo": "Икенсе уйынсы",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Осраҡлы",
+    "playerAIPlayer": "AI уйынсыһы",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Уйын торошо...",
+    "pausedAI": "{{player}} туҡтатылған...",
+    "placingAI": "{{player}} уйнай - фигураны таҡтаға ҡуя...",
+    "placingUser": "{{player}} уйнай - һайланған фигураны таҡтаға ҡуйығыҙ...",
+    "placeUserYou": "Һеҙ уйнайһығыҙ - һайланған фигураны таҡтаға ҡуйығыҙ...",
+    "gameDrawn": "Уйын тигеҙ тамамланды - еңеү һыҙығы юҡ",
+    "gameWon": "{{player}} еңде - еңеү һыҙығы билдәләнгән",
+    "selectingAI": "{{player}} уйнай - {{opponent}} өсөн фигура һайлай...",
+    "selectUser": "{{player}} уйнай - {{opponent}} өсөн фигура һайлағыҙ...",
+    "selectUserYou": "Һеҙ уйнайһығыҙ - {{opponent}} өсөн фигура һайлағыҙ..."
+  },
+  "piece": {
+    "inPlay": "Уйындағы фигура",
+    "none": "Бер нәмә лә һайланмаған",
+    "traits": "Фигура үҙенсәлектәре",
+    "black": "ҡара",
+    "red": "ҡыҙыл",
+    "big": "ҙур",
+    "small": "бәләкәй",
+    "round": "түңәрәк",
+    "square": "квадрат",
+    "solid": "тотош",
+    "hollow": "ҡыуыш"
+  },
+  "board": {
+    "binary": "Икеле таҡта",
+    "piecesPlaced": "Ҡуйылған фигуралар",
+    "cellEmpty": "Күҙәнәк {{cell}}: буш",
+    "cellPiece": "Күҙәнәк {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D рендеринг мөмкин түгел.",
+    "webglHeading": "WebGL эшләй башлай алманы.",
+    "webglMsg": "Уйын өсөн браузерҙа WebGL ҡабыҙылған булырға тейеш."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Һайлау хәүефен алдан күреү өсөн һайлап була торған фигура өҫтөнә курсор ҡуйығыҙ",
+    "hoveredRiskOne": "Курсор аҫтындағы фигура хәүефе: {{risk}} шунда уҡ еңеүсе урынлаштырыу",
+    "hoveredRiskMany": "Курсор аҫтындағы фигура хәүефе: {{risk}} шунда уҡ еңеүсе урынлаштырыуҙар",
+    "immediateWins": "Шунда уҡ еңеүсе урынлаштырыуҙар",
+    "latestRisk": "Һуңғы һайлау хәүефе",
+    "riskOneAI": "AI һайлаған фигура хәүефе: {{risk}} шунда уҡ еңеүсе урынлаштырыу",
+    "riskManyAI": "AI һайлаған фигура хәүефе: {{risk}} шунда уҡ еңеүсе урынлаштырыуҙар",
+    "riskTurnedOff": "Һайлау хәүефе һүндерелгән",
+    "riskUnavailableAI": "AI vs AI режимында һайлау хәүефе мөмкин түгел",
+    "selectionRisk": "Һайлау хәүефе",
+    "turnRiskOff": "Һайлау хәүефен һүндерергә",
+    "turnRiskOn": "Һайлау хәүефен ҡабыҙырға"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Тел",
+    "search": "Телдәрҙе эҙләү",
+    "empty": "Телдәр табылманы",
+    "close": "Ябыу"
+  }
+}

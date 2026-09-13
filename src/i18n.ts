@@ -1,118 +1,92 @@
 import { getPieceTraits, type PieceTraits } from "./game/pieces";
 import type { Difficulty, PieceId } from "./game/types";
 
-export const LOCALES = [
-  "en",
-  "mi",
-  "sv",
-  "es",
-  "fr",
-  "pt",
-  "ru",
-  "de",
-  "tr",
-  "it",
-  "pl",
-  "uk",
-  "nl",
-  "af",
-  "ro",
-  "hu",
-  "el",
-  "cs",
-  "sr",
-  "bg",
-  "da",
-  "fi",
-  "no",
-  "sk",
-  "hr",
-  "ca",
-  "be",
-  "bs",
-  "sq",
-  "lt",
-  "sl",
-  "lv",
-  "mk",
-  "et",
-  "ga",
-  "cy",
-  "eu",
-  "gl",
-  "is",
-  "mt",
-  "lb",
-  "gd",
-  "zh",
-  "hi",
-  "ar",
-  "he",
-  "bn",
-  "id",
-  "ur",
-  "ja",
-  "mr",
-  "vi",
-  "te",
-  "sw",
-  "ha",
-  "pa",
-  "fil",
-  "ta",
-  "yue",
-  "fa",
-  "ko",
-  "am",
-  "th",
-  "jv",
-  "gu",
-  "kn",
-  "yo",
-  "bho",
-  "my",
-  "ln",
-  "or",
-  "ml",
-  "sd",
-  "su",
-  "zu",
-] as const;
-export type Locale = (typeof LOCALES)[number];
-const DEFAULT_LANG: Locale = LOCALES[0];
-
 type TranslationRecords = Record<string, string | number>;
 interface TranslationTree {
   [key: string]: string | TranslationTree;
 }
 
 const STORAGE_KEY: string = "quarto-lang";
+const DEFAULT_LANG: string = "en";
 const listeners: Set<() => void> = new Set<() => void>();
-
-const RTL_LANGUAGES: ReadonlySet<Locale> = new Set<Locale>(["ar", "he", "fa", "ur", "sd"]);
+const RTL_LANGS: ReadonlySet<string> = new Set<string>([
+  "ar",
+  "arc",
+  "ckb",
+  "dv",
+  "fa",
+  "hbo",
+  "he",
+  "ks",
+  "ps",
+  "sam",
+  "sd",
+  "syc",
+  "ug",
+  "ur",
+  "yi",
+]);
+const LANG_ALIASES: Readonly<Record<string, string>> = {
+  in: "id",
+  iw: "he",
+};
 const localeModules: Record<string, TranslationTree> = import.meta.glob<TranslationTree>(
   "./locales/*.json",
   { eager: true, import: "default" },
 );
-const resources: Record<Locale, TranslationTree> = Object.fromEntries(
-  LOCALES.map((lang: Locale): [Locale, TranslationTree] => {
+
+export const LOCALES: readonly string[] = Object.keys(localeModules)
+  .map((path: string): string => path.replace(/^.*\/([^/]+)\.json$/, "$1"))
+  .sort((left: string, right: string): number => left.localeCompare(right));
+export type Locale = string;
+
+const resources: Record<string, TranslationTree> = Object.fromEntries(
+  LOCALES.map((lang: string): [string, TranslationTree] => {
     const resource: TranslationTree | undefined = localeModules[`./locales/${lang}.json`];
     if (resource === undefined) throw new Error(`Missing locale resource: ${lang}`);
     return [lang, resource];
   }),
-) as Record<Locale, TranslationTree>;
+);
+const engResource: TranslationTree = (() => {
+  const resource: TranslationTree | undefined = resources[DEFAULT_LANG];
+  if (resource === undefined) throw new Error("Missing English locale resource");
+  return resource;
+})();
 let localeGlobal: Locale = DEFAULT_LANG;
+let isStorageListenerAttached: boolean = false;
 
-function isSupportedLang(lang: string): lang is Locale {
-  return LOCALES.includes(lang as Locale);
+function readStorage(): string | null {
+  try {
+    return localStorage.getItem(STORAGE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function saveStorage(value: string): void {
+  try {
+    localStorage.setItem(STORAGE_KEY, value);
+  } catch {}
+}
+
+function isSupportedLang(lang: string): boolean {
+  return LOCALES.includes(lang);
+}
+
+function resolveLocale(value: string): Locale | undefined {
+  const baseLang: string = value.toLowerCase().split("-")[0] ?? DEFAULT_LANG;
+  if (isSupportedLang(baseLang)) return baseLang;
+  const alias: string | undefined = LANG_ALIASES[baseLang];
+  return alias !== undefined && isSupportedLang(alias) ? alias : undefined;
 }
 
 function detectLang(): Locale {
-  const stored: string | null = localStorage.getItem(STORAGE_KEY);
-  if (stored !== null && isSupportedLang(stored)) return stored;
+  const stored: string | null = readStorage();
+  const storedLocale: Locale | undefined = stored === null ? undefined : resolveLocale(stored);
+  if (storedLocale !== undefined) return storedLocale;
   for (const candidate of navigator.languages) {
-    const baseLanguage: string | undefined = candidate.toLowerCase().split("-")[0];
-    if (baseLanguage !== undefined && isSupportedLang(baseLanguage)) return baseLanguage;
+    const resolved: Locale | undefined = resolveLocale(candidate);
+    if (resolved !== undefined) return resolved;
   }
   return DEFAULT_LANG;
 }
@@ -138,7 +112,7 @@ function applyTransAttr(attribute: "aria-label" | "title" | "content"): void {
 
 function applyLang(): void {
   document.documentElement.lang = localeGlobal;
-  document.documentElement.dir = RTL_LANGUAGES.has(localeGlobal) ? "rtl" : "ltr";
+  document.documentElement.dir = RTL_LANGS.has(localeGlobal) ? "rtl" : "ltr";
 
   for (const element of document.querySelectorAll<HTMLElement>("[data-i18n]")) {
     const key: string | undefined = element.dataset.i18n;
@@ -150,14 +124,33 @@ function applyLang(): void {
   applyTransAttr("content");
 }
 
+function applyLocale(next: Locale, isPersist: boolean): void {
+  if (next === localeGlobal) return;
+  localeGlobal = next;
+  if (isPersist) saveStorage(localeGlobal);
+  applyLang();
+  for (const listener of listeners) listener();
+}
+
 export async function initI18n(): Promise<void> {
   localeGlobal = detectLang();
   applyLang();
+
+  if (!isStorageListenerAttached) {
+    isStorageListenerAttached = true;
+    window.addEventListener("storage", (event: StorageEvent): void => {
+      if (event.key !== STORAGE_KEY && event.key !== null) return;
+      const resolved: Locale | undefined = resolveLocale(readStorage() ?? DEFAULT_LANG);
+      if (resolved !== undefined) applyLocale(resolved, false);
+    });
+  }
 }
 
 export function translate(key: string, records: TranslationRecords = {}): string {
   const translation: string =
-    lookupTransTree(resources[localeGlobal], key) ?? lookupTransTree(resources.en, key) ?? key;
+    lookupTransTree(resources[localeGlobal] ?? engResource, key) ??
+    lookupTransTree(engResource, key) ??
+    key;
   return translation.replace(/{{\s*([^}\s]+)\s*}}/g, (_: string, name: string): string =>
     String(records[name] ?? `{{${name}}}`),
   );
@@ -182,11 +175,9 @@ export function transTraits(piece: PieceId): string {
 }
 
 export function changeLang(lang: string): void {
-  if (!isSupportedLang(lang) || lang === localeGlobal) return;
-  localeGlobal = lang;
-  localStorage.setItem(STORAGE_KEY, localeGlobal);
-  applyLang();
-  for (const listener of listeners) listener();
+  const resolved: Locale | undefined = resolveLocale(lang);
+  if (resolved === undefined) return;
+  applyLocale(resolved, true);
 }
 
 export function curLang(): Locale {

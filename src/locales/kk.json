@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Мына жобаның тасымалданып жетілдірілген нұсқасы",
+    "newGame": "Жаңа ойын"
+  },
+  "common": {
+    "on": "ҚОСУЛЫ",
+    "off": "ӨШІРУЛІ"
+  },
+  "a11y": {
+    "utilityActions": "Қолданба сілтемелері мен тіл",
+    "viewSource": "Бастапқы кодты GitHub-та көру",
+    "gameControls": "Ойын басқару элементтері",
+    "gameBoard": "3D ойын тақтасы",
+    "gameInfo": "Ойын туралы ақпарат"
+  },
+  "controls": {
+    "diffAI": "AI қиындығы",
+    "diffPlayerOneAI": "P1 қиындығы",
+    "diffPlayerTwoAI": "P2 қиындығы",
+    "startingPlayer": "Бастайтын ойыншы",
+    "gameMode": "Ойын режимі",
+    "pauseAI": "AI-ды кідірту",
+    "resumeAI": "AI-ды жалғастыру",
+    "undo": "Болдырмау",
+    "redo": "Қайталау"
+  },
+  "diff": {
+    "easy": "Оңай",
+    "medium": "Орташа",
+    "hard": "Қиын"
+  },
+  "mode": {
+    "userVsUser": "Пайдаланушы пайдаланушыға қарсы",
+    "userVsAI": "Пайдаланушы AI-ға қарсы",
+    "onlyAI": "AI AI-ға қарсы"
+  },
+  "player": {
+    "playerYou": "Сіз",
+    "playerOne": "Бірінші ойыншы",
+    "playerTwo": "Екінші ойыншы",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Кездейсоқ",
+    "playerAIPlayer": "AI ойыншысы",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Ойын күйі...",
+    "pausedAI": "{{player}} кідіртілді...",
+    "placingAI": "{{player}} ойнап жатыр — фигураны тақтаға қойып жатыр...",
+    "placingUser": "{{player}} ойнап жатыр — таңдалған фигураны тақтаға қойыңыз...",
+    "placeUserYou": "Сіз ойнап жатырсыз — таңдалған фигураны тақтаға қойыңыз...",
+    "gameDrawn": "Ойын тең аяқталды — жеңіс сызығы жоқ",
+    "gameWon": "{{player}} жеңді — жеңіс сызығы ерекшеленді",
+    "selectingAI": "{{player}} ойнап жатыр — {{opponent}} үшін фигура таңдап жатыр...",
+    "selectUser": "{{player}} ойнап жатыр — {{opponent}} үшін фигура таңдаңыз...",
+    "selectUserYou": "Сіз ойнап жатырсыз — {{opponent}} үшін фигура таңдаңыз..."
+  },
+  "piece": {
+    "inPlay": "Ойындағы фигура",
+    "none": "Ештеңе таңдалмаған",
+    "traits": "Фигура қасиеттері",
+    "black": "қара",
+    "red": "қызыл",
+    "big": "үлкен",
+    "small": "кіші",
+    "round": "дөңгелек",
+    "square": "шаршы",
+    "solid": "тұтас",
+    "hollow": "қуыс"
+  },
+  "board": {
+    "binary": "Екілік тақта",
+    "piecesPlaced": "Қойылған фигуралар",
+    "cellEmpty": "Ұяшық {{cell}}: бос",
+    "cellPiece": "Ұяшық {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D бейнелеу қолжетімсіз.",
+    "webglHeading": "WebGL іске қосылмады.",
+    "webglMsg": "Ойын үшін браузерде WebGL қосулы болуы керек."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Таңдау тәуекелін көру үшін меңзерді таңдауға болатын фигураның үстіне апарыңыз",
+    "hoveredRiskOne": "Меңзер астындағы фигура тәуекелі: {{risk}} дереу жеңіс әкелетін орналастыру",
+    "hoveredRiskMany": "Меңзер астындағы фигура тәуекелі: {{risk}} дереу жеңіс әкелетін орналастыру",
+    "immediateWins": "Дереу жеңіс әкелетін орналастырулар",
+    "latestRisk": "Соңғы таңдау тәуекелі",
+    "riskOneAI": "AI таңдаған фигура тәуекелі: {{risk}} дереу жеңіс әкелетін орналастыру",
+    "riskManyAI": "AI таңдаған фигура тәуекелі: {{risk}} дереу жеңіс әкелетін орналастыру",
+    "riskTurnedOff": "Таңдау тәуекелі өшірулі",
+    "riskUnavailableAI": "Таңдау тәуекелі AI AI-ға қарсы режимінде қолжетімсіз",
+    "selectionRisk": "Таңдау тәуекелі",
+    "turnRiskOff": "Таңдау тәуекелін өшіру",
+    "turnRiskOn": "Таңдау тәуекелін қосу"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Тіл",
+    "search": "Тілдерді іздеу",
+    "empty": "Тілдер табылмады",
+    "close": "Жабу"
+  }
+}

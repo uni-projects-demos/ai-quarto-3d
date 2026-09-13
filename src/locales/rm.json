@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "In meglierament portà da",
+    "newGame": "Nov gieu"
+  },
+  "common": {
+    "on": "EN",
+    "off": "DAVENT"
+  },
+  "a11y": {
+    "utilityActions": "Colliaziuns da l'app e lingua",
+    "viewSource": "Vesair il code sin GitHub",
+    "gameControls": "Controls dal gieu",
+    "gameBoard": "Tavla da gieu 3D",
+    "gameInfo": "Infurmaziuns dal gieu"
+  },
+  "controls": {
+    "diffAI": "Difficultad AI",
+    "diffPlayerOneAI": "Difficultad P1",
+    "diffPlayerTwoAI": "Difficultad P2",
+    "startingPlayer": "Giugader che cumenza",
+    "gameMode": "Modus da gieu",
+    "pauseAI": "Pausar AI",
+    "resumeAI": "Cuntinuar AI",
+    "undo": "Revocar",
+    "redo": "Repeter"
+  },
+  "diff": {
+    "easy": "Levada",
+    "medium": "Mesauna",
+    "hard": "Greva"
+  },
+  "mode": {
+    "userVsUser": "Utilisader cunter utilisader",
+    "userVsAI": "Utilisader cunter AI",
+    "onlyAI": "AI cunter AI"
+  },
+  "player": {
+    "playerYou": "Ti",
+    "playerOne": "Giugader In",
+    "playerTwo": "Giugader Dus",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Casual",
+    "playerAIPlayer": "Giugader AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Status dal gieu...",
+    "pausedAI": "{{player}} è pausà...",
+    "placingAI": "{{player}} gioga - metta la figura sin la tavla...",
+    "placingUser": "{{player}} gioga - metta la figura tschernida sin la tavla...",
+    "placeUserYou": "Ti giogas - metta la figura tschernida sin la tavla...",
+    "gameDrawn": "Il gieu è pari - nagina lingia victoriusa",
+    "gameWon": "{{player}} gudogna - la lingia victoriusa è marcada",
+    "selectingAI": "{{player}} gioga - tscherna ina figura per {{opponent}}...",
+    "selectUser": "{{player}} gioga - tscherna ina figura per {{opponent}}...",
+    "selectUserYou": "Ti giogas - tscherna ina figura per {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Figura en gieu",
+    "none": "Naguna tschernida",
+    "traits": "Caracteristicas da la figura",
+    "black": "nair",
+    "red": "cotschen",
+    "big": "grond",
+    "small": "pitschen",
+    "round": "radund",
+    "square": "quadratic",
+    "solid": "solid",
+    "hollow": "cav"
+  },
+  "board": {
+    "binary": "Tavla binara",
+    "piecesPlaced": "Figuras messas",
+    "cellEmpty": "Champa {{cell}}: vida",
+    "cellPiece": "Champa {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "La renderisaziun 3D n'è betg disponibla.",
+    "webglHeading": "WebGL n'ha betg pudì cumenzar.",
+    "webglMsg": "Il gieu dovra WebGL activà en il navigatur."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Passa cun la mieur sur ina figura tschernibla per vesair il ristg da selecziun",
+    "hoveredRiskOne": "Ristg da la figura sut la mieur: {{risk}} posiziun victoriusa immediata",
+    "hoveredRiskMany": "Ristg da la figura sut la mieur: {{risk}} posiziuns victoriusas immediatas",
+    "immediateWins": "Posiziuns victoriusas immediatas",
+    "latestRisk": "Ultim ristg da selecziun",
+    "riskOneAI": "Ristg da la figura tschernida da AI: {{risk}} posiziun victoriusa immediata",
+    "riskManyAI": "Ristg da la figura tschernida da AI: {{risk}} posiziuns victoriusas immediatas",
+    "riskTurnedOff": "Il ristg da selecziun è deactivà",
+    "riskUnavailableAI": "Il ristg da selecziun n'è betg disponibel en il modus AI cunter AI",
+    "selectionRisk": "Ristg da selecziun",
+    "turnRiskOff": "Deactivar il ristg da selecziun",
+    "turnRiskOn": "Activar il ristg da selecziun"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lingua",
+    "search": "Tschertgar linguas",
+    "empty": "Naginas linguas chattadas",
+    "close": "Serrar"
+  }
+}

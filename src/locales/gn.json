@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Peteĩ ñemyatyrõ oñembohasáva",
+    "newGame": "Ñembosarái pyahu"
+  },
+  "common": {
+    "on": "MYANDY",
+    "off": "MBOGUE"
+  },
+  "a11y": {
+    "utilityActions": "Tembiporu joajuha ha ñe'ẽ",
+    "viewSource": "Ehecha ypykue GitHub-pe",
+    "gameControls": "Ñembosarái ñangareko",
+    "gameBoard": "Ñembosarái rupa 3D",
+    "gameInfo": "Ñembosarái marandu"
+  },
+  "controls": {
+    "diffAI": "AI hasyha",
+    "diffPlayerOneAI": "P1 hasyha",
+    "diffPlayerTwoAI": "P2 hasyha",
+    "startingPlayer": "Oñepyrũva ñembosaráihára",
+    "gameMode": "Ñembosarái reko",
+    "pauseAI": "Emombyta sapy'a AI",
+    "resumeAI": "Emoñepyrũ jey AI",
+    "undo": "Mbojevy",
+    "redo": "Japo jey"
+  },
+  "diff": {
+    "easy": "Ndahasýi",
+    "medium": "Mbytepegua",
+    "hard": "Hasy"
+  },
+  "mode": {
+    "userVsUser": "Puruhára vs puruhára",
+    "userVsAI": "Puruhára vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Nde",
+    "playerOne": "Ñembosaráihára Peteĩ",
+    "playerTwo": "Ñembosaráihára Mokõi",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Oimeháicha",
+    "playerAIPlayer": "AI ñembosaráihára",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Ñembosarái reko...",
+    "pausedAI": "{{player}} opyta sapy'a...",
+    "placingAI": "{{player}} oñembosarái - omoĩ pehẽngue tablero-pe...",
+    "placingUser": "{{player}} oñembosarái - Emoĩ pehẽngue ojeporavóva tablero-pe...",
+    "placeUserYou": "Nde reñembosarái - Emoĩ pehẽngue ojeporavóva tablero-pe...",
+    "gameDrawn": "Ñembosarái joja - ndaipóri línea ipu'akáva",
+    "gameWon": "{{player}} ipu'aka - línea ipu'akáva ojehechauka",
+    "selectingAI": "{{player}} oñembosarái - oiporavo pehẽngue {{opponent}}-pe g̃uarã...",
+    "selectUser": "{{player}} oñembosarái - Eiporavo pehẽngue {{opponent}}-pe g̃uarã...",
+    "selectUserYou": "Nde reñembosarái - Eiporavo pehẽngue {{opponent}}-pe g̃uarã..."
+  },
+  "piece": {
+    "inPlay": "Pehẽngue oñembosaráiva",
+    "none": "Ndaipóri ojeporavóva",
+    "traits": "Pehẽngue rekotee",
+    "black": "hũ",
+    "red": "pytã",
+    "big": "tuicha",
+    "small": "michĩ",
+    "round": "apu'a",
+    "square": "irundyke",
+    "solid": "hatã",
+    "hollow": "kuára"
+  },
+  "board": {
+    "binary": "Tablero binario",
+    "piecesPlaced": "Pehẽngue oñemoĩmava",
+    "cellEmpty": "Koty {{cell}}: nandi",
+    "cellPiece": "Koty {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Ndaikatúi ojehechauka 3D.",
+    "webglHeading": "WebGL ndaikatúi oñepyrũ.",
+    "webglMsg": "Ñembosarái oikotevẽ WebGL hendýva kundahára-pe."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Emoĩ kurusu pehẽngue ikatúva ojeporavo ári ehecha hag̃ua ipeligro",
+    "hoveredRiskOne": "Pehẽngue ári oĩva peligro: {{risk}} ñemoĩ pya'e ipu'akáva",
+    "hoveredRiskMany": "Pehẽngue ári oĩva peligro: {{risk}} ñemoĩ pya'e ipu'akáva",
+    "immediateWins": "Ñemoĩ pya'e ipu'akáva",
+    "latestRisk": "Peligro ipyahuvéva",
+    "riskOneAI": "Pehẽngue AI oiporavóva peligro: {{risk}} ñemoĩ pya'e ipu'akáva",
+    "riskManyAI": "Pehẽngue AI oiporavóva peligro: {{risk}} ñemoĩ pya'e ipu'akáva",
+    "riskTurnedOff": "Peligro jeporavo oñembogue",
+    "riskUnavailableAI": "Peligro jeporavo ndaipóri AI vs AI rekópe",
+    "selectionRisk": "Peligro jeporavo",
+    "turnRiskOff": "Embogue peligro jeporavo",
+    "turnRiskOn": "Emyandy peligro jeporavo"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ñe’ẽ",
+    "search": "Eheka ñe’ẽnguéra",
+    "empty": "Ndaipóri ñe’ẽ ojejuhúva",
+    "close": "Oñemboty"
+  }
+}

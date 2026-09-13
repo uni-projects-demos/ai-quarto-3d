@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "אַ פּאָרטירטע פֿאַרבעסערונג פֿון",
+    "newGame": "נײַ שפּיל"
+  },
+  "common": {
+    "on": "אָן",
+    "off": "אויס"
+  },
+  "a11y": {
+    "utilityActions": "אַפּ־לינקס און שפּראַך",
+    "viewSource": "זען דעם מקור אויף GitHub",
+    "gameControls": "שפּיל־קאָנטראָלן",
+    "gameBoard": "3D שפּיל־ברעט",
+    "gameInfo": "שפּיל־אינפֿאָרמאַציע"
+  },
+  "controls": {
+    "diffAI": "AI שוועריקייט",
+    "diffPlayerOneAI": "P1 שוועריקייט",
+    "diffPlayerTwoAI": "P2 שוועריקייט",
+    "startingPlayer": "אָנהייבנדיקער שפּילער",
+    "gameMode": "שפּיל־מאָדע",
+    "pauseAI": "פּויזירן AI",
+    "resumeAI": "ווײַטער AI",
+    "undo": "צוריקמאַכן",
+    "redo": "ווידערמאַכן"
+  },
+  "diff": {
+    "easy": "גרינג",
+    "medium": "מיטל",
+    "hard": "שווער"
+  },
+  "mode": {
+    "userVsUser": "באַניצער קעגן באַניצער",
+    "userVsAI": "באַניצער קעגן AI",
+    "onlyAI": "AI קעגן AI"
+  },
+  "player": {
+    "playerYou": "איר",
+    "playerOne": "שפּילער איינס",
+    "playerTwo": "שפּילער צוויי",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "צופֿעליק",
+    "playerAIPlayer": "AI שפּילער",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "שפּיל־סטאַטוס...",
+    "pausedAI": "{{player}} איז פּויזירט...",
+    "placingAI": "{{player}} שפּילט - לייגט אַ שטיקל אויפֿן ברעט...",
+    "placingUser": "{{player}} שפּילט - לייג דאָס אויסגעקליבענע שטיקל אויפֿן ברעט...",
+    "placeUserYou": "איר שפּילט - לייגט דאָס אויסגעקליבענע שטיקל אויפֿן ברעט...",
+    "gameDrawn": "גלײַך שפּיל - קיין געווינער־ליניע נישט",
+    "gameWon": "{{player}} געווינט - די געווינער־ליניע איז באַצייכנט",
+    "selectingAI": "{{player}} שפּילט - קלײַבט אַ שטיקל פֿאַר {{opponent}}...",
+    "selectUser": "{{player}} שפּילט - קלײַבט אַ שטיקל פֿאַר {{opponent}}...",
+    "selectUserYou": "איר שפּילט - קלײַבט אַ שטיקל פֿאַר {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "שטיקל אין שפּיל",
+    "none": "גאָרנישט אויסגעקליבן",
+    "traits": "אייגנשאַפֿטן פֿון שטיקל",
+    "black": "שוואַרץ",
+    "red": "רויט",
+    "big": "גרויס",
+    "small": "קליין",
+    "round": "רונד",
+    "square": "קוואַדראַטיש",
+    "solid": "פֿול",
+    "hollow": "הויל"
+  },
+  "board": {
+    "binary": "בינאַרער ברעט",
+    "piecesPlaced": "געשטעלטע שטיקלעך",
+    "cellEmpty": "צעל {{cell}}: ליידיק",
+    "cellPiece": "צעל {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D רענדערינג איז נישט בנימצא.",
+    "webglHeading": "WebGL האָט נישט געקענט אָנהייבן.",
+    "webglMsg": "דער שפּיל דאַרף WebGL אַקטיווירט אינעם בלעטערער."
+  },
+  "metrics": {
+    "hoverRiskPreview": "האַלט דעם קורסאָר איבער אַ אויסקלייבאַרן שטיקל צו זען דעם אויסקלײַב־ריזיקירן",
+    "hoveredRiskOne": "ריזיקירן פֿון שטיקל אונטערן קורסאָר: {{risk}} באַלדיקע געווינער־פּלאַץ",
+    "hoveredRiskMany": "ריזיקירן פֿון שטיקל אונטערן קורסאָר: {{risk}} באַלדיקע געווינער־ערטער",
+    "immediateWins": "באַלדיקע געווינער־ערטער",
+    "latestRisk": "לעצטער אויסקלײַב־ריזיקירן",
+    "riskOneAI": "ריזיקירן פֿון AI־אויסגעקליבענעם שטיקל: {{risk}} באַלדיקע געווינער־פּלאַץ",
+    "riskManyAI": "ריזיקירן פֿון AI־אויסגעקליבענעם שטיקל: {{risk}} באַלדיקע געווינער־ערטער",
+    "riskTurnedOff": "אויסקלײַב־ריזיקירן איז אויס",
+    "riskUnavailableAI": "אויסקלײַב־ריזיקירן איז נישט בנימצא אין AI קעגן AI",
+    "selectionRisk": "אויסקלײַב־ריזיקירן",
+    "turnRiskOff": "מאַך אויס אויסקלײַב־ריזיקירן",
+    "turnRiskOn": "מאַך אָן אויסקלײַב־ריזיקירן"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "שפּראַך",
+    "search": "זוכן שפּראַכן",
+    "empty": "קיין שפראכן געפונען",
+    "close": "נאָענט"
+  }
+}

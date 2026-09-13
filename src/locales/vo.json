@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Menodükam pevotöl de",
+    "newGame": "Pled nulik"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Yüms programa e pük",
+    "viewSource": "Logön fonäti su GitHub",
+    "gameControls": "Stirams pleda",
+    "gameBoard": "Pledaboed 3D",
+    "gameInfo": "Nüns pleda"
+  },
+  "controls": {
+    "diffAI": "Fikul AI",
+    "diffPlayerOneAI": "Fikul P1",
+    "diffPlayerTwoAI": "Fikul P2",
+    "startingPlayer": "Pledan primöl",
+    "gameMode": "Mod pleda",
+    "pauseAI": "Stebedön AI",
+    "resumeAI": "Fovön AI",
+    "undo": "Geükön",
+    "redo": "Dönuükön"
+  },
+  "diff": {
+    "easy": "Fasil",
+    "medium": "Zänodik",
+    "hard": "Fikul"
+  },
+  "mode": {
+    "userVsUser": "Geban kontra geban",
+    "userVsAI": "Geban kontra AI",
+    "onlyAI": "AI kontra AI"
+  },
+  "player": {
+    "playerYou": "Ol",
+    "playerOne": "Pledan Bal",
+    "playerTwo": "Pledan Tel",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Fädiko",
+    "playerAIPlayer": "Pledan AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Stad pleda...",
+    "pausedAI": "{{player}} stebedon...",
+    "placingAI": "{{player}} pledon - pladon patedi su boed...",
+    "placingUser": "{{player}} pledon - pladön patedi välöl su boed...",
+    "placeUserYou": "Ol pledol - pladön patedi välöl su boed...",
+    "gameDrawn": "Pled jenon leigik - no binon lien vönik",
+    "gameWon": "{{player}} vikon - lien vönik maädon",
+    "selectingAI": "{{player}} pledon - välon patedi pro {{opponent}}...",
+    "selectUser": "{{player}} pledon - välön patedi pro {{opponent}}...",
+    "selectUserYou": "Ol pledol - välön patedi pro {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pated in pled",
+    "none": "Nos välöl",
+    "traits": "Patöfs pateda",
+    "black": "blägik",
+    "red": "redik",
+    "big": "gretik",
+    "small": "smalik",
+    "round": "trönik",
+    "square": "kvadatik",
+    "solid": "stif",
+    "hollow": "gulik"
+  },
+  "board": {
+    "binary": "Boed binarik",
+    "piecesPlaced": "Pateds pladöl",
+    "cellEmpty": "Zel {{cell}}: vagik",
+    "cellPiece": "Zel {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Maedam 3D no gebidik.",
+    "webglHeading": "WebGL no kanon primön.",
+    "webglMsg": "Pled nedon WebGL binön pejonüköl in bevüresodat."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Dakipön kursori sus pated välovik ad logön risk välama",
+    "hoveredRiskOne": "Risk pateda sus kel kursori binon: {{risk}} plad vönik suno",
+    "hoveredRiskMany": "Risk pateda sus kel kursori binon: {{risk}} plads vönik suno",
+    "immediateWins": "Plads vönik suno",
+    "latestRisk": "Risk välama lätik",
+    "riskOneAI": "Risk pateda pevälöl fa AI: {{risk}} plad vönik suno",
+    "riskManyAI": "Risk pateda pevälöl fa AI: {{risk}} plads vönik suno",
+    "riskTurnedOff": "Risk välama binon peoffüköl",
+    "riskUnavailableAI": "Risk välama no gebidik in mod AI kontra AI",
+    "selectionRisk": "Risk välama",
+    "turnRiskOff": "Offükön risk välama",
+    "turnRiskOn": "Onükön risk välama"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Pük",
+    "search": "Sukön püki",
+    "empty": "No petuvon pük",
+    "close": "Färmükön"
+  }
+}

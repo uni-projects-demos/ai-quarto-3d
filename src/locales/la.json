@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Emendatio translata ex",
+    "newGame": "Ludus novus"
+  },
+  "common": {
+    "on": "ACTIVUM",
+    "off": "INACTIVUM"
+  },
+  "a11y": {
+    "utilityActions": "Nexus applicationis et lingua",
+    "viewSource": "Fontem in GitHub vide",
+    "gameControls": "Moderamina ludi",
+    "gameBoard": "Tabula lusoria 3D",
+    "gameInfo": "Notitia ludi"
+  },
+  "controls": {
+    "diffAI": "Difficultas AI",
+    "diffPlayerOneAI": "Difficultas P1",
+    "diffPlayerTwoAI": "Difficultas P2",
+    "startingPlayer": "Lusor incipiens",
+    "gameMode": "Modus ludi",
+    "pauseAI": "AI siste",
+    "resumeAI": "AI perge",
+    "undo": "Rescinde",
+    "redo": "Refice"
+  },
+  "diff": {
+    "easy": "Facile",
+    "medium": "Medium",
+    "hard": "Difficile"
+  },
+  "mode": {
+    "userVsUser": "Usor contra usorem",
+    "userVsAI": "Usor contra AI",
+    "onlyAI": "AI contra AI"
+  },
+  "player": {
+    "playerYou": "Tu",
+    "playerOne": "Lusor Unus",
+    "playerTwo": "Lusor Duo",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Fortuitus",
+    "playerAIPlayer": "Lusor AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Status ludi...",
+    "pausedAI": "{{player}} pausatus est...",
+    "placingAI": "{{player}} ludit - tessellam in tabula ponit...",
+    "placingUser": "{{player}} ludit - Tessellam selectam in tabula pone...",
+    "placeUserYou": "Tu ludis - Tessellam selectam in tabula pone...",
+    "gameDrawn": "Ludus aequatus - nulla linea victrix",
+    "gameWon": "{{player}} vincit - linea victrix illustrata",
+    "selectingAI": "{{player}} ludit - tessellam pro {{opponent}} eligit...",
+    "selectUser": "{{player}} ludit - Elige tessellam pro {{opponent}}...",
+    "selectUserYou": "Tu ludis - Elige tessellam pro {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Tessella in ludo",
+    "none": "Nihil selectum",
+    "traits": "Proprietates tessellae",
+    "black": "niger",
+    "red": "ruber",
+    "big": "magnus",
+    "small": "parvus",
+    "round": "rotundus",
+    "square": "quadratus",
+    "solid": "solidus",
+    "hollow": "cavus"
+  },
+  "board": {
+    "binary": "Tabula binaria",
+    "piecesPlaced": "Tessellae positae",
+    "cellEmpty": "Cella {{cell}}: vacua",
+    "cellPiece": "Cella {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Imago 3D praesto non est.",
+    "webglHeading": "WebGL incipere non potuit.",
+    "webglMsg": "Ludus postulat ut WebGL in navigatro activum sit."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Indicem super tessellam eligibilem tene ut periculum electionis praevideas",
+    "hoveredRiskOne": "Periculum tessellae sub indice: {{risk}} positio statim victrix",
+    "hoveredRiskMany": "Periculum tessellae sub indice: {{risk}} positiones statim victrices",
+    "immediateWins": "Positiones statim victrices",
+    "latestRisk": "Novissimum periculum electionis",
+    "riskOneAI": "Periculum tessellae ab AI electae: {{risk}} positio statim victrix",
+    "riskManyAI": "Periculum tessellae ab AI electae: {{risk}} positiones statim victrices",
+    "riskTurnedOff": "Periculum electionis inactivum est",
+    "riskUnavailableAI": "Periculum electionis in modo AI contra AI praesto non est",
+    "selectionRisk": "Periculum electionis",
+    "turnRiskOff": "Periculum electionis inactiva",
+    "turnRiskOn": "Periculum electionis activa"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lingua",
+    "search": "Linguās quaere",
+    "empty": "Nūllae linguae inventae sunt",
+    "close": "Claude"
+  }
+}

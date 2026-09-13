@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Gij gaijcienq daeuj",
+    "newGame": "Youxmoq moq"
+  },
+  "common": {
+    "on": "DAH",
+    "off": "DAEJ"
+  },
+  "a11y": {
+    "utilityActions": "Genj app caeuq vah",
+    "viewSource": "Yawj source youq GitHub",
+    "gameControls": "Genj gvanjleix youxmoq",
+    "gameBoard": "Bangz youxmoq 3D",
+    "gameInfo": "Siengjyouq youxmoq"
+  },
+  "controls": {
+    "diffAI": "AI naniz",
+    "diffPlayerOneAI": "P1 naniz",
+    "diffPlayerTwoAI": "P2 naniz",
+    "startingPlayer": "Vunz youx daihit",
+    "gameMode": "Yiengh youxmoq",
+    "pauseAI": "Dangz AI",
+    "resumeAI": "Gijciz AI",
+    "undo": "Dauq",
+    "redo": "Caeuq cungj"
+  },
+  "diff": {
+    "easy": "Yungz",
+    "medium": "Cungh",
+    "hard": "Nanz"
+  },
+  "mode": {
+    "userVsUser": "Vunz cangh vunz",
+    "userVsAI": "Vunz cangh AI",
+    "onlyAI": "AI cangh AI"
+  },
+  "player": {
+    "playerYou": "Mwngz",
+    "playerOne": "Vunz Youx It",
+    "playerTwo": "Vunz Youx Ngeih",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Doenghnaeuz",
+    "playerAIPlayer": "Vunz youx AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Duzdoengh youxmoq...",
+    "pausedAI": "{{player}} dangz le...",
+    "placingAI": "{{player}} youx - ndaej geij duz youq bangz...",
+    "placingUser": "{{player}} youx - ndaej duz gwnz ndei youq bangz...",
+    "placeUserYou": "Mwngz youx - ndaej duz gwnz ndei youq bangz...",
+    "gameDrawn": "Youxmoq doxdoengz - mbouj miz hongz dangz",
+    "gameWon": "{{player}} ndaej - hongz dangz ndaej siengj",
+    "selectingAI": "{{player}} youx - genj duz hawj {{opponent}}...",
+    "selectUser": "{{player}} youx - genj duz hawj {{opponent}}...",
+    "selectUserYou": "Mwngz youx - genj duz hawj {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Duz youq youxmoq",
+    "none": "Mbouj genj gijmaz",
+    "traits": "Yiengh duz",
+    "black": "ndaem",
+    "red": "hoengz",
+    "big": "hung",
+    "small": "iq",
+    "round": "lumj gwnz",
+    "square": "sei geiz",
+    "solid": "giet",
+    "hollow": "hungz"
+  },
+  "board": {
+    "binary": "Bangz binary",
+    "piecesPlaced": "Duz ndaej ndaej",
+    "cellEmpty": "Geih {{cell}}: boengz",
+    "cellPiece": "Geih {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering mbouj miz.",
+    "webglHeading": "WebGL mbouj ndaej daihceij.",
+    "webglMsg": "Youxmoq aeu WebGL dah youq browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Ndaej cursor youq duz ndaej genj hawj yawj nguyj genj",
+    "hoveredRiskOne": "Nguyj duz cursor: {{risk}} dieg dangz deq",
+    "hoveredRiskMany": "Nguyj duz cursor: {{risk}} dieg dangz deq",
+    "immediateWins": "Diengz dangz deq",
+    "latestRisk": "Nguyj genj lajneix",
+    "riskOneAI": "Nguyj duz AI genj: {{risk}} dieg dangz deq",
+    "riskManyAI": "Nguyj duz AI genj: {{risk}} dieg dangz deq",
+    "riskTurnedOff": "Nguyj genj daej",
+    "riskUnavailableAI": "Nguyj genj mbouj miz youq AI cangh AI",
+    "selectionRisk": "Nguyj genj",
+    "turnRiskOff": "Daej nguyj genj",
+    "turnRiskOn": "Dah nguyj genj"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Vah",
+    "search": "Ra vah",
+    "empty": "Miz vah ra ndaej",
+    "close": "Gvangj"
+  }
+}

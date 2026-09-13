@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interfaccia interattiva del gioco da tavolo Quarto in 3D che usa Three.js e la versione Negamax dell’algoritmo di intelligenza artificiale Minimax con potatura alfa-beta. Gioca utente contro utente, utente contro IA e IA contro IA, con difficoltà IA facile, media e difficile.",
     "ogDescription": "Gioco da tavolo Quarto interattivo in 3D. Gioca utente contro utente, utente contro IA e IA contro IA, con difficoltà IA facile, media e difficile."
+  },
+  "language": {
+    "label": "Lingua",
+    "search": "Cerca lingue",
+    "empty": "Nessuna lingua trovata",
+    "close": "Chiudi"
   }
 }

@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interaktiivne 3D Quarto lauamängu kasutajaliides Three.js-iga ning Minimax tehisintellekti algoritmi Negamax-versiooniga koos alfa-beeta kärpimisega. Mängi mängija mängija vastu, mängija AI vastu ja AI AI vastu lihtsa, keskmise või raske AI-ga.",
     "ogDescription": "Interaktiivne 3D Quarto lauamäng. Mängi mängija mängija vastu, mängija AI vastu ja AI AI vastu lihtsa, keskmise või raske AI-ga."
+  },
+  "language": {
+    "label": "Keel",
+    "search": "Otsi keeli",
+    "empty": "Keeli ei leitud",
+    "close": "Sule"
   }
 }

@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Antarmuka dolanan papan Quarto 3D interaktif nggunakake Three.js lan versi Negamax saka algoritma kecerdasan buatan Minimax kanthi pruning alpha-beta. Dolan panganggo lawan panganggo, panganggo lawan AI, lan AI lawan AI kanthi AI gampang, sedheng lan angel.",
     "ogDescription": "Dolanan papan Quarto 3D interaktif. Dolan panganggo lawan panganggo, panganggo lawan AI, lan AI lawan AI kanthi AI gampang, sedheng lan angel."
+  },
+  "language": {
+    "label": "Basa",
+    "search": "Telusuri basa",
+    "empty": "Ora ana basa sing ditemokake",
+    "close": "Nutup"
   }
 }

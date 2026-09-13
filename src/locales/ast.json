@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Una meyora portada de",
+    "newGame": "Xuegu nuevu"
+  },
+  "common": {
+    "on": "ACTIVÁU",
+    "off": "DESACTIVÁU"
+  },
+  "a11y": {
+    "utilityActions": "Enllaces de l'aplicación y llingua",
+    "viewSource": "Ver el códigu fonte en GitHub",
+    "gameControls": "Controles del xuegu",
+    "gameBoard": "Tableru 3D del xuegu",
+    "gameInfo": "Información del xuegu"
+  },
+  "controls": {
+    "diffAI": "Dificultá de la IA",
+    "diffPlayerOneAI": "Dificultá P1",
+    "diffPlayerTwoAI": "Dificultá P2",
+    "startingPlayer": "Xugador inicial",
+    "gameMode": "Mou de xuegu",
+    "pauseAI": "Pausar IA",
+    "resumeAI": "Reanudar IA",
+    "undo": "Desfacer",
+    "redo": "Refacer"
+  },
+  "diff": {
+    "easy": "Fácil",
+    "medium": "Media",
+    "hard": "Difícil"
+  },
+  "mode": {
+    "userVsUser": "Usuariu contra usuariu",
+    "userVsAI": "Usuariu contra IA",
+    "onlyAI": "IA contra IA"
+  },
+  "player": {
+    "playerYou": "Tu",
+    "playerOne": "Xugador Un",
+    "playerTwo": "Xugador Dos",
+    "playerAI": "IA ({{difficulty}})",
+    "playerNumberedAI": "IA (P{{number}}, {{difficulty}})",
+    "playerRandom": "Al debalu",
+    "playerAIPlayer": "Xugador IA",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Estáu del xuegu...",
+    "pausedAI": "{{player}} ta en pausa...",
+    "placingAI": "{{player}} ta xugando - colocando la pieza nel tableru...",
+    "placingUser": "{{player}} ta xugando - Coloca la pieza escoyida nel tableru...",
+    "placeUserYou": "Tas xugando - Coloca la pieza escoyida nel tableru...",
+    "gameDrawn": "Empate - nun hai llinia ganadora",
+    "gameWon": "{{player}} gana - llinia ganadora resaltada",
+    "selectingAI": "{{player}} ta xugando - escoyendo una pieza pa {{opponent}}...",
+    "selectUser": "{{player}} ta xugando - Escueyi una pieza pa {{opponent}}...",
+    "selectUserYou": "Tas xugando - Escueyi una pieza pa {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pieza en xuegu",
+    "none": "Nun hai nada escoyío",
+    "traits": "Carauterístiques de la pieza",
+    "black": "prietu",
+    "red": "coloráu",
+    "big": "grande",
+    "small": "pequeñu",
+    "round": "redondu",
+    "square": "cuadráu",
+    "solid": "macizu",
+    "hollow": "buecu"
+  },
+  "board": {
+    "binary": "Tableru binariu",
+    "piecesPlaced": "Pieces colocaes",
+    "cellEmpty": "Caxella {{cell}}: balera",
+    "cellPiece": "Caxella {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "El renderizáu 3D nun ta disponible.",
+    "webglHeading": "WebGL nun pudo arrancar.",
+    "webglMsg": "El xuegu necesita WebGL activáu nel navegador."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Pon el cursor enriba d'una pieza escoyible pa previsualizar el riesgu de seleición",
+    "hoveredRiskOne": "Riesgu de la pieza baxo'l cursor: {{risk}} colocación ganadora inmediata",
+    "hoveredRiskMany": "Riesgu de la pieza baxo'l cursor: {{risk}} colocaciones ganadores inmediates",
+    "immediateWins": "Colocaciones ganadores inmediates",
+    "latestRisk": "Últimu riesgu de seleición",
+    "riskOneAI": "Riesgu de la pieza escoyida pola IA: {{risk}} colocación ganadora inmediata",
+    "riskManyAI": "Riesgu de la pieza escoyida pola IA: {{risk}} colocaciones ganadores inmediates",
+    "riskTurnedOff": "El riesgu de seleición ta desactiváu",
+    "riskUnavailableAI": "El riesgu de seleición nun ta disponible nel mou IA contra IA",
+    "selectionRisk": "Riesgu de seleición",
+    "turnRiskOff": "Desactivar el riesgu de seleición",
+    "turnRiskOn": "Activar el riesgu de seleición"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Llingua",
+    "search": "Buscar llingües",
+    "empty": "Nun s’alcontraron llingües",
+    "close": "Zarrar"
+  }
+}

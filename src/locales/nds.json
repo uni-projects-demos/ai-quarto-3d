@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "En överdragen Verbeterung vun",
+    "newGame": "Nieg Speel"
+  },
+  "common": {
+    "on": "AN",
+    "off": "UT"
+  },
+  "a11y": {
+    "utilityActions": "App-Links un Spraak",
+    "viewSource": "Bornkode op GitHub ankieken",
+    "gameControls": "Speelstüern",
+    "gameBoard": "3D-Speelbrett",
+    "gameInfo": "Speelinformatschon"
+  },
+  "controls": {
+    "diffAI": "AI-Swierigkeid",
+    "diffPlayerOneAI": "P1-Swierigkeid",
+    "diffPlayerTwoAI": "P2-Swierigkeid",
+    "startingPlayer": "Startspeler",
+    "gameMode": "Speelmodus",
+    "pauseAI": "AI anhollen",
+    "resumeAI": "AI wiedermaken",
+    "undo": "Torüchnehmen",
+    "redo": "Nochmaal maken"
+  },
+  "diff": {
+    "easy": "Eenfach",
+    "medium": "Middel",
+    "hard": "Swierig"
+  },
+  "mode": {
+    "userVsUser": "Bruker gegen Bruker",
+    "userVsAI": "Bruker gegen AI",
+    "onlyAI": "AI gegen AI"
+  },
+  "player": {
+    "playerYou": "Du",
+    "playerOne": "Speler Een",
+    "playerTwo": "Speler Twee",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Tofall",
+    "playerAIPlayer": "AI-Speler",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Speelstatus...",
+    "pausedAI": "{{player}} is anhollen...",
+    "placingAI": "{{player}} speelt - sett en Steen op dat Brett...",
+    "placingUser": "{{player}} speelt - Sett den utsöchten Steen op dat Brett...",
+    "placeUserYou": "Du speelst - Sett den utsöchten Steen op dat Brett...",
+    "gameDrawn": "Unentscheden - keen Winnerreeg",
+    "gameWon": "{{player}} winnt - Winnerreeg markeert",
+    "selectingAI": "{{player}} speelt - söökt en Steen för {{opponent}} ut...",
+    "selectUser": "{{player}} speelt - Söök en Steen för {{opponent}} ut...",
+    "selectUserYou": "Du speelst - Söök en Steen för {{opponent}} ut..."
+  },
+  "piece": {
+    "inPlay": "Steen in't Speel",
+    "none": "Nix utsöcht",
+    "traits": "Steen-Egenschoppen",
+    "black": "swatt",
+    "red": "root",
+    "big": "groot",
+    "small": "lütt",
+    "round": "rund",
+    "square": "veerkant",
+    "solid": "vull",
+    "hollow": "holl"
+  },
+  "board": {
+    "binary": "Binäär Brett",
+    "piecesPlaced": "Sett Stenen",
+    "cellEmpty": "Feld {{cell}}: leddig",
+    "cellPiece": "Feld {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D-Dorstellen is nich verföögbor.",
+    "webglHeading": "WebGL kunn nich starten.",
+    "webglMsg": "Dat Speel bruukt WebGL, dat in'n Browser anmaakt is."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Holl den Muuswieser över en utsöökbaren Steen, üm dat Utsöök-Risiko to sehn",
+    "hoveredRiskOne": "Risiko vun'n Steen ünner de Muus: {{risk}} direkte Winnerplatz",
+    "hoveredRiskMany": "Risiko vun'n Steen ünner de Muus: {{risk}} direkte Winnerplätz",
+    "immediateWins": "Direkte Winnerplätz",
+    "latestRisk": "Lest Utsöök-Risiko",
+    "riskOneAI": "Risiko vun AI utsöchten Steen: {{risk}} direkte Winnerplatz",
+    "riskManyAI": "Risiko vun AI utsöchten Steen: {{risk}} direkte Winnerplätz",
+    "riskTurnedOff": "Utsöök-Risiko is ut",
+    "riskUnavailableAI": "Utsöök-Risiko is in AI gegen AI-Modus nich verföögbor",
+    "selectionRisk": "Utsöök-Risiko",
+    "turnRiskOff": "Utsöök-Risiko utmaken",
+    "turnRiskOn": "Utsöök-Risiko anmaken"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Spraak",
+    "search": "Spraken söken",
+    "empty": "Keen Spraken funnen",
+    "close": "Tomaken"
+  }
+}

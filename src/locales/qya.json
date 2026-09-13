@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Envinyanta vanwa",
+    "newGame": "Vinya tyalië"
+  },
+  "common": {
+    "on": "CALIMA",
+    "off": "FIRINA"
+  },
+  "a11y": {
+    "utilityActions": "App yanwë ar lambë",
+    "viewSource": "Cen i yesta mi GitHub",
+    "gameControls": "Tyalië turië",
+    "gameBoard": "3D tyalië pano",
+    "gameInfo": "Tyalië quenta"
+  },
+  "controls": {
+    "diffAI": "AI urda",
+    "diffPlayerOneAI": "P1 urda",
+    "diffPlayerTwoAI": "P2 urda",
+    "startingPlayer": "Minya tyalindo",
+    "gameMode": "Tyalië lé",
+    "pauseAI": "Hauta AI",
+    "resumeAI": "Lelya AI",
+    "undo": "Entulya",
+    "redo": "Ata carë"
+  },
+  "diff": {
+    "easy": "Faika",
+    "medium": "Enda",
+    "hard": "Urda"
+  },
+  "mode": {
+    "userVsUser": "Maitanëo ná maitanëo",
+    "userVsAI": "Maitanëo ná AI",
+    "onlyAI": "AI ná AI"
+  },
+  "player": {
+    "playerYou": "Lye",
+    "playerOne": "Tyalindo Minya",
+    "playerTwo": "Tyalindo Atta",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Húmë",
+    "playerAIPlayer": "AI tyalindo",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Tyalië ná...",
+    "pausedAI": "{{player}} hauta...",
+    "placingAI": "{{player}} tyalë - panya ranta panoressë...",
+    "placingUser": "{{player}} tyalë - panya cílina ranta panoressë...",
+    "placeUserYou": "Lye tyalë - panya cílina ranta panoressë...",
+    "gameDrawn": "Tyalië ná same - lá turwa téma",
+    "gameWon": "{{player}} túra - turwa téma calima",
+    "selectingAI": "{{player}} tyalë - cíla ranta an {{opponent}}...",
+    "selectUser": "{{player}} tyalë - cíla ranta an {{opponent}}...",
+    "selectUserYou": "Lye tyalë - cíla ranta an {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Ranta mi tyalië",
+    "none": "Lá nat cílina",
+    "traits": "Ranta lambë",
+    "black": "morë",
+    "red": "carnë",
+    "big": "alta",
+    "small": "pitya",
+    "round": "corna",
+    "square": "canta",
+    "solid": "tanca",
+    "hollow": "cumbo"
+  },
+  "board": {
+    "binary": "Atwa pano",
+    "piecesPlaced": "Panyar rantor",
+    "cellEmpty": "Sambë {{cell}}: lusta",
+    "cellPiece": "Sambë {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D cenië lá ëa.",
+    "webglHeading": "WebGL lá polë yesta.",
+    "webglMsg": "Tyalië merë WebGL calima mi browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Harya cursor or cílina ranta cenien i cílë rauco",
+    "hoveredRiskOne": "Rauco ranta nu cursor: {{risk}} sintë turwa nómë",
+    "hoveredRiskMany": "Rauco ranta nu cursor: {{risk}} sintë turwa nómir",
+    "immediateWins": "Sintë turwa nómir",
+    "latestRisk": "Mettëa cílë rauco",
+    "riskOneAI": "Rauco ranta cílina AI: {{risk}} sintë turwa nómë",
+    "riskManyAI": "Rauco ranta cílina AI: {{risk}} sintë turwa nómir",
+    "riskTurnedOff": "Cílë rauco firina",
+    "riskUnavailableAI": "Cílë rauco lá ëa mi AI ná AI",
+    "selectionRisk": "Cílë rauco",
+    "turnRiskOff": "Firin cílë rauco",
+    "turnRiskOn": "Calima cílë rauco"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lambë",
+    "search": "Cesta lamber",
+    "empty": "Lá lambë hirna",
+    "close": "Pahta"
+  }
+}

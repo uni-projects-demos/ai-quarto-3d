@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ing portang pinasulung bersiun ning",
+    "newGame": "Bayung laro"
+  },
+  "common": {
+    "on": "BUKAS",
+    "off": "PATAY"
+  },
+  "a11y": {
+    "utilityActions": "Ding link ning app ampong amanung gagamitan",
+    "viewSource": "Lawen ing source king GitHub",
+    "gameControls": "Kontrol ning laro",
+    "gameBoard": "3D game board",
+    "gameInfo": "Impormasyun ning laro"
+  },
+  "controls": {
+    "diffAI": "Kahirapan ning AI",
+    "diffPlayerOneAI": "Kahirapan P1",
+    "diffPlayerTwoAI": "Kahirapan P2",
+    "startingPlayer": "Munang maglaro",
+    "gameMode": "Paraan ning laro",
+    "pauseAI": "I-pause ing AI",
+    "resumeAI": "Ituloy ing AI",
+    "undo": "I-undo",
+    "redo": "I-redo"
+  },
+  "diff": {
+    "easy": "Mayali",
+    "medium": "Katamtaman",
+    "hard": "Mahirap"
+  },
+  "mode": {
+    "userVsUser": "User laban user",
+    "userVsAI": "User laban AI",
+    "onlyAI": "AI laban AI"
+  },
+  "player": {
+    "playerYou": "Ika",
+    "playerOne": "Player Metung",
+    "playerTwo": "Player Adwa",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Patsambahan",
+    "playerAIPlayer": "AI Player",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Kalagayan ning laro...",
+    "pausedAI": "Naka-pause i {{player}}...",
+    "placingAI": "Maglaro i {{player}} - maglalage piyesa king board...",
+    "placingUser": "Maglaro i {{player}} - ilage ing piniling piyesa king board...",
+    "placeUserYou": "Maglaro ka - ilage ing piniling piyesa king board...",
+    "gameDrawn": "Tabla ing laro - alang linyang manalo",
+    "gameWon": "Manalo i {{player}} - makitang malinaw ing linyang manalo",
+    "selectingAI": "Maglaro i {{player}} - mamili piyesa para kang {{opponent}}...",
+    "selectUser": "Maglaro i {{player}} - mamili kang piyesa para kang {{opponent}}...",
+    "selectUserYou": "Maglaro ka - mamili kang piyesa para kang {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Piyesang gagamitan",
+    "none": "Alang pinili",
+    "traits": "Katangian ning piyesa",
+    "black": "malutu",
+    "red": "maragul a pula",
+    "big": "maragul",
+    "small": "malati",
+    "round": "bilug",
+    "square": "kuwadradu",
+    "solid": "buo",
+    "hollow": "butas"
+  },
+  "board": {
+    "binary": "Binary board",
+    "piecesPlaced": "Ding piyesang milage",
+    "cellEmpty": "Cell {{cell}}: alang laman",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "E available ing 3D rendering.",
+    "webglHeading": "E meg-start ing WebGL.",
+    "webglMsg": "Kailangan ning laro ing WebGL a naka-enable king browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "I-hover ing mapiling piyesa ban akit ing panganib ning pamili",
+    "hoveredRiskOne": "Panganib ning naka-hover a piyesa: {{risk}} agad a puwestung manalo",
+    "hoveredRiskMany": "Panganib ning naka-hover a piyesa: {{risk}} agad a puwestung manalo",
+    "immediateWins": "Agad a puwestung manalo",
+    "latestRisk": "Kabayung panganib ning pamili",
+    "riskOneAI": "Panganib ning piyesang pinili ning AI: {{risk}} agad a puwestung manalo",
+    "riskManyAI": "Panganib ning piyesang pinili ning AI: {{risk}} agad a puwestung manalo",
+    "riskTurnedOff": "Naka-off ing panganib ning pamili",
+    "riskUnavailableAI": "E available ing panganib ning pamili king AI laban AI",
+    "selectionRisk": "Panganib ning pamili",
+    "turnRiskOff": "Patayan ing panganib ning pamili",
+    "turnRiskOn": "Bukasan ing panganib ning pamili"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Amanu",
+    "search": "Manintun amanu",
+    "empty": "Alang akit a amanu",
+    "close": "Isara"
+  }
+}

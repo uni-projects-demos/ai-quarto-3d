@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interaktyvi 3D Quarto stalo žaidimo sąsaja, naudojanti Three.js ir Minimax dirbtinio intelekto algoritmo Negamax versiją su alfa-beta genėjimu. Žaiskite žaidėjas prieš žaidėją, žaidėjas prieš DI ir DI prieš DI lengvu, vidutiniu arba sunkiu DI lygiu.",
     "ogDescription": "Interaktyvus 3D Quarto stalo žaidimas. Žaiskite žaidėjas prieš žaidėją, žaidėjas prieš DI ir DI prieš DI lengvu, vidutiniu arba sunkiu DI lygiu."
+  },
+  "language": {
+    "label": "Kalba",
+    "search": "Ieškoti kalbų",
+    "empty": "Kalbų nerasta",
+    "close": "Uždaryti"
   }
 }

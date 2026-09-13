@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "An enhauncement ported fro",
+    "newGame": "Newe game"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "App linkes and langage",
+    "viewSource": "Se the source on GitHub",
+    "gameControls": "Game controls",
+    "gameBoard": "3D game bord",
+    "gameInfo": "Game informacion"
+  },
+  "controls": {
+    "diffAI": "AI difficultee",
+    "diffPlayerOneAI": "P1 difficultee",
+    "diffPlayerTwoAI": "P2 difficultee",
+    "startingPlayer": "Player that biginneth",
+    "gameMode": "Game manere",
+    "pauseAI": "Pause AI",
+    "resumeAI": "Resume AI",
+    "undo": "Undo",
+    "redo": "Redo"
+  },
+  "diff": {
+    "easy": "Esy",
+    "medium": "Mene",
+    "hard": "Hard"
+  },
+  "mode": {
+    "userVsUser": "User ayen user",
+    "userVsAI": "User ayen AI",
+    "onlyAI": "AI ayen AI"
+  },
+  "player": {
+    "playerYou": "Thou",
+    "playerOne": "Player Oon",
+    "playerTwo": "Player Two",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "At aventure",
+    "playerAIPlayer": "AI player",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Game estat...",
+    "pausedAI": "{{player}} is paused...",
+    "placingAI": "{{player}} pleieth - setting a pece on the bord...",
+    "placingUser": "{{player}} pleieth - set the chosen pece on the bord...",
+    "placeUserYou": "Thou pleiest - set the chosen pece on the bord...",
+    "gameDrawn": "Game drawen - no winninge lyne",
+    "gameWon": "{{player}} winneth - winninge lyne marked",
+    "selectingAI": "{{player}} pleieth - choosing a pece for {{opponent}}...",
+    "selectUser": "{{player}} pleieth - choose a pece for {{opponent}}...",
+    "selectUserYou": "Thou pleiest - choose a pece for {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pece in play",
+    "none": "No thing chosen",
+    "traits": "Qualitees of pece",
+    "black": "blak",
+    "red": "reed",
+    "big": "gret",
+    "small": "smal",
+    "round": "round",
+    "square": "square",
+    "solid": "solid",
+    "hollow": "holwe"
+  },
+  "board": {
+    "binary": "Binary bord",
+    "piecesPlaced": "Peces yset",
+    "cellEmpty": "Celle {{cell}}: voide",
+    "cellPiece": "Celle {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering is nat available.",
+    "webglHeading": "WebGL ne mighte biginne.",
+    "webglMsg": "The game requireth WebGL enabled in the browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Hold the cursor over a choosable pece to se the peril of choice",
+    "hoveredRiskOne": "Peril of pece under cursor: {{risk}} anon winninge place",
+    "hoveredRiskMany": "Peril of pece under cursor: {{risk}} anon winninge places",
+    "immediateWins": "Anon winninge places",
+    "latestRisk": "Latest peril of choice",
+    "riskOneAI": "Peril of pece chosen by AI: {{risk}} anon winninge place",
+    "riskManyAI": "Peril of pece chosen by AI: {{risk}} anon winninge places",
+    "riskTurnedOff": "Peril of choice is off",
+    "riskUnavailableAI": "Peril of choice unavailable in AI ayen AI",
+    "selectionRisk": "Peril of choice",
+    "turnRiskOff": "Turn peril of choice off",
+    "turnRiskOn": "Turn peril of choice on"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Langage",
+    "search": "Seche langages",
+    "empty": "No langages founden",
+    "close": "Shut"
+  }
+}

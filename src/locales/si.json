@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "මෙයින් ගෙනා වැඩිදියුණු කළ අනුවාදයක්",
+    "newGame": "නව ක්‍රීඩාව"
+  },
+  "common": {
+    "on": "සක්‍රීය",
+    "off": "අක්‍රීය"
+  },
+  "a11y": {
+    "utilityActions": "යෙදුම් සබැඳි සහ භාෂාව",
+    "viewSource": "GitHub හි මූලාශ්‍රය බලන්න",
+    "gameControls": "ක්‍රීඩා පාලක",
+    "gameBoard": "3D ක්‍රීඩා පුවරුව",
+    "gameInfo": "ක්‍රීඩා තොරතුරු"
+  },
+  "controls": {
+    "diffAI": "AI අපහසුතාව",
+    "diffPlayerOneAI": "P1 අපහසුතාව",
+    "diffPlayerTwoAI": "P2 අපහසුතාව",
+    "startingPlayer": "ආරම්භක ක්‍රීඩකයා",
+    "gameMode": "ක්‍රීඩා ආකාරය",
+    "pauseAI": "AI විරාම කරන්න",
+    "resumeAI": "AI නැවත අරඹන්න",
+    "undo": "අහෝසි කරන්න",
+    "redo": "නැවත කරන්න"
+  },
+  "diff": {
+    "easy": "පහසු",
+    "medium": "මධ්‍යම",
+    "hard": "අපහසු"
+  },
+  "mode": {
+    "userVsUser": "පරිශීලකයා එදිරිව පරිශීලකයා",
+    "userVsAI": "පරිශීලකයා එදිරිව AI",
+    "onlyAI": "AI එදිරිව AI"
+  },
+  "player": {
+    "playerYou": "ඔබ",
+    "playerOne": "ක්‍රීඩක එක",
+    "playerTwo": "ක්‍රීඩක දෙක",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "අහඹු",
+    "playerAIPlayer": "AI ක්‍රීඩකයා",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "ක්‍රීඩා තත්ත්වය...",
+    "pausedAI": "{{player}} විරාම කර ඇත...",
+    "placingAI": "{{player}} ක්‍රීඩා කරයි - කැබැල්ල පුවරුවේ තබයි...",
+    "placingUser": "{{player}} ක්‍රීඩා කරයි - තෝරාගත් කැබැල්ල පුවරුවේ තබන්න...",
+    "placeUserYou": "ඔබ ක්‍රීඩා කරයි - තෝරාගත් කැබැල්ල පුවරුවේ තබන්න...",
+    "gameDrawn": "ක්‍රීඩාව සමයි - ජයග්‍රාහී රේඛාවක් නැත",
+    "gameWon": "{{player}} ජය ගනී - ජයග්‍රාහී රේඛාව උද්දීපනය කර ඇත",
+    "selectingAI": "{{player}} ක්‍රීඩා කරයි - {{opponent}} සඳහා කැබැල්ලක් තෝරයි...",
+    "selectUser": "{{player}} ක්‍රීඩා කරයි - {{opponent}} සඳහා කැබැල්ලක් තෝරන්න...",
+    "selectUserYou": "ඔබ ක්‍රීඩා කරයි - {{opponent}} සඳහා කැබැල්ලක් තෝරන්න..."
+  },
+  "piece": {
+    "inPlay": "ක්‍රීඩාවේ ඇති කැබැල්ල",
+    "none": "කිසිවක් තෝරා නැත",
+    "traits": "කැබැල්ලේ ලක්ෂණ",
+    "black": "කළු",
+    "red": "රතු",
+    "big": "විශාල",
+    "small": "කුඩා",
+    "round": "වටකුරු",
+    "square": "චතුරස්‍ර",
+    "solid": "ඝන",
+    "hollow": "හිස්"
+  },
+  "board": {
+    "binary": "ද්විමය පුවරුව",
+    "piecesPlaced": "තැබූ කැබලි",
+    "cellEmpty": "කොටුව {{cell}}: හිස්",
+    "cellPiece": "කොටුව {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D රෙන්ඩරින් ලබා ගත නොහැක.",
+    "webglHeading": "WebGL ආරම්භ කළ නොහැකි විය.",
+    "webglMsg": "ක්‍රීඩාවට බ්‍රවුසරයේ WebGL සක්‍රීය කර තිබිය යුතුය."
+  },
+  "metrics": {
+    "hoverRiskPreview": "තේරීමේ අවදානම බැලීමට තෝරාගත හැකි කැබැල්ල මත කර්සරය තබන්න",
+    "hoveredRiskOne": "කර්සරය යට කැබැල්ලේ අවදානම: {{risk}} ක්ෂණික ජයග්‍රාහී ස්ථානය",
+    "hoveredRiskMany": "කර්සරය යට කැබැල්ලේ අවදානම: {{risk}} ක්ෂණික ජයග්‍රාහී ස්ථාන",
+    "immediateWins": "ක්ෂණික ජයග්‍රාහී ස්ථාන",
+    "latestRisk": "නවතම තේරීමේ අවදානම",
+    "riskOneAI": "AI තෝරාගත් කැබැල්ලේ අවදානම: {{risk}} ක්ෂණික ජයග්‍රාහී ස්ථානය",
+    "riskManyAI": "AI තෝරාගත් කැබැල්ලේ අවදානම: {{risk}} ක්ෂණික ජයග්‍රාහී ස්ථාන",
+    "riskTurnedOff": "තේරීමේ අවදානම අක්‍රීයයි",
+    "riskUnavailableAI": "AI එදිරිව AI ආකාරයේ තේරීමේ අවදානම නොමැත",
+    "selectionRisk": "තේරීමේ අවදානම",
+    "turnRiskOff": "තේරීමේ අවදානම අක්‍රීය කරන්න",
+    "turnRiskOn": "තේරීමේ අවදානම සක්‍රීය කරන්න"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "භාෂාව",
+    "search": "භාෂා සොයන්න",
+    "empty": "භාෂා හමු නොවීය",
+    "close": "වසන්න"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Такмили аз ин ҷо интиқолёфта",
+    "newGame": "Бозии нав"
+  },
+  "common": {
+    "on": "ФАЪОЛ",
+    "off": "ХОМӮШ"
+  },
+  "a11y": {
+    "utilityActions": "Пайвандҳои барнома ва забон",
+    "viewSource": "Манбаъро дар GitHub бинед",
+    "gameControls": "Идоракунии бозӣ",
+    "gameBoard": "Тахтаи бозии 3D",
+    "gameInfo": "Маълумоти бозӣ"
+  },
+  "controls": {
+    "diffAI": "Душвории AI",
+    "diffPlayerOneAI": "Душвории P1",
+    "diffPlayerTwoAI": "Душвории P2",
+    "startingPlayer": "Бозигари оғозкунанда",
+    "gameMode": "Ҳолати бозӣ",
+    "pauseAI": "Таваққуфи AI",
+    "resumeAI": "Идомаи AI",
+    "undo": "Бекор кардан",
+    "redo": "Такрор кардан"
+  },
+  "diff": {
+    "easy": "Осон",
+    "medium": "Миёна",
+    "hard": "Душвор"
+  },
+  "mode": {
+    "userVsUser": "Корбар бар зидди корбар",
+    "userVsAI": "Корбар бар зидди AI",
+    "onlyAI": "AI бар зидди AI"
+  },
+  "player": {
+    "playerYou": "Шумо",
+    "playerOne": "Бозигари якум",
+    "playerTwo": "Бозигари дуюм",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Тасодуфӣ",
+    "playerAIPlayer": "Бозигари AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Ҳолати бозӣ...",
+    "pausedAI": "{{player}} таваққуф кардааст...",
+    "placingAI": "{{player}} бозӣ мекунад - муҳраро ба тахта мегузорад...",
+    "placingUser": "{{player}} бозӣ мекунад - муҳраи интихобшударо ба тахта гузоред...",
+    "placeUserYou": "Шумо бозӣ мекунед - муҳраи интихобшударо ба тахта гузоред...",
+    "gameDrawn": "Бозӣ мусовӣ шуд - хати бурд нест",
+    "gameWon": "{{player}} ғолиб шуд - хати бурд равшан шудааст",
+    "selectingAI": "{{player}} бозӣ мекунад - барои {{opponent}} муҳра интихоб мекунад...",
+    "selectUser": "{{player}} бозӣ мекунад - барои {{opponent}} муҳра интихоб кунед...",
+    "selectUserYou": "Шумо бозӣ мекунед - барои {{opponent}} муҳра интихоб кунед..."
+  },
+  "piece": {
+    "inPlay": "Муҳра дар бозӣ",
+    "none": "Ҳеҷ чиз интихоб нашудааст",
+    "traits": "Хусусиятҳои муҳра",
+    "black": "сиёҳ",
+    "red": "сурх",
+    "big": "калон",
+    "small": "хурд",
+    "round": "гирд",
+    "square": "мураббаъ",
+    "solid": "пур",
+    "hollow": "ковок"
+  },
+  "board": {
+    "binary": "Тахтаи дуӣ",
+    "piecesPlaced": "Муҳраҳои гузошташуда",
+    "cellEmpty": "Хона {{cell}}: холӣ",
+    "cellPiece": "Хона {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Намоиши 3D дастрас нест.",
+    "webglHeading": "WebGL оғоз нашуд.",
+    "webglMsg": "Барои бозӣ WebGL бояд дар браузер фаъол бошад."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Барои дидани хатари интихоб нишоннаморо болои муҳраи интихобшаванда нигоҳ доред",
+    "hoveredRiskOne": "Хатари муҳраи зери нишоннамо: {{risk}} ҷойи бурди фаврӣ",
+    "hoveredRiskMany": "Хатари муҳраи зери нишоннамо: {{risk}} ҷойҳои бурди фаврӣ",
+    "immediateWins": "Ҷойҳои бурди фаврӣ",
+    "latestRisk": "Хатари охирини интихоб",
+    "riskOneAI": "Хатари муҳраи интихобкардаи AI: {{risk}} ҷойи бурди фаврӣ",
+    "riskManyAI": "Хатари муҳраи интихобкардаи AI: {{risk}} ҷойҳои бурди фаврӣ",
+    "riskTurnedOff": "Хатари интихоб хомӯш аст",
+    "riskUnavailableAI": "Хатари интихоб дар ҳолати AI бар зидди AI дастрас нест",
+    "selectionRisk": "Хатари интихоб",
+    "turnRiskOff": "Хатари интихобро хомӯш кунед",
+    "turnRiskOn": "Хатари интихобро фаъол кунед"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Забон",
+    "search": "Ҷустуҷӯи забонҳо",
+    "empty": "Ягон забон ёфт нашуд",
+    "close": "Пӯшед"
+  }
+}

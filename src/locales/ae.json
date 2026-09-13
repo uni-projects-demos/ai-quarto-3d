@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Fra-āxštīš haca",
+    "newGame": "Nava vaēna"
+  },
+  "common": {
+    "on": "RAOČA",
+    "off": "TAMA"
+  },
+  "a11y": {
+    "utilityActions": "App bandāišca vaca",
+    "viewSource": "GitHub paiti bunąm vaēna",
+    "gameControls": "Vaēna xšaθra",
+    "gameBoard": "3D vaēna takhta",
+    "gameInfo": "Vaēna xšaēta"
+  },
+  "controls": {
+    "diffAI": "AI dužuuarəta",
+    "diffPlayerOneAI": "P1 dužuuarəta",
+    "diffPlayerTwoAI": "P2 dužuuarəta",
+    "startingPlayer": "Fratəma vaēnara",
+    "gameMode": "Vaēna mainiiu",
+    "pauseAI": "AI stāna",
+    "resumeAI": "AI frā-varta",
+    "undo": "Paiti-varta",
+    "redo": "Frāša kara"
+  },
+  "diff": {
+    "easy": "Hu-āsa",
+    "medium": "Madiia",
+    "hard": "Dužuuara"
+  },
+  "mode": {
+    "userVsUser": "Barəntar paiti barəntar",
+    "userVsAI": "Barəntar paiti AI",
+    "onlyAI": "AI paiti AI"
+  },
+  "player": {
+    "playerYou": "Tū",
+    "playerOne": "Vaēnara Aēva",
+    "playerTwo": "Vaēnara Dva",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Yadā",
+    "playerAIPlayer": "AI vaēnara",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Vaēna stāna...",
+    "pausedAI": "{{player}} stāta...",
+    "placingAI": "{{player}} vaēna - tuką takhtā ni-dā...",
+    "placingUser": "{{player}} vaēna - frašō-kərəta tuką takhtā ni-dā...",
+    "placeUserYou": "Tū vaēna - frašō-kərəta tuką takhtā ni-dā...",
+    "gameDrawn": "Vaēna sama - jaya rēθa ną",
+    "gameWon": "{{player}} jaya - jaya rēθa raocita",
+    "selectingAI": "{{player}} vaēna - {{opponent}}-ai tuką frašō-kərəna...",
+    "selectUser": "{{player}} vaēna - {{opponent}}-ai tuką frašō-kərə...",
+    "selectUserYou": "Tū vaēna - {{opponent}}-ai tuką frašō-kərə..."
+  },
+  "piece": {
+    "inPlay": "Tuka vaēnā",
+    "none": "Ną ciš frašō-kərəta",
+    "traits": "Tuka gaēθā",
+    "black": "sāma",
+    "red": "raoxšna",
+    "big": "mas",
+    "small": "kasu",
+    "round": "vərəzi",
+    "square": "čaθru",
+    "solid": "stūra",
+    "hollow": "tūš"
+  },
+  "board": {
+    "binary": "Dva-aŋra takhta",
+    "piecesPlaced": "Ni-dāta tukā",
+    "cellEmpty": "Gātu {{cell}}: tūš",
+    "cellPiece": "Gātu {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D darsana ną asti.",
+    "webglHeading": "WebGL ną frā-āgāz.",
+    "webglMsg": "Vaēna WebGL browser paiti raoca xšāiia."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Fraša-baya vaēnāi cursor frašō-kərəna tukā upari dāra",
+    "hoveredRiskOne": "Cursor adha tuka baya: {{risk}} tavra jaya-gātu",
+    "hoveredRiskMany": "Cursor adha tuka baya: {{risk}} tavra jaya-gātava",
+    "immediateWins": "Tavra jaya-gātava",
+    "latestRisk": "Apara fraša-baya",
+    "riskOneAI": "AI frašō-kərəta tuka baya: {{risk}} tavra jaya-gātu",
+    "riskManyAI": "AI frašō-kərəta tuka baya: {{risk}} tavra jaya-gātava",
+    "riskTurnedOff": "Fraša-baya tama",
+    "riskUnavailableAI": "Fraša-baya AI paiti AI ną asti",
+    "selectionRisk": "Fraša-baya",
+    "turnRiskOff": "Fraša-baya tama kara",
+    "turnRiskOn": "Fraša-baya raoca kara"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Vac",
+    "search": "Vac is",
+    "empty": "Vac naē vida",
+    "close": "Band"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "En beteringa gifōrd fan",
+    "newGame": "Nīuw spel"
+  },
+  "common": {
+    "on": "AN",
+    "off": "AF"
+  },
+  "a11y": {
+    "utilityActions": "App-band endi sprāka",
+    "viewSource": "Seh thana frumtext an GitHub",
+    "gameControls": "Speles stīuringa",
+    "gameBoard": "3D spelbord",
+    "gameInfo": "Speles kundskap"
+  },
+  "controls": {
+    "diffAI": "AI swārī",
+    "diffPlayerOneAI": "P1 swārī",
+    "diffPlayerTwoAI": "P2 swārī",
+    "startingPlayer": "Formo speler",
+    "gameMode": "Spelwīsa",
+    "pauseAI": "AI raston",
+    "resumeAI": "AI forthsettan",
+    "undo": "Aftartrekan",
+    "redo": "Eft dōn"
+  },
+  "diff": {
+    "easy": "Līht",
+    "medium": "Middel",
+    "hard": "Swār"
+  },
+  "mode": {
+    "userVsUser": "Brūkari wiþ brūkari",
+    "userVsAI": "Brūkari wiþ AI",
+    "onlyAI": "AI wiþ AI"
+  },
+  "player": {
+    "playerYou": "Thū",
+    "playerOne": "Speler Ēn",
+    "playerTwo": "Speler Twēne",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Af slumpe",
+    "playerAIPlayer": "AI speler",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Spelstāt...",
+    "pausedAI": "{{player}} rastod...",
+    "placingAI": "{{player}} spilod - settid stukki an bord...",
+    "placingUser": "{{player}} spilod - set that gikoran stukki an bord...",
+    "placeUserYou": "Thū spilost - set that gikoran stukki an bord...",
+    "gameDrawn": "Spel gilīk - nēn sigelīna",
+    "gameWon": "{{player}} sigid - sigelīna gimerkid",
+    "selectingAI": "{{player}} spilod - kiosid stukki for {{opponent}}...",
+    "selectUser": "{{player}} spilod - kios stukki for {{opponent}}...",
+    "selectUserYou": "Thū spilost - kios stukki for {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Stukki an spele",
+    "none": "Nēwiht gikoran",
+    "traits": "Stukkies art",
+    "black": "swart",
+    "red": "rōd",
+    "big": "grōt",
+    "small": "luttik",
+    "round": "rund",
+    "square": "fīrhōkig",
+    "solid": "fast",
+    "hollow": "hol"
+  },
+  "board": {
+    "binary": "Twītalig bord",
+    "piecesPlaced": "Gisetta stukkia",
+    "cellEmpty": "Stedi {{cell}}: lēdig",
+    "cellPiece": "Stedi {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D bildunga ni ist til.",
+    "webglHeading": "WebGL ni mahta biginnan.",
+    "webglMsg": "Spel tharf WebGL an browser an."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Hald cursor obar kioran stukki te sehan risk kiosa",
+    "hoveredRiskOne": "Risk stukkies under cursor: {{risk}} snell sigestedi",
+    "hoveredRiskMany": "Risk stukkies under cursor: {{risk}} snella sigestedio",
+    "immediateWins": "Snella sigestedio",
+    "latestRisk": "Lētisto kiosa-risk",
+    "riskOneAI": "Risk AI-kioran stukkies: {{risk}} snell sigestedi",
+    "riskManyAI": "Risk AI-kioran stukkies: {{risk}} snella sigestedio",
+    "riskTurnedOff": "Kiosa-risk ist af",
+    "riskUnavailableAI": "Kiosa-risk ni ist til an AI wiþ AI",
+    "selectionRisk": "Kiosa-risk",
+    "turnRiskOff": "Dō kiosa-risk af",
+    "turnRiskOn": "Dō kiosa-risk an"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Sprâka",
+    "search": "Sprâkun sôkian",
+    "empty": "Nêna sprâka fundan",
+    "close": "Bilûkan"
+  }
+}

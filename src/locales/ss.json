@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Kutfutfukiswa lokusuka ku",
+    "newGame": "Umdlalo lomusha"
+  },
+  "common": {
+    "on": "VULIWE",
+    "off": "CISHIWE"
+  },
+  "a11y": {
+    "utilityActions": "Tihhumanisi te-app nelulwimi",
+    "viewSource": "Buka umtfombo ku-GitHub",
+    "gameControls": "Tilawuli temdlalo",
+    "gameBoard": "Libhodi lemdlalo le-3D",
+    "gameInfo": "Imininingwane yemdlalo"
+  },
+  "controls": {
+    "diffAI": "Bulukhuni be-AI",
+    "diffPlayerOneAI": "Bulukhuni be-P1",
+    "diffPlayerTwoAI": "Bulukhuni be-P2",
+    "startingPlayer": "Umdlali localako",
+    "gameMode": "Indlela yemdlalo",
+    "pauseAI": "Misa i-AI",
+    "resumeAI": "Chubeka ne-AI",
+    "undo": "Hlehlisa",
+    "redo": "Phindza"
+  },
+  "diff": {
+    "easy": "Kulula",
+    "medium": "Kusemkhatsini",
+    "hard": "Kumatima"
+  },
+  "mode": {
+    "userVsUser": "Umsebentisi vs umsebentisi",
+    "userVsAI": "Umsebentisi vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Wena",
+    "playerOne": "Umdlali Wekucala",
+    "playerTwo": "Umdlali Wesibili",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Ngalokungahleliwe",
+    "playerAIPlayer": "Umdlali we-AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Simo semdlalo...",
+    "pausedAI": "{{player}} umisiwe...",
+    "placingAI": "{{player}} uyadlala - ubeka incenye ebhodini...",
+    "placingUser": "{{player}} uyadlala - beka incenye lekhetsiwe ebhodini...",
+    "placeUserYou": "Uyadlala - beka incenye lekhetsiwe ebhodini...",
+    "gameDrawn": "Umdlalo uyalingana - akukho umugca wekunqoba",
+    "gameWon": "{{player}} uyancoba - umugca wekunqoba ugcamisiwe",
+    "selectingAI": "{{player}} uyadlala - ukhetsela {{opponent}} incenye...",
+    "selectUser": "{{player}} uyadlala - khetsela {{opponent}} incenye...",
+    "selectUserYou": "Uyadlala - khetsela {{opponent}} incenye..."
+  },
+  "piece": {
+    "inPlay": "Incenye lesemdlalweni",
+    "none": "Kute lokukhetsiwe",
+    "traits": "Timphawu tencenye",
+    "black": "mnyama",
+    "red": "bomvu",
+    "big": "khulu",
+    "small": "ncane",
+    "round": "yindilinga",
+    "square": "sikwele",
+    "solid": "qinile",
+    "hollow": "inemgodzi"
+  },
+  "board": {
+    "binary": "Libhodi le-binary",
+    "piecesPlaced": "Tincenye letibekiwe",
+    "cellEmpty": "Seli {{cell}}: ayinalutfo",
+    "cellPiece": "Seli {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Kuboniswa kwe-3D akutholakali.",
+    "webglHeading": "WebGL ayikwazanga kucala.",
+    "webglMsg": "Umdlalo udzinga WebGL ivulwe kusiphequluli."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Bamba likhesa etikwe ncenye lekhetsisekako kuze ubone bungoti bekukhetsa",
+    "hoveredRiskOne": "Bungoti bencenye lengaphansi kwelikhesa: {{risk}} indzawo yekunqoba ngekushesha",
+    "hoveredRiskMany": "Bungoti bencenye lengaphansi kwelikhesa: {{risk}} tindzawo tekunqoba ngekushesha",
+    "immediateWins": "Tindzawo tekunqoba ngekushesha",
+    "latestRisk": "Bungoti bekukhetsa bakamuva",
+    "riskOneAI": "Bungoti bencenye lekhetswe yi-AI: {{risk}} indzawo yekunqoba ngekushesha",
+    "riskManyAI": "Bungoti bencenye lekhetswe yi-AI: {{risk}} tindzawo tekunqoba ngekushesha",
+    "riskTurnedOff": "Bungoti bekukhetsa bucishiwe",
+    "riskUnavailableAI": "Bungoti bekukhetsa abutholakali ku-AI vs AI",
+    "selectionRisk": "Bungoti bekukhetsa",
+    "turnRiskOff": "Cisha bungoti bekukhetsa",
+    "turnRiskOn": "Vula bungoti bekukhetsa"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lulwimi",
+    "search": "Funa tilwimi",
+    "empty": "Kute lulwimi lolutfolakele",
+    "close": "Vala"
+  }
+}

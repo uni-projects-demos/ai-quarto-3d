@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Ndërfaqe interaktive 3D e lojës së tavolinës Quarto duke përdorur Three.js dhe versionin Negamax të algoritmit të inteligjencës artificiale Minimax me krasitje alfa-beta. Luaj përdorues kundër përdoruesit, përdorues kundër IA-së dhe IA kundër IA-së, me vështirësi të lehtë, mesatare dhe të vështirë.",
     "ogDescription": "Lojë interaktive 3D e tavolinës Quarto. Luaj përdorues kundër përdoruesit, përdorues kundër IA-së dhe IA kundër IA-së, me vështirësi të lehtë, mesatare dhe të vështirë."
+  },
+  "language": {
+    "label": "Gjuha",
+    "search": "Kërkoni gjuhë",
+    "empty": "Nuk u gjet asnjë gjuhë",
+    "close": "Mbylle"
   }
 }

@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interaktív 3D-s Quarto társasjáték-felület Three.js használatával, a Minimax mesterségesintelligencia-algoritmus Negamax változatával és alfa-béta metszéssel. Játssz játékos játékos ellen, játékos MI ellen vagy MI MI ellen módban, könnyű, közepes vagy nehéz MI-vel.",
     "ogDescription": "Interaktív 3D-s Quarto társasjáték. Játssz játékos játékos ellen, játékos MI ellen vagy MI MI ellen módban, könnyű, közepes vagy nehéz MI-vel."
+  },
+  "language": {
+    "label": "Nyelv",
+    "search": "Nyelvek keresése",
+    "empty": "Nem található nyelv",
+    "close": "Bezárás"
   }
 }

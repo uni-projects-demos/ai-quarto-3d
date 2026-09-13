@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Hamu tsīra parivarta",
+    "newGame": "Nava krīḍā"
+  },
+  "common": {
+    "on": "JĪVA",
+    "off": "MṚTA"
+  },
+  "a11y": {
+    "utilityActions": "App bandha u hvāna",
+    "viewSource": "GitHub mūla paśa",
+    "gameControls": "Krīḍā niyama",
+    "gameBoard": "3D krīḍā phalaka",
+    "gameInfo": "Krīḍā jñāna"
+  },
+  "controls": {
+    "diffAI": "AI duṣkara",
+    "diffPlayerOneAI": "P1 duṣkara",
+    "diffPlayerTwoAI": "P2 duṣkara",
+    "startingPlayer": "Prathama krīḍaka",
+    "gameMode": "Krīḍā mārga",
+    "pauseAI": "AI sthā",
+    "resumeAI": "AI cara",
+    "undo": "Pratinivarta",
+    "redo": "Puna kara"
+  },
+  "diff": {
+    "easy": "Sukara",
+    "medium": "Madhya",
+    "hard": "Duṣkara"
+  },
+  "mode": {
+    "userVsUser": "Upayogaka prati upayogaka",
+    "userVsAI": "Upayogaka prati AI",
+    "onlyAI": "AI prati AI"
+  },
+  "player": {
+    "playerYou": "Tva",
+    "playerOne": "Krīḍaka 1",
+    "playerTwo": "Krīḍaka 2",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Yadṛccha",
+    "playerAIPlayer": "AI krīḍaka",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Krīḍā sthiti...",
+    "pausedAI": "{{player}} sthita...",
+    "placingAI": "{{player}} krīḍati - khaṇḍa phalake dhārayati...",
+    "placingUser": "{{player}} krīḍati - vṛta khaṇḍa phalake dhāraya...",
+    "placeUserYou": "Tva krīḍasi - vṛta khaṇḍa phalake dhāraya...",
+    "gameDrawn": "Krīḍā sama - jaya rekhā na",
+    "gameWon": "{{player}} jayati - jaya rekhā dṛśya",
+    "selectingAI": "{{player}} krīḍati - {{opponent}} arthā khaṇḍa vṛṇoti...",
+    "selectUser": "{{player}} krīḍati - {{opponent}} arthā khaṇḍa vṛṇu...",
+    "selectUserYou": "Tva krīḍasi - {{opponent}} arthā khaṇḍa vṛṇu..."
+  },
+  "piece": {
+    "inPlay": "Khaṇḍa krīḍāya",
+    "none": "Na kimpi vṛta",
+    "traits": "Khaṇḍa lakṣaṇa",
+    "black": "kāla",
+    "red": "rakta",
+    "big": "mahā",
+    "small": "kṣudra",
+    "round": "vartula",
+    "square": "caturasra",
+    "solid": "ghana",
+    "hollow": "śūnya"
+  },
+  "board": {
+    "binary": "Dvi-aṅka phalaka",
+    "piecesPlaced": "Dhārita khaṇḍa",
+    "cellEmpty": "Koṣa {{cell}}: śūnya",
+    "cellPiece": "Koṣa {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D darśana na labhya.",
+    "webglHeading": "WebGL na ārabdha.",
+    "webglMsg": "Krīḍā WebGL browser madhye jīva icchati."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Vṛti bhaya paśyituṃ cursor vṛṇīya khaṇḍe dhāraya",
+    "hoveredRiskOne": "Cursor-adha khaṇḍa bhaya: {{risk}} tūrṇa jaya-sthāna",
+    "hoveredRiskMany": "Cursor-adha khaṇḍa bhaya: {{risk}} tūrṇa jaya-sthānā",
+    "immediateWins": "Tūrṇa jaya-sthānā",
+    "latestRisk": "Antima vṛti bhaya",
+    "riskOneAI": "AI-vṛta khaṇḍa bhaya: {{risk}} tūrṇa jaya-sthāna",
+    "riskManyAI": "AI-vṛta khaṇḍa bhaya: {{risk}} tūrṇa jaya-sthānā",
+    "riskTurnedOff": "Vṛti bhaya mṛta",
+    "riskUnavailableAI": "Vṛti bhaya AI prati AI na labhya",
+    "selectionRisk": "Vṛti bhaya",
+    "turnRiskOff": "Vṛti bhaya mṛta kara",
+    "turnRiskOn": "Vṛti bhaya jīva kara"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Hvatanā",
+    "search": "Hvatanā ys",
+    "empty": "Hvatanā na vida",
+    "close": "Band"
+  }
+}

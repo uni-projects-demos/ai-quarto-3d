@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Three.js ଏବଂ alpha-beta pruning ସହିତ Minimax କୃତ୍ରିମ ବୁଦ୍ଧିମତା ଆଲଗୋରିଦମର Negamax ସଂସ୍କରଣ ବ୍ୟବହାର କରୁଥିବା ଇଣ୍ଟର୍ଆକ୍ଟିଭ୍ 3D Quarto ବୋର୍ଡ ଗେମ UI। ସହଜ, ମଧ୍ୟମ ଏବଂ କଠିନ AI ସ୍ତର ସହିତ ବ୍ୟବହାରକାରୀ vs ବ୍ୟବହାରକାରୀ, ବ୍ୟବହାରକାରୀ vs AI ଏବଂ AI vs AI ଖେଳନ୍ତୁ।",
     "ogDescription": "ଇଣ୍ଟର୍ଆକ୍ଟିଭ୍ 3D Quarto ବୋର୍ଡ ଗେମ। ସହଜ, ମଧ୍ୟମ ଏବଂ କଠିନ AI ସ୍ତର ସହିତ ବ୍ୟବହାରକାରୀ vs ବ୍ୟବହାରକାରୀ, ବ୍ୟବହାରକାରୀ vs AI ଏବଂ AI vs AI ଖେଳନ୍ତୁ।"
+  },
+  "language": {
+    "label": "ଭାଷା",
+    "search": "ଭାଷା ଖୋଜ |",
+    "empty": "କ languages ଣସି ଭାଷା ମିଳିଲା ନାହିଁ |",
+    "close": "ବନ୍ଦ"
   }
 }

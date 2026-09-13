@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Kaahisa taama culsan",
+    "newGame": "Qusba taama"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Aplikeyshin silaacitte kee af",
+    "viewSource": "GitHub addat source wagit",
+    "gameControls": "Taama loowitte",
+    "gameBoard": "3D taama boordi",
+    "gameInfo": "Taama oyti"
+  },
+  "controls": {
+    "diffAI": "AI gibdiina",
+    "diffPlayerOneAI": "P1 gibdiina",
+    "diffPlayerTwoAI": "P2 gibdiina",
+    "startingPlayer": "Qimbisah ciyaartoy",
+    "gameMode": "Taama caagiida",
+    "pauseAI": "AI sabbax",
+    "resumeAI": "AI qagit",
+    "undo": "Raqta",
+    "redo": "Qagit ab"
+  },
+  "diff": {
+    "easy": "Xabcini",
+    "medium": "Maysaxxaga",
+    "hard": "Gibdi"
+  },
+  "mode": {
+    "userVsUser": "Maaqidda vs maaqidda",
+    "userVsAI": "Maaqidda vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Atu",
+    "playerOne": "Ciyaartoy Inki",
+    "playerTwo": "Ciyaartoy Namma",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Cakki",
+    "playerAIPlayer": "AI ciyaartoy",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Taama xaalat...",
+    "pausedAI": "{{player}} sabbaxte...",
+    "placingAI": "{{player}} ciyaaral yan - qande boordil dhigah...",
+    "placingUser": "{{player}} ciyaaral yan - doorimte qande boordil dhig...",
+    "placeUserYou": "Atu ciyaaral tan - doorimte qande boordil dhig...",
+    "gameDrawn": "Taama maayso - mayso xariiq mali",
+    "gameWon": "{{player}} mayse - mayso xariiq baxxaqisime",
+    "selectingAI": "{{player}} ciyaaral yan - {{opponent}}-h qande doorah...",
+    "selectUser": "{{player}} ciyaaral yan - {{opponent}}-h qande door...",
+    "selectUserYou": "Atu ciyaaral tan - {{opponent}}-h qande door..."
+  },
+  "piece": {
+    "inPlay": "Ciyaaral tan qande",
+    "none": "Takkay ikkal doorime wayte",
+    "traits": "Qande akkeele",
+    "black": "baxsa",
+    "red": "qasa",
+    "big": "kaxxa",
+    "small": "qasri",
+    "round": "goorow",
+    "square": "sikaar",
+    "solid": "ciggilta",
+    "hollow": "gubbi le"
+  },
+  "board": {
+    "binary": "Binary boordi",
+    "piecesPlaced": "Dhigimte qanditte",
+    "cellEmpty": "Cell {{cell}}: faxe",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering geytimam duuda wa.",
+    "webglHeading": "WebGL qimbisam duuda wa.",
+    "webglMsg": "Taamah browser addat WebGL fanah qimbisa haytam faxximta."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Dooran daddos qande xagarat wagit",
+    "hoveredRiskOne": "Wagimte qande daddos: {{risk}} sissik mayso dhigta",
+    "hoveredRiskMany": "Wagimte qande daddos: {{risk}} sissik mayso dhigitte",
+    "immediateWins": "Sissik mayso dhigitte",
+    "latestRisk": "Ciggila dooran daddos",
+    "riskOneAI": "AI doorimte qande daddos: {{risk}} sissik mayso dhigta",
+    "riskManyAI": "AI doorimte qande daddos: {{risk}} sissik mayso dhigitte",
+    "riskTurnedOff": "Dooran daddos aliffo",
+    "riskUnavailableAI": "AI vs AI caagiidat dooran daddos geytimta wa",
+    "selectionRisk": "Dooran daddos",
+    "turnRiskOff": "Dooran daddos alif",
+    "turnRiskOn": "Dooran daddos qagit"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Afa",
+    "search": "Afa wagit",
+    "empty": "Afa geytimte wayte",
+    "close": "Alif"
+  }
+}

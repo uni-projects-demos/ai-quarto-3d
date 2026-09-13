@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Comhéadan idirghníomhach 3T don chluiche boird Quarto ag úsáid Three.js agus leagan Negamax den algartam intleachta saorga Minimax le bearradh alfa-béite. Imir úsáideoir in aghaidh úsáideora, úsáideoir in aghaidh IS agus IS in aghaidh IS, le deacracht éasca, mheánach agus dheacair.",
     "ogDescription": "Cluiche boird idirghníomhach Quarto 3T. Imir úsáideoir in aghaidh úsáideora, úsáideoir in aghaidh IS agus IS in aghaidh IS, le deacracht éasca, mheánach agus dheacair."
+  },
+  "language": {
+    "label": "Teanga",
+    "search": "Cuardaigh teangacha",
+    "empty": "Níor aimsíodh aon teanga",
+    "close": "Dún"
   }
 }

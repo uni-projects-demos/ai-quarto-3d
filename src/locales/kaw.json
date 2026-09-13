@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Pangrengga kang kapindhah saking",
+    "newGame": "Dolanan anyar"
+  },
+  "common": {
+    "on": "URIP",
+    "off": "PATENI"
+  },
+  "a11y": {
+    "utilityActions": "Panyambung app lan basa",
+    "viewSource": "Deleng sumber ing GitHub",
+    "gameControls": "Pangendhali dolanan",
+    "gameBoard": "Papan dolanan 3D",
+    "gameInfo": "Warta dolanan"
+  },
+  "controls": {
+    "diffAI": "Kangelan AI",
+    "diffPlayerOneAI": "Kangelan P1",
+    "diffPlayerTwoAI": "Kangelan P2",
+    "startingPlayer": "Pemain wiwitan",
+    "gameMode": "Cara dolanan",
+    "pauseAI": "Kendhegake AI",
+    "resumeAI": "Terusake AI",
+    "undo": "Balekna",
+    "redo": "Baleni"
+  },
+  "diff": {
+    "easy": "Gampang",
+    "medium": "Madya",
+    "hard": "Angel"
+  },
+  "mode": {
+    "userVsUser": "Panganggo lawan panganggo",
+    "userVsAI": "Panganggo lawan AI",
+    "onlyAI": "AI lawan AI"
+  },
+  "player": {
+    "playerYou": "Sira",
+    "playerOne": "Pemain Siji",
+    "playerTwo": "Pemain Loro",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Sakarepe",
+    "playerAIPlayer": "Pemain AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Kahanan dolanan...",
+    "pausedAI": "{{player}} kendheg...",
+    "placingAI": "{{player}} dolan - nyelehake pion ing papan...",
+    "placingUser": "{{player}} dolan - selehake pion pinilih ing papan...",
+    "placeUserYou": "Sira dolan - selehake pion pinilih ing papan...",
+    "gameDrawn": "Dolanan imbang - tan ana garis menang",
+    "gameWon": "{{player}} menang - garis menang katandhani",
+    "selectingAI": "{{player}} dolan - milih pion kanggo {{opponent}}...",
+    "selectUser": "{{player}} dolan - pilih pion kanggo {{opponent}}...",
+    "selectUserYou": "Sira dolan - pilih pion kanggo {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pion ing dolanan",
+    "none": "Tan ana pinilih",
+    "traits": "Watak pion",
+    "black": "ireng",
+    "red": "abang",
+    "big": "gedhe",
+    "small": "cilik",
+    "round": "bunder",
+    "square": "pesagi",
+    "solid": "wutuh",
+    "hollow": "bolong"
+  },
+  "board": {
+    "binary": "Papan binari",
+    "piecesPlaced": "Pion kang wis kasèlèh",
+    "cellEmpty": "Petak {{cell}}: suwung",
+    "cellPiece": "Petak {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Gambar 3D tan kasedhiya.",
+    "webglHeading": "WebGL tan bisa wiwit.",
+    "webglMsg": "Dolanan mbutuhake WebGL urip ing browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Tahan cursor ing pion kang bisa pinilih kanggo ndeleng bebaya pilihan",
+    "hoveredRiskOne": "Bebaya pion ing ngisor cursor: {{risk}} papan menang sanalika",
+    "hoveredRiskMany": "Bebaya pion ing ngisor cursor: {{risk}} papan-papan menang sanalika",
+    "immediateWins": "Papan-papan menang sanalika",
+    "latestRisk": "Bebaya pilihan pungkasan",
+    "riskOneAI": "Bebaya pion pinilih AI: {{risk}} papan menang sanalika",
+    "riskManyAI": "Bebaya pion pinilih AI: {{risk}} papan-papan menang sanalika",
+    "riskTurnedOff": "Bebaya pilihan dipateni",
+    "riskUnavailableAI": "Bebaya pilihan tan kasedhiya ing AI lawan AI",
+    "selectionRisk": "Bebaya pilihan",
+    "turnRiskOff": "Pateni bebaya pilihan",
+    "turnRiskOn": "Uripake bebaya pilihan"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Bhāṣa",
+    "search": "Golek bhāṣa",
+    "empty": "Bhāṣa tan pinanggih",
+    "close": "Tutup"
+  }
+}

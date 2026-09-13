@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Un melhorament portat de",
+    "newGame": "Jòc novèl"
+  },
+  "common": {
+    "on": "ACTIU",
+    "off": "INACTIU"
+  },
+  "a11y": {
+    "utilityActions": "Ligams de l'aplicacion e lenga",
+    "viewSource": "Veire la font sus GitHub",
+    "gameControls": "Contraròtles del jòc",
+    "gameBoard": "Taulièr de jòc 3D",
+    "gameInfo": "Informacions del jòc"
+  },
+  "controls": {
+    "diffAI": "Dificultat de l'AI",
+    "diffPlayerOneAI": "Dificultat P1",
+    "diffPlayerTwoAI": "Dificultat P2",
+    "startingPlayer": "Jogaire que comença",
+    "gameMode": "Mòde de jòc",
+    "pauseAI": "Metre l'AI en pausa",
+    "resumeAI": "Reprendre l'AI",
+    "undo": "Desfar",
+    "redo": "Refar"
+  },
+  "diff": {
+    "easy": "Facil",
+    "medium": "Mejan",
+    "hard": "Dificil"
+  },
+  "mode": {
+    "userVsUser": "Utilizaire contra utilizaire",
+    "userVsAI": "Utilizaire contra AI",
+    "onlyAI": "AI contra AI"
+  },
+  "player": {
+    "playerYou": "Tu",
+    "playerOne": "Jogaire Un",
+    "playerTwo": "Jogaire Dos",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Aleatòri",
+    "playerAIPlayer": "Jogaire AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Estat del jòc...",
+    "pausedAI": "{{player}} es en pausa...",
+    "placingAI": "{{player}} jòga - plaça una pèça sul taulièr...",
+    "placingUser": "{{player}} jòga - Plaça la pèça seleccionada sul taulièr...",
+    "placeUserYou": "Tu jògas - Plaça la pèça seleccionada sul taulièr...",
+    "gameDrawn": "Jòc nul - cap de linha ganhaire",
+    "gameWon": "{{player}} ganha - linha ganhaire mesa en evidéncia",
+    "selectingAI": "{{player}} jòga - selecciona una pèça per {{opponent}}...",
+    "selectUser": "{{player}} jòga - Selecciona una pèça per {{opponent}}...",
+    "selectUserYou": "Tu jògas - Selecciona una pèça per {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pèça en jòc",
+    "none": "Res pas seleccionat",
+    "traits": "Caracteristicas de la pèça",
+    "black": "negre",
+    "red": "roge",
+    "big": "grand",
+    "small": "pichon",
+    "round": "redond",
+    "square": "quadrat",
+    "solid": "plen",
+    "hollow": "cavat"
+  },
+  "board": {
+    "binary": "Taulièr binari",
+    "piecesPlaced": "Pèças plaçadas",
+    "cellEmpty": "Casa {{cell}}: voida",
+    "cellPiece": "Casa {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Lo rendut 3D es pas disponible.",
+    "webglHeading": "WebGL a pas pogut començar.",
+    "webglMsg": "Lo jòc necessita que WebGL siá activat dins lo navigador."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Passa lo cursor sus una pèça seleccionabla per veire lo risc de seleccion",
+    "hoveredRiskOne": "Risc de la pèça jos lo cursor: {{risk}} plaçament ganhaire immediat",
+    "hoveredRiskMany": "Risc de la pèça jos lo cursor: {{risk}} plaçaments ganhaires immediats",
+    "immediateWins": "Plaçaments ganhaires immediats",
+    "latestRisk": "Darrièr risc de seleccion",
+    "riskOneAI": "Risc de la pèça seleccionada per AI: {{risk}} plaçament ganhaire immediat",
+    "riskManyAI": "Risc de la pèça seleccionada per AI: {{risk}} plaçaments ganhaires immediats",
+    "riskTurnedOff": "Lo risc de seleccion es desactivat",
+    "riskUnavailableAI": "Lo risc de seleccion es pas disponible en mòde AI contra AI",
+    "selectionRisk": "Risc de seleccion",
+    "turnRiskOff": "Desactivar lo risc de seleccion",
+    "turnRiskOn": "Activar lo risc de seleccion"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lenga",
+    "search": "Recercar de lengas",
+    "empty": "Cap de lenga pas trobada",
+    "close": "Tampar"
+  }
+}

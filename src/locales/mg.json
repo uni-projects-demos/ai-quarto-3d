@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Fanatsarana nafindra avy amin'ny",
+    "newGame": "Lalao vaovao"
+  },
+  "common": {
+    "on": "MIVELONA",
+    "off": "MATY"
+  },
+  "a11y": {
+    "utilityActions": "Rohy fampiharana sy fiteny",
+    "viewSource": "Jereo ny kaody loharano ao GitHub",
+    "gameControls": "Fanaraha-maso lalao",
+    "gameBoard": "Tabilao lalao 3D",
+    "gameInfo": "Mombamomba ny lalao"
+  },
+  "controls": {
+    "diffAI": "Hakitroky ny AI",
+    "diffPlayerOneAI": "Hakitroky ny P1",
+    "diffPlayerTwoAI": "Hakitroky ny P2",
+    "startingPlayer": "Mpilalao manomboka",
+    "gameMode": "Fomba lalao",
+    "pauseAI": "Ajanony vetivety AI",
+    "resumeAI": "Tohizo AI",
+    "undo": "Foano",
+    "redo": "Avereno"
+  },
+  "diff": {
+    "easy": "Mora",
+    "medium": "Antonony",
+    "hard": "Sarotra"
+  },
+  "mode": {
+    "userVsUser": "Mpampiasa vs mpampiasa",
+    "userVsAI": "Mpampiasa vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Ianao",
+    "playerOne": "Mpilalao Voalohany",
+    "playerTwo": "Mpilalao Faharoa",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Kisendrasendra",
+    "playerAIPlayer": "Mpilalao AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Toetry ny lalao...",
+    "pausedAI": "{{player}} naato vetivety...",
+    "placingAI": "{{player}} milalao - mametraka sombin-javatra eo amin'ny tabilao...",
+    "placingUser": "{{player}} milalao - Apetraho eo amin'ny tabilao ny sombin-javatra voafidy...",
+    "placeUserYou": "Ianao milalao - Apetraho eo amin'ny tabilao ny sombin-javatra voafidy...",
+    "gameDrawn": "Ady sahala - tsy misy tsipika fandresena",
+    "gameWon": "{{player}} mandresy - nasongadina ny tsipika fandresena",
+    "selectingAI": "{{player}} milalao - misafidy sombin-javatra ho an'i {{opponent}}...",
+    "selectUser": "{{player}} milalao - Misafidiana sombin-javatra ho an'i {{opponent}}...",
+    "selectUserYou": "Ianao milalao - Misafidiana sombin-javatra ho an'i {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Sombin-javatra ao anaty lalao",
+    "none": "Tsy misy voafidy",
+    "traits": "Toetran'ny sombin-javatra",
+    "black": "mainty",
+    "red": "mena",
+    "big": "lehibe",
+    "small": "kely",
+    "round": "boribory",
+    "square": "efamira",
+    "solid": "feno",
+    "hollow": "lavaka"
+  },
+  "board": {
+    "binary": "Tabilao binary",
+    "piecesPlaced": "Sombin-javatra napetraka",
+    "cellEmpty": "Sela {{cell}}: foana",
+    "cellPiece": "Sela {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Tsy misy ny rendering 3D.",
+    "webglHeading": "Tsy afaka nanomboka ny WebGL.",
+    "webglMsg": "Mila alefa ao amin'ny navigateur ny WebGL mba hilalaovana."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Apetraho eo ambonin'ny sombin-javatra azo fidiana ny totozy hijerena ny risika amin'ny fisafidianana",
+    "hoveredRiskOne": "Risikan'ny sombin-javatra eo ambanin'ny totozy: {{risk}} fametrahana mandresy avy hatrany",
+    "hoveredRiskMany": "Risikan'ny sombin-javatra eo ambanin'ny totozy: {{risk}} fametrahana mandresy avy hatrany",
+    "immediateWins": "Fametrahana mandresy avy hatrany",
+    "latestRisk": "Risika fisafidianana farany",
+    "riskOneAI": "Risikan'ny sombin-javatra nofidin'ny AI: {{risk}} fametrahana mandresy avy hatrany",
+    "riskManyAI": "Risikan'ny sombin-javatra nofidin'ny AI: {{risk}} fametrahana mandresy avy hatrany",
+    "riskTurnedOff": "Maty ny risika fisafidianana",
+    "riskUnavailableAI": "Tsy misy ny risika fisafidianana amin'ny fomba AI vs AI",
+    "selectionRisk": "Risika fisafidianana",
+    "turnRiskOff": "Vonoy ny risika fisafidianana",
+    "turnRiskOn": "Alefaso ny risika fisafidianana"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Fiteny",
+    "search": "Fikarohana fiteny",
+    "empty": "Tsy misy fiteny hita",
+    "close": "Akatona"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ima hacā frābara vazraka",
+    "newGame": "Nava āji"
+  },
+  "common": {
+    "on": "RAUČAH",
+    "off": "AMĀ"
+  },
+  "a11y": {
+    "utilityActions": "App bandaka ut ariya",
+    "viewSource": "GitHub-ma bunam dī",
+    "gameControls": "Āji framānā",
+    "gameBoard": "3D āji takhta",
+    "gameInfo": "Āji xšaça"
+  },
+  "controls": {
+    "diffAI": "AI dušiyāra",
+    "diffPlayerOneAI": "P1 dušiyāra",
+    "diffPlayerTwoAI": "P2 dušiyāra",
+    "startingPlayer": "Fratama ājikara",
+    "gameMode": "Āji rauta",
+    "pauseAI": "AI pati-stā",
+    "resumeAI": "AI fra-varta",
+    "undo": "Pati-varta",
+    "redo": "Puna kara"
+  },
+  "diff": {
+    "easy": "Sukara",
+    "medium": "Madiya",
+    "hard": "Dušiyāra"
+  },
+  "mode": {
+    "userVsUser": "Kāraka pati kāraka",
+    "userVsAI": "Kāraka pati AI",
+    "onlyAI": "AI pati AI"
+  },
+  "player": {
+    "playerYou": "Tuvam",
+    "playerOne": "Ājikara Aiva",
+    "playerTwo": "Ājikara Dva",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Yadṛccha",
+    "playerAIPlayer": "AI ājikara",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Āji stāna...",
+    "pausedAI": "{{player}} pati-stāta...",
+    "placingAI": "{{player}} āji - tuka takhtā niyādayati...",
+    "placingUser": "{{player}} āji - vičita tuka takhtā niyādaya...",
+    "placeUserYou": "Tuvam āji - vičita tuka takhtā niyādaya...",
+    "gameDrawn": "Āji sama - jaya rēša naiy",
+    "gameWon": "{{player}} jaya - jaya rēša ciça",
+    "selectingAI": "{{player}} āji - {{opponent}}-tai tuka vičināti...",
+    "selectUser": "{{player}} āji - {{opponent}}-tai tuka vičina...",
+    "selectUserYou": "Tuvam āji - {{opponent}}-tai tuka vičina..."
+  },
+  "piece": {
+    "inPlay": "Tuka ājiyā",
+    "none": "Na cišciy vičita",
+    "traits": "Tuka ciça",
+    "black": "syāva",
+    "red": "rauta",
+    "big": "vazraka",
+    "small": "kasaka",
+    "round": "varta",
+    "square": "čaθru-kūna",
+    "solid": "stūra",
+    "hollow": "tūšiya"
+  },
+  "board": {
+    "binary": "Dva-aṅka takhta",
+    "piecesPlaced": "Niyāta tukā",
+    "cellEmpty": "Xāna {{cell}}: tūšiya",
+    "cellPiece": "Xāna {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D darsana naiy.",
+    "webglHeading": "WebGL āgāza na karta.",
+    "webglMsg": "Āji WebGL browser-ma rauča bavati."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Vičina-baya dīdanai cursor vičināya tukā upar dāra",
+    "hoveredRiskOne": "Cursor-adha tuka baya: {{risk}} tavraya jaya-stāna",
+    "hoveredRiskMany": "Cursor-adha tuka baya: {{risk}} tavraya jaya-stānā",
+    "immediateWins": "Tavraya jaya-stānā",
+    "latestRisk": "Apara vičina-baya",
+    "riskOneAI": "AI-vičita tuka baya: {{risk}} tavraya jaya-stāna",
+    "riskManyAI": "AI-vičita tuka baya: {{risk}} tavraya jaya-stānā",
+    "riskTurnedOff": "Vičina-baya amā",
+    "riskUnavailableAI": "Vičina-baya AI pati AI-ma naiy",
+    "selectionRisk": "Vičina-baya",
+    "turnRiskOff": "Vičina-baya amā kara",
+    "turnRiskOn": "Vičina-baya rauča kara"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Bāziš",
+    "search": "Bāziš patiš",
+    "empty": "Bāziš naiy vindata",
+    "close": "Band"
+  }
+}

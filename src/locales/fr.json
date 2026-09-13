@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interface interactive du jeu de plateau Quarto en 3D utilisant Three.js et la version Negamax de l’algorithme d’intelligence artificielle Minimax avec élagage alpha-bêta. Jouez joueur contre joueur, joueur contre IA et IA contre IA, avec des difficultés d’IA facile, moyenne et difficile.",
     "ogDescription": "Jeu de plateau Quarto interactif en 3D. Jouez joueur contre joueur, joueur contre IA et IA contre IA, avec des difficultés d’IA facile, moyenne et difficile."
+  },
+  "language": {
+    "label": "Langue",
+    "search": "Langues de recherche",
+    "empty": "Aucune langue trouvée",
+    "close": "Fermer"
   }
 }

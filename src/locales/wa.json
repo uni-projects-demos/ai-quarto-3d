@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "On amidraedje pôrté di",
+    "newGame": "Novea djeu"
+  },
+  "common": {
+    "on": "ECLITCHÎ",
+    "off": "DISTITCHÎ"
+  },
+  "a11y": {
+    "utilityActions": "Loyéns di l'aplicåcion eyet l' lingaedje",
+    "viewSource": "Vey li sourdant so GitHub",
+    "gameControls": "Comandes do djeu",
+    "gameBoard": "Tåvlea di djeu 3D",
+    "gameInfo": "Informåcions do djeu"
+  },
+  "controls": {
+    "diffAI": "Dificulté AI",
+    "diffPlayerOneAI": "Dificulté P1",
+    "diffPlayerTwoAI": "Dificulté P2",
+    "startingPlayer": "Djouweu ki cmince",
+    "gameMode": "Mode do djeu",
+    "pauseAI": "Mete AI e påze",
+    "resumeAI": "Rimete AI",
+    "undo": "Disfé",
+    "redo": "Rifé"
+  },
+  "diff": {
+    "easy": "Åjhey",
+    "medium": "Moyén",
+    "hard": "Målåjhey"
+  },
+  "mode": {
+    "userVsUser": "Uzeu conte uzeu",
+    "userVsAI": "Uzeu conte AI",
+    "onlyAI": "AI conte AI"
+  },
+  "player": {
+    "playerYou": "Vos",
+    "playerOne": "Djouweu Onk",
+    "playerTwo": "Djouweu Deus",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "A l' astcheyance",
+    "playerAIPlayer": "Djouweu AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Estat do djeu...",
+    "pausedAI": "{{player}} est e påze...",
+    "placingAI": "{{player}} djoûwe - i mete ene pîce sol tåvlea...",
+    "placingUser": "{{player}} djoûwe - metoz l' pîce tchoezeye sol tåvlea...",
+    "placeUserYou": "Vos djoûwez - metoz l' pîce tchoezeye sol tåvlea...",
+    "gameDrawn": "Djeu pår - pont d' roye di victoere",
+    "gameWon": "{{player}} wangne - li roye di victoere est metowe e evidince",
+    "selectingAI": "{{player}} djoûwe - i tchoezi ene pîce po {{opponent}}...",
+    "selectUser": "{{player}} djoûwe - tchoezixhoz ene pîce po {{opponent}}...",
+    "selectUserYou": "Vos djoûwez - tchoezixhoz ene pîce po {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pîce e djeu",
+    "none": "Rén d' tchoezi",
+    "traits": "Caractéres del pîce",
+    "black": "noer",
+    "red": "rodje",
+    "big": "grand",
+    "small": "ptit",
+    "round": "rond",
+    "square": "cwåré",
+    "solid": "plin",
+    "hollow": "cavé"
+  },
+  "board": {
+    "binary": "Tåvlea binåre",
+    "piecesPlaced": "Pîces metowes",
+    "cellEmpty": "Cåze {{cell}}: vude",
+    "cellPiece": "Cåze {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Li rindou 3D n' est nén disponibe.",
+    "webglHeading": "WebGL n' a nén sepou s' enonder.",
+    "webglMsg": "Li djeu a dandjî di WebGL eclitchî dins l' betchteu."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Passez l' curseu sol ene pîce tchoezixhåve po vey l' risk do tchoes",
+    "hoveredRiskOne": "Risk del pîce pa dzo l' curseu: {{risk}} plaece di victoere tot d' shûte",
+    "hoveredRiskMany": "Risk del pîce pa dzo l' curseu: {{risk}} plaeces di victoere tot d' shûte",
+    "immediateWins": "Plaeces di victoere tot d' shûte",
+    "latestRisk": "Dierin risk do tchoes",
+    "riskOneAI": "Risk del pîce tchoezeye pa AI: {{risk}} plaece di victoere tot d' shûte",
+    "riskManyAI": "Risk del pîce tchoezeye pa AI: {{risk}} plaeces di victoere tot d' shûte",
+    "riskTurnedOff": "Li risk do tchoes est distitchî",
+    "riskUnavailableAI": "Li risk do tchoes n' est nén disponibe e mode AI conte AI",
+    "selectionRisk": "Risk do tchoes",
+    "turnRiskOff": "Distitchî l' risk do tchoes",
+    "turnRiskOn": "Eclitchî l' risk do tchoes"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Lingaedje",
+    "search": "Cweri des lingaedjes",
+    "empty": "Nol lingaedje trové",
+    "close": "Clôre"
+  }
+}

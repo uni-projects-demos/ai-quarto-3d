@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Isixhumi esibonakalayo somdlalo webhodi we-Quarto we-3D esisebenzisanayo esisebenzisa i-Three.js kanye nenguqulo ye-Negamax ye-algorithm ye-Minimax yobuhlakani bokwenziwa ene-alpha-beta pruning. Dlala umsebenzisi vs umsebenzisi, umsebenzisi vs AI, kanye ne-AI vs AI, ngamazinga obunzima e-AI alula, aphakathi nanzima.",
     "ogDescription": "Umdlalo webhodi we-Quarto we-3D osebenzisanayo. Dlala umsebenzisi vs umsebenzisi, umsebenzisi vs AI, kanye ne-AI vs AI, ngamazinga obunzima e-AI alula, aphakathi nanzima."
+  },
+  "language": {
+    "label": "Ulimi",
+    "search": "Sesha izilimi",
+    "empty": "Azikho izilimi ezitholakele",
+    "close": "Vala"
   }
 }

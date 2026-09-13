@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Jun k'ut ri xb'an utzilal chrij",
+    "newGame": "K'ak' etz'anem"
+  },
+  "common": {
+    "on": "TZIJON",
+    "off": "CHUPUN"
+  },
+  "a11y": {
+    "utilityActions": "Ximonel taq rech ri chakub'al xuquje' ch'ab'al",
+    "viewSource": "Chawila' ri xe'el pa GitHub",
+    "gameControls": "Taq chajinïk rech etz'anem",
+    "gameBoard": "3D tz'alam rech etz'anem",
+    "gameInfo": "Etamab'al rech etz'anem"
+  },
+  "controls": {
+    "diffAI": "K'axk'olil rech AI",
+    "diffPlayerOneAI": "K'axk'olil P1",
+    "diffPlayerTwoAI": "K'axk'olil P2",
+    "startingPlayer": "Nab'e etz'anel",
+    "gameMode": "B'eyal rech etz'anem",
+    "pauseAI": "Chuxla' AI",
+    "resumeAI": "Chutzij chik AI",
+    "undo": "Chatzolij",
+    "redo": "Chab'ana' chik"
+  },
+  "diff": {
+    "easy": "Man k'ax taj",
+    "medium": "Nik'aj",
+    "hard": "K'ax"
+  },
+  "mode": {
+    "userVsUser": "Winaq chuwach winaq",
+    "userVsAI": "Winaq chuwach AI",
+    "onlyAI": "AI chuwach AI"
+  },
+  "player": {
+    "playerYou": "At",
+    "playerOne": "Nab'e etz'anel",
+    "playerTwo": "Ukab' etz'anel",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Jas jun",
+    "playerAIPlayer": "Etz'anel AI",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Rub'anikil ri etz'anem...",
+    "pausedAI": "{{player}} uxlaninaq...",
+    "placingAI": "{{player}} tajin nretz'an - tajin nuk' ri ch'akul pa tz'alam...",
+    "placingUser": "{{player}} tajin nretz'an - chak'ama' ri cha'on ch'akul pa tz'alam...",
+    "placeUserYou": "At tajin katetz'an - chak'ama' ri cha'on ch'akul pa tz'alam...",
+    "gameDrawn": "Junam xk'is ri etz'anem - maj k'olb'al rech ch'akonem",
+    "gameWon": "Xch'akon {{player}} - k'utun ri k'olb'al rech ch'akonem",
+    "selectingAI": "{{player}} tajin nretz'an - tajin nucha' ch'akul che {{opponent}}...",
+    "selectUser": "{{player}} tajin nretz'an - chacha' jun ch'akul che {{opponent}}...",
+    "selectUserYou": "At tajin katetz'an - chacha' jun ch'akul che {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Ch'akul pa etz'anem",
+    "none": "Maj cha'on",
+    "traits": "Uwachil ch'akul",
+    "black": "q'eq",
+    "red": "kyaq",
+    "big": "nim",
+    "small": "ch'uti'n",
+    "round": "setesik",
+    "square": "kajk'ul",
+    "solid": "tz'aqat",
+    "hollow": "jolom"
+  },
+  "board": {
+    "binary": "Kab' yup tz'alam",
+    "piecesPlaced": "Ch'akulab' ri eya'on",
+    "cellEmpty": "K'olb'al {{cell}}: jamaril",
+    "cellPiece": "K'olb'al {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Man k'o ta ri 3D k'utunem.",
+    "webglHeading": "Man xtikïr ta WebGL.",
+    "webglMsg": "Ri etz'anem rajawaxik WebGL tzijon pa ri navegador."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Chaya' ri mouse puwi' jun ch'akul ri k'o cha'ik rech kawila' ri retzelal cha'ik",
+    "hoveredRiskOne": "Retzelal ri ch'akul puwi' mouse: {{risk}} k'olb'al rech ch'akonem chanin",
+    "hoveredRiskMany": "Retzelal ri ch'akul puwi' mouse: {{risk}} taq k'olb'al rech ch'akonem chanin",
+    "immediateWins": "Taq k'olb'al rech ch'akonem chanin",
+    "latestRisk": "Ri ruk'isib'al retzelal cha'ik",
+    "riskOneAI": "Retzelal ri ch'akul ri xucha' AI: {{risk}} k'olb'al rech ch'akonem chanin",
+    "riskManyAI": "Retzelal ri ch'akul ri xucha' AI: {{risk}} taq k'olb'al rech ch'akonem chanin",
+    "riskTurnedOff": "Chupun ri retzelal cha'ik",
+    "riskUnavailableAI": "Man k'o ta retzelal cha'ik pa AI chuwach AI",
+    "selectionRisk": "Retzelal cha'ik",
+    "turnRiskOff": "Chachupu' ri retzelal cha'ik",
+    "turnRiskOn": "Chatzuju' ri retzelal cha'ik"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ch’ab’äl",
+    "search": "Tzukuj ch’ab’äl",
+    "empty": "Maj ch’ab’äl xilitäj",
+    "close": "Tz’apij"
+  }
+}

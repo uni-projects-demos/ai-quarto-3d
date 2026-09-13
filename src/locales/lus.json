@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "A port-a siamṭhatna",
+    "newGame": "Game thar"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "App link leh tawng",
+    "viewSource": "GitHub-a source en rawh",
+    "gameControls": "Game control-te",
+    "gameBoard": "3D game board",
+    "gameInfo": "Game information"
+  },
+  "controls": {
+    "diffAI": "AI harsatna",
+    "diffPlayerOneAI": "P1 harsatna",
+    "diffPlayerTwoAI": "P2 harsatna",
+    "startingPlayer": "Player hmasa",
+    "gameMode": "Game mode",
+    "pauseAI": "AI chawlhtir",
+    "resumeAI": "AI chhunzawm",
+    "undo": "Undo",
+    "redo": "Redo"
+  },
+  "diff": {
+    "easy": "Awlsam",
+    "medium": "Laihâwl",
+    "hard": "Harsa"
+  },
+  "mode": {
+    "userVsUser": "User vs user",
+    "userVsAI": "User vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "I",
+    "playerOne": "Player Pakhat",
+    "playerTwo": "Player Pahnih",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Random",
+    "playerAIPlayer": "AI Player",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Game dinhmun...",
+    "pausedAI": "{{player}} chawlhtir a ni...",
+    "placingAI": "{{player}} a chơi - board-ah piece dah mek...",
+    "placingUser": "{{player}} a chơi - Piece thlan chu board-ah dah rawh...",
+    "placeUserYou": "I chơi - Piece thlan chu board-ah dah rawh...",
+    "gameDrawn": "Game draw - winning line awm lo",
+    "gameWon": "{{player}} a thắng - winning line tihlan a ni",
+    "selectingAI": "{{player}} a chơi - {{opponent}} atan piece thlang mek...",
+    "selectUser": "{{player}} a chơi - {{opponent}} atan piece thlang rawh...",
+    "selectUserYou": "I chơi - {{opponent}} atan piece thlang rawh..."
+  },
+  "piece": {
+    "inPlay": "Piece game-a awm",
+    "none": "Thlan engmah awm lo",
+    "traits": "Piece ziarang",
+    "black": "dum",
+    "red": "sen",
+    "big": "lian",
+    "small": "te",
+    "round": "bial",
+    "square": "square",
+    "solid": "solid",
+    "hollow": "hollow"
+  },
+  "board": {
+    "binary": "Binary board",
+    "piecesPlaced": "Piece dah tawh",
+    "cellEmpty": "Cell {{cell}}: ruak",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering a awm lo.",
+    "webglHeading": "WebGL a tan thei lo.",
+    "webglMsg": "Game chuan browser-a WebGL enable a mamawh."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Piece thlan theih chungah mouse dah la selection risk en rawh",
+    "hoveredRiskOne": "Hovered piece risk: {{risk}} immediate winning placement",
+    "hoveredRiskMany": "Hovered piece risk: {{risk}} immediate winning placements",
+    "immediateWins": "Immediate winning placements",
+    "latestRisk": "Selection risk thar ber",
+    "riskOneAI": "AI thlan piece risk: {{risk}} immediate winning placement",
+    "riskManyAI": "AI thlan piece risk: {{risk}} immediate winning placements",
+    "riskTurnedOff": "Selection risk off a ni",
+    "riskUnavailableAI": "AI vs AI mode-ah selection risk a awm lo",
+    "selectionRisk": "Selection risk",
+    "turnRiskOff": "Selection risk off rawh",
+    "turnRiskOn": "Selection risk on rawh"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Ṭawng hman dan",
+    "search": "Ṭawng zawng rawh",
+    "empty": "Ṭawng hmuh tur a awm lo",
+    "close": "Khar rawh"
+  }
+}

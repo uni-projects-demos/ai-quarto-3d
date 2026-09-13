@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Sirdojuvvon buorideapmi",
+    "newGame": "Ođđa speallu"
+  },
+  "common": {
+    "on": "ALA",
+    "off": "ERE"
+  },
+  "a11y": {
+    "utilityActions": "Prográmma liŋkkat ja giella",
+    "viewSource": "Geahča gáldokoda GitHubas",
+    "gameControls": "Speallostivren",
+    "gameBoard": "3D speallofiellu",
+    "gameInfo": "Speallo dieđut"
+  },
+  "controls": {
+    "diffAI": "AI váttisvuohta",
+    "diffPlayerOneAI": "P1 váttisvuohta",
+    "diffPlayerTwoAI": "P2 váttisvuohta",
+    "startingPlayer": "Álggahahtti spealli",
+    "gameMode": "Speallovuohki",
+    "pauseAI": "Bisset AI",
+    "resumeAI": "Joatkke AI",
+    "undo": "Máhcat",
+    "redo": "Daga fas"
+  },
+  "diff": {
+    "easy": "Álki",
+    "medium": "Gaskageardán",
+    "hard": "Váttis"
+  },
+  "mode": {
+    "userVsUser": "Geavaheaddji vuostá geavaheaddji",
+    "userVsAI": "Geavaheaddji vuostá AI",
+    "onlyAI": "AI vuostá AI"
+  },
+  "player": {
+    "playerYou": "Don",
+    "playerOne": "Spealli Okta",
+    "playerTwo": "Spealli Guokte",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Sáhtedohko",
+    "playerAIPlayer": "AI-spealli",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Speallo dilli...",
+    "pausedAI": "{{player}} lea bisánan...",
+    "placingAI": "{{player}} speallá - bidjá bihtá fiellui...",
+    "placingUser": "{{player}} speallá - bija válljejuvvon bihtá fiellui...",
+    "placeUserYou": "Don spealat - bija válljejuvvon bihtá fiellui...",
+    "gameDrawn": "Speallu dássás - ii leat vuoitolinnjá",
+    "gameWon": "{{player}} vuoitá - vuoitolinnjá lea merkejuvvon",
+    "selectingAI": "{{player}} speallá - vállje bihtá {{opponent}}:ii...",
+    "selectUser": "{{player}} speallá - vállje bihtá {{opponent}}:ii...",
+    "selectUserYou": "Don spealat - vállje bihtá {{opponent}}:ii..."
+  },
+  "piece": {
+    "inPlay": "Bihttá spealus",
+    "none": "Ii mihkkege válljejuvvon",
+    "traits": "Bihtá iešvuođat",
+    "black": "čáhppes",
+    "red": "ruoksat",
+    "big": "stuoris",
+    "small": "unna",
+    "round": "jorbadas",
+    "square": "njeallječiegat",
+    "solid": "gitta",
+    "hollow": "ráigi"
+  },
+  "board": {
+    "binary": "Binára fiellu",
+    "piecesPlaced": "Bidjon bihtát",
+    "cellEmpty": "Ruvttu {{cell}}: guorus",
+    "cellPiece": "Ruvttu {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D govven ii leat olámuttos.",
+    "webglHeading": "WebGL ii sáhttán álggahuvvot.",
+    "webglMsg": "Speallu gáibida ahte WebGL lea alde lohkamisprográmmas."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Doalat čujuhusa válljehahtti bihtá badjel vai oainnát válljenriska",
+    "hoveredRiskOne": "Bihtá riska čujuhusa vuolde: {{risk}} dakkaviđe vuoitobáiki",
+    "hoveredRiskMany": "Bihtá riska čujuhusa vuolde: {{risk}} dakkaviđe vuoitobáikkit",
+    "immediateWins": "Dakkaviđe vuoitobáikkit",
+    "latestRisk": "Maŋimus válljenriska",
+    "riskOneAI": "AI válljen bihtá riska: {{risk}} dakkaviđe vuoitobáiki",
+    "riskManyAI": "AI válljen bihtá riska: {{risk}} dakkaviđe vuoitobáikkit",
+    "riskTurnedOff": "Válljenriska lea ere",
+    "riskUnavailableAI": "Válljenriska ii leat olámuttos AI vuostá AI vuogis",
+    "selectionRisk": "Válljenriska",
+    "turnRiskOff": "Bija válljenriska eret",
+    "turnRiskOn": "Bija válljenriska ala"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Giella",
+    "search": "Oza gielaid",
+    "empty": "Eai gávdnon gielat",
+    "close": "Gidde"
+  }
+}

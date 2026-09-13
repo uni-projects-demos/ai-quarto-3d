@@ -99,5 +99,11 @@
   "metadata": {
     "description": "Interactive na 3D Quarto board game UI gamit ang Three.js at ang Negamax na bersyon ng Minimax artificial intelligence algorithm na may alpha-beta pruning. Maglaro ng user vs user, user vs AI, at AI vs AI, na may madali, katamtaman at mahirap na AI.",
     "ogDescription": "Interactive na 3D Quarto board game. Maglaro ng user vs user, user vs AI, at AI vs AI, na may madali, katamtaman at mahirap na AI."
+  },
+  "language": {
+    "label": "Wika",
+    "search": "Maghanap ng mga wika",
+    "empty": "Walang nahanap na mga wika",
+    "close": "Isara"
   }
 }

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "DubmeH mIw vIghoSbogh",
+    "newGame": "Quj chu'"
+  },
+  "common": {
+    "on": "QAP",
+    "off": "QOTLH"
+  },
+  "a11y": {
+    "utilityActions": "app rarwI' Hol je",
+    "viewSource": "GitHubDaq mung yIlegh",
+    "gameControls": "Quj SeHmeH janmey",
+    "gameBoard": "3D Quj 'echlet",
+    "gameInfo": "Quj De'"
+  },
+  "controls": {
+    "diffAI": "AI Qatlhghach",
+    "diffPlayerOneAI": "P1 Qatlhghach",
+    "diffPlayerTwoAI": "P2 Qatlhghach",
+    "startingPlayer": "taghwI' QujwI'",
+    "gameMode": "Quj mIw",
+    "pauseAI": "AI yIyevmoH",
+    "resumeAI": "AI yIqa'moH",
+    "undo": "yIcheghmoH",
+    "redo": "yIvangqa'"
+  },
+  "diff": {
+    "easy": "ngeD",
+    "medium": "motlh",
+    "hard": "Qatlh"
+  },
+  "mode": {
+    "userVsUser": "lo'wI' Suv lo'wI'",
+    "userVsAI": "lo'wI' Suv AI",
+    "onlyAI": "AI Suv AI"
+  },
+  "player": {
+    "playerYou": "SoH",
+    "playerOne": "QujwI' wa'",
+    "playerTwo": "QujwI' cha'",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "DuD",
+    "playerAIPlayer": "AI QujwI'",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Quj Dotlh...",
+    "pausedAI": "{{player}} yev...",
+    "placingAI": "{{player}} QujtaH - 'ay' 'echletDaq lan...",
+    "placingUser": "{{player}} QujtaH - 'ay' wIvlu'bogh 'echletDaq yIlan...",
+    "placeUserYou": "bIQujtaH - 'ay' wIvlu'bogh 'echletDaq yIlan...",
+    "gameDrawn": "pagh QapwI' - Quj rap",
+    "gameWon": "Qap {{player}} - QapmeH tlhegh 'anglu'",
+    "selectingAI": "{{player}} QujtaH - {{opponent}}vaD 'ay' wIv...",
+    "selectUser": "{{player}} QujtaH - {{opponent}}vaD 'ay' yIwIv...",
+    "selectUserYou": "bIQujtaH - {{opponent}}vaD 'ay' yIwIv..."
+  },
+  "piece": {
+    "inPlay": "QujDaq 'ay'",
+    "none": "pagh wIvlu'",
+    "traits": "'ay' DI'on",
+    "black": "qIj",
+    "red": "Doq",
+    "big": "tIn",
+    "small": "mach",
+    "round": "gho",
+    "square": "meyrI'",
+    "solid": "Sub",
+    "hollow": "Qem"
+  },
+  "board": {
+    "binary": "cha' mI' 'echlet",
+    "piecesPlaced": "'ay'mey lanlu'pu'",
+    "cellEmpty": "Daq {{cell}}: chIm",
+    "cellPiece": "Daq {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D cha'lu'laHbe'.",
+    "webglHeading": "WebGL taghlaHbe'.",
+    "webglMsg": "QujmeH browserDaq WebGL QapnIS."
+  },
+  "metrics": {
+    "hoverRiskPreview": "wIv Qob DaleghmeH 'ay' wIvlaHlu'boghDaq mouse yIlan",
+    "hoveredRiskOne": "mouse bIngDaq 'ay' Qob: {{risk}} nom QapmeH Daq",
+    "hoveredRiskMany": "mouse bIngDaq 'ay' Qob: {{risk}} nom QapmeH Daqmey",
+    "immediateWins": "nom QapmeH Daqmey",
+    "latestRisk": "wIv Qob Qav",
+    "riskOneAI": "AI wIvbogh 'ay' Qob: {{risk}} nom QapmeH Daq",
+    "riskManyAI": "AI wIvbogh 'ay' Qob: {{risk}} nom QapmeH Daqmey",
+    "riskTurnedOff": "wIv Qob Qotlh",
+    "riskUnavailableAI": "AI Suv AI mIwDaq wIv Qob tu'lu'be'",
+    "selectionRisk": "wIv Qob",
+    "turnRiskOff": "wIv Qob yIQotlh",
+    "turnRiskOn": "wIv Qob yIQapmoH"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Hol",
+    "search": "Holmey nej",
+    "empty": "Hol pagh Samlu'",
+    "close": "SoQmoH"
+  }
+}

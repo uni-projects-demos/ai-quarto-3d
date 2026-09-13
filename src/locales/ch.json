@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Un adelånto ni ma-port",
+    "newGame": "Huegon nuebu"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "I link siha gi aplikasion yan fino'",
+    "viewSource": "Atan i source gi GitHub",
+    "gameControls": "Kontrol siha gi huego",
+    "gameBoard": "3D tabla gi huego",
+    "gameInfo": "Infotmasion gi huego"
+  },
+  "controls": {
+    "diffAI": "Difikutåt AI",
+    "diffPlayerOneAI": "Difikutåt P1",
+    "diffPlayerTwoAI": "Difikutåt P2",
+    "startingPlayer": "Mumå'gas na gumå'gåm",
+    "gameMode": "Mode gi huego",
+    "pauseAI": "Na'påra i AI",
+    "resumeAI": "Kontinua i AI",
+    "undo": "Undo",
+    "redo": "Redo"
+  },
+  "diff": {
+    "easy": "Fåsil",
+    "medium": "Talo'",
+    "hard": "Difikut"
+  },
+  "mode": {
+    "userVsUser": "Usario kontra usario",
+    "userVsAI": "Usario kontra AI",
+    "onlyAI": "AI kontra AI"
+  },
+  "player": {
+    "playerYou": "Hågu",
+    "playerOne": "Gumå'gåm Uno",
+    "playerTwo": "Gumå'gåm Dos",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Random",
+    "playerAIPlayer": "AI na gumå'gåm",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Status gi huego...",
+    "pausedAI": "{{player}} esta påra...",
+    "placingAI": "{{player}} gumå'gåm - po'lo i pidaso gi tabla...",
+    "placingUser": "{{player}} gumå'gåm - Po'lo i pidaso ni ma-ayek gi tabla...",
+    "placeUserYou": "Gumå'gåm håo - Po'lo i pidaso ni ma-ayek gi tabla...",
+    "gameDrawn": "Empåti i huego - tåya' linean gånna",
+    "gameWon": "{{player}} guma'ñåo - ma-resåtta i linean gånna",
+    "selectingAI": "{{player}} gumå'gåm - umå'ayek pidaso para {{opponent}}...",
+    "selectUser": "{{player}} gumå'gåm - Ayek un pidaso para {{opponent}}...",
+    "selectUserYou": "Gumå'gåm håo - Ayek un pidaso para {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Pidaso gi huego",
+    "none": "Tåya' ma-ayek",
+    "traits": "Kualidåt siha gi pidaso",
+    "black": "åtulong",
+    "red": "agaga'",
+    "big": "dångkolo",
+    "small": "dikike'",
+    "round": "redondo",
+    "square": "kuadråo",
+    "solid": "solid",
+    "hollow": "guaha hoyo"
+  },
+  "board": {
+    "binary": "Binary na tabla",
+    "piecesPlaced": "Pidaso siha ni ma-po'lo",
+    "cellEmpty": "Cell {{cell}}: tåya' guaha",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "Ti disponipble i 3D rendering.",
+    "webglHeading": "Ti siña tumutuhon i WebGL.",
+    "webglMsg": "Nisisita i huego na ma-enable i WebGL gi browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Na'gaige i mouse gi selectable na pidaso para un li'e' i risk ni umayek",
+    "hoveredRiskOne": "Risk gi pidaso ni mouse gaige: {{risk}} ensegidas na winning placement",
+    "hoveredRiskMany": "Risk gi pidaso ni mouse gaige: {{risk}} ensegidas na winning placements",
+    "immediateWins": "Ensegidas na winning placements",
+    "latestRisk": "Mås nuebu na risk ni umayek",
+    "riskOneAI": "Risk gi pidaso ni AI ma-ayek: {{risk}} ensegidas na winning placement",
+    "riskManyAI": "Risk gi pidaso ni AI ma-ayek: {{risk}} ensegidas na winning placements",
+    "riskTurnedOff": "Ma-off i risk ni umayek",
+    "riskUnavailableAI": "Ti disponipble i risk ni umayek gi AI kontra AI mode",
+    "selectionRisk": "Risk ni umayek",
+    "turnRiskOff": "Na'off i risk ni umayek",
+    "turnRiskOn": "Na'on i risk ni umayek"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Fino'",
+    "search": "Aligao fino' siha",
+    "empty": "Taya' fino' mafañågu",
+    "close": "Huchom"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Порталда тӀаджибизабураб",
+    "newGame": "ЦӀияб хъвай-хъвай"
+  },
+  "common": {
+    "on": "БАЙБИХЬИ",
+    "off": "КЪОТӀИ"
+  },
+  "a11y": {
+    "utilityActions": "Приложениялъул хъватаял ва мацӀ",
+    "viewSource": "GitHubалда код бихьизе",
+    "gameControls": "Хъвай-хъваялъул управлениял",
+    "gameBoard": "3D хъвай-хъваялъул доска",
+    "gameInfo": "Хъвай-хъваялъул информация"
+  },
+  "controls": {
+    "diffAI": "AI-ялъул захӀматлъи",
+    "diffPlayerOneAI": "P1 захӀматлъи",
+    "diffPlayerTwoAI": "P2 захӀматлъи",
+    "startingPlayer": "Байбихьулев хъвачӀого",
+    "gameMode": "Хъвай-хъваялъул режим",
+    "pauseAI": "AI къотӀизабизе",
+    "resumeAI": "AI тӀадбуссинабизе",
+    "undo": "Нахъе буссинабизе",
+    "redo": "ЦӀидасан гьабизе"
+  },
+  "diff": {
+    "easy": "Бищун бигьаяб",
+    "medium": "Гьоркьохъеб",
+    "hard": "ЗахӀматаб"
+  },
+  "mode": {
+    "userVsUser": "ГӀадам vs гӀадам",
+    "userVsAI": "ГӀадам vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "Ду",
+    "playerOne": "ХъвачӀого Цо",
+    "playerTwo": "ХъвачӀого Къве",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Гьукъу-гьукъу",
+    "playerAIPlayer": "AI хъвачӀого",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Хъвай-хъваялъул ҳол...",
+    "pausedAI": "{{player}} къотӀун вуго...",
+    "placingAI": "{{player}} хъвай-хъвай гьабулеб буго - къалам доскада лъолеб буго...",
+    "placingUser": "{{player}} хъвай-хъвай гьабулеб буго - рищараб къалам доскада лъе...",
+    "placeUserYou": "Ду хъвай-хъвай гьабулеб буго - рищараб къалам доскада лъе...",
+    "gameDrawn": "Хъвай-хъвай тең - гъалибалъул рикӀкӀен гьечӀо",
+    "gameWon": "{{player}} гъалиблъана - гъалибалъул рикӀкӀен бихьизабун буго",
+    "selectingAI": "{{player}} хъвай-хъвай гьабулеб буго - {{opponent}}-же къалам рищулеб буго...",
+    "selectUser": "{{player}} хъвай-хъвай гьабулеб буго - {{opponent}}-же къалам рище...",
+    "selectUserYou": "Ду хъвай-хъвай гьабулеб буго - {{opponent}}-же къалам рище..."
+  },
+  "piece": {
+    "inPlay": "Хъвай-хъваялда бугеб къалам",
+    "none": "Рищараб гьечӀо",
+    "traits": "Къаламалъул хасиятал",
+    "black": "чӀегӀераб",
+    "red": "багӀараб",
+    "big": "кӀудияб",
+    "small": "гьитӀинаб",
+    "round": "гохӀараб",
+    "square": "квадрат",
+    "solid": "гъуждулеб",
+    "hollow": "гьоркьоб холи"
+  },
+  "board": {
+    "binary": "Бинарияб доска",
+    "piecesPlaced": "Доскада лъураб къаламал",
+    "cellEmpty": "Ячейка {{cell}}: порожняя",
+    "cellPiece": "Ячейка {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D рендеринг гьабизе мумкин гьечӀо.",
+    "webglHeading": "WebGL байбихьизе къуват гьечӀо.",
+    "webglMsg": "Хъвай-хъваялъе браузералда WebGL байбихьун букӀине ккола."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Рищизе бегьулеб къаламалда курсор лъун рищиялъул хӀинкъи бихьизе",
+    "hoveredRiskOne": "Курсор бугеб къаламалъул хӀинкъи: {{risk}} тӀадежояб гъалибалъул лъей",
+    "hoveredRiskMany": "Курсор бугеб къаламалъул хӀинкъи: {{risk}} тӀадежоял гъалибалъул лъеял",
+    "immediateWins": "ТӀадежоял гъалибалъул лъеял",
+    "latestRisk": "Ахирисеб рищиялъул хӀинкъи",
+    "riskOneAI": "AI рищараб къаламалъул хӀинкъи: {{risk}} тӀадежояб гъалибалъул лъей",
+    "riskManyAI": "AI рищараб къаламалъул хӀинкъи: {{risk}} тӀадежоял гъалибалъул лъеял",
+    "riskTurnedOff": "Рищиялъул хӀинкъи къотӀун буго",
+    "riskUnavailableAI": "AI vs AI режималда рищиялъул хӀинкъи гьечӀо",
+    "selectionRisk": "Рищиялъул хӀинкъи",
+    "turnRiskOff": "Рищиялъул хӀинкъи къотӀизабизе",
+    "turnRiskOn": "Рищиялъул хӀинкъи байбихьизабизе"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "МацӀ",
+    "search": "МацӀал рагӀизе",
+    "empty": "МацӀал рагӀичӀо",
+    "close": "КъотӀизабе"
+  }
+}

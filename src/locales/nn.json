@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "Ei porta forbetring av",
+    "newGame": "Nytt spel"
+  },
+  "common": {
+    "on": "PÅ",
+    "off": "AV"
+  },
+  "a11y": {
+    "utilityActions": "App-lenkjer og språk",
+    "viewSource": "Sjå kjelde på GitHub",
+    "gameControls": "Spelkontrollar",
+    "gameBoard": "3D-spelbrett",
+    "gameInfo": "Spelinformasjon"
+  },
+  "controls": {
+    "diffAI": "AI-vanskegrad",
+    "diffPlayerOneAI": "P1-vanskegrad",
+    "diffPlayerTwoAI": "P2-vanskegrad",
+    "startingPlayer": "Startspelar",
+    "gameMode": "Spelmodus",
+    "pauseAI": "Set AI på pause",
+    "resumeAI": "Hald fram AI",
+    "undo": "Angra",
+    "redo": "Gjer om"
+  },
+  "diff": {
+    "easy": "Lett",
+    "medium": "Middels",
+    "hard": "Vanskeleg"
+  },
+  "mode": {
+    "userVsUser": "Brukar mot brukar",
+    "userVsAI": "Brukar mot AI",
+    "onlyAI": "AI mot AI"
+  },
+  "player": {
+    "playerYou": "Du",
+    "playerOne": "Spelar ein",
+    "playerTwo": "Spelar to",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Tilfeldig",
+    "playerAIPlayer": "AI-spelar",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Spelstatus...",
+    "pausedAI": "{{player}} er sett på pause...",
+    "placingAI": "{{player}} spelar - plasserer brikke på brettet...",
+    "placingUser": "{{player}} spelar - Plasser vald brikke på brettet...",
+    "placeUserYou": "Du spelar - Plasser vald brikke på brettet...",
+    "gameDrawn": "Uavgjort - inga vinnande linje",
+    "gameWon": "{{player}} vinn - vinnande linje er framheva",
+    "selectingAI": "{{player}} spelar - vel ei brikke for {{opponent}}...",
+    "selectUser": "{{player}} spelar - Vel ei brikke for {{opponent}}...",
+    "selectUserYou": "Du spelar - Vel ei brikke for {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Brikke i spel",
+    "none": "Ingenting valt",
+    "traits": "Eigenskapar for brikka",
+    "black": "svart",
+    "red": "raud",
+    "big": "stor",
+    "small": "liten",
+    "round": "rund",
+    "square": "firkanta",
+    "solid": "heil",
+    "hollow": "hol"
+  },
+  "board": {
+    "binary": "Binært brett",
+    "piecesPlaced": "Plasserte brikker",
+    "cellEmpty": "Felt {{cell}}: tomt",
+    "cellPiece": "Felt {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D-rendering er ikkje tilgjengeleg.",
+    "webglHeading": "WebGL kunne ikkje starte.",
+    "webglMsg": "Spelet krev at WebGL er slått på i nettlesaren."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Hald peikaren over ei valbar brikke for å førehandsvise valrisikoen",
+    "hoveredRiskOne": "Risiko for brikka under peikaren: {{risk}} direkte vinnande plassering",
+    "hoveredRiskMany": "Risiko for brikka under peikaren: {{risk}} direkte vinnande plasseringar",
+    "immediateWins": "Direkte vinnande plasseringar",
+    "latestRisk": "Siste valrisiko",
+    "riskOneAI": "Risiko for AI-valt brikke: {{risk}} direkte vinnande plassering",
+    "riskManyAI": "Risiko for AI-valt brikke: {{risk}} direkte vinnande plasseringar",
+    "riskTurnedOff": "Valrisiko er slått av",
+    "riskUnavailableAI": "Valrisiko er ikkje tilgjengeleg i AI mot AI-modus",
+    "selectionRisk": "Valrisiko",
+    "turnRiskOff": "Slå av valrisiko",
+    "turnRiskOn": "Slå på valrisiko"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Språk",
+    "search": "Søk etter språk",
+    "empty": "Ingen språk funne",
+    "close": "Lukk"
+  }
+}
