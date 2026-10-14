@@ -1,0 +1,25 @@
+$tablet-breakpoint: 980px;
+$mobile-breakpoint: 560px;
+
+%icon-grid {
+  display: grid;
+  place-items: center;
+}
+
+%stroke-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+%section-heading {
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+%control-surface {
+  border: 1px solid var(--line);
+  background: var(--control-surface);
+}

@@ -1,3 +1,5 @@
+export { getRandVal, selectStartCell, selectStartPiece } from "./opening";
+
 import {
   CELL_COUNT,
   cellPlacementScore,
@@ -9,12 +11,6 @@ import {
 import type { Cell, Difficulty, MoveAI, PieceId } from "../game/types";
 
 const MATE_SCORE: number = 100_000;
-const STARTING_CELLS = {
-  easy: [1, 2, 4, 7, 8, 11, 13, 14],
-  medium: [0, 3, 12, 15],
-  hard: [5, 6, 9, 10],
-} as const satisfies Record<Difficulty, readonly number[]>;
-
 class SearchLimitErr extends Error {
   override readonly name: "SearchLimitError" = "SearchLimitError";
 }
@@ -52,45 +48,6 @@ export interface SearchOptions {
   onProgress?: (depth: number, nodes: number) => void;
 }
 
-export function getRandVal(seed: number = Date.now()): () => number {
-  let state: number = seed >>> 0;
-
-  return (): number => {
-    state += 0x6d2b79f5;
-    let value: number = Math.imul(state ^ (state >>> 15), state | 1);
-    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
-    return ((value ^ (value >>> 14)) >>> 0) / 4_294_967_296;
-  };
-}
-
-function randSelectFrom<T>(arr: readonly T[], random: () => number): T {
-  if (arr.length === 0) {
-    throw new Error("List is empty - cannot randomly select from.");
-  }
-
-  const selectedT: T | undefined = arr[Math.floor(random() * arr.length)];
-  if (selectedT === undefined) {
-    throw new Error("Random selection failed.");
-  }
-  return selectedT;
-}
-
-export function selectStartPiece(
-  remainingPieces: readonly PieceId[],
-  random: () => number = Math.random,
-): PieceId {
-  return randSelectFrom(remainingPieces, random);
-}
-
-export function selectStartCell(
-  board: readonly Cell[],
-  difficulty: Difficulty,
-  random: () => number = Math.random,
-): number {
-  const available = STARTING_CELLS[difficulty].filter((cell): boolean => board[cell] === null);
-  return randSelectFrom(available, random);
-}
-
 function remainingPiecesMask(remainingPieces: readonly PieceId[]): number {
   let mask: number = 0;
   for (const piece of remainingPieces) {
@@ -101,7 +58,7 @@ function remainingPiecesMask(remainingPieces: readonly PieceId[]): number {
 
 function getStateKey(
   board: readonly Cell[],
-  currentPiece: PieceId,
+  curPiece: PieceId,
   remainingPieces: readonly PieceId[],
   depth: number,
 ): string {
@@ -109,7 +66,7 @@ function getStateKey(
   for (const cell of board) {
     boardKey += cell === null ? "_" : cell.toString(CELL_COUNT);
   }
-  return `${boardKey}:${currentPiece.toString(CELL_COUNT)}:${remainingPiecesMask(remainingPieces).toString(CELL_COUNT)}:${depth}`;
+  return `${boardKey}:${curPiece.toString(CELL_COUNT)}:${remainingPiecesMask(remainingPieces).toString(CELL_COUNT)}:${depth}`;
 }
 
 function assertNode(context: SearchContext): void {
@@ -140,25 +97,25 @@ function orderCells(board: readonly Cell[], piece: PieceId): number[] {
 function orderPieces(board: readonly Cell[], remainingPieces: readonly PieceId[]): PieceId[] {
   return remainingPieces
     .map(
-      (piece: number): OrderedPiece => ({
+      (piece: PieceId): OrderedPiece => ({
         piece,
         danger: sumWinCells(board, piece),
       }),
     )
     .sort((a: OrderedPiece, b: OrderedPiece): number => a.danger - b.danger || a.piece - b.piece)
-    .map(({ piece }: OrderedPiece): number => piece);
+    .map(({ piece }: OrderedPiece): PieceId => piece);
 }
 
 function removePiece(remainingPieces: readonly PieceId[], selected: PieceId): PieceId[] {
-  return remainingPieces.filter((piece: number): boolean => piece !== selected);
+  return remainingPieces.filter((piece: PieceId): boolean => piece !== selected);
 }
 
-function evalTurn(board: readonly Cell[], currentPiece: PieceId): number {
+function evalTurn(board: readonly Cell[], curPiece: PieceId): number {
   const cells: number[] = getEmptyCells(board);
   let winCellPlacements: number = 0;
 
   for (const cell of cells) {
-    if (isWinCellPlacement(board, cell, currentPiece)) {
+    if (isWinCellPlacement(board, cell, curPiece)) {
       winCellPlacements += 1;
     }
   }
@@ -171,7 +128,7 @@ function evalTurn(board: readonly Cell[], currentPiece: PieceId): number {
   let sumScore: number = 0;
 
   for (const cell of cells) {
-    const score: number = cellPlacementScore(board, cell, currentPiece);
+    const score: number = cellPlacementScore(board, cell, curPiece);
     bestScore = Math.max(bestScore, score);
     sumScore += score;
   }
@@ -180,7 +137,7 @@ function evalTurn(board: readonly Cell[], currentPiece: PieceId): number {
 
 function negamax(
   board: Cell[],
-  currentPiece: PieceId,
+  curPiece: PieceId,
   remainingPieces: readonly PieceId[],
   depth: number,
   initialAlpha: number,
@@ -191,10 +148,10 @@ function negamax(
   assertNode(context);
 
   if (depth <= 0) {
-    return evalTurn(board, currentPiece);
+    return evalTurn(board, curPiece);
   }
 
-  const stateKey: string = getStateKey(board, currentPiece, remainingPieces, depth);
+  const stateKey: string = getStateKey(board, curPiece, remainingPieces, depth);
   const cached: number | undefined = context.transposition.get(stateKey);
   if (cached !== undefined) return cached;
 
@@ -202,9 +159,9 @@ function negamax(
   let best: number = -Infinity;
   let isCutoff: boolean = false;
 
-  for (const cell of orderCells(board, currentPiece)) {
-    const wins: boolean = isWinCellPlacement(board, cell, currentPiece);
-    board[cell] = currentPiece;
+  for (const cell of orderCells(board, curPiece)) {
+    const wins: boolean = isWinCellPlacement(board, cell, curPiece);
+    board[cell] = curPiece;
 
     if (wins) {
       board[cell] = null;
@@ -256,9 +213,9 @@ function isCellAvailable(board: readonly Cell[], startCell: number): boolean {
   return true;
 }
 
-function rootCells(board: readonly Cell[], currentPiece: PieceId, startCell?: number): number[] {
+function rootCells(board: readonly Cell[], curPiece: PieceId, startCell?: number): number[] {
   if (startCell === undefined) {
-    return orderCells(board, currentPiece);
+    return orderCells(board, curPiece);
   }
   isCellAvailable(board, startCell);
   return [startCell];
@@ -267,7 +224,7 @@ function rootCells(board: readonly Cell[], currentPiece: PieceId, startCell?: nu
 function searchAtDepth(
   boardInput: readonly Cell[],
   remainingPieces: readonly PieceId[],
-  currentPiece: PieceId,
+  curPiece: PieceId,
   depth: number,
   context: SearchContext,
   startCell?: number,
@@ -276,17 +233,16 @@ function searchAtDepth(
   let best: ScoredMove | null = null;
   let alpha: number = -Infinity;
 
-  for (const cell of rootCells(board, currentPiece, startCell)) {
-    board[cell] = currentPiece;
-
-    if (isWinCellPlacement(board, cell, currentPiece)) {
-      board[cell] = null;
+  for (const cell of rootCells(board, curPiece, startCell)) {
+    if (isWinCellPlacement(board, cell, curPiece)) {
       return {
         cell,
         nxtPiece: null,
         score: MATE_SCORE,
       };
     }
+
+    board[cell] = curPiece;
 
     if (isBoardFull(board)) {
       const candidate: ScoredMove = {
@@ -333,7 +289,7 @@ function searchAtDepth(
 function easyMove(
   board: readonly Cell[],
   remainingPieces: readonly PieceId[],
-  currentPiece: PieceId,
+  curPiece: PieceId,
   startCell?: number,
 ): MoveAI {
   const legal: number[] = getEmptyCells(board);
@@ -348,15 +304,15 @@ function easyMove(
     cell = startCell;
   } else {
     const winningCell: number | undefined = legal.find((candidate: number): boolean =>
-      isWinCellPlacement(board, candidate, currentPiece),
+      isWinCellPlacement(board, candidate, curPiece),
     );
 
     cell = winningCell ?? firstCell;
     if (winningCell === undefined) {
-      let lowestScore: number = cellPlacementScore(board, cell, currentPiece);
+      let lowestScore: number = cellPlacementScore(board, cell, curPiece);
 
       for (const candidate of legal.slice(1)) {
-        const score: number = cellPlacementScore(board, candidate, currentPiece);
+        const score: number = cellPlacementScore(board, candidate, curPiece);
 
         if (score < lowestScore) {
           cell = candidate;
@@ -367,7 +323,7 @@ function easyMove(
   }
 
   const boardAfter: Cell[] = [...board];
-  boardAfter[cell] = currentPiece;
+  boardAfter[cell] = curPiece;
 
   let nxtPiece: PieceId | null = null;
 
@@ -403,11 +359,7 @@ function profile(difficulty: Difficulty, remainingPiecesCount: number): SearchPr
   }
 
   if (difficulty === "medium") {
-    return remainingPiecesCount > 13
-      ? { maxNodes: 100_000, maxDepth: 3 }
-      : remainingPiecesCount > 11
-        ? { maxNodes: 100_000, maxDepth: 3 }
-        : { maxNodes: 100_000, maxDepth: 2 };
+    return { maxNodes: 100_000, maxDepth: remainingPiecesCount > 11 ? 3 : 2 };
   }
 
   // hard difficulty
@@ -426,15 +378,15 @@ function profile(difficulty: Difficulty, remainingPiecesCount: number): SearchPr
 export function findMoveAI(
   board: readonly Cell[],
   remainingPieces: readonly PieceId[],
-  currentPiece: PieceId,
+  curPiece: PieceId,
   difficulty: Difficulty,
   options: SearchOptions = {},
 ): MoveAI {
   if (difficulty === "easy" && remainingPieces.length < 13) {
-    return easyMove(board, remainingPieces, currentPiece, options.startCell);
+    return easyMove(board, remainingPieces, curPiece, options.startCell);
   }
   if (difficulty === "medium" && remainingPieces.length < 4) {
-    return easyMove(board, remainingPieces, currentPiece, options.startCell);
+    return easyMove(board, remainingPieces, curPiece, options.startCell);
   }
 
   const { maxNodes, maxDepth } = profile(difficulty, remainingPieces.length);
@@ -452,7 +404,7 @@ export function findMoveAI(
       completed = searchAtDepth(
         board,
         remainingPieces,
-        currentPiece,
+        curPiece,
         depth,
         context,
         options.startCell,
@@ -472,7 +424,7 @@ export function findMoveAI(
 
   if (completed === null) {
     return {
-      ...easyMove(board, remainingPieces, currentPiece, options.startCell),
+      ...easyMove(board, remainingPieces, curPiece, options.startCell),
       nodes: context.nodes,
     };
   }

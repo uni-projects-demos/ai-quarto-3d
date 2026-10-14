@@ -31,8 +31,10 @@ export function simTestMatch(
 
   while (true) {
     if (pendingPiece === null) {
-      const selectedPiece: number = selectStartPiece(remainingPieces, random);
-      remainingPieces = remainingPieces.filter((piece: number): boolean => piece !== selectedPiece);
+      const selectedPiece: PieceId = selectStartPiece(remainingPieces, random);
+      remainingPieces = remainingPieces.filter(
+        (piece: PieceId): boolean => piece !== selectedPiece,
+      );
       pendingPiece = selectedPiece;
       curPlayerTurn = toggleTurn(curPlayerTurn);
       continue;
@@ -64,7 +66,7 @@ export function simTestMatch(
       };
     }
 
-    const selectedPiece: number | undefined =
+    const selectedPiece: PieceId | undefined =
       move.nxtPiece !== null && remainingPieces.includes(move.nxtPiece)
         ? move.nxtPiece
         : remainingPieces[0];
@@ -76,7 +78,7 @@ export function simTestMatch(
       };
     }
 
-    remainingPieces = remainingPieces.filter((piece: number): boolean => piece !== selectedPiece);
+    remainingPieces = remainingPieces.filter((piece: PieceId): boolean => piece !== selectedPiece);
     pendingPiece = selectedPiece;
     curPlayerTurn = toggleTurn(curPlayerTurn);
   }

@@ -35,7 +35,7 @@ UU-Game PO:
 npm install
 ```
 
-# Development
+# Run
 
 ```Bash
 npm run dev
@@ -45,9 +45,6 @@ npm run dev
 
 ```Bash
 npm run build
-```
-
-```Bash
 npm run preview
 ```
 

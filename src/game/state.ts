@@ -1,11 +1,11 @@
-import type { Turn } from "./types";
+import type { Cell, GameMode, Participant, Phase, PieceId, Turn } from "./types";
 
 export type HistEventType = "place" | "select";
 
 export interface HistEvent {
-  curPlayer: Turn;
-  eventType: HistEventType;
-  turnId: number;
+  readonly curPlayer: Turn;
+  readonly eventType: HistEventType;
+  readonly turnId: number;
 }
 
 function isTurnEvent(left: HistEvent, right: HistEvent): boolean {
@@ -24,8 +24,8 @@ export function getUndoTarget(
   if (isAtomic || action === undefined || !isEntireTurn(action)) return target;
 
   while (target > 0) {
-    const previous: HistEvent | undefined = histEvents[target - 1];
-    if (previous === undefined || !isTurnEvent(previous, action)) break;
+    const prev: HistEvent | undefined = histEvents[target - 1];
+    if (prev === undefined || !isTurnEvent(prev, action)) break;
     target -= 1;
   }
   return target;
@@ -43,9 +43,33 @@ export function getRedoTarget(
   if (isAtomic || action === undefined || !isEntireTurn(action)) return target;
 
   while (target < histEvents.length) {
-    const next: HistEvent | undefined = histEvents[target];
-    if (next === undefined || !isTurnEvent(next, action)) break;
+    const nxt: HistEvent | undefined = histEvents[target];
+    if (nxt === undefined || !isTurnEvent(nxt, action)) break;
     target += 1;
   }
   return target;
+}
+
+export type StepAI = "select-open" | HistEventType | null;
+
+export interface GameState {
+  readonly activeTurn: Turn;
+  readonly nxtPieceAI: PieceId | null;
+  readonly stepAI: StepAI;
+  readonly board: readonly Cell[];
+  readonly pendingPiece: PieceId | null;
+  readonly phase: Phase;
+  readonly remaining: readonly PieceId[];
+  readonly turnId: number;
+  readonly winner: Turn | "draw" | null;
+}
+
+export function toggleTurn(turn: Turn): Turn {
+  return turn === "player1" ? "player2" : "player1";
+}
+
+export function getTurnPlayer(mode: GameMode, turn: Turn): Participant {
+  if (mode === "human-human") return "human";
+  if (mode === "ai-ai") return "ai";
+  return turn === "player1" ? "human" : "ai";
 }

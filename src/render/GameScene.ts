@@ -1,7 +1,6 @@
 import {
-  BoxGeometry,
-  CanvasTexture,
-  CircleGeometry,
+  type BufferGeometry,
+  type CanvasTexture,
   CylinderGeometry,
   DirectionalLight,
   Fog,
@@ -9,32 +8,55 @@ import {
   HemisphereLight,
   MathUtils,
   Mesh,
-  MeshPhysicalMaterial,
+  MeshBasicMaterial,
+  type MeshPhysicalMaterial,
   MeshStandardMaterial,
   Object3D,
   type Object3DEventMap,
-  PCFSoftShadowMap,
+  PCFShadowMap,
   PerspectiveCamera,
   Raycaster,
-  RepeatWrapping,
   Scene,
   SRGBColorSpace,
+  type Texture,
+  TextureLoader,
   TorusGeometry,
   Vector2,
   Vector3,
   WebGLRenderer,
 } from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { GAME_PIECES, getPieceTraits, type PieceTraits } from "../game/pieces";
+import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
+import { GAME_PIECES, type PieceTraits } from "../game/pieces";
 import { BOARD_SIZE, CELL_COUNT, getWinLines } from "../game/rules";
 import type { Cell, Phase, PieceId } from "../game/types";
+import { Cleanup } from "../shared/Cleanup";
+import type { ThemeId } from "../themes";
+import { createMossRim } from "./natureMoss";
+import { PieceGeometry } from "./PieceGeometry";
+import { getPresentedPieceTraits } from "./piecePresentation";
+import { SceneResources } from "./SceneResources";
+import { createTableGeometries, lowerTableRear, type TableGeometries } from "./tableGeometry";
+import { createWoodTexture } from "./textures";
+import {
+  createThemeMaterials,
+  MARBLE_CELL_COLS,
+  type ThemeMaterials,
+  VICTORIAN_CELL_COLS,
+} from "./themeMaterials";
+import { createVictorianPieceDetails } from "./victorianCraft";
 
 const BOARD_SPACE: number = 1.16;
 const BOARD_ROTATION: number = Math.PI / 4;
 const BOARD_ROTATION_COS: number = Math.cos(BOARD_ROTATION);
 const BOARD_ROTATION_SIN: number = Math.sin(BOARD_ROTATION);
 const MOBILE_ASPECT: number = 0.92;
+const VIEW_POLAR_ANGLE: number = 1.25 + MathUtils.degToRad(10);
 const BASE_Y: number = -0.11;
+const TABLE_RADIUS: number = 12;
+const TABLE_BEVEL: number = 0.06;
+const TABLE_THICKNESS: number = 0.22;
+const TABLE_REAR_SCALE: number = 0.78;
 const CELL_TOP_Y: number = 0.02;
 const ANIMATION_FACTOR: number = 0.14;
 const RESERVE_SCALE: number = 0.78;
@@ -45,16 +67,22 @@ const RESERVE_LOWER_START: number = MathUtils.degToRad(-8);
 const RESERVE_LOWER_END: number = MathUtils.degToRad(-82);
 const RESERVE_UPPER_START: number = MathUtils.degToRad(82);
 const RESERVE_UPPER_END: number = MathUtils.degToRad(8);
+const PORTRAIT_RESERVE_START: number = MathUtils.degToRad(-127);
+const PORTRAIT_RESERVE_END: number = MathUtils.degToRad(-53);
 
-interface SceneState {
-  board: readonly Cell[];
-  remaining: readonly PieceId[];
-  pendingPiece: PieceId | null;
-  phase: Phase;
+export interface SceneState {
+  readonly board: readonly Cell[];
+  readonly remaining: readonly PieceId[];
+  readonly pendingPiece: PieceId | null;
+  readonly phase: Phase;
 }
 
 interface PieceView {
   group: Group;
+  body: Mesh<BufferGeometry, MeshPhysicalMaterial>;
+  inset: Mesh<BufferGeometry, MeshPhysicalMaterial> | null;
+  bezel: Mesh<BufferGeometry, MeshPhysicalMaterial> | null;
+  details: Group;
   target: Vector3;
   baseScale: number;
   targetScale: number;
@@ -63,56 +91,53 @@ interface PieceView {
 type InteractiveRef = { type: "cell"; id: number } | { type: "piece"; id: PieceId };
 
 export interface SceneCallbacks {
-  onCellClick: (cell: number) => void;
-  onPieceClick: (piece: PieceId) => void;
-  onPieceHover: (piece: PieceId | null) => void;
+  readonly onCellClick: (cell: number) => void;
+  readonly onPieceClick: (piece: PieceId) => void;
+  readonly onPieceHover: (piece: PieceId | null) => void;
 }
 
 export class GameScene {
+  private readonly cleanup = new Cleanup();
+  private readonly resources = new SceneResources();
+  private readonly interactiveRefs = new WeakMap<Object3D, InteractiveRef>();
+  private disposed = false;
+  private needsRender = true;
   private readonly scene: Scene<Object3DEventMap> = new Scene();
   private readonly camera: PerspectiveCamera = new PerspectiveCamera(37, 1, 0.1, 100);
   private readonly renderer: WebGLRenderer;
   private readonly controls: OrbitControls;
   private readonly raycaster: Raycaster = new Raycaster();
   private readonly pointer: Vector2 = new Vector2();
-  private readonly baseMesh: Mesh;
-  private readonly boardRingBase: Mesh;
-  private readonly boardRim: Mesh;
-  private readonly boardCells: Mesh[] = [];
+  private readonly prevSize = new Vector2();
+  private readonly textureLoader = new TextureLoader();
+  private readonly baseMesh: Mesh<BufferGeometry, MeshPhysicalMaterial>;
+  private readonly tableEdge: Mesh<BufferGeometry, MeshPhysicalMaterial>;
+  private readonly boardRingBase: Mesh<BufferGeometry, MeshPhysicalMaterial>;
+  private readonly boardRim: Mesh<BufferGeometry, MeshPhysicalMaterial>;
+  private readonly originalRimGeometry = new TorusGeometry(3.45, 0.12, 20, 132);
+  private readonly natureMoss = createMossRim();
+  private readonly victorianBoardDetails: Group = new Group();
+  private readonly themeMaterials: Record<ThemeId, ThemeMaterials>;
+  private readonly tableGeometries: TableGeometries;
+  private activeTheme: ThemeId = "marble";
+  private readonly boardCells: Mesh<CylinderGeometry, MeshPhysicalMaterial>[] = [];
+  private readonly cellAccents: Mesh<TorusGeometry, MeshPhysicalMaterial | MeshBasicMaterial>[] =
+    [];
+  private readonly marbleHighlightAccent = new MeshBasicMaterial({ color: 0xbcecff });
+  private readonly victorianHighlightAccent = new MeshBasicMaterial({ color: 0xffe1a0 });
   private readonly pieces: Map<PieceId, PieceView> = new Map<PieceId, PieceView>();
   private readonly interactiveObj: Object3D[] = [];
   private readonly boardOffset: Vector3 = new Vector3();
   private readonly dirLight: DirectionalLight = new DirectionalLight(0xffddb1, 4.8);
   private readonly dirLightTarget: Object3D<Object3DEventMap> = new Object3D();
-
-  private readonly cellGeometry: CylinderGeometry = new CylinderGeometry(0.53, 0.53, 0.12, 48);
-  private readonly pieceGeometries = {
-    smallRound: new CylinderGeometry(0.38, 0.43, 0.9, 32, 1),
-    bigRound: new CylinderGeometry(0.38, 0.43, 1.45, 32, 1),
-    smallSquare: new BoxGeometry(0.74, 0.9, 0.74, 2, 2, 2),
-    bigSquare: new BoxGeometry(0.74, 1.45, 0.74, 2, 2, 2),
-    roundCap: new CylinderGeometry(0.19, 0.19, 0.03, 24),
-    squareCap: new BoxGeometry(0.34, 0.03, 0.34),
-  } as const;
-  private readonly pieceMaterials = {
-    darkBody: new MeshPhysicalMaterial({
-      color: 0x161619,
-      roughness: 0.34,
-      metalness: 0.12,
-      clearcoat: 0.45,
-      clearcoatRoughness: 0.34,
-    }),
-    redBody: new MeshPhysicalMaterial({
-      color: 0x95121f,
-      roughness: 0.48,
-      metalness: 0.06,
-      clearcoat: 0.45,
-      clearcoatRoughness: 0.34,
-    }),
-    darkCap: new MeshStandardMaterial({ color: 0x49494f, roughness: 0.42 }),
-    lightCap: new MeshStandardMaterial({ color: 0xd35d68, roughness: 0.42 }),
-  } as const;
-
+  private readonly brassMaterial: MeshStandardMaterial = new MeshStandardMaterial({
+    color: 0xb48c50,
+    roughness: 0.48,
+    metalness: 0.55,
+  });
+  private readonly pieceGeometries: PieceGeometry;
+  private readonly cellGeometry = new CylinderGeometry(0.53, 0.53, 0.12, 48);
+  private readonly cellAccentGeometry = new TorusGeometry(0.46, 0.012, 8, 48);
   private state: SceneState = {
     board: Array<Cell>(CELL_COUNT).fill(null),
     remaining: [],
@@ -128,82 +153,164 @@ export class GameScene {
     canvas: HTMLCanvasElement,
     private readonly callbacks: SceneCallbacks,
   ) {
-    this.renderer = new WebGLRenderer({ canvas, antialias: true, alpha: true });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    this.renderer.outputColorSpace = SRGBColorSpace;
-    this.renderer.shadowMap.enabled = true;
-    this.renderer.shadowMap.type = PCFSoftShadowMap;
+    try {
+      this.renderer = new WebGLRenderer({ canvas, antialias: true, alpha: true });
+      this.cleanup.add((): void => {
+        this.renderer.setAnimationLoop(null);
+        this.renderer.dispose();
+      });
+      this.cleanup.add((): void => this.resources.dispose());
+      this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      this.renderer.outputColorSpace = SRGBColorSpace;
+      this.renderer.shadowMap.enabled = true;
+      this.renderer.shadowMap.type = PCFShadowMap;
 
-    this.controls = new OrbitControls(this.camera, canvas);
-    this.controls.enableDamping = true;
-    this.controls.enablePan = false;
-    this.controls.minDistance = 8;
-    this.controls.maxDistance = 18;
-    this.controls.minPolarAngle = 0.35;
-    this.controls.maxPolarAngle = 1.25;
+      this.controls = new OrbitControls(this.camera, canvas);
+      const onChange = (): void => {
+        this.needsRender = true;
+      };
+      this.controls.addEventListener("change", onChange);
+      this.cleanup.add((): void => {
+        this.controls.removeEventListener("change", onChange);
+        this.controls.dispose();
+      });
+      this.pieceGeometries = new PieceGeometry(this.resources);
+      this.controls.enableDamping = true;
+      this.controls.enablePan = false;
+      this.controls.minDistance = 8;
+      this.controls.maxDistance = 18;
+      this.controls.minPolarAngle = 0.35;
+      this.controls.maxPolarAngle = VIEW_POLAR_ANGLE;
 
-    const woodTexture: CanvasTexture = this.createWoodTexture();
-    const tileTexture: CanvasTexture = woodTexture.clone();
-    tileTexture.repeat.set(0.65, 0.65);
-    tileTexture.needsUpdate = true;
+      const woodTexture: CanvasTexture = createWoodTexture();
+      this.themeMaterials = createThemeMaterials(
+        this.loadStoneTexture.bind(this),
+        woodTexture,
+        this.resources,
+      );
+      const tableMaterial = this.themeMaterials.marble.table;
+      this.tableGeometries = createTableGeometries(TABLE_RADIUS, TABLE_BEVEL, TABLE_THICKNESS);
+      for (const geometry of Object.values(this.tableGeometries)) this.resources.track(geometry);
+      this.baseMesh = new Mesh(this.tableGeometries.regularTop, tableMaterial);
+      this.tableEdge = new Mesh(this.tableGeometries.regularEdge, tableMaterial);
+      this.lowerTableRear();
+      this.boardRingBase = new Mesh(
+        new CylinderGeometry(3.42, 3.48, 0.18, 96),
+        this.themeMaterials.marble.board,
+      );
+      this.boardRim = new Mesh(this.originalRimGeometry, this.themeMaterials.marble.rim);
+      this.boardRim.add(this.natureMoss.fibres);
 
-    this.baseMesh = new Mesh(
-      new CircleGeometry(12, 120),
-      new MeshPhysicalMaterial({
-        color: 0x77502d,
-        map: woodTexture,
-        roughness: 0.82,
-        metalness: 0.01,
-        clearcoat: 0.08,
-        clearcoatRoughness: 0.95,
-      }),
-    );
-    this.boardRingBase = new Mesh(
-      new CylinderGeometry(3.42, 3.48, 0.18, 96),
-      new MeshPhysicalMaterial({
-        color: 0x65401f,
-        map: woodTexture,
-        roughness: 0.75,
-        metalness: 0.02,
-        clearcoat: 0.12,
-        clearcoatRoughness: 0.86,
-      }),
-    );
-    this.boardRim = new Mesh(
-      new TorusGeometry(3.45, 0.12, 20, 132),
-      new MeshPhysicalMaterial({
-        color: 0x4c2f16,
-        map: woodTexture,
-        roughness: 0.66,
-        metalness: 0.02,
-        clearcoat: 0.18,
-        clearcoatRoughness: 0.78,
-      }),
-    );
+      this.createEnv();
+      this.createBoard();
+      this.layoutTable();
+      this.createPieces();
 
-    this.createEnvironment();
-    this.createBoard(tileTexture);
-    this.createPieces();
+      const resizeTarget: HTMLElement = canvas.parentElement ?? canvas;
+      this.resizeObs = new ResizeObserver(this.resize);
+      this.resizeObs.observe(resizeTarget);
+      this.cleanup.add((): void => this.resizeObs.disconnect());
+      this.resize();
 
-    const resizeTarget: HTMLElement = canvas.parentElement ?? canvas;
-    this.resizeObs = new ResizeObserver(this.resize);
-    this.resizeObs.observe(resizeTarget);
-    this.resize();
+      const events = { signal: this.cleanup.signal };
+      canvas.addEventListener("pointermove", this.onPointerMove, events);
+      canvas.addEventListener("pointerleave", this.onPointerLeave, events);
+      canvas.addEventListener("click", this.onClick, events);
+      canvas.addEventListener(
+        "webglcontextrestored",
+        (): void => {
+          this.needsRender = true;
+        },
+        events,
+      );
+      window.addEventListener("resize", this.resize, events);
 
-    canvas.addEventListener("pointermove", this.onPointerMove);
-    canvas.addEventListener("pointerleave", this.onPointerLeave);
-    canvas.addEventListener("click", this.onClick);
-    window.addEventListener("resize", this.resize);
+      this.resources.trackObject(this.scene);
+      this.resources.track(this.natureMoss.geometry);
+      this.resources.track(this.dirLight.shadow);
+      this.resources.track(this.marbleHighlightAccent);
+      this.resources.track(this.victorianHighlightAccent);
+      this.renderer.setAnimationLoop(this.animate);
+    } catch (err) {
+      this.cleanup.dispose();
+      throw err;
+    }
+  }
 
-    this.renderer.setAnimationLoop(this.animate);
+  dispose(): void {
+    if (this.disposed) return;
+    this.disposed = true;
+    this.cleanup.dispose();
+    this.scene.clear();
+    this.pieces.clear();
+    this.interactiveObj.length = 0;
   }
 
   setState(state: SceneState): void {
-    this.state = state;
+    if (this.disposed) return;
+    if (
+      state.pendingPiece === this.state.pendingPiece &&
+      state.phase === this.state.phase &&
+      state.board.length === this.state.board.length &&
+      state.board.every((piece, idx) => piece === this.state.board[idx]) &&
+      state.remaining.length === this.state.remaining.length &&
+      state.remaining.every((piece, idx) => piece === this.state.remaining[idx])
+    )
+      return;
+    this.state = { ...state, board: [...state.board], remaining: [...state.remaining] };
     this.layoutObjects();
   }
 
-  private createEnvironment(): void {
+  getTheme(): ThemeId {
+    return this.activeTheme;
+  }
+
+  setTheme(theme: ThemeId): void {
+    if (this.disposed || theme === this.activeTheme) return;
+    const victorian: boolean = theme === "victorian";
+    const nature: boolean = theme === "nature";
+    const look = this.themeMaterials[theme];
+    this.activeTheme = theme;
+    this.baseMesh.material = look.table;
+    this.tableEdge.material = look.edge;
+    this.tableEdge.castShadow = nature;
+    this.baseMesh.geometry = nature
+      ? this.tableGeometries.natureTop
+      : this.tableGeometries.regularTop;
+    this.tableEdge.geometry = nature
+      ? this.tableGeometries.natureEdge
+      : this.tableGeometries.regularEdge;
+    this.layoutTable();
+    this.boardRingBase.material = look.board;
+    this.boardRim.material = look.rim;
+    this.boardRim.geometry = nature ? this.natureMoss.geometry : this.originalRimGeometry;
+    this.natureMoss.fibres.visible = nature;
+    for (const [cell, mesh] of this.boardCells.entries()) {
+      mesh.material = look.cells[cell] ?? mesh.material;
+      const accent = this.cellAccents[cell];
+      if (accent) accent.material = look.accent;
+    }
+    for (const [piece, view] of this.pieces) {
+      const { body, details, inset, bezel } = view;
+      const traits: PieceTraits = getPresentedPieceTraits(piece);
+      body.geometry = victorian
+        ? this.pieceGeometries.getVictorianBodyGeometry(piece, traits)
+        : this.pieceGeometries.getMarbleBodyGeometry(piece, traits);
+      body.material = traits.isDark ? look.pieces.darkBody : look.pieces.redBody;
+      if (inset) {
+        inset.material = traits.isDark ? look.hollowDark : look.hollowLight;
+      }
+      if (bezel) {
+        bezel.visible = !nature;
+        bezel.material = look.accent;
+      }
+      details.visible = victorian;
+    }
+    this.victorianBoardDetails.visible = victorian;
+    this.updateHighlights();
+  }
+
+  private createEnv(): void {
     this.scene.background = null;
     this.scene.fog = new Fog(0x11161e, 18, 28);
 
@@ -223,10 +330,12 @@ export class GameScene {
     );
   }
 
-  private createBoard(tileTexture: CanvasTexture): void {
+  private createBoard(): void {
     this.baseMesh.rotation.x = -Math.PI / 2;
     this.baseMesh.position.y = BASE_Y;
     this.baseMesh.receiveShadow = true;
+    this.tableEdge.position.y = BASE_Y;
+    this.tableEdge.receiveShadow = true;
 
     this.boardRingBase.castShadow = true;
     this.boardRingBase.receiveShadow = true;
@@ -235,90 +344,141 @@ export class GameScene {
     this.boardRim.castShadow = true;
     this.boardRim.receiveShadow = true;
 
-    this.scene.add(this.baseMesh, this.boardRingBase, this.boardRim);
+    this.scene.add(this.baseMesh, this.tableEdge, this.boardRingBase, this.boardRim);
 
     for (let cell: number = 0; cell < CELL_COUNT; cell += 1) {
-      const mesh = new Mesh(
-        this.cellGeometry,
-        new MeshPhysicalMaterial({
-          color: cell % 2 === 0 ? 0x8d6036 : 0x6c431f,
-          map: tileTexture,
-          roughness: 0.84,
-          metalness: 0.01,
-          clearcoat: 0.08,
-          clearcoatRoughness: 0.96,
-          emissive: 0x000000,
-        }),
-      );
+      const mesh = new Mesh(this.cellGeometry, this.themeMaterials.marble.cells[cell]);
 
       mesh.castShadow = true;
       mesh.receiveShadow = true;
-      mesh.userData.interactive = { type: "cell", id: cell } satisfies InteractiveRef;
+      this.interactiveRefs.set(mesh, { type: "cell", id: cell });
+
+      const accent = new Mesh(this.cellAccentGeometry, this.themeMaterials.marble.accent);
+      accent.rotation.x = Math.PI / 2;
+      accent.position.y = 0.064;
+      accent.receiveShadow = true;
+      accent.raycast = (): void => {};
+      mesh.add(accent);
+      this.cellAccents.push(accent);
 
       this.boardCells.push(mesh);
       this.interactiveObj.push(mesh);
       this.scene.add(mesh);
     }
+    this.createVictorianBoardDetails();
+  }
+
+  private createVictorianBoardDetails(): void {
+    this.victorianBoardDetails.visible = false;
+    for (const radius of [3.12, 3.24]) {
+      const ring = new Mesh(new TorusGeometry(radius, 0.012, 8, 96), this.brassMaterial);
+      ring.rotation.x = Math.PI / 2;
+      this.victorianBoardDetails.add(ring);
+    }
+    for (let corner: number = 0; corner < 4; corner += 1) {
+      const angle: number = (corner * Math.PI) / 2;
+      const ornament = new Mesh(new TorusGeometry(0.07, 0.012, 8, 24), this.brassMaterial);
+      ornament.rotation.x = Math.PI / 2;
+      ornament.position.set(Math.cos(angle) * 3.18, 0, Math.sin(angle) * 3.18);
+      this.victorianBoardDetails.add(ornament);
+    }
+    this.scene.add(this.victorianBoardDetails);
   }
 
   private createPieces(): void {
     for (const piece of GAME_PIECES) {
-      const group: Group = this.makePiece(piece);
-      this.pieces.set(piece, {
-        group,
-        target: new Vector3(),
-        baseScale: 1,
-        targetScale: 1,
-      });
+      const view = this.makePiece(piece);
+      const group = view.group;
+      this.pieces.set(piece, view);
       this.interactiveObj.push(group);
       this.scene.add(group);
     }
   }
 
-  private makePiece(piece: PieceId): Group {
-    const traits: PieceTraits = getPieceTraits(piece);
+  private makePiece(piece: PieceId): PieceView {
+    const traits: PieceTraits = getPresentedPieceTraits(piece);
     const group = new Group();
-    const interactive: { type: "piece"; id: number } = {
+    const interactive: InteractiveRef = {
       type: "piece",
       id: piece,
     } satisfies InteractiveRef;
     const height: 0.9 | 1.45 = traits.isBig ? 1.45 : 0.9;
-    group.userData.interactive = interactive;
+    this.interactiveRefs.set(group, interactive);
 
     const body = new Mesh(
-      this.getBodyGeometry(traits),
-      traits.isDark ? this.pieceMaterials.darkBody : this.pieceMaterials.redBody,
+      this.pieceGeometries.getMarbleBodyGeometry(piece, traits),
+      traits.isDark
+        ? this.themeMaterials.marble.pieces.darkBody
+        : this.themeMaterials.marble.pieces.redBody,
     );
+    body.name = "piece-body";
     body.position.y = height / 2;
     body.castShadow = true;
     body.receiveShadow = true;
-    body.userData.interactive = interactive;
+    this.interactiveRefs.set(body, interactive);
     group.add(body);
 
-    if (traits.isSolid) {
-      const cap = new Mesh(
-        traits.isRound ? this.pieceGeometries.roundCap : this.pieceGeometries.squareCap,
-        traits.isDark ? this.pieceMaterials.darkCap : this.pieceMaterials.lightCap,
+    let inset: PieceView["inset"] = null;
+    let bezel: PieceView["bezel"] = null;
+    if (!traits.isSolid) {
+      const look = this.themeMaterials.marble;
+      inset = new Mesh(
+        traits.isRound
+          ? new CylinderGeometry(0.201, 0.201, 0.018, 32)
+          : new RoundedBoxGeometry(0.397, 0.018, 0.397, 3, 0.008),
+        traits.isDark ? look.hollowDark : look.hollowLight,
       );
-      cap.position.y = height + 0.02;
-      cap.userData.interactive = interactive;
-      group.add(cap);
+      inset.name = "hollow-inset";
+      inset.position.y = height - 0.103;
+      inset.receiveShadow = true;
+      this.interactiveRefs.set(inset, interactive);
+      group.add(inset);
+      bezel = new Mesh(
+        traits.isRound
+          ? new TorusGeometry(0.215, 0.011, 8, 48)
+          : this.pieceGeometries.createSquareBezel(),
+        look.accent,
+      );
+      bezel.name = "hollow-bezel";
+      if (traits.isRound) bezel.rotation.x = Math.PI / 2;
+      bezel.position.y = height - 0.014;
+      bezel.receiveShadow = true;
+      bezel.raycast = (): void => {};
+      group.add(bezel);
     }
-    return group;
+    const craft = this.themeMaterials.victorian.craft;
+    if (!craft) throw new Error("Victorian craft materials are missing");
+    const details = createVictorianPieceDetails(traits, height, craft);
+    group.add(details);
+    return {
+      group,
+      body,
+      inset,
+      bezel,
+      details,
+      target: new Vector3(),
+      baseScale: 1,
+      targetScale: 1,
+    };
   }
 
-  private getBodyGeometry(traits: PieceTraits): BoxGeometry | CylinderGeometry {
-    if (traits.isRound) {
-      return traits.isBig ? this.pieceGeometries.bigRound : this.pieceGeometries.smallRound;
-    }
-    return traits.isBig ? this.pieceGeometries.bigSquare : this.pieceGeometries.smallSquare;
+  private lowerTableRear(): void {
+    lowerTableRear(this.tableGeometries, TABLE_REAR_SCALE);
+  }
+
+  private layoutTable(): void {
+    this.baseMesh.scale.setScalar(1);
+    this.tableEdge.scale.setScalar(1);
+    this.baseMesh.position.copy(this.boardOffset).setY(BASE_Y);
+    this.tableEdge.position.copy(this.baseMesh.position);
   }
 
   private layoutObjects(): void {
     this.boardOffset.set(this.mobileLayout ? 0 : -1.35, 0, this.mobileLayout ? -1.1 : 0);
-    this.baseMesh.position.set(this.boardOffset.x, BASE_Y, this.boardOffset.z);
+    this.layoutTable();
     this.boardRingBase.position.copy(this.boardOffset).setY(BASE_Y + 0.01);
     this.boardRim.position.copy(this.boardOffset).setY(BASE_Y + 0.08);
+    this.victorianBoardDetails.position.copy(this.boardOffset).setY(BASE_Y + 0.115);
 
     for (const [cell, mesh] of this.boardCells.entries()) {
       const row: number = Math.floor(cell / BOARD_SIZE);
@@ -377,20 +537,20 @@ export class GameScene {
   }
 
   private layoutReservePiece(piece: PieceId, view: PieceView): void {
-    if (this.mobileLayout) {
-      const row: number = Math.floor(piece / BOARD_SIZE);
-      const col: number = piece % BOARD_SIZE;
-      this.setPieceTarget(view, (col - 1.5) * 1.12, BASE_Y, 2.9 + row * 0.98, RESERVE_SCALE);
-      return;
-    }
-
     const upper: boolean = piece < 8;
-    const sideIndex: number = upper ? piece : piece - 8;
-    const progress: number = sideIndex / 7;
-    const angle: number = upper
-      ? MathUtils.lerp(RESERVE_UPPER_START, RESERVE_UPPER_END, progress)
-      : MathUtils.lerp(RESERVE_LOWER_START, RESERVE_LOWER_END, progress);
-    const radius: number = RESERVE_RADIUS + (upper ? 0.04 : -0.04);
+    const sideIdx: number = upper ? piece : piece - 8;
+    const progress: number = sideIdx / 7;
+    const angle: number = this.mobileLayout
+      ? MathUtils.lerp(PORTRAIT_RESERVE_START, PORTRAIT_RESERVE_END, progress)
+      : (upper
+          ? MathUtils.lerp(RESERVE_UPPER_START, RESERVE_UPPER_END, progress)
+          : MathUtils.lerp(RESERVE_LOWER_START, RESERVE_LOWER_END, progress)) -
+        Math.PI / 2;
+    const radius: number = this.mobileLayout
+      ? upper
+        ? 6.1
+        : 4.75
+      : RESERVE_RADIUS + (upper ? 0.04 : -0.04);
 
     this.setPieceTarget(
       view,
@@ -409,14 +569,40 @@ export class GameScene {
   }
 
   private updateHighlights(remaining = new Set(this.state.remaining)): void {
+    this.needsRender = true;
     for (const [cell, mesh] of this.boardCells.entries()) {
-      const material = mesh.material as MeshPhysicalMaterial;
+      const material = mesh.material;
       const interactive: boolean = this.state.phase === "place" && this.state.board[cell] === null;
       const hovered: boolean =
         interactive && this.hovered?.type === "cell" && this.hovered.id === cell;
 
-      material.emissive.setHex(hovered ? 0x8a6322 : interactive ? 0x362311 : 0x000000);
-      material.emissiveIntensity = hovered ? 1.5 : interactive ? 0.9 : 0;
+      const accent = this.cellAccents[cell];
+      if (accent) {
+        accent.visible = this.state.board[cell] === null;
+        accent.material =
+          this.activeTheme === "marble" && hovered
+            ? this.marbleHighlightAccent
+            : this.activeTheme === "victorian" && hovered
+              ? this.victorianHighlightAccent
+              : this.themeMaterials[this.activeTheme].accent;
+        accent.scale.setScalar(this.activeTheme !== "nature" && hovered ? 1.05 : 1);
+      }
+      if (this.activeTheme === "marble") {
+        material.color.setHex(
+          hovered ? 0x297d94 : interactive ? 0x849f9e : MARBLE_CELL_COLS[cell % 2 === 0 ? 0 : 1],
+        );
+        material.emissive.setHex(hovered ? 0x088c9f : interactive ? 0x09374e : 0x000000);
+        material.emissiveIntensity = hovered ? 0.75 : interactive ? 0.65 : 0;
+      } else if (this.activeTheme === "victorian") {
+        material.color.setHex(
+          hovered ? 0xffe9b4 : interactive ? 0xefd5a7 : VICTORIAN_CELL_COLS[cell % 2 === 0 ? 0 : 1],
+        );
+        material.emissive.setHex(hovered ? 0x644014 : interactive ? 0x211609 : 0x000000);
+        material.emissiveIntensity = hovered ? 0.75 : interactive ? 0.3 : 0;
+      } else {
+        material.emissive.setHex(hovered ? 0x317362 : interactive ? 0x123b32 : 0x000000);
+        material.emissiveIntensity = hovered ? 1.5 : interactive ? 0.9 : 0;
+      }
     }
 
     for (const [piece, view] of this.pieces) {
@@ -433,8 +619,8 @@ export class GameScene {
   }
 
   private findInteractive(object: Object3D): InteractiveRef | null {
-    for (let current: Object3D | null = object; current; current = current.parent) {
-      const ref = current.userData.interactive as InteractiveRef | undefined;
+    for (let cur: Object3D | null = object; cur; cur = cur.parent) {
+      const ref = this.interactiveRefs.get(cur);
       if (ref) return ref;
     }
     return null;
@@ -448,6 +634,7 @@ export class GameScene {
 
   private pick(event: MouseEvent): InteractiveRef | null {
     const rect: DOMRect = this.renderer.domElement.getBoundingClientRect();
+    if (rect.width <= 0 || rect.height <= 0) return null;
     this.pointer.set(
       ((event.clientX - rect.left) / rect.width) * 2 - 1,
       -((event.clientY - rect.top) / rect.height) * 2 + 1,
@@ -485,101 +672,87 @@ export class GameScene {
   };
 
   private readonly resize: () => void = (): void => {
+    if (this.disposed) return;
     const canvas: HTMLCanvasElement = this.renderer.domElement;
     const resizeTarget: HTMLElement = canvas.parentElement ?? canvas;
     const width: number = Math.max(1, resizeTarget.clientWidth);
     const height: number = Math.max(1, resizeTarget.clientHeight);
+    const pixelRatio = Math.min(window.devicePixelRatio, 2);
+    this.renderer.getSize(this.prevSize);
+    if (
+      this.isSized &&
+      this.prevSize.x === width &&
+      this.prevSize.y === height &&
+      this.renderer.getPixelRatio() === pixelRatio
+    )
+      return;
     const aspect: number = width / height;
     const nxtMobileLayout: boolean = aspect < MOBILE_ASPECT;
     const isLayoutChange: boolean = !this.isSized || nxtMobileLayout !== this.mobileLayout;
 
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.renderer.setPixelRatio(pixelRatio);
     this.renderer.setSize(width, height, false);
     this.camera.aspect = aspect;
+    this.camera.fov = nxtMobileLayout ? 50 : 37;
     this.mobileLayout = nxtMobileLayout;
 
     if (isLayoutChange) {
       if (this.mobileLayout) {
-        this.camera.position.set(0, 13.8, 13.9);
-        this.controls.target.set(0, BASE_Y, 1.4);
+        this.camera.position.set(0, 6.8, 15.9);
+        this.controls.target.set(0, 1.2, -1.1);
       } else {
-        this.camera.position.set(4.2, 10.4, 13.2);
-        this.controls.target.set(0.95, BASE_Y + 0.1, 0);
+        this.camera.position.set(-1.35, 7.2, 16.2);
+        this.controls.target.set(-1.35, 1.25, -0.5);
       }
+      const offset = this.camera.position.clone().sub(this.controls.target);
+      offset.setFromSphericalCoords(offset.length(), VIEW_POLAR_ANGLE, 0);
+      this.camera.position.copy(this.controls.target).add(offset);
       this.layoutObjects();
     }
 
     this.isSized = true;
     this.camera.updateProjectionMatrix();
     this.controls.update();
+    this.dirLight.position.copy(this.camera.position);
+    this.needsRender = true;
   };
 
   private readonly animate: () => void = (): void => {
-    this.controls.update();
+    if (this.disposed) return;
+    this.needsRender = this.controls.update() || this.needsRender;
     this.dirLight.position.copy(this.camera.position);
     for (const view of this.pieces.values()) {
       if (!view.group.visible) continue;
 
-      view.group.position.lerp(view.target, ANIMATION_FACTOR);
-      view.group.scale.setScalar(
-        MathUtils.lerp(view.group.scale.x, view.targetScale, ANIMATION_FACTOR),
-      );
+      const isMoving =
+        view.group.position.distanceToSquared(view.target) > 1e-12 ||
+        Math.abs(view.group.scale.x - view.targetScale) > 1e-6;
+      if (isMoving) {
+        view.group.position.lerp(view.target, ANIMATION_FACTOR);
+        view.group.scale.setScalar(
+          MathUtils.lerp(view.group.scale.x, view.targetScale, ANIMATION_FACTOR),
+        );
+        this.needsRender = true;
+      } else if (
+        !view.group.position.equals(view.target) ||
+        view.group.scale.x !== view.targetScale
+      ) {
+        view.group.position.copy(view.target);
+        view.group.scale.setScalar(view.targetScale);
+        this.needsRender = true;
+      }
     }
+    if (!this.needsRender) return;
     this.renderer.render(this.scene, this.camera);
+    this.needsRender = false;
   };
 
-  private createWoodTexture(): CanvasTexture {
-    const canvas: HTMLCanvasElement = document.createElement("canvas");
-    canvas.width = 512;
-    canvas.height = 512;
-
-    const texture = new CanvasTexture(canvas);
+  private loadStoneTexture(url: string): Texture {
+    const texture: Texture = this.textureLoader.load(url, (): void => {
+      if (!this.disposed) this.needsRender = true;
+    });
     texture.colorSpace = SRGBColorSpace;
-
-    const context = canvas.getContext("2d");
-    if (!context) return texture;
-
-    const gradient: CanvasGradient = context.createLinearGradient(
-      0,
-      0,
-      canvas.width,
-      canvas.height,
-    );
-    gradient.addColorStop(0, "#6a4322");
-    gradient.addColorStop(0.5, "#4f3118");
-    gradient.addColorStop(1, "#86562e");
-    context.fillStyle = gradient;
-    context.fillRect(0, 0, canvas.width, canvas.height);
-
-    context.globalAlpha = 0.16;
-    for (let y: number = 0; y < canvas.height; y += 4) {
-      const wobble: number = 9 * Math.sin(y / 22) + 4 * Math.sin(y / 9);
-      context.fillStyle = y % 8 === 0 ? "#362010" : "#7c4a24";
-      context.fillRect(0, y + wobble * 0.05, canvas.width, 2);
-    }
-
-    context.globalAlpha = 0.09;
-    for (let line: number = 0; line < 95; line += 1) {
-      const y: number = Math.random() * canvas.height;
-      const amplitude: number = 2 + Math.random() * 8;
-      const frequency: number = 35 + Math.random() * 70;
-      const phase: number = Math.random() * Math.PI * 2;
-
-      context.beginPath();
-      context.strokeStyle = line % 3 === 0 ? "#2c180c" : "#c09058";
-      context.lineWidth = 0.5 + Math.random() * 1.4;
-
-      for (let x: number = -20; x <= canvas.width + 20; x += 8) {
-        const grainY: number = y + Math.sin(x / frequency + phase) * amplitude;
-        if (x === -20) context.moveTo(x, grainY);
-        else context.lineTo(x, grainY);
-      }
-      context.stroke();
-    }
-    context.globalAlpha = 1;
-    texture.wrapS = RepeatWrapping;
-    texture.wrapT = RepeatWrapping;
-    texture.needsUpdate = true;
-    return texture;
+    texture.anisotropy = Math.min(this.renderer.capabilities.getMaxAnisotropy(), 8);
+    return this.resources.track(texture);
   }
 }

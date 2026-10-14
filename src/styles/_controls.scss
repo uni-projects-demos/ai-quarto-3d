@@ -1,0 +1,150 @@
+@use "tokens" as *;
+
+select,
+button {
+  @extend %control-surface;
+  font: inherit;
+  min-height: 38px;
+  border-radius: 9px;
+  color: #f8f4eb;
+}
+
+select {
+  width: 100%;
+  min-width: 0;
+  padding: 0 28px 0 9px;
+  font-size: 0.78rem;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.48;
+  }
+}
+
+button {
+  padding: 0 14px;
+  cursor: pointer;
+  font-weight: 760;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.38;
+  }
+
+  &.primary {
+    color: #16110a;
+    border-color: transparent;
+    background: linear-gradient(135deg, #f1c47d, #d99643);
+    box-shadow: 0 8px 24px rgba(213, 145, 62, 0.18);
+  }
+}
+
+.action-row {
+  display: grid;
+  grid-template-columns: 1fr 38px 38px;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.action-new {
+  min-width: 0;
+  min-height: 38px;
+  font-size: 0.8rem;
+}
+
+.icon-button {
+  @extend %icon-grid;
+  width: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  padding: 0;
+  color: var(--gold);
+
+  &:not(:disabled):hover {
+    background: rgba(233, 185, 110, 0.14);
+  }
+
+  svg {
+    @extend %stroke-icon;
+    width: 19px;
+    height: 19px;
+    stroke-width: 2;
+  }
+}
+
+.utility-button {
+  @extend %icon-grid;
+  @extend %control-surface;
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  min-height: 38px;
+  padding: 0;
+  border-radius: 9px;
+  color: var(--gold);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: var(--control-hover-border);
+    background: var(--control-hover-surface);
+  }
+
+  svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+.game-controls {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.control-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+
+  label {
+    display: grid;
+    min-width: 0;
+    gap: 5px;
+
+    > span {
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 0.61rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+
+  .control-wide {
+    grid-column: 1 / -1;
+  }
+}
+
+select:focus-visible,
+button:focus-visible,
+.utility-button:focus-visible {
+  outline: 3px solid var(--focus-color, var(--accent));
+  outline-offset: var(--focus-offset, 2px);
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .control-grid {
+    grid-template-columns: 1fr;
+    .control-wide {
+      grid-column: auto;
+    }
+  }
+}

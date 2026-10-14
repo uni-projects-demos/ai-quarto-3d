@@ -1,0 +1,38 @@
+@use "tokens" as *;
+
+#app {
+  width: min(1540px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 14px 0;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(310px, 350px);
+  gap: 14px;
+  height: calc(100svh - 28px);
+  max-height: calc(100dvh - 28px);
+  min-height: 0;
+}
+
+.game-screen,
+.game-info {
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-panel);
+}
+
+@media (max-width: $tablet-breakpoint) {
+  #app {
+    width: min(100% - 18px, 820px);
+    padding: 9px 0;
+  }
+  .game-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-height: none;
+    min-height: auto;
+  }
+}

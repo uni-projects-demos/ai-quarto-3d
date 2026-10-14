@@ -36,33 +36,22 @@ function bitCount(bitVal: number): number {
   return numBits;
 }
 
-function computeTraitMask(pieces: readonly PieceId[]): number {
-  if (pieces.length !== BOARD_SIZE) return 0;
-
-  let isWinOnes: number = TRAIT_MASK;
-  let isWinZeros: number = TRAIT_MASK;
-
-  for (const piece of pieces) {
-    isWinOnes &= piece;
-    isWinZeros &= ~piece;
-  }
-  return (isWinOnes | isWinZeros) & TRAIT_MASK;
-}
-
 export function getTraitMask(
   board: readonly Cell[],
   line: WinLine,
   placedCell = -1,
   placedPiece?: PieceId,
 ): number {
-  const pieces: PieceId[] = [];
+  let isWinOnes: number = TRAIT_MASK;
+  let isWinZeros: number = TRAIT_MASK;
   for (const cell of line) {
     const piece: Cell | undefined = cell === placedCell ? placedPiece : board[cell];
 
     if (!isPiece(piece)) return 0;
-    pieces.push(piece);
+    isWinOnes &= piece;
+    isWinZeros &= ~piece;
   }
-  return computeTraitMask(pieces);
+  return (isWinOnes | isWinZeros) & TRAIT_MASK;
 }
 
 function isWinLine(
@@ -86,13 +75,17 @@ export function getWinLines(board: readonly Cell[]): WinLine[] {
 }
 
 export function isWinCellPlacement(board: readonly Cell[], cell: number, piece: PieceId): boolean {
-  if (cell < 0 || cell >= board.length || board[cell] !== null) {
+  if (!isValidCell(board, cell)) {
     return false;
   }
   return (
     LINES_BY_CELL[cell]?.some((line: WinLine): boolean => isWinLine(board, line, cell, piece)) ??
     false
   );
+}
+
+export function isValidCell(board: readonly Cell[], cell: number): boolean {
+  return Number.isInteger(cell) && cell >= 0 && cell < board.length && board[cell] === null;
 }
 
 export function sumWinCells(board: readonly Cell[], piece: PieceId): number {
@@ -118,7 +111,7 @@ export function isBoardEmpty(board: readonly Cell[]): boolean {
 }
 
 export function isBoardFull(board: readonly Cell[]): boolean {
-  return board.length === CELL_COUNT && board.every((cell: Cell): cell is number => cell !== null);
+  return board.length === CELL_COUNT && board.every((cell: Cell): cell is PieceId => cell !== null);
 }
 
 export function cellPlacementScore(board: readonly Cell[], cell: number, piece: PieceId): number {

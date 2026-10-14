@@ -1,15 +1,18 @@
 /// <reference lib="webworker" />
 
 import type { MoveAI, RequestAI, ResponseAI } from "../game/types";
+import { isRequestAI } from "./protocol";
 import { findMoveAI } from "./search";
 
-const worker: DedicatedWorkerGlobalScope = self as DedicatedWorkerGlobalScope;
+declare const self: DedicatedWorkerGlobalScope;
+const worker: DedicatedWorkerGlobalScope = self;
 
 function res(response: ResponseAI): void {
   worker.postMessage(response);
 }
 
-worker.onmessage = ({ data }: MessageEvent<RequestAI>): void => {
+worker.onmessage = ({ data }: MessageEvent<unknown>): void => {
+  if (!isRequestAI(data)) return;
   const { reqId }: RequestAI = data;
 
   try {

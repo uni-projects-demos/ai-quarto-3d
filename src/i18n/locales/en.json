@@ -1,0 +1,123 @@
+{
+  "app": {
+    "title": "AI-Quarto 3D",
+    "eyebrow": "A ported enhancement of",
+    "newGame": "New game",
+    "start": "Start"
+  },
+  "common": {
+    "on": "ON",
+    "off": "OFF"
+  },
+  "a11y": {
+    "utilityActions": "Application links and language",
+    "viewSource": "View source on GitHub",
+    "gameControls": "Game controls",
+    "gameBoard": "3D game board",
+    "gameInfo": "Game information"
+  },
+  "controls": {
+    "diffAI": "AI difficulty",
+    "diffPlayerOneAI": "P1 difficulty",
+    "diffPlayerTwoAI": "P2 difficulty",
+    "startingPlayer": "Starting player",
+    "gameMode": "Game mode",
+    "pauseAI": "Pause AI",
+    "resumeAI": "Resume AI",
+    "undo": "Undo",
+    "redo": "Redo"
+  },
+  "diff": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  },
+  "mode": {
+    "userVsUser": "User vs user",
+    "userVsAI": "User vs AI",
+    "onlyAI": "AI vs AI"
+  },
+  "player": {
+    "playerYou": "You",
+    "playerOne": "Player One",
+    "playerTwo": "Player Two",
+    "playerAI": "AI ({{difficulty}})",
+    "playerNumberedAI": "AI (P{{number}}, {{difficulty}})",
+    "playerRandom": "Random",
+    "playerAIPlayer": "AI Player",
+    "playerShort": "P{{number}}"
+  },
+  "status": {
+    "loading": "Gameplay status...",
+    "pausedAI": "{{player}} is paused...",
+    "placingAI": "{{player}} is playing - placing piece on the board...",
+    "placingUser": "{{player}} is playing - Place selected piece on board...",
+    "placeUserYou": "You are playing - Place selected piece on board...",
+    "gameDrawn": "Game drawn - no winning line",
+    "gameWon": "{{player}} wins - winning line highlighted",
+    "selectingAI": "{{player}} is playing - selecting a piece for {{opponent}}...",
+    "selectUser": "{{player}} is playing - Select a piece for {{opponent}}...",
+    "selectUserYou": "You are playing - Select a piece for {{opponent}}..."
+  },
+  "piece": {
+    "inPlay": "Piece in play",
+    "none": "None selected",
+    "traits": "Piece traits",
+    "green": "Green",
+    "white": "White",
+    "black": "black",
+    "red": "red",
+    "big": "big",
+    "small": "small",
+    "round": "round",
+    "square": "square",
+    "solid": "solid",
+    "hollow": "hollow"
+  },
+  "board": {
+    "binary": "Binary board",
+    "piecesPlaced": "Placed pieces",
+    "cellEmpty": "Cell {{cell}}: empty",
+    "cellPiece": "Cell {{cell}}: {{piece}}"
+  },
+  "error": {
+    "renderingStatus": "3D rendering is unavailable.",
+    "webglHeading": "WebGL could not start.",
+    "webglMsg": "The game requires WebGL to be enabled in the browser."
+  },
+  "metrics": {
+    "hoverRiskPreview": "Hover a selectable piece to preview its selection risk",
+    "hoveredRiskOne": "Hovered piece risk: {{risk}} immediate winning placement",
+    "hoveredRiskMany": "Hovered piece risk: {{risk}} immediate winning placements",
+    "immediateWins": "Immediate winning placements",
+    "latestRisk": "Latest selection risk",
+    "riskOneAI": "AI selected piece risk: {{risk}} immediate winning placement",
+    "riskManyAI": "AI selected piece risk: {{risk}} immediate winning placements",
+    "riskTurnedOff": "Selection risk is turned off",
+    "riskUnavailableAI": "Selection risk unavailable in AI vs AI mode",
+    "selectionRisk": "Selection risk",
+    "turnRiskOff": "Turn selection risk off",
+    "turnRiskOn": "Turn selection risk on"
+  },
+  "metadata": {
+    "description": "Interactive 3D Quarto board game UI using Three.js and the Negamax version of the Minimax artificial intelligence algorithm with alpha-beta pruning. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties.",
+    "ogDescription": "Interactive 3D Quarto board game. Play user vs user, user vs AI, and AI vs AI, with easy, medium and hard AI difficulties."
+  },
+  "language": {
+    "label": "Language",
+    "search": "Search languages",
+    "empty": "No languages found",
+    "close": "Close"
+  },
+  "themes": {
+    "label": "Theme",
+    "previous": "Previous theme",
+    "next": "Next theme",
+    "marble": "Marble",
+    "victorian": "Victorian",
+    "nature": "Nature",
+    "playTheme": "Play {{theme}}",
+    "loadError": "Theme unavailable.",
+    "empty": "No themes available."
+  }
+}

@@ -31,8 +31,8 @@ export function getPieceTraits(piece: PieceId): PieceTraits {
   };
 }
 
-function bit(value: boolean): "0" | "1" {
-  return value ? "1" : "0";
+function bit(val: boolean): "0" | "1" {
+  return val ? "1" : "0";
 }
 
 export function pieceStr(piece: PieceId): string {

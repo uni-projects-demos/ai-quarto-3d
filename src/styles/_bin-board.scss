@@ -1,0 +1,130 @@
+@use "tokens" as *;
+
+.bin-board-card {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  flex: 1 1 0;
+  min-height: 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.bin-board-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+
+  h3 {
+    @extend %section-heading;
+    font-size: 0.84rem;
+  }
+
+  span {
+    color: var(--muted);
+    font-size: 0.69rem;
+    font-weight: 750;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+}
+
+.bin-board-wrap {
+  position: relative;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 286px;
+  aspect-ratio: 1;
+  margin: auto;
+  align-self: center;
+  justify-self: center;
+}
+
+.bin-board {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 5px;
+  padding: 6px;
+  border: 1px solid rgba(233, 185, 110, 0.2);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at 50% 32%, rgba(233, 185, 110, 0.08), transparent 65%),
+    rgba(8, 11, 16, 0.4);
+
+  code {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 0.055em;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9px;
+    color: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.025);
+    font: 800 clamp(0.63rem, 1.4vw, 0.78rem) / 1 var(--font-mono);
+    white-space: nowrap;
+
+    &.occupied,
+    &.win {
+      color: #f7e4c6;
+      background: rgba(114, 72, 34, 0.28);
+    }
+
+    &.occupied {
+      border-color: rgba(233, 185, 110, 0.24);
+    }
+    &.win {
+      border: 2px solid #f1c47d;
+    }
+
+    .bin-bit {
+      display: inline;
+      color: inherit;
+    }
+
+    .win-bit {
+      color: #fff;
+      font-size: 1.15em;
+      font-weight: 950;
+      text-decoration-line: underline;
+      text-decoration-color: var(--gold);
+      text-decoration-thickness: 0.18em;
+      text-underline-offset: 0.12em;
+    }
+  }
+}
+
+.bin-win-overlay {
+  position: absolute;
+  inset: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  overflow: visible;
+  pointer-events: none;
+
+  ellipse {
+    fill: none;
+    stroke: #f1c47d;
+    stroke-width: 0.075;
+    vector-effect: non-scaling-stroke;
+    filter: drop-shadow(0 0 5px rgba(241, 196, 125, 0.58));
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .bin-board-card {
+    flex: 0 0 auto;
+  }
+  .bin-board-wrap {
+    width: min(100%, 286px);
+    height: auto;
+    max-width: none;
+    max-height: none;
+    margin: 0 auto;
+  }
+}
