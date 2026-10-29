@@ -116,8 +116,10 @@
     "marble": "Marble",
     "victorian": "Victorian",
     "nature": "Nature",
+    "flogsta": "Flogsta",
     "playTheme": "Play {{theme}}",
     "loadError": "Theme unavailable.",
+    "loading": "Loading themes...",
     "empty": "No themes available."
   }
 }

@@ -116,6 +116,7 @@
     "marble": "大理石",
     "victorian": "ヴィクトリア朝",
     "nature": "自然",
+    "flogsta": "Flogsta",
     "playTheme": "{{theme}}でプレイ",
     "loadError": "テーマを利用できません。",
     "empty": "利用できるテーマがありません。"

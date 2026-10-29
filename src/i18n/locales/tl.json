@@ -116,6 +116,7 @@
     "marble": "Marmol",
     "victorian": "Victorian",
     "nature": "Kalikasan",
+    "flogsta": "Flogsta",
     "playTheme": "Maglaro gamit ang {{theme}}",
     "loadError": "Hindi available ang tema.",
     "empty": "Walang available na tema."

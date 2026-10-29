@@ -116,6 +116,7 @@
     "marble": "Marmor",
     "victorian": "Victoria-aegne",
     "nature": "Loodus",
+    "flogsta": "Flogsta",
     "playTheme": "Mängi teemaga {{theme}}",
     "loadError": "Teema pole saadaval.",
     "empty": "Ühtegi teemat pole saadaval."

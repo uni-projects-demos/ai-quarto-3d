@@ -7,11 +7,11 @@ interface Disposable {
 export class SceneResources {
   private readonly resources = new Set<Disposable>();
   private readonly released = new WeakSet<Disposable>();
-  private disposed = false;
+  private isDisposed = false;
 
   track<T extends Disposable>(resource: T): T {
     if (this.resources.has(resource) || this.released.has(resource)) return resource;
-    if (this.disposed) {
+    if (this.isDisposed) {
       this.released.add(resource);
     } else this.resources.add(resource);
     if (resource instanceof Material) {
@@ -19,7 +19,7 @@ export class SceneResources {
         if (val instanceof Texture) this.track(val);
       }
     }
-    if (this.disposed) resource.dispose();
+    if (this.isDisposed) resource.dispose();
     return resource;
   }
 
@@ -35,8 +35,8 @@ export class SceneResources {
   }
 
   dispose(): void {
-    if (this.disposed) return;
-    this.disposed = true;
+    if (this.isDisposed) return;
+    this.isDisposed = true;
     const errors: unknown[] = [];
     for (const resource of this.resources) {
       this.released.add(resource);

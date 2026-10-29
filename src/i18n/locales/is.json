@@ -116,6 +116,7 @@
     "marble": "Marmari",
     "victorian": "Viktorískt",
     "nature": "Náttúra",
+    "flogsta": "Flogsta",
     "playTheme": "Spila með {{theme}}",
     "loadError": "Þema er ekki tiltækt.",
     "empty": "Engin þemu eru tiltæk."

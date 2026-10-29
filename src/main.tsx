@@ -31,7 +31,7 @@ function setupTitleFit(): Dispose {
 }
 
 const cleanup = new Cleanup();
-let disposed = false;
+let isDisposed = false;
 
 const appRoot: HTMLElement = requiredEl("app", HTMLElement);
 const reactRoot: Root = createRoot(appRoot);
@@ -42,6 +42,28 @@ flushSync((): void => {
 const canvas: HTMLCanvasElement = requiredEl("game-canvas", HTMLCanvasElement);
 const status: HTMLElement = requiredEl("game-status", HTMLElement);
 const statusLbl: HTMLElement = requiredEl("game-status-label", HTMLElement);
+
+async function preloadThemeBackgrounds(root: HTMLElement): Promise<HTMLImageElement[]> {
+  const urls = new Set<string>();
+  for (const element of root.querySelectorAll<HTMLElement>(
+    ".marble-interior, .nature-landscape, .victorian-wall, .flogsta-balcony",
+  )) {
+    for (const match of getComputedStyle(element).backgroundImage.matchAll(
+      /url\(["']?([^"')]+)["']?\)/g,
+    )) {
+      const url = match[1];
+      if (url) urls.add(url);
+    }
+  }
+  return Promise.all(
+    [...urls].map(async (url): Promise<HTMLImageElement> => {
+      const image = new Image();
+      image.src = url;
+      await image.decode();
+      return image;
+    }),
+  );
+}
 
 function showStartupErr(err: unknown): void {
   requiredEl("theme-selection", HTMLElement).hidden = true;
@@ -71,13 +93,15 @@ async function prepareGame(): Promise<void> {
     import("./ui/ThemeController"),
   ]);
   try {
-    if (disposed) return;
+    if (isDisposed) return;
     let controller: GameController | null = null;
     let picker: ThemePickerController | null = null;
     let selectedTheme: ThemeId = DEFAULT_THEME;
     const screen = requiredEl("game-screen", HTMLElement);
+    const pickerRoot = requiredEl("theme-selection", HTMLElement);
     const switcher = requiredEl("theme-switcher", HTMLElement);
     const startButton = requiredEl("new-game", HTMLButtonElement);
+    canvas.hidden = true;
     const scene = new GameScene(canvas, {
       onCellClick: (cell: number): void => controller?.handleCellClick(cell),
       onPieceClick: (piece): void => controller?.handlePieceClick(piece),
@@ -85,6 +109,23 @@ async function prepareGame(): Promise<void> {
     });
 
     cleanup.add((): void => scene.dispose());
+    const previews = new Map<ThemeId, HTMLCanvasElement>();
+    for (const def of GAME_THEMES) {
+      const preview = pickerRoot.querySelector<HTMLCanvasElement>(
+        `[data-theme-id="${def.id}"] .theme-preview-render`,
+      );
+      if (!preview) throw new Error(`Missing preview for ${def.id}`);
+      previews.set(def.id, preview);
+    }
+    const [backgrounds] = await Promise.all([
+      preloadThemeBackgrounds(screen),
+      scene.preloadThemes(previews),
+    ]);
+    cleanup.add((): void => {
+      backgrounds.length = 0;
+    });
+    if (isDisposed) return;
+    canvas.hidden = false;
 
     const themes = new ThemeController(
       scene,
@@ -133,24 +174,27 @@ async function prepareGame(): Promise<void> {
     const gameController = controller;
     cleanup.add((): void => gameController.dispose());
     picker = new ThemePickerController(
-      requiredEl("theme-selection", HTMLElement),
+      pickerRoot,
       (theme): void => {
         selectedTheme = theme;
         controller?.start();
       },
+      (): void => scene.renderThemePreviews(previews),
     );
     const themePicker = picker;
     cleanup.add((): void => themePicker.dispose());
+    pickerRoot.setAttribute("aria-busy", "false");
+    requiredEl("theme-launch-status", HTMLElement, pickerRoot).hidden = true;
     startButton.disabled = GAME_THEMES.length === 0;
   } catch (error) {
     cleanup.dispose();
-    if (!disposed) showStartupErr(error);
+    if (!isDisposed) showStartupErr(error);
   }
 }
 
 async function startApp(): Promise<void> {
   cleanup.add(await initI18n());
-  if (disposed) return;
+  if (isDisposed) return;
   cleanup.add(setupTitleFit());
   cleanup.add(initLangPicker());
   await prepareGame();
@@ -158,7 +202,7 @@ async function startApp(): Promise<void> {
 
 if (import.meta.hot) {
   import.meta.hot.dispose((): void => {
-    disposed = true;
+    isDisposed = true;
     cleanup.dispose();
     reactRoot.unmount();
   });
@@ -166,5 +210,5 @@ if (import.meta.hot) {
 
 void startApp().catch((err: unknown): void => {
   cleanup.dispose();
-  if (!disposed) showStartupErr(err);
+  if (!isDisposed) showStartupErr(err);
 });

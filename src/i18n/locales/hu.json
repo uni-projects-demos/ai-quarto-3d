@@ -116,6 +116,7 @@
     "marble": "Márvány",
     "victorian": "Viktoriánus",
     "nature": "Természet",
+    "flogsta": "Flogsta",
     "playTheme": "Játék a következő témával: {{theme}}",
     "loadError": "A téma nem érhető el.",
     "empty": "Nincsenek elérhető témák."

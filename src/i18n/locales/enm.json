@@ -116,6 +116,7 @@
     "marble": "Marble",
     "victorian": "Victorian",
     "nature": "Nature",
+    "flogsta": "Flogsta",
     "playTheme": "Pleyen with {{theme}}",
     "loadError": "Theme nat founden.",
     "empty": "No themes founden."

@@ -116,6 +116,7 @@
     "marble": "Marmor",
     "victorian": "Victoriansk",
     "nature": "Natur",
+    "flogsta": "Flogsta",
     "playTheme": "Spil med {{theme}}",
     "loadError": "Temaet er ikke tilgængeligt.",
     "empty": "Ingen temaer er tilgængelige."

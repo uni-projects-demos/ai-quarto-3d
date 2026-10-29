@@ -116,6 +116,7 @@
     "marble": "Marmor",
     "victorian": "Victorianum",
     "nature": "Natura",
+    "flogsta": "Flogsta",
     "playTheme": "Lude cum {{theme}}",
     "loadError": "Thema non praesto est.",
     "empty": "Nulla themata praesto sunt."

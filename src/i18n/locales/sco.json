@@ -116,6 +116,7 @@
     "marble": "Mairble",
     "victorian": "Victorian",
     "nature": "Naitur",
+    "flogsta": "Flogsta",
     "playTheme": "Play wi {{theme}}",
     "loadError": "Theme no available.",
     "empty": "Nae themes available."

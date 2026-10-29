@@ -1,6 +1,7 @@
 import type { JSX } from "react";
 import { translate } from "../i18n/i18n";
 import { GAME_THEMES, type ThemeDef } from "../themes";
+import { SceneBackdrop } from "./SceneBackdrop";
 import { themePrevOrder } from "./themePrevOrder";
 
 export function ThemePicker({
@@ -14,6 +15,7 @@ export function ThemePicker({
       className="theme-picker"
       aria-label={translate("themes.label")}
       data-i18n-aria-label="themes.label"
+      aria-busy="true"
     >
       <ul className="theme-preview-list">
         {themePrevOrder(themes).map((theme) => (
@@ -27,7 +29,14 @@ export function ThemePicker({
               disabled
             >
               <span className="theme-preview-image">
-                <img src={theme.previewImage} alt="" width={1048} height={632} decoding="async" />
+                <span
+                  className="game-screen theme-preview-scene"
+                  data-theme={theme.id}
+                  aria-hidden="true"
+                >
+                  <SceneBackdrop />
+                  <canvas className="theme-preview-render" />
+                </span>
               </span>
               <strong className="theme-preview-name" data-i18n={theme.nameKey}>
                 {translate(theme.nameKey)}
@@ -39,7 +48,14 @@ export function ThemePicker({
       <p className="theme-picker-empty" data-i18n="themes.empty" hidden={themes.length > 0}>
         No themes are currently available.
       </p>
-      <p id="theme-launch-status" className="theme-launch-status" role="status" hidden />
+      <p
+        id="theme-launch-status"
+        className="theme-launch-status"
+        role="status"
+        data-i18n="themes.loading"
+      >
+        Loading themes...
+      </p>
     </section>
   );
 }

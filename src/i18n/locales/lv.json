@@ -116,6 +116,7 @@
     "marble": "Marmors",
     "victorian": "Viktorijas laikmets",
     "nature": "Daba",
+    "flogsta": "Flogsta",
     "playTheme": "Spēlēt ar tēmu {{theme}}",
     "loadError": "Tēma nav pieejama.",
     "empty": "Nav pieejamu tēmu."

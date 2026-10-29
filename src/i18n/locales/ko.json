@@ -116,6 +116,7 @@
     "marble": "대리석",
     "victorian": "빅토리아",
     "nature": "자연",
+    "flogsta": "Flogsta",
     "playTheme": "{{theme}} 테마로 플레이",
     "loadError": "테마를 사용할 수 없습니다.",
     "empty": "사용할 수 있는 테마가 없습니다."

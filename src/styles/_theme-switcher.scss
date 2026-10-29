@@ -2,15 +2,15 @@
 
 .theme-switcher {
   --theme-control-ink: #e8dcc4;
-  --ribbon-top: #2c4351;
+  --ribbon-top: #{#2c4351};
   --ribbon-middle: #203440;
   --ribbon-bottom: #132530;
   --ribbon-ink: #fff4dc;
-  --ribbon-tail-top: #3d5866;
-  --ribbon-tail-middle: #2b414f;
-  --ribbon-tail-bottom: #172b37;
-  --ribbon-fold: #0b1820;
-  --theme-arrow-ink: #402b18;
+  --ribbon-tail-top: #{#3d5866};
+  --ribbon-tail-middle: #{#2b414f};
+  --ribbon-tail-bottom: #{#172b37};
+  --ribbon-fold: #{#0b1820};
+  --theme-arrow-ink: #{#402b18};
   --theme-arrow-surface: #f2e5cd;
   --theme-arrow-border: #937347;
   --theme-arrow-hover: #fff4df;
@@ -117,7 +117,12 @@
     width: 34px;
     height: calc(100% - 8px);
     pointer-events: none;
-    background: linear-gradient(180deg, var(--ribbon-tail-top), var(--ribbon-tail-middle) 48%, var(--ribbon-tail-bottom));
+    background: linear-gradient(
+      180deg,
+      var(--ribbon-tail-top),
+      var(--ribbon-tail-middle) 48%,
+      var(--ribbon-tail-bottom)
+    );
     box-shadow: inset 0 2px 3px rgba(76, 49, 23, 0.12);
   }
 
@@ -145,7 +150,12 @@
   justify-content: center;
   border: 1px solid #bda275;
   border-radius: 4px;
-  background: linear-gradient(180deg, var(--ribbon-top), var(--ribbon-middle) 58%, var(--ribbon-bottom));
+  background: linear-gradient(
+    180deg,
+    var(--ribbon-top),
+    var(--ribbon-middle) 58%,
+    var(--ribbon-bottom)
+  );
   box-shadow: 0 4px 10px rgba(19, 24, 28, 0.42), inset 0 1px rgba(255, 255, 255, 0.08);
   color: var(--ribbon-ink);
 }

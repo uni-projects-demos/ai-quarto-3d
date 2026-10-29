@@ -2,12 +2,12 @@
 
 AI-Quarto in 3D using negamax with alpha-beta pruning, React UI and Three.js scene. Not affiliated with Gigamic.
 
-A ported enhancement of past Uppsala University project: [uni-git-projects/uu-game](https://github.com/Uni-Git-Projects) (below); applying skills from more   
+A ported enhancement of past Uppsala University project: [uni-git-projects/uu-game](https://github.com/Uni-Git-Projects) (below); applying skills from more  
 studies completed with distinction, including (full-stack, UI) web dev, software eng, HCI, CG, AI/ML, and data eng, etc.
 
 > Note: all relevant studies are completed before ChatGPT and other GenAI models have been publicly available.
 
-More specifically, the Python game engine component and CLI are ported and enhanced to an interactive 3D web UI.       
+More specifically, the Python game engine component and CLI are ported and enhanced to an interactive 3D web UI.  
 From recollection, it was the only, if not best game engine; with all components completed, at least with all members.  
 However, it wasn't the only time I overcome epic injuries to excel under eternal 24/7 harassment, wrongdoing plagues.
 
@@ -18,12 +18,12 @@ However, it wasn't the only time I overcome epic injuries to excel under eternal
 <img width="907" height="1141" alt="uu-game-contribution-graph" src="https://github.com/user-attachments/assets/53d5c40f-7a97-4b02-863f-108ca106b526" />
 </details>
 
-* [Viktor Enzell](https://github.com/viktor-enzell)
-* [Gustav From](https://github.com/GustavFrom)
-* [Maxime Gaide](https://github.com/Sravoryk-fork)
-* [Pelle Ingvast](https://github.com/Pallekan)
-* [Laurin Kerle](https://github.com/LaurinKerle)
-* [Adam Ross](https://github.com/r055a)
+- [Viktor Enzell](https://github.com/viktor-enzell)
+- [Gustav From](https://github.com/GustavFrom)
+- [Maxime Gaide](https://github.com/Sravoryk-fork)
+- [Pelle Ingvast](https://github.com/Pallekan)
+- [Laurin Kerle](https://github.com/LaurinKerle)
+- [Adam Ross](https://github.com/r055a)
 
 UU-Game PO:
 

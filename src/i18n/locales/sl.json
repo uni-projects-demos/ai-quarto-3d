@@ -116,6 +116,7 @@
     "marble": "Marmor",
     "victorian": "Viktorijanska",
     "nature": "Narava",
+    "flogsta": "Flogsta",
     "playTheme": "Igraj s temo {{theme}}",
     "loadError": "Tema ni na voljo.",
     "empty": "Ni razpoložljivih tem."

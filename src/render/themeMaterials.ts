@@ -19,6 +19,9 @@ import ebonyUrl from "../assets/themes/victorian-ebony.webp";
 import mahoganyUrl from "../assets/themes/victorian-mahogany.webp";
 import { CELL_COUNT } from "../game/rules";
 import type { ThemeId } from "../themes";
+import { createCoasterTexture } from "./flogstaCoasters";
+import { type CoffeeMaterials, createSugarTexture } from "./flogstaCoffee";
+import { createSalmonTexture, createWeatheredTexture } from "./flogstaPieces";
 import { createNatureCarvingTexture } from "./natureCarving";
 import { createTrunkBarkTexture } from "./natureTable";
 import type { SceneResources } from "./SceneResources";
@@ -43,6 +46,7 @@ export interface ThemeMaterials {
   hollowLight: MeshPhysicalMaterial;
   accent: MeshPhysicalMaterial;
   craft?: VictorianCraftMaterials;
+  coffee?: CoffeeMaterials;
 }
 
 export function createThemeMaterials(
@@ -149,6 +153,32 @@ export function createThemeMaterials(
     clearcoat: 0.62,
     clearcoatRoughness: 0.3,
   });
+  const pine = createWeatheredTexture();
+  const timber = (texture: CanvasTexture): MeshPhysicalMaterial =>
+    material({ map: texture, bumpMap: texture, bumpScale: 0.075, roughness: 0.98 });
+  const balconyWood = timber(pine);
+  const boardWood = timber(createWeatheredTexture(undefined, "chipboard"));
+  const salmon = createSalmonTexture();
+  const sugar = createSugarTexture();
+  const coffeeSurface = material({
+    color: 0x170a04,
+    roughness: 0.06,
+    clearcoat: 1,
+    clearcoatRoughness: 0.025,
+    ior: 1.33,
+    envMapIntensity: 2.5,
+  });
+  const wornEdge = material({
+    color: 0x8c8974,
+    map: pine,
+    bumpMap: pine,
+    bumpScale: 0.09,
+    roughness: 1,
+  });
+  const coaster = (colour: number, ink: number): MeshPhysicalMaterialParameters => {
+    const paper = createCoasterTexture(colour, ink);
+    return { map: paper, bumpMap: paper, bumpScale: 0.004, roughness: 1 };
+  };
   const shell: MeshPhysicalMaterialParameters = {
     map: paua,
     roughness: 0.23,
@@ -167,6 +197,51 @@ export function createThemeMaterials(
     iridescence: 0.12,
   };
   return {
+    flogsta: {
+      table: balconyWood,
+      edge: wornEdge,
+      board: boardWood,
+      rim: wornEdge,
+      cells: cells(coaster(0x668b9b, 0xc8b46e), coaster(0xc8b46e, 0x668b9b)),
+      pieces: {
+        darkBody: material({
+          color: 0x110704,
+          roughness: 0.12,
+          clearcoat: 1,
+          clearcoatRoughness: 0.05,
+          ior: 1.33,
+          envMapIntensity: 0.45,
+        }),
+        redBody: material({ color: 0xfff4db, roughness: 0.66, sheen: 0.18 }),
+      },
+      hollowDark: coffeeSurface,
+      hollowLight: material({
+        map: salmon,
+        bumpMap: salmon,
+        bumpScale: 0.003,
+        roughness: 0.35,
+        clearcoat: 0.45,
+        clearcoatRoughness: 0.3,
+        sheen: 0.12,
+        sheenColor: 0xffb9a3,
+      }),
+      accent: wornEdge,
+      coffee: {
+        glass: material({
+          color: 0xcbdce0,
+          transparent: true,
+          opacity: 0.055,
+          depthWrite: false,
+          ior: 1.46,
+          roughness: 0.065,
+          clearcoat: 1,
+          envMapIntensity: 2,
+        }),
+        surface: coffeeSurface,
+        bubble: material({ color: 0x6a3c1e, roughness: 0.13, clearcoat: 1 }),
+        sugar: material({ map: sugar, bumpMap: sugar, bumpScale: 0.012, roughness: 0.95 }),
+      },
+    },
     marble: {
       table: marbleTable,
       edge: marbleTable,

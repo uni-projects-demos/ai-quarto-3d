@@ -116,6 +116,7 @@
     "marble": "Mramor",
     "victorian": "Viktoriánsky",
     "nature": "Príroda",
+    "flogsta": "Flogsta",
     "playTheme": "Hrať s motívom {{theme}}",
     "loadError": "Motív nie je dostupný.",
     "empty": "Nie sú dostupné žiadne motívy."

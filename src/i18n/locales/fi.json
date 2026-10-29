@@ -116,6 +116,7 @@
     "marble": "Marmori",
     "victorian": "Viktoriaaninen",
     "nature": "Luonto",
+    "flogsta": "Flogsta",
     "playTheme": "Pelaa teemalla {{theme}}",
     "loadError": "Teema ei ole saatavilla.",
     "empty": "Teemoja ei ole saatavilla."

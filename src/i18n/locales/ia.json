@@ -116,6 +116,7 @@
     "marble": "Marmore",
     "victorian": "Victorian",
     "nature": "Natura",
+    "flogsta": "Flogsta",
     "playTheme": "Jocar con {{theme}}",
     "loadError": "Thema non disponibile.",
     "empty": "Nulle themas disponibile."

@@ -3,20 +3,20 @@ export type Dispose = () => void;
 export class Cleanup {
   private readonly callbacks: Dispose[] = [];
   private readonly events = new AbortController();
-  private disposed = false;
+  private isDispose = false;
 
   get signal(): AbortSignal {
     return this.events.signal;
   }
 
   add(callback: Dispose): void {
-    if (this.disposed) callback();
+    if (this.isDispose) callback();
     else this.callbacks.push(callback);
   }
 
   dispose(): void {
-    if (this.disposed) return;
-    this.disposed = true;
+    if (this.isDispose) return;
+    this.isDispose = true;
     this.events.abort();
     const errors: unknown[] = [];
     for (const callback of this.callbacks.splice(0).reverse()) {

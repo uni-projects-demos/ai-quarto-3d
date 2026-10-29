@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import { SceneBackdrop } from "./SceneBackdrop";
 import { ThemePicker } from "./ThemePicker";
 
 function PauseIcon(): JSX.Element {
@@ -23,12 +24,7 @@ export function GameScreen(): JSX.Element {
       aria-label="3D game board"
       data-i18n-aria-label="a11y.gameBoard"
     >
-      <div className="marble-interior" aria-hidden="true" />
-      <div className="nature-landscape" aria-hidden="true" />
-      <div className="scene-architecture" aria-hidden="true">
-        <div className="victorian-wall" />
-        <div className="victorian-lamplight" />
-      </div>
+      <SceneBackdrop />
       <canvas id="game-canvas" />
       <div id="game-status" className="game-status" role="status" aria-live="polite" hidden>
         <span id="status-dots" className="status-dots" hidden aria-hidden="true">

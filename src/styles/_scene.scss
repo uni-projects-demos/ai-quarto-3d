@@ -3,6 +3,7 @@
 .scene-architecture,
 .marble-interior,
 .nature-landscape,
+.flogsta-balcony,
 .victorian-wall,
 .victorian-lamplight {
   position: absolute;
@@ -11,7 +12,8 @@
 
 .scene-architecture,
 .marble-interior,
-.nature-landscape {
+.nature-landscape,
+.flogsta-balcony {
   z-index: 0;
   border-radius: inherit;
   pointer-events: none;
@@ -82,21 +84,73 @@
 
   &::after {
     background:
-      radial-gradient(ellipse 88% 70% at -16% -24%, rgba(226, 170, 69, calc(0.12 * var(--background-light-intensity))), transparent 70%),
-      radial-gradient(ellipse 72% 64% at 112% -30%, rgba(229, 175, 72, calc(0.09 * var(--background-light-intensity))), transparent 68%),
+      radial-gradient(
+        ellipse 88% 70% at -16% -24%,
+        rgba(226, 170, 69, calc(0.12 * var(--background-light-intensity))),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 72% 64% at 112% -30%,
+        rgba(229, 175, 72, calc(0.09 * var(--background-light-intensity))),
+        transparent 68%
+      ),
       linear-gradient(180deg, rgba(30, 27, 23, 0.12), rgba(22, 20, 18, 0.3) 60%, #171816);
   }
 }
 
+.flogsta-balcony {
+  display: none;
+  background:
+    linear-gradient(180deg, transparent 78%, #555b51) center top / 100% 56.28cqw no-repeat,
+    url("../assets/themes/flogsta-panorama.png") center top / 100% auto no-repeat;
+}
+
 .game-screen[data-theme="victorian"],
+.game-screen[data-theme="flogsta"],
 .game-screen[data-theme="nature"] {
-  .marble-interior { display: none; }
+  > .marble-interior {
+    display: none;
+  }
+}
+
+.game-screen[data-theme="flogsta"] {
+  background: #555b51;
+
+  > .flogsta-balcony {
+    display: block;
+  }
+
+  .game-status {
+    color: #f5f5eb;
+    border-color: rgba(185, 203, 209, 0.6);
+    background: rgba(33, 49, 51, 0.94);
+  }
+
+  .theme-switcher {
+    --theme-control-ink: #fff;
+    --ribbon-ink: #fff;
+    --ribbon-top: #bf4a4f;
+    --ribbon-middle: #a92f37;
+    --ribbon-bottom: #{#8f222d};
+    --ribbon-tail-top: #c95a60;
+    --ribbon-tail-middle: #b0424a;
+    --ribbon-tail-bottom: #8e2933;
+    --ribbon-fold: #681923;
+    --theme-arrow-ink: #990000;
+    --theme-arrow-surface: #fff;
+    --theme-arrow-border: #990000;
+    --theme-arrow-hover: #e6e6e6;
+
+    .ribbon-face {
+      border-color: #ccc;
+    }
+  }
 }
 
 .game-screen[data-theme="victorian"] {
   background: linear-gradient(180deg, #302018, #21151a 42%, #11151b);
 
-  .scene-architecture {
+  > .scene-architecture {
     opacity: 1;
     visibility: visible;
   }
@@ -108,13 +162,13 @@
   }
 
   .theme-switcher {
-    --ribbon-top: #542c33;
-    --ribbon-middle: #3c1d26;
-    --ribbon-bottom: #27141c;
-    --ribbon-tail-top: #68404a;
+    --ribbon-top: #{#542c33};
+    --ribbon-middle: #{#3c1d26};
+    --ribbon-bottom: #{#27141c};
+    --ribbon-tail-top: #{#68404a};
     --ribbon-tail-middle: #492932;
     --ribbon-tail-bottom: #301820;
-    --ribbon-fold: #1c0c13;
+    --ribbon-fold: #{#1c0c13};
     --theme-arrow-ink: #ffedca;
     --theme-arrow-surface: #382719;
     --theme-arrow-border: #b6945c;
@@ -136,7 +190,7 @@
 .game-screen[data-theme="nature"] {
   background: #11251c;
 
-  .nature-landscape {
+  > .nature-landscape {
     display: block;
   }
 
@@ -148,34 +202,48 @@
 
   .theme-switcher {
     --theme-control-ink: #dce6c5;
-    --ribbon-top: #254b39;
-    --ribbon-middle: #163b2b;
-    --ribbon-bottom: #0e291f;
-    --ribbon-tail-top: #3d6249;
-    --ribbon-tail-middle: #254b37;
+    --ribbon-top: #{#254b39};
+    --ribbon-middle: #{#163b2b};
+    --ribbon-bottom: #{#0e291f};
+    --ribbon-tail-top: #{#3d6249};
+    --ribbon-tail-middle: #{#254b37};
     --ribbon-tail-bottom: #163222;
-    --ribbon-fold: #091d14;
-    --theme-arrow-ink: #183c2c;
+    --ribbon-fold: #{#091d14};
+    --theme-arrow-ink: #{#183c2c};
     --theme-arrow-surface: #eee7d3;
-    --theme-arrow-border: #7d9276;
+    --theme-arrow-border: #{#7d9276};
     --theme-arrow-hover: #fff3d9;
   }
 }
 
 .victorian-wall {
   --victorian-wall-height: max(56.28cqw, 85cqh);
-  background: url("../assets/themes/victorian-salon.webp") center calc(-0.3 * var(--victorian-wall-height)) / auto var(--victorian-wall-height) no-repeat;
+  background: url("../assets/themes/victorian-salon.webp") center
+    calc(-0.3 * var(--victorian-wall-height)) / auto var(--victorian-wall-height) no-repeat;
   filter: brightness(calc(0.39 * var(--background-light-intensity)));
 
   &::after {
-    background: linear-gradient(180deg, rgba(24, 14, 10, 0.06), rgba(19, 12, 13, 0.24) 55%, #171416);
+    background: linear-gradient(
+      180deg,
+      rgba(24, 14, 10, 0.06),
+      rgba(19, 12, 13, 0.24) 55%,
+      #171416
+    );
   }
 }
 
 .victorian-lamplight {
   background:
-    radial-gradient(ellipse 35% 38% at 12% 12%, rgba(224, 147, 63, calc(0.09 * var(--background-light-intensity))), transparent 72%),
-    radial-gradient(ellipse 35% 38% at 88% 12%, rgba(232, 167, 79, calc(0.07 * var(--background-light-intensity))), transparent 72%),
+    radial-gradient(
+      ellipse 35% 38% at 12% 12%,
+      rgba(224, 147, 63, calc(0.09 * var(--background-light-intensity))),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 35% 38% at 88% 12%,
+      rgba(232, 167, 79, calc(0.07 * var(--background-light-intensity))),
+      transparent 72%
+    ),
     linear-gradient(180deg, rgba(234, 181, 102, 0.06), transparent 60%);
   animation: room-lamplight 8s ease-in-out infinite alternate;
 }

@@ -33,6 +33,7 @@
 }
 
 [hidden] {
+  /* biome-ignore lint/complexity/noImportantStyles: Hidden elements must override component display rules. */
   display: none !important;
 }
 
@@ -57,4 +58,3 @@ body {
       linear-gradient(145deg, #090c11, #121722 58%, #0b0e14);
   }
 }
-

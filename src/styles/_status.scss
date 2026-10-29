@@ -73,21 +73,6 @@
   }
 }
 
-.game-status.is-paused {
-  .status-dots > span {
-    animation-play-state: paused;
-    opacity: 0.35;
-  }
-
-  .pause-icon {
-    display: none;
-  }
-
-  .play-icon {
-    display: block;
-  }
-}
-
 .status-toggle {
   @extend %icon-grid;
   --focus-offset: 3px;
@@ -114,6 +99,21 @@
   .play-icon {
     display: none;
     fill: currentColor;
+  }
+}
+
+.game-status.is-paused {
+  .status-dots > span {
+    animation-play-state: paused;
+    opacity: 0.35;
+  }
+
+  .pause-icon {
+    display: none;
+  }
+
+  .play-icon {
+    display: block;
   }
 }
 

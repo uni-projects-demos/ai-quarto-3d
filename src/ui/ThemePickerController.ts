@@ -14,6 +14,7 @@ export class ThemePickerController {
   constructor(
     private readonly root: HTMLElement,
     private readonly onSelect: (theme: ThemeId) => void,
+    private readonly renderPreviews: () => void,
   ) {
     this.buttons = [...root.querySelectorAll<HTMLButtonElement>("[data-theme-id]")];
     this.status = requiredEl("theme-launch-status", HTMLElement, root);
@@ -89,7 +90,15 @@ export class ThemePickerController {
       this.root.clientHeight -
       Number.parseFloat(style.paddingTop) -
       Number.parseFloat(style.paddingBottom);
-    const layout = themePrevLayout(this.buttons.length, width, height);
+    const screen = this.root.parentElement ?? this.root;
+    const sceneWidth = Math.max(1, screen.clientWidth);
+    const sceneHeight = Math.max(1, screen.clientHeight);
+    const layout = themePrevLayout(this.buttons.length, width, height, sceneWidth / sceneHeight);
     this.root.style.setProperty("--preview-card-width", `${layout.cardWidth}px`);
+    this.root.style.setProperty("--preview-aspect", `${sceneWidth} / ${sceneHeight}`);
+    this.root.style.setProperty("--preview-scene-width", `${sceneWidth}px`);
+    this.root.style.setProperty("--preview-scene-height", `${sceneHeight}px`);
+    this.root.style.setProperty("--preview-scene-scale", `${(layout.cardWidth - 2) / sceneWidth}`);
+    this.renderPreviews();
   };
 }

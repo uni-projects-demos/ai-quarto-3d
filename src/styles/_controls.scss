@@ -84,10 +84,7 @@ button {
   color: var(--gold);
   text-decoration: none;
   cursor: pointer;
-  transition:
-    transform 0.18s ease,
-    border-color 0.18s ease,
-    background 0.18s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
 
   &:hover {
     transform: translateY(-1px);

@@ -116,8 +116,10 @@
     "marble": "Marmor",
     "victorian": "Viktoriansk",
     "nature": "Natur",
+    "flogsta": "Flogsta",
     "playTheme": "Spela med {{theme}}",
     "loadError": "Temat är inte tillgängligt.",
+    "loading": "Laddar teman...",
     "empty": "Inga teman är tillgängliga."
   }
 }

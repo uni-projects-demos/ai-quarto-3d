@@ -116,6 +116,7 @@
     "marble": "Мрамор",
     "victorian": "Викторианская",
     "nature": "Природа",
+    "flogsta": "Flogsta",
     "playTheme": "Играть с темой {{theme}}",
     "loadError": "Тема недоступна.",
     "empty": "Нет доступных тем."

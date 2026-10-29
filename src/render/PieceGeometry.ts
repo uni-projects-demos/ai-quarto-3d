@@ -5,6 +5,7 @@ import {
   LatheGeometry,
   Path,
   Shape,
+  SphereGeometry,
   Vector2,
 } from "three";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
@@ -16,8 +17,10 @@ import type { SceneResources } from "./SceneResources";
 import { createVictorianRoundGeometry, createVictorianSquareGeometry } from "./victorianCraft";
 
 export class PieceGeometry {
+  readonly riceGrainGeometry = new SphereGeometry(1, 6, 4);
   private readonly marbleBodyGeometries = new Map<PieceId, BufferGeometry>();
   private readonly victorianBodyGeometries = new Map<PieceId, BufferGeometry>();
+  private readonly coffeeBodyGeometries = new Map<PieceId, BufferGeometry>();
   private readonly victorianRoundGeometries = {
     small: createVictorianRoundGeometry(0.9, false),
     big: createVictorianRoundGeometry(1.45, false),
@@ -44,6 +47,7 @@ export class PieceGeometry {
 
   constructor(private readonly resources: SceneResources) {
     for (const geometry of [
+      this.riceGrainGeometry,
       ...Object.values(this.marblePieceGeometries),
       ...Object.values(this.victorianRoundGeometries),
       ...Object.values(this.victorianSquareGeometries),
@@ -170,6 +174,31 @@ export class PieceGeometry {
     );
     this.marbleBodyGeometries.set(piece, geometry);
     return this.resources.track(geometry);
+  }
+
+  getCoffeeBodyGeometry(piece: PieceId, traits: PieceTraits): BufferGeometry {
+    const cached = this.coffeeBodyGeometries.get(piece);
+    if (cached) return cached;
+    const geom = this.getMarbleBodyGeometry(piece, traits).clone();
+    const pos = geom.getAttribute("position");
+    const height = traits.isBig ? 1.45 : 0.9;
+    for (let vertex = 0; vertex < pos.count; vertex += 1) {
+      const progress = pos.getY(vertex) / height + 0.5;
+      const scale = traits.isRound
+        ? (0.29 + 0.085 * progress) / (0.43 - 0.05 * progress)
+        : 0.82 + 0.16 * progress;
+      pos.setXYZ(
+        vertex,
+        pos.getX(vertex) * scale,
+        0.06 + progress * (height - 0.18) - height / 2,
+        pos.getZ(vertex) * scale,
+      );
+    }
+    geom.computeVertexNormals();
+    geom.computeBoundingBox();
+    geom.computeBoundingSphere();
+    this.coffeeBodyGeometries.set(piece, geom);
+    return this.resources.track(geom);
   }
 
   getVictorianBodyGeometry(piece: PieceId, traits: PieceTraits): BufferGeometry {
