@@ -2,7 +2,7 @@
   "name": "ai-quarto-3d",
   "private": true,
   "version": "1.0.0",
-  "description": "Static web UI demo of a ported software engineering project completed at Uppsala University: AI-Quarto; enhanced in 3D, using negamax (minimax) with alpha-beta pruning, React UI and Three.js scene.",
+  "description": "AI Quarto 3D using negamax (minimax) with alpha-beta pruning, React UI and Three.js scene. Ported and enhanced demo of a software engineering project completed at Uppsala University, ",
   "type": "module",
   "author": "uni-projects-demos",
   "repository": {
@@ -13,7 +13,7 @@
     "url": "https://github.com/uni-projects-demos/ai-quarto-3d/issues"
   },
   "engines": {
-    "node": ">=26.9.0"
+    "node": ">=26.13"
   },
   "scripts": {
     "dev": "vite",
@@ -24,17 +24,17 @@
     "verify:fix": "biome check --write . && tsc --noEmit && tsc --noEmit -p tsconfig.worker.json && npm run test"
   },
   "dependencies": {
-    "three": "^0.186.1",
+    "three": "^0.187.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.6.4",
-    "@types/three": "^0.186.0",
-    "sass": "^1.107.0",
+    "@biomejs/biome": "^2.6.7",
+    "@types/three": "^0.187.0",
+    "sass": "^1.108.2",
     "typescript": "^7.0.2",
-    "vite": "^8.3.5",
-    "vitest": "^5.0.5",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0"
   },

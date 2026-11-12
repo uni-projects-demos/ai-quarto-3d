@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Kina na {{theme}}",
     "loadError": "Insanganyamatsiko ntiboneka.",
+    "loading": "Kuriko harapakururwa insanganyamatsiko...",
     "empty": "Nta nsanganyamatsiko zihari."
   }
 }

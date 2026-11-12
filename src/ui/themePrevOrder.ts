@@ -1,14 +1,15 @@
 import { curLang, translate } from "../i18n/i18n";
 import type { ThemeDef } from "../themes";
 
-export function themePrevOrder(themes: readonly ThemeDef[]): ThemeDef[] {
-  let collator: Intl.Collator;
+export function themePrevOrder(thms: readonly ThemeDef[]): ThemeDef[] {
+  let coll: Intl.Collator;
   try {
-    collator = new Intl.Collator(curLang(), { sensitivity: "base" });
+    coll = new Intl.Collator(curLang(), { sensitivity: "base" });
   } catch {
-    collator = new Intl.Collator("en", { sensitivity: "base" });
+    coll = new Intl.Collator("en", { sensitivity: "base" });
   }
-  return [...themes].sort((left, right): number =>
-    collator.compare(translate(left.nameKey), translate(right.nameKey)),
-  );
+  return [...thms].sort((left: ThemeDef, right: ThemeDef): number => {
+    const diff: number = coll.compare(translate(left.nameKey), translate(right.nameKey));
+    return diff || left.id.localeCompare(right.id);
+  });
 }

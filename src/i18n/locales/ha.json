@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Yi wasa da {{theme}}",
     "loadError": "Jigo ba ya samuwa.",
+    "loading": "Ana loda jigogi...",
     "empty": "Babu jigogin da ake da su."
   }
 }

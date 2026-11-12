@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Milalaova amin'ny {{theme}}",
     "loadError": "Tsy misy ilay lohahevitra.",
+    "loading": "Mampiditra lohahevitra...",
     "empty": "Tsy misy lohahevitra azo ampiasaina."
   }
 }

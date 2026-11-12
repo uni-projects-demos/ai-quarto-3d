@@ -2,14 +2,14 @@
 
 AI-Quarto in 3D using negamax with alpha-beta pruning, React UI and Three.js scene. Not affiliated with Gigamic.
 
-A ported enhancement of past Uppsala University project: [uni-git-projects/uu-game](https://github.com/Uni-Git-Projects) (below); applying skills from more  
-studies completed with distinction, including (full-stack, UI) web dev, software eng, HCI, CG, AI/ML, and data eng, etc.
+Demonstrating a a past Uppsala University project: [uu-game](https://github.com/Uni-Git-Projects). The Python game  
+engine component and CLI are ported and enhanced to a 3D-interactive web UI, applying skills from other studies  
+completed with distinction, including (full-stack, UI) web dev, software eng, HCI, CG, AI/ML, and data eng, etc.
+
+From recollection, it was the only, if not best game engine, and all components completed, at least with all members.  
+However, it wasn't the only time I overcome epic injuries to excel under eternal 24/7 harassment, wrongdoing plagues.
 
 > Note: all relevant studies are completed before ChatGPT and other GenAI models have been publicly available.
-
-More specifically, the Python game engine component and CLI are ported and enhanced to an interactive 3D web UI.  
-From recollection, it was the only, if not best game engine; with all components completed, at least with all members.  
-However, it wasn't the only time I overcome epic injuries to excel under eternal 24/7 harassment, wrongdoing plagues.
 
 <details>
 <summary>UU-Game group:
@@ -29,26 +29,26 @@ UU-Game PO:
 
 [Davide Vega D'Aurelio](https://www.researchgate.net/profile/Davide-Vega-Daurelio)
 
-# Install
+## Install
 
 ```Bash
 npm install
 ```
 
-# Run
+## Run
 
 ```Bash
 npm run dev
 ```
 
-# Build
+## Build
 
 ```Bash
 npm run build
 npm run preview
 ```
 
-# Test
+## Test
 
 ```Bash
 npm test
@@ -108,9 +108,9 @@ stdout | tests/ai-diff.test.ts > 100-match AI vs AI > medium vs easy: 100 medium
       Tests  4 passed (4)
 ```
 
-# Contribute
+## Contribute
 
-Before making a Pull Request, ensure it addresses an Issue, and verify the branch passes:
+Before making a Pull Request, ensure it addresses an Issue, and verify:
 
 ```Bash
 npm run verify:fix

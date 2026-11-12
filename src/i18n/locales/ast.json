@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Xugar con {{theme}}",
     "loadError": "El tema nun ta disponible.",
+    "loading": "Cargando temes...",
     "empty": "Nun hai temes disponibles."
   }
 }

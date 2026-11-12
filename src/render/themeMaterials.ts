@@ -52,16 +52,16 @@ export interface ThemeMaterials {
 export function createThemeMaterials(
   load: (url: string) => Texture,
   wood: CanvasTexture,
-  resources: SceneResources,
+  resMap: SceneResources,
 ): Record<ThemeId, ThemeMaterials> {
-  const material = (parameters: MeshPhysicalMaterialParameters): MeshPhysicalMaterial =>
-    resources.track(new MeshPhysicalMaterial(parameters));
+  const mat = (params: MeshPhysicalMaterialParameters): MeshPhysicalMaterial =>
+    resMap.track(new MeshPhysicalMaterial(params));
   const cells = (
     even: MeshPhysicalMaterialParameters,
     odd: MeshPhysicalMaterialParameters,
   ): MeshPhysicalMaterial[] =>
     Array.from({ length: CELL_COUNT }, (_, idx) =>
-      material({ ...(idx % 2 === 0 ? even : odd), emissive: 0x000000 }),
+      mat({ ...(idx % 2 === 0 ? even : odd), emissive: 0x000000 }),
     );
   const marble = load(marbleUrl);
   const onyx = load(blackOnyxUrl);
@@ -84,7 +84,7 @@ export function createThemeMaterials(
   const goldColour = goldGrain.clone();
   goldColour.colorSpace = SRGBColorSpace;
   goldColour.needsUpdate = true;
-  const preciousGold = material({
+  const preciousGold = mat({
     color: 0xf3c65c,
     map: goldColour,
     bumpMap: goldGrain,
@@ -94,9 +94,9 @@ export function createThemeMaterials(
     clearcoat: 0.4,
     clearcoatRoughness: 0.25,
   });
-  const gold = material({ color: 0xd3ad62, roughness: 0.26, metalness: 0.72, clearcoat: 0.3 });
-  const brass = material({ color: 0xb48c50, roughness: 0.48, metalness: 0.55 });
-  const victorianDarkBody = material({
+  const gold = mat({ color: 0xd3ad62, roughness: 0.26, metalness: 0.72, clearcoat: 0.3 });
+  const brass = mat({ color: 0xb48c50, roughness: 0.48, metalness: 0.55 });
+  const victorianDarkBody = mat({
     color: 0xc2c4c9,
     map: ebony,
     bumpMap: ebony,
@@ -106,7 +106,7 @@ export function createThemeMaterials(
     clearcoat: 0.8,
     clearcoatRoughness: 0.24,
   });
-  const victorianRedBody = material({
+  const victorianRedBody = mat({
     color: 0xf192a6,
     map: mahogany,
     bumpMap: mahogany,
@@ -117,19 +117,19 @@ export function createThemeMaterials(
     clearcoatRoughness: 0.25,
   });
   const craft: VictorianCraftMaterials = {
-    satinwood: material({
+    satinwood: mat({
       color: 0xdcb974,
       map: satinwood,
       roughness: 0.34,
       clearcoat: 0.58,
       clearcoatRoughness: 0.3,
     }),
-    darkString: material({ color: 0x544332, map: ebony, roughness: 0.36, clearcoat: 0.5 }),
+    darkString: mat({ color: 0x544332, map: ebony, roughness: 0.36, clearcoat: 0.5 }),
     darkBody: victorianDarkBody,
     redBody: victorianRedBody,
     brass,
   };
-  const marbleTable = material({
+  const marbleTable = mat({
     color: 0xe8e5df,
     map: marble,
     roughness: 0.56,
@@ -137,7 +137,7 @@ export function createThemeMaterials(
     clearcoat: 0.16,
     clearcoatRoughness: 0.6,
   });
-  const victorianTable = material({
+  const victorianTable = mat({
     color: 0xc0a393,
     map: mahogany,
     roughness: 0.31,
@@ -145,7 +145,7 @@ export function createThemeMaterials(
     clearcoat: 0.72,
     clearcoatRoughness: 0.26,
   });
-  const natureTable = material({
+  const natureTable = mat({
     color: 0xfff1da,
     map: puriri,
     roughness: 0.34,
@@ -154,13 +154,13 @@ export function createThemeMaterials(
     clearcoatRoughness: 0.3,
   });
   const pine = createWeatheredTexture();
-  const timber = (texture: CanvasTexture): MeshPhysicalMaterial =>
-    material({ map: texture, bumpMap: texture, bumpScale: 0.075, roughness: 0.98 });
+  const timber = (tex: CanvasTexture): MeshPhysicalMaterial =>
+    mat({ map: tex, bumpMap: tex, bumpScale: 0.075, roughness: 0.98 });
   const balconyWood = timber(pine);
   const boardWood = timber(createWeatheredTexture(undefined, "chipboard"));
   const salmon = createSalmonTexture();
   const sugar = createSugarTexture();
-  const coffeeSurface = material({
+  const coffeeSurface = mat({
     color: 0x170a04,
     roughness: 0.06,
     clearcoat: 1,
@@ -168,15 +168,15 @@ export function createThemeMaterials(
     ior: 1.33,
     envMapIntensity: 2.5,
   });
-  const wornEdge = material({
+  const wornEdge = mat({
     color: 0x8c8974,
     map: pine,
     bumpMap: pine,
     bumpScale: 0.09,
     roughness: 1,
   });
-  const coaster = (colour: number, ink: number): MeshPhysicalMaterialParameters => {
-    const paper = createCoasterTexture(colour, ink);
+  const coaster = (col: number, ink: number): MeshPhysicalMaterialParameters => {
+    const paper = createCoasterTexture(col, ink);
     return { map: paper, bumpMap: paper, bumpScale: 0.004, roughness: 1 };
   };
   const shell: MeshPhysicalMaterialParameters = {
@@ -204,7 +204,7 @@ export function createThemeMaterials(
       rim: wornEdge,
       cells: cells(coaster(0x668b9b, 0xc8b46e), coaster(0xc8b46e, 0x668b9b)),
       pieces: {
-        darkBody: material({
+        darkBody: mat({
           color: 0x110704,
           roughness: 0.12,
           clearcoat: 1,
@@ -212,10 +212,10 @@ export function createThemeMaterials(
           ior: 1.33,
           envMapIntensity: 0.45,
         }),
-        redBody: material({ color: 0xfff4db, roughness: 0.66, sheen: 0.18 }),
+        redBody: mat({ color: 0xfff4db, roughness: 0.66, sheen: 0.18 }),
       },
       hollowDark: coffeeSurface,
-      hollowLight: material({
+      hollowLight: mat({
         map: salmon,
         bumpMap: salmon,
         bumpScale: 0.003,
@@ -227,7 +227,7 @@ export function createThemeMaterials(
       }),
       accent: wornEdge,
       coffee: {
-        glass: material({
+        glass: mat({
           color: 0xcbdce0,
           transparent: true,
           opacity: 0.055,
@@ -238,14 +238,14 @@ export function createThemeMaterials(
           envMapIntensity: 2,
         }),
         surface: coffeeSurface,
-        bubble: material({ color: 0x6a3c1e, roughness: 0.13, clearcoat: 1 }),
-        sugar: material({ map: sugar, bumpMap: sugar, bumpScale: 0.012, roughness: 0.95 }),
+        bubble: mat({ color: 0x6a3c1e, roughness: 0.13, clearcoat: 1 }),
+        sugar: mat({ map: sugar, bumpMap: sugar, bumpScale: 0.012, roughness: 0.95 }),
       },
     },
     marble: {
       table: marbleTable,
       edge: marbleTable,
-      board: material({
+      board: mat({
         color: 0xd8c9b7,
         map: wood,
         roughness: 0.75,
@@ -253,7 +253,7 @@ export function createThemeMaterials(
         clearcoat: 0.12,
         clearcoatRoughness: 0.86,
       }),
-      rim: material({
+      rim: mat({
         color: 0xb9a086,
         map: wood,
         roughness: 0.66,
@@ -266,7 +266,7 @@ export function createThemeMaterials(
         { ...pearl, color: MARBLE_CELL_COLS[1] },
       ),
       pieces: {
-        darkBody: material({
+        darkBody: mat({
           color: 0x989ca6,
           map: onyx,
           roughness: 0.27,
@@ -275,7 +275,7 @@ export function createThemeMaterials(
           clearcoatRoughness: 0.2,
           ior: 1.58,
         }),
-        redBody: material({
+        redBody: mat({
           color: 0xba7c84,
           map: garnet,
           roughness: 0.28,
@@ -292,7 +292,7 @@ export function createThemeMaterials(
     victorian: {
       table: victorianTable,
       edge: victorianTable,
-      board: material({
+      board: mat({
         color: 0xc0a083,
         map: mahogany,
         roughness: 0.44,
@@ -330,7 +330,7 @@ export function createThemeMaterials(
     },
     nature: {
       table: natureTable,
-      edge: material({
+      edge: mat({
         color: 0xe5d3b7,
         map: bark,
         bumpMap: bark,
@@ -340,8 +340,8 @@ export function createThemeMaterials(
         clearcoat: 0.04,
         clearcoatRoughness: 0.88,
       }),
-      board: material({ ...shell, color: 0x82949c, roughness: 0.32 }),
-      rim: material({
+      board: mat({ ...shell, color: 0x82949c, roughness: 0.32 }),
+      rim: mat({
         color: 0xa7b587,
         map: moss,
         bumpMap: moss,
@@ -354,7 +354,7 @@ export function createThemeMaterials(
       }),
       cells: cells({ ...shell, color: 0xc9d6cc }, { ...shell, color: 0x94b9b7 }),
       pieces: {
-        darkBody: resources.track(
+        darkBody: resMap.track(
           carvedMaterial(
             {
               color: 0xb4c2b3,
@@ -370,7 +370,7 @@ export function createThemeMaterials(
             true,
           ),
         ),
-        redBody: resources.track(
+        redBody: resMap.track(
           carvedMaterial({
             color: 0xd0d8e1,
             map: bone,
@@ -383,32 +383,32 @@ export function createThemeMaterials(
           }),
         ),
       },
-      hollowDark: material({ ...shell, color: 0xb6ced2 }),
-      hollowLight: material({ ...shell, color: 0xc1d6d4 }),
-      accent: material({ color: 0xbaad8e, map: bone, roughness: 0.36, clearcoat: 0.28 }),
+      hollowDark: mat({ ...shell, color: 0xb6ced2 }),
+      hollowLight: mat({ ...shell, color: 0xc1d6d4 }),
+      accent: mat({ color: 0xbaad8e, map: bone, roughness: 0.36, clearcoat: 0.28 }),
     },
   };
 }
 
 function carvedMaterial(
-  parameters: MeshPhysicalMaterialParameters,
+  params: MeshPhysicalMaterialParameters,
   greenstone = false,
 ): MeshPhysicalMaterial {
-  const material = new MeshPhysicalMaterial(parameters);
-  material.onBeforeCompile = (shader): void => {
-    shader.vertexShader = `#ifdef USE_BUMPMAP
+  const mat = new MeshPhysicalMaterial(params);
+  mat.onBeforeCompile = (shdr): void => {
+    shdr.vertexShader = `#ifdef USE_BUMPMAP
       attribute float naturePieceHeight;
       varying float vNaturePieceHeight;
       #endif
-      ${shader.vertexShader}`;
-    shader.vertexShader = shader.vertexShader.replace(
+      ${shdr.vertexShader}`;
+    shdr.vertexShader = shdr.vertexShader.replace(
       "#include <uv_vertex>",
       `#include <uv_vertex>
        #ifdef USE_BUMPMAP
          vNaturePieceHeight = naturePieceHeight;
        #endif`,
     );
-    shader.fragmentShader = shader.fragmentShader.replace(
+    shdr.fragmentShader = shdr.fragmentShader.replace(
       "#include <bumpmap_pars_fragment>",
       `#ifdef USE_BUMPMAP
          varying float vNaturePieceHeight;
@@ -417,7 +417,7 @@ function carvedMaterial(
        #endif
        ${ShaderChunk.bumpmap_pars_fragment.replaceAll("vBumpMapUv", "natureCarvingUv")}`,
     );
-    shader.fragmentShader = shader.fragmentShader.replace(
+    shdr.fragmentShader = shdr.fragmentShader.replace(
       "#include <map_fragment>",
       `#include <map_fragment>
        #ifdef USE_BUMPMAP
@@ -436,7 +436,7 @@ function carvedMaterial(
          }
        #endif`,
     );
-    shader.fragmentShader = shader.fragmentShader.replace(
+    shdr.fragmentShader = shdr.fragmentShader.replace(
       "#include <roughnessmap_fragment>",
       `#include <roughnessmap_fragment>
        #ifdef USE_BUMPMAP
@@ -444,26 +444,26 @@ function carvedMaterial(
        #endif`,
     );
   };
-  material.customProgramCacheKey = (): string => `nature-wrap-kiwi-relief-v4-${greenstone}`;
-  return material;
+  mat.customProgramCacheKey = (): string => `nature-wrap-kiwi-relief-v4-${greenstone}`;
+  return mat;
 }
 
 function createGoldGrainTexture(): CanvasTexture {
-  const canvas = document.createElement("canvas");
-  canvas.width = 512;
-  canvas.height = 512;
-  const texture = new CanvasTexture(canvas);
-  texture.wrapS = RepeatWrapping;
-  texture.wrapT = RepeatWrapping;
-  const context = canvas.getContext("2d");
-  if (!context) return texture;
-  context.fillStyle = "#efefef";
-  context.fillRect(0, 0, 512, 512);
+  const cvs = document.createElement("canvas");
+  cvs.width = 512;
+  cvs.height = 512;
+  const tex = new CanvasTexture(cvs);
+  tex.wrapS = RepeatWrapping;
+  tex.wrapT = RepeatWrapping;
+  const ctx = cvs.getContext("2d");
+  if (!ctx) return tex;
+  ctx.fillStyle = "#efefef";
+  ctx.fillRect(0, 0, 512, 512);
   for (let row = 0; row < 512; row += 1) {
     const val = Math.round(227 + 14 * Math.sin(row * 17.31) + 5 * Math.cos(row * 3.8));
-    context.fillStyle = `rgb(${val}, ${val}, ${val})`;
-    context.fillRect(0, row, 512, 1);
+    ctx.fillStyle = `rgb(${val}, ${val}, ${val})`;
+    ctx.fillRect(0, row, 512, 1);
   }
-  texture.needsUpdate = true;
-  return texture;
+  tex.needsUpdate = true;
+  return tex;
 }

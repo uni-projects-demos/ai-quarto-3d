@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Luaj me temën {{theme}}",
     "loadError": "Tema nuk është e disponueshme.",
+    "loading": "Po ngarkohen temat...",
     "empty": "Nuk ka tema të disponueshme."
   }
 }

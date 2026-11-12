@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Urar s {{theme}}",
     "loadError": "Asentel ur yelli.",
+    "loading": "Asali n isental...",
     "empty": "Ulac isental."
   }
 }

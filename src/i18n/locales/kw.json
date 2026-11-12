@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Gwari gans {{theme}}",
     "loadError": "Nyns eus thema kavadow.",
+    "loading": "Ow karga temow...",
     "empty": "Nyns eus themow kavadow."
   }
 }

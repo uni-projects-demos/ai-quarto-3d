@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Ñage {{theme}}",
     "loadError": "Tema eko.",
+    "loading": "Tema…",
     "empty": "Tema eko."
   }
 }

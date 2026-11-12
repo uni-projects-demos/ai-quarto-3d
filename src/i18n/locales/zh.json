@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "使用{{theme}}主题游玩",
     "loadError": "主题不可用。",
+    "loading": "正在加载主题...",
     "empty": "没有可用的主题。"
   }
 }

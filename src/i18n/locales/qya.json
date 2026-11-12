@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Tyalë as {{theme}}",
     "loadError": "Téma lá hirna.",
+    "loading": "Téma…",
     "empty": "Lá témar hirnar."
   }
 }

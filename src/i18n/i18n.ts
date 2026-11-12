@@ -9,7 +9,7 @@ import type { TranslationKey, TranslationRecords, TranslationTree } from "./type
 
 const STORAGE_KEY: string = "quarto-lang";
 const DEFAULT_LANG: string = "en";
-const listeners: Set<() => void> = new Set<() => void>();
+const lsnrs: Set<() => void> = new Set<() => void>();
 const RTL_LANGS: ReadonlySet<string> = new Set<string>([
   "ar",
   "arc",
@@ -31,17 +31,17 @@ const LANG_ALIASES: Readonly<Record<string, string>> = {
   in: "id",
   iw: "he",
 };
-const localeModules = import.meta.glob<unknown>(["./locales/*.json", "!./locales/en.json"], {
+const localeMods = import.meta.glob<unknown>(["./locales/*.json", "!./locales/en.json"], {
   import: "default",
 });
-const resources = new Map<Locale, TranslationTree>([[DEFAULT_LANG, engResource]]);
+const resMap = new Map<Locale, TranslationTree>([[DEFAULT_LANG, engResource]]);
 const loading = new Map<Locale, Promise<TranslationTree>>();
 const keys = new Set<string>();
-function collectKeys(tree: TranslationTree, prefix = ""): void {
+function collectKeys(tree: TranslationTree, pre = ""): void {
   for (const [key, val] of Object.entries(tree)) {
-    const path = prefix ? `${prefix}.${key}` : key;
-    if (typeof val === "string") keys.add(path);
-    else collectKeys(val, path);
+    const pth = pre ? `${pre}.${key}` : key;
+    if (typeof val === "string") keys.add(pth);
+    else collectKeys(val, pth);
   }
 }
 collectKeys(engResource);
@@ -60,34 +60,32 @@ function isTranslationTree(val: unknown): val is TranslationTree {
 }
 
 async function loadLocale(lang: Locale): Promise<TranslationTree> {
-  const cached = resources.get(lang);
-  if (cached) return cached;
-  const pending = loading.get(lang);
-  if (pending) return pending;
-  const load = localeModules[`./locales/${lang}.json`];
+  const cache = resMap.get(lang);
+  if (cache) return cache;
+  const pend = loading.get(lang);
+  if (pend) return pend;
+  const load = localeMods[`./locales/${lang}.json`];
   if (!load) throw new Error(`Missing locale resource: ${lang}`);
-  const promise = load()
-    .then((resource: unknown): TranslationTree => {
-      if (!isTranslationTree(resource)) throw new Error(`Invalid locale resource: ${lang}`);
-      resources.set(lang, resource);
-      return resource;
+  const prom = load()
+    .then((res: unknown): TranslationTree => {
+      if (!isTranslationTree(res)) throw new Error(`Invalid locale resource: ${lang}`);
+      resMap.set(lang, res);
+      return res;
     })
     .finally((): void => {
       loading.delete(lang);
     });
-  loading.set(lang, promise);
-  return promise;
+  loading.set(lang, prom);
+  return prom;
 }
 
 export const LOCALES: readonly string[] = [
   DEFAULT_LANG,
-  ...Object.keys(localeModules).map((path: string): string =>
-    path.replace(/^.*\/([^/]+)\.json$/, "$1"),
-  ),
+  ...Object.keys(localeMods).map((pth: string): string => pth.replace(/^.*\/([^/]+)\.json$/, "$1")),
 ].sort((left: string, right: string): number => left.localeCompare(right));
 export type Locale = string;
 
-let localeGlobal: Locale = DEFAULT_LANG;
+let curLocale: Locale = DEFAULT_LANG;
 let localeReq = 0;
 let isStorageListenerAttached = false;
 let initCount = 0;
@@ -97,18 +95,18 @@ function isSupportedLang(lang: string): boolean {
 }
 
 function resolveLocale(val: string): Locale | undefined {
-  const baseLang: string = val.toLowerCase().split("-")[0] ?? DEFAULT_LANG;
-  if (isSupportedLang(baseLang)) return baseLang;
-  const alias: string | undefined = LANG_ALIASES[baseLang];
+  const base: string = val.toLowerCase().split("-")[0] ?? DEFAULT_LANG;
+  if (isSupportedLang(base)) return base;
+  const alias: string | undefined = LANG_ALIASES[base];
   return alias !== undefined && isSupportedLang(alias) ? alias : undefined;
 }
 
 function detectLang(): Locale {
   const stored: string | null = readStorage(STORAGE_KEY);
-  const storedLocale: Locale | undefined = stored === null ? undefined : resolveLocale(stored);
-  if (storedLocale !== undefined) return storedLocale;
-  for (const candidate of navigator.languages) {
-    const resolved: Locale | undefined = resolveLocale(candidate);
+  const storedLang: Locale | undefined = stored === null ? undefined : resolveLocale(stored);
+  if (storedLang !== undefined) return storedLang;
+  for (const cand of navigator.languages) {
+    const resolved: Locale | undefined = resolveLocale(cand);
     if (resolved !== undefined) return resolved;
   }
   return DEFAULT_LANG;
@@ -116,30 +114,30 @@ function detectLang(): Locale {
 
 function lookupTransTree(tree: TranslationTree, key: string): string | undefined {
   let lang: string | TranslationTree = tree;
-  for (const segment of key.split(".")) {
+  for (const seg of key.split(".")) {
     if (typeof lang === "string") return undefined;
-    const nxt: string | TranslationTree | undefined = lang[segment];
+    const nxt: string | TranslationTree | undefined = lang[seg];
     if (nxt === undefined) return undefined;
     lang = nxt;
   }
   return typeof lang === "string" ? lang : undefined;
 }
 
-function applyTransAttr(attribute: "aria-label" | "title" | "content"): void {
-  const dataAttr = `data-i18n-${attribute}`;
-  for (const element of document.querySelectorAll<HTMLElement>(`[${dataAttr}]`)) {
-    const key: string | null = element.getAttribute(dataAttr);
-    if (key !== null && isTranslationKey(key)) element.setAttribute(attribute, translate(key));
+function applyTransAttr(attr: "aria-label" | "title" | "content"): void {
+  const dataAttr = `data-i18n-${attr}`;
+  for (const el of document.querySelectorAll<HTMLElement>(`[${dataAttr}]`)) {
+    const key: string | null = el.getAttribute(dataAttr);
+    if (key !== null && isTranslationKey(key)) el.setAttribute(attr, translate(key));
   }
 }
 
 function applyLang(): void {
-  document.documentElement.lang = localeGlobal;
-  document.documentElement.dir = RTL_LANGS.has(localeGlobal) ? "rtl" : "ltr";
+  document.documentElement.lang = curLocale;
+  document.documentElement.dir = RTL_LANGS.has(curLocale) ? "rtl" : "ltr";
 
-  for (const element of document.querySelectorAll<HTMLElement>("[data-i18n]")) {
-    const key: string | undefined = element.dataset.i18n;
-    if (key !== undefined && isTranslationKey(key)) element.textContent = translate(key);
+  for (const el of document.querySelectorAll<HTMLElement>("[data-i18n]")) {
+    const key: string | undefined = el.dataset.i18n;
+    if (key !== undefined && isTranslationKey(key)) el.textContent = translate(key);
   }
 
   applyTransAttr("aria-label");
@@ -147,19 +145,19 @@ function applyLang(): void {
   applyTransAttr("content");
 }
 
-async function applyLocale(nxt: Locale, isPersist: boolean): Promise<void> {
+async function applyLocale(nxt: Locale, persist: boolean): Promise<void> {
   const req = ++localeReq;
   await loadLocale(nxt);
   if (req !== localeReq) return;
-  if (isPersist) saveStorage(STORAGE_KEY, nxt);
-  if (nxt === localeGlobal) return;
-  localeGlobal = nxt;
+  if (persist) saveStorage(STORAGE_KEY, nxt);
+  if (nxt === curLocale) return;
+  curLocale = nxt;
   applyLang();
-  for (const listener of listeners) listener();
+  for (const lsnr of lsnrs) lsnr();
 }
 
-const onStorage = (event: StorageEvent): void => {
-  if (event.key !== STORAGE_KEY && event.key !== null) return;
+const onStorage = (evt: StorageEvent): void => {
+  if (evt.key !== STORAGE_KEY && evt.key !== null) return;
   const resolved = resolveLocale(readStorage(STORAGE_KEY) ?? DEFAULT_LANG);
   if (resolved !== undefined) void applyLocale(resolved, false).catch(console.error);
 };
@@ -189,19 +187,19 @@ export async function initI18n(): Promise<Dispose> {
 }
 
 export function translate(key: TranslationKey, records: TranslationRecords = {}): string {
-  const translation: string =
-    lookupTransTree(resources.get(localeGlobal) ?? engResource, key) ??
+  const trans: string =
+    lookupTransTree(resMap.get(curLocale) ?? engResource, key) ??
     lookupTransTree(engResource, key) ??
     key;
-  return translation.replace(/{{\s*([^}\s]+)\s*}}/g, (_: string, name: string): string =>
-    String(records[name] ?? `{{${name}}}`),
+  return trans.replace(/{{\s*([^}\s]+)\s*}}/g, (_: string, nm: string): string =>
+    String(records[nm] ?? `{{${nm}}}`),
   );
 }
 
-export function onLangChange(listener: () => void): Dispose {
-  listeners.add(listener);
+export function onLangChange(lsnr: () => void): Dispose {
+  lsnrs.add(lsnr);
   return (): void => {
-    listeners.delete(listener);
+    lsnrs.delete(lsnr);
   };
 }
 
@@ -209,14 +207,14 @@ export function diffLabel(diff: Difficulty): string {
   return translate(`diff.${diff}`);
 }
 
-export function transTraits(piece: PieceId, theme: ThemeId = DEFAULT_THEME): string {
-  const pieceTraits: PieceTraits = getPresentedPieceTraits(piece);
-  const colours = themeColKeys(theme);
+export function transTraits(pc: PieceId, thm: ThemeId = DEFAULT_THEME): string {
+  const pcTraits: PieceTraits = getPresentedPieceTraits(pc);
+  const cols = themeColKeys(thm);
   return [
-    translate(pieceTraits.isDark ? colours.dark : colours.light),
-    translate(`piece.${pieceTraits.isBig ? "big" : "small"}`),
-    translate(`piece.${pieceTraits.isRound ? "round" : "square"}`),
-    translate(`piece.${pieceTraits.isSolid ? "solid" : "hollow"}`),
+    translate(pcTraits.isDark ? cols.dark : cols.light),
+    translate(`piece.${pcTraits.isBig ? "big" : "small"}`),
+    translate(`piece.${pcTraits.isRound ? "round" : "square"}`),
+    translate(`piece.${pcTraits.isSolid ? "solid" : "hollow"}`),
   ].join(", ");
 }
 
@@ -227,5 +225,5 @@ export async function changeLang(lang: string): Promise<void> {
 }
 
 export function curLang(): Locale {
-  return localeGlobal;
+  return curLocale;
 }

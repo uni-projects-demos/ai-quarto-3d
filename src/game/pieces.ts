@@ -18,16 +18,16 @@ export interface PieceTraits {
   readonly isDark: boolean;
 }
 
-function hasTrait(piece: PieceId, mask: number): boolean {
-  return (piece & mask) !== 0;
+function hasTrait(pc: PieceId, mask: number): boolean {
+  return (pc & mask) !== 0;
 }
 
-export function getPieceTraits(piece: PieceId): PieceTraits {
+export function getPieceTraits(pc: PieceId): PieceTraits {
   return {
-    isRound: hasTrait(piece, PIECE_TRAIT_MASK.isRound),
-    isBig: hasTrait(piece, PIECE_TRAIT_MASK.isBig),
-    isSolid: hasTrait(piece, PIECE_TRAIT_MASK.isSolid),
-    isDark: hasTrait(piece, PIECE_TRAIT_MASK.isDark),
+    isRound: hasTrait(pc, PIECE_TRAIT_MASK.isRound),
+    isBig: hasTrait(pc, PIECE_TRAIT_MASK.isBig),
+    isSolid: hasTrait(pc, PIECE_TRAIT_MASK.isSolid),
+    isDark: hasTrait(pc, PIECE_TRAIT_MASK.isDark),
   };
 }
 
@@ -35,7 +35,7 @@ function bit(val: boolean): "0" | "1" {
   return val ? "1" : "0";
 }
 
-export function pieceStr(piece: PieceId): string {
-  const { isDark, isBig, isRound, isSolid } = getPieceTraits(piece);
+export function pieceStr(pc: PieceId): string {
+  const { isDark, isBig, isRound, isSolid } = getPieceTraits(pc);
   return `${bit(isDark)}${bit(isBig)}${bit(isRound)}${bit(!isSolid)}`;
 }

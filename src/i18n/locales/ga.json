@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Imir le {{theme}}",
     "loadError": "Níl an téama ar fáil.",
+    "loading": "Téamaí á lódáil...",
     "empty": "Níl téamaí ar fáil."
   }
 }

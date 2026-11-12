@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Mängi teemaga {{theme}}",
     "loadError": "Teema pole saadaval.",
+    "loading": "Teemade laadimine...",
     "empty": "Ühtegi teemat pole saadaval."
   }
 }

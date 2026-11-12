@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "שחק עם {{theme}}",
     "loadError": "ערכת הנושא אינה זמינה.",
+    "loading": "ערכת נושא…",
     "empty": "אין ערכות נושא זמינות."
   }
 }

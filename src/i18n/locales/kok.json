@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "{{theme}} थीमांत खेळात",
     "loadError": "थीम उपलब्ध ना.",
+    "loading": "थीम लोड जाता...",
     "empty": "थीम उपलब्ध नात."
   }
 }

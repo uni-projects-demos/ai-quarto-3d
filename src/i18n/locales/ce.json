@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "{{theme}}ца ловза",
     "loadError": "Тема яц.",
+    "loading": "Тема…",
     "empty": "Теманаш яц."
   }
 }

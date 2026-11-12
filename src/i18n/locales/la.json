@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Lude cum {{theme}}",
     "loadError": "Thema non praesto est.",
+    "loading": "Thematis onerandis...",
     "empty": "Nulla themata praesto sunt."
   }
 }

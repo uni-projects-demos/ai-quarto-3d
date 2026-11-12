@@ -8,53 +8,56 @@ import {
   GAME_THEMES,
   THEME_REG,
   type ThemeId,
+  type ThemeMetadata,
   themeColKeys,
 } from "../themes";
 import { readThemePref, saveThemePref, THEME_STORAGE_KEY } from "./themePref";
+import { themePrevOrder } from "./themePrevOrder";
 
 export class ThemeController {
   private readonly cleanup = new Cleanup();
   private cur: ThemeId = DEFAULT_THEME;
-  private readonly name: HTMLElement;
+  private readonly nm: HTMLElement;
+  private readonly lyt: HTMLElement;
   private readonly prev: HTMLButtonElement;
   private readonly nxt: HTMLButtonElement;
 
   constructor(
-    private readonly scene: Pick<GameScene, "setTheme">,
-    private readonly screen: HTMLElement,
+    private readonly scn: Pick<GameScene, "setTheme">,
+    private readonly scr: HTMLElement,
     private readonly switcher: HTMLElement,
     private readonly onChange?: () => void,
-    initialTheme: ThemeId = readThemePref(),
+    initThm: ThemeId = readThemePref(),
   ) {
-    this.name = requiredEl("theme-name", HTMLElement, switcher);
+    this.nm = requiredEl("theme-name", HTMLElement, switcher);
+    this.lyt = requiredEl("game-layout", HTMLElement);
     this.prev = requiredEl("theme-previous", HTMLButtonElement, switcher);
     this.nxt = requiredEl("theme-next", HTMLButtonElement, switcher);
 
-    const options = { signal: this.cleanup.signal };
-    this.prev.addEventListener("click", (): void => this.move(-1), options);
-    this.nxt.addEventListener("click", (): void => this.move(1), options);
+    const opts = { signal: this.cleanup.signal };
+    this.prev.addEventListener("click", (): void => this.move(-1), opts);
+    this.nxt.addEventListener("click", (): void => this.move(1), opts);
     this.switcher.addEventListener(
       "keydown",
-      (event: KeyboardEvent): void => {
-        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-        event.preventDefault();
-        this.move(event.key === "ArrowLeft" ? -1 : 1);
+      (evt: KeyboardEvent): void => {
+        if (evt.key !== "ArrowLeft" && evt.key !== "ArrowRight") return;
+        evt.preventDefault();
+        this.move(evt.key === "ArrowLeft" ? -1 : 1);
       },
-      options,
+      opts,
     );
     this.cleanup.add(onLangChange(this.updateName));
     const nameObs = new ResizeObserver(this.fitName);
-    nameObs.observe(this.name);
+    nameObs.observe(this.nm);
     this.cleanup.add((): void => nameObs.disconnect());
     window.addEventListener(
       "storage",
-      (event: StorageEvent): void => {
-        if (event.key === THEME_STORAGE_KEY || event.key === null)
-          this.apply(readThemePref(), false);
+      (evt: StorageEvent): void => {
+        if (evt.key === THEME_STORAGE_KEY || evt.key === null) this.apply(readThemePref(), false);
       },
-      options,
+      opts,
     );
-    this.apply(initialTheme, false);
+    this.apply(initThm, false);
     this.prev.disabled = GAME_THEMES.length < 2;
     this.nxt.disabled = GAME_THEMES.length < 2;
   }
@@ -63,29 +66,44 @@ export class ThemeController {
     this.cleanup.dispose();
   }
 
-  select(theme: ThemeId): void {
-    this.apply(theme, true);
+  select(thm: ThemeId): void {
+    this.apply(thm, true);
   }
 
   private move(dir: -1 | 1): void {
-    this.apply(adjacentTheme(this.cur, dir), true);
+    this.apply(adjacentTheme(this.cur, dir, themePrevOrder(GAME_THEMES)), true);
   }
 
-  private apply(theme: ThemeId, persist: boolean): void {
+  private apply(thm: ThemeId, persist: boolean): void {
     if (this.cleanup.signal.aborted) return;
-    this.cur = theme;
-    this.scene.setTheme(theme);
-    this.screen.dataset.theme = theme;
+    this.cur = thm;
+    this.scn.setTheme(thm);
+    this.scr.dataset.theme = thm;
+    const pal: ThemeMetadata = THEME_REG[thm];
+    const root: HTMLElement = document.documentElement;
+    root.style.setProperty("--settings-background", pal.accent);
+    root.style.setProperty("--settings-ink", pal.panelInk);
+    root.style.setProperty("--settings-muted", pal.panelMuted);
+    root.style.setProperty("--settings-surface", pal.panelSurface);
+    root.style.setProperty("--settings-hover", pal.panelHover);
+    root.style.setProperty("--settings-border", pal.panelBorder);
+    root.style.setProperty("--settings-action-background", pal.actionBackground);
+    root.style.setProperty("--settings-action-hover", pal.actionHover);
+    root.style.setProperty("--settings-action-ink", pal.actionInk);
+    root.style.setProperty("--settings-win-background", pal.winHighlight);
+    root.style.setProperty("--settings-win-ink", pal.winInk);
+    this.lyt.style.setProperty("--control-accent", pal.accent);
+    this.lyt.style.setProperty("--control-action-ink", pal.actionInk);
     this.updateName();
     this.onChange?.();
-    if (persist) saveThemePref(theme);
+    if (persist) saveThemePref(thm);
   }
 
   private readonly updateName = (): void => {
     const key = THEME_REG[this.cur].nameKey;
-    this.name.dataset.i18n = key;
-    this.name.textContent = translate(key);
-    this.name.title = translate(key);
+    this.nm.dataset.i18n = key;
+    this.nm.textContent = translate(key);
+    this.nm.title = translate(key);
     const cols = themeColKeys(this.cur);
     for (const [id, colKey] of [
       ["trait-dark-label", cols.dark],
@@ -101,10 +119,10 @@ export class ThemeController {
   };
 
   private readonly fitName = (): void => {
-    this.name.classList.remove("is-multiline");
-    if (!fitText(this.name)) {
-      this.name.style.fontSize = "";
-      this.name.classList.add("is-multiline");
+    this.nm.classList.remove("is-multiline");
+    if (!fitText(this.nm)) {
+      this.nm.style.fontSize = "";
+      this.nm.classList.add("is-multiline");
     }
   };
 }

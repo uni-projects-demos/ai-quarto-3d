@@ -12,23 +12,32 @@ function isTurnEvent(left: HistEvent, right: HistEvent): boolean {
   return left.curPlayer === right.curPlayer && left.turnId === right.turnId;
 }
 
+function histTarget(
+  histEvents: readonly HistEvent[],
+  idx: number,
+  dir: -1 | 1,
+  isAtomic: boolean,
+  isEntireTurn: (action: HistEvent) => boolean,
+): number {
+  let tgt: number = idx + dir;
+  const action: HistEvent | undefined = histEvents[dir < 0 ? tgt : idx];
+  if (isAtomic || action === undefined || !isEntireTurn(action)) return tgt;
+
+  while (tgt > 0 && tgt < histEvents.length) {
+    const adj: HistEvent | undefined = histEvents[dir < 0 ? tgt - 1 : tgt];
+    if (adj === undefined || !isTurnEvent(adj, action)) break;
+    tgt += dir;
+  }
+  return tgt;
+}
+
 export function getUndoTarget(
   histEvents: readonly HistEvent[],
   idx: number,
   isAtomic: boolean,
   isEntireTurn: (action: HistEvent) => boolean,
 ): number {
-  if (idx <= 0) return 0;
-  let target: number = idx - 1;
-  const action: HistEvent | undefined = histEvents[target];
-  if (isAtomic || action === undefined || !isEntireTurn(action)) return target;
-
-  while (target > 0) {
-    const prev: HistEvent | undefined = histEvents[target - 1];
-    if (prev === undefined || !isTurnEvent(prev, action)) break;
-    target -= 1;
-  }
-  return target;
+  return idx <= 0 ? 0 : histTarget(histEvents, idx, -1, isAtomic, isEntireTurn);
 }
 
 export function getRedoTarget(
@@ -37,17 +46,9 @@ export function getRedoTarget(
   isAtomic: boolean,
   isEntireTurn: (action: HistEvent) => boolean,
 ): number {
-  if (idx >= histEvents.length) return histEvents.length;
-  let target: number = idx + 1;
-  const action: HistEvent | undefined = histEvents[idx];
-  if (isAtomic || action === undefined || !isEntireTurn(action)) return target;
-
-  while (target < histEvents.length) {
-    const nxt: HistEvent | undefined = histEvents[target];
-    if (nxt === undefined || !isTurnEvent(nxt, action)) break;
-    target += 1;
-  }
-  return target;
+  return idx >= histEvents.length
+    ? histEvents.length
+    : histTarget(histEvents, idx, 1, isAtomic, isEntireTurn);
 }
 
 export type StepAI = "select-open" | HistEventType | null;

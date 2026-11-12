@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "{{theme}} turru",
     "loadError": "Tema geytimte wayte.",
+    "loading": "Tema…",
     "empty": "Tema geytimte wayte."
   }
 }

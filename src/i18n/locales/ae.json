@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Vaēna {{theme}}",
     "loadError": "Mainiiu naē vida.",
+    "loading": "Mainiiu…",
     "empty": "Mainiiu naē vida."
   }
 }

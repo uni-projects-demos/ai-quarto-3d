@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Mit {{theme}} spelen",
     "loadError": "Thema nich verföögbar.",
+    "loading": "Themen warrt laadt...",
     "empty": "Keen Themen verföögbar."
   }
 }

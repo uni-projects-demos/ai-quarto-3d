@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Sakana na {{theme}}",
     "loadError": "Motó ya likambo ezali te.",
+    "loading": "Kozongisa mitó ya makambo...",
     "empty": "Mitó ya makambo ezali te."
   }
 }

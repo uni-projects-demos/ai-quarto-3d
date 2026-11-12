@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Main jo {{theme}}",
     "loadError": "Tema indak ado.",
+    "loading": "Tema…",
     "empty": "Indak ado tema."
   }
 }

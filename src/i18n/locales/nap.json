@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Joca cu {{theme}}",
     "loadError": "'O tema nun è disponibile.",
+    "loading": "Carrecanno ’e teme...",
     "empty": "Nun ce stanno teme disponibili."
   }
 }

@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Ilgħab bit-tema {{theme}}",
     "loadError": "It-tema mhijiex disponibbli.",
+    "loading": "Qed jitgħabbew it-temi...",
     "empty": "M'hemmx temi disponibbli."
   }
 }

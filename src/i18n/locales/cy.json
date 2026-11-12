@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Chwarae gyda {{theme}}",
     "loadError": "Nid yw'r thema ar gael.",
+    "loading": "Wrthi’n llwytho themâu...",
     "empty": "Nid oes themâu ar gael."
   }
 }

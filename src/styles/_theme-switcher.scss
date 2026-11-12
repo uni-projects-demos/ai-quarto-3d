@@ -1,21 +1,6 @@
 @use "tokens" as *;
 
 .theme-switcher {
-  --theme-control-ink: #e8dcc4;
-  --ribbon-top: #{#2c4351};
-  --ribbon-middle: #203440;
-  --ribbon-bottom: #132530;
-  --ribbon-ink: #fff4dc;
-  --ribbon-tail-top: #{#3d5866};
-  --ribbon-tail-middle: #{#2b414f};
-  --ribbon-tail-bottom: #{#172b37};
-  --ribbon-fold: #{#0b1820};
-  --theme-arrow-ink: #{#402b18};
-  --theme-arrow-surface: #f2e5cd;
-  --theme-arrow-border: #937347;
-  --theme-arrow-hover: #fff4df;
-  --theme-arrow-focus: #fff4d8;
-
   position: absolute;
   bottom: 18px;
   left: 50%;
@@ -36,7 +21,7 @@
 
 .theme-arrow {
   @extend %icon-grid;
-  --focus-color: var(--theme-arrow-focus);
+  --focus-color: var(--settings-ink);
   --focus-offset: 3px;
   position: relative;
   width: var(--scene-control-height);
@@ -44,15 +29,14 @@
   min-height: var(--scene-control-height);
   margin: 0;
   padding: 0;
-  border: 2px solid var(--theme-arrow-border);
+  border: 2px solid var(--settings-border);
   border-radius: 50%;
-  background: var(--theme-arrow-surface);
-  box-shadow: 0 3px 8px rgba(42, 27, 13, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.3);
-  color: var(--theme-arrow-ink);
+  background: var(--settings-surface);
+  color: var(--settings-ink);
   line-height: 1;
   cursor: pointer;
   touch-action: manipulation;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: none;
 
   svg {
     @extend %stroke-icon;
@@ -63,8 +47,7 @@
   }
 
   &:hover {
-    background: var(--theme-arrow-hover);
-    box-shadow: 0 4px 11px rgba(42, 27, 13, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    background: var(--settings-hover);
   }
 
   &::after {
@@ -73,17 +56,14 @@
     inset: -4px;
   }
 
-  &:active {
-    transform: scale(0.95);
-  }
-
   &:disabled {
     cursor: default;
     opacity: 0.4;
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 7px #221910;
+    outline: 3px solid var(--settings-ink);
+    outline-offset: 3px;
   }
 }
 
@@ -95,7 +75,7 @@
 .theme-caption {
   display: block;
   margin-bottom: 1px;
-  color: var(--theme-control-ink);
+  color: var(--settings-ink);
   font-family: inherit;
   font-size: 0.55rem;
   font-weight: 700;
@@ -117,13 +97,7 @@
     width: 34px;
     height: calc(100% - 8px);
     pointer-events: none;
-    background: linear-gradient(
-      180deg,
-      var(--ribbon-tail-top),
-      var(--ribbon-tail-middle) 48%,
-      var(--ribbon-tail-bottom)
-    );
-    box-shadow: inset 0 2px 3px rgba(76, 49, 23, 0.12);
+    background: var(--settings-background);
   }
 
   &::before {
@@ -148,16 +122,10 @@
   padding: 4px 10px;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #bda275;
+  border: 1px solid var(--settings-border);
   border-radius: 4px;
-  background: linear-gradient(
-    180deg,
-    var(--ribbon-top),
-    var(--ribbon-middle) 58%,
-    var(--ribbon-bottom)
-  );
-  box-shadow: 0 4px 10px rgba(19, 24, 28, 0.42), inset 0 1px rgba(255, 255, 255, 0.08);
-  color: var(--ribbon-ink);
+  background: var(--settings-background);
+  color: var(--settings-ink);
 }
 
 .theme-name {
@@ -184,7 +152,7 @@
   z-index: 1;
   width: 15px;
   height: 6px;
-  background: var(--ribbon-fold);
+  background: var(--settings-border);
   pointer-events: none;
 }
 

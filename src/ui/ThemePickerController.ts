@@ -2,103 +2,76 @@ import { onLangChange, translate } from "../i18n/i18n";
 import { Cleanup } from "../shared/Cleanup";
 import { requiredEl } from "../shared/dom";
 import { GAME_THEMES, isThemeId, type ThemeId } from "../themes";
-import { themePrevLayout } from "./themePrevLayout";
 import { themePrevOrder } from "./themePrevOrder";
 
 export class ThemePickerController {
   private readonly cleanup = new Cleanup();
-  private starting = false;
-  private readonly buttons: HTMLButtonElement[];
-  private readonly status: HTMLElement;
+  private isStarting = false;
+  private readonly btns: HTMLButtonElement[];
+  private readonly stat: HTMLElement;
 
   constructor(
     private readonly root: HTMLElement,
-    private readonly onSelect: (theme: ThemeId) => void,
-    private readonly renderPreviews: () => void,
+    private readonly onSelect: (thm: ThemeId) => void,
+    private readonly fitPreviews: () => void,
   ) {
-    this.buttons = [...root.querySelectorAll<HTMLButtonElement>("[data-theme-id]")];
-    this.status = requiredEl("theme-launch-status", HTMLElement, root);
-    for (const button of this.buttons) {
-      button.disabled = false;
-      button.addEventListener(
+    this.btns = [...root.querySelectorAll<HTMLButtonElement>("[data-theme-id]")];
+    this.stat = requiredEl("theme-launch-status", HTMLElement, root);
+    for (const btn of this.btns) {
+      btn.disabled = false;
+      btn.addEventListener(
         "click",
         (): void => {
-          const theme = button.dataset.themeId;
-          if (theme && isThemeId(theme)) this.select(theme);
+          const thm = btn.dataset.themeId;
+          if (thm && isThemeId(thm)) this.select(thm);
         },
         { signal: this.cleanup.signal },
       );
     }
     this.cleanup.add(onLangChange(this.updateLabels));
-    const resizeObs = new ResizeObserver(this.fitPreviews);
-    resizeObs.observe(root);
-    this.cleanup.add((): void => resizeObs.disconnect());
     this.updateLabels();
   }
 
   dispose(): void {
-    this.starting = true;
-    for (const button of this.buttons) button.disabled = true;
+    this.isStarting = true;
+    for (const btn of this.btns) btn.disabled = true;
     this.cleanup.dispose();
   }
 
   dismiss(): void {
-    this.starting = true;
+    this.isStarting = true;
     this.root.hidden = true;
   }
 
-  private select(theme: ThemeId): void {
-    if (this.starting) return;
-    this.starting = true;
+  private select(thm: ThemeId): void {
+    if (this.isStarting) return;
+    this.isStarting = true;
     this.root.setAttribute("aria-busy", "true");
-    for (const button of this.buttons) button.disabled = true;
+    for (const btn of this.btns) btn.disabled = true;
     try {
-      this.onSelect(theme);
+      this.onSelect(thm);
     } catch (err) {
-      this.starting = false;
+      this.isStarting = false;
       this.root.setAttribute("aria-busy", "false");
-      this.status.dataset.i18n = "themes.loadError";
-      this.status.textContent = translate("themes.loadError");
-      this.status.hidden = false;
-      for (const button of this.buttons) button.disabled = false;
+      this.stat.dataset.i18n = "themes.loadError";
+      this.stat.textContent = translate("themes.loadError");
+      this.stat.hidden = false;
+      for (const btn of this.btns) btn.disabled = false;
       console.error(err);
     }
   }
 
   private readonly updateLabels = (): void => {
     for (const def of themePrevOrder(GAME_THEMES)) {
-      const button = this.buttons.find((button) => button.dataset.themeId === def.id);
-      if (!button) continue;
-      button.setAttribute(
+      const btn = this.btns.find((btn) => btn.dataset.themeId === def.id);
+      if (!btn) continue;
+      btn.setAttribute(
         "aria-label",
         translate("themes.playTheme", { theme: translate(def.nameKey) }),
       );
-      const item = button.closest(".theme-preview-item");
+      const item = btn.closest(".theme-preview-item");
       item?.parentElement?.append(item);
     }
     this.fitPreviews();
-  };
-
-  private readonly fitPreviews = (): void => {
-    if (this.root.hidden) return;
-    const style = getComputedStyle(this.root);
-    const width =
-      this.root.clientWidth -
-      Number.parseFloat(style.paddingLeft) -
-      Number.parseFloat(style.paddingRight);
-    const height =
-      this.root.clientHeight -
-      Number.parseFloat(style.paddingTop) -
-      Number.parseFloat(style.paddingBottom);
-    const screen = this.root.parentElement ?? this.root;
-    const sceneWidth = Math.max(1, screen.clientWidth);
-    const sceneHeight = Math.max(1, screen.clientHeight);
-    const layout = themePrevLayout(this.buttons.length, width, height, sceneWidth / sceneHeight);
-    this.root.style.setProperty("--preview-card-width", `${layout.cardWidth}px`);
-    this.root.style.setProperty("--preview-aspect", `${sceneWidth} / ${sceneHeight}`);
-    this.root.style.setProperty("--preview-scene-width", `${sceneWidth}px`);
-    this.root.style.setProperty("--preview-scene-height", `${sceneHeight}px`);
-    this.root.style.setProperty("--preview-scene-scale", `${(layout.cardWidth - 2) / sceneWidth}`);
-    this.renderPreviews();
   };
 }

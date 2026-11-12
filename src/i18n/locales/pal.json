@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Bāzīg kun {{theme}}",
     "loadError": "Šēwāg nē dīd.",
+    "loading": "Šēwāg…",
     "empty": "Šēwāg nē dīd."
   }
 }

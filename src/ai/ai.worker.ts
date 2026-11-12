@@ -5,19 +5,19 @@ import { isRequestAI } from "./protocol";
 import { findMoveAI } from "./search";
 
 declare const self: DedicatedWorkerGlobalScope;
-const worker: DedicatedWorkerGlobalScope = self;
+const wkr: DedicatedWorkerGlobalScope = self;
 
-function res(response: ResponseAI): void {
-  worker.postMessage(response);
+function res(resp: ResponseAI): void {
+  wkr.postMessage(resp);
 }
 
-worker.onmessage = ({ data }: MessageEvent<unknown>): void => {
-  if (!isRequestAI(data)) return;
-  const { reqId }: RequestAI = data;
+wkr.onmessage = ({ data: dat }: MessageEvent<unknown>): void => {
+  if (!isRequestAI(dat)) return;
+  const { reqId }: RequestAI = dat;
 
   try {
-    const move: MoveAI = findMoveAI(data.board, data.remaining, data.curPiece, data.diff, {
-      startCell: data.startCell,
+    const move: MoveAI = findMoveAI(dat.board, dat.remaining, dat.curPiece, dat.diff, {
+      startCell: dat.startCell,
       onProgress: (depth: number, nodes: number): void => {
         res({
           type: "progress",
@@ -33,11 +33,11 @@ worker.onmessage = ({ data }: MessageEvent<unknown>): void => {
       reqId,
       move,
     });
-  } catch (error: unknown) {
+  } catch (err: unknown) {
     res({
       type: "error",
       reqId,
-      msg: error instanceof Error ? error.message : "Unknown AI error",
+      msg: err instanceof Error ? err.message : "Unknown AI error",
     });
   }
 };

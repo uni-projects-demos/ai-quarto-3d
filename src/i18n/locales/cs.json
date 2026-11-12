@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Hrát s motivem {{theme}}",
     "loadError": "Motiv není dostupný.",
+    "loading": "Načítání motivů...",
     "empty": "Nejsou dostupné žádné motivy."
   }
 }

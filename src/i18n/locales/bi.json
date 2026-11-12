@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Plei wetem {{theme}}",
     "loadError": "Tema i no stap.",
+    "loading": "Tema…",
     "empty": "I no gat tema."
   }
 }

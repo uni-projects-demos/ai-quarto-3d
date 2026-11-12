@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "C'hoari gant {{theme}}",
     "loadError": "N'eo ket hegerz an tem.",
+    "loading": "O kargañ an temoù...",
     "empty": "N'eus tem hegerz ebet."
   }
 }

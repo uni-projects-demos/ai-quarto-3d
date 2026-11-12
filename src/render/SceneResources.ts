@@ -5,48 +5,48 @@ interface Disposable {
 }
 
 export class SceneResources {
-  private readonly resources = new Set<Disposable>();
+  private readonly resMap = new Set<Disposable>();
   private readonly released = new WeakSet<Disposable>();
-  private isDisposed = false;
+  private disposed = false;
 
-  track<T extends Disposable>(resource: T): T {
-    if (this.resources.has(resource) || this.released.has(resource)) return resource;
-    if (this.isDisposed) {
-      this.released.add(resource);
-    } else this.resources.add(resource);
-    if (resource instanceof Material) {
-      for (const val of Object.values(resource)) {
+  track<T extends Disposable>(res: T): T {
+    if (this.resMap.has(res) || this.released.has(res)) return res;
+    if (this.disposed) {
+      this.released.add(res);
+    } else this.resMap.add(res);
+    if (res instanceof Material) {
+      for (const val of Object.values(res)) {
         if (val instanceof Texture) this.track(val);
       }
     }
-    if (this.isDisposed) resource.dispose();
-    return resource;
+    if (this.disposed) res.dispose();
+    return res;
   }
 
   trackObject(root: Object3D): void {
-    root.traverse((object): void => {
-      if (!(object instanceof Mesh)) return;
-      this.track(object.geometry);
-      for (const material of Array.isArray(object.material) ? object.material : [object.material]) {
-        this.track(material);
+    root.traverse((obj): void => {
+      if (!(obj instanceof Mesh)) return;
+      this.track(obj.geometry);
+      for (const mat of Array.isArray(obj.material) ? obj.material : [obj.material]) {
+        this.track(mat);
       }
-      if (object instanceof InstancedMesh) this.track(object);
+      if (obj instanceof InstancedMesh) this.track(obj);
     });
   }
 
   dispose(): void {
-    if (this.isDisposed) return;
-    this.isDisposed = true;
-    const errors: unknown[] = [];
-    for (const resource of this.resources) {
-      this.released.add(resource);
+    if (this.disposed) return;
+    this.disposed = true;
+    const errs: unknown[] = [];
+    for (const res of this.resMap) {
+      this.released.add(res);
       try {
-        resource.dispose();
+        res.dispose();
       } catch (err) {
-        errors.push(err);
+        errs.push(err);
       }
     }
-    this.resources.clear();
-    if (errors.length > 0) throw new AggregateError(errors, "Could not release scene resources");
+    this.resMap.clear();
+    if (errs.length > 0) throw new AggregateError(errs, "Could not release scene resources");
   }
 }

@@ -38,7 +38,7 @@ import { GAME_PIECES, type PieceTraits } from "../game/pieces";
 import { BOARD_SIZE, CELL_COUNT, getWinLines } from "../game/rules";
 import type { Cell, Phase, PieceId } from "../game/types";
 import { Cleanup } from "../shared/Cleanup";
-import { GAME_THEMES, type ThemeId } from "../themes";
+import { GAME_THEMES, THEME_REG, type ThemeId } from "../themes";
 import { createCoasterGeom } from "./flogstaCoasters";
 import { createCoffeeDetails } from "./flogstaCoffee";
 import { createRiceGrains } from "./flogstaPieces";
@@ -104,22 +104,22 @@ type InteractiveRef = { type: "cell"; id: number } | { type: "piece"; id: PieceI
 
 export interface SceneCallbacks {
   readonly onCellClick: (cell: number) => void;
-  readonly onPieceClick: (piece: PieceId) => void;
-  readonly onPieceHover: (piece: PieceId | null) => void;
+  readonly onPieceClick: (pc: PieceId) => void;
+  readonly onPieceHover: (pc: PieceId | null) => void;
 }
 
 export class GameScene {
   private readonly cleanup = new Cleanup();
-  private readonly resources = new SceneResources();
+  private readonly resMap = new SceneResources();
   private readonly interactiveRefs = new WeakMap<Object3D, InteractiveRef>();
-  private isDisposed = false;
+  private disposed = false;
   private needsRender = true;
-  private readonly scene: Scene<Object3DEventMap> = new Scene();
+  private readonly scn: Scene<Object3DEventMap> = new Scene();
   private readonly camera: PerspectiveCamera = new PerspectiveCamera(37, 1, 0.1, 100);
   private readonly renderer: WebGLRenderer;
   private readonly controls: OrbitControls;
   private readonly raycaster: Raycaster = new Raycaster();
-  private readonly pointer: Vector2 = new Vector2();
+  private readonly ptr: Vector2 = new Vector2();
   private readonly prevSize = new Vector2();
   private readonly textureManager = new LoadingManager();
   private readonly texturesReady = new Promise<void>((resolve, reject): void => {
@@ -137,7 +137,7 @@ export class GameScene {
   private readonly natureMoss = createMossRim();
   private readonly victorianBoardDetails: Group = new Group();
   private readonly themeMaterials: Record<ThemeId, ThemeMaterials>;
-  private readonly tableGeometries: TableGeometries;
+  private readonly tableGeoms: TableGeometries;
   private readonly interiorFog = new Fog(0x11161e, 18, 28);
   private readonly hemisphere = new HemisphereLight(0xfff0d8, 0x2a1e14, 0.7);
   private coffeeEnvironment: Texture | null = null;
@@ -145,9 +145,15 @@ export class GameScene {
   private readonly boardCells: Mesh<CylinderGeometry, MeshPhysicalMaterial>[] = [];
   private readonly cellAccents: Mesh<TorusGeometry, MeshPhysicalMaterial | MeshBasicMaterial>[] =
     [];
+  private readonly winningCellAccents: Mesh<TorusGeometry, MeshBasicMaterial>[] = [];
+  private readonly winningCellAccentGeometry: TorusGeometry = new TorusGeometry(0.49, 0.025, 8, 48);
+  private readonly winningHighlightMaterial: MeshBasicMaterial = new MeshBasicMaterial({
+    color: THEME_REG.marble.winHighlight,
+    toneMapped: false,
+  });
   private readonly marbleHighlightAccent = new MeshBasicMaterial({ color: 0xbcecff });
   private readonly victorianHighlightAccent = new MeshBasicMaterial({ color: 0xffe1a0 });
-  private readonly pieces: Map<PieceId, PieceView> = new Map<PieceId, PieceView>();
+  private readonly pcs: Map<PieceId, PieceView> = new Map<PieceId, PieceView>();
   private readonly interactiveObj: Object3D[] = [];
   private readonly boardOffset: Vector3 = new Vector3();
   private readonly dirLight: DirectionalLight = new DirectionalLight(0xffddb1, 4.8);
@@ -159,36 +165,37 @@ export class GameScene {
   });
   private readonly pieceGeometries: PieceGeometry;
   private readonly cellGeometry = new CylinderGeometry(0.53, 0.53, 0.12, 48);
-  private readonly coasterGeometry = this.resources.track(createCoasterGeom());
+  private readonly coasterGeometry = this.resMap.track(createCoasterGeom());
   private readonly cellAccentGeometry = new TorusGeometry(0.46, 0.012, 8, 48);
-  private state: SceneState = {
+  private st: SceneState = {
     board: Array<Cell>(CELL_COUNT).fill(null),
     remaining: [],
     pendingPiece: null,
     phase: "select",
   };
   private hovered: InteractiveRef | null = null;
+  private winCells: ReadonlySet<number> = new Set<number>();
   private mobileLayout: boolean = false;
   private isSized: boolean = false;
   private readonly resizeObs: ResizeObserver;
 
   constructor(
-    canvas: HTMLCanvasElement,
-    private readonly callbacks: SceneCallbacks,
+    cvs: HTMLCanvasElement,
+    private readonly cbs: SceneCallbacks,
   ) {
     try {
-      this.renderer = new WebGLRenderer({ canvas, antialias: true, alpha: true });
+      this.renderer = new WebGLRenderer({ canvas: cvs, antialias: true, alpha: true });
       this.cleanup.add((): void => {
         this.renderer.setAnimationLoop(null);
         this.renderer.dispose();
       });
-      this.cleanup.add((): void => this.resources.dispose());
+      this.cleanup.add((): void => this.resMap.dispose());
       this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       this.renderer.outputColorSpace = SRGBColorSpace;
       this.renderer.shadowMap.enabled = true;
       this.renderer.shadowMap.type = PCFShadowMap;
 
-      this.controls = new OrbitControls(this.camera, canvas);
+      this.controls = new OrbitControls(this.camera, cvs);
       const onChange = (): void => {
         this.needsRender = true;
       };
@@ -197,7 +204,7 @@ export class GameScene {
         this.controls.removeEventListener("change", onChange);
         this.controls.dispose();
       });
-      this.pieceGeometries = new PieceGeometry(this.resources);
+      this.pieceGeometries = new PieceGeometry(this.resMap);
       this.controls.enableDamping = true;
       this.controls.enablePan = false;
       this.controls.minDistance = 8;
@@ -209,13 +216,13 @@ export class GameScene {
       this.themeMaterials = createThemeMaterials(
         this.loadStoneTexture.bind(this),
         woodTexture,
-        this.resources,
+        this.resMap,
       );
       const tableMaterial = this.themeMaterials.marble.table;
-      this.tableGeometries = createTableGeometries(TABLE_RADIUS, TABLE_BEVEL, TABLE_THICKNESS);
-      for (const geometry of Object.values(this.tableGeometries)) this.resources.track(geometry);
-      this.baseMesh = new Mesh(this.tableGeometries.regularTop, tableMaterial);
-      this.tableEdge = new Mesh(this.tableGeometries.regularEdge, tableMaterial);
+      this.tableGeoms = createTableGeometries(TABLE_RADIUS, TABLE_BEVEL, TABLE_THICKNESS);
+      for (const geom of Object.values(this.tableGeoms)) this.resMap.track(geom);
+      this.baseMesh = new Mesh(this.tableGeoms.regularTop, tableMaterial);
+      this.tableEdge = new Mesh(this.tableGeoms.regularEdge, tableMaterial);
       this.lowerTableRear();
       this.boardRingBase = new Mesh(
         new CylinderGeometry(3.42, 3.48, 0.18, 96),
@@ -229,30 +236,30 @@ export class GameScene {
       this.layoutTable();
       this.createPieces();
 
-      const resizeTarget: HTMLElement = canvas.parentElement ?? canvas;
+      const resizeTgt: HTMLElement = cvs.parentElement ?? cvs;
       this.resizeObs = new ResizeObserver(this.resize);
-      this.resizeObs.observe(resizeTarget);
+      this.resizeObs.observe(resizeTgt);
       this.cleanup.add((): void => this.resizeObs.disconnect());
       this.resize();
 
-      const events = { signal: this.cleanup.signal };
-      canvas.addEventListener("pointermove", this.onPointerMove, events);
-      canvas.addEventListener("pointerleave", this.onPointerLeave, events);
-      canvas.addEventListener("click", this.onClick, events);
-      canvas.addEventListener(
+      const evts = { signal: this.cleanup.signal };
+      cvs.addEventListener("pointermove", this.onPointerMove, evts);
+      cvs.addEventListener("pointerleave", this.onPointerLeave, evts);
+      cvs.addEventListener("click", this.onClick, evts);
+      cvs.addEventListener(
         "webglcontextrestored",
         (): void => {
           this.needsRender = true;
         },
-        events,
+        evts,
       );
-      window.addEventListener("resize", this.resize, events);
+      window.addEventListener("resize", this.resize, evts);
 
-      this.resources.trackObject(this.scene);
-      this.resources.track(this.natureMoss.geometry);
-      this.resources.track(this.dirLight.shadow);
-      this.resources.track(this.marbleHighlightAccent);
-      this.resources.track(this.victorianHighlightAccent);
+      this.resMap.trackObject(this.scn);
+      this.resMap.track(this.natureMoss.geometry);
+      this.resMap.track(this.dirLight.shadow);
+      this.resMap.track(this.marbleHighlightAccent);
+      this.resMap.track(this.victorianHighlightAccent);
       this.renderer.setAnimationLoop(this.animate);
     } catch (err) {
       this.cleanup.dispose();
@@ -261,74 +268,74 @@ export class GameScene {
   }
 
   dispose(): void {
-    if (this.isDisposed) return;
-    this.isDisposed = true;
+    if (this.disposed) return;
+    this.disposed = true;
     this.cleanup.dispose();
-    this.scene.clear();
-    this.pieces.clear();
+    this.scn.clear();
+    this.pcs.clear();
     this.interactiveObj.length = 0;
     this.previewTargets = null;
   }
 
-  async preloadThemes(previews: ReadonlyMap<ThemeId, HTMLCanvasElement>): Promise<void> {
+  async preloadThemes(prevws: ReadonlyMap<ThemeId, HTMLCanvasElement>): Promise<void> {
     await this.texturesReady;
-    this.renderThemePreviews(previews);
+    this.renderThemePreviews(prevws);
   }
 
-  renderThemePreviews(previews: ReadonlyMap<ThemeId, HTMLCanvasElement>): void {
-    if (this.isDisposed) return;
+  renderThemePreviews(prevws: ReadonlyMap<ThemeId, HTMLCanvasElement>): void {
+    if (this.disposed) return;
     this.resize();
     const src = this.renderer.domElement;
     if (
-      this.previewTargets === previews &&
+      this.previewTargets === prevws &&
       this.previewSize.x === src.width &&
       this.previewSize.y === src.height
     )
       return;
-    const theme = this.activeTheme;
-    const state = this.state;
+    const thm = this.activeTheme;
+    const st = this.st;
     this.setState({
       board: Array<Cell>(CELL_COUNT).fill(null),
       remaining: GAME_PIECES,
       pendingPiece: null,
       phase: "select",
     });
-    for (const view of this.pieces.values()) {
-      view.group.position.copy(view.target);
-      view.group.scale.setScalar(view.targetScale);
+    for (const vw of this.pcs.values()) {
+      vw.group.position.copy(vw.target);
+      vw.group.scale.setScalar(vw.targetScale);
     }
     try {
       for (const def of GAME_THEMES) {
-        const preview = previews.get(def.id);
-        const context = preview?.getContext("2d");
-        if (!preview || !context) throw new Error(`Missing preview for ${def.id}`);
+        const prevw = prevws.get(def.id);
+        const ctx = prevw?.getContext("2d");
+        if (!prevw || !ctx) throw new Error(`Missing preview for ${def.id}`);
         this.setTheme(def.id);
-        this.renderer.render(this.scene, this.camera);
-        preview.width = Math.min(src.width, 1048);
-        preview.height = Math.round(preview.width / this.camera.aspect);
-        context.drawImage(src, 0, 0, preview.width, preview.height);
+        this.renderer.render(this.scn, this.camera);
+        prevw.width = Math.min(src.width, 1048);
+        prevw.height = Math.round(prevw.width / this.camera.aspect);
+        ctx.drawImage(src, 0, 0, prevw.width, prevw.height);
       }
-      this.previewTargets = previews;
+      this.previewTargets = prevws;
       this.previewSize.set(src.width, src.height);
     } finally {
-      this.setTheme(theme);
-      this.setState(state);
+      this.setTheme(thm);
+      this.setState(st);
       this.needsRender = true;
     }
   }
 
-  setState(state: SceneState): void {
-    if (this.isDisposed) return;
+  setState(st: SceneState): void {
+    if (this.disposed) return;
     if (
-      state.pendingPiece === this.state.pendingPiece &&
-      state.phase === this.state.phase &&
-      state.board.length === this.state.board.length &&
-      state.board.every((piece, idx) => piece === this.state.board[idx]) &&
-      state.remaining.length === this.state.remaining.length &&
-      state.remaining.every((piece, idx) => piece === this.state.remaining[idx])
+      st.pendingPiece === this.st.pendingPiece &&
+      st.phase === this.st.phase &&
+      st.board.length === this.st.board.length &&
+      st.board.every((pc, idx) => pc === this.st.board[idx]) &&
+      st.remaining.length === this.st.remaining.length &&
+      st.remaining.every((pc, idx) => pc === this.st.remaining[idx])
     )
       return;
-    this.state = { ...state, board: [...state.board], remaining: [...state.remaining] };
+    this.st = { ...st, board: [...st.board], remaining: [...st.remaining] };
     this.layoutObjects();
   }
 
@@ -336,22 +343,19 @@ export class GameScene {
     return this.activeTheme;
   }
 
-  setTheme(theme: ThemeId): void {
-    if (this.isDisposed || theme === this.activeTheme) return;
-    const isVictorian: boolean = theme === "victorian";
-    const isNature: boolean = theme === "nature";
-    const isFlogsta: boolean = theme === "flogsta";
-    const look = this.themeMaterials[theme];
-    this.activeTheme = theme;
+  setTheme(thm: ThemeId): void {
+    if (this.disposed || thm === this.activeTheme) return;
+    const isVictorian: boolean = thm === "victorian";
+    const isNature: boolean = thm === "nature";
+    const isFlogsta: boolean = thm === "flogsta";
+    const look = this.themeMaterials[thm];
+    this.activeTheme = thm;
+    this.winningHighlightMaterial.color.set(THEME_REG[thm].winHighlight);
     this.baseMesh.material = look.table;
     this.tableEdge.material = look.edge;
     this.tableEdge.castShadow = isNature;
-    this.baseMesh.geometry = isNature
-      ? this.tableGeometries.natureTop
-      : this.tableGeometries.regularTop;
-    this.tableEdge.geometry = isNature
-      ? this.tableGeometries.natureEdge
-      : this.tableGeometries.regularEdge;
+    this.baseMesh.geometry = isNature ? this.tableGeoms.natureTop : this.tableGeoms.regularTop;
+    this.tableEdge.geometry = isNature ? this.tableGeoms.natureEdge : this.tableGeoms.regularEdge;
     this.layoutTable();
     this.boardRingBase.material = look.board;
     this.boardRim.material = look.rim;
@@ -365,15 +369,15 @@ export class GameScene {
       const accent = this.cellAccents[cell];
       if (accent) accent.material = look.accent;
     }
-    for (const [piece, view] of this.pieces) {
-      const { body, details, inset, bezel, rice, coffee } = view;
-      const traits: PieceTraits = getPresentedPieceTraits(piece);
+    for (const [pc, vw] of this.pcs) {
+      const { body, details: dtls, inset, bezel, rice, coffee } = vw;
+      const traits: PieceTraits = getPresentedPieceTraits(pc);
       body.geometry =
         isFlogsta && traits.isDark
-          ? this.pieceGeometries.getCoffeeBodyGeometry(piece, traits)
+          ? this.pieceGeometries.getCoffeeBodyGeometry(pc, traits)
           : isVictorian
-            ? this.pieceGeometries.getVictorianBodyGeometry(piece, traits)
-            : this.pieceGeometries.getMarbleBodyGeometry(piece, traits);
+            ? this.pieceGeometries.getVictorianBodyGeometry(pc, traits)
+            : this.pieceGeometries.getMarbleBodyGeometry(pc, traits);
       body.material = traits.isDark ? look.pieces.darkBody : look.pieces.redBody;
       if (inset) {
         inset.material = traits.isDark ? look.hollowDark : look.hollowLight;
@@ -384,14 +388,14 @@ export class GameScene {
         bezel.visible = !isNature && !isFlogsta;
         bezel.material = look.accent;
       }
-      details.visible = isVictorian;
+      dtls.visible = isVictorian;
       if (rice) rice.visible = isFlogsta;
       if (coffee) coffee.visible = isFlogsta;
     }
     this.victorianBoardDetails.visible = isVictorian;
-    this.scene.fog = isFlogsta ? null : this.interiorFog;
-    this.scene.environment = isFlogsta ? this.getCoffeeEnvironment() : null;
-    this.scene.environmentIntensity = isFlogsta ? 0.22 : 1;
+    this.scn.fog = isFlogsta ? null : this.interiorFog;
+    this.scn.environment = isFlogsta ? this.getCoffeeEnvironment() : null;
+    this.scn.environmentIntensity = isFlogsta ? 0.22 : 1;
     this.renderer.toneMapping = isFlogsta ? ACESFilmicToneMapping : NoToneMapping;
     this.hemisphere.color.setHex(isFlogsta ? 0xe1f3ff : 0xfff0d8);
     this.hemisphere.groundColor.setHex(isFlogsta ? 0x66664e : 0x2a1e14);
@@ -402,8 +406,8 @@ export class GameScene {
   }
 
   private createEnv(): void {
-    this.scene.background = null;
-    this.scene.fog = this.interiorFog;
+    this.scn.background = null;
+    this.scn.fog = this.interiorFog;
 
     this.dirLight.castShadow = true;
     this.dirLight.shadow.mapSize.set(2048, 2048);
@@ -414,7 +418,7 @@ export class GameScene {
     this.dirLight.shadow.bias = -0.00015;
     this.dirLight.target = this.dirLightTarget;
 
-    this.scene.add(this.hemisphere, this.dirLight, this.dirLightTarget);
+    this.scn.add(this.hemisphere, this.dirLight, this.dirLightTarget);
   }
 
   private createBoard(): void {
@@ -431,7 +435,7 @@ export class GameScene {
     this.boardRim.castShadow = true;
     this.boardRim.receiveShadow = true;
 
-    this.scene.add(this.baseMesh, this.tableEdge, this.boardRingBase, this.boardRim);
+    this.scn.add(this.baseMesh, this.tableEdge, this.boardRingBase, this.boardRim);
 
     for (let cell: number = 0; cell < CELL_COUNT; cell += 1) {
       const mesh = new Mesh(this.cellGeometry, this.themeMaterials.marble.cells[cell]);
@@ -448,58 +452,69 @@ export class GameScene {
       mesh.add(accent);
       this.cellAccents.push(accent);
 
+      const winningAccent: Mesh<TorusGeometry, MeshBasicMaterial> = new Mesh(
+        this.winningCellAccentGeometry,
+        this.winningHighlightMaterial,
+      );
+      winningAccent.rotation.x = Math.PI / 2;
+      winningAccent.position.y = 0.09;
+      winningAccent.visible = false;
+      winningAccent.raycast = (): void => {};
+      mesh.add(winningAccent);
+      this.winningCellAccents.push(winningAccent);
+
       this.boardCells.push(mesh);
       this.interactiveObj.push(mesh);
-      this.scene.add(mesh);
+      this.scn.add(mesh);
     }
     this.createVictorianBoardDetails();
   }
 
   private createVictorianBoardDetails(): void {
     this.victorianBoardDetails.visible = false;
-    for (const radius of [3.12, 3.24]) {
-      const ring = new Mesh(new TorusGeometry(radius, 0.012, 8, 96), this.brassMaterial);
+    for (const rad of [3.12, 3.24]) {
+      const ring = new Mesh(new TorusGeometry(rad, 0.012, 8, 96), this.brassMaterial);
       ring.rotation.x = Math.PI / 2;
       this.victorianBoardDetails.add(ring);
     }
     for (let corner: number = 0; corner < 4; corner += 1) {
-      const angle: number = (corner * Math.PI) / 2;
+      const ang: number = (corner * Math.PI) / 2;
       const ornament = new Mesh(new TorusGeometry(0.07, 0.012, 8, 24), this.brassMaterial);
       ornament.rotation.x = Math.PI / 2;
-      ornament.position.set(Math.cos(angle) * 3.18, 0, Math.sin(angle) * 3.18);
+      ornament.position.set(Math.cos(ang) * 3.18, 0, Math.sin(ang) * 3.18);
       this.victorianBoardDetails.add(ornament);
     }
-    this.scene.add(this.victorianBoardDetails);
+    this.scn.add(this.victorianBoardDetails);
   }
 
   private createPieces(): void {
-    for (const piece of GAME_PIECES) {
-      const view = this.makePiece(piece);
-      const group = view.group;
-      this.pieces.set(piece, view);
+    for (const pc of GAME_PIECES) {
+      const vw = this.makePiece(pc);
+      const group = vw.group;
+      this.pcs.set(pc, vw);
       this.interactiveObj.push(group);
-      this.scene.add(group);
+      this.scn.add(group);
     }
   }
 
-  private makePiece(piece: PieceId): PieceView {
-    const traits: PieceTraits = getPresentedPieceTraits(piece);
+  private makePiece(pc: PieceId): PieceView {
+    const traits: PieceTraits = getPresentedPieceTraits(pc);
     const group = new Group();
     const interactive: InteractiveRef = {
       type: "piece",
-      id: piece,
+      id: pc,
     } satisfies InteractiveRef;
-    const height: 0.9 | 1.45 = traits.isBig ? 1.45 : 0.9;
+    const hgt: 0.9 | 1.45 = traits.isBig ? 1.45 : 0.9;
     this.interactiveRefs.set(group, interactive);
 
     const body = new Mesh(
-      this.pieceGeometries.getMarbleBodyGeometry(piece, traits),
+      this.pieceGeometries.getMarbleBodyGeometry(pc, traits),
       traits.isDark
         ? this.themeMaterials.marble.pieces.darkBody
         : this.themeMaterials.marble.pieces.redBody,
     );
     body.name = "piece-body";
-    body.position.y = height / 2;
+    body.position.y = hgt / 2;
     body.castShadow = true;
     body.receiveShadow = true;
     this.interactiveRefs.set(body, interactive);
@@ -516,7 +531,7 @@ export class GameScene {
         traits.isDark ? look.hollowDark : look.hollowLight,
       );
       inset.name = "hollow-inset";
-      inset.position.y = height - 0.103;
+      inset.position.y = hgt - 0.103;
       inset.receiveShadow = true;
       this.interactiveRefs.set(inset, interactive);
       group.add(inset);
@@ -528,15 +543,15 @@ export class GameScene {
       );
       bezel.name = "hollow-bezel";
       if (traits.isRound) bezel.rotation.x = Math.PI / 2;
-      bezel.position.y = height - 0.014;
+      bezel.position.y = hgt - 0.014;
       bezel.receiveShadow = true;
       bezel.raycast = (): void => {};
       group.add(bezel);
     }
     const craft = this.themeMaterials.victorian.craft;
     if (!craft) throw new Error("Victorian craft materials are missing");
-    const details = createVictorianPieceDetails(traits, height, craft);
-    group.add(details);
+    const dtls = createVictorianPieceDetails(traits, hgt, craft);
+    group.add(dtls);
     const rice = traits.isDark
       ? null
       : createRiceGrains(
@@ -546,16 +561,16 @@ export class GameScene {
           this.pieceGeometries.riceGrainGeometry,
         );
     if (rice) group.add(rice);
-    const coffeeMaterials = this.themeMaterials.flogsta.coffee;
-    if (!coffeeMaterials) throw new Error("Coffee materials are missing");
-    const coffee = traits.isDark ? createCoffeeDetails(traits, coffeeMaterials) : null;
+    const coffeeMats = this.themeMaterials.flogsta.coffee;
+    if (!coffeeMats) throw new Error("Coffee materials are missing");
+    const coffee = traits.isDark ? createCoffeeDetails(traits, coffeeMats) : null;
     if (coffee) group.add(coffee);
     return {
       group,
       body,
       inset,
       bezel,
-      details,
+      details: dtls,
       rice,
       coffee,
       target: new Vector3(),
@@ -565,7 +580,7 @@ export class GameScene {
   }
 
   private lowerTableRear(): void {
-    lowerTableRear(this.tableGeometries, TABLE_REAR_SCALE);
+    lowerTableRear(this.tableGeoms, TABLE_REAR_SCALE);
   }
 
   private layoutTable(): void {
@@ -595,92 +610,96 @@ export class GameScene {
       );
     }
 
-    const winningCells = new Set<number>();
-    for (const winLine of getWinLines(this.state.board)) {
-      for (const cell of winLine) winningCells.add(cell);
+    const winCells: Set<number> = new Set<number>();
+    for (const winLine of getWinLines(this.st.board)) {
+      for (const cell of winLine) winCells.add(cell);
     }
-    const remaining = new Set(this.state.remaining);
+    this.winCells = winCells;
+    const rem = new Set(this.st.remaining);
     const pieceCells = new Map<PieceId, number>();
-    for (const [cell, piece] of this.state.board.entries()) {
-      if (piece !== null) pieceCells.set(piece, cell);
+    for (const [cell, pc] of this.st.board.entries()) {
+      if (pc !== null) pieceCells.set(pc, cell);
     }
 
-    for (const piece of GAME_PIECES) {
-      const view: PieceView | undefined = this.pieces.get(piece);
-      if (!view) continue;
+    for (const pc of GAME_PIECES) {
+      const vw: PieceView | undefined = this.pcs.get(pc);
+      if (!vw) continue;
 
-      const boardCell: number | undefined = pieceCells.get(piece);
+      const boardCell: number | undefined = pieceCells.get(pc);
       if (boardCell !== undefined) {
         const cellMesh = this.boardCells[boardCell];
         if (!cellMesh) continue;
 
         this.setPieceTarget(
-          view,
+          vw,
           cellMesh.position.x,
           CELL_TOP_Y,
           cellMesh.position.z,
-          winningCells.has(boardCell) ? WIN_SCALE : 1,
+          winCells.has(boardCell) ? WIN_SCALE : 1,
         );
-      } else if (this.state.pendingPiece === piece) {
+      } else if (this.st.pendingPiece === pc) {
         this.setPieceTarget(
-          view,
+          vw,
           this.mobileLayout ? 2.95 : 5.25,
           BASE_Y,
           this.mobileLayout ? 2.0 : 0,
           WIN_SCALE,
         );
-      } else if (remaining.has(piece)) {
-        this.layoutReservePiece(piece, view);
+      } else if (rem.has(pc)) {
+        this.layoutReservePiece(pc, vw);
       } else {
-        view.group.visible = false;
+        vw.group.visible = false;
       }
     }
-    this.updateHighlights(remaining);
+    this.updateHighlights(rem);
   }
 
-  private layoutReservePiece(piece: PieceId, view: PieceView): void {
-    const upper: boolean = piece < 8;
-    const sideIdx: number = upper ? piece : piece - 8;
-    const progress: number = sideIdx / 7;
-    const angle: number = this.mobileLayout
-      ? MathUtils.lerp(PORTRAIT_RESERVE_START, PORTRAIT_RESERVE_END, progress)
+  private layoutReservePiece(pc: PieceId, vw: PieceView): void {
+    const upper: boolean = pc < 8;
+    const sideIdx: number = upper ? pc : pc - 8;
+    const prog: number = sideIdx / 7;
+    const ang: number = this.mobileLayout
+      ? MathUtils.lerp(PORTRAIT_RESERVE_START, PORTRAIT_RESERVE_END, prog)
       : (upper
-          ? MathUtils.lerp(RESERVE_UPPER_START, RESERVE_UPPER_END, progress)
-          : MathUtils.lerp(RESERVE_LOWER_START, RESERVE_LOWER_END, progress)) -
+          ? MathUtils.lerp(RESERVE_UPPER_START, RESERVE_UPPER_END, prog)
+          : MathUtils.lerp(RESERVE_LOWER_START, RESERVE_LOWER_END, prog)) -
         Math.PI / 2;
-    const radius: number = this.mobileLayout
+    const rad: number = this.mobileLayout
       ? upper
         ? 6.1
         : 4.75
       : RESERVE_RADIUS + (upper ? 0.04 : -0.04);
 
     this.setPieceTarget(
-      view,
-      this.boardOffset.x + Math.cos(angle) * radius,
+      vw,
+      this.boardOffset.x + Math.cos(ang) * rad,
       BASE_Y,
-      this.boardOffset.z + Math.sin(angle) * radius,
+      this.boardOffset.z + Math.sin(ang) * rad,
       RESERVE_SCALE,
     );
   }
 
-  private setPieceTarget(view: PieceView, x: number, y: number, z: number, scale: number): void {
-    view.target.set(x, y, z);
-    view.baseScale = scale;
-    view.targetScale = scale;
-    view.group.visible = true;
+  private setPieceTarget(vw: PieceView, x: number, y: number, z: number, scale: number): void {
+    vw.target.set(x, y, z);
+    vw.baseScale = scale;
+    vw.targetScale = scale;
+    vw.group.visible = true;
   }
 
-  private updateHighlights(remaining = new Set(this.state.remaining)): void {
+  private updateHighlights(rem = new Set(this.st.remaining)): void {
     this.needsRender = true;
     for (const [cell, mesh] of this.boardCells.entries()) {
-      const material = mesh.material;
-      const interactive: boolean = this.state.phase === "place" && this.state.board[cell] === null;
+      const winningAccent = this.winningCellAccents[cell];
+      if (winningAccent)
+        winningAccent.visible = this.st.phase === "finished" && this.winCells.has(cell);
+      const mat = mesh.material;
+      const interactive: boolean = this.st.phase === "place" && this.st.board[cell] === null;
       const hovered: boolean =
         interactive && this.hovered?.type === "cell" && this.hovered.id === cell;
 
       const accent = this.cellAccents[cell];
       if (accent) {
-        accent.visible = this.activeTheme !== "flogsta" && this.state.board[cell] === null;
+        accent.visible = this.activeTheme !== "flogsta" && this.st.board[cell] === null;
         accent.material =
           this.activeTheme === "marble" && hovered
             ? this.marbleHighlightAccent
@@ -690,41 +709,41 @@ export class GameScene {
         accent.scale.setScalar(this.activeTheme !== "nature" && hovered ? 1.05 : 1);
       }
       if (this.activeTheme === "marble") {
-        material.color.setHex(
+        mat.color.setHex(
           hovered ? 0x297d94 : interactive ? 0x849f9e : MARBLE_CELL_COLS[cell % 2 === 0 ? 0 : 1],
         );
-        material.emissive.setHex(hovered ? 0x088c9f : interactive ? 0x09374e : 0x000000);
-        material.emissiveIntensity = hovered ? 0.75 : interactive ? 0.65 : 0;
+        mat.emissive.setHex(hovered ? 0x088c9f : interactive ? 0x09374e : 0x000000);
+        mat.emissiveIntensity = hovered ? 0.75 : interactive ? 0.65 : 0;
       } else if (this.activeTheme === "victorian") {
-        material.color.setHex(
+        mat.color.setHex(
           hovered ? 0xffe9b4 : interactive ? 0xefd5a7 : VICTORIAN_CELL_COLS[cell % 2 === 0 ? 0 : 1],
         );
-        material.emissive.setHex(hovered ? 0x644014 : interactive ? 0x211609 : 0x000000);
-        material.emissiveIntensity = hovered ? 0.75 : interactive ? 0.3 : 0;
+        mat.emissive.setHex(hovered ? 0x644014 : interactive ? 0x211609 : 0x000000);
+        mat.emissiveIntensity = hovered ? 0.75 : interactive ? 0.3 : 0;
       } else if (this.activeTheme === "flogsta") {
-        material.emissive.setHex(hovered ? 0xa9b9b2 : interactive ? 0x34433e : 0x000000);
-        material.emissiveIntensity = hovered ? 0.35 : interactive ? 0.12 : 0;
+        mat.emissive.setHex(hovered ? 0xa9b9b2 : interactive ? 0x34433e : 0x000000);
+        mat.emissiveIntensity = hovered ? 0.35 : interactive ? 0.12 : 0;
       } else {
-        material.emissive.setHex(hovered ? 0x317362 : interactive ? 0x123b32 : 0x000000);
-        material.emissiveIntensity = hovered ? 1.5 : interactive ? 0.9 : 0;
+        mat.emissive.setHex(hovered ? 0x317362 : interactive ? 0x123b32 : 0x000000);
+        mat.emissiveIntensity = hovered ? 1.5 : interactive ? 0.9 : 0;
       }
     }
 
-    for (const [piece, view] of this.pieces) {
-      view.targetScale = view.baseScale;
+    for (const [pc, vw] of this.pcs) {
+      vw.targetScale = vw.baseScale;
       if (
-        this.state.phase === "select" &&
-        remaining.has(piece) &&
+        this.st.phase === "select" &&
+        rem.has(pc) &&
         this.hovered?.type === "piece" &&
-        this.hovered.id === piece
+        this.hovered.id === pc
       ) {
-        view.targetScale = Math.max(view.baseScale, HOVER_SCALE);
+        vw.targetScale = Math.max(vw.baseScale, HOVER_SCALE);
       }
     }
   }
 
-  private findInteractive(object: Object3D): InteractiveRef | null {
-    for (let cur: Object3D | null = object; cur; cur = cur.parent) {
+  private findInteractive(obj: Object3D): InteractiveRef | null {
+    for (let cur: Object3D | null = obj; cur; cur = cur.parent) {
       const ref = this.interactiveRefs.get(cur);
       if (ref) return ref;
     }
@@ -733,18 +752,18 @@ export class GameScene {
 
   private isInteractive(ref: InteractiveRef): boolean {
     return ref.type === "cell"
-      ? this.state.phase === "place" && this.state.board[ref.id] === null
-      : this.state.phase === "select" && this.state.remaining.includes(ref.id);
+      ? this.st.phase === "place" && this.st.board[ref.id] === null
+      : this.st.phase === "select" && this.st.remaining.includes(ref.id);
   }
 
-  private pick(event: MouseEvent): InteractiveRef | null {
+  private pick(evt: MouseEvent): InteractiveRef | null {
     const rect: DOMRect = this.renderer.domElement.getBoundingClientRect();
     if (rect.width <= 0 || rect.height <= 0) return null;
-    this.pointer.set(
-      ((event.clientX - rect.left) / rect.width) * 2 - 1,
-      -((event.clientY - rect.top) / rect.height) * 2 + 1,
+    this.ptr.set(
+      ((evt.clientX - rect.left) / rect.width) * 2 - 1,
+      -((evt.clientY - rect.top) / rect.height) * 2 + 1,
     );
-    this.raycaster.setFromCamera(this.pointer, this.camera);
+    this.raycaster.setFromCamera(this.ptr, this.camera);
 
     for (const hit of this.raycaster.intersectObjects(this.interactiveObj, true)) {
       const ref: InteractiveRef | null = this.findInteractive(hit.object);
@@ -753,50 +772,50 @@ export class GameScene {
     return null;
   }
 
-  private readonly onPointerMove: (event: PointerEvent) => void = (event: PointerEvent): void => {
-    const next: InteractiveRef | null = this.pick(event);
-    if (next?.type === this.hovered?.type && next?.id === this.hovered?.id) return;
+  private readonly onPointerMove: (evt: PointerEvent) => void = (evt: PointerEvent): void => {
+    const nxt: InteractiveRef | null = this.pick(evt);
+    if (nxt?.type === this.hovered?.type && nxt?.id === this.hovered?.id) return;
 
-    this.hovered = next;
-    this.renderer.domElement.style.cursor = next ? "pointer" : "grab";
-    this.callbacks.onPieceHover(next?.type === "piece" ? next.id : null);
+    this.hovered = nxt;
+    this.renderer.domElement.style.cursor = nxt ? "pointer" : "grab";
+    this.cbs.onPieceHover(nxt?.type === "piece" ? nxt.id : null);
     this.updateHighlights();
   };
 
   private readonly onPointerLeave: () => void = (): void => {
     this.hovered = null;
-    this.callbacks.onPieceHover(null);
+    this.cbs.onPieceHover(null);
     this.renderer.domElement.style.cursor = "grab";
     this.updateHighlights();
   };
 
-  private readonly onClick: (event: MouseEvent) => void = (event: MouseEvent): void => {
-    const ref: InteractiveRef | null = this.pick(event);
-    if (ref?.type === "cell") this.callbacks.onCellClick(ref.id);
-    else if (ref?.type === "piece") this.callbacks.onPieceClick(ref.id);
+  private readonly onClick: (evt: MouseEvent) => void = (evt: MouseEvent): void => {
+    const ref: InteractiveRef | null = this.pick(evt);
+    if (ref?.type === "cell") this.cbs.onCellClick(ref.id);
+    else if (ref?.type === "piece") this.cbs.onPieceClick(ref.id);
   };
 
   private readonly resize: () => void = (): void => {
-    if (this.isDisposed) return;
-    const canvas: HTMLCanvasElement = this.renderer.domElement;
-    const resizeTarget: HTMLElement = canvas.parentElement ?? canvas;
-    const width: number = Math.max(1, resizeTarget.clientWidth);
-    const height: number = Math.max(1, resizeTarget.clientHeight);
+    if (this.disposed) return;
+    const cvs: HTMLCanvasElement = this.renderer.domElement;
+    const resizeTgt: HTMLElement = cvs.parentElement ?? cvs;
+    const wdt: number = Math.max(1, resizeTgt.clientWidth);
+    const hgt: number = Math.max(1, resizeTgt.clientHeight);
     const pixelRatio = Math.min(window.devicePixelRatio, 2);
     this.renderer.getSize(this.prevSize);
     if (
       this.isSized &&
-      this.prevSize.x === width &&
-      this.prevSize.y === height &&
+      this.prevSize.x === wdt &&
+      this.prevSize.y === hgt &&
       this.renderer.getPixelRatio() === pixelRatio
     )
       return;
-    const aspect: number = width / height;
+    const aspect: number = wdt / hgt;
     const nxtMobileLayout: boolean = aspect < MOBILE_ASPECT;
     const isLayoutChange: boolean = !this.isSized || nxtMobileLayout !== this.mobileLayout;
 
     this.renderer.setPixelRatio(pixelRatio);
-    this.renderer.setSize(width, height, false);
+    this.renderer.setSize(wdt, hgt, false);
     this.camera.aspect = aspect;
     this.camera.fov = nxtMobileLayout ? 50 : 37;
     this.mobileLayout = nxtMobileLayout;
@@ -809,9 +828,9 @@ export class GameScene {
         this.camera.position.set(-1.35, 7.2, 16.2);
         this.controls.target.set(-1.35, 1.25, -0.5);
       }
-      const offset = this.camera.position.clone().sub(this.controls.target);
-      offset.setFromSphericalCoords(offset.length(), VIEW_POLAR_ANGLE, 0);
-      this.camera.position.copy(this.controls.target).add(offset);
+      const ofs = this.camera.position.clone().sub(this.controls.target);
+      ofs.setFromSphericalCoords(ofs.length(), VIEW_POLAR_ANGLE, 0);
+      this.camera.position.copy(this.controls.target).add(ofs);
       this.layoutObjects();
     }
 
@@ -823,54 +842,51 @@ export class GameScene {
   };
 
   private readonly animate: () => void = (): void => {
-    if (this.isDisposed) return;
+    if (this.disposed) return;
     this.needsRender = this.controls.update() || this.needsRender;
     this.dirLight.position.copy(this.camera.position);
-    for (const view of this.pieces.values()) {
-      if (!view.group.visible) continue;
+    for (const vw of this.pcs.values()) {
+      if (!vw.group.visible) continue;
 
       const isMoving =
-        view.group.position.distanceToSquared(view.target) > 1e-12 ||
-        Math.abs(view.group.scale.x - view.targetScale) > 1e-6;
+        vw.group.position.distanceToSquared(vw.target) > 1e-12 ||
+        Math.abs(vw.group.scale.x - vw.targetScale) > 1e-6;
       if (isMoving) {
-        view.group.position.lerp(view.target, ANIMATION_FACTOR);
-        view.group.scale.setScalar(
-          MathUtils.lerp(view.group.scale.x, view.targetScale, ANIMATION_FACTOR),
+        vw.group.position.lerp(vw.target, ANIMATION_FACTOR);
+        vw.group.scale.setScalar(
+          MathUtils.lerp(vw.group.scale.x, vw.targetScale, ANIMATION_FACTOR),
         );
         this.needsRender = true;
-      } else if (
-        !view.group.position.equals(view.target) ||
-        view.group.scale.x !== view.targetScale
-      ) {
-        view.group.position.copy(view.target);
-        view.group.scale.setScalar(view.targetScale);
+      } else if (!vw.group.position.equals(vw.target) || vw.group.scale.x !== vw.targetScale) {
+        vw.group.position.copy(vw.target);
+        vw.group.scale.setScalar(vw.targetScale);
         this.needsRender = true;
       }
     }
     if (!this.needsRender) return;
-    this.renderer.render(this.scene, this.camera);
+    this.renderer.render(this.scn, this.camera);
     this.needsRender = false;
   };
 
   private getCoffeeEnvironment(): Texture {
     if (this.coffeeEnvironment) return this.coffeeEnvironment;
-    const environment = new RoomEnvironment();
-    const generator = new PMREMGenerator(this.renderer);
+    const env = new RoomEnvironment();
+    const gen = new PMREMGenerator(this.renderer);
     try {
-      this.coffeeEnvironment = this.resources.track(generator.fromScene(environment, 0.04)).texture;
+      this.coffeeEnvironment = this.resMap.track(gen.fromScene(env, 0.04)).texture;
       return this.coffeeEnvironment;
     } finally {
-      environment.dispose();
-      generator.dispose();
+      env.dispose();
+      gen.dispose();
     }
   }
 
   private loadStoneTexture(url: string): Texture {
-    const texture: Texture = this.textureLoader.load(url, (): void => {
-      if (!this.isDisposed) this.needsRender = true;
+    const tex: Texture = this.textureLoader.load(url, (): void => {
+      if (!this.disposed) this.needsRender = true;
     });
-    texture.colorSpace = SRGBColorSpace;
-    texture.anisotropy = Math.min(this.renderer.capabilities.getMaxAnisotropy(), 8);
-    return this.resources.track(texture);
+    tex.colorSpace = SRGBColorSpace;
+    tex.anisotropy = Math.min(this.renderer.capabilities.getMaxAnisotropy(), 8);
+    return this.resMap.track(tex);
   }
 }

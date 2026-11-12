@@ -1,5 +1,17 @@
 @use "tokens" as *;
 
+.game-info,
+.language-dialog {
+  --text: var(--settings-ink);
+  --muted: var(--settings-muted);
+  --line: var(--settings-border);
+  --border: var(--settings-border);
+  --control-surface: var(--settings-surface);
+  --control-hover-surface: var(--settings-hover);
+  --control-hover-border: var(--settings-border);
+  --focus-color: var(--settings-ink);
+}
+
 .game-info {
   display: flex;
   flex-direction: column;
@@ -7,7 +19,11 @@
   min-width: 0;
   min-height: 0;
   padding: 18px;
+  --surface: var(--settings-background);
+  --gold: var(--settings-ink);
+  color: var(--text);
   background: var(--surface);
+  box-shadow: none;
 }
 
 .info-header {
@@ -48,9 +64,9 @@
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 6px 10px;
   padding: 13px 14px;
-  border: 1px solid rgba(233, 185, 110, 0.2);
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, rgba(233, 185, 110, 0.09), rgba(255, 255, 255, 0.02));
+  background: var(--control-surface);
 
   > span {
     grid-column: 1 / -1;
@@ -101,7 +117,7 @@
   }
 
   code {
-    color: #fff;
+    color: var(--text);
     font-size: 0.79rem;
   }
 }

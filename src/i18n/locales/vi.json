@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Chơi với {{theme}}",
     "loadError": "Chủ đề không khả dụng.",
+    "loading": "Đang tải chủ đề...",
     "empty": "Không có chủ đề khả dụng."
   }
 }

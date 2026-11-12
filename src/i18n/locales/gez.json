@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "ተጻወት በ{{theme}}",
     "loadError": "አልቦ ርእስ።",
+    "loading": "ርእስ…",
     "empty": "አልቦ ርእሳት።"
   }
 }

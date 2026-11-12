@@ -45,59 +45,59 @@ export class PieceGeometry {
     hollowBigSquare: createHollowSquare(1.45),
   } as const;
 
-  constructor(private readonly resources: SceneResources) {
-    for (const geometry of [
+  constructor(private readonly resMap: SceneResources) {
+    for (const geom of [
       this.riceGrainGeometry,
       ...Object.values(this.marblePieceGeometries),
       ...Object.values(this.victorianRoundGeometries),
       ...Object.values(this.victorianSquareGeometries),
     ])
-      resources.track(geometry);
+      resMap.track(geom);
   }
 
-  private createStoneCylinder(height: number, hollow = false): LatheGeometry {
-    const geometry = new LatheGeometry(
+  private createStoneCylinder(hgt: number, hollow = false): LatheGeometry {
+    const geom = new LatheGeometry(
       [
         new Vector2(0, 0),
         new Vector2(0.39, 0),
         new Vector2(0.415, 0.008),
         new Vector2(0.428, 0.023),
         new Vector2(0.43, 0.045),
-        new Vector2(0.382, height - 0.045),
-        new Vector2(0.378, height - 0.023),
-        new Vector2(0.365, height - 0.008),
-        new Vector2(0.342, height),
+        new Vector2(0.382, hgt - 0.045),
+        new Vector2(0.378, hgt - 0.023),
+        new Vector2(0.365, hgt - 0.008),
+        new Vector2(0.342, hgt),
         ...(hollow
           ? [
-              new Vector2(0.22, height),
-              new Vector2(0.205, height - 0.012),
-              new Vector2(0.205, height - 0.12),
-              new Vector2(0, height - 0.12),
+              new Vector2(0.22, hgt),
+              new Vector2(0.205, hgt - 0.012),
+              new Vector2(0.205, hgt - 0.12),
+              new Vector2(0, hgt - 0.12),
             ]
-          : [new Vector2(0, height)]),
+          : [new Vector2(0, hgt)]),
       ],
       64,
     );
-    geometry.translate(0, -height / 2, 0);
-    return geometry;
+    geom.translate(0, -hgt / 2, 0);
+    return geom;
   }
 
   createSquareBezel(): ExtrudeGeometry {
     const shape = squarePath(new Shape(), 0.225, 0.025);
     shape.holes.push(squarePath(new Path(), 0.205, 0.023));
-    const geometry = new ExtrudeGeometry(shape, {
+    const geom = new ExtrudeGeometry(shape, {
       depth: 0.012,
       bevelEnabled: false,
       curveSegments: 8,
     });
-    geometry.rotateX(-Math.PI / 2);
-    return geometry;
+    geom.rotateX(-Math.PI / 2);
+    return geom;
   }
 
-  getMarbleBodyGeometry(piece: PieceId, traits: PieceTraits): BufferGeometry {
-    const cached = this.marbleBodyGeometries.get(piece);
-    if (cached) return cached;
-    const source = traits.isRound
+  getMarbleBodyGeometry(pc: PieceId, traits: PieceTraits): BufferGeometry {
+    const cache = this.marbleBodyGeometries.get(pc);
+    if (cache) return cache;
+    const src = traits.isRound
       ? traits.isSolid
         ? traits.isBig
           ? this.marblePieceGeometries.bigRound
@@ -112,101 +112,101 @@ export class PieceGeometry {
         : traits.isBig
           ? this.marblePieceGeometries.hollowBigSquare
           : this.marblePieceGeometries.hollowSmallSquare;
-    const geometry = !traits.isRound && source.index ? source.toNonIndexed() : source.clone();
-    const uvs = geometry.getAttribute("uv");
-    const positions = geometry.getAttribute("position");
-    const normals = geometry.getAttribute("normal");
+    const geom = !traits.isRound && src.index ? src.toNonIndexed() : src.clone();
+    const uvs = geom.getAttribute("uv");
+    const posArr = geom.getAttribute("position");
+    const normals = geom.getAttribute("normal");
     const carvingUVs = uvs.clone();
-    const height: number = traits.isBig ? 1.45 : 0.9;
-    const offsetU: number = ((piece * 7 + 3) % 17) / 34;
-    const offsetV: number = ((piece * 11 + 5) % 19) / 38;
-    for (let vertex: number = 0; vertex < uvs.count; vertex += 1) {
+    const hgt: number = traits.isBig ? 1.45 : 0.9;
+    const offsetU: number = ((pc * 7 + 3) % 17) / 34;
+    const offsetV: number = ((pc * 11 + 5) % 19) / 38;
+    for (let vtx: number = 0; vtx < uvs.count; vtx += 1) {
       const perimeterU = traits.isRound
-        ? uvs.getX(vertex) + 0.125
-        : squareCarvingU(positions.getX(vertex), positions.getZ(vertex));
-      let u: number = uvs.getX(vertex);
-      let v: number = traits.isRound ? positions.getY(vertex) / height + 0.5 : uvs.getY(vertex);
-      if (Math.abs(normals.getY(vertex)) > 0.95) {
-        const width: number = traits.isRound ? 0.86 : 0.74;
-        u = positions.getX(vertex) / width + 0.5;
-        v = positions.getZ(vertex) / width + 0.5;
+        ? uvs.getX(vtx) + 0.125
+        : squareCarvingU(posArr.getX(vtx), posArr.getZ(vtx));
+      let u: number = uvs.getX(vtx);
+      let v: number = traits.isRound ? posArr.getY(vtx) / hgt + 0.5 : uvs.getY(vtx);
+      if (Math.abs(normals.getY(vtx)) > 0.95) {
+        const wdt: number = traits.isRound ? 0.86 : 0.74;
+        u = posArr.getX(vtx) / wdt + 0.5;
+        v = posArr.getZ(vtx) / wdt + 0.5;
       } else if (!traits.isRound) {
         u =
-          (Math.abs(normals.getX(vertex)) > Math.abs(normals.getZ(vertex))
-            ? positions.getZ(vertex)
-            : positions.getX(vertex)) /
+          (Math.abs(normals.getX(vtx)) > Math.abs(normals.getZ(vtx))
+            ? posArr.getZ(vtx)
+            : posArr.getX(vtx)) /
             0.74 +
           0.5;
-        v = positions.getY(vertex) / height + 0.5;
+        v = posArr.getY(vtx) / hgt + 0.5;
       }
-      const plainTop: boolean = normals.getY(vertex) > 0.65 && positions.getY(vertex) > 0;
+      const plainTop: boolean = normals.getY(vtx) > 0.65 && posArr.getY(vtx) > 0;
       const insideCup: boolean =
         !traits.isSolid &&
-        positions.getY(vertex) > height / 2 - 0.14 &&
+        posArr.getY(vtx) > hgt / 2 - 0.14 &&
         (traits.isRound
-          ? Math.hypot(positions.getX(vertex), positions.getZ(vertex)) < 0.29
-          : Math.max(Math.abs(positions.getX(vertex)), Math.abs(positions.getZ(vertex))) < 0.26);
+          ? Math.hypot(posArr.getX(vtx), posArr.getZ(vtx)) < 0.29
+          : Math.max(Math.abs(posArr.getX(vtx)), Math.abs(posArr.getZ(vtx))) < 0.26);
       carvingUVs.setXY(
-        vertex,
+        vtx,
         plainTop || insideCup ? 0.025 : perimeterU,
-        plainTop || insideCup ? 0.025 : positions.getY(vertex) / height + 0.5,
+        plainTop || insideCup ? 0.025 : posArr.getY(vtx) / hgt + 0.5,
       );
-      uvs.setXY(vertex, u * 0.48 + offsetU, v * 0.48 + offsetV);
+      uvs.setXY(vtx, u * 0.48 + offsetU, v * 0.48 + offsetV);
     }
     if (!traits.isRound) {
-      for (let vertex = 0; vertex < carvingUVs.count; vertex += 3) {
-        const vals = [0, 1, 2].map((offset) => carvingUVs.getX(vertex + offset));
+      for (let vtx = 0; vtx < carvingUVs.count; vtx += 3) {
+        const vals = [0, 1, 2].map((ofs) => carvingUVs.getX(vtx + ofs));
         const plainFace = [0, 1, 2].some(
-          (offset) => Math.abs(carvingUVs.getY(vertex + offset) - 0.025) < 0.0001,
+          (ofs) => Math.abs(carvingUVs.getY(vtx + ofs) - 0.025) < 0.0001,
         );
         if (!plainFace && Math.max(...vals) - Math.min(...vals) > 0.5) {
-          for (let offset = 0; offset < 3; offset += 1) {
-            const u = vals[offset];
-            if (u !== undefined && u < 0.5) carvingUVs.setX(vertex + offset, u + 1);
+          for (let ofs = 0; ofs < 3; ofs += 1) {
+            const u = vals[ofs];
+            if (u !== undefined && u < 0.5) carvingUVs.setX(vtx + ofs, u + 1);
           }
         }
       }
     }
-    geometry.setAttribute("uv1", carvingUVs);
-    geometry.setAttribute(
+    geom.setAttribute("uv1", carvingUVs);
+    geom.setAttribute(
       "naturePieceHeight",
-      new Float32BufferAttribute(new Float32Array(positions.count).fill(height), 1),
+      new Float32BufferAttribute(new Float32Array(posArr.count).fill(hgt), 1),
     );
-    this.marbleBodyGeometries.set(piece, geometry);
-    return this.resources.track(geometry);
+    this.marbleBodyGeometries.set(pc, geom);
+    return this.resMap.track(geom);
   }
 
-  getCoffeeBodyGeometry(piece: PieceId, traits: PieceTraits): BufferGeometry {
-    const cached = this.coffeeBodyGeometries.get(piece);
-    if (cached) return cached;
-    const geom = this.getMarbleBodyGeometry(piece, traits).clone();
+  getCoffeeBodyGeometry(pc: PieceId, traits: PieceTraits): BufferGeometry {
+    const cache = this.coffeeBodyGeometries.get(pc);
+    if (cache) return cache;
+    const geom = this.getMarbleBodyGeometry(pc, traits).clone();
     const pos = geom.getAttribute("position");
-    const height = traits.isBig ? 1.45 : 0.9;
-    for (let vertex = 0; vertex < pos.count; vertex += 1) {
-      const progress = pos.getY(vertex) / height + 0.5;
+    const hgt = traits.isBig ? 1.45 : 0.9;
+    for (let vtx = 0; vtx < pos.count; vtx += 1) {
+      const prog = pos.getY(vtx) / hgt + 0.5;
       const scale = traits.isRound
-        ? (0.29 + 0.085 * progress) / (0.43 - 0.05 * progress)
-        : 0.82 + 0.16 * progress;
+        ? (0.29 + 0.085 * prog) / (0.43 - 0.05 * prog)
+        : 0.82 + 0.16 * prog;
       pos.setXYZ(
-        vertex,
-        pos.getX(vertex) * scale,
-        0.06 + progress * (height - 0.18) - height / 2,
-        pos.getZ(vertex) * scale,
+        vtx,
+        pos.getX(vtx) * scale,
+        0.06 + prog * (hgt - 0.18) - hgt / 2,
+        pos.getZ(vtx) * scale,
       );
     }
     geom.computeVertexNormals();
     geom.computeBoundingBox();
     geom.computeBoundingSphere();
-    this.coffeeBodyGeometries.set(piece, geom);
-    return this.resources.track(geom);
+    this.coffeeBodyGeometries.set(pc, geom);
+    return this.resMap.track(geom);
   }
 
-  getVictorianBodyGeometry(piece: PieceId, traits: PieceTraits): BufferGeometry {
-    const cached = this.victorianBodyGeometries.get(piece);
-    if (cached) return cached;
-    let source: BufferGeometry;
+  getVictorianBodyGeometry(pc: PieceId, traits: PieceTraits): BufferGeometry {
+    const cache = this.victorianBodyGeometries.get(pc);
+    if (cache) return cache;
+    let src: BufferGeometry;
     if (traits.isRound) {
-      source = traits.isSolid
+      src = traits.isSolid
         ? traits.isBig
           ? this.victorianRoundGeometries.big
           : this.victorianRoundGeometries.small
@@ -214,7 +214,7 @@ export class PieceGeometry {
           ? this.victorianRoundGeometries.hollowBig
           : this.victorianRoundGeometries.hollowSmall;
     } else {
-      source = traits.isSolid
+      src = traits.isSolid
         ? traits.isBig
           ? this.victorianSquareGeometries.big
           : this.victorianSquareGeometries.small
@@ -222,30 +222,30 @@ export class PieceGeometry {
           ? this.victorianSquareGeometries.hollowBig
           : this.victorianSquareGeometries.hollowSmall;
     }
-    const geometry = source.clone();
-    const positions = geometry.getAttribute("position");
-    const normals = geometry.getAttribute("normal");
-    const uvs = geometry.getAttribute("uv");
-    const height = traits.isBig ? 1.45 : 0.9;
-    const offsetU = ((piece * 7 + 2) % 17) / 35;
-    const offsetV = ((piece * 11 + 3) % 19) / 39;
-    for (let vertex = 0; vertex < positions.count; vertex += 1) {
-      let u = uvs.getX(vertex);
-      let v = positions.getY(vertex) / height + 0.5;
-      if (Math.abs(normals.getY(vertex)) > 0.95) {
-        u = positions.getX(vertex) / 0.88 + 0.5;
-        v = positions.getZ(vertex) / 0.88 + 0.5;
+    const geom = src.clone();
+    const posArr = geom.getAttribute("position");
+    const normals = geom.getAttribute("normal");
+    const uvs = geom.getAttribute("uv");
+    const hgt = traits.isBig ? 1.45 : 0.9;
+    const offsetU = ((pc * 7 + 2) % 17) / 35;
+    const offsetV = ((pc * 11 + 3) % 19) / 39;
+    for (let vtx = 0; vtx < posArr.count; vtx += 1) {
+      let u = uvs.getX(vtx);
+      let v = posArr.getY(vtx) / hgt + 0.5;
+      if (Math.abs(normals.getY(vtx)) > 0.95) {
+        u = posArr.getX(vtx) / 0.88 + 0.5;
+        v = posArr.getZ(vtx) / 0.88 + 0.5;
       } else if (!traits.isRound) {
         u =
-          (Math.abs(normals.getX(vertex)) > Math.abs(normals.getZ(vertex))
-            ? positions.getZ(vertex)
-            : positions.getX(vertex)) /
+          (Math.abs(normals.getX(vtx)) > Math.abs(normals.getZ(vtx))
+            ? posArr.getZ(vtx)
+            : posArr.getX(vtx)) /
             0.74 +
           0.5;
       }
-      uvs.setXY(vertex, u * 0.46 + offsetU, v * 0.46 + offsetV);
+      uvs.setXY(vtx, u * 0.46 + offsetU, v * 0.46 + offsetV);
     }
-    this.victorianBodyGeometries.set(piece, geometry);
-    return this.resources.track(geometry);
+    this.victorianBodyGeometries.set(pc, geom);
+    return this.resMap.track(geom);
   }
 }

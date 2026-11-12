@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "{{theme}} atorlugu pinnguarit",
     "loadError": "Sammisaq pigineqanngilaq.",
+    "loading": "Tema-t ikkunneqassapput...",
     "empty": "Sammisat pigineqanngillat."
   }
 }

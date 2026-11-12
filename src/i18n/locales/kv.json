@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "{{theme}} темаӧн ворс",
     "loadError": "Тема абу.",
+    "loading": "Тема…",
     "empty": "Темаяс абу."
   }
 }

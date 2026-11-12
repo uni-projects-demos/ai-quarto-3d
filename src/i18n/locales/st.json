@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Bapala ka {{theme}}",
     "loadError": "Sehlooho ha se fumanehe.",
+    "loading": "Ho kenya lihlooho...",
     "empty": "Ha ho lihlooho tse fumanehang."
   }
 }

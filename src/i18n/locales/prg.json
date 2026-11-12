@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Spēlis sen {{theme}}",
     "loadError": "Tēma ni attrāts.",
+    "loading": "Tēma…",
     "empty": "Tēmas ni attrāts."
   }
 }

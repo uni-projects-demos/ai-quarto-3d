@@ -15,23 +15,23 @@ export function createMossRim(): {
   geometry: TorusGeometry;
   fibres: InstancedMesh<ConeGeometry, MeshStandardMaterial>;
 } {
-  const geometry = new TorusGeometry(RING_RADIUS, MOSS_RADIUS, 32, 240);
-  const positions = geometry.getAttribute("position");
-  for (let vertex = 0; vertex < positions.count; vertex += 1) {
-    const x = positions.getX(vertex);
-    const y = positions.getY(vertex);
-    const angle = Math.atan2(y, x);
-    const crossSection = Math.atan2(positions.getZ(vertex), Math.hypot(x, y) - RING_RADIUS);
-    const radius = mossRadius(angle, crossSection);
-    positions.setXYZ(
-      vertex,
-      (RING_RADIUS + radius * Math.cos(crossSection)) * Math.cos(angle),
-      (RING_RADIUS + radius * Math.cos(crossSection)) * Math.sin(angle),
-      radius * Math.sin(crossSection),
+  const geom = new TorusGeometry(RING_RADIUS, MOSS_RADIUS, 32, 240);
+  const posArr = geom.getAttribute("position");
+  for (let vtx = 0; vtx < posArr.count; vtx += 1) {
+    const x = posArr.getX(vtx);
+    const y = posArr.getY(vtx);
+    const ang = Math.atan2(y, x);
+    const crossSection = Math.atan2(posArr.getZ(vtx), Math.hypot(x, y) - RING_RADIUS);
+    const rad = mossRadius(ang, crossSection);
+    posArr.setXYZ(
+      vtx,
+      (RING_RADIUS + rad * Math.cos(crossSection)) * Math.cos(ang),
+      (RING_RADIUS + rad * Math.cos(crossSection)) * Math.sin(ang),
+      rad * Math.sin(crossSection),
     );
   }
-  geometry.computeVertexNormals();
-  geometry.computeBoundingSphere();
+  geom.computeVertexNormals();
+  geom.computeBoundingSphere();
 
   const fibres = new InstancedMesh(
     new ConeGeometry(1, 1, 3),
@@ -45,48 +45,48 @@ export function createMossRim(): {
   const strand = new Object3D();
   const up = new Vector3(0, 1, 0);
   const normal = new Vector3();
-  const colour = new Color();
+  const col = new Color();
   let seed = 0x6174e;
-  const random = (): number => {
+  const rnd = (): number => {
     seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
     return seed / 4294967296;
   };
   for (let idx = 0; idx < fibres.count; idx += 1) {
-    const angle = random() * Math.PI * 2;
-    const crossSection = -random() * Math.PI;
-    const radius = mossRadius(angle, crossSection);
-    const length = 0.018 + random() ** 2 * 0.045;
-    const width = 0.002 + random() * 0.003;
+    const ang = rnd() * Math.PI * 2;
+    const crossSection = -rnd() * Math.PI;
+    const rad = mossRadius(ang, crossSection);
+    const len = 0.018 + rnd() ** 2 * 0.045;
+    const wdt = 0.002 + rnd() * 0.003;
     normal.set(
-      Math.cos(angle) * Math.cos(crossSection),
-      Math.sin(angle) * Math.cos(crossSection),
+      Math.cos(ang) * Math.cos(crossSection),
+      Math.sin(ang) * Math.cos(crossSection),
       Math.sin(crossSection),
     );
     strand.position.set(
-      (RING_RADIUS + radius * Math.cos(crossSection)) * Math.cos(angle),
-      (RING_RADIUS + radius * Math.cos(crossSection)) * Math.sin(angle),
-      radius * Math.sin(crossSection),
+      (RING_RADIUS + rad * Math.cos(crossSection)) * Math.cos(ang),
+      (RING_RADIUS + rad * Math.cos(crossSection)) * Math.sin(ang),
+      rad * Math.sin(crossSection),
     );
-    normal.x += (random() - 0.5) * 0.45;
-    normal.y += (random() - 0.5) * 0.45;
+    normal.x += (rnd() - 0.5) * 0.45;
+    normal.y += (rnd() - 0.5) * 0.45;
     normal.normalize();
-    strand.position.addScaledVector(normal, length / 2 - 0.003);
+    strand.position.addScaledVector(normal, len / 2 - 0.003);
     strand.quaternion.setFromUnitVectors(up, normal);
-    strand.scale.set(width, length, width * 0.65);
+    strand.scale.set(wdt, len, wdt * 0.65);
     strand.updateMatrix();
     fibres.setMatrixAt(idx, strand.matrix);
-    colour.setHSL(0.205 + random() * 0.075, 0.28 + random() * 0.24, 0.16 + random() * 0.14);
-    fibres.setColorAt(idx, colour);
+    col.setHSL(0.205 + rnd() * 0.075, 0.28 + rnd() * 0.24, 0.16 + rnd() * 0.14);
+    fibres.setColorAt(idx, col);
   }
   fibres.computeBoundingSphere();
-  return { geometry, fibres };
+  return { geometry: geom, fibres };
 }
 
-function mossRadius(angle: number, crossSection: number): number {
+function mossRadius(ang: number, crossSection: number): number {
   return (
     MOSS_RADIUS +
-    0.012 * Math.sin(angle * 27 + Math.sin(crossSection * 3)) +
-    0.007 * Math.sin(angle * 61 + crossSection * 4) +
-    0.006 * Math.sin(angle * 13 - crossSection * 2)
+    0.012 * Math.sin(ang * 27 + Math.sin(crossSection * 3)) +
+    0.007 * Math.sin(ang * 61 + crossSection * 4) +
+    0.006 * Math.sin(ang * 13 - crossSection * 2)
   );
 }

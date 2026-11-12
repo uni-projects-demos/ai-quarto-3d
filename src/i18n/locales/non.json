@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Spila með {{theme}}",
     "loadError": "Þema er ekki tiltækt.",
+    "loading": "Þema…",
     "empty": "Engin þemu eru tiltæk."
   }
 }

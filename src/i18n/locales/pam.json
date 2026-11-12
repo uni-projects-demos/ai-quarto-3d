@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Mialung gamit ing {{theme}}",
     "loadError": "Alang tema.",
+    "loading": "Mag-load la reng tema...",
     "empty": "Alang tema a magamit."
   }
 }

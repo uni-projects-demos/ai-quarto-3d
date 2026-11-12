@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Spylje mei {{theme}}",
     "loadError": "Tema net beskikber.",
+    "loading": "Tema’s lade...",
     "empty": "Gjin tema's beskikber."
   }
 }

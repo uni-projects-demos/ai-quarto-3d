@@ -37,7 +37,7 @@ function bitCount(bitVal: number): number {
 }
 
 export function getTraitMask(
-  board: readonly Cell[],
+  brd: readonly Cell[],
   line: WinLine,
   placedCell = -1,
   placedPiece?: PieceId,
@@ -45,87 +45,86 @@ export function getTraitMask(
   let isWinOnes: number = TRAIT_MASK;
   let isWinZeros: number = TRAIT_MASK;
   for (const cell of line) {
-    const piece: Cell | undefined = cell === placedCell ? placedPiece : board[cell];
+    const pc: Cell | undefined = cell === placedCell ? placedPiece : brd[cell];
 
-    if (!isPiece(piece)) return 0;
-    isWinOnes &= piece;
-    isWinZeros &= ~piece;
+    if (!isPiece(pc)) return 0;
+    isWinOnes &= pc;
+    isWinZeros &= ~pc;
   }
   return (isWinOnes | isWinZeros) & TRAIT_MASK;
 }
 
 function isWinLine(
-  board: readonly Cell[],
+  brd: readonly Cell[],
   line: WinLine,
   placedCell = -1,
   placedPiece?: PieceId,
 ): boolean {
-  return getTraitMask(board, line, placedCell, placedPiece) !== 0;
+  return getTraitMask(brd, line, placedCell, placedPiece) !== 0;
 }
 
-export function getWinLine(board: readonly Cell[]): WinLine | null {
+export function getWinLine(brd: readonly Cell[]): WinLine | null {
   for (const line of BOARD_WIN_LINES) {
-    if (isWinLine(board, line)) return line;
+    if (isWinLine(brd, line)) return line;
   }
   return null;
 }
 
-export function getWinLines(board: readonly Cell[]): WinLine[] {
-  return BOARD_WIN_LINES.filter((line: WinLine): boolean => isWinLine(board, line));
+export function getWinLines(brd: readonly Cell[]): WinLine[] {
+  return BOARD_WIN_LINES.filter((line: WinLine): boolean => isWinLine(brd, line));
 }
 
-export function isWinCellPlacement(board: readonly Cell[], cell: number, piece: PieceId): boolean {
-  if (!isValidCell(board, cell)) {
+export function isWinCellPlacement(brd: readonly Cell[], cell: number, pc: PieceId): boolean {
+  if (!isValidCell(brd, cell)) {
     return false;
   }
   return (
-    LINES_BY_CELL[cell]?.some((line: WinLine): boolean => isWinLine(board, line, cell, piece)) ??
-    false
+    LINES_BY_CELL[cell]?.some((line: WinLine): boolean => isWinLine(brd, line, cell, pc)) ?? false
   );
 }
 
-export function isValidCell(board: readonly Cell[], cell: number): boolean {
-  return Number.isInteger(cell) && cell >= 0 && cell < board.length && board[cell] === null;
+export function isValidCell(brd: readonly Cell[], cell: number): boolean {
+  return Number.isInteger(cell) && cell >= 0 && cell < brd.length && brd[cell] === null;
 }
 
-export function sumWinCells(board: readonly Cell[], piece: PieceId): number {
+export function sumWinCells(brd: readonly Cell[], pc: PieceId): number {
   let sum: number = 0;
-  for (let cell: number = 0; cell < board.length; cell += 1) {
-    if (board[cell] === null && isWinCellPlacement(board, cell, piece)) {
+  for (let cell: number = 0; cell < brd.length; cell += 1) {
+    if (brd[cell] === null && isWinCellPlacement(brd, cell, pc)) {
       sum += 1;
     }
   }
   return sum;
 }
 
-export function getEmptyCells(board: readonly Cell[]): number[] {
+export function getEmptyCells(brd: readonly Cell[]): number[] {
   const cells: number[] = [];
-  for (let cell: number = 0; cell < board.length; cell += 1) {
-    if (board[cell] === null) cells.push(cell);
+  for (let cell: number = 0; cell < brd.length; cell += 1) {
+    if (brd[cell] === null) cells.push(cell);
   }
   return cells;
 }
 
-export function isBoardEmpty(board: readonly Cell[]): boolean {
-  return board.length === CELL_COUNT && board.every((cell: Cell): cell is null => cell === null);
+export function isBoardEmpty(brd: readonly Cell[]): boolean {
+  return brd.length === CELL_COUNT && brd.every((cell: Cell): cell is null => cell === null);
 }
 
-export function isBoardFull(board: readonly Cell[]): boolean {
-  return board.length === CELL_COUNT && board.every((cell: Cell): cell is PieceId => cell !== null);
+export function isBoardFull(brd: readonly Cell[]): boolean {
+  return brd.length === CELL_COUNT && brd.every((cell: Cell): cell is PieceId => cell !== null);
 }
 
-export function cellPlacementScore(board: readonly Cell[], cell: number, piece: PieceId): number {
+export function cellPlacementScore(brd: readonly Cell[], cell: number, pc: PieceId): number {
   let score: number = 0;
 
   for (const line of LINES_BY_CELL[cell] ?? []) {
     let pieceCount: number = 1;
-    let ones: number = piece;
-    let zeroes: number = ~piece & TRAIT_MASK;
+    let ones: number = pc;
+    let zeroes: number = ~pc & TRAIT_MASK;
 
     for (const lineCell of line) {
       if (lineCell === cell) continue;
 
-      const bitVal: Cell | undefined = board[lineCell];
+      const bitVal: Cell | undefined = brd[lineCell];
       if (!isPiece(bitVal)) continue;
 
       pieceCount += 1;

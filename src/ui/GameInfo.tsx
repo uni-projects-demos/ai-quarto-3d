@@ -53,13 +53,6 @@ function BinaryBoard(): JSX.Element {
             </code>
           ))}
         </div>
-        <svg
-          id="bin-win-overlay"
-          className="bin-win-overlay"
-          viewBox="0 0 4 4"
-          aria-hidden="true"
-          style={{ display: "none" }}
-        />
       </div>
     </section>
   );

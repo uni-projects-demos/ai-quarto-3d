@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Dhana na {{theme}}",
     "loadError": "Omwenyo kaupo.",
+    "loading": "Omwenyo…",
     "empty": "Omiwenyo kayi po."
   }
 }

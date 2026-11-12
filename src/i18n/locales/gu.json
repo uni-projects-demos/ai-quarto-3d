@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "{{theme}} થીમમાં રમો",
     "loadError": "થીમ ઉપલબ્ધ નથી.",
+    "loading": "થીમ લોડ થઈ રહી છે...",
     "empty": "કોઈ થીમ ઉપલબ્ધ નથી."
   }
 }

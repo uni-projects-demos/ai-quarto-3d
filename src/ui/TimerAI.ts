@@ -1,27 +1,27 @@
 export interface ClockAI {
   now(): number;
-  set(callback: () => void, ms: number): number;
+  set(cb: () => void, ms: number): number;
   clear(id: number): void;
 }
 
 const clockAI: ClockAI = {
   now: (): number => performance.now(),
-  set: (callback, ms): number => window.setTimeout(callback, ms),
+  set: (cb, ms): number => window.setTimeout(cb, ms),
   clear: (id): void => window.clearTimeout(id),
 };
 
 export class TimerAI {
   private id: number | null = null;
-  private remainingMS: number;
+  private remMS: number;
   private startedAt = 0;
   private disposed = false;
 
   constructor(
     delayMS: number,
-    private readonly callback: () => void,
+    private readonly cb: () => void,
     private readonly clock: ClockAI = clockAI,
   ) {
-    this.remainingMS = Math.max(0, delayMS);
+    this.remMS = Math.max(0, delayMS);
   }
 
   timerResumeAI(): void {
@@ -31,8 +31,8 @@ export class TimerAI {
       if (this.disposed || this.id !== id) return;
       this.id = null;
       this.disposed = true;
-      this.callback();
-    }, this.remainingMS);
+      this.cb();
+    }, this.remMS);
     this.id = id;
   }
 
@@ -40,7 +40,7 @@ export class TimerAI {
     if (this.id === null) return;
     this.clock.clear(this.id);
     this.id = null;
-    this.remainingMS = Math.max(0, this.remainingMS - (this.clock.now() - this.startedAt));
+    this.remMS = Math.max(0, this.remMS - (this.clock.now() - this.startedAt));
   }
 
   timerClearAI(): void {

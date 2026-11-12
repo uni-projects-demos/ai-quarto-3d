@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "{{theme}} থিমে খেলুন",
     "loadError": "থিম উপলব্ধ নেই।",
+    "loading": "থিম লোড হচ্ছে...",
     "empty": "কোনো থিম উপলব্ধ নেই।"
   }
 }

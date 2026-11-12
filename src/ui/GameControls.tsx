@@ -62,13 +62,13 @@ const DIFF_CONTROLS = [
 }[];
 
 function Options<T extends string>({
-  options,
+  options: opts,
 }: {
   options: readonly ControlOption<T>[];
 }): JSX.Element {
   return (
     <>
-      {options.map(({ val, key, lbl }) => (
+      {opts.map(({ val, key, lbl }) => (
         <option key={val} value={val} data-i18n={key}>
           {lbl}
         </option>

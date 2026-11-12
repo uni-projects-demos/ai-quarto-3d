@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Maplalian antuk {{theme}}",
     "loadError": "Tema nenten wenten.",
+    "loading": "Tema…",
     "empty": "Nenten wenten tema."
   }
 }

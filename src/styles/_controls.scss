@@ -32,10 +32,9 @@ button {
   }
 
   &.primary {
-    color: #16110a;
-    border-color: transparent;
-    background: linear-gradient(135deg, #f1c47d, #d99643);
-    box-shadow: 0 8px 24px rgba(213, 145, 62, 0.18);
+    color: var(--settings-action-ink);
+    border-color: var(--settings-action-background);
+    background: var(--settings-action-background);
   }
 }
 
@@ -84,10 +83,8 @@ button {
   color: var(--gold);
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
 
   &:hover {
-    transform: translateY(-1px);
     border-color: var(--control-hover-border);
     background: var(--control-hover-surface);
   }
@@ -99,8 +96,44 @@ button {
 }
 
 .game-controls {
+  --control-lit-accent: var(--settings-ink);
   padding-bottom: 16px;
   border-bottom: 1px solid var(--line);
+
+  select,
+  .icon-button {
+    border-color: var(--control-hover-border);
+  }
+
+  select {
+    color: var(--settings-ink);
+
+    option {
+      color: var(--text);
+      background: var(--control-surface);
+    }
+  }
+
+  .action-new.primary {
+    border-color: var(--settings-action-background);
+    color: var(--settings-action-ink);
+    background: var(--settings-action-background);
+    box-shadow: none;
+
+    &:not(:disabled):hover {
+      border-color: var(--settings-action-hover);
+      background: var(--settings-action-hover);
+    }
+  }
+
+  .icon-button {
+    color: var(--control-lit-accent);
+
+    &:not(:disabled):hover {
+      border-color: var(--control-lit-accent);
+      background: var(--control-hover-surface);
+    }
+  }
 }
 
 .control-grid {
@@ -115,7 +148,7 @@ button {
 
     > span {
       overflow: hidden;
-      color: var(--muted);
+      color: var(--control-lit-accent, var(--muted));
       font-size: 0.61rem;
       font-weight: 800;
       letter-spacing: 0.07em;

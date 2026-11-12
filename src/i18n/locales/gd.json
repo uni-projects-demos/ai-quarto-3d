@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Cluich le {{theme}}",
     "loadError": "Chan eil an cuspair ri fhaighinn.",
+    "loading": "A’ luchdadh chuspairean...",
     "empty": "Chan eil cuspairean ri fhaighinn."
   }
 }

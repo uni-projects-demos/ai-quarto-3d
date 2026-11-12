@@ -9,6 +9,7 @@ import { fitText, requiredEl } from "./shared/dom";
 import { DEFAULT_THEME, GAME_THEMES, type ThemeId } from "./themes";
 import type GameController from "./ui/GameController";
 import { ThemePickerController } from "./ui/ThemePickerController";
+import { fitThemePreviews } from "./ui/themePrevLayout";
 
 function setupTitleFit(): Dispose {
   const title: HTMLHeadingElement = requiredEl("app-title", HTMLHeadingElement);
@@ -31,7 +32,7 @@ function setupTitleFit(): Dispose {
 }
 
 const cleanup = new Cleanup();
-let isDisposed = false;
+let disposed = false;
 
 const appRoot: HTMLElement = requiredEl("app", HTMLElement);
 const reactRoot: Root = createRoot(appRoot);
@@ -39,16 +40,28 @@ flushSync((): void => {
   reactRoot.render(<App />);
 });
 
-const canvas: HTMLCanvasElement = requiredEl("game-canvas", HTMLCanvasElement);
-const status: HTMLElement = requiredEl("game-status", HTMLElement);
+const cvs: HTMLCanvasElement = requiredEl("game-canvas", HTMLCanvasElement);
+const stat: HTMLElement = requiredEl("game-status", HTMLElement);
 const statusLbl: HTMLElement = requiredEl("game-status-label", HTMLElement);
+
+const pickerRoot: HTMLElement = requiredEl("theme-selection", HTMLElement);
+let renderPreviews: (() => void) | null = null;
+const fitPreviews = (): void => {
+  if (pickerRoot.hidden) return;
+  fitThemePreviews(pickerRoot, GAME_THEMES.length);
+  renderPreviews?.();
+};
+const previewResizeObs: ResizeObserver = new ResizeObserver(fitPreviews);
+previewResizeObs.observe(pickerRoot);
+cleanup.add((): void => previewResizeObs.disconnect());
+fitPreviews();
 
 async function preloadThemeBackgrounds(root: HTMLElement): Promise<HTMLImageElement[]> {
   const urls = new Set<string>();
-  for (const element of root.querySelectorAll<HTMLElement>(
+  for (const el of root.querySelectorAll<HTMLElement>(
     ".marble-interior, .nature-landscape, .victorian-wall, .flogsta-balcony",
   )) {
-    for (const match of getComputedStyle(element).backgroundImage.matchAll(
+    for (const match of getComputedStyle(el).backgroundImage.matchAll(
       /url\(["']?([^"')]+)["']?\)/g,
     )) {
       const url = match[1];
@@ -57,20 +70,20 @@ async function preloadThemeBackgrounds(root: HTMLElement): Promise<HTMLImageElem
   }
   return Promise.all(
     [...urls].map(async (url): Promise<HTMLImageElement> => {
-      const image = new Image();
-      image.src = url;
-      await image.decode();
-      return image;
+      const img = new Image();
+      img.src = url;
+      await img.decode();
+      return img;
     }),
   );
 }
 
 function showStartupErr(err: unknown): void {
   requiredEl("theme-selection", HTMLElement).hidden = true;
-  canvas.hidden = true;
-  status.hidden = false;
-  status.classList.remove("is-ai", "is-paused");
-  status.classList.add("is-error");
+  cvs.hidden = true;
+  stat.hidden = false;
+  stat.classList.remove("is-ai", "is-paused");
+  stat.classList.add("is-error");
   statusLbl.textContent = translate("error.renderingStatus");
 
   const fb: HTMLDivElement = document.createElement("div");
@@ -81,7 +94,7 @@ function showStartupErr(err: unknown): void {
   heading.textContent = translate("error.webglHeading");
   msg.textContent = translate("error.webglMsg");
   fb.append(heading, msg);
-  canvas.parentElement?.append(fb);
+  cvs.parentElement?.append(fb);
 
   console.error(err);
 }
@@ -93,60 +106,58 @@ async function prepareGame(): Promise<void> {
     import("./ui/ThemeController"),
   ]);
   try {
-    if (isDisposed) return;
+    if (disposed) return;
     let controller: GameController | null = null;
     let picker: ThemePickerController | null = null;
     let selectedTheme: ThemeId = DEFAULT_THEME;
-    const screen = requiredEl("game-screen", HTMLElement);
-    const pickerRoot = requiredEl("theme-selection", HTMLElement);
+    const scr = requiredEl("game-screen", HTMLElement);
     const switcher = requiredEl("theme-switcher", HTMLElement);
     const startButton = requiredEl("new-game", HTMLButtonElement);
-    canvas.hidden = true;
-    const scene = new GameScene(canvas, {
+    cvs.hidden = true;
+    const scn = new GameScene(cvs, {
       onCellClick: (cell: number): void => controller?.handleCellClick(cell),
-      onPieceClick: (piece): void => controller?.handlePieceClick(piece),
-      onPieceHover: (piece): void => controller?.handlePieceHover(piece),
+      onPieceClick: (pc): void => controller?.handlePieceClick(pc),
+      onPieceHover: (pc): void => controller?.handlePieceHover(pc),
     });
 
-    cleanup.add((): void => scene.dispose());
-    const previews = new Map<ThemeId, HTMLCanvasElement>();
+    cleanup.add((): void => scn.dispose());
+    const prevws = new Map<ThemeId, HTMLCanvasElement>();
     for (const def of GAME_THEMES) {
-      const preview = pickerRoot.querySelector<HTMLCanvasElement>(
+      const prevw = pickerRoot.querySelector<HTMLCanvasElement>(
         `[data-theme-id="${def.id}"] .theme-preview-render`,
       );
-      if (!preview) throw new Error(`Missing preview for ${def.id}`);
-      previews.set(def.id, preview);
+      if (!prevw) throw new Error(`Missing preview for ${def.id}`);
+      prevws.set(def.id, prevw);
     }
     const [backgrounds] = await Promise.all([
-      preloadThemeBackgrounds(screen),
-      scene.preloadThemes(previews),
+      preloadThemeBackgrounds(scr),
+      scn.preloadThemes(prevws),
     ]);
     cleanup.add((): void => {
       backgrounds.length = 0;
     });
-    if (isDisposed) return;
-    canvas.hidden = false;
+    if (disposed) return;
+    cvs.hidden = false;
 
-    const themes = new ThemeController(
-      scene,
-      screen,
+    const thms = new ThemeController(
+      scn,
+      scr,
       switcher,
       (): void => controller?.refreshTheme(),
       DEFAULT_THEME,
     );
 
-    cleanup.add((): void => themes.dispose());
+    cleanup.add((): void => thms.dispose());
 
     controller = new GameControllerClass(
-      scene,
+      scn,
       {
         binCells: [...document.querySelectorAll<HTMLElement>("[data-binary-cell]")],
-        binWinOverlay: requiredEl("bin-win-overlay", SVGSVGElement),
         diffAI: requiredEl("diff", HTMLSelectElement),
         diffPlayerOneAI: requiredEl("diff-p-one", HTMLSelectElement),
         diffPlayerTwoAI: requiredEl("diff-p-two", HTMLSelectElement),
         gameMode: requiredEl("game-mode", HTMLSelectElement),
-        status,
+        status: stat,
         statusLbl,
         newGame: startButton,
         pauseToggleAI: requiredEl("ai-pause-toggle", HTMLButtonElement),
@@ -164,37 +175,41 @@ async function prepareGame(): Promise<void> {
         wrapDiffPlayerTwoAI: requiredEl("diff-p-two-wrap", HTMLElement),
       },
       (): void => {
-        themes.select(selectedTheme);
+        thms.select(selectedTheme);
         picker?.dismiss();
         switcher.hidden = false;
-        screen.setAttribute("tabindex", "-1");
-        screen.focus({ preventScroll: true });
+        scr.setAttribute("tabindex", "-1");
+        scr.focus({ preventScroll: true });
       },
     );
     const gameController = controller;
     cleanup.add((): void => gameController.dispose());
+    renderPreviews = (): void => scn.renderThemePreviews(prevws);
+    cleanup.add((): void => {
+      renderPreviews = null;
+    });
     picker = new ThemePickerController(
       pickerRoot,
-      (theme): void => {
-        selectedTheme = theme;
+      (thm): void => {
+        selectedTheme = thm;
         controller?.start();
       },
-      (): void => scene.renderThemePreviews(previews),
+      fitPreviews,
     );
     const themePicker = picker;
     cleanup.add((): void => themePicker.dispose());
     pickerRoot.setAttribute("aria-busy", "false");
     requiredEl("theme-launch-status", HTMLElement, pickerRoot).hidden = true;
     startButton.disabled = GAME_THEMES.length === 0;
-  } catch (error) {
+  } catch (err) {
     cleanup.dispose();
-    if (!isDisposed) showStartupErr(error);
+    if (!disposed) showStartupErr(err);
   }
 }
 
 async function startApp(): Promise<void> {
   cleanup.add(await initI18n());
-  if (isDisposed) return;
+  if (disposed) return;
   cleanup.add(setupTitleFit());
   cleanup.add(initLangPicker());
   await prepareGame();
@@ -202,7 +217,7 @@ async function startApp(): Promise<void> {
 
 if (import.meta.hot) {
   import.meta.hot.dispose((): void => {
-    isDisposed = true;
+    disposed = true;
     cleanup.dispose();
     reactRoot.unmount();
   });
@@ -210,5 +225,5 @@ if (import.meta.hot) {
 
 void startApp().catch((err: unknown): void => {
   cleanup.dispose();
-  if (!isDisposed) showStartupErr(err);
+  if (!disposed) showStartupErr(err);
 });

@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Pag-uyag gamit an {{theme}}",
     "loadError": "Waray tema.",
+    "loading": "Nagkakarga hin mga tema...",
     "empty": "Waray mga tema."
   }
 }

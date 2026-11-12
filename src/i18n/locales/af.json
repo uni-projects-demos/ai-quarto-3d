@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Speel met {{theme}}",
     "loadError": "Tema nie beskikbaar nie.",
+    "loading": "Temas word gelaai...",
     "empty": "Geen temas beskikbaar nie."
   }
 }

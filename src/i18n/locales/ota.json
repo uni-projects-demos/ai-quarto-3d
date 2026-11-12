@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "{{theme}} temasıyla oyna",
     "loadError": "Tema kullanılamıyor.",
+    "loading": "Tema…",
     "empty": "Kullanılabilir tema yok."
   }
 }

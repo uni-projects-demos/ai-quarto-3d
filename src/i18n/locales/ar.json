@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "العب بسمة {{theme}}",
     "loadError": "السمة غير متاحة.",
+    "loading": "جارٍ تحميل السمات...",
     "empty": "لا توجد سمات متاحة."
   }
 }

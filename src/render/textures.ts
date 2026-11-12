@@ -1,51 +1,51 @@
 import { CanvasTexture, RepeatWrapping, SRGBColorSpace } from "three";
 
 export function createWoodTexture(): CanvasTexture {
-  const canvas: HTMLCanvasElement = document.createElement("canvas");
-  canvas.width = 512;
-  canvas.height = 512;
+  const cvs: HTMLCanvasElement = document.createElement("canvas");
+  cvs.width = 512;
+  cvs.height = 512;
 
-  const texture = new CanvasTexture(canvas);
-  texture.colorSpace = SRGBColorSpace;
+  const tex = new CanvasTexture(cvs);
+  tex.colorSpace = SRGBColorSpace;
 
-  const context = canvas.getContext("2d");
-  if (!context) return texture;
+  const ctx = cvs.getContext("2d");
+  if (!ctx) return tex;
 
-  const gradient: CanvasGradient = context.createLinearGradient(0, 0, canvas.width, canvas.height);
-  gradient.addColorStop(0, "#6a4322");
-  gradient.addColorStop(0.5, "#4f3118");
-  gradient.addColorStop(1, "#86562e");
-  context.fillStyle = gradient;
-  context.fillRect(0, 0, canvas.width, canvas.height);
+  const grad: CanvasGradient = ctx.createLinearGradient(0, 0, cvs.width, cvs.height);
+  grad.addColorStop(0, "#6a4322");
+  grad.addColorStop(0.5, "#4f3118");
+  grad.addColorStop(1, "#86562e");
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, cvs.width, cvs.height);
 
-  context.globalAlpha = 0.16;
-  for (let y: number = 0; y < canvas.height; y += 4) {
+  ctx.globalAlpha = 0.16;
+  for (let y: number = 0; y < cvs.height; y += 4) {
     const wobble: number = 9 * Math.sin(y / 22) + 4 * Math.sin(y / 9);
-    context.fillStyle = y % 8 === 0 ? "#362010" : "#7c4a24";
-    context.fillRect(0, y + wobble * 0.05, canvas.width, 2);
+    ctx.fillStyle = y % 8 === 0 ? "#362010" : "#7c4a24";
+    ctx.fillRect(0, y + wobble * 0.05, cvs.width, 2);
   }
 
-  context.globalAlpha = 0.09;
+  ctx.globalAlpha = 0.09;
   for (let line: number = 0; line < 95; line += 1) {
-    const y: number = Math.random() * canvas.height;
-    const amplitude: number = 2 + Math.random() * 8;
-    const frequency: number = 35 + Math.random() * 70;
+    const y: number = Math.random() * cvs.height;
+    const amp: number = 2 + Math.random() * 8;
+    const freq: number = 35 + Math.random() * 70;
     const phase: number = Math.random() * Math.PI * 2;
 
-    context.beginPath();
-    context.strokeStyle = line % 3 === 0 ? "#2c180c" : "#c09058";
-    context.lineWidth = 0.5 + Math.random() * 1.4;
+    ctx.beginPath();
+    ctx.strokeStyle = line % 3 === 0 ? "#2c180c" : "#c09058";
+    ctx.lineWidth = 0.5 + Math.random() * 1.4;
 
-    for (let x: number = -20; x <= canvas.width + 20; x += 8) {
-      const grainY: number = y + Math.sin(x / frequency + phase) * amplitude;
-      if (x === -20) context.moveTo(x, grainY);
-      else context.lineTo(x, grainY);
+    for (let x: number = -20; x <= cvs.width + 20; x += 8) {
+      const grainY: number = y + Math.sin(x / freq + phase) * amp;
+      if (x === -20) ctx.moveTo(x, grainY);
+      else ctx.lineTo(x, grainY);
     }
-    context.stroke();
+    ctx.stroke();
   }
-  context.globalAlpha = 1;
-  texture.wrapS = RepeatWrapping;
-  texture.wrapT = RepeatWrapping;
-  texture.needsUpdate = true;
-  return texture;
+  ctx.globalAlpha = 1;
+  tex.wrapS = RepeatWrapping;
+  tex.wrapT = RepeatWrapping;
+  tex.needsUpdate = true;
+  return tex;
 }

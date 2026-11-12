@@ -125,26 +125,6 @@
     border-color: rgba(185, 203, 209, 0.6);
     background: rgba(33, 49, 51, 0.94);
   }
-
-  .theme-switcher {
-    --theme-control-ink: #fff;
-    --ribbon-ink: #fff;
-    --ribbon-top: #bf4a4f;
-    --ribbon-middle: #a92f37;
-    --ribbon-bottom: #{#8f222d};
-    --ribbon-tail-top: #c95a60;
-    --ribbon-tail-middle: #b0424a;
-    --ribbon-tail-bottom: #8e2933;
-    --ribbon-fold: #681923;
-    --theme-arrow-ink: #990000;
-    --theme-arrow-surface: #fff;
-    --theme-arrow-border: #990000;
-    --theme-arrow-hover: #e6e6e6;
-
-    .ribbon-face {
-      border-color: #ccc;
-    }
-  }
 }
 
 .game-screen[data-theme="victorian"] {
@@ -159,21 +139,6 @@
     color: #f4e5c8;
     border-color: rgba(205, 164, 98, 0.35);
     background: rgba(31, 18, 17, 0.92);
-  }
-
-  .theme-switcher {
-    --ribbon-top: #{#542c33};
-    --ribbon-middle: #{#3c1d26};
-    --ribbon-bottom: #{#27141c};
-    --ribbon-tail-top: #{#68404a};
-    --ribbon-tail-middle: #492932;
-    --ribbon-tail-bottom: #301820;
-    --ribbon-fold: #{#1c0c13};
-    --theme-arrow-ink: #ffedca;
-    --theme-arrow-surface: #382719;
-    --theme-arrow-border: #b6945c;
-    --theme-arrow-hover: #503922;
-    --theme-arrow-focus: #ffe2a3;
   }
 }
 
@@ -199,27 +164,10 @@
     border-color: rgba(171, 200, 151, 0.5);
     background: rgba(15, 39, 28, 0.94);
   }
-
-  .theme-switcher {
-    --theme-control-ink: #dce6c5;
-    --ribbon-top: #{#254b39};
-    --ribbon-middle: #{#163b2b};
-    --ribbon-bottom: #{#0e291f};
-    --ribbon-tail-top: #{#3d6249};
-    --ribbon-tail-middle: #{#254b37};
-    --ribbon-tail-bottom: #163222;
-    --ribbon-fold: #{#091d14};
-    --theme-arrow-ink: #{#183c2c};
-    --theme-arrow-surface: #eee7d3;
-    --theme-arrow-border: #{#7d9276};
-    --theme-arrow-hover: #fff3d9;
-  }
 }
 
 .victorian-wall {
-  --victorian-wall-height: max(56.28cqw, 85cqh);
-  background: url("../assets/themes/victorian-salon.webp") center
-    calc(-0.3 * var(--victorian-wall-height)) / auto var(--victorian-wall-height) no-repeat;
+  background: url("../assets/themes/victorian-salon.webp") center top / 100% auto no-repeat;
   filter: brightness(calc(0.39 * var(--background-light-intensity)));
 
   &::after {

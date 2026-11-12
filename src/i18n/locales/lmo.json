@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Giuga con {{theme}}",
     "loadError": "El tema l'è minga disponibil.",
+    "loading": "Tema…",
     "empty": "Gh'è minga temi disponibil."
   }
 }

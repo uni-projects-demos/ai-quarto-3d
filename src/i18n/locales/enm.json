@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Pleyen with {{theme}}",
     "loadError": "Theme nat founden.",
+    "loading": "Theme…",
     "empty": "No themes founden."
   }
 }

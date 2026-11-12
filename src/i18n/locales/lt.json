@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Žaisti su tema {{theme}}",
     "loadError": "Tema nepasiekiama.",
+    "loading": "Įkeliamos temos...",
     "empty": "Temų nėra."
   }
 }

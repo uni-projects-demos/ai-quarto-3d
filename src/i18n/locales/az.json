@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "{{theme}} mövzusu ilə oyna",
     "loadError": "Mövzu əlçatan deyil.",
+    "loading": "Mövzular yüklənir...",
     "empty": "Əlçatan mövzu yoxdur."
   }
 }

@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Играть с темой {{theme}}",
     "loadError": "Тема недоступна.",
+    "loading": "Тема…",
     "empty": "Нет доступных тем."
   }
 }

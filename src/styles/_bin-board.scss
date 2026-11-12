@@ -50,11 +50,9 @@
   grid-template-rows: repeat(4, 1fr);
   gap: 5px;
   padding: 6px;
-  border: 1px solid rgba(233, 185, 110, 0.2);
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background:
-    radial-gradient(circle at 50% 32%, rgba(233, 185, 110, 0.08), transparent 65%),
-    rgba(8, 11, 16, 0.4);
+  background: var(--control-surface);
 
   code {
     display: flex;
@@ -62,24 +60,26 @@
     align-items: center;
     justify-content: center;
     gap: 0.055em;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--line);
     border-radius: 9px;
-    color: rgba(255, 255, 255, 0.28);
-    background: rgba(255, 255, 255, 0.025);
+    color: var(--muted);
+    background: var(--surface);
     font: 800 clamp(0.63rem, 1.4vw, 0.78rem) / 1 var(--font-mono);
     white-space: nowrap;
 
     &.occupied,
     &.win {
-      color: #f7e4c6;
-      background: rgba(114, 72, 34, 0.28);
+      color: var(--text);
+      background: var(--control-hover-surface);
     }
 
     &.occupied {
-      border-color: rgba(233, 185, 110, 0.24);
+      border-color: var(--line);
     }
     &.win {
-      border: 2px solid #f1c47d;
+      border: 2px solid var(--settings-win-ink);
+      color: var(--settings-win-ink);
+      background: var(--settings-win-background);
     }
 
     .bin-bit {
@@ -88,7 +88,7 @@
     }
 
     .win-bit {
-      color: #fff;
+      color: var(--text);
       font-size: 1.15em;
       font-weight: 950;
       text-decoration-line: underline;
@@ -96,23 +96,11 @@
       text-decoration-thickness: 0.18em;
       text-underline-offset: 0.12em;
     }
-  }
-}
 
-.bin-win-overlay {
-  position: absolute;
-  inset: 6px;
-  width: calc(100% - 12px);
-  height: calc(100% - 12px);
-  overflow: visible;
-  pointer-events: none;
-
-  ellipse {
-    fill: none;
-    stroke: #f1c47d;
-    stroke-width: 0.075;
-    vector-effect: non-scaling-stroke;
-    filter: drop-shadow(0 0 5px rgba(241, 196, 125, 0.58));
+    &.win .win-bit {
+      color: var(--settings-win-ink);
+      text-decoration-color: var(--settings-win-ink);
+    }
   }
 }
 

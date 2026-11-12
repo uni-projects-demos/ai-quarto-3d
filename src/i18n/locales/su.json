@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Maén nganggo {{theme}}",
     "loadError": "Téma teu sayogi.",
+    "loading": "Ngamuat téma...",
     "empty": "Teu aya téma anu sayogi."
   }
 }

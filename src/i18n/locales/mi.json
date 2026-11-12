@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Tākaro ki {{theme}}",
     "loadError": "Kāore te kaupapa i te wātea.",
+    "loading": "Kei te uta i ngā kaupapa...",
     "empty": "Kāore he kaupapa e wātea ana."
   }
 }

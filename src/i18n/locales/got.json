@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Leik in {{theme}}",
     "loadError": "Haidus ni bigitans.",
+    "loading": "Haidus…",
     "empty": "Haidjus ni bigitanai."
   }
 }

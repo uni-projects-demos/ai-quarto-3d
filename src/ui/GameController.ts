@@ -38,23 +38,23 @@ interface DeferMoveAI {
 
 class GameController {
   private readonly cleanup = new Cleanup();
-  private readonly view: GameView;
+  private readonly vw: GameView;
   private disposed = false;
   private hasStarted = false;
-  private board: Cell[] = Array(CELL_COUNT).fill(null);
-  private remaining: PieceId[] = [...GAME_PIECES];
+  private brd: Cell[] = Array(CELL_COUNT).fill(null);
+  private rem: PieceId[] = [...GAME_PIECES];
   private pendingPiece: PieceId | null = null;
   private phase: Phase = "select";
-  private activeTurn: Turn = "player1";
+  private actTurn: Turn = "player1";
   private winner: Turn | "draw" | null = null;
   private requestId: number = 0;
-  private random: () => number = getRandVal();
+  private rnd: () => number = getRandVal();
   private isPauseAI: boolean = false;
   private timerAI: TimerAI | null = null;
   private activeReqAI: RequestAI | null = null;
   private deferMoveAI: DeferMoveAI | null = null;
   private pendRecoverAI: boolean = false;
-  private worker: Worker | null = null;
+  private wkr: Worker | null = null;
   private turnId: number = 0;
   private stepAI: StepAI = null;
   private nxtPieceAI: PieceId | null = null;
@@ -62,56 +62,52 @@ class GameController {
   private histStates: GameState[] = [];
   private histIdx: number = 0;
   private isReview: boolean = false;
-  private hoveredPiece: PieceId | null = null;
+  private hoverPc: PieceId | null = null;
   private isRiskEnabled: boolean = true;
 
   constructor(
-    private readonly scene: Pick<GameScene, "setState" | "getTheme">,
-    private readonly elements: Elements,
+    private readonly scn: Pick<GameScene, "setState" | "getTheme">,
+    private readonly els: Elements,
     private readonly onStart?: () => void,
   ) {
-    this.view = new GameView(elements);
+    this.vw = new GameView(els);
     this.cleanup.add(
       onLangChange((): void => {
         this.updateStartOptions();
         this.updateUI();
       }),
     );
-    const options = { signal: this.cleanup.signal };
-    this.elements.pauseToggleAI.addEventListener("click", this.togglePauseAI, options);
-    this.elements.newGame.addEventListener("click", (): void => this.start(), options);
-    this.elements.starter.addEventListener(
+    const opts = { signal: this.cleanup.signal };
+    this.els.pauseToggleAI.addEventListener("click", this.togglePauseAI, opts);
+    this.els.newGame.addEventListener("click", (): void => this.start(), opts);
+    this.els.starter.addEventListener(
       "change",
       (): void => {
         if (this.hasStarted) this.newGame();
       },
-      options,
+      opts,
     );
-    this.elements.gameMode.addEventListener(
+    this.els.gameMode.addEventListener(
       "change",
       (): void => {
         this.configModeControls();
         if (this.hasStarted) this.newGame();
         else this.updateUI();
       },
-      options,
+      opts,
     );
-    this.elements.undo.addEventListener("click", this.undo, options);
-    this.elements.redo.addEventListener("click", this.redo, options);
-    this.elements.riskToggle.addEventListener("click", this.toggleRisk, options);
+    this.els.undo.addEventListener("click", this.undo, opts);
+    this.els.redo.addEventListener("click", this.redo, opts);
+    this.els.riskToggle.addEventListener("click", this.toggleRisk, opts);
 
-    for (const control of [
-      this.elements.diffAI,
-      this.elements.diffPlayerOneAI,
-      this.elements.diffPlayerTwoAI,
-    ]) {
+    for (const control of [this.els.diffAI, this.els.diffPlayerOneAI, this.els.diffPlayerTwoAI]) {
       control.addEventListener(
         "change",
         (): void => {
           this.updateStartOptions();
           this.updateUI();
         },
-        options,
+        opts,
       );
     }
     this.configModeControls();
@@ -138,17 +134,17 @@ class GameController {
     this.renderPendingPiece();
   }
 
-  handlePieceClick(piece: PieceId): void {
+  handlePieceClick(pc: PieceId): void {
     if (
       !this.hasStarted ||
       this.isReview ||
       this.phase !== "select" ||
-      !this.isTurnUser(this.activeTurn) ||
-      !this.remaining.includes(piece)
+      !this.isTurnUser(this.actTurn) ||
+      !this.rem.includes(pc)
     ) {
       return;
     }
-    this.passPiece(piece);
+    this.passPiece(pc);
   }
 
   handleCellClick(cell: number): void {
@@ -156,9 +152,9 @@ class GameController {
       !this.hasStarted ||
       this.isReview ||
       this.phase !== "place" ||
-      !this.isTurnUser(this.activeTurn) ||
+      !this.isTurnUser(this.actTurn) ||
       this.pendingPiece === null ||
-      !this.isValidCell(cell)
+      !isValidCell(this.brd, cell)
     ) {
       return;
     }
@@ -166,42 +162,42 @@ class GameController {
     this.placePiece(cell, null);
   }
 
-  handlePieceHover(piece: PieceId | null): void {
+  handlePieceHover(pc: PieceId | null): void {
     if (!this.hasStarted) return;
     const isPreviewSelection: boolean =
-      piece !== null &&
+      pc !== null &&
       !this.isReview &&
       this.phase === "select" &&
-      this.isTurnUser(this.activeTurn) &&
-      this.remaining.includes(piece);
+      this.isTurnUser(this.actTurn) &&
+      this.rem.includes(pc);
 
-    this.hoveredPiece = isPreviewSelection ? piece : null;
+    this.hoverPc = isPreviewSelection ? pc : null;
     this.renderRisk();
 
-    if (!isPreviewSelection || piece === null) {
+    if (!isPreviewSelection || pc === null) {
       this.renderPendingPiece();
       return;
     }
-    this.view.renderPendingPiece({ ...this.captureViewState(), pendingPiece: piece });
+    this.vw.renderPendingPiece({ ...this.captureViewState(), pendingPiece: pc });
   }
 
   private readonly newGame: () => void = (): void => {
     if (!this.hasStarted) return;
     this.cancelAI();
     this.isPauseAI = false;
-    this.random = getRandVal();
-    this.board = Array(CELL_COUNT).fill(null);
-    this.remaining = [...GAME_PIECES];
+    this.rnd = getRandVal();
+    this.brd = Array(CELL_COUNT).fill(null);
+    this.rem = [...GAME_PIECES];
     this.pendingPiece = null;
     this.winner = null;
-    this.activeTurn = this.getRandomStarter(
-      isStarter(this.elements.starter.value) ? this.elements.starter.value : "random",
+    this.actTurn = this.getRandomStarter(
+      isStarter(this.els.starter.value) ? this.els.starter.value : "random",
     );
     this.phase = "select";
     this.stepAI = null;
     this.nxtPieceAI = null;
     this.isReview = false;
-    this.hoveredPiece = null;
+    this.hoverPc = null;
     this.turnId = 0;
     this.histEvents = [];
     this.histStates = [];
@@ -213,9 +209,10 @@ class GameController {
 
   private updateStartOptions(): void {
     for (const turn of ["player1", "player2"] as const) {
-      const option: HTMLOptionElement | null =
-        this.elements.starter.querySelector<HTMLOptionElement>(`option[value="${turn}"]`);
-      if (option !== null) option.textContent = this.view.userTurnLbl(turn);
+      const opt: HTMLOptionElement | null = this.els.starter.querySelector<HTMLOptionElement>(
+        `option[value="${turn}"]`,
+      );
+      if (opt !== null) opt.textContent = this.vw.userTurnLbl(turn);
     }
   }
 
@@ -224,21 +221,21 @@ class GameController {
     const isUserVsAi: boolean = mode === "human-ai";
     const isAiVsAi: boolean = mode === "ai-ai";
 
-    this.elements.diffAI.disabled = !isUserVsAi;
-    this.elements.wrapDiffAI.hidden = !isUserVsAi;
+    this.els.diffAI.disabled = !isUserVsAi;
+    this.els.wrapDiffAI.hidden = !isUserVsAi;
 
-    this.elements.diffPlayerOneAI.disabled = !isAiVsAi;
-    this.elements.diffPlayerTwoAI.disabled = !isAiVsAi;
-    this.elements.wrapDiffPlayerOneAI.hidden = !isAiVsAi;
-    this.elements.wrapDiffPlayerTwoAI.hidden = !isAiVsAi;
+    this.els.diffPlayerOneAI.disabled = !isAiVsAi;
+    this.els.diffPlayerTwoAI.disabled = !isAiVsAi;
+    this.els.wrapDiffPlayerOneAI.hidden = !isAiVsAi;
+    this.els.wrapDiffPlayerTwoAI.hidden = !isAiVsAi;
 
-    this.elements.risk.hidden = isAiVsAi;
+    this.els.risk.hidden = isAiVsAi;
 
     this.updateStartOptions();
   }
 
   private startTurn(): void {
-    if (this.getTurnPlayer(this.activeTurn) === "ai") {
+    if (this.getTurnPlayer(this.actTurn) === "ai") {
       this.phase = "thinking";
       this.stepAI = this.pendingPiece === null ? "select-open" : "place";
       this.nxtPieceAI = null;
@@ -260,15 +257,14 @@ class GameController {
     });
   }
 
-  private turnSelectAI(piece: PieceId | null, turnID: number): void {
+  private turnSelectAI(pc: PieceId | null, turnID: number): void {
     if (!this.isCurTurnAI(turnID) || this.stepAI !== "select") return;
-    const selectedPiece: PieceId | null =
-      piece !== null && this.remaining.includes(piece) ? piece : (this.remaining[0] ?? null);
-    if (selectedPiece === null) {
+    const selPc: PieceId | null = pc !== null && this.rem.includes(pc) ? pc : (this.rem[0] ?? null);
+    if (selPc === null) {
       this.gameFinn("draw");
       return;
     }
-    this.passPiece(selectedPiece);
+    this.passPiece(selPc);
   }
 
   private turnResumeAI(turnID: number): void {
@@ -290,24 +286,24 @@ class GameController {
       !this.isReview &&
       turnID === this.requestId &&
       this.phase === "thinking" &&
-      this.getTurnPlayer(this.activeTurn) === "ai"
+      this.getTurnPlayer(this.actTurn) === "ai"
     );
   }
 
   private selectStartPieceAI(turnID: number): void {
-    if (!this.isCurTurnAI(turnID) || this.pendingPiece !== null || this.remaining.length === 0) {
+    if (!this.isCurTurnAI(turnID) || this.pendingPiece !== null || this.rem.length === 0) {
       return;
     }
-    this.passPiece(selectStartPiece(this.remaining, this.random));
+    this.passPiece(selectStartPiece(this.rem, this.rnd));
   }
 
-  private passPiece(piece: PieceId): void {
-    const curPlayer: Turn = this.activeTurn;
+  private passPiece(pc: PieceId): void {
+    const curPlayer: Turn = this.actTurn;
     const turnId: number = this.turnId;
 
-    this.remaining = this.remaining.filter((bitVal: PieceId): boolean => bitVal !== piece);
-    this.pendingPiece = piece;
-    this.activeTurn = this.toggleTurn(this.activeTurn);
+    this.rem = this.rem.filter((bitVal: PieceId): boolean => bitVal !== pc);
+    this.pendingPiece = pc;
+    this.actTurn = toggleTurn(this.actTurn);
     this.turnId += 1;
 
     this.startTurn();
@@ -317,17 +313,17 @@ class GameController {
   private requestMoveAI(): void {
     if (this.pendingPiece === null) return;
 
-    const diff: Difficulty = this.turnDiff(this.activeTurn);
+    const diff: Difficulty = this.turnDiff(this.actTurn);
     this.activeReqAI = {
       type: "find-move",
       reqId: ++this.requestId,
-      board: [...this.board],
-      remaining: [...this.remaining],
+      board: [...this.brd],
+      remaining: [...this.rem],
       curPiece: this.pendingPiece,
       diff,
-      ...(isBoardEmpty(this.board)
+      ...(isBoardEmpty(this.brd)
         ? {
-            startCell: selectStartCell(this.board, diff, this.random),
+            startCell: selectStartCell(this.brd, diff, this.rnd),
           }
         : {}),
     };
@@ -338,13 +334,13 @@ class GameController {
     if (this.isReview || this.isPauseAI || this.activeReqAI === null) return;
     this.workerTerminate();
     try {
-      this.worker = new Worker(new URL("../ai/ai.worker.ts", import.meta.url), {
+      this.wkr = new Worker(new URL("../ai/ai.worker.ts", import.meta.url), {
         type: "module",
       });
-      this.worker.addEventListener("message", this.onWorkerMsg);
-      this.worker.addEventListener("error", this.onWorkerErr);
-      this.worker.addEventListener("messageerror", this.onWorkerErr);
-      this.worker.postMessage(this.activeReqAI);
+      this.wkr.addEventListener("message", this.onWorkerMsg);
+      this.wkr.addEventListener("error", this.onWorkerErr);
+      this.wkr.addEventListener("messageerror", this.onWorkerErr);
+      this.wkr.postMessage(this.activeReqAI);
     } catch {
       this.onWorkerErr();
     }
@@ -358,20 +354,16 @@ class GameController {
   };
 
   private workerTerminate(): void {
-    if (this.worker === null) return;
-    this.worker.removeEventListener("message", this.onWorkerMsg);
-    this.worker.removeEventListener("error", this.onWorkerErr);
-    this.worker.removeEventListener("messageerror", this.onWorkerErr);
-    this.worker.terminate();
-    this.worker = null;
+    if (this.wkr === null) return;
+    this.wkr.removeEventListener("message", this.onWorkerMsg);
+    this.wkr.removeEventListener("error", this.onWorkerErr);
+    this.wkr.removeEventListener("messageerror", this.onWorkerErr);
+    this.wkr.terminate();
+    this.wkr = null;
   }
 
   private readonly togglePauseAI: () => void = (): void => {
-    if (
-      this.isReview ||
-      this.phase !== "thinking" ||
-      this.getTurnPlayer(this.activeTurn) !== "ai"
-    ) {
+    if (this.isReview || this.phase !== "thinking" || this.getTurnPlayer(this.actTurn) !== "ai") {
       return;
     }
 
@@ -407,29 +399,29 @@ class GameController {
 
   private readonly undo: () => void = (): void => {
     if (!this.isHistNav() || this.histIdx <= 0) return;
-    const target: number = getUndoTarget(
+    const tgt: number = getUndoTarget(
       this.histEvents,
       this.histIdx,
       this.isReview,
       (action: HistEvent): boolean => this.getTurnPlayer(action.curPlayer) === "ai",
     );
-    this.restoreHist(target);
+    this.restoreHist(tgt);
   };
 
   private readonly redo: () => void = (): void => {
     if (!this.isHistNav() || this.histIdx >= this.histEvents.length) return;
-    const target: number = getRedoTarget(
+    const tgt: number = getRedoTarget(
       this.histEvents,
       this.histIdx,
       this.isReview,
       (action: HistEvent): boolean => this.getTurnPlayer(action.curPlayer) === "ai",
     );
-    this.restoreHist(target);
+    this.restoreHist(tgt);
   };
 
-  private readonly onWorkerMsg = (event: MessageEvent<unknown>): void => {
-    if (event.currentTarget !== this.worker) return;
-    const res: unknown = event.data;
+  private readonly onWorkerMsg = (evt: MessageEvent<unknown>): void => {
+    if (evt.currentTarget !== this.wkr) return;
+    const res: unknown = evt.data;
     if (!isResponseAI(res)) {
       this.onWorkerErr();
       return;
@@ -483,25 +475,23 @@ class GameController {
       return;
     }
 
-    if (!this.isValidCell(cell)) {
+    if (!isValidCell(this.brd, cell)) {
       this.recoverFB();
       return;
     }
 
-    const selectedPiece =
-      nxtPiece !== null && this.remaining.includes(nxtPiece)
-        ? nxtPiece
-        : (this.remaining[0] ?? null);
-    this.placePiece(cell, selectedPiece);
+    const selPc =
+      nxtPiece !== null && this.rem.includes(nxtPiece) ? nxtPiece : (this.rem[0] ?? null);
+    this.placePiece(cell, selPc);
     if (this.phase === "finished") return;
-    this.timerSetAI(520, (): void => this.turnSelectAI(selectedPiece, moveRequestId));
+    this.timerSetAI(520, (): void => this.turnSelectAI(selPc, moveRequestId));
   }
 
   private placePiece(cell: number, nxtPiece: PieceId | null): void {
-    const curPlayer = this.activeTurn;
+    const curPlayer = this.actTurn;
     const turnId = this.turnId;
     const isAI = this.getTurnPlayer(curPlayer) === "ai";
-    this.board[cell] = this.pendingPiece;
+    this.brd[cell] = this.pendingPiece;
     this.pendingPiece = null;
     this.stepAI = isAI ? "select" : null;
     this.nxtPieceAI = isAI ? nxtPiece : null;
@@ -512,10 +502,6 @@ class GameController {
     this.saveGameState(curPlayer, turnId, "place");
   }
 
-  private isValidCell(cell: number): boolean {
-    return isValidCell(this.board, cell);
-  }
-
   private recoverFB(): void {
     if (this.pendingPiece === null) return;
 
@@ -524,23 +510,23 @@ class GameController {
       return;
     }
 
-    const cell: number = isBoardEmpty(this.board)
-      ? selectStartCell(this.board, this.turnDiff(this.activeTurn), this.random)
-      : this.board.indexOf(null);
+    const cell: number = isBoardEmpty(this.brd)
+      ? selectStartCell(this.brd, this.turnDiff(this.actTurn), this.rnd)
+      : this.brd.indexOf(null);
 
     if (cell < 0) {
       this.gameFinn("draw");
       return;
     }
-    this.applyMoveAI(cell, this.remaining[0] ?? null, this.requestId);
+    this.applyMoveAI(cell, this.rem[0] ?? null, this.requestId);
   }
 
   private isGameFinn(curTurn: Turn): boolean {
-    if (getWinLine(this.board) !== null) {
+    if (getWinLine(this.brd) !== null) {
       this.gameFinn(curTurn);
       return true;
     }
-    if (isBoardFull(this.board)) {
+    if (isBoardFull(this.brd)) {
       this.gameFinn("draw");
       return true;
     }
@@ -570,13 +556,13 @@ class GameController {
 
   private captureGameState(copy = true): GameState {
     return {
-      activeTurn: this.activeTurn,
+      activeTurn: this.actTurn,
       nxtPieceAI: this.nxtPieceAI,
       stepAI: this.stepAI,
-      board: copy ? [...this.board] : this.board,
+      board: copy ? [...this.brd] : this.brd,
       pendingPiece: this.pendingPiece,
       phase: this.phase,
-      remaining: copy ? [...this.remaining] : this.remaining,
+      remaining: copy ? [...this.rem] : this.rem,
       turnId: this.turnId,
       winner: this.winner,
     };
@@ -595,25 +581,25 @@ class GameController {
     this.renderRisk();
   }
 
-  private restoreHist(target: number): void {
-    const snapshot: GameState | undefined = this.histStates[target];
+  private restoreHist(tgt: number): void {
+    const snapshot: GameState | undefined = this.histStates[tgt];
     if (snapshot === undefined) return;
 
     this.cancelAI();
 
-    this.board = [...snapshot.board];
-    this.remaining = [...snapshot.remaining];
+    this.brd = [...snapshot.board];
+    this.rem = [...snapshot.remaining];
     this.pendingPiece = snapshot.pendingPiece;
     this.phase = snapshot.phase;
-    this.activeTurn = snapshot.activeTurn;
+    this.actTurn = snapshot.activeTurn;
     this.winner = snapshot.winner;
     this.turnId = snapshot.turnId;
     this.stepAI = snapshot.stepAI;
     this.nxtPieceAI = snapshot.nxtPieceAI;
-    this.histIdx = target;
+    this.histIdx = tgt;
 
     const isAIState: boolean =
-      !this.isReview && this.phase === "thinking" && this.getTurnPlayer(this.activeTurn) === "ai";
+      !this.isReview && this.phase === "thinking" && this.getTurnPlayer(this.actTurn) === "ai";
     this.isPauseAI = isAIState;
     this.updateUI();
 
@@ -629,14 +615,14 @@ class GameController {
       this.hasStarted &&
       (this.isReview ||
         this.phase !== "thinking" ||
-        this.getTurnPlayer(this.activeTurn) !== "ai" ||
+        this.getTurnPlayer(this.actTurn) !== "ai" ||
         this.isPauseAI)
     );
   }
 
   private readonly toggleRisk: () => void = (): void => {
     this.isRiskEnabled = !this.isRiskEnabled;
-    if (!this.isRiskEnabled) this.hoveredPiece = null;
+    if (!this.isRiskEnabled) this.hoverPc = null;
     this.renderRisk();
   };
 
@@ -647,37 +633,37 @@ class GameController {
       isReview: this.isReview,
       isPauseAI: this.isPauseAI,
       isRiskEnabled: this.isRiskEnabled,
-      hoveredPiece: this.hoveredPiece,
+      hoveredPiece: this.hoverPc,
       histIdx: this.histIdx,
       histLength: this.histEvents.length,
       canNavigate: this.isHistNav(),
       gameMode: this.gameMode(),
       diffByTurn: { player1: this.turnDiff("player1"), player2: this.turnDiff("player2") },
-      theme: this.scene.getTheme(),
+      theme: this.scn.getTheme(),
     };
   }
 
   private updateUI(): void {
     this.syncScene();
-    this.view.updateUI(this.captureViewState());
+    this.vw.updateUI(this.captureViewState());
   }
 
   private updateHistControl(): void {
-    this.view.updateHistControl(this.captureViewState());
+    this.vw.updateHistControl(this.captureViewState());
   }
 
   private renderRisk(): void {
-    this.view.renderRisk(this.captureViewState());
+    this.vw.renderRisk(this.captureViewState());
   }
 
   private renderPendingPiece(): void {
-    this.view.renderPendingPiece(this.captureViewState());
+    this.vw.renderPendingPiece(this.captureViewState());
   }
 
   private syncScene(): void {
-    this.scene.setState({
-      board: this.board,
-      remaining: this.remaining,
+    this.scn.setState({
+      board: this.brd,
+      remaining: this.rem,
       pendingPiece: this.pendingPiece,
       phase: this.phase,
     });
@@ -692,37 +678,31 @@ class GameController {
   }
 
   private gameMode(): GameMode {
-    const val = this.elements.gameMode.value;
+    const val = this.els.gameMode.value;
     return isGameMode(val) ? val : "human-ai";
   }
 
   private turnDiff(turn: Turn): Difficulty {
     if (this.gameMode() !== "ai-ai") {
-      const val = this.elements.diffAI.value;
+      const val = this.els.diffAI.value;
       return isDifficulty(val) ? val : "medium";
     }
     const val =
-      turn === "player1"
-        ? this.elements.diffPlayerOneAI.value
-        : this.elements.diffPlayerTwoAI.value;
+      turn === "player1" ? this.els.diffPlayerOneAI.value : this.els.diffPlayerTwoAI.value;
     return isDifficulty(val) ? val : "hard";
   }
 
   private getRandomStarter(starter: Starter): Turn {
     if (starter !== "random") return starter;
-    return this.random() < 0.5 ? "player1" : "player2";
+    return this.rnd() < 0.5 ? "player1" : "player2";
   }
 
-  private toggleTurn(turn: Turn): Turn {
-    return toggleTurn(turn);
-  }
-
-  private timerSetAI(delayMS: number, callback: () => void): void {
+  private timerSetAI(delayMS: number, cb: () => void): void {
     this.timerClearAI();
     const timer = new TimerAI(delayMS, (): void => {
       if (this.timerAI !== timer) return;
       this.timerAI = null;
-      callback();
+      cb();
     });
     this.timerAI = timer;
     this.timerResumeAI();

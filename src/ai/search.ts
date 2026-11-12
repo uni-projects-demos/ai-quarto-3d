@@ -48,43 +48,46 @@ export interface SearchOptions {
   onProgress?: (depth: number, nodes: number) => void;
 }
 
-function remainingPiecesMask(remainingPieces: readonly PieceId[]): number {
+function remainingPiecesMask(remPcs: readonly PieceId[]): number {
   let mask: number = 0;
-  for (const piece of remainingPieces) {
-    mask |= 1 << piece;
+  for (const pc of remPcs) {
+    mask |= 1 << pc;
   }
   return mask;
 }
 
 function getStateKey(
-  board: readonly Cell[],
+  brd: readonly Cell[],
   curPiece: PieceId,
-  remainingPieces: readonly PieceId[],
+  remPcs: readonly PieceId[],
   depth: number,
 ): string {
   let boardKey: string = "";
-  for (const cell of board) {
+  for (const cell of brd) {
     boardKey += cell === null ? "_" : cell.toString(CELL_COUNT);
   }
-  return `${boardKey}:${curPiece.toString(CELL_COUNT)}:${remainingPiecesMask(remainingPieces).toString(CELL_COUNT)}:${depth}`;
+  return (
+    `${boardKey}:${curPiece.toString(CELL_COUNT)}:` +
+    `${remainingPiecesMask(remPcs).toString(CELL_COUNT)}:${depth}`
+  );
 }
 
-function assertNode(context: SearchContext): void {
-  context.nodes += 1;
-  if (context.nodes > context.maxNodes) {
+function assertNode(ctx: SearchContext): void {
+  ctx.nodes += 1;
+  if (ctx.nodes > ctx.maxNodes) {
     throw new SearchLimitErr();
   }
 }
 
-function orderCells(board: readonly Cell[], piece: PieceId): number[] {
-  return getEmptyCells(board)
+function orderCells(brd: readonly Cell[], pc: PieceId): number[] {
+  return getEmptyCells(brd)
     .map((cell: number): OrderedCell => {
-      const isWin: boolean = isWinCellPlacement(board, cell, piece);
+      const isWin: boolean = isWinCellPlacement(brd, cell, pc);
 
       return {
         cell,
         isWin,
-        score: isWin ? 0 : cellPlacementScore(board, cell, piece),
+        score: isWin ? 0 : cellPlacementScore(brd, cell, pc),
       };
     })
     .sort(
@@ -94,41 +97,41 @@ function orderCells(board: readonly Cell[], piece: PieceId): number[] {
     .map(({ cell }: OrderedCell): number => cell);
 }
 
-function orderPieces(board: readonly Cell[], remainingPieces: readonly PieceId[]): PieceId[] {
-  return remainingPieces
+function orderPieces(brd: readonly Cell[], remPcs: readonly PieceId[]): PieceId[] {
+  return remPcs
     .map(
-      (piece: PieceId): OrderedPiece => ({
-        piece,
-        danger: sumWinCells(board, piece),
+      (pc: PieceId): OrderedPiece => ({
+        piece: pc,
+        danger: sumWinCells(brd, pc),
       }),
     )
     .sort((a: OrderedPiece, b: OrderedPiece): number => a.danger - b.danger || a.piece - b.piece)
-    .map(({ piece }: OrderedPiece): PieceId => piece);
+    .map(({ piece: pc }: OrderedPiece): PieceId => pc);
 }
 
-function removePiece(remainingPieces: readonly PieceId[], selected: PieceId): PieceId[] {
-  return remainingPieces.filter((piece: PieceId): boolean => piece !== selected);
+function removePiece(remPcs: readonly PieceId[], sel: PieceId): PieceId[] {
+  return remPcs.filter((pc: PieceId): boolean => pc !== sel);
 }
 
-function evalTurn(board: readonly Cell[], curPiece: PieceId): number {
-  const cells: number[] = getEmptyCells(board);
-  let winCellPlacements: number = 0;
+function evalTurn(brd: readonly Cell[], curPiece: PieceId): number {
+  const cells: number[] = getEmptyCells(brd);
+  let winCellPlaces: number = 0;
 
   for (const cell of cells) {
-    if (isWinCellPlacement(board, cell, curPiece)) {
-      winCellPlacements += 1;
+    if (isWinCellPlacement(brd, cell, curPiece)) {
+      winCellPlaces += 1;
     }
   }
 
-  if (winCellPlacements > 0) {
-    return 5_000 + winCellPlacements * 200;
+  if (winCellPlaces > 0) {
+    return 5_000 + winCellPlaces * 200;
   }
 
   let bestScore: number = 0;
   let sumScore: number = 0;
 
   for (const cell of cells) {
-    const score: number = cellPlacementScore(board, cell, curPiece);
+    const score: number = cellPlacementScore(brd, cell, curPiece);
     bestScore = Math.max(bestScore, score);
     sumScore += score;
   }
@@ -136,54 +139,54 @@ function evalTurn(board: readonly Cell[], curPiece: PieceId): number {
 }
 
 function negamax(
-  board: Cell[],
+  brd: Cell[],
   curPiece: PieceId,
-  remainingPieces: readonly PieceId[],
+  remPcs: readonly PieceId[],
   depth: number,
   initialAlpha: number,
   beta: number,
   ply: number,
-  context: SearchContext,
+  ctx: SearchContext,
 ): number {
-  assertNode(context);
+  assertNode(ctx);
 
   if (depth <= 0) {
-    return evalTurn(board, curPiece);
+    return evalTurn(brd, curPiece);
   }
 
-  const stateKey: string = getStateKey(board, curPiece, remainingPieces, depth);
-  const cached: number | undefined = context.transposition.get(stateKey);
-  if (cached !== undefined) return cached;
+  const stateKey: string = getStateKey(brd, curPiece, remPcs, depth);
+  const cache: number | undefined = ctx.transposition.get(stateKey);
+  if (cache !== undefined) return cache;
 
   let alpha: number = initialAlpha;
   let best: number = -Infinity;
   let isCutoff: boolean = false;
 
-  for (const cell of orderCells(board, curPiece)) {
-    const wins: boolean = isWinCellPlacement(board, cell, curPiece);
-    board[cell] = curPiece;
+  for (const cell of orderCells(brd, curPiece)) {
+    const wins: boolean = isWinCellPlacement(brd, cell, curPiece);
+    brd[cell] = curPiece;
 
     if (wins) {
-      board[cell] = null;
+      brd[cell] = null;
       return MATE_SCORE - ply;
     }
 
-    if (isBoardFull(board)) {
+    if (isBoardFull(brd)) {
       best = Math.max(best, 0);
-      board[cell] = null;
+      brd[cell] = null;
       continue;
     }
 
-    for (const nxtPiece of orderPieces(board, remainingPieces)) {
+    for (const nxtPiece of orderPieces(brd, remPcs)) {
       const score: number = -negamax(
-        board,
+        brd,
         nxtPiece,
-        removePiece(remainingPieces, nxtPiece),
+        removePiece(remPcs, nxtPiece),
         depth - 1,
         -beta,
         -alpha,
         ply + 1,
-        context,
+        ctx,
       );
 
       best = Math.max(best, score);
@@ -195,46 +198,46 @@ function negamax(
       }
     }
 
-    board[cell] = null;
+    brd[cell] = null;
     if (isCutoff) break;
   }
 
   const res: number = Number.isFinite(best) ? best : 0;
   if (!isCutoff) {
-    context.transposition.set(stateKey, res);
+    ctx.transposition.set(stateKey, res);
   }
   return res;
 }
 
-function isCellAvailable(board: readonly Cell[], startCell: number): boolean {
-  if (startCell < 0 || startCell >= board.length || board[startCell] !== null) {
+function isCellAvailable(brd: readonly Cell[], startCell: number): boolean {
+  if (startCell < 0 || startCell >= brd.length || brd[startCell] !== null) {
     throw new Error(`Starting cell ${startCell} is not available.`);
   }
   return true;
 }
 
-function rootCells(board: readonly Cell[], curPiece: PieceId, startCell?: number): number[] {
+function rootCells(brd: readonly Cell[], curPiece: PieceId, startCell?: number): number[] {
   if (startCell === undefined) {
-    return orderCells(board, curPiece);
+    return orderCells(brd, curPiece);
   }
-  isCellAvailable(board, startCell);
+  isCellAvailable(brd, startCell);
   return [startCell];
 }
 
 function searchAtDepth(
   boardInput: readonly Cell[],
-  remainingPieces: readonly PieceId[],
+  remPcs: readonly PieceId[],
   curPiece: PieceId,
   depth: number,
-  context: SearchContext,
+  ctx: SearchContext,
   startCell?: number,
 ): ScoredMove {
-  const board: Cell[] = [...boardInput];
+  const brd: Cell[] = [...boardInput];
   let best: ScoredMove | null = null;
   let alpha: number = -Infinity;
 
-  for (const cell of rootCells(board, curPiece, startCell)) {
-    if (isWinCellPlacement(board, cell, curPiece)) {
+  for (const cell of rootCells(brd, curPiece, startCell)) {
+    if (isWinCellPlacement(brd, cell, curPiece)) {
       return {
         cell,
         nxtPiece: null,
@@ -242,34 +245,34 @@ function searchAtDepth(
       };
     }
 
-    board[cell] = curPiece;
+    brd[cell] = curPiece;
 
-    if (isBoardFull(board)) {
-      const candidate: ScoredMove = {
+    if (isBoardFull(brd)) {
+      const cand: ScoredMove = {
         cell,
         nxtPiece: null,
         score: 0,
       };
 
-      if (best === null || candidate.score > best.score) {
-        best = candidate;
+      if (best === null || cand.score > best.score) {
+        best = cand;
       }
-      board[cell] = null;
+      brd[cell] = null;
       continue;
     }
 
-    for (const nxtPiece of orderPieces(board, remainingPieces)) {
-      assertNode(context);
+    for (const nxtPiece of orderPieces(brd, remPcs)) {
+      assertNode(ctx);
 
       const score: number = -negamax(
-        board,
+        brd,
         nxtPiece,
-        removePiece(remainingPieces, nxtPiece),
+        removePiece(remPcs, nxtPiece),
         depth - 1,
         -Infinity,
         -alpha,
         1,
-        context,
+        ctx,
       );
 
       if (best === null || score > best.score) {
@@ -277,7 +280,7 @@ function searchAtDepth(
       }
       alpha = Math.max(alpha, score);
     }
-    board[cell] = null;
+    brd[cell] = null;
   }
 
   if (best === null) {
@@ -287,57 +290,57 @@ function searchAtDepth(
 }
 
 function easyMove(
-  board: readonly Cell[],
-  remainingPieces: readonly PieceId[],
+  brd: readonly Cell[],
+  remPcs: readonly PieceId[],
   curPiece: PieceId,
   startCell?: number,
 ): MoveAI {
-  const legal: number[] = getEmptyCells(board);
-  const firstCell: number | undefined = legal[0];
+  const legal: number[] = getEmptyCells(brd);
+  const fstCell: number | undefined = legal[0];
 
-  if (firstCell === undefined) {
+  if (fstCell === undefined) {
     throw new Error("No valid (AI) move exists.");
   }
 
   let cell: number;
-  if (startCell !== undefined && isCellAvailable(board, startCell)) {
+  if (startCell !== undefined && isCellAvailable(brd, startCell)) {
     cell = startCell;
   } else {
-    const winningCell: number | undefined = legal.find((candidate: number): boolean =>
-      isWinCellPlacement(board, candidate, curPiece),
+    const winCell: number | undefined = legal.find((cand: number): boolean =>
+      isWinCellPlacement(brd, cand, curPiece),
     );
 
-    cell = winningCell ?? firstCell;
-    if (winningCell === undefined) {
-      let lowestScore: number = cellPlacementScore(board, cell, curPiece);
+    cell = winCell ?? fstCell;
+    if (winCell === undefined) {
+      let lowestScore: number = cellPlacementScore(brd, cell, curPiece);
 
-      for (const candidate of legal.slice(1)) {
-        const score: number = cellPlacementScore(board, candidate, curPiece);
+      for (const cand of legal.slice(1)) {
+        const score: number = cellPlacementScore(brd, cand, curPiece);
 
         if (score < lowestScore) {
-          cell = candidate;
+          cell = cand;
           lowestScore = score;
         }
       }
     }
   }
 
-  const boardAfter: Cell[] = [...board];
+  const boardAfter: Cell[] = [...brd];
   boardAfter[cell] = curPiece;
 
   let nxtPiece: PieceId | null = null;
 
-  if (!isBoardFull(boardAfter) && remainingPieces.length > 0) {
+  if (!isBoardFull(boardAfter) && remPcs.length > 0) {
     let highestDanger: number = -1;
 
-    for (const candidate of remainingPieces) {
-      const danger: number = sumWinCells(boardAfter, candidate);
+    for (const cand of remPcs) {
+      const danger: number = sumWinCells(boardAfter, cand);
 
       if (
         danger > highestDanger ||
-        (danger === highestDanger && (nxtPiece === null || candidate < nxtPiece))
+        (danger === highestDanger && (nxtPiece === null || cand < nxtPiece))
       ) {
-        nxtPiece = candidate;
+        nxtPiece = cand;
         highestDanger = danger;
       }
     }
@@ -353,44 +356,44 @@ function easyMove(
   };
 }
 
-function profile(difficulty: Difficulty, remainingPiecesCount: number): SearchProfile {
-  if (difficulty === "easy") {
+function profile(diff: Difficulty, remPcCnt: number): SearchProfile {
+  if (diff === "easy") {
     return { maxNodes: 241, maxDepth: 1 };
   }
 
-  if (difficulty === "medium") {
-    return { maxNodes: 100_000, maxDepth: remainingPiecesCount > 11 ? 3 : 2 };
+  if (diff === "medium") {
+    return { maxNodes: 100_000, maxDepth: remPcCnt > 11 ? 3 : 2 };
   }
 
   // hard difficulty
-  if (remainingPiecesCount > 13) {
+  if (remPcCnt > 13) {
     return { maxNodes: 1_000_000, maxDepth: 2 };
   }
-  if (remainingPiecesCount > 10) {
+  if (remPcCnt > 10) {
     return { maxNodes: 1_000_000, maxDepth: 4 };
   }
-  if (remainingPiecesCount > 4) {
+  if (remPcCnt > 4) {
     return { maxNodes: 1_000_000, maxDepth: 5 };
   }
-  return { maxNodes: 1_000_000, maxDepth: remainingPiecesCount };
+  return { maxNodes: 1_000_000, maxDepth: remPcCnt };
 }
 
 export function findMoveAI(
-  board: readonly Cell[],
-  remainingPieces: readonly PieceId[],
+  brd: readonly Cell[],
+  remPcs: readonly PieceId[],
   curPiece: PieceId,
-  difficulty: Difficulty,
-  options: SearchOptions = {},
+  diff: Difficulty,
+  opts: SearchOptions = {},
 ): MoveAI {
-  if (difficulty === "easy" && remainingPieces.length < 13) {
-    return easyMove(board, remainingPieces, curPiece, options.startCell);
+  if (diff === "easy" && remPcs.length < 13) {
+    return easyMove(brd, remPcs, curPiece, opts.startCell);
   }
-  if (difficulty === "medium" && remainingPieces.length < 4) {
-    return easyMove(board, remainingPieces, curPiece, options.startCell);
+  if (diff === "medium" && remPcs.length < 4) {
+    return easyMove(brd, remPcs, curPiece, opts.startCell);
   }
 
-  const { maxNodes, maxDepth } = profile(difficulty, remainingPieces.length);
-  const context: SearchContext = {
+  const { maxNodes, maxDepth } = profile(diff, remPcs.length);
+  const ctx: SearchContext = {
     maxNodes,
     nodes: 0,
     transposition: new Map(),
@@ -401,37 +404,30 @@ export function findMoveAI(
 
   for (let depth: number = 1; depth <= maxDepth; depth += 1) {
     try {
-      completed = searchAtDepth(
-        board,
-        remainingPieces,
-        curPiece,
-        depth,
-        context,
-        options.startCell,
-      );
+      completed = searchAtDepth(brd, remPcs, curPiece, depth, ctx, opts.startCell);
 
       completedDepth = depth;
-      options.onProgress?.(depth, context.nodes);
+      opts.onProgress?.(depth, ctx.nodes);
 
       if (completed.score >= MATE_SCORE - CELL_COUNT) {
         break;
       }
-    } catch (error: unknown) {
-      if (error instanceof SearchLimitErr) break;
-      throw error;
+    } catch (err: unknown) {
+      if (err instanceof SearchLimitErr) break;
+      throw err;
     }
   }
 
   if (completed === null) {
     return {
-      ...easyMove(board, remainingPieces, curPiece, options.startCell),
-      nodes: context.nodes,
+      ...easyMove(brd, remPcs, curPiece, opts.startCell),
+      nodes: ctx.nodes,
     };
   }
   return {
     ...completed,
     depth: completedDepth,
-    nodes: context.nodes,
+    nodes: ctx.nodes,
     strategy: "search",
   };
 }

@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Main dengan {{theme}}",
     "loadError": "Tema tidak tersedia.",
+    "loading": "Memuatkan tema...",
     "empty": "Tiada tema tersedia."
   }
 }

@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Joca cu {{theme}}",
     "loadError": "Lu tema nun è dispunìbbili.",
+    "loading": "Carricannu li temi...",
     "empty": "Nun ci sunnu temi dispunìbbili."
   }
 }

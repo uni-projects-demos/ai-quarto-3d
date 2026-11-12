@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Dolanan nganggo {{theme}}",
     "loadError": "Tema ora kasedhiya.",
+    "loading": "Ngemot tema...",
     "empty": "Ora ana tema sing kasedhiya."
   }
 }

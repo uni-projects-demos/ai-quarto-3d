@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Ghjucà cù {{theme}}",
     "loadError": "U tema ùn hè dispunibule.",
+    "loading": "Caricamentu di i temi...",
     "empty": "Ùn ci sò temi dispunibuli."
   }
 }

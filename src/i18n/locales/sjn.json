@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Gêm na {{theme}}",
     "loadError": "Nauth ú-hirnen.",
+    "loading": "Nauth…",
     "empty": "Ú nauth hirnen."
   }
 }

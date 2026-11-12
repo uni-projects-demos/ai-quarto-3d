@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Taʻalo ma le {{theme}}",
     "loadError": "E lē maua le autu.",
+    "loading": "O lo’o utaina autū...",
     "empty": "E leai ni autu e maua."
   }
 }

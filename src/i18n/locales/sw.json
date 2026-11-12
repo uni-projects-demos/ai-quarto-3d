@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Cheza kwa mandhari {{theme}}",
     "loadError": "Mandhari hayapatikani.",
+    "loading": "Inapakia mandhari...",
     "empty": "Hakuna mandhari yanayopatikana."
   }
 }

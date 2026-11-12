@@ -25,8 +25,8 @@ function isBoard(val: unknown): val is Cell[] {
 
 function isRemaining(val: unknown): val is PieceId[] {
   if (!Array.isArray(val)) return false;
-  const pieces: readonly unknown[] = val;
-  for (const piece of pieces) if (!isPieceId(piece)) return false;
+  const pcs: readonly unknown[] = val;
+  for (const pc of pcs) if (!isPieceId(pc)) return false;
   return true;
 }
 
@@ -42,13 +42,13 @@ export function isRequestAI(val: unknown): val is RequestAI {
   )
     return false;
 
-  const board = val.board;
-  const pieces = [...board.filter((cell) => cell !== null), ...val.remaining, val.curPiece];
+  const brd = val.board;
+  const pcs = [...brd.filter((cell) => cell !== null), ...val.remaining, val.curPiece];
   return (
-    pieces.length === CELL_COUNT &&
-    new Set(pieces).size === CELL_COUNT &&
+    pcs.length === CELL_COUNT &&
+    new Set(pcs).size === CELL_COUNT &&
     (val.startCell === undefined ||
-      (typeof val.startCell === "number" && isValidCell(board, val.startCell)))
+      (typeof val.startCell === "number" && isValidCell(brd, val.startCell)))
   );
 }
 

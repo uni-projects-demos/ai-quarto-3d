@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Play wi {{theme}}",
     "loadError": "Theme no available.",
+    "loading": "Loadin themes...",
     "empty": "Nae themes available."
   }
 }

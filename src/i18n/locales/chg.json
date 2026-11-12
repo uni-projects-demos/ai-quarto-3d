@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "{{theme}} mavzusida o‘ynash",
     "loadError": "Mavzu mavjud emas.",
+    "loading": "Mavzu…",
     "empty": "Mavzular mavjud emas."
   }
 }

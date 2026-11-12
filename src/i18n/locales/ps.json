@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "په {{theme}} بڼه کې ولوبېږئ",
     "loadError": "بڼه نشته.",
+    "loading": "موضوعات پورته کېږي...",
     "empty": "هیڅ بڼه نشته."
   }
 }

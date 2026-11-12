@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Tlanga hi {{theme}}",
     "loadError": "Nhlokomhaka a yi kumeki.",
+    "loading": "Ku layicha tinhlokomhaka...",
     "empty": "A ku na tinhlokomhaka leti kumekaka."
   }
 }

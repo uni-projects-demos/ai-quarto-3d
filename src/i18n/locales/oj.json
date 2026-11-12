@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Odamin {{theme}}",
     "loadError": "Gaawiin izhiwebiziwin ayaasii.",
+    "loading": "Izhiwebiziwin…",
     "empty": "Gaawiin izhiwebiziwinan ayaasiinoon."
   }
 }

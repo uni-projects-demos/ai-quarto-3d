@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "{{theme}} waliin taphadhu",
     "loadError": "Mata dureen hin jiru.",
+    "loading": "Mata dureewwan fe’amaa jiru...",
     "empty": "Mata dureewwan hin jiran."
   }
 }

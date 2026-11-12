@@ -12,6 +12,6 @@ export function readThemePref(): ThemeId {
   return readStoredTheme() ?? DEFAULT_THEME;
 }
 
-export function saveThemePref(theme: ThemeId): void {
-  saveStorage(THEME_STORAGE_KEY, theme);
+export function saveThemePref(thm: ThemeId): void {
+  saveStorage(THEME_STORAGE_KEY, thm);
 }

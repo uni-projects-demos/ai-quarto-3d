@@ -1,31 +1,31 @@
 export type Dispose = () => void;
 
 export class Cleanup {
-  private readonly callbacks: Dispose[] = [];
-  private readonly events = new AbortController();
+  private readonly cbs: Dispose[] = [];
+  private readonly evts = new AbortController();
   private isDispose = false;
 
   get signal(): AbortSignal {
-    return this.events.signal;
+    return this.evts.signal;
   }
 
-  add(callback: Dispose): void {
-    if (this.isDispose) callback();
-    else this.callbacks.push(callback);
+  add(cb: Dispose): void {
+    if (this.isDispose) cb();
+    else this.cbs.push(cb);
   }
 
   dispose(): void {
     if (this.isDispose) return;
     this.isDispose = true;
-    this.events.abort();
-    const errors: unknown[] = [];
-    for (const callback of this.callbacks.splice(0).reverse()) {
+    this.evts.abort();
+    const errs: unknown[] = [];
+    for (const cb of this.cbs.splice(0).reverse()) {
       try {
-        callback();
+        cb();
       } catch (err) {
-        errors.push(err);
+        errs.push(err);
       }
     }
-    if (errors.length > 0) throw new AggregateError(errors, "Could not release all resources");
+    if (errs.length > 0) throw new AggregateError(errs, "Could not release all resources");
   }
 }

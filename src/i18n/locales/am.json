@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "በ{{theme}} ይጫወቱ",
     "loadError": "ገጽታ አይገኝም።",
+    "loading": "ገጽታዎች በመጫን ላይ...",
     "empty": "የሚገኙ ገጽታዎች የሉም።"
   }
 }

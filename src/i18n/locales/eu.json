@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Jokatu {{theme}} gaiarekin",
     "loadError": "Gaia ez dago erabilgarri.",
+    "loading": "Gaiak kargatzen...",
     "empty": "Ez dago gai erabilgarririk."
   }
 }

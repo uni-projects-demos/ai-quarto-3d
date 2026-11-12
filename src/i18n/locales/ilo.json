@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Agay-ayam nga agusar ti {{theme}}",
     "loadError": "Awan ti tema.",
+    "loading": "Agkarkarga kadagiti tema...",
     "empty": "Awan dagiti tema."
   }
 }

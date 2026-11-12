@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Spēlēt ar tēmu {{theme}}",
     "loadError": "Tēma nav pieejama.",
+    "loading": "Ielādē motīvus...",
     "empty": "Nav pieejamu tēmu."
   }
 }

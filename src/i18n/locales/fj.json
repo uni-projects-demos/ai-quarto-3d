@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Qito ena {{theme}}",
     "loadError": "Sega ni tiko na ulutaga.",
+    "loading": "Vakavodoki tiko na veika e baleta na ulutaga...",
     "empty": "Sega ni tiko na ulutaga."
   }
 }

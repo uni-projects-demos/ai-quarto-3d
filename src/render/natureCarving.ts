@@ -2,44 +2,44 @@ import { CanvasTexture, RepeatWrapping } from "three";
 
 const FACE_WIDTH = 512;
 const HEIGHT = 1024;
-type Groove = (path: Path2D, width: number) => void;
+type Groove = (pth: Path2D, wdt: number) => void;
 
 export function createNatureCarvingTexture(variant: "forest" | "ocean" = "forest"): CanvasTexture {
-  const canvas = document.createElement("canvas");
-  canvas.width = FACE_WIDTH * 4;
-  canvas.height = HEIGHT;
-  const texture = new CanvasTexture(canvas);
-  texture.channel = 1;
-  texture.wrapS = RepeatWrapping;
-  texture.wrapT = RepeatWrapping;
-  const context = canvas.getContext("2d");
-  if (!context) return texture;
-  context.fillStyle = "#c7c7c7";
-  context.fillRect(0, 0, canvas.width, HEIGHT);
-  context.lineCap = "round";
-  context.lineJoin = "round";
+  const cvs = document.createElement("canvas");
+  cvs.width = FACE_WIDTH * 4;
+  cvs.height = HEIGHT;
+  const tex = new CanvasTexture(cvs);
+  tex.channel = 1;
+  tex.wrapS = RepeatWrapping;
+  tex.wrapT = RepeatWrapping;
+  const ctx = cvs.getContext("2d");
+  if (!ctx) return tex;
+  ctx.fillStyle = "#c7c7c7";
+  ctx.fillRect(0, 0, cvs.width, HEIGHT);
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
 
-  const groove = (path: Path2D, width: number): void => {
-    for (const [extra, colour] of [
+  const groove = (pth: Path2D, wdt: number): void => {
+    for (const [extra, col] of [
       [8, "#dddddd"],
       [2, "#969696"],
       [-4, "#767676"],
       [-10, "#565656"],
       [-16, "#363636"],
     ] as const) {
-      context.lineWidth = Math.max(3, width + extra);
-      context.strokeStyle = colour;
-      context.stroke(path);
+      ctx.lineWidth = Math.max(3, wdt + extra);
+      ctx.strokeStyle = col;
+      ctx.stroke(pth);
     }
   };
 
   if (variant === "ocean") {
-    drawCarving(context, canvas.width, groove);
+    drawCarving(ctx, cvs.width, groove);
   } else {
-    for (const offset of [-29, 0, 29]) {
+    for (const ofs of [-29, 0, 29]) {
       const ribbon = new Path2D();
-      for (let x = -FACE_WIDTH; x <= canvas.width + FACE_WIDTH; x += 8) {
-        const y = 454 + offset + 112 * Math.sin((x / FACE_WIDTH) * Math.PI * 2);
+      for (let x = -FACE_WIDTH; x <= cvs.width + FACE_WIDTH; x += 8) {
+        const y = 454 + ofs + 112 * Math.sin((x / FACE_WIDTH) * Math.PI * 2);
         if (x === -FACE_WIDTH) ribbon.moveTo(x, y);
         else ribbon.lineTo(x, y);
       }
@@ -53,9 +53,9 @@ export function createNatureCarvingTexture(variant: "forest" | "ocean" = "forest
       spiral.bezierCurveTo(start + 88, 355, start + 263, 209, start + 290, 275);
       for (let step = 0; step <= 100; step += 1) {
         const t = step / 100;
-        const angle = -Math.PI / 2 + t * Math.PI * 2.65;
-        const radius = 122 * (1 - t) ** 0.9 + 9;
-        spiral.lineTo(start + 290 + Math.cos(angle) * radius, 406 + Math.sin(angle) * radius);
+        const ang = -Math.PI / 2 + t * Math.PI * 2.65;
+        const rad = 122 * (1 - t) ** 0.9 + 9;
+        spiral.lineTo(start + 290 + Math.cos(ang) * rad, 406 + Math.sin(ang) * rad);
       }
       groove(spiral, 32);
 
@@ -66,8 +66,8 @@ export function createNatureCarvingTexture(variant: "forest" | "ocean" = "forest
         blade.moveTo(x, y);
         blade.bezierCurveTo(x + 15, y + 43, x + 91, y + 24, x + 110, y - 14);
         blade.bezierCurveTo(x + 71, y - 19, x + 29, y - 30, x, y);
-        context.fillStyle = "#707070";
-        context.fill(blade);
+        ctx.fillStyle = "#707070";
+        ctx.fill(blade);
         groove(blade, 22);
         const vein = new Path2D();
         vein.moveTo(x + 15, y);
@@ -88,25 +88,25 @@ export function createNatureCarvingTexture(variant: "forest" | "ocean" = "forest
   }
 
   for (let side = 0; side < 4; side += 1) {
-    drawKiwi(context, side * FACE_WIDTH + FACE_WIDTH / 2 - 20, 834, groove);
+    drawKiwi(ctx, side * FACE_WIDTH + FACE_WIDTH / 2 - 20, 834, groove);
   }
 
   for (const y of [118, 213, 660, 724, 965]) {
     const border = new Path2D();
     border.moveTo(-24, y);
-    border.lineTo(canvas.width + 24, y);
+    border.lineTo(cvs.width + 24, y);
     groove(border, 12);
   }
-  texture.needsUpdate = true;
-  return texture;
+  tex.needsUpdate = true;
+  return tex;
 }
 
-function drawCarving(context: CanvasRenderingContext2D, width: number, groove: Groove): void {
+function drawCarving(ctx: CanvasRenderingContext2D, wdt: number, groove: Groove): void {
   for (const centre of [276, 605]) {
-    for (const offset of [-19, 0, 19]) {
+    for (const ofs of [-19, 0, 19]) {
       const cur = new Path2D();
-      for (let x = -FACE_WIDTH; x <= width + FACE_WIDTH; x += 8) {
-        const y = centre + offset + 22 * Math.sin((x / FACE_WIDTH) * Math.PI * 2);
+      for (let x = -FACE_WIDTH; x <= wdt + FACE_WIDTH; x += 8) {
+        const y = centre + ofs + 22 * Math.sin((x / FACE_WIDTH) * Math.PI * 2);
         if (x === -FACE_WIDTH) cur.moveTo(x, y);
         else cur.lineTo(x, y);
       }
@@ -117,7 +117,7 @@ function drawCarving(context: CanvasRenderingContext2D, width: number, groove: G
   for (const centre of [166, 692]) {
     for (const dir of [-1, 1]) {
       const weave = new Path2D();
-      for (let x = -64; x <= width + 64; x += 4) {
+      for (let x = -64; x <= wdt + 64; x += 4) {
         const y = centre + dir * 15 * Math.sin((x / 64) * Math.PI * 2);
         if (x === -64) weave.moveTo(x, y);
         else weave.lineTo(x, y);
@@ -136,15 +136,15 @@ function drawCarving(context: CanvasRenderingContext2D, width: number, groove: G
     crest.quadraticCurveTo(start + 145, 252, start + 158, 266);
     groove(crest, 21);
 
-    context.save();
-    context.translate(start + FACE_WIDTH / 2, 429);
-    if (side % 2 === 1) context.scale(-1, 1);
-    drawWhale(context, groove);
-    context.restore();
+    ctx.save();
+    ctx.translate(start + FACE_WIDTH / 2, 429);
+    if (side % 2 === 1) ctx.scale(-1, 1);
+    drawWhale(ctx, groove);
+    ctx.restore();
   }
 }
 
-function drawWhale(context: CanvasRenderingContext2D, groove: Groove): void {
+function drawWhale(ctx: CanvasRenderingContext2D, groove: Groove): void {
   const whale = new Path2D();
   whale.moveTo(-118, -12);
   whale.bezierCurveTo(-86, -37, -43, -65, -13, -59);
@@ -159,16 +159,16 @@ function drawWhale(context: CanvasRenderingContext2D, groove: Groove): void {
   whale.bezierCurveTo(-161, -24, -176, -44, -170, -65);
   whale.bezierCurveTo(-144, -41, -126, -33, -118, -12);
   whale.closePath();
-  context.fillStyle = "#ababab";
-  context.fill(whale);
+  ctx.fillStyle = "#ababab";
+  ctx.fill(whale);
   groove(whale, 26);
 
   const flipper = new Path2D();
   flipper.moveTo(20, 26);
   flipper.bezierCurveTo(-1, 58, 0, 84, 31, 103);
   flipper.bezierCurveTo(52, 91, 55, 53, 47, 35);
-  context.fillStyle = "#b0b0b0";
-  context.fill(flipper);
+  ctx.fillStyle = "#b0b0b0";
+  ctx.fill(flipper);
   groove(flipper, 19);
 
   const jaw = new Path2D();
@@ -183,11 +183,11 @@ function drawWhale(context: CanvasRenderingContext2D, groove: Groove): void {
   }
   const eye = new Path2D();
   eye.arc(126, 3, 4, 0, Math.PI * 2);
-  context.fillStyle = "#414141";
-  context.fill(eye);
+  ctx.fillStyle = "#414141";
+  ctx.fill(eye);
 }
 
-function drawKiwi(context: CanvasRenderingContext2D, x: number, y: number, groove: Groove): void {
+function drawKiwi(ctx: CanvasRenderingContext2D, x: number, y: number, groove: Groove): void {
   const body = new Path2D();
   body.moveTo(x - 118, y + 5);
   body.bezierCurveTo(x - 138, y - 41, x - 105, y - 83, x - 59, y - 87);
@@ -197,8 +197,8 @@ function drawKiwi(context: CanvasRenderingContext2D, x: number, y: number, groov
   body.bezierCurveTo(x + 77, y - 5, x + 67, y + 16, x + 47, y + 32);
   body.bezierCurveTo(x + 17, y + 62, x - 94, y + 62, x - 118, y + 5);
   body.closePath();
-  context.fillStyle = "#858585";
-  context.fill(body);
+  ctx.fillStyle = "#858585";
+  ctx.fill(body);
   groove(body, 23);
 
   const bill = new Path2D();
@@ -233,8 +233,8 @@ function drawKiwi(context: CanvasRenderingContext2D, x: number, y: number, groov
   }
   const eye = new Path2D();
   eye.arc(x + 86, y - 36, 4, 0, Math.PI * 2);
-  context.fillStyle = "#414141";
-  context.fill(eye);
+  ctx.fillStyle = "#414141";
+  ctx.fill(eye);
 }
 
 export function squareCarvingU(x: number, z: number): number {

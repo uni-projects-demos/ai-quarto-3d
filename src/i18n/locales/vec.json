@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Zoga co {{theme}}",
     "loadError": "El tema no xe disponibile.",
+    "loading": "Drio cargar i temi...",
     "empty": "No ghe xe temi disponibili."
   }
 }

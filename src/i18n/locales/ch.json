@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Hugåndo yan {{theme}}",
     "loadError": "Ti guaha tema.",
+    "loading": "Tema…",
     "empty": "Ti guaha siha na tema."
   }
 }

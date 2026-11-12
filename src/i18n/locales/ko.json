@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "{{theme}} 테마로 플레이",
     "loadError": "테마를 사용할 수 없습니다.",
+    "loading": "테마 불러오는 중...",
     "empty": "사용할 수 있는 테마가 없습니다."
   }
 }

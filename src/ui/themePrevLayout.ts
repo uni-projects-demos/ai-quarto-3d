@@ -3,27 +3,43 @@ const LBL_HEIGHT = 50;
 const MIN_CARD_WIDTH = 128;
 
 export function themePrevLayout(
-  count: number,
-  width: number,
-  height: number,
+  cnt: number,
+  wdt: number,
+  hgt: number,
   imgAspect: number,
 ): { cols: number; cardWidth: number } {
-  if (count < 1 || width <= 0 || height <= 0) return { cols: 0, cardWidth: 0 };
-  const min = Math.min(MIN_CARD_WIDTH, width);
+  if (cnt < 1 || wdt <= 0 || hgt <= 0) return { cols: 0, cardWidth: 0 };
+  const min = Math.min(MIN_CARD_WIDTH, wdt);
   const maxCols = Math.min(
-    Math.ceil(Math.sqrt(count)),
-    Math.max(1, Math.floor((width + GAP) / (min + GAP))),
+    Math.ceil(Math.sqrt(cnt)),
+    Math.max(1, Math.floor((wdt + GAP) / (min + GAP))),
   );
   let best = { cols: 1, cardWidth: 0 };
   for (let cols = 1; cols <= maxCols; cols += 1) {
-    const rows = Math.ceil(count / cols);
-    const cardWidth = Math.min(
-      (width - (cols - 1) * GAP) / cols,
-      ((height - (rows - 1) * GAP) / rows - LBL_HEIGHT) * imgAspect,
+    const rows = Math.ceil(cnt / cols);
+    const cardWdt = Math.min(
+      (wdt - (cols - 1) * GAP) / cols,
+      ((hgt - (rows - 1) * GAP) / rows - LBL_HEIGHT) * imgAspect,
     );
-    if (cardWidth >= min && cardWidth > best.cardWidth) best = { cols, cardWidth };
+    if (cardWdt > best.cardWidth) best = { cols, cardWidth: cardWdt };
   }
   return best.cardWidth > 0
     ? best
-    : { cols: maxCols, cardWidth: (width - (maxCols - 1) * GAP) / maxCols };
+    : { cols: maxCols, cardWidth: (wdt - (maxCols - 1) * GAP) / maxCols };
+}
+
+export function fitThemePreviews(root: HTMLElement, cnt: number): void {
+  if (root.hidden) return;
+  const scr = root.parentElement ?? root;
+  const scnWdt = Math.max(1, scr.clientWidth);
+  const scnHgt = Math.max(1, scr.clientHeight);
+  const sty = getComputedStyle(root);
+  const wdt = scnWdt - Number.parseFloat(sty.paddingLeft) - Number.parseFloat(sty.paddingRight);
+  const hgt = scnHgt - Number.parseFloat(sty.paddingTop) - Number.parseFloat(sty.paddingBottom);
+  const lyt = themePrevLayout(cnt, wdt, hgt, scnWdt / scnHgt);
+  root.style.setProperty("--preview-card-width", `${lyt.cardWidth}px`);
+  root.style.setProperty("--preview-aspect", `${scnWdt} / ${scnHgt}`);
+  root.style.setProperty("--preview-scene-width", `${scnWdt}px`);
+  root.style.setProperty("--preview-scene-height", `${scnHgt}px`);
+  root.style.setProperty("--preview-scene-scale", `${(lyt.cardWidth - 2) / scnWdt}`);
 }

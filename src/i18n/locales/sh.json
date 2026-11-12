@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Igraj s temom {{theme}}",
     "loadError": "Tema nije dostupna.",
+    "loading": "Učitavanje tema...",
     "empty": "Nema dostupnih tema."
   }
 }

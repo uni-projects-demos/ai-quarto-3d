@@ -119,6 +119,7 @@
     "flogsta": "Flogsta",
     "playTheme": "Jwe ak {{theme}}",
     "loadError": "Tèm pa disponib.",
+    "loading": "Chajman tèm yo...",
     "empty": "Pa gen tèm disponib."
   }
 }

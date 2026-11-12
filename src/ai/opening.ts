@@ -7,22 +7,22 @@ const STARTING_CELLS = {
 } as const satisfies Record<Difficulty, readonly number[]>;
 
 export function getRandVal(seed: number = Date.now()): () => number {
-  let state: number = seed >>> 0;
+  let st: number = seed >>> 0;
 
   return (): number => {
-    state += 0x6d2b79f5;
-    let val: number = Math.imul(state ^ (state >>> 15), state | 1);
+    st += 0x6d2b79f5;
+    let val: number = Math.imul(st ^ (st >>> 15), st | 1);
     val ^= val + Math.imul(val ^ (val >>> 7), val | 61);
     return ((val ^ (val >>> 14)) >>> 0) / 4_294_967_296;
   };
 }
 
-function randSelectFrom<T>(arr: readonly T[], random: () => number): T {
+function randSelectFrom<T>(arr: readonly T[], rnd: () => number): T {
   if (arr.length === 0) {
     throw new Error("List is empty - cannot randomly select from.");
   }
 
-  const selectedT: T | undefined = arr[Math.floor(random() * arr.length)];
+  const selectedT: T | undefined = arr[Math.floor(rnd() * arr.length)];
   if (selectedT === undefined) {
     throw new Error("Random selection failed.");
   }
@@ -30,17 +30,17 @@ function randSelectFrom<T>(arr: readonly T[], random: () => number): T {
 }
 
 export function selectStartPiece(
-  remainingPieces: readonly PieceId[],
-  random: () => number = Math.random,
+  remPcs: readonly PieceId[],
+  rnd: () => number = Math.random,
 ): PieceId {
-  return randSelectFrom(remainingPieces, random);
+  return randSelectFrom(remPcs, rnd);
 }
 
 export function selectStartCell(
-  board: readonly Cell[],
-  difficulty: Difficulty,
-  random: () => number = Math.random,
+  brd: readonly Cell[],
+  diff: Difficulty,
+  rnd: () => number = Math.random,
 ): number {
-  const available = STARTING_CELLS[difficulty].filter((cell): boolean => board[cell] === null);
-  return randSelectFrom(available, random);
+  const available = STARTING_CELLS[diff].filter((cell): boolean => brd[cell] === null);
+  return randSelectFrom(available, rnd);
 }
