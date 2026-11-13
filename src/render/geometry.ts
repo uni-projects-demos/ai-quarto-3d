@@ -21,18 +21,18 @@ export function createHollowSquare(
   rounded = true,
   sty: "marble" | "victorian" = "marble",
 ): BufferGeometry {
-  const victorian = sty === "victorian";
-  const rad = victorian ? 0.018 : rounded ? 0.045 : 0.004;
-  const shape = squarePath(new Shape(), 0.37, rad);
+  const isVictorian: boolean = sty === "victorian";
+  const rad: 0.004 | 0.018 | 0.045 = isVictorian ? 0.018 : rounded ? 0.045 : 0.004;
+  const shape: Shape = squarePath(new Shape(), 0.37, rad);
   shape.holes.push(squarePath(new Path(), 0.205, 0.023));
   const lip = new ExtrudeGeometry(shape, { depth: 0.12, bevelEnabled: false, curveSegments: 8 });
   lip.rotateX(-Math.PI / 2);
   lip.translate(0, hgt / 2 - 0.12, 0);
-  const base = rounded
-    ? new RoundedBoxGeometry(0.74, hgt - 0.12, 0.74, victorian ? 3 : 4, rad)
+  const base: BufferGeometry = rounded
+    ? new RoundedBoxGeometry(0.74, hgt - 0.12, 0.74, isVictorian ? 3 : 4, rad)
     : new BoxGeometry(0.74, hgt - 0.12, 0.74).toNonIndexed();
   base.translate(0, -0.06, 0);
-  const merged = mergeGeometries([base, lip], false);
+  const merged: BufferGeometry = mergeGeometries([base, lip], false);
   base.dispose();
   lip.dispose();
   if (!merged) throw new Error("Could not create recessed square piece");

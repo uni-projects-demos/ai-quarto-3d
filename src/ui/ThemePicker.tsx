@@ -11,7 +11,7 @@ interface ThemePreviewStyle extends CSSProperties {
 }
 
 export function ThemePicker({
-  themes: thms = GAME_THEMES,
+  themes = GAME_THEMES,
 }: {
   themes?: readonly ThemeDef[];
 }): JSX.Element {
@@ -24,18 +24,18 @@ export function ThemePicker({
       aria-busy="true"
     >
       <ul className="theme-preview-list">
-        {themePrevOrder(thms).map((thm) => (
-          <li className="theme-preview-item" key={thm.id}>
+        {themePrevOrder(themes).map((theme: ThemeDef) => (
+          <li className="theme-preview-item" key={theme.id}>
             <button
               type="button"
               className="theme-preview-card"
-              data-theme-id={thm.id}
-              aria-label={translate("themes.playTheme", { theme: translate(thm.nameKey) })}
+              data-theme-id={theme.id}
+              aria-label={translate("themes.playTheme", { theme: translate(theme.nameKey) })}
               style={
                 {
-                  "--preview-accent": thm.accent,
-                  "--preview-ink": thm.panelInk,
-                  "--preview-border": thm.panelBorder,
+                  "--preview-accent": theme.accent,
+                  "--preview-ink": theme.panelInk,
+                  "--preview-border": theme.panelBorder,
                 } satisfies ThemePreviewStyle
               }
               disabled
@@ -43,21 +43,21 @@ export function ThemePicker({
               <span className="theme-preview-image">
                 <span
                   className="game-screen theme-preview-scene"
-                  data-theme={thm.id}
+                  data-theme={theme.id}
                   aria-hidden="true"
                 >
                   <SceneBackdrop />
                   <canvas className="theme-preview-render" />
                 </span>
               </span>
-              <strong className="theme-preview-name" data-i18n={thm.nameKey}>
-                {translate(thm.nameKey)}
+              <strong className="theme-preview-name" data-i18n={theme.nameKey}>
+                {translate(theme.nameKey)}
               </strong>
             </button>
           </li>
         ))}
       </ul>
-      <p className="theme-picker-empty" data-i18n="themes.empty" hidden={thms.length > 0}>
+      <p className="theme-picker-empty" data-i18n="themes.empty" hidden={themes.length > 0}>
         No themes are currently available.
       </p>
       <p

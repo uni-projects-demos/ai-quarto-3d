@@ -1,8 +1,10 @@
 import {
+  type BufferAttribute,
   type BufferGeometry,
   CanvasTexture,
   ExtrudeGeometry,
   Group,
+  type InterleavedBufferAttribute,
   LatheGeometry,
   Mesh,
   type MeshPhysicalMaterial,
@@ -15,6 +17,7 @@ import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.j
 import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
 import type { PieceTraits } from "../game/pieces";
 import { createHollowSquare } from "./geometry";
+import { createWoodCanvas } from "./textures";
 
 export interface VictorianCraftMaterials {
   satinwood: MeshPhysicalMaterial;
@@ -25,17 +28,16 @@ export interface VictorianCraftMaterials {
 }
 
 export function createSatinwoodTexture(): CanvasTexture {
-  const cvs = document.createElement("canvas");
-  cvs.width = 512;
-  cvs.height = 512;
-  const tex = new CanvasTexture(cvs);
+  const cvs: HTMLCanvasElement = createWoodCanvas();
+  const tex: CanvasTexture = new CanvasTexture(cvs);
   tex.colorSpace = SRGBColorSpace;
-  const ctx = cvs.getContext("2d");
+  const ctx: CanvasRenderingContext2D | null = cvs.getContext("2d");
   if (!ctx) return tex;
+
   ctx.fillStyle = "#f8eed7";
   ctx.fillRect(0, 0, 512, 512);
-  for (let strand = 0; strand < 250; strand += 1) {
-    const x = strand * 2.1;
+  for (let strand: number = 0; strand < 250; strand += 1) {
+    const x: number = strand * 2.1;
     ctx.strokeStyle = `rgba(133, 101, 55, ${0.025 + (strand % 7) * 0.008})`;
     ctx.lineWidth = strand % 5 === 0 ? 1.2 : 0.5;
     ctx.beginPath();
@@ -47,7 +49,7 @@ export function createSatinwoodTexture(): CanvasTexture {
   return tex;
 }
 
-export function createVictorianRoundGeometry(hgt: number, hollow: boolean): LatheGeometry {
+export function createVictorianRoundGeometry(hgt: number, isHollow: boolean): LatheGeometry {
   const geom = new LatheGeometry(
     [
       new Vector2(0, 0),
@@ -73,7 +75,7 @@ export function createVictorianRoundGeometry(hgt: number, hollow: boolean): Lath
       new Vector2(0.38, hgt - 0.045),
       new Vector2(0.377, hgt - 0.018),
       new Vector2(0.369, hgt),
-      ...(hollow
+      ...(isHollow
         ? [
             new Vector2(0.22, hgt),
             new Vector2(0.205, hgt - 0.012),
@@ -85,16 +87,16 @@ export function createVictorianRoundGeometry(hgt: number, hollow: boolean): Lath
     64,
     Math.PI,
   );
-  const posArr = geom.getAttribute("position");
-  for (let vtx = 0; vtx < posArr.count; vtx += 1) {
-    const y = posArr.getY(vtx);
+  const posArr: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("position");
+  for (let vtx: number = 0; vtx < posArr.count; vtx += 1) {
+    const y: number = posArr.getY(vtx);
     if (y < 0.204 || y > hgt - 0.219) continue;
-    const x = posArr.getX(vtx);
-    const z = posArr.getZ(vtx);
-    const rad = Math.hypot(x, z);
-    const ang = Math.atan2(x, z);
-    const cut = 0.004 * (1 + Math.cos(ang * 12));
-    const scale = (rad - cut) / rad;
+    const x: number = posArr.getX(vtx);
+    const z: number = posArr.getZ(vtx);
+    const rad: number = Math.hypot(x, z);
+    const ang: number = Math.atan2(x, z);
+    const cut: number = 0.004 * (1 + Math.cos(ang * 12));
+    const scale: number = (rad - cut) / rad;
     posArr.setXYZ(vtx, x * scale, y, z * scale);
   }
   geom.computeVertexNormals();
@@ -102,8 +104,8 @@ export function createVictorianRoundGeometry(hgt: number, hollow: boolean): Lath
   return geom;
 }
 
-export function createVictorianSquareGeometry(hgt: number, hollow: boolean): BufferGeometry {
-  if (!hollow) return new RoundedBoxGeometry(0.74, hgt, 0.74, 3, 0.018);
+export function createVictorianSquareGeometry(hgt: number, isHollow: boolean): BufferGeometry {
+  if (!isHollow) return new RoundedBoxGeometry(0.74, hgt, 0.74, 3, 0.018);
   return createHollowSquare(hgt, true, "victorian");
 }
 
@@ -116,8 +118,11 @@ export function createVictorianPieceDetails(
   dtls.name = "victorian-details";
   dtls.visible = false;
   const batches = new Map<MeshPhysicalMaterial, BufferGeometry[]>();
-  const add = (geom: BufferGeometry, mat: MeshPhysicalMaterial): void => {
-    const parts = batches.get(mat) ?? [];
+  const add: (geom: BufferGeometry, mat: MeshPhysicalMaterial) => void = (
+    geom: BufferGeometry,
+    mat: MeshPhysicalMaterial,
+  ): void => {
+    const parts: BufferGeometry[] = batches.get(mat) ?? [];
     parts.push(geom.index ? geom.toNonIndexed() : geom);
     batches.set(mat, parts);
   };
@@ -146,10 +151,10 @@ export function createVictorianPieceDetails(
         add(part, mat);
       }
     }
-    const panelHeight = hgt - 0.46;
-    const wood = traits.isDark ? mats.darkBody : mats.redBody;
-    for (let face = 0; face < 4; face += 1) {
-      const ang = (face * Math.PI) / 2;
+    const panelHeight: number = hgt - 0.46;
+    const wood: MeshPhysicalMaterial = traits.isDark ? mats.darkBody : mats.redBody;
+    for (let face: number = 0; face < 4; face += 1) {
+      const ang: number = (face * Math.PI) / 2;
       for (const [wdt, h, strip, mat] of [
         [0.59, panelHeight + 0.034, 0.006, mats.darkString],
         [0.555, panelHeight, 0.013, wood],
@@ -181,7 +186,7 @@ export function createVictorianPieceDetails(
     }
   }
   for (const [mat, parts] of batches) {
-    const geom = mergeGeometries(parts, false);
+    const geom: BufferGeometry = mergeGeometries(parts, false);
     if (!geom) throw new Error("Could not batch Victorian craftsmanship");
     const mesh = new Mesh(geom, mat);
     mesh.castShadow = true;
@@ -200,9 +205,12 @@ function miteredFrame(wdt: number, hgt: number, strip: number): ExtrudeGeometry[
     [wdt / 2, hgt / 2],
     [-wdt / 2, hgt / 2],
   ] as const;
-  const inner = outer.map(([x, y]) => [x - Math.sign(x) * strip, y - Math.sign(y) * strip]);
-  return outer.map((point, idx) => {
-    const nxt = (idx + 1) % 4;
+  const inner: number[][] = outer.map(([x, y]: readonly [number, number]): number[] => [
+    x - Math.sign(x) * strip,
+    y - Math.sign(y) * strip,
+  ]);
+  return outer.map((point: readonly [number, number], idx: number): ExtrudeGeometry => {
+    const nxt: number = (idx + 1) % 4;
     const shape = new Shape();
     shape.moveTo(point[0], point[1]);
     for (const vtx of [outer[nxt], inner[nxt], inner[idx]]) {
@@ -217,11 +225,11 @@ function miteredFrame(wdt: number, hgt: number, strip: number): ExtrudeGeometry[
       bevelSegments: 1,
       curveSegments: 1,
     });
-    const posArr = geom.getAttribute("position");
-    const uvs = geom.getAttribute("uv");
-    for (let vtx = 0; vtx < posArr.count; vtx += 1) {
-      const across = posArr.getX(vtx) / wdt + 0.5;
-      const along = posArr.getY(vtx) / hgt + 0.5;
+    const posArr: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("position");
+    const uvs: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("uv");
+    for (let vtx: number = 0; vtx < posArr.count; vtx += 1) {
+      const across: number = posArr.getX(vtx) / wdt + 0.5;
+      const along: number = posArr.getY(vtx) / hgt + 0.5;
       uvs.setXY(vtx, idx % 2 === 0 ? along : across, idx % 2 === 0 ? across : along);
     }
     return geom;

@@ -1,14 +1,17 @@
 import { CanvasTexture, RepeatWrapping, SRGBColorSpace } from "three";
 
-export function createWoodTexture(): CanvasTexture {
+export function createWoodCanvas(): HTMLCanvasElement {
   const cvs: HTMLCanvasElement = document.createElement("canvas");
   cvs.width = 512;
   cvs.height = 512;
+  return cvs;
+}
 
-  const tex = new CanvasTexture(cvs);
+export function createWoodTexture(): CanvasTexture {
+  const cvs: HTMLCanvasElement = createWoodCanvas();
+  const tex: CanvasTexture = new CanvasTexture(cvs);
   tex.colorSpace = SRGBColorSpace;
-
-  const ctx = cvs.getContext("2d");
+  const ctx: CanvasRenderingContext2D | null = cvs.getContext("2d");
   if (!ctx) return tex;
 
   const grad: CanvasGradient = ctx.createLinearGradient(0, 0, cvs.width, cvs.height);

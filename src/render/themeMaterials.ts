@@ -6,6 +6,7 @@ import {
   ShaderChunk,
   SRGBColorSpace,
   type Texture,
+  type WebGLProgramParametersWithUniforms,
 } from "three";
 import blackOnyxUrl from "../assets/themes/black-onyx.webp";
 import boneUrl from "../assets/themes/bone-ivory.webp";
@@ -17,6 +18,7 @@ import pounamuUrl from "../assets/themes/pounamu-stone.webp";
 import puririTrunkUrl from "../assets/themes/puriri-trunk.webp";
 import ebonyUrl from "../assets/themes/victorian-ebony.webp";
 import mahoganyUrl from "../assets/themes/victorian-mahogany.webp";
+import { GAME_PIECES, getPieceTraits } from "../game/pieces";
 import { CELL_COUNT } from "../game/rules";
 import type { ThemeId } from "../themes";
 import { createCoasterTexture } from "./flogstaCoasters";
@@ -24,11 +26,19 @@ import { type CoffeeMaterials, createSugarTexture } from "./flogstaCoffee";
 import { createSalmonTexture, createWeatheredTexture } from "./flogstaPieces";
 import { createNatureCarvingTexture } from "./natureCarving";
 import { createTrunkBarkTexture } from "./natureTable";
+import { quakeCellColourIndex, quakePieceColour } from "./quakePalette";
+import {
+  createQuakeBoardTexture,
+  createQuakeBrickTexture,
+  createQuakeCardboardTexture,
+  createQuakePlasticTexture,
+} from "./quakeTextures";
 import type { SceneResources } from "./SceneResources";
 import { createSatinwoodTexture, type VictorianCraftMaterials } from "./victorianCraft";
 
-export const MARBLE_CELL_COLS = [0xc5bca7, 0xaebbc0] as const;
-export const VICTORIAN_CELL_COLS = [0xe7ce9c, 0xd7b888] as const;
+export const MARBLE_CELL_COLS: readonly [12958887, 11451328] = [0xc5bca7, 0xaebbc0] as const;
+export const VICTORIAN_CELL_COLS: readonly [15191708, 14137480] = [0xe7ce9c, 0xd7b888] as const;
+export const QUAKE_CELL_COLS: readonly [2499622, 11348268] = [0x262426, 0xad292c] as const;
 
 export interface PieceMaterials {
   darkBody: MeshPhysicalMaterial;
@@ -47,6 +57,8 @@ export interface ThemeMaterials {
   accent: MeshPhysicalMaterial;
   craft?: VictorianCraftMaterials;
   coffee?: CoffeeMaterials;
+  quakeBodies?: readonly MeshPhysicalMaterial[];
+  quakeInsets?: readonly MeshPhysicalMaterial[];
 }
 
 export function createThemeMaterials(
@@ -54,37 +66,43 @@ export function createThemeMaterials(
   wood: CanvasTexture,
   resMap: SceneResources,
 ): Record<ThemeId, ThemeMaterials> {
-  const mat = (params: MeshPhysicalMaterialParameters): MeshPhysicalMaterial =>
-    resMap.track(new MeshPhysicalMaterial(params));
-  const cells = (
+  const mat: (params: MeshPhysicalMaterialParameters) => MeshPhysicalMaterial = (
+    params: MeshPhysicalMaterialParameters,
+  ): MeshPhysicalMaterial => resMap.track(new MeshPhysicalMaterial(params));
+  const cells: (
+    even: MeshPhysicalMaterialParameters,
+    odd: MeshPhysicalMaterialParameters,
+  ) => MeshPhysicalMaterial[] = (
     even: MeshPhysicalMaterialParameters,
     odd: MeshPhysicalMaterialParameters,
   ): MeshPhysicalMaterial[] =>
-    Array.from({ length: CELL_COUNT }, (_, idx) =>
-      mat({ ...(idx % 2 === 0 ? even : odd), emissive: 0x000000 }),
+    Array.from(
+      { length: CELL_COUNT },
+      (_: unknown, idx: number): MeshPhysicalMaterial =>
+        mat({ ...(idx % 2 === 0 ? even : odd), emissive: 0x000000 }),
     );
-  const marble = load(marbleUrl);
-  const onyx = load(blackOnyxUrl);
-  const garnet = load(garnetStoneUrl);
-  const mahogany = load(mahoganyUrl);
-  const ebony = load(ebonyUrl);
-  const satinwood = createSatinwoodTexture();
-  const puriri = load(puririTrunkUrl);
-  const bark = createTrunkBarkTexture();
-  const paua = load(pauaUrl);
-  const pounamu = load(pounamuUrl);
-  const bone = load(boneUrl);
-  const moss = load(mossUrl);
+  const marble: Texture = load(marbleUrl);
+  const onyx: Texture = load(blackOnyxUrl);
+  const garnet: Texture = load(garnetStoneUrl);
+  const mahogany: Texture = load(mahoganyUrl);
+  const ebony: Texture = load(ebonyUrl);
+  const satinwood: CanvasTexture = createSatinwoodTexture();
+  const puriri: Texture = load(puririTrunkUrl);
+  const bark: CanvasTexture = createTrunkBarkTexture();
+  const paua: Texture = load(pauaUrl);
+  const pounamu: Texture = load(pounamuUrl);
+  const bone: Texture = load(boneUrl);
+  const moss: Texture = load(mossUrl);
   moss.wrapS = RepeatWrapping;
   moss.wrapT = RepeatWrapping;
   moss.repeat.set(24, 1);
-  const carving = createNatureCarvingTexture();
-  const oceanCarving = createNatureCarvingTexture("ocean");
-  const goldGrain = createGoldGrainTexture();
-  const goldColour = goldGrain.clone();
+  const carving: CanvasTexture = createNatureCarvingTexture();
+  const oceanCarving: CanvasTexture = createNatureCarvingTexture("ocean");
+  const goldGrain: CanvasTexture = createGoldGrainTexture();
+  const goldColour: CanvasTexture = goldGrain.clone();
   goldColour.colorSpace = SRGBColorSpace;
   goldColour.needsUpdate = true;
-  const preciousGold = mat({
+  const preciousGold: MeshPhysicalMaterial = mat({
     color: 0xf3c65c,
     map: goldColour,
     bumpMap: goldGrain,
@@ -94,9 +112,14 @@ export function createThemeMaterials(
     clearcoat: 0.4,
     clearcoatRoughness: 0.25,
   });
-  const gold = mat({ color: 0xd3ad62, roughness: 0.26, metalness: 0.72, clearcoat: 0.3 });
-  const brass = mat({ color: 0xb48c50, roughness: 0.48, metalness: 0.55 });
-  const victorianDarkBody = mat({
+  const gold: MeshPhysicalMaterial = mat({
+    color: 0xd3ad62,
+    roughness: 0.26,
+    metalness: 0.72,
+    clearcoat: 0.3,
+  });
+  const brass: MeshPhysicalMaterial = mat({ color: 0xb48c50, roughness: 0.48, metalness: 0.55 });
+  const victorianDarkBody: MeshPhysicalMaterial = mat({
     color: 0xc2c4c9,
     map: ebony,
     bumpMap: ebony,
@@ -106,7 +129,7 @@ export function createThemeMaterials(
     clearcoat: 0.8,
     clearcoatRoughness: 0.24,
   });
-  const victorianRedBody = mat({
+  const victorianRedBody: MeshPhysicalMaterial = mat({
     color: 0xf192a6,
     map: mahogany,
     bumpMap: mahogany,
@@ -129,7 +152,7 @@ export function createThemeMaterials(
     redBody: victorianRedBody,
     brass,
   };
-  const marbleTable = mat({
+  const marbleTable: MeshPhysicalMaterial = mat({
     color: 0xe8e5df,
     map: marble,
     roughness: 0.56,
@@ -137,7 +160,7 @@ export function createThemeMaterials(
     clearcoat: 0.16,
     clearcoatRoughness: 0.6,
   });
-  const victorianTable = mat({
+  const victorianTable: MeshPhysicalMaterial = mat({
     color: 0xc0a393,
     map: mahogany,
     roughness: 0.31,
@@ -145,7 +168,7 @@ export function createThemeMaterials(
     clearcoat: 0.72,
     clearcoatRoughness: 0.26,
   });
-  const natureTable = mat({
+  const natureTable: MeshPhysicalMaterial = mat({
     color: 0xfff1da,
     map: puriri,
     roughness: 0.34,
@@ -153,14 +176,54 @@ export function createThemeMaterials(
     clearcoat: 0.62,
     clearcoatRoughness: 0.3,
   });
-  const pine = createWeatheredTexture();
-  const timber = (tex: CanvasTexture): MeshPhysicalMaterial =>
-    mat({ map: tex, bumpMap: tex, bumpScale: 0.075, roughness: 0.98 });
-  const balconyWood = timber(pine);
-  const boardWood = timber(createWeatheredTexture(undefined, "chipboard"));
-  const salmon = createSalmonTexture();
-  const sugar = createSugarTexture();
-  const coffeeSurface = mat({
+  const plastic: CanvasTexture = resMap.track(createQuakePlasticTexture());
+  const quakeGrit: CanvasTexture = resMap.track(createQuakeBoardTexture());
+  const quakeBrick: CanvasTexture = resMap.track(createQuakeBrickTexture());
+  const quakeCardboard: CanvasTexture = resMap.track(createQuakeCardboardTexture());
+  const quakePiece: (colour: number, texture: CanvasTexture) => MeshPhysicalMaterial = (
+    colour: number,
+    texture: CanvasTexture,
+  ): MeshPhysicalMaterial =>
+    mat({
+      color: colour,
+      map: texture,
+      bumpMap: texture,
+      bumpScale: texture === quakeBrick ? 0.037 : 0.012,
+      roughness: texture === quakeBrick ? 0.97 : 0.88,
+      metalness: 0,
+      clearcoat: texture === quakeBrick ? 0 : 0.035,
+    });
+  const quakeBodies: MeshPhysicalMaterial[] = GAME_PIECES.map(
+    (pc): MeshPhysicalMaterial =>
+      quakePiece(quakePieceColour(pc), getPieceTraits(pc).isRound ? quakeCardboard : quakeBrick),
+  );
+  const quakeBodyAt: (pc: number) => MeshPhysicalMaterial = (pc: number): MeshPhysicalMaterial => {
+    const body: MeshPhysicalMaterial | undefined = quakeBodies[pc];
+    if (!body) throw new Error(`Missing Quake piece material for ${pc}`);
+    return body;
+  };
+  const quakeInsets: MeshPhysicalMaterial[] = GAME_PIECES.map(
+    (pc): MeshPhysicalMaterial =>
+      mat({
+        color: quakeBodyAt(pc).color.clone().multiplyScalar(0.61),
+        map: getPieceTraits(pc).isRound ? quakeCardboard : quakeBrick,
+        roughness: 1,
+      }),
+  );
+  const quakeInsetAt: (pc: number) => MeshPhysicalMaterial = (pc: number): MeshPhysicalMaterial => {
+    const inset: MeshPhysicalMaterial | undefined = quakeInsets[pc];
+    if (!inset) throw new Error(`Missing Quake inset material for ${pc}`);
+    return inset;
+  };
+  const pine: CanvasTexture = createWeatheredTexture();
+  const timber: (tex: CanvasTexture) => MeshPhysicalMaterial = (
+    tex: CanvasTexture,
+  ): MeshPhysicalMaterial => mat({ map: tex, bumpMap: tex, bumpScale: 0.075, roughness: 0.98 });
+  const balconyWood: MeshPhysicalMaterial = timber(pine);
+  const boardWood: MeshPhysicalMaterial = timber(createWeatheredTexture(undefined, "chipboard"));
+  const salmon: CanvasTexture = createSalmonTexture();
+  const sugar: CanvasTexture = createSugarTexture();
+  const coffeeSurface: MeshPhysicalMaterial = mat({
     color: 0x170a04,
     roughness: 0.06,
     clearcoat: 1,
@@ -168,15 +231,18 @@ export function createThemeMaterials(
     ior: 1.33,
     envMapIntensity: 2.5,
   });
-  const wornEdge = mat({
+  const wornEdge: MeshPhysicalMaterial = mat({
     color: 0x8c8974,
     map: pine,
     bumpMap: pine,
     bumpScale: 0.09,
     roughness: 1,
   });
-  const coaster = (col: number, ink: number): MeshPhysicalMaterialParameters => {
-    const paper = createCoasterTexture(col, ink);
+  const coaster: (col: number, ink: number) => MeshPhysicalMaterialParameters = (
+    col: number,
+    ink: number,
+  ): MeshPhysicalMaterialParameters => {
+    const paper: CanvasTexture = createCoasterTexture(col, ink);
     return { map: paper, bumpMap: paper, bumpScale: 0.004, roughness: 1 };
   };
   const shell: MeshPhysicalMaterialParameters = {
@@ -289,45 +355,6 @@ export function createThemeMaterials(
       hollowLight: preciousGold,
       accent: gold,
     },
-    victorian: {
-      table: victorianTable,
-      edge: victorianTable,
-      board: mat({
-        color: 0xc0a083,
-        map: mahogany,
-        roughness: 0.44,
-        metalness: 0.02,
-        clearcoat: 0.45,
-        clearcoatRoughness: 0.34,
-      }),
-      rim: brass,
-      cells: cells(
-        {
-          color: VICTORIAN_CELL_COLS[0],
-          map: satinwood,
-          roughness: 0.4,
-          metalness: 0,
-          clearcoat: 0.46,
-          clearcoatRoughness: 0.32,
-        },
-        {
-          color: VICTORIAN_CELL_COLS[1],
-          map: satinwood,
-          roughness: 0.4,
-          metalness: 0,
-          clearcoat: 0.46,
-          clearcoatRoughness: 0.32,
-        },
-      ),
-      pieces: {
-        darkBody: victorianDarkBody,
-        redBody: victorianRedBody,
-      },
-      hollowDark: brass,
-      hollowLight: brass,
-      accent: brass,
-      craft,
-    },
     nature: {
       table: natureTable,
       edge: mat({
@@ -387,6 +414,84 @@ export function createThemeMaterials(
       hollowLight: mat({ ...shell, color: 0xc1d6d4 }),
       accent: mat({ color: 0xbaad8e, map: bone, roughness: 0.36, clearcoat: 0.28 }),
     },
+    quake: {
+      table: mat({
+        color: 0xe7e4dc,
+        map: plastic,
+        bumpMap: plastic,
+        bumpScale: 0.018,
+        roughness: 0.94,
+        metalness: 0,
+        clearcoat: 0.025,
+      }),
+      edge: mat({
+        color: 0xd3d0c6,
+        map: plastic,
+        bumpMap: plastic,
+        bumpScale: 0.024,
+        roughness: 0.98,
+      }),
+      board: mat({ color: 0x222023, map: quakeGrit, roughness: 0.9 }),
+      rim: mat({ color: 0xa72a2d, map: quakeGrit, roughness: 0.88 }),
+      cells: Array.from(
+        { length: CELL_COUNT },
+        (_: unknown, cell: number): MeshPhysicalMaterial =>
+          mat({
+            color: QUAKE_CELL_COLS[quakeCellColourIndex(cell)],
+            map: quakeGrit,
+            roughness: 0.91,
+            emissive: 0x000000,
+          }),
+      ),
+      pieces: {
+        darkBody: quakeBodyAt(8),
+        redBody: quakeBodyAt(0),
+      },
+      quakeBodies,
+      quakeInsets,
+      hollowDark: quakeInsetAt(8),
+      hollowLight: quakeInsetAt(0),
+      accent: mat({ color: 0x972629, map: quakeGrit, roughness: 0.9 }),
+    },
+    victorian: {
+      table: victorianTable,
+      edge: victorianTable,
+      board: mat({
+        color: 0xc0a083,
+        map: mahogany,
+        roughness: 0.44,
+        metalness: 0.02,
+        clearcoat: 0.45,
+        clearcoatRoughness: 0.34,
+      }),
+      rim: brass,
+      cells: cells(
+        {
+          color: VICTORIAN_CELL_COLS[0],
+          map: satinwood,
+          roughness: 0.4,
+          metalness: 0,
+          clearcoat: 0.46,
+          clearcoatRoughness: 0.32,
+        },
+        {
+          color: VICTORIAN_CELL_COLS[1],
+          map: satinwood,
+          roughness: 0.4,
+          metalness: 0,
+          clearcoat: 0.46,
+          clearcoatRoughness: 0.32,
+        },
+      ),
+      pieces: {
+        darkBody: victorianDarkBody,
+        redBody: victorianRedBody,
+      },
+      hollowDark: brass,
+      hollowLight: brass,
+      accent: brass,
+      craft,
+    },
   };
 }
 
@@ -395,7 +500,7 @@ function carvedMaterial(
   greenstone = false,
 ): MeshPhysicalMaterial {
   const mat = new MeshPhysicalMaterial(params);
-  mat.onBeforeCompile = (shdr): void => {
+  mat.onBeforeCompile = (shdr: WebGLProgramParametersWithUniforms): void => {
     shdr.vertexShader = `#ifdef USE_BUMPMAP
       attribute float naturePieceHeight;
       varying float vNaturePieceHeight;
@@ -449,18 +554,18 @@ function carvedMaterial(
 }
 
 function createGoldGrainTexture(): CanvasTexture {
-  const cvs = document.createElement("canvas");
+  const cvs: HTMLCanvasElement = document.createElement("canvas");
   cvs.width = 512;
   cvs.height = 512;
   const tex = new CanvasTexture(cvs);
   tex.wrapS = RepeatWrapping;
   tex.wrapT = RepeatWrapping;
-  const ctx = cvs.getContext("2d");
+  const ctx: CanvasRenderingContext2D | null = cvs.getContext("2d");
   if (!ctx) return tex;
   ctx.fillStyle = "#efefef";
   ctx.fillRect(0, 0, 512, 512);
-  for (let row = 0; row < 512; row += 1) {
-    const val = Math.round(227 + 14 * Math.sin(row * 17.31) + 5 * Math.cos(row * 3.8));
+  for (let row: number = 0; row < 512; row += 1) {
+    const val: number = Math.round(227 + 14 * Math.sin(row * 17.31) + 5 * Math.cos(row * 3.8));
     ctx.fillStyle = `rgb(${val}, ${val}, ${val})`;
     ctx.fillRect(0, row, 512, 1);
   }

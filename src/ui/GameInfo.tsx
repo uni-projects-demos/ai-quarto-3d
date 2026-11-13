@@ -47,7 +47,7 @@ function BinaryBoard(): JSX.Element {
       </div>
       <div className="bin-board-wrap">
         <div id="bin-board" className="bin-board">
-          {BIN_CELLS.map((id, cell) => (
+          {BIN_CELLS.map((id: string, cell: number) => (
             <code key={id} data-binary-cell={cell}>
               ----
             </code>

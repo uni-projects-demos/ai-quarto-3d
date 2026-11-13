@@ -9,15 +9,15 @@ export function themePrevLayout(
   imgAspect: number,
 ): { cols: number; cardWidth: number } {
   if (cnt < 1 || wdt <= 0 || hgt <= 0) return { cols: 0, cardWidth: 0 };
-  const min = Math.min(MIN_CARD_WIDTH, wdt);
-  const maxCols = Math.min(
+  const min: number = Math.min(MIN_CARD_WIDTH, wdt);
+  const maxCols: number = Math.min(
     Math.ceil(Math.sqrt(cnt)),
     Math.max(1, Math.floor((wdt + GAP) / (min + GAP))),
   );
-  let best = { cols: 1, cardWidth: 0 };
-  for (let cols = 1; cols <= maxCols; cols += 1) {
-    const rows = Math.ceil(cnt / cols);
-    const cardWdt = Math.min(
+  let best: { cols: number; cardWidth: number } = { cols: 1, cardWidth: 0 };
+  for (let cols: number = 1; cols <= maxCols; cols += 1) {
+    const rows: number = Math.ceil(cnt / cols);
+    const cardWdt: number = Math.min(
       (wdt - (cols - 1) * GAP) / cols,
       ((hgt - (rows - 1) * GAP) / rows - LBL_HEIGHT) * imgAspect,
     );
@@ -30,16 +30,23 @@ export function themePrevLayout(
 
 export function fitThemePreviews(root: HTMLElement, cnt: number): void {
   if (root.hidden) return;
-  const scr = root.parentElement ?? root;
-  const scnWdt = Math.max(1, scr.clientWidth);
-  const scnHgt = Math.max(1, scr.clientHeight);
-  const sty = getComputedStyle(root);
-  const wdt = scnWdt - Number.parseFloat(sty.paddingLeft) - Number.parseFloat(sty.paddingRight);
-  const hgt = scnHgt - Number.parseFloat(sty.paddingTop) - Number.parseFloat(sty.paddingBottom);
-  const lyt = themePrevLayout(cnt, wdt, hgt, scnWdt / scnHgt);
-  root.style.setProperty("--preview-card-width", `${lyt.cardWidth}px`);
+  const scr: HTMLElement = root.parentElement ?? root;
+  const scnWdt: number = Math.max(1, scr.clientWidth);
+  const scnHgt: number = Math.max(1, scr.clientHeight);
+  const style: CSSStyleDeclaration = getComputedStyle(root);
+  const wdt: number =
+    scnWdt - Number.parseFloat(style.paddingLeft) - Number.parseFloat(style.paddingRight);
+  const hgt: number =
+    scnHgt - Number.parseFloat(style.paddingTop) - Number.parseFloat(style.paddingBottom);
+  const layout: { cols: number; cardWidth: number } = themePrevLayout(
+    cnt,
+    wdt,
+    hgt,
+    scnWdt / scnHgt,
+  );
+  root.style.setProperty("--preview-card-width", `${layout.cardWidth}px`);
   root.style.setProperty("--preview-aspect", `${scnWdt} / ${scnHgt}`);
   root.style.setProperty("--preview-scene-width", `${scnWdt}px`);
   root.style.setProperty("--preview-scene-height", `${scnHgt}px`);
-  root.style.setProperty("--preview-scene-scale", `${(lyt.cardWidth - 2) / scnWdt}`);
+  root.style.setProperty("--preview-scene-scale", `${(layout.cardWidth - 2) / scnWdt}`);
 }

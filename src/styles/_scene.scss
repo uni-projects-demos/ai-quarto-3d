@@ -4,6 +4,7 @@
 .marble-interior,
 .nature-landscape,
 .flogsta-balcony,
+.quake-landscape,
 .victorian-wall,
 .victorian-lamplight {
   position: absolute;
@@ -13,7 +14,8 @@
 .scene-architecture,
 .marble-interior,
 .nature-landscape,
-.flogsta-balcony {
+.flogsta-balcony,
+.quake-landscape {
   z-index: 0;
   border-radius: inherit;
   pointer-events: none;
@@ -105,9 +107,24 @@
     url("../assets/themes/flogsta-panorama.png") center top / 100% auto no-repeat;
 }
 
+.quake-landscape {
+  display: none;
+  background:
+    linear-gradient(180deg, transparent 77%, #171516) center top / 100% 56.28cqw no-repeat,
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 12, 0.12),
+      rgba(13, 12, 13, 0.32) 70%,
+      rgba(23, 21, 22, 0.96)
+    ),
+    url("../assets/themes/quake-house.webp") center top / 100% auto no-repeat;
+  filter: brightness(calc(0.41 * var(--background-light-intensity)));
+}
+
 .game-screen[data-theme="victorian"],
 .game-screen[data-theme="flogsta"],
-.game-screen[data-theme="nature"] {
+.game-screen[data-theme="nature"],
+.game-screen[data-theme="quake"] {
   > .marble-interior {
     display: none;
   }
@@ -124,6 +141,20 @@
     color: #f5f5eb;
     border-color: rgba(185, 203, 209, 0.6);
     background: rgba(33, 49, 51, 0.94);
+  }
+}
+
+.game-screen[data-theme="quake"] {
+  background: #141416;
+
+  > .quake-landscape {
+    display: block;
+  }
+
+  .game-status {
+    color: #f3ece6;
+    border-color: rgba(177, 63, 66, 0.64);
+    background: rgba(22, 19, 21, 0.94);
   }
 }
 
@@ -242,7 +273,8 @@
 
 @container game-scene (max-aspect-ratio: 0.92) {
   .marble-interior,
-  .nature-landscape {
+  .nature-landscape,
+  .quake-landscape {
     background-size: auto 70%;
     background-position: center top;
   }

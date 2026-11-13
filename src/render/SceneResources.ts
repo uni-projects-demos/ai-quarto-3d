@@ -1,17 +1,24 @@
-import { InstancedMesh, Material, Mesh, type Object3D, Texture } from "three";
+import {
+  InstancedMesh,
+  Material,
+  Mesh,
+  type Object3D,
+  type Object3DEventMap,
+  Texture,
+} from "three";
 
 interface Disposable {
   dispose(): void;
 }
 
 export class SceneResources {
-  private readonly resMap = new Set<Disposable>();
-  private readonly released = new WeakSet<Disposable>();
-  private disposed = false;
+  private readonly resMap: Set<Disposable> = new Set<Disposable>();
+  private readonly released: WeakSet<Disposable> = new WeakSet<Disposable>();
+  private isDisposed: boolean = false;
 
   track<T extends Disposable>(res: T): T {
     if (this.resMap.has(res) || this.released.has(res)) return res;
-    if (this.disposed) {
+    if (this.isDisposed) {
       this.released.add(res);
     } else this.resMap.add(res);
     if (res instanceof Material) {
@@ -19,12 +26,12 @@ export class SceneResources {
         if (val instanceof Texture) this.track(val);
       }
     }
-    if (this.disposed) res.dispose();
+    if (this.isDisposed) res.dispose();
     return res;
   }
 
   trackObject(root: Object3D): void {
-    root.traverse((obj): void => {
+    root.traverse((obj: Object3D<Object3DEventMap>): void => {
       if (!(obj instanceof Mesh)) return;
       this.track(obj.geometry);
       for (const mat of Array.isArray(obj.material) ? obj.material : [obj.material]) {
@@ -35,8 +42,8 @@ export class SceneResources {
   }
 
   dispose(): void {
-    if (this.disposed) return;
-    this.disposed = true;
+    if (this.isDisposed) return;
+    this.isDisposed = true;
     const errs: unknown[] = [];
     for (const res of this.resMap) {
       this.released.add(res);

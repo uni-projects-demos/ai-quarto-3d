@@ -2,11 +2,11 @@ export type Dispose = () => void;
 
 export class Cleanup {
   private readonly cbs: Dispose[] = [];
-  private readonly evts = new AbortController();
-  private isDispose = false;
+  private readonly events: AbortController = new AbortController();
+  private isDispose: boolean = false;
 
   get signal(): AbortSignal {
-    return this.evts.signal;
+    return this.events.signal;
   }
 
   add(cb: Dispose): void {
@@ -17,7 +17,7 @@ export class Cleanup {
   dispose(): void {
     if (this.isDispose) return;
     this.isDispose = true;
-    this.evts.abort();
+    this.events.abort();
     const errs: unknown[] = [];
     for (const cb of this.cbs.splice(0).reverse()) {
       try {

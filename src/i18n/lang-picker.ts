@@ -34,10 +34,14 @@ function normSearch(val: string): string {
 export function initLangPicker(): Dispose {
   const cleanup = new Cleanup();
   const evts = { signal: cleanup.signal };
-  let req = 0;
+  let req: number = 0;
   const dialog: HTMLDialogElement = requiredEl("language-dialog", HTMLDialogElement);
-  const toggles = [...document.querySelectorAll<HTMLButtonElement>("[data-language-toggle]")];
-  const localeCodes = [...document.querySelectorAll<HTMLElement>("[data-locale-code]")];
+  const toggles: HTMLButtonElement[] = [
+    ...document.querySelectorAll<HTMLButtonElement>("[data-language-toggle]"),
+  ];
+  const localeCodes: HTMLElement[] = [
+    ...document.querySelectorAll<HTMLElement>("[data-locale-code]"),
+  ];
   let activeToggle: HTMLButtonElement | undefined = toggles[0];
   const closeButton: HTMLButtonElement = requiredEl("close-language", HTMLButtonElement);
   const search: HTMLInputElement = requiredEl("language-search", HTMLInputElement);
@@ -45,8 +49,8 @@ export function initLangPicker(): Dispose {
   const empty: HTMLElement = requiredEl("language-empty", HTMLElement);
   const coll: Intl.Collator = new Intl.Collator("en", { sensitivity: "base" });
   const langs: LangOption[] = LOCALES.map((code: string): LangOption => {
-    const native = fbNativeLangs[code] ?? langName(code, code);
-    const english = langName(code, "en");
+    const native: string = fbNativeLangs[code] ?? langName(code, code);
+    const english: string = langName(code, "en");
     return { code, native, english, search: normSearch(`${native} ${english} ${code}`) };
   }).sort(
     (left: LangOption, right: LangOption): number =>
@@ -64,27 +68,27 @@ export function initLangPicker(): Dispose {
 
   const btns = new Map<Locale, HTMLButtonElement>();
   for (const lang of langs) {
-    const btn = document.createElement("button");
+    const btn: HTMLButtonElement = document.createElement("button");
     btn.type = "button";
     btn.className = "language-option";
     btn.dataset.locale = lang.code;
-    const nm = document.createElement("span");
+    const nm: HTMLSpanElement = document.createElement("span");
     nm.textContent = lang.native;
     nm.lang = lang.code;
     nm.dir = "auto";
-    const code = document.createElement("small");
+    const code: HTMLElement = document.createElement("small");
     code.textContent = lang.code.toUpperCase();
     code.dir = "ltr";
     btn.append(nm, code);
     btns.set(lang.code, btn);
   }
 
-  const renderLangs = (): void => {
-    const query = normSearch(search.value.trim());
-    const cur = curLang();
-    const fragment = document.createDocumentFragment();
+  const renderLangs: () => void = (): void => {
+    const query: string = normSearch(search.value.trim());
+    const cur: string = curLang();
+    const fragment: DocumentFragment = document.createDocumentFragment();
     for (const lang of langs) {
-      const btn = btns.get(lang.code);
+      const btn: HTMLButtonElement | undefined = btns.get(lang.code);
       if (!btn || !lang.search.includes(query)) continue;
       btn.setAttribute("aria-pressed", String(lang.code === cur));
       fragment.append(btn);
@@ -97,8 +101,9 @@ export function initLangPicker(): Dispose {
     "click",
     (evt: MouseEvent): void => {
       if (!(evt.target instanceof Element)) return;
-      const btn = evt.target.closest<HTMLButtonElement>("button[data-locale]");
-      const code = btn?.dataset.locale;
+      const btn: HTMLButtonElement | null =
+        evt.target.closest<HTMLButtonElement>("button[data-locale]");
+      const code: string | undefined = btn?.dataset.locale;
       if (!code || !opts.contains(btn)) return;
       const reqId: number = ++req;
       void changeLang(code)

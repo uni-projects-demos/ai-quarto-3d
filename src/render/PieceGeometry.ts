@@ -1,7 +1,9 @@
 import {
+  type BufferAttribute,
   type BufferGeometry,
   ExtrudeGeometry,
   Float32BufferAttribute,
+  type InterleavedBufferAttribute,
   LatheGeometry,
   Path,
   Shape,
@@ -17,10 +19,11 @@ import type { SceneResources } from "./SceneResources";
 import { createVictorianRoundGeometry, createVictorianSquareGeometry } from "./victorianCraft";
 
 export class PieceGeometry {
-  readonly riceGrainGeometry = new SphereGeometry(1, 6, 4);
+  readonly riceGrainGeometry: SphereGeometry = new SphereGeometry(1, 6, 4);
   private readonly marbleBodyGeometries = new Map<PieceId, BufferGeometry>();
   private readonly victorianBodyGeometries = new Map<PieceId, BufferGeometry>();
   private readonly coffeeBodyGeometries = new Map<PieceId, BufferGeometry>();
+  private readonly quakeBodyGeometries = new Map<PieceId, BufferGeometry>();
   private readonly victorianRoundGeometries = {
     small: createVictorianRoundGeometry(0.9, false),
     big: createVictorianRoundGeometry(1.45, false),
@@ -83,7 +86,7 @@ export class PieceGeometry {
   }
 
   createSquareBezel(): ExtrudeGeometry {
-    const shape = squarePath(new Shape(), 0.225, 0.025);
+    const shape: Shape = squarePath(new Shape(), 0.225, 0.025);
     shape.holes.push(squarePath(new Path(), 0.205, 0.023));
     const geom = new ExtrudeGeometry(shape, {
       depth: 0.012,
@@ -95,9 +98,9 @@ export class PieceGeometry {
   }
 
   getMarbleBodyGeometry(pc: PieceId, traits: PieceTraits): BufferGeometry {
-    const cache = this.marbleBodyGeometries.get(pc);
+    const cache: BufferGeometry | undefined = this.marbleBodyGeometries.get(pc);
     if (cache) return cache;
-    const src = traits.isRound
+    const src: BufferGeometry = traits.isRound
       ? traits.isSolid
         ? traits.isBig
           ? this.marblePieceGeometries.bigRound
@@ -112,16 +115,16 @@ export class PieceGeometry {
         : traits.isBig
           ? this.marblePieceGeometries.hollowBigSquare
           : this.marblePieceGeometries.hollowSmallSquare;
-    const geom = !traits.isRound && src.index ? src.toNonIndexed() : src.clone();
-    const uvs = geom.getAttribute("uv");
-    const posArr = geom.getAttribute("position");
-    const normals = geom.getAttribute("normal");
-    const carvingUVs = uvs.clone();
+    const geom: BufferGeometry = !traits.isRound && src.index ? src.toNonIndexed() : src.clone();
+    const uvs: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("uv");
+    const posArr: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("position");
+    const normals: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("normal");
+    const carvingUVs: BufferAttribute = uvs.clone();
     const hgt: number = traits.isBig ? 1.45 : 0.9;
     const offsetU: number = ((pc * 7 + 3) % 17) / 34;
     const offsetV: number = ((pc * 11 + 5) % 19) / 38;
     for (let vtx: number = 0; vtx < uvs.count; vtx += 1) {
-      const perimeterU = traits.isRound
+      const perimeterU: number = traits.isRound
         ? uvs.getX(vtx) + 0.125
         : squareCarvingU(posArr.getX(vtx), posArr.getZ(vtx));
       let u: number = uvs.getX(vtx);
@@ -139,8 +142,8 @@ export class PieceGeometry {
           0.5;
         v = posArr.getY(vtx) / hgt + 0.5;
       }
-      const plainTop: boolean = normals.getY(vtx) > 0.65 && posArr.getY(vtx) > 0;
-      const insideCup: boolean =
+      const isPlainTop: boolean = normals.getY(vtx) > 0.65 && posArr.getY(vtx) > 0;
+      const isInsideCup: boolean =
         !traits.isSolid &&
         posArr.getY(vtx) > hgt / 2 - 0.14 &&
         (traits.isRound
@@ -148,20 +151,20 @@ export class PieceGeometry {
           : Math.max(Math.abs(posArr.getX(vtx)), Math.abs(posArr.getZ(vtx))) < 0.26);
       carvingUVs.setXY(
         vtx,
-        plainTop || insideCup ? 0.025 : perimeterU,
-        plainTop || insideCup ? 0.025 : posArr.getY(vtx) / hgt + 0.5,
+        isPlainTop || isInsideCup ? 0.025 : perimeterU,
+        isPlainTop || isInsideCup ? 0.025 : posArr.getY(vtx) / hgt + 0.5,
       );
       uvs.setXY(vtx, u * 0.48 + offsetU, v * 0.48 + offsetV);
     }
     if (!traits.isRound) {
-      for (let vtx = 0; vtx < carvingUVs.count; vtx += 3) {
-        const vals = [0, 1, 2].map((ofs) => carvingUVs.getX(vtx + ofs));
-        const plainFace = [0, 1, 2].some(
-          (ofs) => Math.abs(carvingUVs.getY(vtx + ofs) - 0.025) < 0.0001,
+      for (let vtx: number = 0; vtx < carvingUVs.count; vtx += 3) {
+        const vals: number[] = [0, 1, 2].map((ofs: number): number => carvingUVs.getX(vtx + ofs));
+        const isPlainFace: boolean = [0, 1, 2].some(
+          (ofs: number): boolean => Math.abs(carvingUVs.getY(vtx + ofs) - 0.025) < 0.0001,
         );
-        if (!plainFace && Math.max(...vals) - Math.min(...vals) > 0.5) {
-          for (let ofs = 0; ofs < 3; ofs += 1) {
-            const u = vals[ofs];
+        if (!isPlainFace && Math.max(...vals) - Math.min(...vals) > 0.5) {
+          for (let ofs: number = 0; ofs < 3; ofs += 1) {
+            const u: number | undefined = vals[ofs];
             if (u !== undefined && u < 0.5) carvingUVs.setX(vtx + ofs, u + 1);
           }
         }
@@ -176,15 +179,63 @@ export class PieceGeometry {
     return this.resMap.track(geom);
   }
 
+  getQuakeBodyGeometry(pc: PieceId, traits: PieceTraits): BufferGeometry {
+    const cached: BufferGeometry | undefined = this.quakeBodyGeometries.get(pc);
+    if (cached) return cached;
+    const geom: BufferGeometry = this.getMarbleBodyGeometry(pc, traits).clone();
+    const pos: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("position");
+    const hgt: 0.9 | 1.45 = traits.isBig ? 1.45 : 0.9;
+    const tilt: number =
+      Math.sin(pc * 13.73 + 1.2) * (traits.isRound ? 0.009 : traits.isBig ? 0.016 : 0.035);
+    for (let i: number = 0; i < pos.count; i += 1) {
+      const x: number = pos.getX(i);
+      const y: number = pos.getY(i);
+      const z: number = pos.getZ(i);
+      const angle: number = Math.atan2(z, x);
+      const level: number = y / hgt + 0.5;
+      const radius: number = Math.hypot(x, z);
+      const exterior: number = Math.min(1, Math.max(0, (radius - 0.25) / 0.12));
+      if (traits.isRound) {
+        const paperWrinkle: number =
+          0.006 * Math.sin(angle * 8 + pc) * Math.sin(level * 23 + pc * 1.2);
+        const roughCut: number =
+          exterior *
+          Math.max(0, (level - 0.97) / 0.03) *
+          (0.005 + 0.006 * Math.max(0, Math.sin(angle * 19 + pc * 3)));
+        pos.setXYZ(i, x * (1 + paperWrinkle) + tilt * level, y - roughCut, z * (1 + paperWrinkle));
+      } else {
+        const fracture: number =
+          Math.max(0, Math.sin(angle * 5 + pc * 1.17)) ** 5 *
+          Math.max(0, Math.sin(level * 13 + pc * 2.47)) ** 2;
+        const waviness: number =
+          Math.sin(angle * 11 + pc * 0.8 + level * 7) *
+          Math.sin(level * 17 - angle * 3 + pc) *
+          0.015;
+        const edgeScale: number =
+          1 + exterior * (waviness - fracture * (traits.isBig ? 0.085 : 0.12));
+        const topChip: number =
+          exterior *
+          Math.max(0, (level - 0.86) / 0.14) *
+          (0.023 + 0.088 * Math.max(0, Math.sin(angle * 6 + pc * 1.23)) ** 7);
+        pos.setXYZ(i, x * edgeScale + tilt * (level - 0.2), y - topChip, z * edgeScale);
+      }
+    }
+    geom.computeVertexNormals();
+    geom.computeBoundingBox();
+    geom.computeBoundingSphere();
+    this.quakeBodyGeometries.set(pc, geom);
+    return this.resMap.track(geom);
+  }
+
   getCoffeeBodyGeometry(pc: PieceId, traits: PieceTraits): BufferGeometry {
-    const cache = this.coffeeBodyGeometries.get(pc);
+    const cache: BufferGeometry | undefined = this.coffeeBodyGeometries.get(pc);
     if (cache) return cache;
-    const geom = this.getMarbleBodyGeometry(pc, traits).clone();
-    const pos = geom.getAttribute("position");
-    const hgt = traits.isBig ? 1.45 : 0.9;
-    for (let vtx = 0; vtx < pos.count; vtx += 1) {
-      const prog = pos.getY(vtx) / hgt + 0.5;
-      const scale = traits.isRound
+    const geom: BufferGeometry = this.getMarbleBodyGeometry(pc, traits).clone();
+    const pos: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("position");
+    const hgt: 0.9 | 1.45 = traits.isBig ? 1.45 : 0.9;
+    for (let vtx: number = 0; vtx < pos.count; vtx += 1) {
+      const prog: number = pos.getY(vtx) / hgt + 0.5;
+      const scale: number = traits.isRound
         ? (0.29 + 0.085 * prog) / (0.43 - 0.05 * prog)
         : 0.82 + 0.16 * prog;
       pos.setXYZ(
@@ -202,7 +253,7 @@ export class PieceGeometry {
   }
 
   getVictorianBodyGeometry(pc: PieceId, traits: PieceTraits): BufferGeometry {
-    const cache = this.victorianBodyGeometries.get(pc);
+    const cache: BufferGeometry | undefined = this.victorianBodyGeometries.get(pc);
     if (cache) return cache;
     let src: BufferGeometry;
     if (traits.isRound) {
@@ -222,16 +273,16 @@ export class PieceGeometry {
           ? this.victorianSquareGeometries.hollowBig
           : this.victorianSquareGeometries.hollowSmall;
     }
-    const geom = src.clone();
-    const posArr = geom.getAttribute("position");
-    const normals = geom.getAttribute("normal");
-    const uvs = geom.getAttribute("uv");
-    const hgt = traits.isBig ? 1.45 : 0.9;
-    const offsetU = ((pc * 7 + 2) % 17) / 35;
-    const offsetV = ((pc * 11 + 3) % 19) / 39;
-    for (let vtx = 0; vtx < posArr.count; vtx += 1) {
-      let u = uvs.getX(vtx);
-      let v = posArr.getY(vtx) / hgt + 0.5;
+    const geom: BufferGeometry = src.clone();
+    const posArr: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("position");
+    const normals: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("normal");
+    const uvs: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("uv");
+    const hgt: 0.9 | 1.45 = traits.isBig ? 1.45 : 0.9;
+    const offsetU: number = ((pc * 7 + 2) % 17) / 35;
+    const offsetV: number = ((pc * 11 + 3) % 19) / 39;
+    for (let vtx: number = 0; vtx < posArr.count; vtx += 1) {
+      let u: number = uvs.getX(vtx);
+      let v: number = posArr.getY(vtx) / hgt + 0.5;
       if (Math.abs(normals.getY(vtx)) > 0.95) {
         u = posArr.getX(vtx) / 0.88 + 0.5;
         v = posArr.getZ(vtx) / 0.88 + 0.5;

@@ -31,7 +31,7 @@ export interface Elements {
 }
 
 export interface GameViewState extends GameState {
-  readonly hasStarted: boolean;
+  readonly isStarted: boolean;
   readonly isReview: boolean;
   readonly isPauseAI: boolean;
   readonly isRiskEnabled: boolean;
@@ -63,8 +63,8 @@ export class GameView {
 
   updateUI(st: GameViewState): void {
     this.renderBinBoard(st);
-    this.els.status.hidden = !st.hasStarted;
-    const startLabel = st.hasStarted ? "app.newGame" : "app.start";
+    this.els.status.hidden = !st.isStarted;
+    const startLabel: "app.newGame" | "app.start" = st.isStarted ? "app.newGame" : "app.start";
     this.els.newGame.dataset.i18n = startLabel;
     this.els.newGame.textContent = translate(startLabel);
 
@@ -84,7 +84,7 @@ export class GameView {
     this.renderRisk(st);
     this.renderPendingPiece(st);
 
-    if (!st.hasStarted) {
+    if (!st.isStarted) {
       return;
     }
 

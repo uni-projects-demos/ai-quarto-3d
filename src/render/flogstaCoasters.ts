@@ -1,14 +1,20 @@
-import { CanvasTexture, CylinderGeometry, SRGBColorSpace } from "three";
+import {
+  type BufferAttribute,
+  CanvasTexture,
+  CylinderGeometry,
+  type InterleavedBufferAttribute,
+  SRGBColorSpace,
+} from "three";
 
 export function createCoasterGeom(): CylinderGeometry {
   const geom = new CylinderGeometry(0.53, 0.53, 0.028, 64);
-  const pos = geom.getAttribute("position");
-  const uv = geom.getAttribute("uv");
-  for (let vtx = 0; vtx < pos.count; vtx += 1) {
-    const x = pos.getX(vtx);
-    const z = pos.getZ(vtx);
-    const ang = Math.atan2(z, x);
-    const fray = 0.996 + 0.004 * Math.sin(ang * 17 + Math.sin(ang * 7));
+  const pos: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("position");
+  const uv: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("uv");
+  for (let vtx: number = 0; vtx < pos.count; vtx += 1) {
+    const x: number = pos.getX(vtx);
+    const z: number = pos.getZ(vtx);
+    const ang: number = Math.atan2(z, x);
+    const fray: number = 0.996 + 0.004 * Math.sin(ang * 17 + Math.sin(ang * 7));
     pos.setX(vtx, x * fray);
     pos.setZ(vtx, z * fray);
     if (Math.abs(geom.getAttribute("normal").getY(vtx)) > 0.5) {
@@ -22,25 +28,25 @@ export function createCoasterGeom(): CylinderGeometry {
 
 export function createCoasterTexture(col: number, ink: number): CanvasTexture {
   const size = 512;
-  const cvs = document.createElement("canvas");
+  const cvs: HTMLCanvasElement = document.createElement("canvas");
   cvs.width = size;
   cvs.height = size;
-  const ctx = cvs.getContext("2d");
+  const ctx: CanvasRenderingContext2D | null = cvs.getContext("2d");
   if (!ctx) throw new Error("Could not create pub coaster texture");
-  const img = ctx.createImageData(size, size);
+  const img: ImageData = ctx.createImageData(size, size);
   const paper = [178, 164, 133] as const;
-  const paint = [col >> 16, (col >> 8) & 255, col & 255];
-  const ofs = Math.random() * 1000;
-  for (let y = 0; y < size; y += 1) {
-    for (let x = 0; x < size; x += 1) {
-      const rad = Math.hypot(x - size / 2, y - size / 2);
-      const noise = Math.random();
-      const patch = Math.sin((x + ofs) / 47) * Math.cos((y + ofs) / 59);
-      const printed = rad < 245 - noise * 5 && (rad < 229 || noise > 0.3);
-      const pixel = (y * size + x) * 4;
-      for (let channel = 0; channel < 3; channel += 1) {
+  const paint: number[] = [col >> 16, (col >> 8) & 255, col & 255];
+  const ofs: number = Math.random() * 1000;
+  for (let y: number = 0; y < size; y += 1) {
+    for (let x: number = 0; x < size; x += 1) {
+      const rad: number = Math.hypot(x - size / 2, y - size / 2);
+      const noise: number = Math.random();
+      const patch: number = Math.sin((x + ofs) / 47) * Math.cos((y + ofs) / 59);
+      const isPrinted: boolean = rad < 245 - noise * 5 && (rad < 229 || noise > 0.3);
+      const pixel: number = (y * size + x) * 4;
+      for (let channel: number = 0; channel < 3; channel += 1) {
         img.data[pixel + channel] =
-          (printed ? (paint[channel] ?? 0) : (paper[channel] ?? 0)) +
+          (isPrinted ? (paint[channel] ?? 0) : (paper[channel] ?? 0)) +
           (noise - 0.5) * 24 +
           patch * 8;
       }
@@ -73,9 +79,9 @@ export function createCoasterTexture(col: number, ink: number): CanvasTexture {
   ctx.closePath();
   ctx.fill();
   ctx.globalAlpha = 1;
-  for (let fibre = 0; fibre < 6500; fibre += 1) {
-    const x = Math.random() * size;
-    const y = Math.random() * size;
+  for (let fibre: number = 0; fibre < 6500; fibre += 1) {
+    const x: number = Math.random() * size;
+    const y: number = Math.random() * size;
     ctx.strokeStyle = fibre % 3 === 0 ? "rgba(65, 55, 36, 0.17)" : "rgba(213, 201, 169, 0.3)";
     ctx.lineWidth = 0.5 + Math.random();
     ctx.beginPath();
@@ -83,11 +89,11 @@ export function createCoasterTexture(col: number, ink: number): CanvasTexture {
     ctx.lineTo(x + Math.random() * 6 - 3, y + Math.random() * 4);
     ctx.stroke();
   }
-  for (let stain = 0; stain < 6; stain += 1) {
-    const x = Math.random() * size;
-    const y = Math.random() * size;
-    const rad = 22 + Math.random() * 65;
-    const blotch = ctx.createRadialGradient(x, y, 0, x, y, rad);
+  for (let stain: number = 0; stain < 6; stain += 1) {
+    const x: number = Math.random() * size;
+    const y: number = Math.random() * size;
+    const rad: number = 22 + Math.random() * 65;
+    const blotch: CanvasGradient = ctx.createRadialGradient(x, y, 0, x, y, rad);
     blotch.addColorStop(0, "rgba(73, 48, 23, 0.23)");
     blotch.addColorStop(1, "transparent");
     ctx.fillStyle = blotch;

@@ -9,7 +9,7 @@ import type { TranslationKey, TranslationRecords, TranslationTree } from "./type
 
 const STORAGE_KEY: string = "quarto-lang";
 const DEFAULT_LANG: string = "en";
-const lsnrs: Set<() => void> = new Set<() => void>();
+const listeners: Set<() => void> = new Set<() => void>();
 const RTL_LANGS: ReadonlySet<string> = new Set<string>([
   "ar",
   "arc",
@@ -31,15 +31,18 @@ const LANG_ALIASES: Readonly<Record<string, string>> = {
   in: "id",
   iw: "he",
 };
-const localeMods = import.meta.glob<unknown>(["./locales/*.json", "!./locales/en.json"], {
-  import: "default",
-});
+const localeMods: Record<string, () => Promise<unknown>> = import.meta.glob<unknown>(
+  ["./locales/*.json", "!./locales/en.json"],
+  {
+    import: "default",
+  },
+);
 const resMap = new Map<Locale, TranslationTree>([[DEFAULT_LANG, engResource]]);
 const loading = new Map<Locale, Promise<TranslationTree>>();
 const keys = new Set<string>();
 function collectKeys(tree: TranslationTree, pre = ""): void {
   for (const [key, val] of Object.entries(tree)) {
-    const pth = pre ? `${pre}.${key}` : key;
+    const pth: string = pre ? `${pre}.${key}` : key;
     if (typeof val === "string") keys.add(pth);
     else collectKeys(val, pth);
   }
@@ -55,18 +58,21 @@ function isTranslationTree(val: unknown): val is TranslationTree {
     typeof val === "object" &&
     val !== null &&
     !Array.isArray(val) &&
-    Object.values(val).every((nxt: unknown) => typeof nxt === "string" || isTranslationTree(nxt))
+    Object.values(val).every(
+      (nxt: unknown): nxt is string | TranslationTree =>
+        typeof nxt === "string" || isTranslationTree(nxt),
+    )
   );
 }
 
 async function loadLocale(lang: Locale): Promise<TranslationTree> {
-  const cache = resMap.get(lang);
+  const cache: TranslationTree | undefined = resMap.get(lang);
   if (cache) return cache;
-  const pend = loading.get(lang);
+  const pend: Promise<TranslationTree> | undefined = loading.get(lang);
   if (pend) return pend;
-  const load = localeMods[`./locales/${lang}.json`];
+  const load: (() => Promise<unknown>) | undefined = localeMods[`./locales/${lang}.json`];
   if (!load) throw new Error(`Missing locale resource: ${lang}`);
-  const prom = load()
+  const prom: Promise<TranslationTree> = load()
     .then((res: unknown): TranslationTree => {
       if (!isTranslationTree(res)) throw new Error(`Invalid locale resource: ${lang}`);
       resMap.set(lang, res);
@@ -86,9 +92,9 @@ export const LOCALES: readonly string[] = [
 export type Locale = string;
 
 let curLocale: Locale = DEFAULT_LANG;
-let localeReq = 0;
-let isStorageListenerAttached = false;
-let initCount = 0;
+let localeReq: number = 0;
+let isStorageListenerAttached: boolean = false;
+let initCount: number = 0;
 
 function isSupportedLang(lang: string): boolean {
   return LOCALES.includes(lang);
@@ -145,25 +151,25 @@ function applyLang(): void {
   applyTransAttr("content");
 }
 
-async function applyLocale(nxt: Locale, persist: boolean): Promise<void> {
-  const req = ++localeReq;
+async function applyLocale(nxt: Locale, isPersist: boolean): Promise<void> {
+  const req: number = ++localeReq;
   await loadLocale(nxt);
   if (req !== localeReq) return;
-  if (persist) saveStorage(STORAGE_KEY, nxt);
+  if (isPersist) saveStorage(STORAGE_KEY, nxt);
   if (nxt === curLocale) return;
   curLocale = nxt;
   applyLang();
-  for (const lsnr of lsnrs) lsnr();
+  for (const listener of listeners) listener();
 }
 
-const onStorage = (evt: StorageEvent): void => {
+const onStorage: (evt: StorageEvent) => void = (evt: StorageEvent): void => {
   if (evt.key !== STORAGE_KEY && evt.key !== null) return;
-  const resolved = resolveLocale(readStorage(STORAGE_KEY) ?? DEFAULT_LANG);
+  const resolved: string | undefined = resolveLocale(readStorage(STORAGE_KEY) ?? DEFAULT_LANG);
   if (resolved !== undefined) void applyLocale(resolved, false).catch(console.error);
 };
 
 export async function initI18n(): Promise<Dispose> {
-  const req = localeReq + 1;
+  const req: number = localeReq + 1;
   try {
     await applyLocale(detectLang(), false);
   } catch {
@@ -175,10 +181,10 @@ export async function initI18n(): Promise<Dispose> {
     isStorageListenerAttached = true;
     window.addEventListener("storage", onStorage);
   }
-  let disposed = false;
+  let isDisposed: boolean = false;
   return (): void => {
-    if (disposed) return;
-    disposed = true;
+    if (isDisposed) return;
+    isDisposed = true;
     initCount -= 1;
     if (initCount > 0) return;
     isStorageListenerAttached = false;
@@ -196,10 +202,10 @@ export function translate(key: TranslationKey, records: TranslationRecords = {})
   );
 }
 
-export function onLangChange(lsnr: () => void): Dispose {
-  lsnrs.add(lsnr);
+export function onLangChange(listener: () => void): Dispose {
+  listeners.add(listener);
   return (): void => {
-    lsnrs.delete(lsnr);
+    listeners.delete(listener);
   };
 }
 

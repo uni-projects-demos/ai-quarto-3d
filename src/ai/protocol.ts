@@ -42,8 +42,8 @@ export function isRequestAI(val: unknown): val is RequestAI {
   )
     return false;
 
-  const brd = val.board;
-  const pcs = [...brd.filter((cell) => cell !== null), ...val.remaining, val.curPiece];
+  const brd: Cell[] = val.board;
+  const pcs = [...brd.filter((cell: Cell) => cell !== null), ...val.remaining, val.curPiece];
   return (
     pcs.length === CELL_COUNT &&
     new Set(pcs).size === CELL_COUNT &&
@@ -57,7 +57,7 @@ export function isResponseAI(val: unknown): val is ResponseAI {
   if (val.type === "error") return typeof val.msg === "string";
   if (val.type === "progress") return isCount(val.depth) && isCount(val.nodes);
   if (val.type !== "result" || !isRecord(val.move)) return false;
-  const move = val.move;
+  const move: Record<string, unknown> = val.move;
   return (
     isCount(move.cell) &&
     move.cell < CELL_COUNT &&

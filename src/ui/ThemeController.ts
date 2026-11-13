@@ -15,7 +15,7 @@ import { readThemePref, saveThemePref, THEME_STORAGE_KEY } from "./themePref";
 import { themePrevOrder } from "./themePrevOrder";
 
 export class ThemeController {
-  private readonly cleanup = new Cleanup();
+  private readonly cleanup: Cleanup = new Cleanup();
   private cur: ThemeId = DEFAULT_THEME;
   private readonly nm: HTMLElement;
   private readonly lyt: HTMLElement;

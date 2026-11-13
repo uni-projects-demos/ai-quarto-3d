@@ -40,21 +40,26 @@ import type { Cell, Phase, PieceId } from "../game/types";
 import { Cleanup } from "../shared/Cleanup";
 import { GAME_THEMES, THEME_REG, type ThemeId } from "../themes";
 import { createCoasterGeom } from "./flogstaCoasters";
-import { createCoffeeDetails } from "./flogstaCoffee";
+import { type CoffeeMaterials, createCoffeeDetails } from "./flogstaCoffee";
 import { createRiceGrains } from "./flogstaPieces";
 import { createMossRim } from "./natureMoss";
 import { PieceGeometry } from "./PieceGeometry";
 import { getPresentedPieceTraits } from "./piecePresentation";
+import { CanterburyAftershocks, type QuakeRotation } from "./quakeAftershocks";
+import { quakeCellColourIndex } from "./quakePalette";
+import { createQuakePieceDetails } from "./quakePieces";
+import { createQuakeTableDetails } from "./quakeTable";
 import { SceneResources } from "./SceneResources";
 import { createTableGeometries, lowerTableRear, type TableGeometries } from "./tableGeometry";
 import { createWoodTexture } from "./textures";
 import {
   createThemeMaterials,
   MARBLE_CELL_COLS,
+  QUAKE_CELL_COLS,
   type ThemeMaterials,
   VICTORIAN_CELL_COLS,
 } from "./themeMaterials";
-import { createVictorianPieceDetails } from "./victorianCraft";
+import { createVictorianPieceDetails, type VictorianCraftMaterials } from "./victorianCraft";
 
 const BOARD_SPACE: number = 1.16;
 const BOARD_ROTATION: number = Math.PI / 4;
@@ -93,6 +98,7 @@ interface PieceView {
   inset: Mesh<BufferGeometry, MeshPhysicalMaterial> | null;
   bezel: Mesh<BufferGeometry, MeshPhysicalMaterial> | null;
   details: Group;
+  quakeDetails: Group;
   rice: InstancedMesh<SphereGeometry, MeshPhysicalMaterial> | null;
   coffee: Group | null;
   target: Vector3;
@@ -109,37 +115,43 @@ export interface SceneCallbacks {
 }
 
 export class GameScene {
-  private readonly cleanup = new Cleanup();
-  private readonly resMap = new SceneResources();
-  private readonly interactiveRefs = new WeakMap<Object3D, InteractiveRef>();
-  private disposed = false;
-  private needsRender = true;
+  private readonly cleanup: Cleanup = new Cleanup();
+  private readonly resMap: SceneResources = new SceneResources();
+  private readonly interactiveRefs: WeakMap<Object3D<Object3DEventMap>, InteractiveRef> =
+    new WeakMap<Object3D, InteractiveRef>();
+  private isDisposed: boolean = false;
+  private isNeedRender: boolean = true;
   private readonly scn: Scene<Object3DEventMap> = new Scene();
+  private readonly quakePivot: Group = new Group();
+  private readonly tableContents: Group = new Group();
+  private readonly aftershocks: CanterburyAftershocks = new CanterburyAftershocks();
+  private lastFrameAt: number = 0;
   private readonly camera: PerspectiveCamera = new PerspectiveCamera(37, 1, 0.1, 100);
   private readonly renderer: WebGLRenderer;
   private readonly controls: OrbitControls;
   private readonly raycaster: Raycaster = new Raycaster();
   private readonly ptr: Vector2 = new Vector2();
-  private readonly prevSize = new Vector2();
-  private readonly textureManager = new LoadingManager();
-  private readonly texturesReady = new Promise<void>((resolve, reject): void => {
+  private readonly prevSize: Vector2 = new Vector2();
+  private readonly textureManager: LoadingManager = new LoadingManager();
+  private readonly texturesReady: Promise<void> = new Promise<void>((resolve, reject): void => {
     this.textureManager.onLoad = (): void => resolve();
     this.textureManager.onError = (url: string): void => reject(new Error(`Could not load ${url}`));
   });
-  private readonly textureLoader = new TextureLoader(this.textureManager);
-  private readonly previewSize = new Vector2();
+  private readonly textureLoader: TextureLoader = new TextureLoader(this.textureManager);
+  private readonly previewSize: Vector2 = new Vector2();
   private previewTargets: ReadonlyMap<ThemeId, HTMLCanvasElement> | null = null;
   private readonly baseMesh: Mesh<BufferGeometry, MeshPhysicalMaterial>;
   private readonly tableEdge: Mesh<BufferGeometry, MeshPhysicalMaterial>;
   private readonly boardRingBase: Mesh<BufferGeometry, MeshPhysicalMaterial>;
   private readonly boardRim: Mesh<BufferGeometry, MeshPhysicalMaterial>;
-  private readonly originalRimGeometry = new TorusGeometry(3.45, 0.12, 20, 132);
+  private readonly originalRimGeometry: TorusGeometry = new TorusGeometry(3.45, 0.12, 20, 132);
   private readonly natureMoss = createMossRim();
   private readonly victorianBoardDetails: Group = new Group();
+  private readonly quakeTableDetails: Group = createQuakeTableDetails();
   private readonly themeMaterials: Record<ThemeId, ThemeMaterials>;
   private readonly tableGeoms: TableGeometries;
-  private readonly interiorFog = new Fog(0x11161e, 18, 28);
-  private readonly hemisphere = new HemisphereLight(0xfff0d8, 0x2a1e14, 0.7);
+  private readonly interiorFog: Fog = new Fog(0x11161e, 18, 28);
+  private readonly hemisphere: HemisphereLight = new HemisphereLight(0xfff0d8, 0x2a1e14, 0.7);
   private coffeeEnvironment: Texture | null = null;
   private activeTheme: ThemeId = "marble";
   private readonly boardCells: Mesh<CylinderGeometry, MeshPhysicalMaterial>[] = [];
@@ -151,8 +163,15 @@ export class GameScene {
     color: THEME_REG.marble.winHighlight,
     toneMapped: false,
   });
-  private readonly marbleHighlightAccent = new MeshBasicMaterial({ color: 0xbcecff });
-  private readonly victorianHighlightAccent = new MeshBasicMaterial({ color: 0xffe1a0 });
+  private readonly marbleHighlightAccent: MeshBasicMaterial = new MeshBasicMaterial({
+    color: 0xbcecff,
+  });
+  private readonly victorianHighlightAccent: MeshBasicMaterial = new MeshBasicMaterial({
+    color: 0xffe1a0,
+  });
+  private readonly quakeHighlightAccent: MeshBasicMaterial = new MeshBasicMaterial({
+    color: 0xe84b4c,
+  });
   private readonly pcs: Map<PieceId, PieceView> = new Map<PieceId, PieceView>();
   private readonly interactiveObj: Object3D[] = [];
   private readonly boardOffset: Vector3 = new Vector3();
@@ -164,9 +183,9 @@ export class GameScene {
     metalness: 0.55,
   });
   private readonly pieceGeometries: PieceGeometry;
-  private readonly cellGeometry = new CylinderGeometry(0.53, 0.53, 0.12, 48);
-  private readonly coasterGeometry = this.resMap.track(createCoasterGeom());
-  private readonly cellAccentGeometry = new TorusGeometry(0.46, 0.012, 8, 48);
+  private readonly cellGeometry: CylinderGeometry = new CylinderGeometry(0.53, 0.53, 0.12, 48);
+  private readonly coasterGeometry: CylinderGeometry = this.resMap.track(createCoasterGeom());
+  private readonly cellAccentGeometry: TorusGeometry = new TorusGeometry(0.46, 0.012, 8, 48);
   private st: SceneState = {
     board: Array<Cell>(CELL_COUNT).fill(null),
     remaining: [],
@@ -175,7 +194,7 @@ export class GameScene {
   };
   private hovered: InteractiveRef | null = null;
   private winCells: ReadonlySet<number> = new Set<number>();
-  private mobileLayout: boolean = false;
+  private isMobileLayout: boolean = false;
   private isSized: boolean = false;
   private readonly resizeObs: ResizeObserver;
 
@@ -196,8 +215,8 @@ export class GameScene {
       this.renderer.shadowMap.type = PCFShadowMap;
 
       this.controls = new OrbitControls(this.camera, cvs);
-      const onChange = (): void => {
-        this.needsRender = true;
+      const onChange: () => void = (): void => {
+        this.isNeedRender = true;
       };
       this.controls.addEventListener("change", onChange);
       this.cleanup.add((): void => {
@@ -218,7 +237,7 @@ export class GameScene {
         woodTexture,
         this.resMap,
       );
-      const tableMaterial = this.themeMaterials.marble.table;
+      const tableMaterial: MeshPhysicalMaterial = this.themeMaterials.marble.table;
       this.tableGeoms = createTableGeometries(TABLE_RADIUS, TABLE_BEVEL, TABLE_THICKNESS);
       for (const geom of Object.values(this.tableGeoms)) this.resMap.track(geom);
       this.baseMesh = new Mesh(this.tableGeoms.regularTop, tableMaterial);
@@ -232,6 +251,8 @@ export class GameScene {
       this.boardRim.add(this.natureMoss.fibres);
 
       this.createEnv();
+      this.quakePivot.add(this.tableContents);
+      this.scn.add(this.quakePivot);
       this.createBoard();
       this.layoutTable();
       this.createPieces();
@@ -242,24 +263,25 @@ export class GameScene {
       this.cleanup.add((): void => this.resizeObs.disconnect());
       this.resize();
 
-      const evts = { signal: this.cleanup.signal };
-      cvs.addEventListener("pointermove", this.onPointerMove, evts);
-      cvs.addEventListener("pointerleave", this.onPointerLeave, evts);
-      cvs.addEventListener("click", this.onClick, evts);
+      const events = { signal: this.cleanup.signal };
+      cvs.addEventListener("pointermove", this.onPointerMove, events);
+      cvs.addEventListener("pointerleave", this.onPointerLeave, events);
+      cvs.addEventListener("click", this.onClick, events);
       cvs.addEventListener(
         "webglcontextrestored",
         (): void => {
-          this.needsRender = true;
+          this.isNeedRender = true;
         },
-        evts,
+        events,
       );
-      window.addEventListener("resize", this.resize, evts);
+      window.addEventListener("resize", this.resize, events);
 
       this.resMap.trackObject(this.scn);
       this.resMap.track(this.natureMoss.geometry);
       this.resMap.track(this.dirLight.shadow);
       this.resMap.track(this.marbleHighlightAccent);
       this.resMap.track(this.victorianHighlightAccent);
+      this.resMap.track(this.quakeHighlightAccent);
       this.renderer.setAnimationLoop(this.animate);
     } catch (err) {
       this.cleanup.dispose();
@@ -268,8 +290,8 @@ export class GameScene {
   }
 
   dispose(): void {
-    if (this.disposed) return;
-    this.disposed = true;
+    if (this.isDisposed) return;
+    this.isDisposed = true;
     this.cleanup.dispose();
     this.scn.clear();
     this.pcs.clear();
@@ -277,23 +299,23 @@ export class GameScene {
     this.previewTargets = null;
   }
 
-  async preloadThemes(prevws: ReadonlyMap<ThemeId, HTMLCanvasElement>): Promise<void> {
+  async preloadThemes(previews: ReadonlyMap<ThemeId, HTMLCanvasElement>): Promise<void> {
     await this.texturesReady;
-    this.renderThemePreviews(prevws);
+    this.renderThemePreviews(previews);
   }
 
-  renderThemePreviews(prevws: ReadonlyMap<ThemeId, HTMLCanvasElement>): void {
-    if (this.disposed) return;
+  renderThemePreviews(previews: ReadonlyMap<ThemeId, HTMLCanvasElement>): void {
+    if (this.isDisposed) return;
     this.resize();
-    const src = this.renderer.domElement;
+    const src: HTMLCanvasElement = this.renderer.domElement;
     if (
-      this.previewTargets === prevws &&
+      this.previewTargets === previews &&
       this.previewSize.x === src.width &&
       this.previewSize.y === src.height
     )
       return;
-    const thm = this.activeTheme;
-    const st = this.st;
+    const thm: "flogsta" | "marble" | "nature" | "quake" | "victorian" = this.activeTheme;
+    const st: SceneState = this.st;
     this.setState({
       board: Array<Cell>(CELL_COUNT).fill(null),
       remaining: GAME_PIECES,
@@ -306,8 +328,8 @@ export class GameScene {
     }
     try {
       for (const def of GAME_THEMES) {
-        const prevw = prevws.get(def.id);
-        const ctx = prevw?.getContext("2d");
+        const prevw: HTMLCanvasElement | undefined = previews.get(def.id);
+        const ctx: CanvasRenderingContext2D | null | undefined = prevw?.getContext("2d");
         if (!prevw || !ctx) throw new Error(`Missing preview for ${def.id}`);
         this.setTheme(def.id);
         this.renderer.render(this.scn, this.camera);
@@ -315,24 +337,24 @@ export class GameScene {
         prevw.height = Math.round(prevw.width / this.camera.aspect);
         ctx.drawImage(src, 0, 0, prevw.width, prevw.height);
       }
-      this.previewTargets = prevws;
+      this.previewTargets = previews;
       this.previewSize.set(src.width, src.height);
     } finally {
       this.setTheme(thm);
       this.setState(st);
-      this.needsRender = true;
+      this.isNeedRender = true;
     }
   }
 
   setState(st: SceneState): void {
-    if (this.disposed) return;
+    if (this.isDisposed) return;
     if (
       st.pendingPiece === this.st.pendingPiece &&
       st.phase === this.st.phase &&
       st.board.length === this.st.board.length &&
-      st.board.every((pc, idx) => pc === this.st.board[idx]) &&
+      st.board.every((pc: Cell, idx: number): boolean => pc === this.st.board[idx]) &&
       st.remaining.length === this.st.remaining.length &&
-      st.remaining.every((pc, idx) => pc === this.st.remaining[idx])
+      st.remaining.every((pc, idx: number): boolean => pc === this.st.remaining[idx])
     )
       return;
     this.st = { ...st, board: [...st.board], remaining: [...st.remaining] };
@@ -344,12 +366,16 @@ export class GameScene {
   }
 
   setTheme(thm: ThemeId): void {
-    if (this.disposed || thm === this.activeTheme) return;
+    if (this.isDisposed || thm === this.activeTheme) return;
     const isVictorian: boolean = thm === "victorian";
     const isNature: boolean = thm === "nature";
     const isFlogsta: boolean = thm === "flogsta";
-    const look = this.themeMaterials[thm];
+    const isQuake: boolean = thm === "quake";
+    const look: ThemeMaterials = this.themeMaterials[thm];
     this.activeTheme = thm;
+    this.resetQuakeMotion();
+    this.aftershocks.reset();
+    this.lastFrameAt = 0;
     this.winningHighlightMaterial.color.set(THEME_REG[thm].winHighlight);
     this.baseMesh.material = look.table;
     this.tableEdge.material = look.edge;
@@ -362,33 +388,45 @@ export class GameScene {
     this.boardRim.visible = !isFlogsta;
     this.boardRim.geometry = isNature ? this.natureMoss.geometry : this.originalRimGeometry;
     this.natureMoss.fibres.visible = isNature;
+    this.quakeTableDetails.visible = isQuake;
     for (const [cell, mesh] of this.boardCells.entries()) {
       mesh.geometry = isFlogsta ? this.coasterGeometry : this.cellGeometry;
       mesh.rotation.y = isFlogsta ? Math.sin(cell * 7.13) * 0.18 : 0;
       mesh.material = look.cells[cell] ?? mesh.material;
-      const accent = this.cellAccents[cell];
+      const accent: Mesh<TorusGeometry, MeshBasicMaterial | MeshPhysicalMaterial> | undefined =
+        this.cellAccents[cell];
       if (accent) accent.material = look.accent;
     }
     for (const [pc, vw] of this.pcs) {
-      const { body, details: dtls, inset, bezel, rice, coffee } = vw;
+      const { body, details: dtls, quakeDetails, inset, bezel, rice, coffee } = vw;
       const traits: PieceTraits = getPresentedPieceTraits(pc);
-      body.geometry =
-        isFlogsta && traits.isDark
+      body.geometry = isQuake
+        ? this.pieceGeometries.getQuakeBodyGeometry(pc, traits)
+        : isFlogsta && traits.isDark
           ? this.pieceGeometries.getCoffeeBodyGeometry(pc, traits)
           : isVictorian
             ? this.pieceGeometries.getVictorianBodyGeometry(pc, traits)
             : this.pieceGeometries.getMarbleBodyGeometry(pc, traits);
-      body.material = traits.isDark ? look.pieces.darkBody : look.pieces.redBody;
+      body.material = isQuake
+        ? (look.quakeBodies?.[pc] ?? look.pieces.darkBody)
+        : traits.isDark
+          ? look.pieces.darkBody
+          : look.pieces.redBody;
       if (inset) {
-        inset.material = traits.isDark ? look.hollowDark : look.hollowLight;
+        inset.material = isQuake
+          ? (look.quakeInsets?.[pc] ?? look.hollowDark)
+          : traits.isDark
+            ? look.hollowDark
+            : look.hollowLight;
         inset.position.y =
           (traits.isBig ? 1.45 : 0.9) - (isFlogsta ? (traits.isDark ? 0.126 : 0.014) : 0.103);
       }
       if (bezel) {
-        bezel.visible = !isNature && !isFlogsta;
+        bezel.visible = !isNature && !isFlogsta && !isQuake;
         bezel.material = look.accent;
       }
       dtls.visible = isVictorian;
+      quakeDetails.visible = isQuake;
       if (rice) rice.visible = isFlogsta;
       if (coffee) coffee.visible = isFlogsta;
     }
@@ -397,11 +435,11 @@ export class GameScene {
     this.scn.environment = isFlogsta ? this.getCoffeeEnvironment() : null;
     this.scn.environmentIntensity = isFlogsta ? 0.22 : 1;
     this.renderer.toneMapping = isFlogsta ? ACESFilmicToneMapping : NoToneMapping;
-    this.hemisphere.color.setHex(isFlogsta ? 0xe1f3ff : 0xfff0d8);
-    this.hemisphere.groundColor.setHex(isFlogsta ? 0x66664e : 0x2a1e14);
-    this.hemisphere.intensity = isFlogsta ? 1.8 : 0.7;
-    this.dirLight.color.setHex(isFlogsta ? 0xfff4de : 0xffddb1);
-    this.dirLight.intensity = isFlogsta ? 3 : 4.8;
+    this.hemisphere.color.setHex(isFlogsta ? 0xe1f3ff : isQuake ? 0xdfe7f1 : 0xfff0d8);
+    this.hemisphere.groundColor.setHex(isFlogsta ? 0x66664e : isQuake ? 0x484348 : 0x2a1e14);
+    this.hemisphere.intensity = isFlogsta ? 1.8 : isQuake ? 1.18 : 0.7;
+    this.dirLight.color.setHex(isFlogsta ? 0xfff4de : isQuake ? 0xe3e6ed : 0xffddb1);
+    this.dirLight.intensity = isFlogsta ? 3 : isQuake ? 3.25 : 4.8;
     this.updateHighlights();
   }
 
@@ -435,7 +473,8 @@ export class GameScene {
     this.boardRim.castShadow = true;
     this.boardRim.receiveShadow = true;
 
-    this.scn.add(this.baseMesh, this.tableEdge, this.boardRingBase, this.boardRim);
+    this.tableContents.add(this.baseMesh, this.tableEdge, this.boardRingBase, this.boardRim);
+    this.tableContents.add(this.quakeTableDetails);
 
     for (let cell: number = 0; cell < CELL_COUNT; cell += 1) {
       const mesh = new Mesh(this.cellGeometry, this.themeMaterials.marble.cells[cell]);
@@ -465,7 +504,7 @@ export class GameScene {
 
       this.boardCells.push(mesh);
       this.interactiveObj.push(mesh);
-      this.scn.add(mesh);
+      this.tableContents.add(mesh);
     }
     this.createVictorianBoardDetails();
   }
@@ -484,16 +523,16 @@ export class GameScene {
       ornament.position.set(Math.cos(ang) * 3.18, 0, Math.sin(ang) * 3.18);
       this.victorianBoardDetails.add(ornament);
     }
-    this.scn.add(this.victorianBoardDetails);
+    this.tableContents.add(this.victorianBoardDetails);
   }
 
   private createPieces(): void {
     for (const pc of GAME_PIECES) {
-      const vw = this.makePiece(pc);
-      const group = vw.group;
+      const vw: PieceView = this.makePiece(pc);
+      const group: Group = vw.group;
       this.pcs.set(pc, vw);
       this.interactiveObj.push(group);
-      this.scn.add(group);
+      this.tableContents.add(group);
     }
   }
 
@@ -523,7 +562,7 @@ export class GameScene {
     let inset: PieceView["inset"] = null;
     let bezel: PieceView["bezel"] = null;
     if (!traits.isSolid) {
-      const look = this.themeMaterials.marble;
+      const look: ThemeMaterials = this.themeMaterials.marble;
       inset = new Mesh(
         traits.isRound
           ? new CylinderGeometry(0.201, 0.201, 0.018, 32)
@@ -548,11 +587,13 @@ export class GameScene {
       bezel.raycast = (): void => {};
       group.add(bezel);
     }
-    const craft = this.themeMaterials.victorian.craft;
+    const craft: VictorianCraftMaterials | undefined = this.themeMaterials.victorian.craft;
     if (!craft) throw new Error("Victorian craft materials are missing");
-    const dtls = createVictorianPieceDetails(traits, hgt, craft);
+    const dtls: Group = createVictorianPieceDetails(traits, hgt, craft);
     group.add(dtls);
-    const rice = traits.isDark
+    const quakeDetails: Group = createQuakePieceDetails(traits, pc);
+    group.add(quakeDetails);
+    const rice: InstancedMesh<SphereGeometry, MeshPhysicalMaterial> | null = traits.isDark
       ? null
       : createRiceGrains(
           body.geometry,
@@ -561,9 +602,9 @@ export class GameScene {
           this.pieceGeometries.riceGrainGeometry,
         );
     if (rice) group.add(rice);
-    const coffeeMats = this.themeMaterials.flogsta.coffee;
+    const coffeeMats: CoffeeMaterials | undefined = this.themeMaterials.flogsta.coffee;
     if (!coffeeMats) throw new Error("Coffee materials are missing");
-    const coffee = traits.isDark ? createCoffeeDetails(traits, coffeeMats) : null;
+    const coffee: Group | null = traits.isDark ? createCoffeeDetails(traits, coffeeMats) : null;
     if (coffee) group.add(coffee);
     return {
       group,
@@ -571,6 +612,7 @@ export class GameScene {
       inset,
       bezel,
       details: dtls,
+      quakeDetails,
       rice,
       coffee,
       target: new Vector3(),
@@ -591,11 +633,14 @@ export class GameScene {
   }
 
   private layoutObjects(): void {
-    this.boardOffset.set(this.mobileLayout ? 0 : -1.35, 0, this.mobileLayout ? -1.1 : 0);
+    this.boardOffset.set(this.isMobileLayout ? 0 : -1.35, 0, this.isMobileLayout ? -1.1 : 0);
+    this.quakePivot.position.copy(this.boardOffset).setY(BASE_Y);
+    this.tableContents.position.copy(this.quakePivot.position).negate();
     this.layoutTable();
     this.boardRingBase.position.copy(this.boardOffset).setY(BASE_Y + 0.01);
     this.boardRim.position.copy(this.boardOffset).setY(BASE_Y + 0.08);
     this.victorianBoardDetails.position.copy(this.boardOffset).setY(BASE_Y + 0.115);
+    this.quakeTableDetails.position.copy(this.boardOffset).setY(BASE_Y + 0.008);
 
     for (const [cell, mesh] of this.boardCells.entries()) {
       const row: number = Math.floor(cell / BOARD_SIZE);
@@ -627,7 +672,8 @@ export class GameScene {
 
       const boardCell: number | undefined = pieceCells.get(pc);
       if (boardCell !== undefined) {
-        const cellMesh = this.boardCells[boardCell];
+        const cellMesh: Mesh<CylinderGeometry, MeshPhysicalMaterial> | undefined =
+          this.boardCells[boardCell];
         if (!cellMesh) continue;
 
         this.setPieceTarget(
@@ -640,9 +686,9 @@ export class GameScene {
       } else if (this.st.pendingPiece === pc) {
         this.setPieceTarget(
           vw,
-          this.mobileLayout ? 2.95 : 5.25,
+          this.isMobileLayout ? 2.95 : 5.25,
           BASE_Y,
-          this.mobileLayout ? 2.0 : 0,
+          this.isMobileLayout ? 2.0 : 0,
           WIN_SCALE,
         );
       } else if (rem.has(pc)) {
@@ -658,13 +704,13 @@ export class GameScene {
     const upper: boolean = pc < 8;
     const sideIdx: number = upper ? pc : pc - 8;
     const prog: number = sideIdx / 7;
-    const ang: number = this.mobileLayout
+    const ang: number = this.isMobileLayout
       ? MathUtils.lerp(PORTRAIT_RESERVE_START, PORTRAIT_RESERVE_END, prog)
       : (upper
           ? MathUtils.lerp(RESERVE_UPPER_START, RESERVE_UPPER_END, prog)
           : MathUtils.lerp(RESERVE_LOWER_START, RESERVE_LOWER_END, prog)) -
         Math.PI / 2;
-    const rad: number = this.mobileLayout
+    const rad: number = this.isMobileLayout
       ? upper
         ? 6.1
         : 4.75
@@ -687,17 +733,19 @@ export class GameScene {
   }
 
   private updateHighlights(rem = new Set(this.st.remaining)): void {
-    this.needsRender = true;
+    this.isNeedRender = true;
     for (const [cell, mesh] of this.boardCells.entries()) {
-      const winningAccent = this.winningCellAccents[cell];
+      const winningAccent: Mesh<TorusGeometry, MeshBasicMaterial> | undefined =
+        this.winningCellAccents[cell];
       if (winningAccent)
         winningAccent.visible = this.st.phase === "finished" && this.winCells.has(cell);
-      const mat = mesh.material;
+      const mat: MeshPhysicalMaterial = mesh.material;
       const interactive: boolean = this.st.phase === "place" && this.st.board[cell] === null;
       const hovered: boolean =
         interactive && this.hovered?.type === "cell" && this.hovered.id === cell;
 
-      const accent = this.cellAccents[cell];
+      const accent: Mesh<TorusGeometry, MeshBasicMaterial | MeshPhysicalMaterial> | undefined =
+        this.cellAccents[cell];
       if (accent) {
         accent.visible = this.activeTheme !== "flogsta" && this.st.board[cell] === null;
         accent.material =
@@ -705,7 +753,9 @@ export class GameScene {
             ? this.marbleHighlightAccent
             : this.activeTheme === "victorian" && hovered
               ? this.victorianHighlightAccent
-              : this.themeMaterials[this.activeTheme].accent;
+              : this.activeTheme === "quake" && hovered
+                ? this.quakeHighlightAccent
+                : this.themeMaterials[this.activeTheme].accent;
         accent.scale.setScalar(this.activeTheme !== "nature" && hovered ? 1.05 : 1);
       }
       if (this.activeTheme === "marble") {
@@ -720,6 +770,10 @@ export class GameScene {
         );
         mat.emissive.setHex(hovered ? 0x644014 : interactive ? 0x211609 : 0x000000);
         mat.emissiveIntensity = hovered ? 0.75 : interactive ? 0.3 : 0;
+      } else if (this.activeTheme === "quake") {
+        mat.color.setHex(hovered ? 0xe34b50 : QUAKE_CELL_COLS[quakeCellColourIndex(cell)]);
+        mat.emissive.setHex(hovered ? 0x5a1017 : interactive ? 0x22080b : 0x000000);
+        mat.emissiveIntensity = hovered ? 0.62 : interactive ? 0.17 : 0;
       } else if (this.activeTheme === "flogsta") {
         mat.emissive.setHex(hovered ? 0xa9b9b2 : interactive ? 0x34433e : 0x000000);
         mat.emissiveIntensity = hovered ? 0.35 : interactive ? 0.12 : 0;
@@ -744,7 +798,7 @@ export class GameScene {
 
   private findInteractive(obj: Object3D): InteractiveRef | null {
     for (let cur: Object3D | null = obj; cur; cur = cur.parent) {
-      const ref = this.interactiveRefs.get(cur);
+      const ref: InteractiveRef | undefined = this.interactiveRefs.get(cur);
       if (ref) return ref;
     }
     return null;
@@ -796,12 +850,12 @@ export class GameScene {
   };
 
   private readonly resize: () => void = (): void => {
-    if (this.disposed) return;
+    if (this.isDisposed) return;
     const cvs: HTMLCanvasElement = this.renderer.domElement;
     const resizeTgt: HTMLElement = cvs.parentElement ?? cvs;
     const wdt: number = Math.max(1, resizeTgt.clientWidth);
     const hgt: number = Math.max(1, resizeTgt.clientHeight);
-    const pixelRatio = Math.min(window.devicePixelRatio, 2);
+    const pixelRatio: number = Math.min(window.devicePixelRatio, 2);
     this.renderer.getSize(this.prevSize);
     if (
       this.isSized &&
@@ -811,24 +865,24 @@ export class GameScene {
     )
       return;
     const aspect: number = wdt / hgt;
-    const nxtMobileLayout: boolean = aspect < MOBILE_ASPECT;
-    const isLayoutChange: boolean = !this.isSized || nxtMobileLayout !== this.mobileLayout;
+    const isNxtMobileLayout: boolean = aspect < MOBILE_ASPECT;
+    const isLayoutChange: boolean = !this.isSized || isNxtMobileLayout !== this.isMobileLayout;
 
     this.renderer.setPixelRatio(pixelRatio);
     this.renderer.setSize(wdt, hgt, false);
     this.camera.aspect = aspect;
-    this.camera.fov = nxtMobileLayout ? 50 : 37;
-    this.mobileLayout = nxtMobileLayout;
+    this.camera.fov = isNxtMobileLayout ? 50 : 37;
+    this.isMobileLayout = isNxtMobileLayout;
 
     if (isLayoutChange) {
-      if (this.mobileLayout) {
+      if (this.isMobileLayout) {
         this.camera.position.set(0, 6.8, 15.9);
         this.controls.target.set(0, 1.2, -1.1);
       } else {
         this.camera.position.set(-1.35, 7.2, 16.2);
         this.controls.target.set(-1.35, 1.25, -0.5);
       }
-      const ofs = this.camera.position.clone().sub(this.controls.target);
+      const ofs: Vector3 = this.camera.position.clone().sub(this.controls.target);
       ofs.setFromSphericalCoords(ofs.length(), VIEW_POLAR_ANGLE, 0);
       this.camera.position.copy(this.controls.target).add(ofs);
       this.layoutObjects();
@@ -838,17 +892,44 @@ export class GameScene {
     this.camera.updateProjectionMatrix();
     this.controls.update();
     this.dirLight.position.copy(this.camera.position);
-    this.needsRender = true;
+    this.isNeedRender = true;
   };
 
+  private resetQuakeMotion(): void {
+    this.quakePivot.rotation.set(0, 0, 0);
+    for (const vw of this.pcs.values()) vw.group.rotation.set(0, 0, 0);
+    this.isNeedRender = true;
+  }
+
   private readonly animate: () => void = (): void => {
-    if (this.disposed) return;
-    this.needsRender = this.controls.update() || this.needsRender;
+    if (this.isDisposed) return;
+    const now: number = performance.now();
+    const elapsed: number = this.lastFrameAt === 0 ? 0 : (now - this.lastFrameAt) / 1000;
+    this.lastFrameAt = now;
+    this.isNeedRender = this.controls.update() || this.isNeedRender;
     this.dirLight.position.copy(this.camera.position);
+    if (this.activeTheme === "quake") {
+      const motion: QuakeRotation = this.aftershocks.step(elapsed);
+      if (
+        this.quakePivot.rotation.x !== motion.pitch ||
+        this.quakePivot.rotation.z !== motion.roll ||
+        this.quakePivot.rotation.y !== motion.yaw
+      ) {
+        this.quakePivot.rotation.set(motion.pitch, motion.yaw, motion.roll);
+        this.isNeedRender = true;
+      }
+      for (const [pc, vw] of this.pcs) {
+        const wobble: QuakeRotation = this.aftershocks.pieceWobble(pc);
+        if (vw.group.rotation.x !== wobble.pitch || vw.group.rotation.z !== wobble.roll) {
+          vw.group.rotation.set(wobble.pitch, 0, wobble.roll);
+          this.isNeedRender = true;
+        }
+      }
+    }
     for (const vw of this.pcs.values()) {
       if (!vw.group.visible) continue;
 
-      const isMoving =
+      const isMoving: boolean =
         vw.group.position.distanceToSquared(vw.target) > 1e-12 ||
         Math.abs(vw.group.scale.x - vw.targetScale) > 1e-6;
       if (isMoving) {
@@ -856,16 +937,16 @@ export class GameScene {
         vw.group.scale.setScalar(
           MathUtils.lerp(vw.group.scale.x, vw.targetScale, ANIMATION_FACTOR),
         );
-        this.needsRender = true;
+        this.isNeedRender = true;
       } else if (!vw.group.position.equals(vw.target) || vw.group.scale.x !== vw.targetScale) {
         vw.group.position.copy(vw.target);
         vw.group.scale.setScalar(vw.targetScale);
-        this.needsRender = true;
+        this.isNeedRender = true;
       }
     }
-    if (!this.needsRender) return;
+    if (!this.isNeedRender) return;
     this.renderer.render(this.scn, this.camera);
-    this.needsRender = false;
+    this.isNeedRender = false;
   };
 
   private getCoffeeEnvironment(): Texture {
@@ -883,7 +964,7 @@ export class GameScene {
 
   private loadStoneTexture(url: string): Texture {
     const tex: Texture = this.textureLoader.load(url, (): void => {
-      if (!this.disposed) this.needsRender = true;
+      if (!this.isDisposed) this.isNeedRender = true;
     });
     tex.colorSpace = SRGBColorSpace;
     tex.anisotropy = Math.min(this.renderer.capabilities.getMaxAnisotropy(), 8);

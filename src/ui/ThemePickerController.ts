@@ -5,9 +5,9 @@ import { GAME_THEMES, isThemeId, type ThemeId } from "../themes";
 import { themePrevOrder } from "./themePrevOrder";
 
 export class ThemePickerController {
-  private readonly cleanup = new Cleanup();
-  private isStarting = false;
-  private readonly btns: HTMLButtonElement[];
+  private readonly cleanup: Cleanup = new Cleanup();
+  private isStarting: boolean = false;
+  private readonly buttons: HTMLButtonElement[];
   private readonly stat: HTMLElement;
 
   constructor(
@@ -15,14 +15,14 @@ export class ThemePickerController {
     private readonly onSelect: (thm: ThemeId) => void,
     private readonly fitPreviews: () => void,
   ) {
-    this.btns = [...root.querySelectorAll<HTMLButtonElement>("[data-theme-id]")];
+    this.buttons = [...root.querySelectorAll<HTMLButtonElement>("[data-theme-id]")];
     this.stat = requiredEl("theme-launch-status", HTMLElement, root);
-    for (const btn of this.btns) {
+    for (const btn of this.buttons) {
       btn.disabled = false;
       btn.addEventListener(
         "click",
         (): void => {
-          const thm = btn.dataset.themeId;
+          const thm: string | undefined = btn.dataset.themeId;
           if (thm && isThemeId(thm)) this.select(thm);
         },
         { signal: this.cleanup.signal },
@@ -34,7 +34,7 @@ export class ThemePickerController {
 
   dispose(): void {
     this.isStarting = true;
-    for (const btn of this.btns) btn.disabled = true;
+    for (const btn of this.buttons) btn.disabled = true;
     this.cleanup.dispose();
   }
 
@@ -47,7 +47,7 @@ export class ThemePickerController {
     if (this.isStarting) return;
     this.isStarting = true;
     this.root.setAttribute("aria-busy", "true");
-    for (const btn of this.btns) btn.disabled = true;
+    for (const btn of this.buttons) btn.disabled = true;
     try {
       this.onSelect(thm);
     } catch (err) {
@@ -56,20 +56,22 @@ export class ThemePickerController {
       this.stat.dataset.i18n = "themes.loadError";
       this.stat.textContent = translate("themes.loadError");
       this.stat.hidden = false;
-      for (const btn of this.btns) btn.disabled = false;
+      for (const btn of this.buttons) btn.disabled = false;
       console.error(err);
     }
   }
 
-  private readonly updateLabels = (): void => {
+  private readonly updateLabels: () => void = (): void => {
     for (const def of themePrevOrder(GAME_THEMES)) {
-      const btn = this.btns.find((btn) => btn.dataset.themeId === def.id);
+      const btn: HTMLButtonElement | undefined = this.buttons.find(
+        (btn: HTMLButtonElement): boolean => btn.dataset.themeId === def.id,
+      );
       if (!btn) continue;
       btn.setAttribute(
         "aria-label",
         translate("themes.playTheme", { theme: translate(def.nameKey) }),
       );
-      const item = btn.closest(".theme-preview-item");
+      const item: Element | null = btn.closest(".theme-preview-item");
       item?.parentElement?.append(item);
     }
     this.fitPreviews();

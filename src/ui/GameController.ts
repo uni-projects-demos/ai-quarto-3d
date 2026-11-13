@@ -37,10 +37,10 @@ interface DeferMoveAI {
 }
 
 class GameController {
-  private readonly cleanup = new Cleanup();
+  private readonly cleanup: Cleanup = new Cleanup();
   private readonly vw: GameView;
-  private disposed = false;
-  private hasStarted = false;
+  private isDisposed: boolean = false;
+  private isStarted: boolean = false;
   private brd: Cell[] = Array(CELL_COUNT).fill(null);
   private rem: PieceId[] = [...GAME_PIECES];
   private pendingPiece: PieceId | null = null;
@@ -83,7 +83,7 @@ class GameController {
     this.els.starter.addEventListener(
       "change",
       (): void => {
-        if (this.hasStarted) this.newGame();
+        if (this.isStarted) this.newGame();
       },
       opts,
     );
@@ -91,7 +91,7 @@ class GameController {
       "change",
       (): void => {
         this.configModeControls();
-        if (this.hasStarted) this.newGame();
+        if (this.isStarted) this.newGame();
         else this.updateUI();
       },
       opts,
@@ -115,17 +115,17 @@ class GameController {
   }
 
   dispose(): void {
-    if (this.disposed) return;
-    this.disposed = true;
-    this.hasStarted = false;
+    if (this.isDisposed) return;
+    this.isDisposed = true;
+    this.isStarted = false;
     this.cancelAI();
     this.cleanup.dispose();
   }
 
   start(): void {
-    if (this.disposed) return;
-    if (!this.hasStarted) this.onStart?.();
-    this.hasStarted = true;
+    if (this.isDisposed) return;
+    if (!this.isStarted) this.onStart?.();
+    this.isStarted = true;
     this.configModeControls();
     this.newGame();
   }
@@ -136,7 +136,7 @@ class GameController {
 
   handlePieceClick(pc: PieceId): void {
     if (
-      !this.hasStarted ||
+      !this.isStarted ||
       this.isReview ||
       this.phase !== "select" ||
       !this.isTurnUser(this.actTurn) ||
@@ -149,7 +149,7 @@ class GameController {
 
   handleCellClick(cell: number): void {
     if (
-      !this.hasStarted ||
+      !this.isStarted ||
       this.isReview ||
       this.phase !== "place" ||
       !this.isTurnUser(this.actTurn) ||
@@ -163,7 +163,7 @@ class GameController {
   }
 
   handlePieceHover(pc: PieceId | null): void {
-    if (!this.hasStarted) return;
+    if (!this.isStarted) return;
     const isPreviewSelection: boolean =
       pc !== null &&
       !this.isReview &&
@@ -182,7 +182,7 @@ class GameController {
   }
 
   private readonly newGame: () => void = (): void => {
-    if (!this.hasStarted) return;
+    if (!this.isStarted) return;
     this.cancelAI();
     this.isPauseAI = false;
     this.rnd = getRandVal();
@@ -282,7 +282,7 @@ class GameController {
 
   private isCurTurnAI(turnID = this.requestId): boolean {
     return (
-      this.hasStarted &&
+      this.isStarted &&
       !this.isReview &&
       turnID === this.requestId &&
       this.phase === "thinking" &&
@@ -612,7 +612,7 @@ class GameController {
 
   private isHistNav(): boolean {
     return (
-      this.hasStarted &&
+      this.isStarted &&
       (this.isReview ||
         this.phase !== "thinking" ||
         this.getTurnPlayer(this.actTurn) !== "ai" ||
@@ -629,7 +629,7 @@ class GameController {
   private captureViewState(): GameViewState {
     return {
       ...this.captureGameState(false),
-      hasStarted: this.hasStarted,
+      isStarted: this.isStarted,
       isReview: this.isReview,
       isPauseAI: this.isPauseAI,
       isRiskEnabled: this.isRiskEnabled,

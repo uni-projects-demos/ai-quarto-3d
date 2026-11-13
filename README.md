@@ -2,14 +2,14 @@
 
 AI-Quarto in 3D using negamax with alpha-beta pruning, React UI and Three.js scene. Not affiliated with Gigamic.
 
-Demonstrating a a past Uppsala University project: [uu-game](https://github.com/Uni-Git-Projects). The Python game  
-engine component and CLI are ported and enhanced to a 3D-interactive web UI, applying skills from other studies  
-completed with distinction, including (full-stack, UI) web dev, software eng, HCI, CG, AI/ML, and data eng, etc.
+A demo of past Uppsala University Agile SWE project: [uu-game](https://github.com/Uni-Git-Projects). The Python game engine component and CLI are  
+ported and enhanced to a 3D-interactive web UI; applying skills also from other studies completed with distinction,  
+including full-stack web dev, software eng, HCI, comp graphics, AI/ML, eng math, stats and physics, and data eng...
 
-From recollection, it was the only, if not best game engine, and all components completed, at least with all members.  
+From recollection, it was the only, if not best game engine - and all components completed, at least with all members.  
 However, it wasn't the only time I overcome epic injuries to excel under eternal 24/7 harassment, wrongdoing plagues.
 
-> Note: all relevant studies are completed before ChatGPT and other GenAI models have been publicly available.
+> Note: all relevant studies are completed before ChatGPT and other Gen-AI models have been publicly available.
 
 <details>
 <summary>UU-Game group:
@@ -32,7 +32,7 @@ UU-Game PO:
 ## Install
 
 ```Bash
-npm install
+npm ci
 ```
 
 ## Run

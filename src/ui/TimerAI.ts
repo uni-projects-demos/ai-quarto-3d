@@ -6,15 +6,15 @@ export interface ClockAI {
 
 const clockAI: ClockAI = {
   now: (): number => performance.now(),
-  set: (cb, ms): number => window.setTimeout(cb, ms),
-  clear: (id): void => window.clearTimeout(id),
+  set: (cb: () => void, ms: number): number => window.setTimeout(cb, ms),
+  clear: (id: number): void => window.clearTimeout(id),
 };
 
 export class TimerAI {
   private id: number | null = null;
   private remMS: number;
-  private startedAt = 0;
-  private disposed = false;
+  private startedAt: number = 0;
+  private isDisposed: boolean = false;
 
   constructor(
     delayMS: number,
@@ -25,12 +25,12 @@ export class TimerAI {
   }
 
   timerResumeAI(): void {
-    if (this.disposed || this.id !== null) return;
+    if (this.isDisposed || this.id !== null) return;
     this.startedAt = this.clock.now();
-    const id = this.clock.set((): void => {
-      if (this.disposed || this.id !== id) return;
+    const id: number = this.clock.set((): void => {
+      if (this.isDisposed || this.id !== id) return;
       this.id = null;
-      this.disposed = true;
+      this.isDisposed = true;
       this.cb();
     }, this.remMS);
     this.id = id;
@@ -46,6 +46,6 @@ export class TimerAI {
   timerClearAI(): void {
     if (this.id !== null) this.clock.clear(this.id);
     this.id = null;
-    this.disposed = true;
+    this.isDisposed = true;
   }
 }

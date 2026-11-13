@@ -1,4 +1,11 @@
-import { type BufferGeometry, CircleGeometry, LatheGeometry, Vector2 } from "three";
+import {
+  type BufferAttribute,
+  type BufferGeometry,
+  CircleGeometry,
+  type InterleavedBufferAttribute,
+  LatheGeometry,
+  Vector2,
+} from "three";
 import { createTrunkTable, weldTrunkEdge } from "./natureTable";
 
 export interface TableGeometries {
@@ -28,8 +35,9 @@ export function createTableGeometries(
     ],
     120,
   );
-  const edgePositions = edgeGeometry.getAttribute("position");
-  const edgeUVs = edgeGeometry.getAttribute("uv");
+  const edgePositions: BufferAttribute | InterleavedBufferAttribute =
+    edgeGeometry.getAttribute("position");
+  const edgeUVs: BufferAttribute | InterleavedBufferAttribute = edgeGeometry.getAttribute("uv");
   for (let vtx: number = 0; vtx < edgePositions.count; vtx += 1) {
     edgeUVs.setXY(
       vtx,
@@ -37,7 +45,10 @@ export function createTableGeometries(
       0.5 - edgePositions.getZ(vtx) / (2 * topRad),
     );
   }
-  const trunk = createTrunkTable(TABLE_RADIUS, TABLE_BEVEL);
+  const trunk: { top: CircleGeometry; edge: LatheGeometry } = createTrunkTable(
+    TABLE_RADIUS,
+    TABLE_BEVEL,
+  );
   return {
     regularTop: topGeometry,
     regularEdge: edgeGeometry,
@@ -53,9 +64,9 @@ export function lowerTableRear(tableGeoms: TableGeometries, TABLE_REAR_SCALE: nu
     [tableGeoms.natureTop, true],
     [tableGeoms.natureEdge, false],
   ] as const) {
-    const pos = geom.getAttribute("position");
-    const uv = geom.getAttribute("uv");
-    for (let idx = 0; idx < pos.count; idx += 1) {
+    const pos: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("position");
+    const uv: BufferAttribute | InterleavedBufferAttribute = geom.getAttribute("uv");
+    for (let idx: number = 0; idx < pos.count; idx += 1) {
       const rear: number = flat ? pos.getY(idx) : -pos.getZ(idx);
       if (rear <= 0) continue;
       if (flat) pos.setY(idx, rear * TABLE_REAR_SCALE);

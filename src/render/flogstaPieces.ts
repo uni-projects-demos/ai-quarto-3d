@@ -18,29 +18,32 @@ export function createWeatheredTexture(
   substrate: "pine" | "chipboard" = "pine",
 ): CanvasTexture {
   const size = 1024;
-  const cvs = document.createElement("canvas");
+  const cvs: HTMLCanvasElement = document.createElement("canvas");
   cvs.width = size;
   cvs.height = size;
-  const ctx = cvs.getContext("2d");
+  const ctx: CanvasRenderingContext2D | null = cvs.getContext("2d");
   if (!ctx) throw new Error("Could not create weathered timber texture");
-  const img = ctx.createImageData(size, size);
+  const img: ImageData = ctx.createImageData(size, size);
   const timberCol = [153, 147, 127] as const;
-  const paintCol = paint === undefined ? null : [paint >> 16, (paint >> 8) & 255, paint & 255];
-  const ofsX = Math.random() * 1000;
-  const ofsY = Math.random() * 1000;
-  const planks = Array.from({ length: 7 }, (): number => Math.random() * 32 - 16);
+  const paintCol: number[] | null =
+    paint === undefined ? null : [paint >> 16, (paint >> 8) & 255, paint & 255];
+  const ofsX: number = Math.random() * 1000;
+  const ofsY: number = Math.random() * 1000;
+  const planks: number[] = Array.from({ length: 7 }, (): number => Math.random() * 32 - 16);
   const chipboard = substrate === "chipboard";
-  for (let y = 0; y < size; y += 1) {
-    for (let x = 0; x < size; x += 1) {
-      const grain = chipboard ? 0 : x + 7 * Math.sin((y + ofsY) / 93) + 3 * Math.sin(y / 31);
-      const noise = Math.sin(x * 91.7 + y * 73.1 + ofsX);
-      const patch =
+  for (let y: number = 0; y < size; y += 1) {
+    for (let x: number = 0; x < size; x += 1) {
+      const grain: number = chipboard
+        ? 0
+        : x + 7 * Math.sin((y + ofsY) / 93) + 3 * Math.sin(y / 31);
+      const noise: number = Math.sin(x * 91.7 + y * 73.1 + ofsX);
+      const patch: number =
         Math.sin((x + ofsX) / 79 + Math.sin(y / 117)) *
         Math.cos((y + ofsY) / 103 + Math.sin(x / 83));
-      const split = Math.max(0, Math.sin(grain * 0.17) - 0.976) * 1300;
-      const water = Math.max(0, patch + 0.1) ** 2 * 73;
-      const plank = planks[Math.floor((x * planks.length) / size)] ?? 0;
-      const tone = chipboard
+      const split: number = Math.max(0, Math.sin(grain * 0.17) - 0.976) * 1300;
+      const water: number = Math.max(0, patch + 0.1) ** 2 * 73;
+      const plank: number = planks[Math.floor((x * planks.length) / size)] ?? 0;
+      const tone: number = chipboard
         ? noise * 19 - water
         : 7 * Math.sin(grain * 1.3) +
           10 * Math.sin(grain * 0.23) +
@@ -48,10 +51,10 @@ export function createWeatheredTexture(
           plank -
           split -
           water;
-      const paintMask = patch + noise * 0.27;
-      const pixel = (y * size + x) * 4;
-      for (let channel = 0; channel < 3; channel += 1) {
-        const col = paintCol?.[channel];
+      const paintMask: number = patch + noise * 0.27;
+      const pixel: number = (y * size + x) * 4;
+      for (let channel: number = 0; channel < 3; channel += 1) {
+        const col: number | undefined = paintCol?.[channel];
         img.data[pixel + channel] =
           col !== undefined && paintMask > -0.23
             ? col + noise * 10 - water * 0.45 + (paintMask < -0.1 ? 27 : 0)
@@ -65,9 +68,9 @@ export function createWeatheredTexture(
     const chips = ["#b9a57e", "#ceb991", "#8c7a58", "#ddd0ad", "#a08c66"] as const;
     ctx.save();
     ctx.globalAlpha = paint === undefined ? 0.7 : 0.15;
-    for (let idx = 0; idx < 14000; idx += 1) {
-      const wdt = 2 + Math.random() * 5;
-      const len = 4 + Math.random() * 14;
+    for (let idx: number = 0; idx < 14000; idx += 1) {
+      const wdt: number = 2 + Math.random() * 5;
+      const len: number = 4 + Math.random() * 14;
       ctx.save();
       ctx.translate(Math.random() * size, Math.random() * size);
       ctx.rotate(Math.random() * Math.PI);
@@ -83,14 +86,19 @@ export function createWeatheredTexture(
     }
     ctx.restore();
   }
-  const blotch = (x: number, y: number, rad: number, col: string): void => {
-    const grad = ctx.createRadialGradient(x, y, 0, x, y, rad);
+  const blotch: (x: number, y: number, rad: number, col: string) => void = (
+    x: number,
+    y: number,
+    rad: number,
+    col: string,
+  ): void => {
+    const grad: CanvasGradient = ctx.createRadialGradient(x, y, 0, x, y, rad);
     grad.addColorStop(0, col);
     grad.addColorStop(1, "transparent");
     ctx.fillStyle = grad;
     ctx.fillRect(x - rad, y - rad, rad * 2, rad * 2);
   };
-  for (let idx = 0; idx < 26; idx += 1) {
+  for (let idx: number = 0; idx < 26; idx += 1) {
     blotch(
       Math.random() * size,
       Math.random() * size,
@@ -98,11 +106,11 @@ export function createWeatheredTexture(
       idx % 3 === 0 ? "rgba(233, 227, 204, 0.48)" : "rgba(44, 44, 29, 0.32)",
     );
   }
-  for (let idx = 0; idx < 120; idx += 1) {
-    const x = Math.random() * size;
-    const y = Math.random() * size;
-    const len = 12 + Math.random() * 180;
-    const drift = Math.random() * 18 - 9;
+  for (let idx: number = 0; idx < 120; idx += 1) {
+    const x: number = Math.random() * size;
+    const y: number = Math.random() * size;
+    const len: number = 12 + Math.random() * 180;
+    const drift: number = Math.random() * 18 - 9;
     ctx.strokeStyle = Math.random() < 0.3 ? "rgba(228, 215, 176, 0.72)" : "rgba(40, 34, 22, 0.6)";
     ctx.lineWidth = 0.5 + Math.random() * 2.8;
     ctx.beginPath();
@@ -110,11 +118,11 @@ export function createWeatheredTexture(
     ctx.bezierCurveTo(x + drift, y + len / 3, x - drift, y + len * 0.7, x + drift, y + len);
     ctx.stroke();
   }
-  for (let idx = 0; idx < (chipboard ? 0 : 7); idx += 1) {
-    const x = Math.random() * size;
-    const y = Math.random() * size;
-    const rad = 9 + Math.random() * 12;
-    for (let ring = 0; ring < 4; ring += 1) {
+  for (let idx: number = 0; idx < (chipboard ? 0 : 7); idx += 1) {
+    const x: number = Math.random() * size;
+    const y: number = Math.random() * size;
+    const rad: number = 9 + Math.random() * 12;
+    for (let ring: number = 0; ring < 4; ring += 1) {
       ctx.strokeStyle = `rgba(64, 46, 26, ${0.28 - ring * 0.045})`;
       ctx.lineWidth = 1.3;
       ctx.beginPath();
@@ -123,16 +131,16 @@ export function createWeatheredTexture(
     }
   }
   if (paint === undefined) {
-    for (let idx = 0; idx < 13; idx += 1) {
-      const x = Math.random() * size;
-      const y = Math.random() * size;
-      const rad = 25 + Math.random() * 53;
-      const ang = Math.random() * Math.PI;
+    for (let idx: number = 0; idx < 13; idx += 1) {
+      const x: number = Math.random() * size;
+      const y: number = Math.random() * size;
+      const rad: number = 25 + Math.random() * 53;
+      const ang: number = Math.random() * Math.PI;
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(ang);
       ctx.scale(0.65 + Math.random() * 0.55, 0.6 + Math.random() * 0.5);
-      const start = Math.random() * Math.PI;
+      const start: number = Math.random() * Math.PI;
       ctx.strokeStyle = idx % 3 === 0 ? "rgba(108, 56, 25, 0.35)" : "rgba(59, 32, 15, 0.4)";
       ctx.lineWidth = 2 + Math.random() * 5;
       ctx.beginPath();
@@ -141,10 +149,10 @@ export function createWeatheredTexture(
       blotch(0, 0, rad * 1.2, "rgba(86, 49, 22, 0.22)");
       ctx.restore();
     }
-    for (let idx = 0; idx < 20; idx += 1) {
-      const x = Math.random() * size;
-      const y = Math.random() * size;
-      const rad = 10 + Math.random() * 44;
+    for (let idx: number = 0; idx < 20; idx += 1) {
+      const x: number = Math.random() * size;
+      const y: number = Math.random() * size;
+      const rad: number = 10 + Math.random() * 44;
       blotch(x, y, rad, idx % 2 === 0 ? "rgba(71, 34, 16, 0.4)" : "rgba(121, 67, 24, 0.32)");
       ctx.strokeStyle = "rgba(82, 44, 19, 0.3)";
       ctx.lineWidth = 1 + Math.random() * 3;
@@ -153,9 +161,9 @@ export function createWeatheredTexture(
       ctx.quadraticCurveTo(x + rad, y + rad, x + rad * 0.4, y + rad * 2.6);
       ctx.stroke();
     }
-    for (let idx = 0; idx < 11; idx += 1) {
-      const x = Math.random() * size;
-      const y = Math.random() * size;
+    for (let idx: number = 0; idx < 11; idx += 1) {
+      const x: number = Math.random() * size;
+      const y: number = Math.random() * size;
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(Math.random() * Math.PI);
@@ -177,18 +185,18 @@ export function createWeatheredTexture(
 }
 
 export function createSalmonTexture(): CanvasTexture {
-  const cvs = document.createElement("canvas");
+  const cvs: HTMLCanvasElement = document.createElement("canvas");
   cvs.width = 256;
   cvs.height = 256;
-  const ctx = cvs.getContext("2d");
+  const ctx: CanvasRenderingContext2D | null = cvs.getContext("2d");
   if (!ctx) throw new Error("Could not create salmon texture");
-  const flesh = ctx.createLinearGradient(0, 0, 256, 256);
+  const flesh: CanvasGradient = ctx.createLinearGradient(0, 0, 256, 256);
   flesh.addColorStop(0, "#d87055");
   flesh.addColorStop(0.5, "#c95e47");
   flesh.addColorStop(1, "#de7e62");
   ctx.fillStyle = flesh;
   ctx.fillRect(0, 0, 256, 256);
-  for (let band = -100; band < 360; band += 32) {
+  for (let band: number = -100; band < 360; band += 32) {
     ctx.beginPath();
     ctx.moveTo(-20, band + 58);
     ctx.bezierCurveTo(52, band + 18, 163, band + 20, 276, band - 35);
@@ -214,13 +222,13 @@ export function createRiceGrains(
   const grains = new InstancedMesh(geom, mat, 1100);
   grains.name = "rice-grains";
   grains.visible = false;
-  const sampler = new MeshSurfaceSampler(new Mesh(body, mat)).build();
+  const sampler: MeshSurfaceSampler = new MeshSurfaceSampler(new Mesh(body, mat)).build();
   const pos = new Vector3();
   const norm = new Vector3();
   const grain = new Object3D();
-  const hgt = traits.isBig ? 1.45 : 0.9;
-  let cnt = 0;
-  for (let attempt = 0; attempt < 2200 && cnt < 1100; attempt += 1) {
+  const hgt: 0.9 | 1.45 = traits.isBig ? 1.45 : 0.9;
+  let cnt: number = 0;
+  for (let attempt: number = 0; attempt < 2200 && cnt < 1100; attempt += 1) {
     sampler.sample(pos, norm);
     if (norm.y < -0.5) continue;
     if (
