@@ -1,6 +1,6 @@
 import type { JSX } from "react";
-import type { Difficulty, GameMode, Starter } from "../game/types";
-import type { TranslationKey } from "../i18n/types";
+import type { Difficulty, GameMode, Starter } from "../../game/types";
+import type { TranslationKey } from "../../i18n/types";
 
 interface ControlOption<T extends string> {
   val: T;

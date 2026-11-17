@@ -1,4 +1,4 @@
-import type { Cell, Difficulty, PieceId } from "../game/types";
+import type { Cell, Difficulty, PcId } from "../game/types";
 
 const STARTING_CELLS = {
   easy: [1, 2, 4, 7, 8, 11, 13, 14],
@@ -29,10 +29,7 @@ function randSelectFrom<T>(arr: readonly T[], rnd: () => number): T {
   return selectedT;
 }
 
-export function selectStartPiece(
-  remPcs: readonly PieceId[],
-  rnd: () => number = Math.random,
-): PieceId {
+export function selectStartPiece(remPcs: readonly PcId[], rnd: () => number = Math.random): PcId {
   return randSelectFrom(remPcs, rnd);
 }
 

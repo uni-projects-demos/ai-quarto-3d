@@ -1,7 +1,7 @@
 import type { JSX } from "react";
-import { CELL_COUNT } from "../game/rules";
+import { CELL_COUNT } from "../../game/rules";
+import { LanguageToggle } from "../i18n/LanguageToggle";
 import { GameControls } from "./GameControls";
-import { LanguageToggle } from "./LanguageToggle";
 
 const BIN_CELLS = Array.from({ length: CELL_COUNT }, (_, cell) => `binary-cell-${cell}`);
 

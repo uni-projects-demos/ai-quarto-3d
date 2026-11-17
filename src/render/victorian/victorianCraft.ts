@@ -15,9 +15,9 @@ import {
 } from "three";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
-import type { PieceTraits } from "../game/pieces";
-import { createHollowSquare } from "./geometry";
-import { createWoodCanvas } from "./textures";
+import type { PieceTraits } from "../../game/pieces";
+import { createHollowSquare } from "../geometry";
+import { createWoodCanvas } from "../textures";
 
 export interface VictorianCraftMaterials {
   satinwood: MeshPhysicalMaterial;

@@ -7,9 +7,9 @@ import { initLangPicker } from "./i18n/lang-picker";
 import { Cleanup, type Dispose } from "./shared/Cleanup";
 import { fitText, requiredEl } from "./shared/dom";
 import { DEFAULT_THEME, GAME_THEMES, type ThemeId } from "./themes";
-import type GameController from "./ui/GameController";
-import { ThemePickerController } from "./ui/ThemePickerController";
-import { fitThemePreviews } from "./ui/themePrevLayout";
+import type GameController from "./ui/game/GameController";
+import { ThemePickerController } from "./ui/theme/ThemePickerController";
+import { fitThemePreviews } from "./ui/theme/themePrevLayout";
 
 function setupTitleFit(): Dispose {
   const title: HTMLHeadingElement = requiredEl("app-title", HTMLHeadingElement);
@@ -59,7 +59,7 @@ fitPreviews();
 async function preloadThemeBackgrounds(root: HTMLElement): Promise<HTMLImageElement[]> {
   const urls = new Set<string>();
   for (const el of root.querySelectorAll<HTMLElement>(
-    ".flogsta-balcony, .marble-interior, .nature-landscape, .quake-landscape, .victorian-wall",
+    ".quake-landscape, .victorian-wall, .bunk, .flogsta-balcony, .marble-interior, .nature-landscape",
   )) {
     for (const match of getComputedStyle(el).backgroundImage.matchAll(
       /url\(["']?([^"')]+)["']?\)/g,
@@ -102,8 +102,8 @@ function showStartupErr(err: unknown): void {
 async function prepareGame(): Promise<void> {
   const [{ GameScene }, { default: GameControllerClass }, { ThemeController }] = await Promise.all([
     import("./render/GameScene"),
-    import("./ui/GameController"),
-    import("./ui/ThemeController"),
+    import("./ui/game/GameController"),
+    import("./ui/theme/ThemeController"),
   ]);
   try {
     if (isDisposed) return;
@@ -190,7 +190,7 @@ async function prepareGame(): Promise<void> {
     });
     picker = new ThemePickerController(
       pickerRoot,
-      (thm: "marble" | "victorian" | "nature" | "flogsta" | "quake"): void => {
+      (thm: ThemeId): void => {
         selectedTheme = thm;
         controller?.start();
       },

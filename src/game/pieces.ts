@@ -1,4 +1,4 @@
-import type { PieceId } from "./types";
+import type { PcId } from "./types";
 import { PIECE_IDS } from "./types";
 
 export const TRAIT_MASK = [0b1000, 0b0010, 0b0001, 0b0100] as const;
@@ -9,7 +9,7 @@ const PIECE_TRAIT_MASK = {
   isDark: TRAIT_MASK[0],
 } as const;
 
-export const GAME_PIECES: readonly PieceId[] = PIECE_IDS;
+export const GAME_PIECES: readonly PcId[] = PIECE_IDS;
 
 export interface PieceTraits {
   readonly isRound: boolean;
@@ -18,11 +18,11 @@ export interface PieceTraits {
   readonly isDark: boolean;
 }
 
-function hasTrait(pc: PieceId, mask: number): boolean {
+function hasTrait(pc: PcId, mask: number): boolean {
   return (pc & mask) !== 0;
 }
 
-export function getPieceTraits(pc: PieceId): PieceTraits {
+export function getPieceTraits(pc: PcId): PieceTraits {
   return {
     isRound: hasTrait(pc, PIECE_TRAIT_MASK.isRound),
     isBig: hasTrait(pc, PIECE_TRAIT_MASK.isBig),
@@ -35,7 +35,7 @@ function bit(val: boolean): "0" | "1" {
   return val ? "1" : "0";
 }
 
-export function pieceStr(pc: PieceId): string {
+export function pieceStr(pc: PcId): string {
   const { isDark, isBig, isRound, isSolid } = getPieceTraits(pc);
   return `${bit(isDark)}${bit(isBig)}${bit(isRound)}${bit(!isSolid)}`;
 }

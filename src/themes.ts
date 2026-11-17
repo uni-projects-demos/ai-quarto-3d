@@ -21,6 +21,21 @@ export interface ThemeDef extends ThemeMetadata {
 }
 
 export const THEME_REG = {
+  bunk: {
+    nameKey: "themes.bunk",
+    accent: "#23475d",
+    panelInk: "#f2f4ed",
+    panelMuted: "#cedce0",
+    panelSurface: "#30586b",
+    panelHover: "#3f6b7d",
+    panelBorder: "#9fbac5",
+    actionBackground: "#e4bd77",
+    actionInk: "#173c50",
+    actionHover: "#f5d69b",
+    winHighlight: "#e9ce7d",
+    winInk: "#173c50",
+    isEnabled: false,
+  },
   flogsta: {
     nameKey: "themes.flogsta",
     accent: "#b54e47",
@@ -103,39 +118,23 @@ function isRegisteredTheme(val: string): val is ThemeId {
   return Object.hasOwn(THEME_REG, val);
 }
 
-const reg: ("flogsta" | "marble" | "nature" | "quake" | "victorian")[] =
-  Object.keys(THEME_REG).filter(isRegisteredTheme);
+const reg: ThemeId[] = Object.keys(THEME_REG).filter(isRegisteredTheme);
 export const GAME_THEMES: readonly ThemeDef[] = reg
-  .filter(
-    (id: "flogsta" | "marble" | "nature" | "quake" | "victorian"): true => THEME_REG[id].isEnabled,
-  )
-  .map(
-    (id: "flogsta" | "marble" | "nature" | "quake" | "victorian"): ThemeDef => ({
-      ...THEME_REG[id],
-      id,
-    }),
-  );
-export const DEFAULT_THEME: ThemeId = (():
-  | "flogsta"
-  | "marble"
-  | "nature"
-  | "quake"
-  | "victorian" => {
-  const first: "flogsta" | "marble" | "nature" | "quake" | "victorian" | undefined =
-    GAME_THEMES[0]?.id ?? reg[0];
-  if (first === undefined) throw new Error("No themes are registered");
-  return first;
-})();
+  .filter((id: ThemeId): boolean => THEME_REG[id].isEnabled)
+  .map((id: ThemeId): ThemeDef => ({ ...THEME_REG[id], id }));
+export const DEFAULT_THEME: ThemeId = "quake";
 
 export function themeColKeys(thm: ThemeId): {
   dark: "piece.green" | "piece.black" | "piece.blue" | "piece.dark";
   light: "piece.white" | "piece.red" | "piece.yellow" | "piece.light";
 } {
-  return thm === "quake"
-    ? { dark: "piece.dark", light: "piece.light" }
-    : thm === "nature"
-      ? { dark: "piece.green", light: "piece.white" }
-      : { dark: "piece.black", light: thm === "flogsta" ? "piece.white" : "piece.red" };
+  return thm === "bunk"
+    ? { dark: "piece.blue", light: "piece.yellow" }
+    : thm === "quake"
+      ? { dark: "piece.dark", light: "piece.light" }
+      : thm === "nature"
+        ? { dark: "piece.green", light: "piece.white" }
+        : { dark: "piece.black", light: thm === "flogsta" ? "piece.white" : "piece.red" };
 }
 
 export function isThemeId(val: unknown): val is ThemeId {

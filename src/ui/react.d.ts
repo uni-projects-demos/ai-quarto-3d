@@ -1,5 +1,5 @@
 import type { DOMAttributes } from "react";
-import type { TranslationKey } from "../i18n/types";
+import type { TranslationKey } from "../../i18n/types";
 
 declare module "react" {
   interface HTMLAttributes<T> extends DOMAttributes<T> {

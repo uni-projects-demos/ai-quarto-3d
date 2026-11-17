@@ -1,7 +1,7 @@
-import { onLangChange, translate } from "../i18n/i18n";
-import type { GameScene } from "../render/GameScene";
-import { Cleanup } from "../shared/Cleanup";
-import { fitText, requiredEl } from "../shared/dom";
+import { onLangChange, translate } from "../../i18n/i18n";
+import type { GameScene } from "../../render/GameScene";
+import { Cleanup } from "../../shared/Cleanup";
+import { fitText, requiredEl } from "../../shared/dom";
 import {
   adjacentTheme,
   DEFAULT_THEME,
@@ -10,7 +10,7 @@ import {
   type ThemeId,
   type ThemeMetadata,
   themeColKeys,
-} from "../themes";
+} from "../../themes";
 import { readThemePref, saveThemePref, THEME_STORAGE_KEY } from "./themePref";
 import { themePrevOrder } from "./themePrevOrder";
 

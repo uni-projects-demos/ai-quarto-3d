@@ -6,7 +6,7 @@ import {
   LatheGeometry,
   Vector2,
 } from "three";
-import { createTrunkTable, weldTrunkEdge } from "./natureTable";
+import { createTrunkTable, weldTrunkEdge } from "./nature/natureTable";
 
 export interface TableGeometries {
   regularTop: CircleGeometry;

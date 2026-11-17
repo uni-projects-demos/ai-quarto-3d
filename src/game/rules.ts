@@ -1,4 +1,4 @@
-import type { Cell, PieceId, WinLine } from "./types";
+import type { Cell, PcId, WinLine } from "./types";
 
 export const BOARD_SIZE: number = 4;
 export const CELL_COUNT: number = BOARD_SIZE ** 2;
@@ -23,7 +23,7 @@ const LINES_BY_CELL: readonly (readonly WinLine[])[] = Array.from(
     BOARD_WIN_LINES.filter((line: WinLine): boolean => line.includes(cell)),
 );
 
-function isPiece(bitVal: Cell | undefined): bitVal is PieceId {
+function isPiece(bitVal: Cell | undefined): bitVal is PcId {
   return bitVal !== null && bitVal !== undefined;
 }
 
@@ -40,7 +40,7 @@ export function getTraitMask(
   brd: readonly Cell[],
   line: WinLine,
   placedCell = -1,
-  placedPiece?: PieceId,
+  placedPiece?: PcId,
 ): number {
   let isWinOnes: number = TRAIT_MASK;
   let isWinZeros: number = TRAIT_MASK;
@@ -58,7 +58,7 @@ function isWinLine(
   brd: readonly Cell[],
   line: WinLine,
   placedCell = -1,
-  placedPiece?: PieceId,
+  placedPiece?: PcId,
 ): boolean {
   return getTraitMask(brd, line, placedCell, placedPiece) !== 0;
 }
@@ -74,7 +74,7 @@ export function getWinLines(brd: readonly Cell[]): WinLine[] {
   return BOARD_WIN_LINES.filter((line: WinLine): boolean => isWinLine(brd, line));
 }
 
-export function isWinCellPlacement(brd: readonly Cell[], cell: number, pc: PieceId): boolean {
+export function isWinCellPlacement(brd: readonly Cell[], cell: number, pc: PcId): boolean {
   if (!isValidCell(brd, cell)) {
     return false;
   }
@@ -87,7 +87,7 @@ export function isValidCell(brd: readonly Cell[], cell: number): boolean {
   return Number.isInteger(cell) && cell >= 0 && cell < brd.length && brd[cell] === null;
 }
 
-export function sumWinCells(brd: readonly Cell[], pc: PieceId): number {
+export function sumWinCells(brd: readonly Cell[], pc: PcId): number {
   let sum: number = 0;
   for (let cell: number = 0; cell < brd.length; cell += 1) {
     if (brd[cell] === null && isWinCellPlacement(brd, cell, pc)) {
@@ -110,10 +110,10 @@ export function isBoardEmpty(brd: readonly Cell[]): boolean {
 }
 
 export function isBoardFull(brd: readonly Cell[]): boolean {
-  return brd.length === CELL_COUNT && brd.every((cell: Cell): cell is PieceId => cell !== null);
+  return brd.length === CELL_COUNT && brd.every((cell: Cell): cell is PcId => cell !== null);
 }
 
-export function cellPlacementScore(brd: readonly Cell[], cell: number, pc: PieceId): number {
+export function cellPlacementScore(brd: readonly Cell[], cell: number, pc: PcId): number {
   let score: number = 0;
 
   for (const line of LINES_BY_CELL[cell] ?? []) {

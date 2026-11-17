@@ -22,13 +22,13 @@
   <meta property="og:url" content="https://uni-projects-demos.github.io/ai-quatro-3d/" />
   <meta property="og:image" content="https://uni-projects-demos.github.io/ai-quatro-3d/social-preview.png" />
 
-  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-5ZFN4BS4"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1752BEPVPX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args) {
-      window.dataLayer.push(args);
-    }
+    // biome-ignore lint/complexity/noArguments: Google gtag.js requires arguments object
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('config', 'G-1752BEPVPX');
   </script>
 
   <script type="application/ld+json">
@@ -39,7 +39,6 @@
       "url": "https://uni-projects-demos.github.io/ai-quarto-3d/"
     }
   </script>
-  <title data-i18n="app.title">AI-Quarto 3D</title>
 </head>
 <body>
   <div id="app"></div>

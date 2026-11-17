@@ -81,7 +81,8 @@
 }
 
 .marble-interior {
-  background: url("../assets/themes/stockholm-interior.webp") center top / 100% auto no-repeat;
+  background: url("../assets/themes/marble/stockholm-interior.webp") center top / 100% auto
+    no-repeat;
   filter: brightness(calc(0.33 * var(--background-light-intensity)));
 
   &::after {
@@ -104,7 +105,7 @@
   display: none;
   background:
     linear-gradient(180deg, transparent 78%, #555b51) center top / 100% 56.28cqw no-repeat,
-    url("../assets/themes/flogsta-panorama.png") center top / 100% auto no-repeat;
+    url("../assets/themes/flogsta/flogsta-panorama.png") center top / 100% auto no-repeat;
 }
 
 .quake-landscape {
@@ -117,11 +118,12 @@
       rgba(13, 12, 13, 0.32) 70%,
       rgba(23, 21, 22, 0.96)
     ),
-    url("../assets/themes/quake-house.webp") center top / 100% auto no-repeat;
+    url("../assets/themes/quake/quake-house.webp") center top / 100% auto no-repeat;
   filter: brightness(calc(0.41 * var(--background-light-intensity)));
 }
 
 .game-screen[data-theme="victorian"],
+.game-screen[data-theme="bunk"],
 .game-screen[data-theme="flogsta"],
 .game-screen[data-theme="nature"],
 .game-screen[data-theme="quake"] {
@@ -175,7 +177,7 @@
 
 .nature-landscape {
   display: none;
-  background: url("../assets/themes/fiordland-bush.webp") center -130px / 100% auto no-repeat;
+  background: url("../assets/themes/nature/fiordland-bush.webp") center -130px / 100% auto no-repeat;
   filter: brightness(calc(0.35 * var(--background-light-intensity)));
 
   &::after {
@@ -198,7 +200,8 @@
 }
 
 .victorian-wall {
-  background: url("../assets/themes/victorian-salon.webp") center top / 100% auto no-repeat;
+  background: url("../assets/themes/victorian/victorian-salon.webp") center top / 100% auto
+    no-repeat;
   filter: brightness(calc(0.39 * var(--background-light-intensity)));
 
   &::after {

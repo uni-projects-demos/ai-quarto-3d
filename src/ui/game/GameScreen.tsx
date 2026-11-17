@@ -1,6 +1,8 @@
 import type { JSX } from "react";
-import { SceneBackdrop } from "./SceneBackdrop";
-import { ThemePicker } from "./ThemePicker";
+import { translate } from "../../i18n/i18n";
+import { DEFAULT_THEME, THEME_REG } from "../../themes";
+import { SceneBackdrop } from "../SceneBackdrop";
+import { ThemePicker } from "../theme/ThemePicker";
 
 function PauseIcon(): JSX.Element {
   return (
@@ -20,7 +22,7 @@ export function GameScreen(): JSX.Element {
     <section
       id="game-screen"
       className="game-screen"
-      data-theme="marble"
+      data-theme={DEFAULT_THEME}
       aria-label="3D game board"
       data-i18n-aria-label="a11y.gameBoard"
     >
@@ -81,9 +83,9 @@ export function GameScreen(): JSX.Element {
                 id="theme-name"
                 className="theme-name"
                 aria-live="polite"
-                data-i18n="themes.marble"
+                data-i18n={THEME_REG[DEFAULT_THEME].nameKey}
               >
-                Marble
+                {translate(THEME_REG[DEFAULT_THEME].nameKey)}
               </output>
             </div>
           </div>

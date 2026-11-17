@@ -2,8 +2,8 @@ import { CELL_COUNT, isValidCell } from "../game/rules";
 import {
   type Cell,
   isDifficulty,
-  isPieceId,
-  type PieceId,
+  isPcId,
+  type PcId,
   type RequestAI,
   type ResponseAI,
 } from "../game/types";
@@ -19,14 +19,14 @@ function isCount(val: unknown): val is number {
 function isBoard(val: unknown): val is Cell[] {
   if (!Array.isArray(val) || val.length !== CELL_COUNT) return false;
   const cells: readonly unknown[] = val;
-  for (const cell of cells) if (cell !== null && !isPieceId(cell)) return false;
+  for (const cell of cells) if (cell !== null && !isPcId(cell)) return false;
   return true;
 }
 
-function isRemaining(val: unknown): val is PieceId[] {
+function isRemaining(val: unknown): val is PcId[] {
   if (!Array.isArray(val)) return false;
   const pcs: readonly unknown[] = val;
-  for (const pc of pcs) if (!isPieceId(pc)) return false;
+  for (const pc of pcs) if (!isPcId(pc)) return false;
   return true;
 }
 
@@ -36,7 +36,7 @@ export function isRequestAI(val: unknown): val is RequestAI {
     val.type !== "find-move" ||
     !isCount(val.reqId) ||
     !isDifficulty(val.diff) ||
-    !isPieceId(val.curPiece) ||
+    !isPcId(val.curPiece) ||
     !isBoard(val.board) ||
     !isRemaining(val.remaining)
   )
@@ -61,7 +61,7 @@ export function isResponseAI(val: unknown): val is ResponseAI {
   return (
     isCount(move.cell) &&
     move.cell < CELL_COUNT &&
-    (move.nxtPiece === null || isPieceId(move.nxtPiece)) &&
+    (move.nxtPiece === null || isPcId(move.nxtPiece)) &&
     typeof move.score === "number" &&
     Number.isFinite(move.score) &&
     isCount(move.depth) &&

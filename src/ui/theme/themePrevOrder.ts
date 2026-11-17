@@ -1,5 +1,5 @@
-import { curLang, translate } from "../i18n/i18n";
-import type { ThemeDef } from "../themes";
+import { curLang, translate } from "../../i18n/i18n";
+import type { ThemeDef } from "../../themes";
 
 export function themePrevOrder(themes: readonly ThemeDef[]): ThemeDef[] {
   let coll: Intl.Collator;

@@ -23,8 +23,8 @@ import {
 } from "three";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
-import type { PieceTraits } from "../game/pieces";
-import { squarePath } from "./geometry";
+import type { PieceTraits } from "../../game/pieces";
+import { squarePath } from "../geometry";
 
 export interface CoffeeMaterials {
   glass: MeshPhysicalMaterial;

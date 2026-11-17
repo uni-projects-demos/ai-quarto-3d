@@ -1,7 +1,7 @@
 import type { JSX } from "react";
-import { GameInfo } from "./ui/GameInfo";
-import { GameScreen } from "./ui/GameScreen";
-import { LanguageDialog } from "./ui/LanguageDialog";
+import { GameInfo } from "./ui/game/GameInfo";
+import { GameScreen } from "./ui/game/GameScreen";
+import { LanguageDialog } from "./ui/i18n/LanguageDialog";
 
 export default function App(): JSX.Element {
   return (

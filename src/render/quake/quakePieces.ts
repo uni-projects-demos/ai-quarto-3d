@@ -7,7 +7,7 @@ import {
   TubeGeometry,
   Vector3,
 } from "three";
-import type { PieceTraits } from "../game/pieces";
+import type { PieceTraits } from "../../game/pieces";
 
 export function createQuakePieceDetails(traits: PieceTraits, pc: number): Group {
   const group = new Group();

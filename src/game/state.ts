@@ -1,4 +1,4 @@
-import type { Cell, GameMode, Participant, Phase, PieceId, Turn } from "./types";
+import type { Cell, GameMode, Participant, PcId, Phase, Turn } from "./types";
 
 export type HistEventType = "place" | "select";
 
@@ -55,12 +55,12 @@ export type StepAI = "select-open" | HistEventType | null;
 
 export interface GameState {
   readonly activeTurn: Turn;
-  readonly nxtPieceAI: PieceId | null;
+  readonly nxtPieceAI: PcId | null;
   readonly stepAI: StepAI;
   readonly board: readonly Cell[];
-  readonly pendingPiece: PieceId | null;
+  readonly pendingPiece: PcId | null;
   readonly phase: Phase;
-  readonly remaining: readonly PieceId[];
+  readonly remaining: readonly PcId[];
   readonly turnId: number;
   readonly winner: Turn | "draw" | null;
 }

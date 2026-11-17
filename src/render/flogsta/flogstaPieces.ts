@@ -11,7 +11,7 @@ import {
   Vector3,
 } from "three";
 import { MeshSurfaceSampler } from "three/addons/math/MeshSurfaceSampler.js";
-import type { PieceTraits } from "../game/pieces";
+import type { PieceTraits } from "../../game/pieces";
 
 export function createWeatheredTexture(
   paint?: number,

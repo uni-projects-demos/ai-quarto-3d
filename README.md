@@ -110,7 +110,7 @@ stdout | tests/ai-diff.test.ts > 100-match AI vs AI > medium vs easy: 100 medium
 
 ## Contribute
 
-Before making a Pull Request, ensure it addresses an Issue, and verify:
+Before making an Issue-linked Pull Request, verify it passes CI checks:
 
 ```Bash
 npm run verify:fix

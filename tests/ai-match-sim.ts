@@ -1,7 +1,7 @@
 import { findMoveAI, getRandVal, selectStartCell, selectStartPiece } from "../src/ai/search";
 import { GAME_PIECES } from "../src/game/pieces";
 import { CELL_COUNT, getWinLine, isBoardEmpty, isBoardFull } from "../src/game/rules";
-import type { Cell, Difficulty, MoveAI, PieceId, Turn } from "../src/game/types";
+import type { Cell, Difficulty, MoveAI, PcId, Turn } from "../src/game/types";
 
 export interface TestRunRes {
   winner: Turn | "draw";
@@ -24,17 +24,15 @@ export function simTestMatch(
 ): TestRunRes {
   const random: () => number = getRandVal();
   const board: Cell[] = Array<Cell>(CELL_COUNT).fill(null);
-  let remainingPieces: PieceId[] = [...GAME_PIECES];
+  let remainingPieces: PcId[] = [...GAME_PIECES];
   let curPlayerTurn: Turn = startingPlayer;
-  let pendingPiece: PieceId | null = null;
+  let pendingPiece: PcId | null = null;
   let numCellPlacements: number = 0;
 
   while (true) {
     if (pendingPiece === null) {
-      const selectedPiece: PieceId = selectStartPiece(remainingPieces, random);
-      remainingPieces = remainingPieces.filter(
-        (piece: PieceId): boolean => piece !== selectedPiece,
-      );
+      const selectedPiece: PcId = selectStartPiece(remainingPieces, random);
+      remainingPieces = remainingPieces.filter((piece: PcId): boolean => piece !== selectedPiece);
       pendingPiece = selectedPiece;
       curPlayerTurn = toggleTurn(curPlayerTurn);
       continue;
@@ -66,7 +64,7 @@ export function simTestMatch(
       };
     }
 
-    const selectedPiece: PieceId | undefined =
+    const selectedPiece: PcId | undefined =
       move.nxtPiece !== null && remainingPieces.includes(move.nxtPiece)
         ? move.nxtPiece
         : remainingPieces[0];
@@ -78,7 +76,7 @@ export function simTestMatch(
       };
     }
 
-    remainingPieces = remainingPieces.filter((piece: PieceId): boolean => piece !== selectedPiece);
+    remainingPieces = remainingPieces.filter((piece: PcId): boolean => piece !== selectedPiece);
     pendingPiece = selectedPiece;
     curPlayerTurn = toggleTurn(curPlayerTurn);
   }

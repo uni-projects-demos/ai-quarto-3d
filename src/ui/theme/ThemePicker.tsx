@@ -1,7 +1,7 @@
 import type { CSSProperties, JSX } from "react";
-import { translate } from "../i18n/i18n";
-import { GAME_THEMES, type ThemeDef } from "../themes";
-import { SceneBackdrop } from "./SceneBackdrop";
+import { translate } from "../../i18n/i18n";
+import { GAME_THEMES, type ThemeDef } from "../../themes";
+import { SceneBackdrop } from "../SceneBackdrop";
 import { themePrevOrder } from "./themePrevOrder";
 
 interface ThemePreviewStyle extends CSSProperties {

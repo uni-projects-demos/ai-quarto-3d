@@ -1,7 +1,7 @@
 export const PIECE_IDS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] as const;
 
-export type PieceId = (typeof PIECE_IDS)[number];
-export type Cell = PieceId | null;
+export type PcId = (typeof PIECE_IDS)[number];
+export type Cell = PcId | null;
 
 export type Turn = "player1" | "player2";
 export type Participant = "human" | "ai";
@@ -11,7 +11,7 @@ export type Starter = Turn | "random";
 export type Phase = "select" | "place" | "thinking" | "finished";
 export type Strategy = "heuristic" | "search";
 
-export function isPieceId(val: unknown): val is PieceId {
+export function isPcId(val: unknown): val is PcId {
   return typeof val === "number" && Number.isInteger(val) && val >= 0 && val < PIECE_IDS.length;
 }
 
@@ -31,7 +31,7 @@ export type WinLine = readonly [number, number, number, number];
 
 export interface MoveAI {
   readonly cell: number;
-  readonly nxtPiece: PieceId | null;
+  readonly nxtPiece: PcId | null;
   readonly score: number;
   readonly depth: number;
   readonly nodes: number;
@@ -45,8 +45,8 @@ interface MsgAI {
 export interface RequestAI extends MsgAI {
   readonly type: "find-move";
   readonly board: readonly Cell[];
-  readonly remaining: readonly PieceId[];
-  readonly curPiece: PieceId;
+  readonly remaining: readonly PcId[];
+  readonly curPiece: PcId;
   readonly diff: Difficulty;
   readonly startCell?: number | undefined;
 }

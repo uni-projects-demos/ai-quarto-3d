@@ -1,7 +1,7 @@
-import { onLangChange, translate } from "../i18n/i18n";
-import { Cleanup } from "../shared/Cleanup";
-import { requiredEl } from "../shared/dom";
-import { GAME_THEMES, isThemeId, type ThemeId } from "../themes";
+import { onLangChange, translate } from "../../i18n/i18n";
+import { Cleanup } from "../../shared/Cleanup";
+import { requiredEl } from "../../shared/dom";
+import { GAME_THEMES, isThemeId, type ThemeId } from "../../themes";
 import { themePrevOrder } from "./themePrevOrder";
 
 export class ThemePickerController {

@@ -1,5 +1,5 @@
-import { readStorage, saveStorage } from "../shared/storage";
-import { DEFAULT_THEME, isThemeId, type ThemeId } from "../themes";
+import { readStorage, saveStorage } from "../../shared/storage";
+import { DEFAULT_THEME, isThemeId, type ThemeId } from "../../themes";
 
 export const THEME_STORAGE_KEY = "quarto-theme";
 

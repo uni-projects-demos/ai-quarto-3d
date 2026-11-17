@@ -1,5 +1,5 @@
 import type { PieceTraits } from "../game/pieces";
-import type { Difficulty, PieceId } from "../game/types";
+import type { Difficulty, PcId } from "../game/types";
 import { getPresentedPieceTraits } from "../render/piecePresentation";
 import type { Dispose } from "../shared/Cleanup";
 import { readStorage, saveStorage } from "../shared/storage";
@@ -213,7 +213,7 @@ export function diffLabel(diff: Difficulty): string {
   return translate(`diff.${diff}`);
 }
 
-export function transTraits(pc: PieceId, thm: ThemeId = DEFAULT_THEME): string {
+export function transTraits(pc: PcId, thm: ThemeId = DEFAULT_THEME): string {
   const pcTraits: PieceTraits = getPresentedPieceTraits(pc);
   const cols = themeColKeys(thm);
   return [

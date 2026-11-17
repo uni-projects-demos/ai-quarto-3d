@@ -114,6 +114,7 @@
     "close": "Close"
   },
   "themes": {
+    "bunk": "Bunk",
     "label": "Theme",
     "previous": "Previous theme",
     "next": "Next theme",

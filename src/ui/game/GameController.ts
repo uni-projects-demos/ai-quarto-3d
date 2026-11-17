@@ -1,7 +1,7 @@
-import { getRandVal, selectStartCell, selectStartPiece } from "../ai/opening";
-import { isResponseAI } from "../ai/protocol";
-import { GAME_PIECES } from "../game/pieces";
-import { CELL_COUNT, getWinLine, isBoardEmpty, isBoardFull, isValidCell } from "../game/rules";
+import { getRandVal, selectStartCell, selectStartPiece } from "../../ai/opening";
+import { isResponseAI } from "../../ai/protocol";
+import { GAME_PIECES } from "../../game/pieces";
+import { CELL_COUNT, getWinLine, isBoardEmpty, isBoardFull, isValidCell } from "../../game/rules";
 import {
   type GameState,
   getRedoTarget,
@@ -11,28 +11,28 @@ import {
   type HistEventType,
   type StepAI,
   toggleTurn,
-} from "../game/state";
+} from "../../game/state";
 import type {
   Cell,
   Difficulty,
   GameMode,
   Participant,
+  PcId,
   Phase,
-  PieceId,
   RequestAI,
   Starter,
   Turn,
-} from "../game/types";
-import { isDifficulty, isGameMode, isStarter } from "../game/types";
-import { onLangChange } from "../i18n/i18n";
-import type { GameScene } from "../render/GameScene";
-import { Cleanup } from "../shared/Cleanup";
+} from "../../game/types";
+import { isDifficulty, isGameMode, isStarter } from "../../game/types";
+import { onLangChange } from "../../i18n/i18n";
+import type { GameScene } from "../../render/GameScene";
+import { Cleanup } from "../../shared/Cleanup";
+import { TimerAI } from "../TimerAI";
 import { type Elements, GameView, type GameViewState } from "./GameView";
-import { TimerAI } from "./TimerAI";
 
 interface DeferMoveAI {
   cell: number;
-  nxtPiece: PieceId | null;
+  nxtPiece: PcId | null;
   reqId: number;
 }
 
@@ -42,8 +42,8 @@ class GameController {
   private isDisposed: boolean = false;
   private isStarted: boolean = false;
   private brd: Cell[] = Array(CELL_COUNT).fill(null);
-  private rem: PieceId[] = [...GAME_PIECES];
-  private pendingPiece: PieceId | null = null;
+  private rem: PcId[] = [...GAME_PIECES];
+  private pendingPiece: PcId | null = null;
   private phase: Phase = "select";
   private actTurn: Turn = "player1";
   private winner: Turn | "draw" | null = null;
@@ -57,12 +57,12 @@ class GameController {
   private wkr: Worker | null = null;
   private turnId: number = 0;
   private stepAI: StepAI = null;
-  private nxtPieceAI: PieceId | null = null;
+  private nxtPieceAI: PcId | null = null;
   private histEvents: HistEvent[] = [];
   private histStates: GameState[] = [];
   private histIdx: number = 0;
   private isReview: boolean = false;
-  private hoverPc: PieceId | null = null;
+  private hoverPc: PcId | null = null;
   private isRiskEnabled: boolean = true;
 
   constructor(
@@ -134,7 +134,7 @@ class GameController {
     this.renderPendingPiece();
   }
 
-  handlePieceClick(pc: PieceId): void {
+  handlePieceClick(pc: PcId): void {
     if (
       !this.isStarted ||
       this.isReview ||
@@ -162,7 +162,7 @@ class GameController {
     this.placePiece(cell, null);
   }
 
-  handlePieceHover(pc: PieceId | null): void {
+  handlePieceHover(pc: PcId | null): void {
     if (!this.isStarted) return;
     const isPreviewSelection: boolean =
       pc !== null &&
@@ -257,9 +257,9 @@ class GameController {
     });
   }
 
-  private turnSelectAI(pc: PieceId | null, turnID: number): void {
+  private turnSelectAI(pc: PcId | null, turnID: number): void {
     if (!this.isCurTurnAI(turnID) || this.stepAI !== "select") return;
-    const selPc: PieceId | null = pc !== null && this.rem.includes(pc) ? pc : (this.rem[0] ?? null);
+    const selPc: PcId | null = pc !== null && this.rem.includes(pc) ? pc : (this.rem[0] ?? null);
     if (selPc === null) {
       this.gameFinn("draw");
       return;
@@ -297,11 +297,11 @@ class GameController {
     this.passPiece(selectStartPiece(this.rem, this.rnd));
   }
 
-  private passPiece(pc: PieceId): void {
+  private passPiece(pc: PcId): void {
     const curPlayer: Turn = this.actTurn;
     const turnId: number = this.turnId;
 
-    this.rem = this.rem.filter((bitVal: PieceId): boolean => bitVal !== pc);
+    this.rem = this.rem.filter((bitVal: PcId): boolean => bitVal !== pc);
     this.pendingPiece = pc;
     this.actTurn = toggleTurn(this.actTurn);
     this.turnId += 1;
@@ -459,7 +459,7 @@ class GameController {
 
   private applyMoveAI(
     cell: number,
-    nxtPiece: PieceId | null,
+    nxtPiece: PcId | null,
     moveRequestId: number = this.requestId,
   ): void {
     if (moveRequestId !== this.requestId || !this.isCurTurnAI() || this.pendingPiece === null) {
@@ -487,7 +487,7 @@ class GameController {
     this.timerSetAI(520, (): void => this.turnSelectAI(selPc, moveRequestId));
   }
 
-  private placePiece(cell: number, nxtPiece: PieceId | null): void {
+  private placePiece(cell: number, nxtPiece: PcId | null): void {
     const curPlayer = this.actTurn;
     const turnId = this.turnId;
     const isAI = this.getTurnPlayer(curPlayer) === "ai";

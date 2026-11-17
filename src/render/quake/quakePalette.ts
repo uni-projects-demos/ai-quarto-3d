@@ -1,6 +1,6 @@
-import { getPieceTraits } from "../game/pieces";
-import { BOARD_SIZE } from "../game/rules";
-import type { PieceId } from "../game/types";
+import { getPieceTraits } from "../../game/pieces";
+import { BOARD_SIZE } from "../../game/rules";
+import type { PcId } from "../../game/types";
 
 export function quakeCellColourIndex(cell: number): 0 | 1 {
   const row: number = Math.floor(cell / BOARD_SIZE);
@@ -17,7 +17,7 @@ export const QUAKE_CARDBOARD_COLOURS = {
   light: [0xdfbf97, 0xebd0aa, 0xd6b388, 0xe4c6a0],
 } as const;
 
-export function quakePieceColour(pc: PieceId): number {
+export function quakePieceColour(pc: PcId): number {
   const { isRound, isDark } = getPieceTraits(pc);
   const palette = isRound ? QUAKE_CARDBOARD_COLOURS : QUAKE_BRICK_COLOURS;
   const shade = ((pc & 0b0110) >> 1) as 0 | 1 | 2 | 3;

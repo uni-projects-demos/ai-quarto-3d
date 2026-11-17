@@ -1,10 +1,10 @@
-import { pieceStr, TRAIT_MASK } from "../game/pieces";
-import { getTraitMask, getWinLines, sumWinCells } from "../game/rules";
-import { type GameState, getTurnPlayer, toggleTurn } from "../game/state";
-import type { Cell, Difficulty, GameMode, PieceId, Turn, WinLine } from "../game/types";
-import { curLang, diffLabel, translate, transTraits } from "../i18n/i18n";
-import { controlLabel } from "../shared/dom";
-import type { ThemeId } from "../themes";
+import { pieceStr, TRAIT_MASK } from "../../game/pieces";
+import { getTraitMask, getWinLines, sumWinCells } from "../../game/rules";
+import { type GameState, getTurnPlayer, toggleTurn } from "../../game/state";
+import type { Cell, Difficulty, GameMode, PcId, Turn, WinLine } from "../../game/types";
+import { curLang, diffLabel, translate, transTraits } from "../../i18n/i18n";
+import { controlLabel } from "../../shared/dom";
+import type { ThemeId } from "../../themes";
 
 export interface Elements {
   readonly binCells: HTMLElement[];
@@ -35,7 +35,7 @@ export interface GameViewState extends GameState {
   readonly isReview: boolean;
   readonly isPauseAI: boolean;
   readonly isRiskEnabled: boolean;
-  readonly hoveredPiece: PieceId | null;
+  readonly hoveredPiece: PcId | null;
   readonly histIdx: number;
   readonly histLength: number;
   readonly canNavigate: boolean;
@@ -211,7 +211,7 @@ export class GameView {
     this.els.pieceStr.textContent = pieceStr(st.pendingPiece);
   }
 
-  private renderWinBinBits(el: HTMLElement, pc: PieceId, winTraits = 0): void {
+  private renderWinBinBits(el: HTMLElement, pc: PcId, winTraits = 0): void {
     const pieceBinStr: string = pieceStr(pc);
 
     const bits: HTMLSpanElement[] = [...pieceBinStr].map(

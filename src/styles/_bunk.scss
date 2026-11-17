@@ -1,0 +1,597 @@
+.bunk-cabin {
+  --bunk-hull-roll: 0deg;
+  --bunk-hull-x: 0px;
+  --bunk-hull-y: 0px;
+  --bunk-water-roll: 0deg;
+  --bunk-water-x: 0px;
+  --bunk-water-y: 0px;
+  --bunk-surface-x: 0px;
+  --bunk-surface-y: 0px;
+  --bunk-foam-x: 0px;
+  --bunk-foam-y: 0px;
+  --bunk-crest-opacity: 0.3;
+  --bunk-bed-x: 0px;
+  --bunk-bed-y: 0px;
+  --bunk-bed-roll: 0deg;
+  --bunk-bed-depth: 0px;
+  position: absolute;
+  inset: -6%;
+  z-index: 0;
+  display: none;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  transform: translate3d(var(--bunk-hull-x), var(--bunk-hull-y), 0) rotate(var(--bunk-hull-roll));
+  transform-origin: 50% 45%;
+  will-change: transform;
+  background:
+    radial-gradient(ellipse 88% 58% at 50% 16%, rgba(248, 242, 218, 0.2), transparent 72%),
+    linear-gradient(180deg, rgba(17, 42, 54, 0.03), transparent 24%, rgba(9, 25, 37, 0.09) 100%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    inset: 0 0 auto;
+    height: 9.5%;
+    border-bottom: clamp(10px, 1.7cqw, 25px) solid #456270;
+    background: linear-gradient(
+      180deg,
+      #2e4b5d 0%,
+      #d7d7c8 11%,
+      #99aab0 42%,
+      #718994 71%,
+      #355467 100%
+    );
+    box-shadow: 0 14px 24px rgba(5, 25, 41, 0.42);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 7;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(7, 28, 38, 0.08),
+      transparent 38%,
+      rgba(5, 24, 39, 0.23)
+    );
+    pointer-events: none;
+  }
+}
+
+.bunk-cabin-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(13, 31, 42, 0.16),
+      rgba(7, 20, 31, 0.34) 78%,
+      rgba(6, 16, 24, 0.58)
+    ),
+    url("../assets/themes/bunk/bunk-cabin-shell.webp") center top / 100% auto no-repeat;
+  opacity: 0.96;
+  filter: saturate(0.84) contrast(1.06) brightness(0.92);
+  transform: scale(1.01);
+}
+
+.bunk-window {
+  position: absolute;
+  z-index: 1;
+  inset: 13% 11% 39%;
+  overflow: hidden;
+  border: clamp(10px, 1.8cqw, 27px) solid #c7d0c3;
+  border-radius: 55px 46px 61px 50px / 47px 60px 48px 55px;
+  background: linear-gradient(180deg, #bddce5 0%, #94c1cd 58%, #719bab 100%);
+  box-shadow:
+    0 0 0 6px #456370,
+    0 0 0 12px rgba(20, 48, 62, 0.64),
+    inset 0 0 0 3px #395767,
+    inset 0 0 40px rgba(13, 49, 63, 0.42),
+    14px 22px 36px rgba(8, 31, 44, 0.48);
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      linear-gradient(
+        90deg,
+        transparent 48.3%,
+        #446677 48.6% 49.6%,
+        #dce2d4 49.9% 50.3%,
+        #385c6c 50.7% 51.4%,
+        transparent 51.7%
+      ),
+      linear-gradient(
+        115deg,
+        rgba(255, 255, 255, 0.2),
+        transparent 33%,
+        transparent 70%,
+        rgba(12, 38, 56, 0.18)
+      );
+    box-shadow: inset 0 0 42px rgba(6, 33, 50, 0.36);
+  }
+}
+
+.bunk-ocean {
+  position: absolute;
+  inset: -30%;
+  will-change: transform;
+  transform: translate3d(var(--bunk-water-x), var(--bunk-water-y), 0) rotate(var(--bunk-water-roll));
+  background:
+    radial-gradient(ellipse 40% 16% at 22% 25%, rgba(252, 250, 226, 0.63), transparent 90%),
+    linear-gradient(
+      180deg,
+      #c1e1e7 0%,
+      #87bbc8 35%,
+      #dce5d9 48.5%,
+      #3a7d97 49.3%,
+      #205c7a 60%,
+      #103c5c 78%,
+      #092941 100%
+    );
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 49% -15% -10%;
+    opacity: calc(0.26 + var(--bunk-crest-opacity));
+    transform: translate3d(var(--bunk-surface-x), var(--bunk-surface-y), 0);
+    background:
+      radial-gradient(ellipse 27% 6% at 18% 9%, rgba(222, 242, 238, 0.36), transparent 90%),
+      radial-gradient(ellipse 34% 7% at 72% 20%, rgba(193, 229, 233, 0.25), transparent 95%),
+      radial-gradient(ellipse 43% 9% at 45% 67%, rgba(138, 198, 211, 0.18), transparent 93%),
+      linear-gradient(180deg, rgba(165, 217, 225, 0.18), transparent 68%);
+    filter: blur(7px);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 55% -20% -15%;
+    opacity: calc(0.16 + var(--bunk-crest-opacity));
+    transform: translate3d(var(--bunk-foam-x), var(--bunk-foam-y), 0);
+    background:
+      radial-gradient(ellipse 26% 5% at 77% 35%, rgba(229, 245, 240, 0.4), transparent 92%),
+      radial-gradient(ellipse 22% 5% at 21% 64%, rgba(205, 234, 233, 0.25), transparent 92%),
+      radial-gradient(ellipse 48% 13% at 57% 88%, rgba(86, 164, 187, 0.14), transparent 91%);
+    filter: blur(5px);
+  }
+}
+
+.bunk-window-bolts {
+  position: absolute;
+  z-index: 4;
+  inset: 10.2% 8.7% 36.2%;
+  border: clamp(3px, 0.5cqw, 8px) dotted rgba(24, 61, 76, 0.34);
+  border-radius: 67px 54px 73px 58px;
+}
+
+.bunk-hull-ribs {
+  position: absolute;
+  z-index: 5;
+  inset: 10% 0 0;
+  opacity: 0.42;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 48, 63, 0.3),
+      #c7cbbd 2%,
+      #5b7988 4.4%,
+      transparent 5.2% 94.8%,
+      #567685 96%,
+      #c7cab9 98.1%,
+      rgba(20, 48, 63, 0.3)
+    ),
+    linear-gradient(180deg, transparent 49%, rgba(16, 41, 54, 0.16) 56%, transparent 67%);
+}
+
+.bunk-cabin-light {
+  position: absolute;
+  z-index: 6;
+  top: 8%;
+  right: 7%;
+  width: clamp(27px, 4.2cqw, 58px);
+  height: clamp(18px, 2.5cqw, 38px);
+  border: 5px solid #415966;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 35%, #fff5ca, #f4d392 47%, #7c776c);
+  box-shadow:
+    0 2px 14px rgba(255, 234, 161, 0.28),
+    0 8px 17px rgba(13, 36, 46, 0.22);
+}
+
+.bunk-berth {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  transform: translate3d(var(--bunk-bed-x), var(--bunk-bed-y), var(--bunk-bed-depth))
+    rotate(var(--bunk-bed-roll));
+  transform-origin: 50% 82%;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  will-change: transform;
+}
+
+.bunk-lower-slot {
+  position: absolute;
+  z-index: 3;
+  bottom: -1%;
+  left: 3%;
+  width: 94%;
+  height: 20%;
+  clip-path: inset(37% 0 0);
+  border: clamp(7px, 1cqw, 13px) solid #b4b19b;
+  border-top: 8px solid #304f62;
+  border-radius: 9px 11px 0 0;
+  overflow: hidden;
+  background: linear-gradient(160deg, #071b30 10%, #17384d 70%, #3a6274 100%);
+  box-shadow:
+    inset 0 12px 26px rgba(2, 12, 24, 0.63),
+    0 -5px 14px rgba(10, 25, 34, 0.37);
+}
+
+.bunk-lower-pillow {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  width: 22%;
+  height: 45%;
+  border: 5px solid #dfd5b7;
+  border-radius: 47%;
+  background: #a3afb0;
+}
+
+.bunk-lower-blanket {
+  position: absolute;
+  bottom: -8%;
+  left: -2%;
+  width: 72%;
+  height: 65%;
+  border-radius: 35% 40% 0 0;
+  transform: rotate(-3deg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.13), transparent 35%),
+    linear-gradient(22deg, #30597a 0%, #88a6ae 22%, #23435d 100%);
+}
+
+.bunk-bedframe-left,
+.bunk-bedframe-right {
+  position: absolute;
+  z-index: 6;
+  top: 57%;
+  height: 46%;
+  width: clamp(17px, 2.8cqw, 38px);
+  border: 3px solid #2c4b5d;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    #21384a 0%,
+    #d3d2bd 32%,
+    #8fa2a6 60%,
+    #456474 81%,
+    #223e50 100%
+  );
+  box-shadow:
+    5px 5px 14px rgba(4, 25, 38, 0.48),
+    inset 1px 0 0 rgba(255, 255, 255, 0.16);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 4% -18% 4% auto;
+    width: 24%;
+    border-radius: 0 6px 6px 0;
+    background: linear-gradient(180deg, rgba(14, 35, 47, 0.5), rgba(152, 174, 180, 0.4));
+    filter: blur(0.2px);
+  }
+}
+
+.bunk-bedframe-left {
+  left: 4%;
+  transform: rotate(2.1deg);
+}
+
+.bunk-bedframe-right {
+  right: 4%;
+  transform: rotate(-3.3deg);
+}
+
+.bunk-upper-bar {
+  position: absolute;
+  z-index: 8;
+  left: 6.5%;
+  right: 7.5%;
+  top: 55.2%;
+  height: clamp(15px, 2.4cqw, 30px);
+  border: 3px solid #325267;
+  border-radius: 18px;
+  transform: rotate(-0.8deg);
+  background: linear-gradient(180deg, #ece5cf, #9aacaa 40%, #668592 71%, #28455b);
+  box-shadow:
+    0 7px 14px rgba(8, 29, 41, 0.46),
+    inset 0 1px 0 rgba(255, 255, 255, 0.36);
+}
+
+.bunk-outer-rail {
+  position: absolute;
+  z-index: 9;
+  left: 3.5%;
+  right: 3.8%;
+  bottom: 26.8%;
+  height: clamp(11px, 1.9cqw, 22px);
+  border: 3px solid #27475f;
+  border-radius: 999px;
+  transform: rotate(-1.2deg);
+  background: linear-gradient(180deg, #e9e2cd, #97a8a5 38%, #627f90 72%, #223f55);
+  box-shadow:
+    0 6px 10px rgba(8, 29, 41, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: clamp(10px, 1.3cqw, 18px);
+    height: clamp(54px, 10cqh, 118px);
+    border: 3px solid #305169;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #335469, #e5dec7 48%, #5b7b8b);
+    box-shadow: 0 3px 8px rgba(7, 25, 40, 0.25);
+  }
+
+  &::before {
+    left: 4.5%;
+    transform: rotate(2deg);
+  }
+  &::after {
+    right: 4.5%;
+    transform: rotate(-2deg);
+  }
+}
+
+.bunk-mattress {
+  position: absolute;
+  z-index: 2;
+  inset: 67% -4% 4%;
+  border-top: clamp(13px, 2.1cqw, 29px) solid #e8e2c8;
+  border-bottom: 11px solid #294d65;
+  border-radius: 39% 49% 8% 9% / 19% 23% 8% 9%;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(245, 239, 218, 0.16),
+      rgba(255, 255, 255, 0.04) 35%,
+      transparent 36%
+    ),
+    linear-gradient(150deg, #bccdc0, #7597a0 52%, #385b72);
+  box-shadow:
+    0 -14px 25px rgba(14, 37, 47, 0.4),
+    0 12px 20px rgba(5, 20, 31, 0.24),
+    inset 0 15px 19px rgba(243, 241, 218, 0.3);
+}
+
+.bunk-sheet {
+  position: absolute;
+  z-index: 3;
+  bottom: 9%;
+  left: 7%;
+  right: 6%;
+  height: 21%;
+  border: 4px solid rgba(233, 232, 208, 0.6);
+  border-radius: 40% 50% 8% 6%;
+  transform: rotate(-2deg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 42%),
+    linear-gradient(108deg, #cbd7c8 0%, #9ab8b1 48%, #b7c6ba 100%);
+}
+
+.bunk-blanket {
+  position: absolute;
+  z-index: 4;
+  bottom: -7%;
+  left: -4%;
+  width: 63%;
+  height: 31%;
+  border: 5px solid rgba(239, 218, 171, 0.57);
+  border-radius: 33% 61% 10% 5% / 32% 47% 0 0;
+  transform: rotate(7deg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent 38%),
+    linear-gradient(24deg, #355574 0%, #d7c28f 24%, #a16e56 41%, #587b94 100%);
+  box-shadow: 15px -10px 26px rgba(9, 33, 47, 0.36);
+}
+
+.bunk-pillow {
+  position: absolute;
+  z-index: 4;
+  right: 6%;
+  bottom: 10%;
+  width: 27%;
+  height: 16%;
+  border: 8px solid #e8e0c6;
+  border-radius: 46% 35% 41% 28%;
+  transform: rotate(-13deg);
+  background: linear-gradient(140deg, #f2eede, #a6c2bc 62%, #557b86);
+  box-shadow: -8px 8px 18px rgba(12, 38, 51, 0.39);
+}
+
+.bunk-soft-toy {
+  position: absolute;
+  z-index: 5;
+  right: 25%;
+  bottom: 19%;
+  width: clamp(20px, 4.6cqw, 60px);
+  aspect-ratio: 1;
+  border: 3px solid #654532;
+  border-radius: 46%;
+  transform: rotate(19deg);
+  background:
+    radial-gradient(circle at 37% 40%, #201d1a 0 5%, transparent 6%),
+    radial-gradient(circle at 65% 40%, #201d1a 0 5%, transparent 6%),
+    radial-gradient(ellipse at 52% 65%, #b79169 0 22%, transparent 23%),
+    #9d7252;
+  box-shadow: 3px 7px 12px rgba(12, 29, 40, 0.43);
+
+  .bunk-toy-ear {
+    position: absolute;
+    top: -17%;
+    left: -9%;
+    width: 35%;
+    height: 40%;
+    border-radius: 50%;
+    background: #876244;
+
+    &:last-child {
+      left: auto;
+      right: -9%;
+    }
+  }
+}
+
+.bunk-guard-panel {
+  position: absolute;
+  z-index: 5;
+  bottom: 17.5%;
+  left: 10%;
+  right: 11%;
+  height: 12%;
+  opacity: 0.9;
+  border: 2px solid rgba(226, 218, 194, 0.72);
+  border-radius: 10px 12px 16px 14px;
+  background: linear-gradient(180deg, rgba(231, 225, 205, 0.24), rgba(153, 171, 176, 0.18));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 4px 10px rgba(8, 28, 38, 0.22);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    width: 4px;
+    border-radius: 999px;
+    background: rgba(232, 228, 211, 0.72);
+    box-shadow: 0 0 0 1px rgba(101, 126, 136, 0.16);
+  }
+
+  &::before {
+    left: 33%;
+  }
+  &::after {
+    right: 33%;
+  }
+}
+
+.bunk-rail {
+  position: absolute;
+  z-index: 8;
+  bottom: 18.4%;
+  left: 4%;
+  width: 92%;
+  height: clamp(13px, 2cqw, 27px);
+  border: 3px solid #2d4c60;
+  border-radius: 15px 30px 18px 21px;
+  transform: rotate(-1.3deg);
+  background: linear-gradient(180deg, #f3ecdb, #a8b9ac 40%, #648392 70%, #21455f);
+  box-shadow:
+    0 6px 14px rgba(7, 25, 40, 0.56),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: clamp(12px, 1.5cqw, 22px);
+    height: clamp(70px, 14cqh, 175px);
+    border: 3px solid #305169;
+    border-radius: 9px;
+    background: linear-gradient(90deg, #3b6277, #e4dfc6 50%, #517487);
+  }
+
+  &::before {
+    left: 8%;
+    transform: rotate(3deg);
+  }
+  &::after {
+    right: 8%;
+    transform: rotate(-3deg);
+  }
+}
+
+.bunk-ladder {
+  position: absolute;
+  z-index: 7;
+  right: 3%;
+  bottom: -9%;
+  width: 14%;
+  height: 37%;
+  transform: rotate(-4deg);
+  border-left: clamp(9px, 1.2cqw, 17px) solid #d9d8ba;
+  border-right: clamp(9px, 1.2cqw, 17px) solid #aeb6a6;
+  border-radius: 8px;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0 17%,
+    #364f59 17.5% 19%,
+    #b9bcaa 20% 25%,
+    #476575 26% 28%,
+    transparent 28.5% 33%
+  );
+  filter: drop-shadow(5px 7px 5px rgba(8, 28, 40, 0.43));
+}
+
+.game-screen[data-theme="bunk"] {
+  background: #426679;
+
+  > .bunk-cabin {
+    display: block;
+  }
+
+  .game-status {
+    color: #f3f5e8;
+    border-color: rgba(161, 208, 217, 0.59);
+    background: rgba(18, 46, 65, 0.93);
+  }
+}
+
+@container game-scene (max-aspect-ratio: 0.92) {
+  .bunk-window {
+    inset: 13% 6% 45%;
+  }
+  .bunk-window-bolts {
+    inset: 10.5% 3.5% 42.4%;
+  }
+  .bunk-mattress {
+    inset-block-start: 68%;
+  }
+  .bunk-outer-rail {
+    bottom: 29%;
+  }
+  .bunk-rail {
+    bottom: 21.5%;
+  }
+  .bunk-guard-panel {
+    bottom: 21.5%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bunk-cabin,
+  .bunk-cabin-art,
+  .bunk-berth,
+  .bunk-ocean,
+  .bunk-ocean::before,
+  .bunk-ocean::after {
+    will-change: auto;
+  }
+}
