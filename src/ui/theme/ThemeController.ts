@@ -8,9 +8,9 @@ import {
   GAME_THEMES,
   THEME_REG,
   type ThemeId,
-  type ThemeMetadata,
   themeColKeys,
 } from "../../themes";
+import { applyThemePalette } from "./themePalette";
 import { readThemePref, saveThemePref, THEME_STORAGE_KEY } from "./themePref";
 import { themePrevOrder } from "./themePrevOrder";
 
@@ -79,21 +79,9 @@ export class ThemeController {
     this.cur = thm;
     this.scn.setTheme(thm);
     this.scr.dataset.theme = thm;
-    const pal: ThemeMetadata = THEME_REG[thm];
-    const root: HTMLElement = document.documentElement;
-    root.style.setProperty("--settings-background", pal.accent);
-    root.style.setProperty("--settings-ink", pal.panelInk);
-    root.style.setProperty("--settings-muted", pal.panelMuted);
-    root.style.setProperty("--settings-surface", pal.panelSurface);
-    root.style.setProperty("--settings-hover", pal.panelHover);
-    root.style.setProperty("--settings-border", pal.panelBorder);
-    root.style.setProperty("--settings-action-background", pal.actionBackground);
-    root.style.setProperty("--settings-action-hover", pal.actionHover);
-    root.style.setProperty("--settings-action-ink", pal.actionInk);
-    root.style.setProperty("--settings-win-background", pal.winHighlight);
-    root.style.setProperty("--settings-win-ink", pal.winInk);
-    this.lyt.style.setProperty("--control-accent", pal.accent);
-    this.lyt.style.setProperty("--control-action-ink", pal.actionInk);
+    applyThemePalette(thm);
+    this.lyt.style.setProperty("--control-accent", THEME_REG[thm].accent);
+    this.lyt.style.setProperty("--control-action-ink", THEME_REG[thm].actionInk);
     this.updateName();
     this.onChange?.();
     if (persist) saveThemePref(thm);

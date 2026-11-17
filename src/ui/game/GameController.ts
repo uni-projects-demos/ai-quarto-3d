@@ -334,7 +334,7 @@ class GameController {
     if (this.isReview || this.isPauseAI || this.activeReqAI === null) return;
     this.workerTerminate();
     try {
-      this.wkr = new Worker(new URL("../ai/ai.worker.ts", import.meta.url), {
+      this.wkr = new Worker(new URL("../../ai/ai.worker.ts", import.meta.url), {
         type: "module",
       });
       this.wkr.addEventListener("message", this.onWorkerMsg);

@@ -8,7 +8,7 @@ import {
 } from "three";
 import blackOnyxUrl from "../../assets/themes/marble/black-onyx.webp";
 import garnetStoneUrl from "../../assets/themes/marble/garnet-stone.webp";
-import marbleUrl from "../../assets/themesmarble//marble.webp";
+import marbleUrl from "../../assets/themes/marble/marble.webp";
 import type { MaterialHelpers, ThemeMaterials } from "../themeMaterials";
 
 export const MARBLE_CELL_COLS: readonly [12958887, 11451328] = [0xc5bca7, 0xaebbc0] as const;

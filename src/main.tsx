@@ -9,6 +9,7 @@ import { fitText, requiredEl } from "./shared/dom";
 import { DEFAULT_THEME, GAME_THEMES, type ThemeId } from "./themes";
 import type GameController from "./ui/game/GameController";
 import { ThemePickerController } from "./ui/theme/ThemePickerController";
+import { applyThemePalette } from "./ui/theme/themePalette";
 import { fitThemePreviews } from "./ui/theme/themePrevLayout";
 
 function setupTitleFit(): Dispose {
@@ -30,6 +31,8 @@ function setupTitleFit(): Dispose {
     mutationObs.disconnect();
   };
 }
+
+applyThemePalette(DEFAULT_THEME);
 
 const cleanup = new Cleanup();
 let isDisposed: boolean = false;

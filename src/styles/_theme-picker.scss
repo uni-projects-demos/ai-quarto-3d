@@ -29,7 +29,7 @@
 }
 
 .theme-preview-card {
-  --preview-lit-accent: var(--preview-accent, #deceb4);
+  --preview-lit-accent: var(--preview-accent, var(--settings-background));
   --focus-color: var(--preview-lit-accent);
   --focus-offset: 4px;
 
@@ -39,7 +39,7 @@
   flex-direction: column;
   padding: 0;
   overflow: hidden;
-  border: 1px solid var(--preview-border, #74614d);
+  border: 1px solid var(--preview-border, var(--settings-border));
   border-radius: var(--radius-md);
   color: var(--text);
   background: #152123;
@@ -97,8 +97,8 @@
 .theme-preview-name {
   width: 100%;
   padding: 11px 12px;
-  color: var(--preview-ink, #28231d);
-  background: var(--preview-accent, #deceb4);
+  color: var(--preview-ink, var(--settings-ink));
+  background: var(--preview-accent, var(--settings-background));
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1rem, 1.7vw, 1.2rem);
   font-weight: 500;
