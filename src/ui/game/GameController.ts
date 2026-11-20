@@ -1,5 +1,10 @@
 import { getRandVal, selectStartCell, selectStartPiece } from "../../ai/opening";
 import { isResponseAI } from "../../ai/protocol";
+import {
+  isQuakeLosingSelector,
+  QuakePenaltyTimer,
+  selectQuakeRemovalCell,
+} from "../../game/easterEgg";
 import { GAME_PIECES } from "../../game/pieces";
 import { CELL_COUNT, getWinLine, isBoardEmpty, isBoardFull, isValidCell } from "../../game/rules";
 import {
@@ -64,6 +69,7 @@ class GameController {
   private isReview: boolean = false;
   private hoverPc: PcId | null = null;
   private isRiskEnabled: boolean = true;
+  private readonly quakePenalty = new QuakePenaltyTimer((): boolean => this.applyQuakePenalty());
 
   constructor(
     private readonly scn: Pick<GameScene, "setState" | "getTheme">,
@@ -119,6 +125,7 @@ class GameController {
     this.isDisposed = true;
     this.isStarted = false;
     this.cancelAI();
+    this.quakePenalty.stop();
     this.cleanup.dispose();
   }
 
@@ -132,6 +139,8 @@ class GameController {
 
   refreshTheme(): void {
     this.renderPendingPiece();
+    this.quakePenalty.stop();
+    this.scheduleQuakePenalty();
   }
 
   handlePieceClick(pc: PcId): void {
@@ -184,6 +193,7 @@ class GameController {
   private readonly newGame: () => void = (): void => {
     if (!this.isStarted) return;
     this.cancelAI();
+    this.quakePenalty.stop();
     this.isPauseAI = false;
     this.rnd = getRandVal();
     this.brd = Array(CELL_COUNT).fill(null);
@@ -235,6 +245,7 @@ class GameController {
   }
 
   private startTurn(): void {
+    this.quakePenalty.stop();
     if (this.getTurnPlayer(this.actTurn) === "ai") {
       this.phase = "thinking";
       this.stepAI = this.pendingPiece === null ? "select-open" : "place";
@@ -248,6 +259,7 @@ class GameController {
     this.stepAI = null;
     this.nxtPieceAI = null;
     this.updateUI();
+    this.scheduleQuakePenalty();
   }
 
   private turnScheduleAI(delayMS: number): void {
@@ -298,6 +310,7 @@ class GameController {
   }
 
   private passPiece(pc: PcId): void {
+    this.quakePenalty.stop();
     const curPlayer: Turn = this.actTurn;
     const turnId: number = this.turnId;
 
@@ -500,6 +513,7 @@ class GameController {
       this.updateUI();
     }
     this.saveGameState(curPlayer, turnId, "place");
+    this.scheduleQuakePenalty();
   }
 
   private recoverFB(): void {
@@ -534,6 +548,7 @@ class GameController {
   }
 
   private gameFinn(curTurn: Turn | "draw"): void {
+    this.quakePenalty.stop();
     this.cancelAI();
     this.winner = curTurn;
     this.phase = "finished";
@@ -552,6 +567,39 @@ class GameController {
     this.activeReqAI = null;
     this.deferMoveAI = null;
     this.pendRecoverAI = false;
+  }
+
+  private canApplyQuakePenalty(): boolean {
+    return (
+      this.isStarted &&
+      !this.isReview &&
+      this.scn.getTheme() === "quake" &&
+      this.phase === "select" &&
+      this.getTurnPlayer(this.actTurn) === "human"
+    );
+  }
+
+  private scheduleQuakePenalty(): void {
+    if (this.canApplyQuakePenalty() && isQuakeLosingSelector(this.brd, this.rem)) {
+      this.quakePenalty.start();
+    }
+  }
+
+  private applyQuakePenalty(): boolean {
+    if (!this.canApplyQuakePenalty()) return false;
+    const cell: number | null = selectQuakeRemovalCell(this.brd, this.rem);
+    if (cell === null) return false;
+    const pc: Cell | undefined = this.brd[cell];
+    if (pc === undefined || pc === null) return false;
+
+    this.brd[cell] = null;
+    this.rem.push(pc);
+    this.rem.sort((left: PcId, right: PcId): number => left - right);
+    this.hoverPc = null;
+    this.saveGameState(this.actTurn, this.turnId, "quake");
+    this.updateUI();
+
+    return this.canApplyQuakePenalty() && this.brd.some((piece: Cell): boolean => piece !== null);
   }
 
   private captureGameState(copy = true): GameState {
@@ -586,6 +634,7 @@ class GameController {
     if (snapshot === undefined) return;
 
     this.cancelAI();
+    this.quakePenalty.stop();
 
     this.brd = [...snapshot.board];
     this.rem = [...snapshot.remaining];
@@ -602,6 +651,7 @@ class GameController {
       !this.isReview && this.phase === "thinking" && this.getTurnPlayer(this.actTurn) === "ai";
     this.isPauseAI = isAIState;
     this.updateUI();
+    this.scheduleQuakePenalty();
 
     if (isAIState) {
       const delayMS: number =

@@ -1,6 +1,6 @@
 import type { Cell, GameMode, Participant, PcId, Phase, Turn } from "./types";
 
-export type HistEventType = "place" | "select";
+export type HistEventType = "place" | "select" | "quake";
 
 export interface HistEvent {
   readonly curPlayer: Turn;
@@ -51,7 +51,7 @@ export function getRedoTarget(
     : histTarget(histEvents, idx, 1, isAtomic, isEntireTurn);
 }
 
-export type StepAI = "select-open" | HistEventType | null;
+export type StepAI = "select-open" | "place" | "select" | null;
 
 export interface GameState {
   readonly activeTurn: Turn;

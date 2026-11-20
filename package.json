@@ -2,7 +2,7 @@
   "name": "ai-quarto-3d",
   "private": true,
   "version": "1.0.0",
-  "description": "AI Quarto 3D using negamax (minimax) with alpha-beta pruning and Three.js scene. Ported and enhanced demo of a software engineering project completed at Uppsala University, ",
+  "description": "AI Quarto 3D using negamax (minimax) with alpha-beta pruning and Three.js scene. Ported and enhanced demo of a software engineering project completed at Uppsala University.",
   "type": "module",
   "author": "uni-projects-demos",
   "repository": {
@@ -34,7 +34,7 @@
     "sass": "^1.108.2",
     "typescript": "^7.0.2",
     "vite": "^8.3.8",
-    "vitest": "^5.1.0",
+    "vitest": "^5.1.1",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0"
   },
